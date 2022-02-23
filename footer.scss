@@ -1,0 +1,69 @@
+$robotoFontFamily: "Roboto", sans-serif;
+$georgiaFontFamily: Georgia, Times, "Times New Roman", serif;
+$color: rgba(0,0,0,.08);
+$color2: rgba(0,0,0,.02);
+$cnBlue: #003594;
+$white: #ffffff;
+$black: #0a0a0a;
+$grey: #D8D8D8;
+$footerHdr: #878792;
+$borderGrey: #F2F2F2;
+$transparency100: rgba(0, 53, 148, 1);
+$transparency75: rgba(0, 53, 148, 0.75);
+$colorSelect:#3694d7;
+$timing:.3s;
+$redAlert: #F31431;
+$caption: #767676;
+$bgColor: #fafafa;
+
+@mixin attr-transition1 ($attr) {
+  -webkit-transition: $attr 0.25s;
+  -moz-transition: $attr 0.25s;
+  -o-transition: $attr 0.25s;
+  transition: $attr 0.25s;
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+footer {
+  &.grid-container {
+    max-width: 76rem;
+  }
+}
+
+.grid-padding-x > .cell {
+  &.remove-padding {
+    padding: 0;
+  }
+  @media only screen
+    and (max-width: 780px) {
+      padding-left: 1.45rem;
+      padding-right: 1.45rem;
+  }
+}
+
+/* footer */
+#footer {
+  background-color: #002c7b;
+  color: $white;
+  padding-top:72px;
+  padding-bottom:72px;
+  a {
+    color: $white;
+  }
+  .copyright-section {
+    border-top: 1px solid #6c6c6c;
+    padding-top:40px;
+    .copyright {
+      font-size: 0.9rem;
+    }
+  }
+  .social-links {
+    ul {
+      list-style: none;
+    }
+  }
+}

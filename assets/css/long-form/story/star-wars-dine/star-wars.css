@@ -1,0 +1,248 @@
+@font-face {
+  font-family: 'Star Jedi';
+  src: url("http://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/css/long-form/story/star-wars-dine/fontsStarJedi.eot");
+  src: url("http://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/css/long-form/story/star-wars-dine/StarJedi.eot?#iefix") format("embedded-opentype"), url("http://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/css/long-form/story/star-wars-dine/StarJedi.woff2") format("woff2"), url("http://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/css/long-form/story/star-wars-dine/StarJedi.woff") format("woff"), url("http://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/css/long-form/story/star-wars-dine/StarJedi.svg#StarJedi") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+.merriweather {
+  font-family: "Merriweather", serif; }
+
+.montserrat {
+  font-family: "Montserrat", sans-serif; }
+
+.roboto {
+  font-family: "Roboto", sans-serif; }
+
+.taviraj {
+  font-family: "Taviraj", serif; }
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+p, .pubdate, .byline, .text-content .author_bio .bio .team-title.post {
+  color: #ffffff !important; }
+
+p a, .text-content a, .text-content .author_bio a {
+  color: #ffffff !important;
+  border-bottom: 2px solid #ffffff !important; }
+  p a:hover, .text-content a:hover, .text-content .author_bio a:hover {
+    border-bottom: none !important; }
+
+.text-content .top_social a {
+  border: 1px solid #ffffff; }
+
+.text-content .author_bio .bio a {
+  border: none !important; }
+
+.text-content .author_bio .bio .author_social_links i:hover {
+  color: transparent; }
+
+.text-content .top_social a:hover {
+  border: 1px solid #ffffff;
+  background: #ffffff; }
+
+.text-content .comment-form-wrapper h2 {
+  color: #fff; }
+
+.fade {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  background-image: linear-gradient(0deg, transparent, black 75%);
+  z-index: 1; }
+
+.star-wars, .star-wars-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  color: #feda4a;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: justify;
+  overflow: hidden;
+  margin-bottom: 60px;
+  background: black url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png") repeat; }
+  .star-wars .scene1, .star-wars-mobile .scene1 {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+    position: absolute;
+    font-family: "Roboto", sans-serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: #34d6df;
+    align-items: center;
+    justify-content: center; }
+  .star-wars .scene2, .star-wars-mobile .scene2 {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+    position: absolute;
+    color: #f9d71c;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+    .star-wars .scene2 .star-wars-headline, .star-wars-mobile .scene2 .star-wars-headline {
+      text-align: center; }
+    .star-wars .scene2 h1, .star-wars-mobile .scene2 h1 {
+      font-family: 'Star Jedi';
+      font-size: 12rem;
+      line-height: 8rem; }
+    .star-wars .scene2 h4, .star-wars-mobile .scene2 h4 {
+      font-family: "Roboto", sans-serif;
+      font-size: 2.5rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 25px;
+      color: #34d6df; }
+      .star-wars .scene2 h4.new-hope, .star-wars-mobile .scene2 h4.new-hope {
+        margin-bottom: 0;
+        margin-top: 30px; }
+    .star-wars .scene2 img, .star-wars-mobile .scene2 img {
+      height: 250px; }
+
+@media only screen and (max-width: 800px) {
+  .star-wars {
+    display: none; } }
+
+.star-wars-mobile .scene2 {
+  position: relative;
+  opacity: 1;
+  height: auto;
+  min-height: auto;
+  padding: 2rem 0; }
+  .star-wars-mobile .scene2 h1 {
+    font-family: 'Star Jedi';
+    font-size: 12rem;
+    line-height: 8rem; }
+  .star-wars-mobile .scene2 h4 {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 25px;
+    color: #34d6df; }
+    .star-wars-mobile .scene2 h4.new-hope {
+      margin-bottom: 0;
+      margin-top: 30px; }
+  .star-wars-mobile .scene2 img {
+    height: auto; }
+.star-wars-mobile .scene3 {
+  position: relative; }
+  .star-wars-mobile .scene3 p {
+    margin-bottom: 25px;
+    font-size: 1.15rem;
+    line-height: 1.75rem;
+    text-align: center;
+    letter-spacing: 0; }
+@media only screen and (max-width: 800px) {
+  .star-wars-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    height: auto;
+    color: #feda4a;
+    text-align: justify;
+    margin-bottom: 0px;
+    overflow: hidden; } }
+
+.star-wars p, .star-wars-mobile p {
+  color: #feda4a !important; }
+
+.perspective {
+  position: relative;
+  margin: 0 auto;
+  width: 800px;
+  height: 700px;
+  overflow: visible;
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
+  perspective: 300px;
+  -webkit-transform: perspective(300) rotateX(25deg);
+  -moz-transform: rotateX(25deg);
+  transform: rotateX(25deg);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  overflow: hidden; }
+
+.crawl {
+  padding-top: 0px;
+  position: absolute;
+  z-index: 10;
+  top: 430px; }
+  .crawl p {
+    margin-bottom: 25px;
+    font-size: 2rem;
+    line-height: 3.5rem; }
+
+.stars {
+  background: black url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png") repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  z-index: 0; }
+
+.twinkling {
+  width: 10000px;
+  height: 100%;
+  background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+  background-size: 1000px 1000px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  -moz-animation: move-background 70s linear infinite;
+  -ms-animation: move-background 70s linear infinite;
+  -o-animation: move-background 70s linear infinite;
+  -webkit-animation: move-background 70s linear infinite;
+  animation: move-background 70s linear infinite; }
+
+.text-content h2, .related-story-box-right h4 {
+  color: #f9d71c !important; }
+
+.related-story-box-right .headline a {
+  color: #000 !important;
+  border-bottom: 2px #000 solid !important; }
+  .related-story-box-right .headline a:hover {
+    border-bottom: none; }
+
+.tiktok-embed {
+  border: none; }
+  @media only screen and (max-width: 660px) {
+    .tiktok-embed {
+      padding: 0px !important; } }
+
+.cn-logo {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-top: 25px; }
+  .cn-logo img {
+    width: 70px; }
+  @media only screen and (max-width: 660px) {
+    .cn-logo {
+      margin-bottom: 25px;
+      margin-top: 25px; } }
+
+/*# sourceMappingURL=star-wars.css.map */

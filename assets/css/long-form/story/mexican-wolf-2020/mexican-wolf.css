@@ -1,0 +1,55 @@
+.montserrat {
+  font-family: "Montserrat", sans-serif; }
+
+.roboto {
+  font-family: "Roboto", sans-serif; }
+
+.taviraj {
+  font-family: "Taviraj", serif; }
+
+.lightGold {
+  color: #e0a845 !important; }
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+@media only screen and (max-width: 1080px) {
+  #intro {
+    height: 70vh; } }
+@media only screen and (max-width: 640px) {
+  #intro {
+    height: auto; } }
+#intro .intro-text {
+  background-color: #1f190e !important; }
+  @media only screen and (max-width: 1080px) {
+    #intro .intro-text {
+      height: 70vh; } }
+  @media only screen and (max-width: 640px) {
+    #intro .intro-text {
+      height: auto; } }
+  #intro .intro-text h1 {
+    max-width: 80% !important;
+    font-family: "Taviraj", serif !important;
+    font-weight: 600 !important;
+    font-size: 2.5rem !important;
+    line-height: 3rem !important;
+    color: #f3f0e9;
+    margin: 0 auto;
+    margin-bottom: 0 !important; }
+    #intro .intro-text h1 .lightGold {
+      color: #e0a845 !important;
+      margin-bottom: 0 !important; }
+    @media only screen and (max-width: 1224px) {
+      #intro .intro-text h1 {
+        font-size: 2rem !important;
+        line-height: 2.5rem !important; } }
+    @media only screen and (max-width: 1080px) {
+      #intro .intro-text h1 {
+        max-width: 90% !important;
+        font-size: 1.75rem !important;
+        line-height: 2rem !important; } }
+
+/*# sourceMappingURL=mexican-wolf.css.map */

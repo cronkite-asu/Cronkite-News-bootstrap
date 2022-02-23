@@ -1,0 +1,108 @@
+$tavirajFontFamily: 'Taviraj', serif;
+$merriweatherFontFamily: 'Merriweather', serif;
+$montserratFontFamily: 'Montserrat', sans-serif;
+$merriweatherSanFontFamily: 'Merriweather Sans', sans-serif;
+$robotoFontFamily: 'Roboto', sans-serif;
+$vollkornFontFamily: 'Vollkorn', serif;
+$ebGaramondFontFamily: 'EB Garamond', serif;
+$baskervilleFontFamily: 'Libre Baskerville', serif;
+
+$color: rgba(0,0,0,.08);
+$color2: rgba(0,0,0,.02);
+$cnBlue: #003594;
+$white: #ffffff;
+$black: #000;
+$grey: #D8D8D8;
+$footerHdr: #878792;
+$borderGrey: #F2F2F2;
+$transparency100: rgba(0, 53, 148, 1);
+$transparency75: rgba(0, 53, 148, 0.75);
+$colorSelect:#3694d7;
+$timing:.3s;
+$redAlert: #F31431;
+$caption: #6e6e6e;
+
+.merriweather {
+  font-family: $merriweatherFontFamily;
+}
+
+.montserrat {
+  font-family: $montserratFontFamily;
+}
+
+.roboto {
+  font-family: $robotoFontFamily;
+}
+
+.taviraj {
+  font-family: $tavirajFontFamily;
+}
+
+@mixin single-story-category-hdr {
+  max-width: 1160px;
+  font-weight: 600;
+  font-size: calc(16.4px + 1.55vw);
+  margin-top:18px;
+  @media only screen
+    and (max-width: 660px) {
+      font-size: calc(16.4px + 2.5vw);
+  }
+}
+
+@mixin attr-transition1 ($attr) {
+  -webkit-transition: $attr 0.25s;
+  -moz-transition: $attr 0.25s;
+  -o-transition: $attr 0.25s;
+  transition: $attr 0.25s;
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@mixin caption-text() {
+  max-width: 800px;
+  font-family: $montserratFontFamily;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: $caption;
+  padding-top: 10px;
+  letter-spacing: 0;
+  line-height: 1.2rem;
+}
+
+@mixin sidebar-header() {
+  font-family: $montserratFontFamily;
+  font-size: calc(12.4px + 0.3vw);
+  font-weight: 600;
+  color: $black;
+  border-left: 4px solid $cnBlue;
+  padding-left:15px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+p, .pubdate, .byline, .text-content .author_bio .bio .team-title.post {color:$white !important;}
+p a, .text-content a, .text-content .author_bio a {
+  color:$white !important;
+  border-bottom: 2px solid $white !important;
+  &:hover {
+    border-bottom: none !important;
+  }
+}
+.text-content .top_social a {border:1px solid $white;}
+
+.text-content .author_bio .bio a {
+  border:none !important;
+}
+.text-content .author_bio .bio .author_social_links i:hover {
+  color: transparent;
+}
+.text-content .top_social a:hover {
+  border:1px solid #ffffff;
+  background: $white;
+}
+.text-content .comment-form-wrapper h2 {
+  color: #fff;
+}

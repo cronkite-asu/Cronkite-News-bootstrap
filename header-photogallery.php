@@ -1,9 +1,7 @@
 <?php
-
 /**
  * Header
  */
-
 ?>
 
 <!doctype html>
@@ -14,19 +12,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Add Favicon -->
-    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="icon">
-    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="shortcut icon">
-    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>"  rel="apple-touch-icon">
+    <link type="image/png" href="<?php the_field('favicon','options'); ?>" rel="icon">
+    <link type="image/png" href="<?php the_field('favicon','options'); ?>" rel="shortcut icon">
+    <link type="image/png" href="<?php the_field('favicon','options'); ?>"  rel="apple-touch-icon">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3145657-18"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            <?php //echo $output?>
-            gtag('config', 'UA-3145657-18');
-        </script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3145657-18"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			<?php //echo $output ?>
+			gtag('config', 'UA-3145657-18');
+		</script>
 
     <!-- Google Optimize -->
     <script src="https://www.googleoptimize.com/optimize.js?id=OPT-KJHZKHH"></script>
@@ -41,33 +39,32 @@
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 
     <!-- FB App Configuration for Comment Moderation   -->
-        <script>
-            window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '511732915827177',
-                xfbml      : true,
-                version    : 'v2.11'
-                });
-                FB.AppEvents.logPageView();
-            };
+		<script>
+			window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '511732915827177',
+				xfbml      : true,
+				version    : 'v2.11'
+				});
+				FB.AppEvents.logPageView();
+			};
 
-            (function(d, s, id){
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) {return;}
-                js = d.createElement(s); js.id = id;
-                js.src = "https://connect.facebook.net/en_US/sdk.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        </script>
+			(function(d, s, id){
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) {return;}
+				js = d.createElement(s); js.id = id;
+				js.src = "https://connect.facebook.net/en_US/sdk.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
 
     <meta property="fb:app_id" content="511732915827177" />
 
-        <!-- FB instant articles -->
-        <meta property="fb:pages" content="305166330794" />
+		<!-- FB instant articles -->
+		<meta property="fb:pages" content="305166330794" />
 
     <?php wp_head(); ?>
 
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/css/fullscreen-gallery/app.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
@@ -76,16 +73,30 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
+    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/long-form/foundation.css">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+		<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/app.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/single-story-post.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/long-form/long-form-base.css">
+    <link href="<?php bloginfo('template_directory');?>/assets/css/nav.css" rel="stylesheet">
+
+    <?php if (is_single(162517)) { ?>
+      <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/css/fullscreen-gallery/covid-gallery.css">
+    <?php } else { ?>
+      <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/css/fullscreen-gallery/app.css">
+    <?php } ?>
+
     <style type='text/css'>
-        body.admin-bar {margin-top:32px !important}
-        @media screen and (max-width: 782px) {
-            body.admin-bar { margin-top:0px !important }
-        }
-        @media screen and (max-width: 600px) {
-            body.admin-bar { margin-top:0px !important }
-            html #wpadminbar{ margin-top: -46px; }
-        }
-    </style>
+  	    body.admin-bar {margin-top:32px !important}
+  	    @media screen and (max-width: 782px) {
+  	        body.admin-bar { margin-top:0px !important }
+  	    }
+  	    @media screen and (max-width: 600px) {
+  	        body.admin-bar { margin-top:0px !important }
+  	        html #wpadminbar{ margin-top: -46px; }
+  	    }
+  	</style>
 
   </head>
 

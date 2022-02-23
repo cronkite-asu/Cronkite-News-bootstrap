@@ -39,6 +39,21 @@ a {
   @include attr-transition(color);
 }
 
+/* The progress container (grey background) */
+.progress-container {
+  position: fixed;
+  width: 100%;
+  height: 4px;
+  background: #f4f4f4;
+  z-index: 10;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 4px;
+  background: $cnBlue;
+  width: 0%; }
+
 .open {
   display: block;
 }
@@ -156,6 +171,10 @@ a {
             img {
               cursor: pointer;
             }
+            form {
+              padding: 0 6px;
+              margin: 0;
+            }
             input[type="text"] {
               display: none;
               width: 0px;
@@ -266,7 +285,7 @@ a {
     }
   }
 
-  .sub_nav {
+  .sub_nav, .sub_nav-alert {
     display: flex;
     /*height: $sub-nav-height;*/
     background-color: $bg-grey;
@@ -385,6 +404,21 @@ a {
     @media only screen
       and (max-width: 800px) {
         display: none;
+    }
+  }
+
+  #sub_nav-alert {
+    p {
+      @media only screen
+        and (max-width: 1260px) {
+          font-size: calc(12px + 0.08vw);
+          padding:0 15px !important;
+          width: 100%;
+      }
+    }
+    @media only screen
+      and (max-width: 800px) {
+        display: block;
     }
   }
 }

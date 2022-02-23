@@ -26,15 +26,14 @@ get_header(); ?>
                         <div class="sidemeta">
                             <div class="post format-archives ">
                                 <div class="post-content post-content-news">
-                                    <?php //dynamic_sidebar4'Sidebar Archive');?>
+                                    <?php //dynamic_sidebar4'Sidebar Archive'); ?>
                                     <div class="filter-box clearfix">
 
-                                        <?php $month = (isset($_GET['monthOption']) && !empty($_GET['monthOption'])) ? $_GET['monthOption'] : ""; ?>
-                                        <?php $years = (isset($_GET['yearOption']) && !empty($_GET['yearOption'])) ? $_GET['yearOption'] : ""; ?>
+                                        <?php $month = ( isset($_GET['monthOption']) && !empty($_GET['monthOption']) ) ? $_GET['monthOption']: ""; ?>
+                                        <?php $years = ( isset($_GET['yearOption']) && !empty($_GET['yearOption']) ) ? $_GET['yearOption']: ""; ?>
 
 
-                                        <?php  $startYear = 2014;
-                                        $curYear = date('Y'); ?>
+                                        <?php  $startYear = 2014; $curYear = date('Y'); ?>
 
                                         <form id="form-filter" method="get">
                                             <select name="monthOption">
@@ -55,7 +54,7 @@ get_header(); ?>
 
                                             <select name="yearOption">
                                                 <option value="filter by Year">Filter by Year</option>
-                                                <?php for ($i = $startYear; $i <= $curYear; $i++) : ?>
+                                                <?php for($i = $startYear; $i <= $curYear; $i++) : ?>
                                                     <option <?php selected($years, $i); ?> value="<?php echo $i; ?>"><?php echo $i; ?></option>
                                                 <?php endfor; ?>
                                             </select>
@@ -64,36 +63,36 @@ get_header(); ?>
                                     </div>
 
                                     <?php $args = array(
-                                        'post_type'     => 'post',
-                                        'order'         => 'ASC',
-                                        'orderby'       => 'date',
+                                        'post_type'	    => 'post',
+                                        'order'		    => 'ASC',
+                                        'orderby'	    => 'date',
                                         'posts_per_page'    => -1,
                                         'monthnum' => $month,
                                         'year' => $years,
 
                                     );
-                                    $the_query = new WP_Query($args);
-if ($the_query->have_posts()) : ?>
-                                            <?php while ($the_query->have_posts()) :
-                                                $the_query->the_post();
-                                                $do_not_duplicate = $post->ID; ?><!-- BEGIN of POST -->
+                                    $the_query = new WP_Query( $args );
+                                    if ( $the_query->have_posts() ) : ?>
+
+                                            <?php while ( $the_query->have_posts() ) : $the_query->the_post();
+                                            $do_not_duplicate = $post->ID; ?><!-- BEGIN of POST -->
                                             <div class="archive-list">
                                                 <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                                 <?php global $post;
                                                     $categories = get_the_category($post->ID);
                                                     $catPost =  $categories[0]->cat_name;
-                                                    $catID = get_cat_ID($catPost)
+                                                    $catID = get_cat_ID( $catPost )
                                                 ?>
                                                 <h5>Category: <?php echo $catPost ?></h5>
                                                 <ul>
-                                                    <li><?php wp_get_archives('cat=' . $catID); ?></li>
+                                                    <li><?php wp_get_archives('cat='.$catID); ?></li>
                                                 </ul>
                                                 </div><!-- END of .post-type-->
                                             <?php endwhile; ?><!-- END of POST -->
 
-<?php else : ?>
+                                    <?php else : ?>
                                         <h3>Sorry, no results found</h3>
-<?php endif; ?>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <!-- END of .col-->
@@ -103,8 +102,8 @@ if ($the_query->have_posts()) : ?>
                             <figure>
                                 <figcaption class="author-details">
                                     <h3>Search for more stories and video:</h3>
-                                    <form method="get" class="navbar-form search" id="searchform" action="<?php echo esc_url(home_url('/')); ?>">
-                                        <input type="text" class="form-control" name="s" id="s" placeholder="<?php esc_attr_e('Search Stories and Video'); ?>" />
+                                    <form method="get" class="navbar-form search" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                        <input type="text" class="form-control" name="s" id="s" placeholder="<?php esc_attr_e( 'Search Stories and Video' ); ?>" />
                                         <button type="submit"  class="btn btn-default btn-submit icon-right-open" name="submit" id="searchsubmit"></button>
                                     </form>
                                 </figcaption>

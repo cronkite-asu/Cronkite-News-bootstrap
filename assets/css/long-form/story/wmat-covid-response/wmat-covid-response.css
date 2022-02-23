@@ -1,0 +1,106 @@
+.merriweather {
+  font-family: "Merriweather", serif; }
+
+.montserrat {
+  font-family: "Montserrat", sans-serif; }
+
+.roboto {
+  font-family: "Roboto", sans-serif; }
+
+.taviraj {
+  font-family: "Taviraj", serif; }
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+p, .pubdate, .byline, .text-content .author_bio .bio .team-title.post {
+  color: #ffffff !important; }
+
+p a, .text-content a, .text-content .author_bio a {
+  color: #ffffff !important;
+  border-bottom: 2px solid #ffffff !important; }
+  p a:hover, .text-content a:hover, .text-content .author_bio a:hover {
+    border-bottom: none !important; }
+
+.text-content .top_social a {
+  border: 1px solid #ffffff; }
+
+.text-content .author_bio .bio a {
+  border: none !important; }
+
+.text-content .author_bio .bio .author_social_links i:hover {
+  color: transparent; }
+
+.text-content .top_social a:hover {
+  border: 1px solid #ffffff;
+  background: #ffffff; }
+
+.text-content .comment-form-wrapper h2, .text-content h2 {
+  color: #fff; }
+
+.grid-container.text-content {
+  max-width: 75rem !important;
+  padding-top: 6rem;
+  padding-bottom: 10rem; }
+  .grid-container.text-content.author-open, .grid-container.text-content.fb-comments {
+    max-width: 75rem !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important; }
+  .grid-container.text-content.author {
+    padding-bottom: 0px !important;
+    padding-top: 0px !important; }
+  .grid-container.text-content p {
+    font-size: 1.5rem;
+    line-height: 2.5rem; }
+
+.author-open + .text-content {
+  padding-top: 0 !important; }
+
+.photo-content {
+  margin-top: 0px !important; }
+
+.photo-gallery-content-sxs {
+  padding-top: 5rem;
+  padding-bottom: 5rem; }
+  .photo-gallery-content-sxs .align-self-stretch {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .photo-gallery-content-sxs p {
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 2.5rem; }
+
+#profile-audio {
+  padding-top: 5.5rem; }
+  #profile-audio p {
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 2.5rem; }
+    #profile-audio p:first-child {
+      margin-bottom: 3rem; }
+  #profile-audio .profiles {
+    position: relative;
+    margin-bottom: 1.5rem; }
+    #profile-audio .profiles .audio {
+      position: absolute;
+      right: 30px;
+      bottom: 15px;
+      font-size: 2.5rem; }
+      #profile-audio .profiles .audio a {
+        color: #ffffff; }
+        #profile-audio .profiles .audio a:hover {
+          opacity: 0.75; }
+  #profile-audio .profile-content p {
+    font-weight: 200;
+    font-size: 1rem;
+    line-height: 2rem; }
+    #profile-audio .profile-content p:first-child {
+      margin-bottom: 0; }
+
+/*# sourceMappingURL=wmat-covid-response.css.map */
