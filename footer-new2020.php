@@ -1,41 +1,35 @@
 <?php
-
 /**
  * Footer
  */
-
 ?>
 
   <!-- footer -->
-  <footer class="grid-container full-width">
-    <div class="grid-container">
+  <div id="footer">
+    <footer class="grid-container full-width">
       <div class="grid-x grid-padding-x">
-        <div class="large-3 cell">
+        <div class="large-3 medium-3 small-6 cell">
           <h6>Who we are</h6>
-          <p>Cronkite News is the news division of <a href="https://azpbs.org/" target="_blank">Arizona PBS</a>. The daily news products are produced by the <a href="https://cronkite.asu.edu/" target="_blank">Walter Cronkite School of Journalism and Mass Communication</a> at <a href="https://www.asu.edu/" target="_blank">Arizona State University</a>.</p>
-          <p>Find a staff list and description of our beats <a href="https://cronkitenews.azpbs.org/about-us/" target="_blank">here</a>.</p>
-          <p><a href="https://www.asu.edu/privacy/" target="_blank">Privacy statement</a></p>
+          <p>Cronkite News, the news division of <a href="https://azpbs.org/" target="_blank">Arizona PBS</a>, is produced by the <a href="https://cronkite.asu.edu/" target="_blank">Walter Cronkite School of Journalism and Mass Communication</a> at <a href="https://www.asu.edu/" target="_blank">Arizona State University</a>.</p>
+          <p>Staff members are listed <a href="https://cronkitenews.azpbs.org/about-us/" target="_blank">here</a>.</p>
         </div>
 
-        <div class="large-3 cell">
+        <div class="large-3 medium-3 small-6 cell">
           <h6>What we do</h6>
           <p><a href="https://cronkitenews.azpbs.org/what-we-do/" target="_blank">Learn more</a> about what we do and how to find our content on our broadcast, digital and social media platforms.</p>
-          <h6>Use our content</h6>
+          <h6 class="inside">Use our content</h6>
           <p>Find out how your news organization can use <a href="https://cronkitenews.azpbs.org/use-our-content/" target="_blank">Cronkite News content</a>.</p>
         </div>
 
-        <div class="large-3 cell">
+        <div class="large-3 medium-3 small-6 cell">
           <h6>Get in touch</h6>
           <p><a href="https://cronkitenews.azpbs.org/daily-newsletter-signup/" target="_blank">Sign up</a> for daily headlines.</p>
           <p>555 N. Central Ave. Phoenix, AZ, 85004</p>
           <p>602.496.5050</p>
           <p><a href="mailto:cronkitenews@asu.edu">cronkitenews@asu.edu</a></p>
-          <br />
-          <h6>Follow</h6>
-          <a href="https://twitter.com/cronkitenews" target="_blank"><i class="fab fa-twitter"></i></a> <a href="https://www.facebook.com/cronkitenewsazpbs" target="_blank"><i class="fab fa-facebook-square"></i></a> <a href="https://www.instagram.com/cronkitenews/" target="_blank"><i class="fab fa-instagram"></i></a> <a href="https://www.youtube.com/user/cronkitenewswatch" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
 
-        <div class="large-3 cell">
+        <div class="large-3 medium-3 small-6 cell">
           <h6>Read more</h6>
           <ul class="no-bullet">
             <li><a href="https://cronkitenoticias.azpbs.org/" target="_blank">Cronkite Noticias</a></li>
@@ -47,23 +41,37 @@
             <li><a href="/rss-feed">RSS</a></li>
           </ul>
         </div>
-
-        <div class="large-12 cell">
-          <p class="copyright">&copy; <?php echo date('Y'); ?> Cronkite News. All rights reserved. <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">Creative Commons</a></p>
+      </div>
+      <div class="grid-x grid-margin-x copyright-section">
+        <div class="large-4 cell">
+          <p class="copyright">&copy; <?php echo date('Y'); ?> Cronkite News. All rights reserved.</p>
+        </div>
+        <div class="large-4 medium-4 small-12 cell">
+          <p><a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">Creative Commons</a> <a href="https://www.asu.edu/privacy/" target="_blank">Privacy statement</a></p>
+        </div>
+        <div class="large-4 medium-4 small-12 cell text-right">
+          <ul class="social-links no-bullet">
+            <li><a href="https://twitter.com/cronkitenews" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/cronkitenews/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/cronkitenewsazpbs" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://www.youtube.com/user/cronkitenewswatch" target="_blank"><i class="fab fa-youtube"></i></a></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <!-- Add This Social Sharing -->
   <?php if (is_single()) { ?>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-555a00cd1124129e" async="async"></script>
-  <?php } elseif (!is_page('impeachment-sentiment')) { ?>
+  <?php } else if (!is_page('impeachment-sentiment')) { ?>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-555a00cd1124129e" async="async"></script>
   <?php } ?>
 
   <!-- scripts -->
-  <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/jquery.js"></script>
+  <!--<script src="<?php bloginfo('template_directory');?>/assets/js/vendor/jquery.js"></script>-->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
   <?php wp_footer(); ?>
   <script type='text/javascript'>
       var _sf_async_config={};
@@ -112,7 +120,21 @@
   <script type="text/javascript" src="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick.min.js"></script>
   <script type="text/javascript" src="<?php bloginfo('template_directory');?>/assets/js/vendor/smooth-scroll/dist/smooth-scroll.js"></script>
   <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/plyr-master/dist/plyr.js"></script>
+  <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/before-after/js/jquery.event.move.js"></script>
+  <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/before-after/js/jquery.twentytwenty.js"></script>
 
+  <?php if (current_user_can('administrator')) { ?>
+  <script src="https://webreader.naturalreaders.com/nr-webreader.js" defer></script>
+  <script>
+      window.addEventListener("DOMContentLoaded", function() {
+          if (typeof NRWebReader != 'undefined') {
+              window['NRWebReader'] = new NRWebReader({
+              widget_id: "3m7ptr3zhp"  // DO NOT REMOVE. This is your widget ID for your WebReader
+              });
+          }
+      });
+  </script>
+  <?php } ?>
 
   <script>
   /**
@@ -139,7 +161,6 @@
 
     // Search: expand on click
     $('.search-box img').click(function() {
-
       $('#searchform input[type=text]').blur(function() {
         if($.trim(this.value).length > 0) {
           $("#searchform").submit();
@@ -156,8 +177,6 @@
 
 
     $(document).ready(function() {
-
-
 
       // video player
       const controls = [
@@ -179,7 +198,12 @@
               'fullscreen' // Toggle fullscreen
           ];
       const quality = { default: 576, options: [4320, 2880, 2160, 1440, 1080, 720, 576, 480, 360, 240] };
+      const controlsHome = ['play-large'];
       const player = new Plyr('#player', { quality });
+      const playerHome = new Plyr('#player-home', { controlsHome });
+      const player1 = new Plyr('#youth-suicide-player', { quality });
+      const mainAudioPlayer = new Plyr('#main-audio-player', {});
+      const storyAudioPlayer = new Plyr('#story-audio-player', {});
 
       var scroll = new SmoothScroll('a[href*="#"]');
 
@@ -211,6 +235,11 @@
         });
       }
 
+      // before and after photo slider
+      $(window).on('load', function() {
+        $('.before-after-photos .photos').twentytwenty();
+      });
+
       // show author bio on sidebar
       $window.on('scroll',  function() {
         var windowScrollTop = $window.scrollTop();
@@ -230,6 +259,127 @@
         autoplaySpeed: 6000
       });
 
+      $('.homepage-slider').slick({
+        infinite: true,
+        dots: true,
+        centerMode: false,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        arrows: true
+      });
+
+      $('.homepage-special-projects').slick({
+        infinite: true,
+        dots: false,
+        centerMode: false,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        arrows: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        responsive: [
+           {
+             breakpoint: 768,
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1
+             }
+           },
+           {
+             breakpoint: 480,
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1
+             }
+           }
+         ]
+      });
+
+      $('.sports-featured-photos').slick({
+        infinite: true,
+        dots: false,
+        centerMode: false,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        arrows: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        cssEase: 'linear',
+        responsive: [
+           {
+             breakpoint: 768,
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1
+             }
+           },
+           {
+             breakpoint: 480,
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1
+             }
+           }
+         ]
+      });
+
+      $('.media-literacy-slideshow').slick({
+        infinite: true,
+        dots: false,
+        centerMode: false,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        arrows: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: true,
+        responsive: [
+           {
+             breakpoint: 768,
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1
+             }
+           },
+           {
+             breakpoint: 480,
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1
+             }
+           }
+         ]
+      });
+
+      $('.audio-featured-stories').slick({
+        infinite: true,
+        dots: true,
+        centerMode: false,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        arrows: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+           {
+             breakpoint: 768,
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1
+             }
+           },
+           {
+             breakpoint: 480,
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1
+             }
+           }
+         ]
+      });
+
       $('.story-slideshow').slick({
         infinite: true,
         dots: false,
@@ -238,11 +388,37 @@
         autoplaySpeed: 6000
       });
 
-      $('.youth-suicide-stories').slick({
+      $('.in-this-series').slick({
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: false,
-        autoplaySpeed: 2000,
+        dots: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
       });
 
       $('.headshot-slider').slick({
@@ -284,17 +460,38 @@
         ]
       });
 
+      // audio player sticky
+      $(window).scroll(function(){
+        var sticky = $('.audio-player-container'),
+            scroll = $(window).scrollTop();
+
+        if (scroll >= 222) {
+          sticky.addClass('fixed');
+        } else {
+          sticky.removeClass('fixed');
+        }
+      });
+
+      // audio page player
+      $('.audio-plyr').click(function () {
+        console.log($(this).data("link"));
+        console.log($(this).data("title"));
+        $('#main-audio-player').attr("src", $(this).data("link"));
+        $('.current-audio-title').text($(this).data("title"));
+        mainAudioPlayer.play();
+      });
+
       jQuery('.hamburger').click(function() {
-            if (jQuery('.hamburger.is-active').length) {
-                jQuery('#sub_nav').addClass('open').removeClass('close');
-                jQuery('.sub_nav').removeClass('slideOutUp').addClass('slideInDown');
-                jQuery('.sub_nav').css("display", "block");
-            } else {
-                jQuery('#sub_nav').addClass('close').removeClass('open');
-                jQuery('.sub_nav').removeClass('slideInDown').addClass('slideOutUp');
+  			if (jQuery('.hamburger.is-active').length) {
+  				jQuery('#sub_nav').addClass('open').removeClass('close');
+  				jQuery('.sub_nav').removeClass('slideOutUp').addClass('slideInDown');
+  				jQuery('.sub_nav').css("display", "block");
+  			} else {
+  				jQuery('#sub_nav').addClass('close').removeClass('open');
+  				jQuery('.sub_nav').removeClass('slideInDown').addClass('slideOutUp');
           jQuery('.sub_nav').css("display", "none");
-            }
-        });
+  			}
+  		});
 
       $('.dropdown-el').click(function(e) {
         e.preventDefault();
@@ -365,7 +562,6 @@
       let observer = new IntersectionObserver(callback);
       nodes.forEach(node => observer.observe(node.node));
     };
-
     BackgroundLazyLoader();
 
       var $window = $(window);

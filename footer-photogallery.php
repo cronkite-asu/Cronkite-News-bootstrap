@@ -1,9 +1,7 @@
 <?php
-
 /**
  * Footer
  */
-
 ?>
 
     <!-- scripts -->
@@ -75,6 +73,16 @@
           } else {
             $('.slick-prev').fadeIn();
           }
+        });
+
+        $('.audio a').click(function() {
+          $('audio').each(function( index ) {
+            $('audio').get(index).pause();
+            $('audio').get(index).currentTime = 0;
+          });
+          var className = $(this).attr('class');
+          console.log(className);
+          $('#' + className).get(0).play();
         });
 
       });

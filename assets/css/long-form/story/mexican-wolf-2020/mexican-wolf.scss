@@ -1,0 +1,140 @@
+$tavirajFontFamily: 'Taviraj', serif;
+$montserratFontFamily: 'Montserrat', sans-serif;
+$robotoFontFamily: 'Roboto', sans-serif;
+
+
+$bgColor: rgba(247,244,233,1);
+$darkBGColor: rgba(31,25,14,1);
+$bgColorAlt: #f9f6ed;
+$mainTextColor: #1f190e;
+$alterTextColor: #f3f0e9;
+
+$titleFS: calc(16.4px + 2vw);
+$bodyFS: calc(16.4px + 0.5vw);
+
+$lightGold: rgba(224, 168, 69, 1);
+$color: rgba(0,0,0,.08);
+$color2: rgba(0,0,0,.02);
+$cnBlue: #003594;
+$white: #ffffff;
+$black: #0a0a0a;
+$grey: #D8D8D8;
+$footerHdr: #878792;
+$borderGrey: #F2F2F2;
+$transparency100: rgba(0, 53, 148, 1);
+$transparency75: rgba(0, 53, 148, 0.75);
+$colorSelect:#3694d7;
+$timing:.3s;
+$redAlert: #F31431;
+$caption: #767676;
+
+.montserrat {
+  font-family: $montserratFontFamily;
+}
+
+.roboto {
+  font-family: $robotoFontFamily;
+}
+
+.taviraj {
+  font-family: $tavirajFontFamily;
+}
+
+.lightGold {
+  color:$lightGold !important;
+}
+
+@mixin single-story-category-hdr {
+  max-width: 1160px;
+  font-weight: 600;
+  font-size: calc(16.4px + 1.55vw);
+  margin-top:18px;
+  @media only screen
+    and (max-width: 660px) {
+      font-size: calc(16.4px + 2.5vw);
+  }
+}
+
+@mixin attr-transition1 ($attr) {
+  -webkit-transition: $attr 0.25s;
+  -moz-transition: $attr 0.25s;
+  -o-transition: $attr 0.25s;
+  transition: $attr 0.25s;
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@mixin caption-text() {
+  max-width: 800px;
+  font-family: $montserratFontFamily;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: $caption;
+  padding-top: 10px;
+  letter-spacing: 0;
+  line-height: 1.2rem;
+}
+
+@mixin sidebar-header() {
+  font-family: $montserratFontFamily;
+  font-size: calc(12.4px + 0.3vw);
+  font-weight: 600;
+  color: $black;
+  border-left: 4px solid $cnBlue;
+  padding-left:15px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+
+#intro {
+  @media only screen
+    and (max-width: 1080px) {
+      height: 70vh;
+  }
+  @media only screen
+    and (max-width: 640px) {
+      height: auto;
+  }
+  .intro-text {
+    background-color: $mainTextColor !important;
+
+    @media only screen
+      and (max-width: 1080px) {
+        height: 70vh;
+    }
+    @media only screen
+      and (max-width: 640px) {
+        height: auto;
+    }
+    h1 {
+      max-width: 80% !important;
+      font-family: $tavirajFontFamily !important;
+      font-weight: 600 !important;
+      font-size: 2.5rem !important;
+      line-height: 3rem !important;
+      color: $alterTextColor;
+      margin: 0 auto;
+      margin-bottom: 0 !important;
+      .lightGold {
+        color:$lightGold !important;
+        margin-bottom: 0 !important;
+      }
+
+      @media only screen
+        and (max-width: 1224px) {
+          font-size: 2rem !important;
+          line-height: 2.5rem !important;
+      }
+      @media only screen
+        and (max-width: 1080px) {
+          max-width: 90% !important;
+          font-size: 1.75rem !important;
+          line-height: 2rem !important;
+      }
+    }
+  }
+}

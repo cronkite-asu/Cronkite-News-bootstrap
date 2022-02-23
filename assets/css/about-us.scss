@@ -16,15 +16,10 @@ $timing:.3s;
 $redAlert: #F31431;
 $caption: #767676;
 
-body {
-  height: auto !important;
-  line-height: 0;
-}
-
 @mixin single-story-category-hdr {
   max-width: 1160px;
   font-weight: 600;
-  font-size: calc(16.4px + 1.55vw);
+  font-size: 2.5rem;
   margin-top:18px;
   @media only screen
     and (max-width: 660px) {
@@ -136,6 +131,9 @@ body {
   }
 
   &.about-us {
+    .about-details, .faculty-staff, .students {
+      margin-bottom: 1.5rem;
+    }
     ul {
       list-style: none;
     }
@@ -173,8 +171,8 @@ body {
     grid-gap:1em;
     margin:0 0 0 12px;
     padding:0;
-    border-top: 1px solid #eee;
-    padding: 40px 0 0 0;
+    border-top: none !important;
+    padding: 20px 0 0 0;
   }
 
   .cn-staff-list {
@@ -190,40 +188,32 @@ body {
     padding: 10px 0;
   }
 
-  .student-staff-list li .fa-twitter, .cn-staff-list li .fa-twitter, .cn_staff_body .fa-twitter {
-    background:none;
-    color:#000;
-    transition: all 0.2s ease;
-  }
-
-  .student-staff-list li .fa-twitter:hover, .cn-staff-list li .fa-twitter:hover, .cn_staff_body .fa-twitter:hover {
-    color: #234384;
-  }
 
   .student-staff-list li .staff-title, .cn-staff-list li .staff-title, .cn-locations li .staff-title, .cn_staff_body .staff-title {
     font-weight: 800;
-    font-size: 1.08em;
+    font-size: 1.15rem;
+    margin-top: 25px;
     margin-bottom:0px;
   }
 
   .cn_staff_body .staff-title {
-    font-size:0.90em;
+    font-size:1rem;
     font-weight:600;
   }
 
   .student-staff-list li .team-title, .cn-staff-list li .team-title, .cn-locations li .team-title{
     display: flex;
     flex-flow: column;
+    font-size: 0.95rem;
   }
 
-  .cn-locations li .team-title a {
+  .cn-locations li .team-title a, .cn-locations li .team-title a, .student-staff-list li a {
     color: #234384;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 
-  .cn-locations li .team-title a:hover {
+  .cn-locations li .team-title a:hover, .student-staff-list li a:hover {
     color: #000;
-    text-decoration: underline;
   }
 
   .student-staff-list li .fa, .cn-staff-list li fa {
@@ -237,6 +227,7 @@ body {
 
   .cn-staff-list li .staff-social-links a {
     margin-right: 5px;
+    color: $cnBlue;
   }
 
   img.cn-staff-circular, .cn-staff-circular, .cn-staff-circular-sm {
@@ -286,25 +277,24 @@ body {
     justify-content: left;
     align-items: center;
     width: 264px;
-    padding: 6px 25px 6px 10px;
+    padding: 6px 25px 6px 20px;
     color: #234384 !important;
     background-color: rgba(217, 217, 217, 0.4);
     border-left: 4px solid #234384;
+    border-bottom: 1px solid #eee !important;
     margin-top:50px;
     margin-left: 12px;
-  }
-
-  .cn_sub_head-2 {
-    width: 264px;
+    font-family: $robotoFontFamily;
+    font-size: 1.5rem;
   }
 
   .about-single-title {
     margin:6px 8px;
   }
 
-  .cn_content p {
-    font-size:20px;
-    line-height: 32px;
+  .cn_content p, .about-details p {
+    font-size:1.15rem;
+    line-height: 2rem;
   }
 
   .cn_content p img {

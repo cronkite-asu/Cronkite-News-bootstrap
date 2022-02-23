@@ -16,6 +16,11 @@
   max-width: 80rem; }
 .grid-container.main-content {
   max-width: 80rem; }
+.grid-container.text-content {
+  max-width: 80rem; }
+
+.full {
+  background-color: #000; }
 
 #intro {
   background: #000;
@@ -46,13 +51,20 @@
     line-height: 2rem;
     text-transform: uppercase;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+  .main-content h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    margin-top: 15px; }
   .main-content p {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 1rem;
     line-height: 1.85rem;
-    letter-spacing: 0.015em;
     color: #494949; }
+  .main-content .button.hollow {
+    text-transform: uppercase; }
   .main-content .youth-suicide-stories h3 {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
@@ -60,29 +72,44 @@
     line-height: 1.75rem;
     margin-top: 15px; }
   .main-content .youth-suicide-stories div {
-    padding-right: 25px; }
+    padding-right: 18px;
+    padding-left: 8px; }
     .main-content .youth-suicide-stories div p {
+      font-size: 0.95rem;
+      line-height: 1.5rem;
       text-align: left; }
+  .main-content .youth-suicide-stories .slick-prev:before, .main-content .youth-suicide-stories .slick-next:before {
+    color: #003594 !important; }
+  .main-content .youth-suicide-stories .slick-prev {
+    left: -10px; }
+  .main-content .youth-suicide-stories .slick-next {
+    right: -5px; }
 
-.video-content {
-  padding-top: 5rem; }
-  .video-content p {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 1.85rem;
-    letter-spacing: 0.015em;
-    color: #494949; }
-  .video-content .youth-suicide-stories h3 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    margin-top: 15px; }
-  .video-content .youth-suicide-stories div {
-    padding-right: 25px; }
-    .video-content .youth-suicide-stories div p {
-      text-align: left; }
+.text-content hr {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 40px;
+  margin-top: 40px; }
+.text-content .grid-x > .large-8 {
+  padding-left: 30px; }
+
+.video-content p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.85rem;
+  letter-spacing: 0.015em;
+  color: #494949; }
+.video-content .youth-suicide-stories h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-top: 15px; }
+.video-content .youth-suicide-stories div {
+  padding-right: 25px; }
+  .video-content .youth-suicide-stories div p {
+    text-align: left; }
 
 .partners-content {
   padding-top: 5rem;
@@ -94,5 +121,14 @@
     line-height: 2rem;
     text-transform: uppercase;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+
+.wp-caption-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #8c8c8c;
+  padding-top: 10px;
+  letter-spacing: 0;
+  line-height: 1.55; }
 
 /*# sourceMappingURL=youth-suicide.css.map */

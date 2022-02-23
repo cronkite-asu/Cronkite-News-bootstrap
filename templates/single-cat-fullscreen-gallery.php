@@ -1,10 +1,8 @@
 <?php
-
 /**
  * Template Name: Fullscreen Photo/Video Gallery
  * Story template without sidebar
  */
-
 get_header('photogallery'); ?>
 
   <section id="gallery">

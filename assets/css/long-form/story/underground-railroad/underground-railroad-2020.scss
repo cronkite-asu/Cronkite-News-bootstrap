@@ -1,0 +1,437 @@
+$tavirajFontFamily: 'Taviraj', serif;
+$montserratFontFamily: 'Montserrat', sans-serif;
+$robotoFontFamily: 'Roboto', sans-serif;
+$oswaldFontFamily: 'Oswald', sans-serif;
+$cardoFontFamily: 'Cardo', serif;
+
+$bgColor: rgba(247,244,233,1);
+$darkBGColor: rgba(31,25,14,1);
+$bgColorAlt: #f9f6ed;
+$mainTextColor: #484d5c;
+$alterTextColor: #ffce00;
+
+$titleFS: calc(16.4px + 2vw);
+$bodyFS: calc(16.4px + 0.5vw);
+
+$lightGold: rgba(224, 168, 69, 1);
+$color: rgba(0,0,0,.08);
+$color2: rgba(0,0,0,.02);
+$cnBlue: #003594;
+$cnBlueRGB: rgba(0, 53, 148, 1);
+$white: #ffffff;
+$black: #0a0a0a;
+$grey: #D8D8D8;
+$footerHdr: #878792;
+$borderGrey: #F2F2F2;
+$transparency100: rgba(0, 53, 148, 1);
+$transparency75: rgba(0, 53, 148, 0.75);
+$colorSelect:#3694d7;
+$timing:.3s;
+$redAlert: #F31431;
+$caption: #767676;
+
+.montserrat {
+  font-family: $montserratFontFamily;
+}
+
+.roboto {
+  font-family: $robotoFontFamily;
+}
+
+.taviraj {
+  font-family: $tavirajFontFamily;
+}
+
+.lightGold {
+  color:$lightGold !important;
+}
+
+@mixin single-story-category-hdr {
+  max-width: 1160px;
+  font-weight: 600;
+  font-size: calc(16.4px + 1.55vw);
+  margin-top:18px;
+  @media only screen
+    and (max-width: 660px) {
+      font-size: calc(16.4px + 2.5vw);
+  }
+}
+
+@mixin attr-transition1 ($attr) {
+  -webkit-transition: $attr 0.25s;
+  -moz-transition: $attr 0.25s;
+  -o-transition: $attr 0.25s;
+  transition: $attr 0.25s;
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@mixin caption-text() {
+  max-width: 800px;
+  font-family: $montserratFontFamily;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: $caption;
+  padding-top: 10px;
+  letter-spacing: 0;
+  line-height: 1.2rem;
+}
+
+@mixin sidebar-header() {
+  font-family: $montserratFontFamily;
+  font-size: calc(12.4px + 0.3vw);
+  font-weight: 600;
+  color: $black;
+  border-left: 4px solid $cnBlue;
+  padding-left:15px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+
+#intro {
+  .grid-padding-x {
+    height: 90vh;
+
+    @media only screen
+      and (max-width: 1024px) {
+        height: auto;
+    }
+  }
+  .intro-text {
+    order:1;
+    @media only screen
+      and (max-width: 1200px) {
+        order:2;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    @media only screen
+      and (max-width: 1080px) {
+    }
+    @media only screen
+      and (max-width: 1024px) {
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+    @media only screen
+      and (max-width: 640px) {
+        height: auto;
+    }
+    h1 {
+      max-width: 80% !important;
+      font-family: $oswaldFontFamily !important;
+      font-weight: 600 !important;
+      font-size: 2.5rem !important;
+      line-height: 3.25rem !important;
+      color: #fff;
+      margin: 0 auto;
+      margin-bottom: 30px !important;
+      text-transform: uppercase;
+      .lightGold {
+        color:$lightGold !important;
+        margin-bottom: 0 !important;
+      }
+      @media only screen
+        and (max-width: 1520px) {
+          max-width: 100% !important;
+      }
+      @media only screen
+        and (max-width: 1224px) {
+          font-size: 2rem !important;
+          line-height: 2.5rem !important;
+      }
+      @media only screen
+        and (max-width: 1024px) {
+          max-width: 66% !important;
+      }
+      @media only screen
+        and (max-width: 980px) {
+          max-width: 80% !important;
+      }
+      @media only screen
+        and (max-width: 860px) {
+          max-width: 90% !important;
+      }
+      @media only screen
+        and (max-width: 760px) {
+          max-width: 100% !important;
+      }
+    }
+    p {
+      max-width: 80% !important;
+      margin: 0 auto;
+      font-family: $cardoFontFamily;
+      font-size: 1.45rem;
+      line-height: 2.5rem;
+      color: #fff;
+      @media only screen
+        and (max-width: 1520px) {
+          max-width: 100% !important;
+      }
+      @media only screen
+        and (max-width: 1024px) {
+          max-width: 66% !important;
+      }
+      @media only screen
+        and (max-width: 980px) {
+          max-width: 80% !important;
+      }
+      @media only screen
+        and (max-width: 860px) {
+          max-width: 90% !important;
+      }
+      @media only screen
+        and (max-width: 760px) {
+          max-width: 100% !important;
+      }
+    }
+
+
+    .audio-holder {
+      display: flex;
+      flex-direction: row;
+      background-color:$darkBGColor;
+      padding:35px 50px;
+      max-width: 640px;
+      margin: 0 auto;
+      @media only screen
+        and (max-width: 1520px) {
+          padding: 25px 40px;
+      }
+
+      @media only screen
+        and (max-width: 1425px) {
+          padding: 25px 20px;
+      }
+      @media only screen
+        and (max-width: 1375px) {
+          padding: 25px 15px;
+      }
+      @media only screen
+        and (max-width: 760px) {
+          flex-direction: column;
+      }
+
+      &.in-content {
+        margin-top:35px;
+        margin-bottom:40px;
+      }
+      .player-btn {
+        display: flex;
+        max-width: 210px;
+        height: 80px;
+        @media only screen
+          and (max-width: 1345px) {
+            max-width: 190px;
+        }
+        @media only screen
+          and (max-width: 760px) {
+            margin: 0 auto;
+        }
+        &:after {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $alterTextColor;
+          font-weight: 600;
+          content: " AUDIO ";
+          padding: 0 26px 0 15px;
+          margin-right: 26px;
+          border-right:2px solid $bgColor;
+          letter-spacing: 2px;
+          @media only screen
+            and (max-width: 1345px) {
+              font-size: 1rem;
+              margin-right: 18px;
+              padding: 0 15px 0 15px;
+          }
+          @media only screen
+            and (max-width: 1240px) {
+              font-size: 0.85rem !important;
+              margin-right: 14px;
+              padding: 0 14px 0 0px;
+          }
+          @media only screen
+            and (max-width: 760px) {
+              border-right: none;
+              display: none;
+          }
+        }
+        svg {
+          max-width: 112px;
+          width: 112px;
+          opacity: 0.75;
+          @include attr-transition1(opacity);
+          &:hover {
+            opacity: 1;
+            cursor: pointer;
+          }
+        }
+        .hide {
+          display: none;
+        }
+      }
+      .title-player-holder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .audio-title {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          p {
+            max-width: 100% !important;
+            font-family: $montserratFontFamily !important;
+            font-size: 0.925rem !important;
+            font-weight: 500 !important;
+            letter-spacing: 2px !important;
+            line-height: 1.5rem;
+            color: $bgColor;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            @media only screen
+              and (max-width: 1240px) {
+                font-size: 0.85rem !important;
+            }
+          }
+          @media only screen
+            and (max-width: 760px) {
+              padding-top:25px;
+          }
+        }
+        .audio-player {
+          display: flex;
+          align-items: center;
+          max-width: 330px !important;
+          width: 330px;
+          @media only screen
+            and (max-width: 1345px) {
+              max-width: 300px !important;
+              width: 300px;
+          }
+
+          @media only screen
+            and (max-width: 1240px) {
+              max-width: 280px !important;
+              width: 280px;
+          }
+
+          @media only screen
+            and (max-width: 1024px) {
+              max-width: initial !important;
+              width: 100%;
+          }
+
+          @media only screen
+            and (max-width: 760px) {
+              padding-top:25px;
+          }
+
+          .plyr--audio .plyr__controls {
+            background: none;
+            padding: 0;
+            color: $white !important;
+          }
+          .plyr__menu button, .plyr__volume button, .plyr__controls .plyr__controls__item:first-child, .plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio .plyr__control:hover, .plyr--audio .plyr__control[aria-expanded=true] {
+            display: none;
+          }
+          .plyr__controls .plyr__controls__item.plyr__progress__container {
+            padding-left: 0px !important;
+          }
+          .plyr__volume input[type=range] {
+            &:after {
+              display: block;
+              content: " ";
+              background: url('https://cronkitenews.azpbs.org/wp-content/uploads/2020/12/audio-plyr-volume.png');
+              width: 25px;
+              height: 18px;
+              opacity: 0.65;
+              margin-left: 4px;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+  .background-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d5d5d5 !important;
+    order:2;
+    @media only screen
+      and (max-width: 1200px) {
+        height: auto;
+    }
+    @media only screen
+      and (max-width: 1024px) {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    @media only screen
+      and (max-width: 900px) {
+        order:1;
+        height: 70vh;
+    }
+  }
+  .arizona-focus-grid-2020 {
+    max-width: 700px;
+    max-height: 590px;
+    margin: 0 auto;
+    @media only screen
+      and (max-width: 760px) {
+        max-width: 100%;
+        max-height: auto;
+    }
+    .cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h2 {
+        font-family: $oswaldFontFamily !important;
+        font-weight: 600 !important;
+        font-size: 4rem !important;
+        line-height: 5rem !important;
+        color: #000;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        &:after {
+          display: block;
+          background-color:$alterTextColor;
+          content: "Science & Technology";
+          font-size: 1.85rem;
+          font-weight: 300;
+          height:40px;
+          color:#fff;
+          text-align: center;
+          line-height: 2.4rem;
+        }
+        @media only screen
+          and (max-width: 760px) {
+            font-size: 2.5rem !important;
+            line-height: 3.5rem !important;
+        }
+      }
+      img {
+        max-width: 400px;
+        @media only screen
+          and (max-width: 1200px) {
+            max-width: 280px;
+        }
+        @media only screen
+          and (max-width: 760px) {
+            max-width: 275px;
+        }
+      }
+    }
+  }
+  /**/
+}

@@ -1,0 +1,55 @@
+$tavirajFontFamily: 'Taviraj', serif;
+$montserratFontFamily: 'Montserrat', sans-serif;
+$robotoFontFamily: 'Roboto', sans-serif;
+$oswaldFontFamily: 'Oswald', sans-serif;
+$cardoFontFamily: 'Cardo', serif;
+$notoSerif: 'Noto Serif', serif;
+
+$bgColor: rgba(247,244,233,1);
+$darkBGColor: rgba(31,25,14,1);
+$bgColorAlt: #f9f6ed;
+$mainTextColor: #484d5c;
+$alterTextColor: #ffce00;
+
+$titleFS: calc(16.4px + 2vw);
+$bodyFS: calc(16.4px + 0.5vw);
+
+$lightGold: rgba(224, 168, 69, 1);
+$color: rgba(0,0,0,.08);
+$color2: rgba(0,0,0,.02);
+$cnBlue: #003594;
+$cnBlueRGB: rgba(0, 53, 148, 1);
+$white: #ffffff;
+$black: #0a0a0a;
+$grey: #D8D8D8;
+$footerHdr: #878792;
+$borderGrey: #F2F2F2;
+$transparency100: rgba(0, 53, 148, 1);
+$transparency75: rgba(0, 53, 148, 0.75);
+$colorSelect:#3694d7;
+$timing:.3s;
+$redAlert: #F31431;
+$caption: #767676;
+
+
+#intro .intro-text h1 {
+  font-family: $notoSerif;
+  width: 100%;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 4.25rem;
+  padding: 0;
+  color: #fff;
+  margin: 0 0 30px 0;
+}
+
+#intro .intro-text p {
+  font-family: $robotoFontFamily;
+}
+
+#intro .background-img .photo-credit {
+  font-family: $robotoFontFamily;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+}

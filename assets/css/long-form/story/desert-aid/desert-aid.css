@@ -1,0 +1,41 @@
+.merriweather {
+  font-family: "Merriweather", serif; }
+
+.montserrat {
+  font-family: "Montserrat", sans-serif; }
+
+.roboto {
+  font-family: "Roboto", sans-serif; }
+
+.taviraj {
+  font-family: "Taviraj", serif; }
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+#fullscreen-video .intro-text h1 {
+  max-width: 1200px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3), 0px 4px 7px rgba(0, 0, 0, 0.1), 0px 9px 12px rgba(0, 0, 0, 0.1); }
+#fullscreen-video .intro-text h1.absolute-text {
+  font-family: "Merriweather Sans", sans-serif !important;
+  font-weight: 600;
+  font-size: 4rem;
+  line-height: 5.75rem;
+  color: #fee; }
+@media only screen and (max-width: 660px) {
+  #fullscreen-video .intro-text {
+    font-size: 3.15rem;
+    line-height: 3.5rem; } }
+#fullscreen-video .intro-text p {
+  font-family: "Lato", sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 300; }
+  @media only screen and (max-width: 660px) {
+    #fullscreen-video .intro-text p {
+      font-size: 1.15rem !important;
+      line-height: 2rem; } }
+
+/*# sourceMappingURL=desert-aid.css.map */

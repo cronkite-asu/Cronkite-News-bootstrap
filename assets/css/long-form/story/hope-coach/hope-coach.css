@@ -1,0 +1,44 @@
+.merriweather {
+  font-family: "Merriweather", serif; }
+
+.montserrat {
+  font-family: "Montserrat", sans-serif; }
+
+.roboto {
+  font-family: "Roboto", sans-serif; }
+
+.taviraj {
+  font-family: "Taviraj", serif; }
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+p, .pubdate, .byline, .text-content .author_bio .bio .team-title.post {
+  color: #ffffff !important; }
+
+p a, .text-content a, .text-content .author_bio a {
+  color: #ffffff !important;
+  border-bottom: 2px solid #ffffff !important; }
+  p a:hover, .text-content a:hover, .text-content .author_bio a:hover {
+    border-bottom: none !important; }
+
+.text-content .top_social a {
+  border: 1px solid #ffffff; }
+
+.text-content .author_bio .bio a {
+  border: none !important; }
+
+.text-content .author_bio .bio .author_social_links i:hover {
+  color: transparent; }
+
+.text-content .top_social a:hover {
+  border: 1px solid #ffffff;
+  background: #ffffff; }
+
+.text-content .comment-form-wrapper h2 {
+  color: #fff; }
+
+/*# sourceMappingURL=hope-coach.css.map */

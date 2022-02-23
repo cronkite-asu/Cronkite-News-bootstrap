@@ -396,15 +396,6 @@ ul.ks-cboxtags .tooltip {
 .fp-slidesNav ul li a span {
   background: #003594; }
 
-.slick-prev, .slick-next {
-  z-index: 10; }
-
-.slick-prev {
-  left: 10px; }
-
-.slick-next {
-  right: 10px; }
-
 .dropdown-el {
   margin-top: 12px;
   min-width: 12em;

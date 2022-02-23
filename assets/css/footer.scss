@@ -1,0 +1,104 @@
+$montserratFontFamily: 'Montserrat', sans-serif;
+$robotoFontFamily: "Roboto", sans-serif;
+$georgiaFontFamily: Georgia, Times, "Times New Roman", serif;
+$color: rgba(0,0,0,.08);
+$color2: rgba(0,0,0,.02);
+$cnBlue: #003594;
+$white: #ffffff;
+$black: #0a0a0a;
+$grey: #D8D8D8;
+$footerHdr: #878792;
+$borderGrey: #F2F2F2;
+$transparency100: rgba(0, 53, 148, 1);
+$transparency75: rgba(0, 53, 148, 0.75);
+$colorSelect:#3694d7;
+$timing:.3s;
+$redAlert: #F31431;
+$caption: #767676;
+$bgColor: #fafafa;
+
+@mixin attr-transition1 ($attr) {
+  -webkit-transition: $attr 0.25s;
+  -moz-transition: $attr 0.25s;
+  -o-transition: $attr 0.25s;
+  transition: $attr 0.25s;
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* footer */
+#footer {
+  background:#002870;
+  color: $white;
+  padding-top:72px;
+  padding-bottom:72px;
+  a {
+    color: $white;
+  }
+
+  .grid-padding-x > .cell {
+    &.remove-padding {
+      padding: 0;
+    }
+    @media only screen
+      and (max-width: 780px) {
+        padding-left: 1.45rem;
+        padding-right: 1.45rem;
+    }
+  }
+
+  footer {
+    &.grid-container {
+      max-width: 78rem;
+    }
+    h6 {
+      font-family: $montserratFontFamily;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      &.inside {
+        margin-top: 40px;
+      }
+    }
+    p {
+      font-size: 1rem;
+    }
+    a {
+      color:rgba(255,255,255,0.75);
+      &:hover {
+        color:rgba(255,255,255,1);
+        text-decoration: none;
+      }
+    }
+    .copyright-section {
+      padding-top:40px;
+      border-top:1px solid rgba(255,255,255,0.75);
+      .copyright {
+        font-size: 0.85rem;
+      }
+      p {
+        font-size: 0.85rem;
+        a {
+          padding-left: 10px;
+          padding-right:10px;
+          font-size: 0.85rem !important;
+        }
+      }
+      .social-links {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        list-style: none !important;
+        li {
+          padding-left: 15px;
+          i {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
