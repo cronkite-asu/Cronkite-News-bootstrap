@@ -1,0 +1,362 @@
+@keyframes fade-in-up {
+  0% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+.grid-container.intro {
+  max-width: 80rem;
+  margin-bottom: 40px; }
+  @media only screen and (max-width: 800px) {
+    .grid-container.intro {
+      margin-bottom: 10px; } }
+  .grid-container.intro .superbowl-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0 0 0; }
+    @media only screen and (max-width: 1200px) {
+      .grid-container.intro .superbowl-header {
+        flex-direction: column; } }
+    @media only screen and (max-width: 800px) {
+      .grid-container.intro .superbowl-header {
+        flex-direction: column; } }
+    .grid-container.intro .superbowl-header .superbowl-logo {
+      display: flex;
+      max-width: 12%; }
+      @media only screen and (max-width: 1200px) {
+        .grid-container.intro .superbowl-header .superbowl-logo {
+          max-width: 15%; } }
+      @media only screen and (max-width: 800px) {
+        .grid-container.intro .superbowl-header .superbowl-logo {
+          max-width: 50%; } }
+    .grid-container.intro .superbowl-header h1 {
+      display: flex;
+      font-family: "Alata", sans-serif;
+      font-size: 5rem;
+      font-weight: 600;
+      line-height: 6rem;
+      color: #006633;
+      margin-left: 40px;
+      margin-top: 40px; }
+      @media only screen and (max-width: 1200px) {
+        .grid-container.intro .superbowl-header h1 {
+          font-size: 3.5rem;
+          line-height: 4.5rem;
+          margin-top: 10px;
+          margin-left: 0px; } }
+      @media only screen and (max-width: 800px) {
+        .grid-container.intro .superbowl-header h1 {
+          font-size: 3rem;
+          line-height: 4rem;
+          margin-left: 0px;
+          margin-top: 20px; } }
+  .grid-container.intro p {
+    font-family: "Alata", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 100;
+    color: #ffffff !important; }
+
+.grid-container.content {
+  max-width: 80rem; }
+  .grid-container.content hr {
+    max-width: 98.5%;
+    border-top: 0.5px solid #ccc; }
+  .grid-container.content .story-text {
+    min-height: 240px;
+    padding: 0px 10px 25px 10px; }
+    .grid-container.content .story-text h3 {
+      font-family: "Alata", sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.45rem;
+      color: #006633;
+      margin-top: 15px;
+      margin-bottom: 25px; }
+      @media only screen and (max-width: 800px) {
+        .grid-container.content .story-text h3 {
+          font-size: 1rem;
+          line-height: 1.5rem;
+          margin-bottom: 0px; } }
+      .grid-container.content .story-text h3.main {
+        font-size: 1.6rem;
+        line-height: 2.2rem; }
+        @media only screen and (max-width: 800px) {
+          .grid-container.content .story-text h3.main {
+            font-size: 1.3rem;
+            line-height: 1.8rem; } }
+      .grid-container.content .story-text h3 a {
+        color: #006633; }
+    .grid-container.content .story-text p {
+      color: #ffffff !important; }
+    .grid-container.content .story-text .button {
+      font-family: "Alata", sans-serif;
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: #363636;
+      -webkit-transition: background-color 0.25s;
+      -moz-transition: background-color 0.25s;
+      -o-transition: background-color 0.25s;
+      transition: background-color 0.25s; }
+      .grid-container.content .story-text .button i {
+        color: #e09e1d;
+        -webkit-transition: color 0.25s;
+        -moz-transition: color 0.25s;
+        -o-transition: color 0.25s;
+        transition: color 0.25s; }
+      .grid-container.content .story-text .button:hover {
+        color: #363636;
+        background-color: #e09e1d; }
+        .grid-container.content .story-text .button:hover i {
+          color: #ffffff; }
+  .grid-container.content h4 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: "Alata", sans-serif;
+    font-weight: 700;
+    color: #006633;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    padding: 0 25px; }
+    .grid-container.content h4 a {
+      color: #006633 !important; }
+      .grid-container.content h4 a:hover {
+        color: #006633 !important; }
+  .grid-container.content h4:after {
+    content: '';
+    border-top: 1px solid #006633;
+    margin: 0 0 0 20px;
+    flex: 1 0 20px;
+    width: 100%; }
+
+.grid-container.video {
+  max-width: 80rem;
+  margin-top: 40px;
+  margin-bottom: 40px; }
+  @media only screen and (max-width: 800px) {
+    .grid-container.video {
+      margin-top: 20px;
+      margin-bottom: 20px; } }
+  .grid-container.video .story-text {
+    min-height: 240px;
+    padding: 0 10px; }
+    @media only screen and (max-width: 800px) {
+      .grid-container.video .story-text {
+        min-height: auto; } }
+    .grid-container.video .story-text .img-preview {
+      position: relative;
+      display: block; }
+      .grid-container.video .story-text .img-preview .overlay {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white; }
+        .grid-container.video .story-text .img-preview .overlay i {
+          font-size: 2.5rem; }
+    .grid-container.video .story-text h3 {
+      font-family: "Alata", sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.45rem;
+      color: #006633;
+      margin-top: 15px;
+      margin-bottom: 25px; }
+      @media only screen and (max-width: 800px) {
+        .grid-container.video .story-text h3 {
+          font-size: 1rem;
+          line-height: 1.5rem;
+          margin-bottom: 25px; } }
+      .grid-container.video .story-text h3.main {
+        font-size: 1.6rem;
+        line-height: 2.2rem; }
+      .grid-container.video .story-text h3 a {
+        color: #006633; }
+    .grid-container.video .story-text p {
+      color: #ffffff !important; }
+  .grid-container.video h4 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: "Alata", sans-serif;
+    font-weight: 700;
+    color: #006633;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    padding: 0 10px 25px 10px; }
+    @media only screen and (max-width: 800px) {
+      .grid-container.video h4 {
+        font-size: 1.25rem; } }
+    .grid-container.video h4 a {
+      color: #006633 !important; }
+      .grid-container.video h4 a:hover {
+        color: #006633 !important; }
+  .grid-container.video h4:after {
+    content: '';
+    border-top: 1px solid #006633;
+    margin: 0 0 0 20px;
+    flex: 1 0 20px;
+    width: 100%; }
+
+.grid-container.stories {
+  max-width: 80rem;
+  margin-bottom: 40px; }
+  @media only screen and (max-width: 800px) {
+    .grid-container.stories {
+      margin-top: 20px;
+      margin-bottom: 20px; } }
+  .grid-container.stories .divider {
+    border-bottom: 1px solid #006633;
+    margin: 0 10px; }
+    @media only screen and (max-width: 800px) {
+      .grid-container.stories .divider {
+        border-bottom: none; } }
+  .grid-container.stories .story-text {
+    padding: 0 10px;
+    margin-top: 25px;
+    margin-bottom: 25px; }
+    @media only screen and (max-width: 800px) {
+      .grid-container.stories .story-text {
+        margin-top: 0px; } }
+    .grid-container.stories .story-text:first-child {
+      margin-top: 0px; }
+    .grid-container.stories .story-text .img-preview {
+      position: relative;
+      display: block; }
+      .grid-container.stories .story-text .img-preview .overlay {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white; }
+        .grid-container.stories .story-text .img-preview .overlay i {
+          font-size: 2.5rem; }
+    .grid-container.stories .story-text h3 {
+      font-family: "Alata", sans-serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 2.2rem;
+      color: #006633;
+      margin-top: 0px;
+      margin-bottom: 15px; }
+      @media only screen and (max-width: 800px) {
+        .grid-container.stories .story-text h3 {
+          font-size: 1.3rem;
+          line-height: 1.8rem; } }
+      .grid-container.stories .story-text h3.main {
+        font-size: 1.6rem;
+        line-height: 2.2rem; }
+      .grid-container.stories .story-text h3 a {
+        color: #006633; }
+    .grid-container.stories .story-text p {
+      font-size: 0.95rem;
+      color: #000 !important; }
+    .grid-container.stories .story-text .button {
+      font-family: "Alata", sans-serif;
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: rgba(0, 102, 51, 0.65);
+      -webkit-transition: background-color 0.25s;
+      -moz-transition: background-color 0.25s;
+      -o-transition: background-color 0.25s;
+      transition: background-color 0.25s; }
+      .grid-container.stories .story-text .button i {
+        color: #ffffff;
+        -webkit-transition: color 0.25s;
+        -moz-transition: color 0.25s;
+        -o-transition: color 0.25s;
+        transition: color 0.25s; }
+      .grid-container.stories .story-text .button:hover {
+        color: #ffffff;
+        background-color: #006633; }
+        .grid-container.stories .story-text .button:hover i {
+          color: #ffffff; }
+  .grid-container.stories h4 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: "Alata", sans-serif;
+    font-weight: 700;
+    color: #006633;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    padding: 0 10px 0px 10px; }
+    @media only screen and (max-width: 800px) {
+      .grid-container.stories h4 {
+        font-size: 1.25rem;
+        padding-top: 20px;
+        padding-bottom: 0px;
+        margin-bottom: 25px; } }
+    .grid-container.stories h4 a {
+      color: #006633 !important; }
+      .grid-container.stories h4 a:hover {
+        color: #006633 !important; }
+  .grid-container.stories h4:after {
+    content: '';
+    border-top: 1px solid #006633;
+    margin: 0 0 0 20px;
+    flex: 1 0 20px;
+    width: 100%; }
+
+#superbowl-countdown {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 15px 35px;
+  background: rgba(2, 118, 60, 0.8);
+  box-shadow: 0px 5px 16px -5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 5px 16px -5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 5px 16px -5px rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: center; }
+  @media only screen and (max-width: 800px) {
+    #superbowl-countdown {
+      margin-top: 40px;
+      padding: 15px 0px; } }
+  #superbowl-countdown .countdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; }
+    #superbowl-countdown .countdown div {
+      display: flex;
+      flex-direction: column;
+      font-family: "Montserrat", sans-serif;
+      margin-left: 8px; }
+      @media only screen and (max-width: 800px) {
+        #superbowl-countdown .countdown div {
+          margin-left: 0px; } }
+      #superbowl-countdown .countdown div:last-child {
+        margin-left: 0px; }
+      #superbowl-countdown .countdown div span {
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        font-weight: 600;
+        text-align: center;
+        font-size: 40px; }
+      #superbowl-countdown .countdown div div {
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 12px; }
+
+/*# sourceMappingURL=superbowl2023.css.map */

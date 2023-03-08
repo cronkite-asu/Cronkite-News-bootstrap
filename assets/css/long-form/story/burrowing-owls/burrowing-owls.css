@@ -1,0 +1,188 @@
+.merriweather {
+  font-family: "Merriweather", serif; }
+
+.montserrat {
+  font-family: "Montserrat", sans-serif; }
+
+.roboto {
+  font-family: "Roboto", sans-serif; }
+
+.taviraj {
+  font-family: "Taviraj", serif; }
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+#intro-animated-bg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("https://cronkitenews.azpbs.org/wp-content/uploads/2022/05/owl-bg.jpg") repeat;
+  overflow: hidden; }
+  #intro-animated-bg .bg {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+    background: url("https://cronkitenews.azpbs.org/wp-content/uploads/2022/05/owl-bg.jpg") repeat;
+    -webkit-animation: infiniteScrollBg 45s linear infinite;
+    animation: infiniteScrollBg 45s linear infinite;
+    z-index: 0;
+    overflow: hidden; }
+  #intro-animated-bg .owl-mosiac {
+    z-index: 1; }
+    #intro-animated-bg .owl-mosiac img {
+      max-width: 900px; }
+      @media only screen and (max-width: 800px) {
+        #intro-animated-bg .owl-mosiac img {
+          max-width: 700px; } }
+      @media only screen and (max-width: 700px) {
+        #intro-animated-bg .owl-mosiac img {
+          max-width: 600px; } }
+      @media only screen and (max-width: 520px) {
+        #intro-animated-bg .owl-mosiac img {
+          max-width: 480px; } }
+      @media only screen and (max-width: 480px) {
+        #intro-animated-bg .owl-mosiac img {
+          max-width: 400px; } }
+      @media only screen and (max-width: 390px) {
+        #intro-animated-bg .owl-mosiac img {
+          max-width: 340px; } }
+  #intro-animated-bg .headline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    /*background:linear-gradient(to bottom, rgb(152, 57, 87), rgb(219, 39, 38));*/
+    padding-left: 5rem;
+    padding-right: 5rem; }
+    #intro-animated-bg .headline.absolute {
+      position: absolute; }
+    @media only screen and (max-width: 780px) {
+      #intro-animated-bg .headline {
+        padding-left: 1.45rem;
+        padding-right: 1.45rem; } }
+    @media only screen and (max-width: 640px) {
+      #intro-animated-bg .headline {
+        padding-top: 2.5rem;
+        padding-bottom: 0.5rem; } }
+    #intro-animated-bg .headline a {
+      color: #ffffff;
+      text-decoration: underline;
+      border-bottom: none;
+      padding-left: 4px; }
+      #intro-animated-bg .headline a:hover {
+        text-decoration: none; }
+    #intro-animated-bg .headline h1 {
+      font-family: "Merriweather", serif;
+      max-width: 900px;
+      font-size: 2.5rem;
+      font-weight: 500;
+      line-height: 4rem;
+      padding: 0;
+      color: #000;
+      margin: 40px 0 25px 0;
+      letter-spacing: -0.05rem; }
+      #intro-animated-bg .headline h1.absolute-text {
+        color: #ffffff !important;
+        text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3), 0px 4px 7px rgba(0, 0, 0, 0.1), 0px 9px 12px rgba(0, 0, 0, 0.1); }
+      @media only screen and (max-width: 1200px) {
+        #intro-animated-bg .headline h1 {
+          font-size: 2.5rem;
+          line-height: 3.5rem;
+          margin: 60px 0 25px 0; } }
+      @media only screen and (max-width: 800px) {
+        #intro-animated-bg .headline h1 {
+          font-size: 2rem;
+          line-height: 3rem;
+          margin: 40px 0 25px 0; } }
+      @media only screen and (max-width: 660px) {
+        #intro-animated-bg .headline h1 {
+          font-size: 1.75rem;
+          line-height: 2.75rem;
+          letter-spacing: 0;
+          margin: 20px 0 25px 0; } }
+      @media only screen and (max-width: 400px) {
+        #intro-animated-bg .headline h1 {
+          font-size: 1.5rem;
+          line-height: 2.5rem;
+          letter-spacing: 0;
+          margin: 0px 0 15px 0; } }
+    #intro-animated-bg .headline p {
+      max-width: 800px;
+      font-family: "Merriweather Sans", sans-serif;
+      color: #000;
+      font-size: 1.25rem;
+      font-size: 300;
+      line-height: 2.25rem;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 40px; }
+      @media only screen and (max-width: 780px) {
+        #intro-animated-bg .headline p {
+          font-size: 1.15rem;
+          line-height: 2rem; } }
+      @media only screen and (max-width: 600px) {
+        #intro-animated-bg .headline p {
+          margin-bottom: 0px; } }
+  #intro-animated-bg .grid-padding-x > .cell.photo-style-e2e {
+    padding-left: 0;
+    padding-right: 0; }
+  #intro-animated-bg .photo-credit {
+    display: block;
+    padding: 5px 10px;
+    margin: 0 auto;
+    margin-top: 6px;
+    max-width: 800px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #6e6e6e;
+    padding-top: 10px;
+    letter-spacing: 0;
+    line-height: 1.2rem;
+    text-align: left;
+    max-width: 100%; }
+    #intro-animated-bg .photo-credit a {
+      color: #000;
+      text-decoration: underline; }
+      #intro-animated-bg .photo-credit a:hover {
+        text-decoration: none; }
+
+.intro-caption .photo-credit {
+  display: block;
+  padding: 5px 10px;
+  margin: 0 auto;
+  margin-top: 6px;
+  max-width: 800px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #6e6e6e;
+  padding-top: 10px;
+  letter-spacing: 0;
+  line-height: 1.2rem;
+  font-family: "Roboto", sans-serif !important;
+  padding-top: 0px !important;
+  text-align: right;
+  max-width: 100%; }
+  .intro-caption .photo-credit a {
+    color: #6e6e6e;
+    text-decoration: underline; }
+    .intro-caption .photo-credit a:hover {
+      text-decoration: none; }
+
+@keyframes infiniteScrollBg {
+  0% {
+    background-position: 50% 0; }
+  100% {
+    background-position: 50% -2160; } }
+
+/*# sourceMappingURL=burrowing-owls.css.map */

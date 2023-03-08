@@ -68,7 +68,7 @@
       </div>
 
       <div class="large-12 medium-12 small-12 cell story-content">
-        <h2>CN2Go daily briefings</h2>
+        <h2>CN2Go briefings</h2>
       </div>
       <div class="large-6 medium-12 small-12 cell">
         <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/877770739&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
@@ -132,7 +132,7 @@
                   $permalink = get_permalink( $newsStories );
                   $audioFile = get_field('audio_video_file', $newsStories);
           ?>
-                <div class="large-10 medium-10 small-10 cell listed-stories">
+                <div class="large-12 medium-12 small-12 cell listed-stories">
                   <?php
                     if (get_field('use_short_headline', $newsStories) == 'yes' && get_field('homepage_headline', $newsStories) != '') {
                       $title = get_field('homepage_headline', $newsStories);
@@ -152,6 +152,19 @@
             }
           ?>
         </div>
+      </div>
+    </div>
+
+    <div class="grid-x grid-padding-x single-story-block">
+      <div style="margin-top:25px;margin-bottom:25px;" class="large-12 medium-12 small-12 cell story-content">
+        <hr />
+      </div>
+
+      <div class="large-12 medium-12 small-12 cell story-content">
+        <h2>The Sweet Spot</h2>
+      </div>
+      <div class="large-12 medium-12 small-12 cell">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/4fPaJdTpr7UQ9cFVGcsgNi?utm_source=generator&t=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
     </div>
 
@@ -224,7 +237,7 @@
                   $audioFile = get_field('audio_video_file', $sportsStories);
                   $permalink = get_permalink( $sportsStories );
           ?>
-                <div class="large-10 medium-10 small-10 cell listed-stories">
+                <div class="large-12 medium-12 small-12 cell listed-stories">
                   <?php
                     if (get_field('use_short_headline', $sportsStories) == 'yes' && get_field('homepage_headline', $sportsStories) != '') {
                       $title = get_field('homepage_headline', $sportsStories);

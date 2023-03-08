@@ -133,6 +133,13 @@
   </script>
   <?php } ?>
 
+  <?php
+    $settings = get_field('longform-settings', get_the_ID());
+    if ($settings['scripts-file'] != '') {
+  ?>
+  <script src="<?php echo $settings['scripts-file']; ?>"></script>
+  <?php } ?>
+
   <script>
   /**
    * forEach implementation for Objects/NodeLists/Arrays, automatic type loops and context options
@@ -258,35 +265,36 @@
           }
         });
 
+        // long form intro slider
+        $('.intro-slider').slick({
+          infinite: true,
+          dots: false,
+          centerMode: false,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          arrows: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          fade: true,
+          cssEase: 'linear',
+          responsive: [
+             {
+               breakpoint: 768,
+               settings: {
+                 slidesToShow: 1,
+                 slidesToScroll: 1
+               }
+             },
+             {
+               breakpoint: 480,
+               settings: {
+                 slidesToShow: 1,
+                 slidesToScroll: 1
+               }
+             }
+           ]
+        });
 
-        /*gsap.to(".star-wars h1", {
-          scrollTrigger: {
-            trigger: ".star-wars",
-            start: "top top",
-            end: "+=800",
-            scrub: true
-          },
-          opacity: 0
-        });*/
-
-
-
-      /*let fsPhotosSections = gsap.utils.toArray(".fullscreen-slideshow div");
-
-      gsap.to(fsPhotosSections, {
-        xPercent: -100 * (fsPhotosSections.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".fullscreen-photo-content",
-          pin: true,
-          start: "top +=10px",
-          end: "bottom -=100px",
-          markers: true,
-          scrub: 1,
-          // Base vertical scrolling on how wide the container is so it feels more natural.
-          end: () => "+=" + (document.querySelector(".fullscreen-slideshow").offsetWidth / 5)
-        }
-      });*/
 
       // video player
       const controls = [

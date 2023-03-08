@@ -35,7 +35,7 @@
     <link type="image/png" href="<?php the_field('favicon','options'); ?>"  rel="apple-touch-icon">
 
 		<!-- font awesome -->
-		<script src="https://use.fontawesome.com/9e4502c156.js"></script>
+		<script src="https://kit.fontawesome.com/0f0514404d.js" crossorigin="anonymous"></script>
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
 
@@ -87,19 +87,8 @@
 
 		?>
 
-	<script>
-           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-           ga('create', 'UA-3145657-18', 'auto');
-           <?php echo $output ?>
-           ga('send', 'pageview');
-
-
-
-       </script>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>
 
 
        <!-- Hotjar Tracking Code for http://cronkitenews.azpbs.org -->

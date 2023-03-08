@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tour start="node1" appversion="6.1.13" apprev="18080">
+  <panorama id="node1">
+    <input levelbias="0.400" overlap="1" leveltileurl="tiles/node1/cf_%c/l_%l/c_%x/tile_%y.jpg" levelingpitch="0" width="1344" levelingroll="0" leveltilesize="510" height="1344" levelbiashidpi="1.000">
+      <level predecode="0" width="1344" height="1344" preload="0"/>
+      <level predecode="0" width="672" height="672" preload="0"/>
+      <level predecode="1" width="336" height="336" preload="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view pannorth="0" fovmode="0">
+      <start projection="4" pan="0" fov="70" tilt="0"/>
+      <flyin projection="9" pan="0" fov="170" tilt="-90"/>
+      <min pan="0" fovpixel="2" tilt="-90"/>
+      <max fovfisheye="360" pan="360" fovstereographic="270" scaletofit="1" fov="120" tilt="90"/>
+    </view>
+    <userdata info="" nodeid="node1" altitude="2246.05" source="" description="" tags="Downloads" customnodeid="" datetime="4/6/22 11:34 AM" comment="" heading="0" longitude="-111.755033" latitude="35.204264" copyright="" title="" author=""/>
+    <hotspots wordwrap="1" width="180" height="20">
+      <label background="1" backgroundcolor="0xffffff" textcolor="0x000000" backgroundalpha="1" wordwrap="1" width="180" borderalpha="1" border="1" bordercolor="0x000000" enabled="1" height="20" textalpha="1" borderradius="1"/>
+      <polystyle backgroundcolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1" handcursor="1" bordercolor="0x0000ff"/>
+      <hotspot description="" customimage="media/noun-circle-in-circle-318506-FFFFFF.png" distance="46.4626" customimageheight="100" pan="-60.96" use3D="1" id="Point01" url="{node3}" target="" distance3D="571.503" skinid="ht_node" title="Unhealthy forest" customimagewidth="100" fov="10" tilt="2.96"/>
+      <hotspot description="" customimage="media/noun-circle-in-circle-318506-FFFFFF.png" distance="39.1145" customimageheight="100" pan="-239.86" use3D="1" id="Point02" url="{node2}" target="" distance3D="571.503" skinid="ht_node" title="Healthy forest" customimagewidth="100" fov="10" tilt="15.8"/>
+    </hotspots>
+    <media/>
+    <transition blendcolor="0x000000" zoomoutpause="1" zoomafterinfov="90" zoomafteroutfov="20" softedge="0" zoomout="0" blendtime="1" zoomin="0" enabled="1" type="crossdissolve" zoomspeed="2" zoomfov="20"/>
+    <animation animsequence="Animation01" useinautorotation="0" syncanimationwithvideo="0"/>
+    <control simulatemass="1" contextvr="1" dblclickfullscreen="0" lockedkeyboardzoom="0" invertwheel="0" sensitivity="8" lockedkeyboard="0" lockedmouse="0" lockedwheel="0" contextprojections="0" rubberband="0" speedwheel="1" contextfullscreen="1" invertcontrol="1"/>
+  </panorama>
+  <panorama id="node2">
+    <input levelbias="0.400" overlap="1" leveltileurl="tiles/node2/cf_%c/l_%l/c_%x/tile_%y.jpg" levelingpitch="0" width="1344" levelingroll="0" leveltilesize="510" height="1344" levelbiashidpi="1.000">
+      <level predecode="0" width="1344" height="1344" preload="0"/>
+      <level predecode="0" width="672" height="672" preload="0"/>
+      <level predecode="1" width="336" height="336" preload="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view pannorth="0" fovmode="0">
+      <start projection="4" pan="109.49" fov="70" tilt="11.7"/>
+      <flyin projection="9" pan="0" fov="170" tilt="-90"/>
+      <min pan="0" fovpixel="2" tilt="-90"/>
+      <max fovfisheye="360" pan="360" fovstereographic="270" scaletofit="1" fov="120" tilt="90"/>
+    </view>
+    <userdata info="" nodeid="node2" altitude="2253.13" source="" description="" tags="Downloads" customnodeid="" datetime="4/6/22 11:19 AM" comment="" heading="0" longitude="-111.754603" latitude="35.204281" copyright="" title="" author=""/>
+    <hotspots wordwrap="1" width="180" height="20">
+      <label background="1" backgroundcolor="0xffffff" textcolor="0x000000" backgroundalpha="1" wordwrap="1" width="180" borderalpha="1" border="1" bordercolor="0x000000" enabled="1" height="20" textalpha="1" borderradius="1"/>
+      <polystyle backgroundcolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1" handcursor="1" bordercolor="0x0000ff"/>
+      <hotspot description="" customimage="media/noun-circle-in-circle-318506-FFFFFF.png" distance="39.1145" customimageheight="100" pan="-54.74" use3D="1" id="Point01" url="{node1}" target="" distance3D="571.503" skinid="ht_node" title="Return to road" customimagewidth="100" fov="10" tilt="-6.74"/>
+      <hotspot description="“We have trees that are spaced out enough that they can receive their own light and their own resources and water, and they're not being choked out by each other,” said Elise Sawa, U.S. Forest Service forester in Coconino National Forest." customimage="media/noun-info-3016385-FFFFFF.png" customimageheight="100" pan="-148.9" use3D="1" id="Point02" url="" target="" distance3D="571.503" skinid="ht_info" title="Spacing" customimagewidth="100" fov="10" tilt="10.74"/>
+      <hotspot description="This area of the Coconino National Forest was thinned four or five years ago, forester Elise Sawa said, and lots of light now hits the ground. “But we don't just want it to stay like this. We want new growth. It's letting more trees regenerate, and they will be healthier trees, too.” " customimage="media/noun-info-3016385-FFFFFF.png" customimageheight="100" pan="-286.8" use3D="1" id="Point03" url="" target="" distance3D="571.503" skinid="ht_info" title="Light" customimagewidth="100" fov="10" tilt="49.68"/>
+      <hotspot description="Healthy areas like this have &quot;age diversity&quot;: some trees in this part of the Coconino National Forest are 50 to 75 years old, while others are 15 to 20 years old, forester Elise Sawa said. Trunk thickness indicates a tree’s age. " customimage="media/noun-info-3016385-FFFFFF.png" customimageheight="100" pan="-28.8" use3D="1" id="Point04" url="" target="" distance3D="571.503" skinid="ht_info" title="Age" customimagewidth="100" fov="10" tilt="19.5"/>
+    </hotspots>
+    <media/>
+    <transition blendcolor="0x000000" zoomoutpause="1" zoomafterinfov="90" zoomafteroutfov="20" softedge="0" zoomout="0" blendtime="1" zoomin="0" enabled="1" type="crossdissolve" zoomspeed="2" zoomfov="20"/>
+    <animation animsequence="Animation01" useinautorotation="0" syncanimationwithvideo="0"/>
+    <control simulatemass="1" contextvr="1" dblclickfullscreen="0" lockedkeyboardzoom="0" invertwheel="0" sensitivity="8" lockedkeyboard="0" lockedmouse="0" lockedwheel="0" contextprojections="0" rubberband="0" speedwheel="1" contextfullscreen="1" invertcontrol="1"/>
+  </panorama>
+  <panorama id="node3">
+    <input levelbias="0.400" overlap="1" leveltileurl="tiles/node3/cf_%c/l_%l/c_%x/tile_%y.jpg" levelingpitch="0" width="1344" levelingroll="0" leveltilesize="510" height="1344" levelbiashidpi="1.000">
+      <level predecode="0" width="1344" height="1344" preload="0"/>
+      <level predecode="0" width="672" height="672" preload="0"/>
+      <level predecode="1" width="336" height="336" preload="1"/>
+      <preview color="0x808080" strip="1"/>
+    </input>
+    <view pannorth="0" fovmode="0">
+      <start projection="4" pan="47.06" fov="70" tilt="6.23"/>
+      <flyin projection="9" pan="0" fov="170" tilt="-90"/>
+      <min pan="0" fovpixel="2" tilt="-90"/>
+      <max fovfisheye="360" pan="360" fovstereographic="270" scaletofit="1" fov="120" tilt="90"/>
+    </view>
+    <userdata info="" nodeid="node3" altitude="2236.15" source="" description="" tags="Downloads" customnodeid="" datetime="4/6/22 11:39 AM" comment="" heading="0" longitude="-111.755519" latitude="35.204394" copyright="" title="" author=""/>
+    <hotspots wordwrap="1" width="180" height="20">
+      <label background="1" backgroundcolor="0xffffff" textcolor="0x000000" backgroundalpha="1" wordwrap="1" width="180" borderalpha="1" border="1" bordercolor="0x000000" enabled="1" height="20" textalpha="1" borderradius="1"/>
+      <polystyle backgroundcolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1" handcursor="1" bordercolor="0x0000ff"/>
+      <hotspot description="" customimage="media/noun-circle-in-circle-318506-FFFFFF.png" distance="46.4626" customimageheight="100" pan="-200.1" use3D="0" id="Point01" url="{node1}" target="" distance3D="571.503" skinid="ht_node" title="Return to road" customimagewidth="100" fov="10" tilt="-5.6"/>
+      <hotspot description="This area has “a lot of small-diameter trees and just an insane amount of them in a small area,” forester Elise Sawa said.  That crowding leaves “a lot less light on the ground for new regeneration,” and the existing trees don’t grow well." customimage="media/noun-info-3016385-FFFFFF.png" customimageheight="100" pan="-184.55" use3D="1" id="Point02" url="" target="" distance3D="571.503" skinid="ht_info" title="Trunk thickness" customimagewidth="100" fov="10" tilt="14.78"/>
+      <hotspot description="These trees are curved, Elise Sawa, U.S. Forest Service forester in Coconino National Forest, said, because they’re “trying to look for light and trying to survive.” Crowding reduces the light that’s available to younger trees. " customimage="media/noun-info-3016385-FFFFFF.png" customimageheight="100" pan="-291.28" use3D="1" id="Point03" url="" target="" distance3D="571.503" skinid="ht_info" title="Curved trunks" customimagewidth="100" fov="10" tilt="10.51"/>
+    </hotspots>
+    <media/>
+    <transition blendcolor="0x000000" zoomoutpause="1" zoomafterinfov="90" zoomafteroutfov="20" softedge="0" zoomout="0" blendtime="1" zoomin="0" enabled="1" type="crossdissolve" zoomspeed="2" zoomfov="20"/>
+    <animation animsequence="Animation01" useinautorotation="0" syncanimationwithvideo="0"/>
+    <control simulatemass="1" contextvr="1" dblclickfullscreen="0" lockedkeyboardzoom="0" invertwheel="0" sensitivity="8" lockedkeyboard="0" lockedmouse="0" lockedwheel="0" contextprojections="0" rubberband="0" speedwheel="1" contextfullscreen="1" invertcontrol="1"/>
+  </panorama>
+  <masternode>
+    <userdata info="" nodeid="master" source="" description="" tags="" customnodeid="" datetime="" comment="" heading="0" longitude="" latitude="" copyright="" title="" author=""/>
+  </masternode>
+</tour>

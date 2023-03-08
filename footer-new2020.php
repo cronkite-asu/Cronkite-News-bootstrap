@@ -296,7 +296,38 @@
          ]
       });
 
+      // sports featured photos
       $('.sports-featured-photos').slick({
+        infinite: true,
+        dots: false,
+        centerMode: false,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        arrows: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        cssEase: 'linear',
+        responsive: [
+           {
+             breakpoint: 768,
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1
+             }
+           },
+           {
+             breakpoint: 480,
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1
+             }
+           }
+         ]
+      });
+
+      // homepage featured photos
+      $('.news-featured-photos').slick({
         infinite: true,
         dots: false,
         centerMode: false,

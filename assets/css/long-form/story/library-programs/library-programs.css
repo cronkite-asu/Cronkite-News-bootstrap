@@ -1,0 +1,31 @@
+.merriweather {
+  font-family: "Merriweather", serif; }
+
+.montserrat {
+  font-family: "Montserrat", sans-serif; }
+
+.roboto {
+  font-family: "Roboto", sans-serif; }
+
+.taviraj {
+  font-family: "Taviraj", serif; }
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+.sidexside-content {
+  background: #cdcdcd; }
+  .sidexside-content h4 {
+    color: #000; }
+  .sidexside-content iframe {
+    background: #ddd; }
+  .sidexside-content .wp-caption-text {
+    color: #000; }
+    .sidexside-content .wp-caption-text a {
+      color: #000 !important;
+      border-bottom: 1px solid #000; }
+
+/*# sourceMappingURL=library-programs.css.map */

@@ -1,4 +1,4 @@
-
+$montserratFontFamily: 'Montserrat', sans-serif;
 $robotoFontFamily: "Roboto", sans-serif;
 $georgiaFontFamily: Georgia, Times, "Times New Roman", serif;
 $oleoFontFamily: 'Oleo Script', cursive;
@@ -120,8 +120,29 @@ body {
   }
 
   &.page-not-found {
-    h2 {
-      font-family: $oleoFontFamily;
+    h1 {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      font-family: $montserratFontFamily;
+      font-weight: 700;
+      color: $cnBlue;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      a {
+        color:$cnBlue !important;
+        &:hover {
+          color:$cnBlue !important;
+        }
+      }
+    }
+    h1:after {
+        content: '';
+        border-top: 1px solid $cnBlue;
+        margin: 0 0 0 20px;
+        flex: 1 0 20px;
+        width: 100%;
     }
     p {
       font-family: $robotoFontFamily;

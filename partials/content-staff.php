@@ -1,5 +1,4 @@
     <?php
-      //echo $_SERVER[REQUEST_URI];
       if (get_query_var('staffname')) {
         $search_staff_name = get_query_var('staffname');
         $normal_staff_name = ucwords(str_replace('-', ' ', $search_staff_name));
@@ -54,10 +53,15 @@
                }
 
                // show name pronunciation
-               if (get_field('pronunciation')) {
+               if (get_field('pronunciation') != '' || get_field('audio_pronunciation') != '') {
+                 if (get_field('pronunciation') != '') {
+                   $pronunciationHolder = get_field('pronunciation');
+                 } else {
+                   $pronunciationHolder = "Pronunciation";
+                 }
                  echo '<span class="pronunciation">';
        ?>
-                 <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php } ?> <?php echo get_field('pronunciation') ?></span>
+                 <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php } ?> <?php echo $pronunciationHolder; ?></span>
        <?php
                  echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
                }
@@ -101,6 +105,8 @@
                        <a href="https://www.instagram.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
                <?php } else if (get_sub_field('social_media_type') == 'linkedin') { ?>
                        <a href="https://www.linkedin.com/in/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
+               <?php } else if (get_sub_field('social_media_type') == 'tiktok') { ?>
+                       <a href="https://www.tiktok.com/@<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
              <?php
                      }
                    }
@@ -124,6 +130,8 @@
                        <a href="https://www.instagram.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
                <?php } else if (get_sub_field('contact_outlet') == 'linkedin') { ?>
                        <a href="https://www.linkedin.com/in/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
+               <?php } else if (get_sub_field('social_media_type') == 'tiktok') { ?>
+                       <a href="https://www.tiktok.com/@<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
              <?php
                      }
                    }
@@ -186,15 +194,16 @@
               $audioTitleCleanURL = str_replace("&#8217;", "", str_replace('’', '', str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title())))));
               echo '<!-- TITLE: '.get_the_ID().'-->';
 
-              if (get_field('video_location') != '') {
-                $assetLocation = get_field('video_location');
-              } else if (get_field('audio_video_file') != '') {
-                $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".get_the_ID()."/".$audioTitleCleanURL;
-              } else if (get_field('external_link') != '') {
-                $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".get_the_ID()."/".$audioTitleCleanURL;
-              } else {
-                $assetLocation = get_the_permalink();
-              }
+              if (get_field('original-content', get_the_ID()) == 'yes' || get_field('original-content', get_the_ID()) == '') {
+                if (get_field('video_location') != '') {
+                  $assetLocation = get_field('video_location');
+                } else if (get_field('audio_video_file') != '') {
+                  $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".get_the_ID()."/".$audioTitleCleanURL;
+                } else if (get_field('external_link') != '') {
+                  $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".get_the_ID()."/".$audioTitleCleanURL;
+                } else {
+                  $assetLocation = get_the_permalink();
+                }
         ?>
               <div class="grid-x grid-margin-x story-results-stack">
                 <div class="large-8 medium-8 small-8 cell">
@@ -211,9 +220,15 @@
                   <hr />
                 </div>
               </div>
-        <?
+        <?php
+              }
             }
         ?>
+          </div>
+          <div class="large-4 medium-12 small-12 cell sidebar">
+            <?php if ($staffChecker != 1) { ?>
+              <?php dynamic_sidebar('Sidebar Author - 2020'); ?>
+            <? } ?>
           </div>
         <?
           } else {
@@ -222,25 +237,17 @@
               <div id="latest-stories" class="large-8 medium-12 small-12 cell story-content">
                 <div class="grid-x grid-padding-x">
                   <div class="large-12 medium-12 small-12 cell">
-                    <h6>Latest from <?php echo $normal_staff_name; ?></h6>
+
                   </div>
                 </div>
-                <div class="grid-x grid-padding-x">
-                  <div class="large-12 medium-12 small-12 cell">
-                    <p>No stories found for this reporter.</p>
-                  </div>
-                </div>
+              </div>
+              <div class="large-4 medium-12 small-12 cell sidebar">
+
               </div>
         <?php
             }
           }
           wp_reset_query();
         ?>
-
-        <div class="large-4 medium-12 small-12 cell sidebar">
-          <?php if ($staffChecker != 1) { ?>
-            <?php dynamic_sidebar('Sidebar Author - 2020'); ?>
-          <? } ?>
-        </div>
       </div>
     </div>

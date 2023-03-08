@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<panorama appversion="6.1.13" id="node1" apprev="18080">
+  <input levelbias="0.400" overlap="1" leveltileurl="tiles/node1/cf_%c/l_%l/c_%x/tile_%y.jpg" levelingpitch="0" width="672" levelingroll="0" leveltilesize="510" height="672" levelbiashidpi="1.000">
+    <level predecode="0" width="672" height="672" preload="0"/>
+    <level predecode="1" width="336" height="336" preload="1"/>
+    <preview color="0x808080" strip="1"/>
+  </input>
+  <view pannorth="0" fovmode="0">
+    <start projection="4" pan="0" fov="70" tilt="0"/>
+    <flyin projection="9" pan="0" fov="170" tilt="-90"/>
+    <min pan="0" fovpixel="2" tilt="-90"/>
+    <max fovfisheye="360" pan="360" fovstereographic="270" scaletofit="1" fov="120" tilt="90"/>
+  </view>
+  <userdata info="" nodeid="node1" source="" description="" tags="Documents" customnodeid="" datetime="4/14/22 2:05 PM" comment="" heading="0" longitude="" latitude="" copyright="" title="" author=""/>
+  <hotspots wordwrap="1" width="180" height="20">
+    <label background="1" backgroundcolor="0xffffff" textcolor="0x000000" backgroundalpha="1" wordwrap="1" width="180" borderalpha="1" border="1" bordercolor="0x000000" enabled="1" height="20" textalpha="1" borderradius="1"/>
+    <polystyle backgroundcolor="0x0000ff" mode="0" backgroundalpha="0.25098" borderalpha="1" handcursor="1" bordercolor="0x0000ff"/>
+    <hotspot description="This tower is shorter than it will be in the Amazon, as Biosphere 2’s ceiling prevents it from reaching above the tree canopy. Joost van Haren, a co-principal investigator for the study, said the tower will measure temperature, humidity, methane concentration and more at the project's study site in Brazil. " customimage="media/noun-info-3016385-FFFFFF.png" customimageheight="100" pan="-182.19" use3D="1" id="Point01" url="" target="" distance3D="571.503" skinid="ht_info" title="Eddy covariance and sampling profile tubing tower" customimagewidth="100" fov="10" tilt="26.73"/>
+    <hotspot description="This mechanism, built by five University of Arizona senior engineering students, will measure methane fluxes from a tree stem in the Amazon. This will allow researchers to compare methane emissions from the stem with atmospheric methane measurements on-site in Brazil, team leader Joost van Haren said." customimage="media/noun-info-3016385-FFFFFF.png" customimageheight="100" pan="-126.81" use3D="1" id="Point02" url="" target="" distance3D="571.503" skinid="ht_info" title="Tree stem flux assembly" customimagewidth="100" fov="10" tilt="-44.05"/>
+    <hotspot description="This cage, made of aluminum bars surrounded by PVC piping, will encase the tree stem flux mechanism and allow it to remain sealed to the tree during floods in the rainforest, Joost van Haren said.&#xa;&#xa;" customimage="media/noun-info-3016385-FFFFFF.png" customimageheight="100" pan="-238.98" use3D="1" id="Point03" url="" target="" distance3D="571.503" skinid="ht_info" title="Tree system flux guide" customimagewidth="100" fov="10" tilt="5.71"/>
+    <hotspot description="The mechanical engineering team drills at the base of a Burmese rosewood tree in the University of Arizona’s Biosphere 2. The students plan to install the tree stem flux mechanism they built to run tests before shipping the device to the Amazon. " customimage="media/noun-info-3016385-FFFFFF.png" customimageheight="100" pan="-201.87" use3D="1" id="Point04" url="" target="" distance3D="571.503" skinid="ht_info" title="Installation" customimagewidth="100" fov="10" tilt="-12.87"/>
+    <hotspot description="The University of Arizona’s indoor rainforest at Biosphere 2 will be used as a testing ground for the student-designed mechanisms before they’re installed in the Amazon rainforest, researcher Joost van Haren said. Scroll left or right to discover some of the pieces of this project.  " customimage="media/noun-info-3016385-FFFFFF.png" customimageheight="100" pan="-3.88" use3D="1" id="Point05" url="" target="" distance3D="571.503" skinid="ht_info" title="Wall of the Biosphere 2&#xa;" customimagewidth="100" fov="10" tilt="11.82"/>
+  </hotspots>
+  <media/>
+  <transition blendcolor="0x000000" zoomoutpause="1" zoomafterinfov="90" zoomafteroutfov="20" softedge="0" zoomout="0" blendtime="1" zoomin="0" enabled="1" type="crossdissolve" zoomspeed="2" zoomfov="20"/>
+  <animation animsequence="Animation01" useinautorotation="0" syncanimationwithvideo="0"/>
+  <control simulatemass="1" contextvr="1" dblclickfullscreen="0" lockedkeyboardzoom="0" invertwheel="0" sensitivity="8" lockedkeyboard="0" lockedmouse="0" lockedwheel="0" contextprojections="0" rubberband="0" speedwheel="1" contextfullscreen="1" invertcontrol="1"/>
+</panorama>

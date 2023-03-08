@@ -1,3 +1,14 @@
+<!-- header -->
+<div class="page-header">
+  <div class="grid-container main-stories">
+    <div class="grid-x grid-padding-x single-story-block">
+      <div class="large-12 medium-12 small-12 cell">
+        <h1><?php echo get_the_title();  ?></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- main body container -->
 <div id="main_container" class="grid-container about-us">
 
@@ -6,7 +17,6 @@
 
     <div class="large-12 medium-12 small-12 cell about-details">
 
-      <h1 class="single-story-hdr"><?php the_title(); ?></h1>
       <?php if (have_posts()) { ?>
           <?php while (have_posts()) { the_post(); ?>
               <?php the_content(); ?>
@@ -17,14 +27,14 @@
     <div class="large-12 medium-12 small-12 cell faculty-staff">
 
       <!-- Cronkite News location -->
-      <h2 class="cn_sub_head-2">Locations</h2>
+      <h4>Locations</h4>
       <?php if( have_rows('cn_locations') ) { ?>
           <ul class="cn-locations">
           <?php
             while ( have_rows('cn_locations') ) {
               the_row();
               echo '<li><img src="'.get_sub_field('cn_location_photo').'" alt="'.get_sub_field('cn_location_name').'" />';
-              echo '<h4 class="staff-title">'.get_sub_field('cn_location_name').'</h4>';
+              echo '<h5 class="staff-title">'.get_sub_field('cn_location_name').'</h5>';
               echo '<span class="team-title">'.get_sub_field('cn_location_address').'</span>';
               echo '<span class="team-title">'.get_sub_field('cn_location_phone').'</span>';
               echo '<span class="team-title"><a href="mailto:'.get_sub_field('cn_location_email').'" target="_blank">'.get_sub_field('cn_location_email').'</a></span>';
@@ -40,7 +50,7 @@
     <div class="large-12 medium-12 small-12 cell faculty-staff">
 
       <!-- Cronkite News Faculty and Staff -->
-      <h2 class="cn_sub_head-2">Newsroom Leaders</h2>
+      <h4>Newsroom Leaders</h4>
       <?php
         $args = array(
                       'post_type'   => 'cn_staff',
@@ -77,14 +87,11 @@
 
 
                     if (get_the_title() != '') {
-                      echo '<h4 class="staff-title">'.get_the_title().'</h4>';
+                      echo '<h5 class="staff-title">'.get_the_title().'</h5>';
                     }
                     if (get_field('cn_staff_title') != '') {
                       echo '<span class="team-title">'.get_field('cn_staff_title').'</span>';
                     }
-                    /*social_media_outlets
-                      -social_media_type
-                      -social_media_handle*/
                   ?>
                     <div class="staff-social-links">
                   <?php
@@ -118,7 +125,7 @@
     </div>
 
     <div class="large-12 medium-12 small-12 cell faculty-staff">
-      <h2 class="cn_sub_head">Staff</h2>
+      <h4>Staff</h4>
 
       <?php
         $currentSemester = get_field('current_semester', 'option');
@@ -153,7 +160,7 @@
             ?>
                 <li>
                   <?php
-                    $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))));
+                    $staffNameURLSafe = str_replace('’', '', str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val))))));
                     $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
                     if (get_field('student_photo') != '') {
                       echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/"><img src="'.get_field('student_photo').'" class="cn-staff-circular" /></a>';
@@ -161,7 +168,7 @@
                       echo '<span class="cn-staff-circular empty"> </span>';
                     }
                     if (get_the_title() != '') {
-                      echo '<h4 class="staff-title"><a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/">'.get_the_title().'</a></h4>';
+                      echo '<h5 class="staff-title"><a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/">'.get_the_title().'</a></h5>';
                     }
                     if (get_field('student_title') != '') {
                       echo '<span class="team-title">'.ucwords(str_replace('-', ' ', get_field('student_title'))).'</span>';
@@ -211,7 +218,7 @@
     </div>
 
     <div class="large-12 medium-12 small-12 cell faculty-staff">
-      <h2 class="cn_sub_head-2">Our partners</h2>
+      <h4>Our partners</h4>
       <?php if( have_rows('our_partners') ) { ?>
           <ul class="our_partners">
           <?php

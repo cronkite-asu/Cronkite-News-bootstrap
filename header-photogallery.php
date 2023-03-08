@@ -16,15 +16,8 @@
     <link type="image/png" href="<?php the_field('favicon','options'); ?>" rel="shortcut icon">
     <link type="image/png" href="<?php the_field('favicon','options'); ?>"  rel="apple-touch-icon">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3145657-18"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			<?php //echo $output ?>
-			gtag('config', 'UA-3145657-18');
-		</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>
 
     <!-- Google Optimize -->
     <script src="https://www.googleoptimize.com/optimize.js?id=OPT-KJHZKHH"></script>
@@ -34,7 +27,7 @@
     <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
 
     <!-- Font Awesome -->
-    <script src="https://use.fontawesome.com/9e4502c156.js"></script>
+    <script src="https://kit.fontawesome.com/0f0514404d.js" crossorigin="anonymous"></script>
     <!-- AMP Analytics -->
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 

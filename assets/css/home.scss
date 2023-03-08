@@ -4,6 +4,7 @@ $georgiaFontFamily: Georgia, Times, "Times New Roman", serif;
 $color: rgba(0,0,0,.08);
 $color2: rgba(0,0,0,.02);
 $cnBlue: #003594;
+$cnRed: #c31212;
 $white: #ffffff;
 $black: #0a0a0a;
 $grey: #D8D8D8;
@@ -88,6 +89,11 @@ body {
     font-family: $robotoFontFamily;
     font-size: 1.55rem;
     letter-spacing: 0;
+    @media only screen
+      and (max-width: 800px) {
+        font-size: 1.15rem;
+        font-weight: bold;
+    }
   }
   h3 {
     font-family: $robotoFontFamily;
@@ -100,9 +106,8 @@ body {
 }
 
 .grid-container {
-  &.main-stories, &.featured-stories, &.vertical-stories, &.latest-stories, &.vertical-stories {
+  &.main-stories, &.featured-stories, &.vertical-stories, &.latest-stories, &.vertical-stories, &.photo-gallery-block {
     max-width: 78rem;
-    /*padding: 40px 0;*/
     border-top:1px solid $grey;
   }
 }
@@ -159,6 +164,9 @@ body {
         margin-bottom: 0;
       }
     }
+    .main-story-summary-mobile {
+      margin-top: 10px;
+    }
   }
   .slide-aside {
     a {
@@ -195,7 +203,7 @@ body {
 
         @media only screen
           and (max-width: 660px) {
-            font-size: 1.15rem !important;
+            font-size: 1.1rem !important;
         }
       }
       &:hover {
@@ -230,7 +238,7 @@ body {
     }
     @media only screen
       and (max-width: 660px) {
-        font-size: 1.15rem !important;
+        font-size: 1rem !important;
     }
   }
 
@@ -276,17 +284,18 @@ body {
 
 /* featured stories */
 .featured-stories-block {
-  /*background-image: linear-gradient( 135deg, #3C8CE7 10%, #00EAFF 100%);*/
-  /*background-image: linear-gradient(to bottom, transparent, $cnBlue);*/
-  /*background-color: rgba(0, 40, 112, 0.40);*/
+  background-image: linear-gradient( 135deg, #3C8CE7 10%, #00EAFF 100%);
+  background-image: linear-gradient(to bottom, transparent, $cnBlue);
+  background-color: rgba(0, 40, 112, 0.40);
   background: radial-gradient(#437cbb, #002870);
   box-shadow: 0px 5px 16px -5px rgba(0,0,0,0.3);
   -webkit-box-shadow: 0px 5px 16px -5px rgba(0,0,0,0.3);
   -moz-box-shadow: 0px 5px 16px -5px rgba(0,0,0,0.3);
+
   padding:50px 0;
   @media only screen
     and (max-width: 1224px) {
-      padding-bottom: 0;
+      padding-bottom: 40px;
   }
 }
 
@@ -317,12 +326,20 @@ body {
   h4:before,
   h4:after {
       content: '';
-      border-top: 1px solid #4f7ec5;
+      border-image-source: linear-gradient(to right, #fff 50%, #fff 50%);
+      border-top: 1px solid;
+      border-image-slice: 1;
       margin: 0 20px 0 0;
       flex: 1 0 20px;
   }
   h4:after {
-      margin: 0 0 0 20px;
+    content: '';
+    border-image-slice: 1;
+    border-top: 1px solid;
+    border-image-source: linear-gradient(to right, #fff 50%, #fff 50%);
+    margin: 0 0 0 20px;
+    flex: 1 0 20px;
+    width: 100%;
   }
   h5 {
     font-family: $montserratFontFamily;
@@ -381,11 +398,8 @@ body {
     padding: 30px 20px;
     margin: 0 auto !important;
     margin-top: 15px !important;
-    background-color: #444444;
-    background: url("https://cronkitenews.azpbs.org/wp-content/uploads/2021/02/SARS-CoV-2_without_transparent.png") rgba(28, 28, 28, 0.45);
+    background: rgba(28, 28, 28, 0.45);
     background-repeat: no-repeat;
-    background-position: 1020px -210px;
-    background-size: 400px 400px;
 
     @media only screen
       and (max-width: 1024px) {
@@ -397,7 +411,7 @@ body {
     }
     @media only screen
       and (max-width: 1024px) {
-        background-position: 125% 180px;
+        background-position: 98% 150px;
     }
     @media only screen
       and (max-width: 660px) {
@@ -408,6 +422,25 @@ body {
       @media only screen
         and (max-width: 1024px) {
           max-width: 800px;
+      }
+      .read-more {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding:10px 15px;
+        color: $white !important;
+        font-weight: bold;
+        max-width: 140px;
+        background-color: rgba(169,28,19,1);
+        cursor: pointer;
+        &:hover {
+          text-decoration: none;
+          background-color: rgba(169,28,19,0.8);
+        }
+        i {
+          padding-left: 10px;
+        }
       }
     }
     .series-stories {
@@ -487,8 +520,9 @@ body {
     margin-top: 16px;
     @media only screen
       and (max-width: 660px) {
+        margin-top: 0px;
         font-weight: 400 !important;
-        font-size: 1.15rem !important;
+        font-size: 1rem !important;
     }
     a {
       color: $cnBlue !important;
@@ -499,8 +533,120 @@ body {
   }
   .grid-padding-x > .cell {
     margin-bottom: 40px;
+    @media only screen
+      and (max-width: 660px) {
+        margin-bottom: 15px;
+        padding-left: 0.875rem !important;
+        padding-right: 0.875rem !important;
+    }
   }
   .grid-padding-x > .cell:first-child {
     margin-bottom: 35px;
+  }
+  .grid-padding-x.kill-bottom-space > .cell:first-child {
+    margin-bottom: 5px !important;
+  }
+  .small-stories {
+    margin-bottom: 22px !important;
+    h3 {
+      margin:0px;
+    }
+    p {
+      margin-bottom: 0px;
+      padding: 0px;
+    }
+  }
+}
+
+.photo-gallery-block {
+  border-top:none !important;
+  h4 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: $montserratFontFamily;
+    font-weight: 700;
+    color: $cnBlue;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    a {
+      color:$cnBlue !important;
+      &:hover {
+        color:$cnBlue !important;
+      }
+    }
+  }
+  h4:after {
+      content: '';
+      border-top: 1px solid $cnBlue;
+      margin: 0 0 0 20px;
+      flex: 1 0 20px;
+      width: 100%;
+  }
+  .grid-margin-x > .cell {
+    /*margin-bottom: 40px;*/
+  }
+  .grid-margin-x > .cell:first-child {
+    margin-bottom: 35px;
+  }
+
+  img {
+    width: 100%;
+  }
+  .slick-prev, .slick-next {
+    right: 20px;
+    color: $white;
+    z-index: 99999;
+  }
+  .slick-prev:before, .slick-next:before {
+    color: $white;
+  }
+  .slick-slider {
+    margin-bottom: 0px;
+  }
+  .asset-caption {
+    p {
+      @include caption-text;
+      a {
+        color: $cnBlue !important;
+        &:hover {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.top-slide-list {
+  margin:0 0 0 10px;
+  @media only screen
+    and (max-width: 800px) {
+      margin:0;
+  }
+  li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+    a:last-child {
+      img {
+        max-width: 110px;
+      }
+    }
+    a:first-child {
+      color: $cnBlue !important;
+      padding-left: 15px;
+      &:hover {
+        color: $black;
+      }
+    }
+    &:hover {
+      background-color: $borderGrey;
+    }
   }
 }

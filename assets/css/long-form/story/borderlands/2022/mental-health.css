@@ -1,0 +1,28 @@
+@keyframes fade-in-up {
+  0% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+.pullquote {
+  margin-top: 25px;
+  margin-bottom: 25px; }
+  .pullquote .quote {
+    border-top: 4px solid #003594; }
+    .pullquote .quote p {
+      font-family: "Alata", sans-serif;
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 2.75rem;
+      padding-top: 15px;
+      color: #003594; }
+  .pullquote .credentials p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-size: 1rem;
+    color: #000;
+    text-align: right;
+    padding-bottom: 15px;
+    border-bottom: 4px solid #003594; }
+
+/*# sourceMappingURL=mental-health.css.map */

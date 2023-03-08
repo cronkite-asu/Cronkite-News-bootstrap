@@ -195,36 +195,6 @@
                      }
                    }
                  }
-                 //wp_reset_query();
-
-                 /*if (count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
-                   $extStaffCount = count($externalAuthorRepeater);
-                   if ($groupFields['cn_staff'] != '') {
-                     echo ' and ';
-                   }
-                   $sepCounter = 0;
-                   foreach ($externalAuthorRepeater as $key => $val ) {
-                     $sepCounter++;
-                     echo $val['external_authors'];
-                     if ($val['author_title_site'] != '' || $val['author_title_site'] != 'other') {
-                       if (array_key_exists($val['author_title_site'], $externalSites) == true) {
-                         echo '/<a href="'.$externalSites[$val['author_title_site']].'" target="_blank">'.ucwords(str_replace('-', ' ', $val['author_title_site'])).'</a>';
-                       } else {
-                         echo '/'.str_replace('Pbs', 'PBS', str_replace('For', 'for', ucwords(str_replace('-', ' ', $val['author_title_site']))));
-                       }
-                     }
-                     if ($sepCounter != $extStaffCount) {
-                       if ($sepCounter == ($extStaffCount - 1)) {
-                         echo $andSeparator.' ';
-                       } else {
-                         echo $commaSeparator.' ';
-                       }
-                     }
-                   }
-                   echo '</span>';
-                   $newCheck++;
-                 }*/
-
                }
 
                if ($newCheck == 0 && get_field('post_author') != '') {
@@ -248,7 +218,7 @@
 
            <div class="date-social">
              <div class="pub_date">
-               <time datetime="<?php echo ap_date(); ?>"><?php echo ap_date(); ?></time>
+               <time datetime="<?php echo ap_audio_video_date($audio_id); ?>"><?php echo ap_audio_video_date($audio_id); ?></time>
                <?php if (get_field('updated_date_and_time') != '') { ?>
                   | <span class="article_updated">Updated:</span> <time datetime="<?php echo get_field('updated_date_and_time'); ?>"><?php echo get_field('updated_date_and_time'); ?></time>
                <?php } ?>
@@ -294,7 +264,7 @@
              <?php
               } else if (get_field('external_link', $audio_id) != '') {
              ?>
-                <iframe width="98%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="<?php echo get_field('external_link', $audio_id); ?>&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">                
+                <iframe width="98%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="<?php echo get_field('external_link', $audio_id); ?>&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
              <?php
               }
              ?>

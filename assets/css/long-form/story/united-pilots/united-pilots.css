@@ -1,0 +1,64 @@
+.merriweather {
+  font-family: "Merriweather", serif; }
+
+.montserrat {
+  font-family: "Montserrat", sans-serif; }
+
+.roboto {
+  font-family: "Roboto", sans-serif; }
+
+.taviraj {
+  font-family: "Taviraj", serif; }
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+#fullscreen-video .intro-text {
+  justify-content: flex-start; }
+  #fullscreen-video .intro-text h1 {
+    font-family: "Oswald", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 5rem;
+    padding-top: 5%; }
+    @media only screen and (max-width: 660px) {
+      #fullscreen-video .intro-text h1 {
+        font-size: 2rem;
+        line-height: 2.5rem; } }
+
+#intro-photo-gallery-overlay .intro-text {
+  background: none !important; }
+  #intro-photo-gallery-overlay .intro-text h1 {
+    font-family: "League Gothic", sans-serif;
+    letter-spacing: 1px;
+    line-height: 3rem;
+    font-size: 2.25rem;
+    margin: 0; }
+#intro-photo-gallery-overlay .main-photo {
+  text-align: center;
+  display: flex;
+  justify-content: center; }
+  #intro-photo-gallery-overlay .main-photo .intro-text {
+    justify-content: flex-start;
+    background: none !important;
+    opacity: 1;
+    max-width: 800px; }
+    #intro-photo-gallery-overlay .main-photo .intro-text.absolute {
+      left: auto;
+      margin-top: 40px !important; }
+    #intro-photo-gallery-overlay .main-photo .intro-text h1.absolute-text {
+      font-family: "League Gothic", sans-serif;
+      letter-spacing: 0.75px;
+      line-height: 4rem;
+      font-size: 3rem; }
+    #intro-photo-gallery-overlay .main-photo .intro-text p {
+      font-family: "Lora", serif;
+      max-width: 880px;
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 1.15rem; }
+
+/*# sourceMappingURL=united-pilots.css.map */

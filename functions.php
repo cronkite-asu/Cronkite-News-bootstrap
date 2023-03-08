@@ -21,7 +21,7 @@ add_editor_style();
 add_theme_support( 'post-thumbnails' );
 
 // Support for Post Formats
-add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
+//add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
 
 // Custom Background
 add_theme_support( 'custom-background', array('default-color' => 'fff'));
@@ -323,7 +323,7 @@ add_action('wp_footer', 'hook_parselyTrack');
     }
     add_filter( 'wp_page_menu', 'add_menuclass' );
 
-// Create pagination
+    // Create pagination
     function bootstrap_pagination() {
         global $wp_query;
         $big = 999999999;
@@ -344,84 +344,92 @@ add_action('wp_footer', 'hook_parselyTrack');
         echo $pagination;
     }
 
-// Register Sidebars
-
+    // Register Sidebars
     /* Sidebar Right */
-        register_sidebar( array(
-            'id' => 'sidebar_right',
-            'name' => __( 'Sidebar Right' ),
-            'description' => __( 'This sidebar is located on the right-hand side of each page.'),
-            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-            'after_widget' => '</aside>',
-            'before_title' => '<h5>',
-            'after_title' => '</h5>',
-        ));
+    register_sidebar( array(
+        'id' => 'sidebar_right',
+        'name' => __( 'Sidebar Right' ),
+        'description' => __( 'This sidebar is located on the right-hand side of each page.'),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>',
+    ));
 
-        /* Sidebar Archive */
-        register_sidebar( array(
-            'id' => 'sidebar_archive',
-            'name' => __( 'Sidebar Archive' ),
-            'description' => __( 'This sidebar is located on the right-hand side of each page.'),
-            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-            'after_widget' => '</aside>',
-            'before_title' => '<h5>',
-            'after_title' => '</h5>',
-        ));
+    /* Sidebar Archive */
+    register_sidebar( array(
+        'id' => 'sidebar_archive',
+        'name' => __( 'Sidebar Archive' ),
+        'description' => __( 'This sidebar is located on the right-hand side of each page.'),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>',
+    ));
 
-        /* Sidebar Category */
-        register_sidebar( array(
-            'id' => 'sidebar_category',
-            'name' => __( 'Sidebar Category' ),
-            'description' => __( 'This sidebar is located on the right-hand side of each page.'),
-            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-            'after_widget' => '</aside>',
-            'before_title' => '<h5>',
-            'after_title' => '</h5>',
-        ));
+    /* Sidebar Category */
+    register_sidebar( array(
+        'id' => 'sidebar_category',
+        'name' => __( 'Sidebar Category' ),
+        'description' => __( 'This sidebar is located on the right-hand side of each page.'),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>',
+    ));
 
-		   register_sidebar( array(
-            'id' => 'sidebar_newscast',
-            'name' => __( 'Sidebar Archive Newscast' ),
-            'description' => __( ''),
-            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-            'after_widget' => '</aside>',
-            'before_title' => '<h5>',
-            'after_title' => '</h5>',
-        ));
+   register_sidebar( array(
+        'id' => 'sidebar_newscast',
+        'name' => __( 'Sidebar Archive Newscast' ),
+        'description' => __( ''),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h5>',
+        'after_title' => '</h5>',
+    ));
 
-        register_sidebar( array(
-           'id' => 'sidebar_new_story',
-           'name' => __( 'Sidebar New Story Template - 2020' ),
-           'description' => __( ''),
-           'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-           'after_widget' => '</aside>',
-           'before_title' => '<h5>',
-           'after_title' => '</h5>',
-        ));
+    register_sidebar( array(
+       'id' => 'sidebar_new_story',
+       'name' => __( 'Sidebar New Story Template - 2020' ),
+       'description' => __( ''),
+       'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+       'after_widget' => '</aside>',
+       'before_title' => '<h5>',
+       'after_title' => '</h5>',
+    ));
 
-        register_sidebar( array(
-           'id' => 'sidebar_author',
-           'name' => __( 'Sidebar Author - 2020' ),
-           'description' => __( ''),
-           'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-           'after_widget' => '</aside>',
-           'before_title' => '<h5>',
-           'after_title' => '</h5>',
-        ));
+    register_sidebar( array(
+       'id' => 'sidebar_author',
+       'name' => __( 'Sidebar Author - 2020' ),
+       'description' => __( ''),
+       'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+       'after_widget' => '</aside>',
+       'before_title' => '<h5>',
+       'after_title' => '</h5>',
+    ));
 
-        register_sidebar( array(
-           'id' => 'sidebar_health_insider',
-           'name' => __( 'Health Insider' ),
-           'description' => __( ''),
-           'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-           'after_widget' => '</aside>',
-           'before_title' => '<h5>',
-           'after_title' => '</h5>',
-        ));
+    register_sidebar( array(
+       'id' => 'sidebar_health_insider',
+       'name' => __( 'Health Insider' ),
+       'description' => __( ''),
+       'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+       'after_widget' => '</aside>',
+       'before_title' => '<h5>',
+       'after_title' => '</h5>',
+    ));
+
+    register_sidebar( array(
+       'id' => 'sidebar_noticias',
+       'name' => __( 'Sidebar Noticias' ),
+       'description' => __( ''),
+       'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+       'after_widget' => '</aside>',
+       'before_title' => '<h5>',
+       'after_title' => '</h5>',
+    ));
 
 
-
-// Remove #more anchor from posts
+    // Remove #more anchor from posts
     function remove_more_jump_link($link) {
         $offset = strpos($link, '#more-');
         if ($offset) { $end = strpos($link, '"',$offset); }
@@ -761,6 +769,64 @@ function ap_date() {
         $apmonth = 'Nov. ';
     elseif (get_the_time('m')=='12') :
         $apmonth = 'Dec. ';
+    else:
+        $apmonth = (get_the_time('F'));
+    endif;
+    //$thedate = get_the_time('l') . ', ' . $apmonth . ' ' . get_the_time('j') . ', ' . get_the_time('Y');
+    $thedate = $apmonth . ' ' . get_the_time('j') . ', ' . get_the_time('Y');
+    return $thedate;
+}
+
+// Make months AP style for audio/video
+function ap_audio_video_date($postID) {
+    if (get_the_time('m', $postID) =='01') :
+        $apmonth = 'Jan. ';
+    elseif (get_the_time('m', $postID) == '02') :
+        $apmonth = 'Feb. ';
+    elseif (get_the_time('m', $postID) == '08') :
+        $apmonth = 'Aug. ';
+    elseif (get_the_time('m', $postID) == '09') :
+        $apmonth = 'Sept. ';
+    elseif (get_the_time('m', $postID) == '10') :
+        $apmonth = 'Oct. ';
+    elseif (get_the_time('m', $postID) == '11') :
+        $apmonth = 'Nov. ';
+    elseif (get_the_time('m', $postID) == '12') :
+        $apmonth = 'Dec. ';
+    else:
+        $apmonth = (get_the_time('F', $postID));
+    endif;
+    //$thedate = get_the_time('l') . ', ' . $apmonth . ' ' . get_the_time('j') . ', ' . get_the_time('Y');
+    $thedate = $apmonth . ' ' . get_the_time('j', $postID) . ', ' . get_the_time('Y', $postID);
+    return $thedate;
+}
+
+// Make months AP noticias style
+function ap_noticias_date() {
+    if (get_the_time('m')=='01') :
+        $apmonth = 'Enero ';
+    elseif (get_the_time('m')=='02') :
+        $apmonth = 'Feb. ';
+    elseif (get_the_time('m')=='03') :
+        $apmonth = 'Marzo ';
+    elseif (get_the_time('m')=='04') :
+        $apmonth = 'Abr. ';
+    elseif (get_the_time('m')=='05') :
+        $apmonth = 'May ';
+    elseif (get_the_time('m')=='06') :
+        $apmonth = 'Jun. ';
+    elseif (get_the_time('m')=='07') :
+        $apmonth = 'Jul. ';
+    elseif (get_the_time('m')=='08') :
+        $apmonth = 'Agosto ';
+    elseif (get_the_time('m')=='09') :
+        $apmonth = 'Set. ';
+    elseif (get_the_time('m')=='10') :
+        $apmonth = 'Oct. ';
+    elseif (get_the_time('m')=='11') :
+        $apmonth = 'Nov. ';
+    elseif (get_the_time('m')=='12') :
+        $apmonth = 'Dic. ';
     else:
         $apmonth = (get_the_time('F'));
     endif;
@@ -1271,5 +1337,24 @@ function add_audio_story_var($vars){
     return $vars;
 }
 add_rewrite_rule('^audio/story/([^/]+)/([^/]+)/?$','index.php?page_id=175279&audio_id=$matches[1]&audio_title=$matches[2]','top');
+
+// change tags label to keywords
+function change_tax_object_label() {
+  global $wp_taxonomies;
+  $labels = &$wp_taxonomies['post_tag']->labels;
+  $labels->name = __('Keywords', 'framework');
+  $labels->singular_name = __('Keywords', 'framework');
+  $labels->search_items = __('Search Keywords', 'framework');
+  $labels->all_items = __('Keywords', 'framework');
+  $labels->separate_items_with_commas = __('Separate Keywords with commas', 'framework');
+  $labels->choose_from_most_used = __('Choose from the most used Keywords', 'framework');
+  $labels->popular_items = __('Popular Keywords', 'framework');
+  $labels->edit_item = __('Edit Keyword Name', 'framework');
+  $labels->view_item = __('View Keyword Name', 'framework');
+  $labels->update_item = __('Update Keyword Name', 'framework');
+  $labels->add_new_item = __('Add Your Keyword Name', 'framework');
+  $labels->new_item_name = __('Your New Keywords Name', 'framework');
+}
+add_action( 'init', 'change_tax_object_label' );
 
 ?>

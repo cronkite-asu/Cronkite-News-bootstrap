@@ -1,0 +1,93 @@
+@keyframes fade-in-up {
+  0% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+body {
+  background-color: #363636; }
+
+.intro h1 {
+  font-family: "Alata", sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 2rem;
+  color: #e09e1d;
+  margin: 40px 0 60px 0; }
+  @media only screen and (max-width: 800px) {
+    .intro h1 {
+      font-size: 3rem;
+      line-height: 4rem;
+      margin: 40px 0 30px 0; } }
+.intro p {
+  font-family: "Alata", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 100;
+  color: #ffffff !important; }
+
+.tapachula-story {
+  background-color: #525252;
+  box-shadow: 0px 5px 16px -5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 5px 16px -5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 5px 16px -5px rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  margin: 2rem auto;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  -webkit-transition: box-shadow 0.25s;
+  -moz-transition: box-shadow 0.25s;
+  -o-transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s; }
+  .tapachula-story:last-child {
+    margin-bottom: 40px; }
+  .tapachula-story .story-text {
+    min-height: 350px;
+    padding: 25px 25px;
+    order: 1; }
+    @media only screen and (max-width: 1260px) {
+      .tapachula-story .story-text {
+        order: 2; } }
+    .tapachula-story .story-text h3 {
+      font-family: "Alata", sans-serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 2rem;
+      color: #e09e1d;
+      margin-bottom: 25px; }
+      .tapachula-story .story-text h3 a {
+        color: #e09e1d; }
+    .tapachula-story .story-text p {
+      color: #ffffff !important; }
+    .tapachula-story .story-text .button {
+      font-family: "Alata", sans-serif;
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: #363636;
+      -webkit-transition: background-color 0.25s;
+      -moz-transition: background-color 0.25s;
+      -o-transition: background-color 0.25s;
+      transition: background-color 0.25s; }
+      .tapachula-story .story-text .button i {
+        color: #e09e1d;
+        -webkit-transition: color 0.25s;
+        -moz-transition: color 0.25s;
+        -o-transition: color 0.25s;
+        transition: color 0.25s; }
+      .tapachula-story .story-text .button:hover {
+        color: #363636;
+        background-color: #e09e1d; }
+        .tapachula-story .story-text .button:hover i {
+          color: #ffffff; }
+  .tapachula-story:hover {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none; }
+  .tapachula-story .story-photo {
+    order: 2; }
+    @media only screen and (max-width: 1260px) {
+      .tapachula-story .story-photo {
+        order: 1; } }
+
+/*# sourceMappingURL=tapachula.css.map */

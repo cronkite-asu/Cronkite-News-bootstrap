@@ -133,6 +133,14 @@ audio {
             padding-right: 0rem;
       }
     }
+    &.desktop {
+      max-width: 94rem !important;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  &.pullquote {
+    max-width: 46.875rem;
   }
 }
 
@@ -442,6 +450,145 @@ audio {
     }
   }
 }
+
+#intro-head-slider {
+  .intro-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*background:linear-gradient(to bottom, rgb(152, 57, 87), rgb(219, 39, 38));*/
+    padding-left: 5rem;
+    padding-right: 5rem;
+    @media only screen
+      and (max-width: 780px) {
+        padding-left: 1.45rem;
+        padding-right: 1.45rem;
+    }
+    @media only screen
+      and (max-width: 640px) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    a {
+      color: $white;
+      text-decoration: underline;
+      border-bottom: none;
+      padding-left: 4px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    h1 {
+      font-family: $merriweatherFontFamily;
+      max-width: 1000px;
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 4rem;
+      padding:0;
+      color: $black;
+      margin: 60px 0 25px 0;
+      @media only screen
+        and (max-width: 800px) {
+          font-size: 2.5rem;
+          line-height: 3.5rem;
+          margin: 40px 0 25px 0;
+      }
+      @media only screen
+        and (max-width: 600px) {
+          font-size: 1.65rem;
+          line-height: 2.75rem;
+          margin: 10px 0 10px 0;
+      }
+    }
+    p {
+      max-width: 800px;
+      font-family: $merriweatherSanFontFamily;
+      color: $caption;
+      font-size:1.25rem;
+      font-size: 300;
+      line-height: 2.25rem;
+      padding:0;
+      margin: 0;
+      margin-bottom:40px;
+      @media only screen
+        and (max-width: 780px) {
+          font-size: 1.15rem;
+          line-height: 2rem;
+      }
+      @media only screen
+        and (max-width: 600px) {
+          margin-bottom:0px;
+      }
+    }
+    hr {
+      width: 100%;
+      border-top:1px solid $white;
+    }
+    .summary {
+      font-family: $merriweatherSanFontFamily;
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 2.25rem;
+      color: $black;
+      margin-top:1.25rem;
+      margin-bottom: 1.25rem;
+      width: 100%;
+    }
+  }
+  .photo-credit-width-1200 {
+    max-width: 75rem;
+    text-align: left;
+    margin:0 auto;
+  }
+  .photo-credit-width-1800 {
+    max-width: 64rem;
+    margin:0 auto;
+  }
+  .grid-padding-x > .cell {
+    &.photo-style-e2e {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .photo-style-fpp {
+
+    }
+  }
+  img {
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    margin: 0 auto;
+  }
+
+  .slick-prev, .slick-next {
+    z-index: 999999;
+  }
+
+  .slick-prev {
+    left: 30px;
+  }
+
+  .slick-next {
+    right:30px;
+  }
+
+  .photo-credit, .asset-caption {
+    display: block;
+    padding:5px 10px;
+    margin:0 auto;
+    margin-top:6px;
+    @include caption-text();
+    text-align: left;
+    max-width: 100%;
+    a {
+      color: #6e6e6e;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
 
 #intro-head-photo-overlay {
   .intro-text {
@@ -1109,7 +1256,24 @@ audio {
   .wp-caption-text {
     margin-top:10px;
     @include caption-text();
+    padding-top: 0px;
+    &.audio {
+      margin-top:-20px;
+      margin-bottom:25px;
+    }
+    &.video {
+      margin-bottom:25px;
+    }
+    a {
+      color: #6e6e6e;
+      border-bottom: 1px solid #757575;
+      @include attr-transition1(border);
+      &:hover {
+        border:none;
+      }
+    }
   }
+
   .wp-caption {
     &.alignright {
       float:right;
@@ -1338,7 +1502,7 @@ audio {
     max-width:400px;
 
     margin-top:10px;
-    padding-left: 25px;
+    /*padding-left: 25px;*/
     padding-bottom:15px;
     @media only screen
       and (max-width: 660px) {
@@ -1378,6 +1542,77 @@ audio {
     }
     .wp-caption-text {
       max-width: 100%;
+      .soundcite {
+        padding:5px 6px;
+        max-width: 97%;
+      }
+    }
+    @media only screen
+      and (max-width: 1080px) {
+        margin-right: -10%;
+    }
+    @media only screen
+      and (max-width: 900px) {
+        margin-right: -8%;
+    }
+    @media only screen
+      and (max-width: 860px) {
+        float:none;
+        margin-right:0;
+        margin:40px auto;
+        padding: 0;
+    }
+  }
+
+  .alignleft {
+    float: left;
+    max-width:400px;
+    margin-top:10px;
+    /*padding-left: 25px;*/
+    margin-right: 25px;
+    padding-bottom:15px;
+    @media only screen
+      and (max-width: 660px) {
+        max-width: 100%;
+        margin-top:0;
+    }
+    img {
+      box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+      max-width: 400px;
+      @media only screen
+        and (max-width: 660px) {
+          float:none;
+          max-width: 100%;
+      }
+    }
+    a {
+      color: #757575;
+      border-bottom: 1px solid #757575;
+      @include attr-transition1(border);
+      &:hover {
+        border:none;
+      }
+    }
+    &.rect {
+      iframe {
+        width:400px;
+        height: 225px;
+        box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+      }
+    }
+    &.square {
+      iframe {
+        width:400px;
+        height: 400px;
+        box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+      }
+    }
+    .wp-caption-text {
+      max-width: 100%;
+      .soundcite {
+        padding:5px 6px;
+        max-width: 97%;
+      }
     }
     @media only screen
       and (max-width: 1080px) {
@@ -1521,6 +1756,9 @@ audio {
         padding-left: 0rem;
         padding-right: 0rem;
     }
+  }
+  .large-6, .medium-6 {
+    text-align: center;
   }
   .small-12 {
     @media only screen
@@ -1979,7 +2217,7 @@ audio {
     i {
       font-family: $merriweatherSanFontFamily;
       font-size: 0.85rem;
-      font-style: normal;
+      font-style: italic;
     }
   }
   @media only screen
@@ -1987,6 +2225,35 @@ audio {
     &.su-pullquote-align-left {
       border-right: none;
       border-left: 5px solid #eee;
+    }
+  }
+}
+
+.charts-doc {
+
+  .wp-caption-text {
+    max-width: 45rem;
+    margin:0 auto;
+    margin-top:0px;
+    margin-bottom: 0px;
+    p {
+      @include caption-text();
+      max-width: 90rem;
+      padding:0;
+      margin-bottom: 0px;
+    }
+    @media only screen
+      and (max-width: 780px) {
+        padding-left: 1.45rem;
+        padding-right: 1.45rem;
+    }
+    a {
+      color: #6e6e6e;
+      border-bottom: 1px solid #757575;
+      @include attr-transition1(border);
+      &:hover {
+        border:none;
+      }
     }
   }
 }

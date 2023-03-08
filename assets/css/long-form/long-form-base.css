@@ -54,6 +54,12 @@ audio {
     .grid-container.charts-doc.full .grid-padding-x > .cell {
       padding-left: 0rem;
       padding-right: 0rem; }
+  .grid-container.charts-doc.desktop {
+    max-width: 94rem !important;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; }
+.grid-container.pullquote {
+  max-width: 46.875rem; }
 
 .grid-padding-x > .cell.remove-padding {
   padding: 0; }
@@ -306,6 +312,117 @@ audio {
     color: #6e6e6e;
     text-decoration: underline; }
     #intro-head-photo .photo-credit a:hover {
+      text-decoration: none; }
+
+#intro-head-slider .intro-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /*background:linear-gradient(to bottom, rgb(152, 57, 87), rgb(219, 39, 38));*/
+  padding-left: 5rem;
+  padding-right: 5rem; }
+  @media only screen and (max-width: 780px) {
+    #intro-head-slider .intro-text {
+      padding-left: 1.45rem;
+      padding-right: 1.45rem; } }
+  @media only screen and (max-width: 640px) {
+    #intro-head-slider .intro-text {
+      padding-top: 2rem;
+      padding-bottom: 2rem; } }
+  #intro-head-slider .intro-text a {
+    color: #ffffff;
+    text-decoration: underline;
+    border-bottom: none;
+    padding-left: 4px; }
+    #intro-head-slider .intro-text a:hover {
+      text-decoration: none; }
+  #intro-head-slider .intro-text h1 {
+    font-family: "Merriweather", serif;
+    max-width: 1000px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 4rem;
+    padding: 0;
+    color: #000;
+    margin: 60px 0 25px 0; }
+    @media only screen and (max-width: 800px) {
+      #intro-head-slider .intro-text h1 {
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+        margin: 40px 0 25px 0; } }
+    @media only screen and (max-width: 600px) {
+      #intro-head-slider .intro-text h1 {
+        font-size: 1.65rem;
+        line-height: 2.75rem;
+        margin: 10px 0 10px 0; } }
+  #intro-head-slider .intro-text p {
+    max-width: 800px;
+    font-family: "Merriweather Sans", sans-serif;
+    color: #6e6e6e;
+    font-size: 1.25rem;
+    font-size: 300;
+    line-height: 2.25rem;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 40px; }
+    @media only screen and (max-width: 780px) {
+      #intro-head-slider .intro-text p {
+        font-size: 1.15rem;
+        line-height: 2rem; } }
+    @media only screen and (max-width: 600px) {
+      #intro-head-slider .intro-text p {
+        margin-bottom: 0px; } }
+  #intro-head-slider .intro-text hr {
+    width: 100%;
+    border-top: 1px solid #ffffff; }
+  #intro-head-slider .intro-text .summary {
+    font-family: "Merriweather Sans", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 2.25rem;
+    color: #000;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    width: 100%; }
+#intro-head-slider .photo-credit-width-1200 {
+  max-width: 75rem;
+  text-align: left;
+  margin: 0 auto; }
+#intro-head-slider .photo-credit-width-1800 {
+  max-width: 64rem;
+  margin: 0 auto; }
+#intro-head-slider .grid-padding-x > .cell.photo-style-e2e {
+  padding-left: 0;
+  padding-right: 0; }
+#intro-head-slider img {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  margin: 0 auto; }
+#intro-head-slider .slick-prev, #intro-head-slider .slick-next {
+  z-index: 999999; }
+#intro-head-slider .slick-prev {
+  left: 30px; }
+#intro-head-slider .slick-next {
+  right: 30px; }
+#intro-head-slider .photo-credit, #intro-head-slider .asset-caption {
+  display: block;
+  padding: 5px 10px;
+  margin: 0 auto;
+  margin-top: 6px;
+  max-width: 800px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #6e6e6e;
+  padding-top: 10px;
+  letter-spacing: 0;
+  line-height: 1.2rem;
+  text-align: left;
+  max-width: 100%; }
+  #intro-head-slider .photo-credit a, #intro-head-slider .asset-caption a {
+    color: #6e6e6e;
+    text-decoration: underline; }
+    #intro-head-slider .photo-credit a:hover, #intro-head-slider .asset-caption a:hover {
       text-decoration: none; }
 
 #intro-head-photo-overlay .intro-text {
@@ -843,7 +960,22 @@ audio {
   color: #6e6e6e;
   padding-top: 10px;
   letter-spacing: 0;
-  line-height: 1.2rem; }
+  line-height: 1.2rem;
+  padding-top: 0px; }
+  .text-content .wp-caption-text.audio {
+    margin-top: -20px;
+    margin-bottom: 25px; }
+  .text-content .wp-caption-text.video {
+    margin-bottom: 25px; }
+  .text-content .wp-caption-text a {
+    color: #6e6e6e;
+    border-bottom: 1px solid #757575;
+    -webkit-transition: border 0.25s;
+    -moz-transition: border 0.25s;
+    -o-transition: border 0.25s;
+    transition: border 0.25s; }
+    .text-content .wp-caption-text a:hover {
+      border: none; }
 .text-content .wp-caption.alignright {
   float: right;
   margin-left: 40px;
@@ -1043,7 +1175,7 @@ audio {
   float: right;
   max-width: 400px;
   margin-top: 10px;
-  padding-left: 25px;
+  /*padding-left: 25px;*/
   padding-bottom: 15px; }
   @media only screen and (max-width: 660px) {
     .text-content .alignright {
@@ -1075,6 +1207,9 @@ audio {
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
   .text-content .alignright .wp-caption-text {
     max-width: 100%; }
+    .text-content .alignright .wp-caption-text .soundcite {
+      padding: 5px 6px;
+      max-width: 97%; }
   @media only screen and (max-width: 1080px) {
     .text-content .alignright {
       margin-right: -10%; } }
@@ -1083,6 +1218,58 @@ audio {
       margin-right: -8%; } }
   @media only screen and (max-width: 860px) {
     .text-content .alignright {
+      float: none;
+      margin-right: 0;
+      margin: 40px auto;
+      padding: 0; } }
+.text-content .alignleft {
+  float: left;
+  max-width: 400px;
+  margin-top: 10px;
+  /*padding-left: 25px;*/
+  margin-right: 25px;
+  padding-bottom: 15px; }
+  @media only screen and (max-width: 660px) {
+    .text-content .alignleft {
+      max-width: 100%;
+      margin-top: 0; } }
+  .text-content .alignleft img {
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px; }
+    @media only screen and (max-width: 660px) {
+      .text-content .alignleft img {
+        float: none;
+        max-width: 100%; } }
+  .text-content .alignleft a {
+    color: #757575;
+    border-bottom: 1px solid #757575;
+    -webkit-transition: border 0.25s;
+    -moz-transition: border 0.25s;
+    -o-transition: border 0.25s;
+    transition: border 0.25s; }
+    .text-content .alignleft a:hover {
+      border: none; }
+  .text-content .alignleft.rect iframe {
+    width: 400px;
+    height: 225px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
+  .text-content .alignleft.square iframe {
+    width: 400px;
+    height: 400px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
+  .text-content .alignleft .wp-caption-text {
+    max-width: 100%; }
+    .text-content .alignleft .wp-caption-text .soundcite {
+      padding: 5px 6px;
+      max-width: 97%; }
+  @media only screen and (max-width: 1080px) {
+    .text-content .alignleft {
+      margin-right: -10%; } }
+  @media only screen and (max-width: 900px) {
+    .text-content .alignleft {
+      margin-right: -8%; } }
+  @media only screen and (max-width: 860px) {
+    .text-content .alignleft {
       float: none;
       margin-right: 0;
       margin: 40px auto;
@@ -1182,6 +1369,8 @@ audio {
   .photo-content .grid-padding-x > .cell {
     padding-left: 0rem;
     padding-right: 0rem; } }
+.photo-content .large-6, .photo-content .medium-6 {
+  text-align: center; }
 @media only screen and (max-width: 660px) {
   .photo-content .small-12 {
     margin-bottom: 0px; } }
@@ -1591,10 +1780,41 @@ audio {
   .su-pullquote p i {
     font-family: "Merriweather Sans", sans-serif;
     font-size: 0.85rem;
-    font-style: normal; }
+    font-style: italic; }
 @media only screen and (max-width: 768px) {
   .su-pullquote.su-pullquote-align-left {
     border-right: none;
     border-left: 5px solid #eee; } }
+
+.charts-doc .wp-caption-text {
+  max-width: 45rem;
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-bottom: 0px; }
+  .charts-doc .wp-caption-text p {
+    max-width: 800px;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #6e6e6e;
+    padding-top: 10px;
+    letter-spacing: 0;
+    line-height: 1.2rem;
+    max-width: 90rem;
+    padding: 0;
+    margin-bottom: 0px; }
+  @media only screen and (max-width: 780px) {
+    .charts-doc .wp-caption-text {
+      padding-left: 1.45rem;
+      padding-right: 1.45rem; } }
+  .charts-doc .wp-caption-text a {
+    color: #6e6e6e;
+    border-bottom: 1px solid #757575;
+    -webkit-transition: border 0.25s;
+    -moz-transition: border 0.25s;
+    -o-transition: border 0.25s;
+    transition: border 0.25s; }
+    .charts-doc .wp-caption-text a:hover {
+      border: none; }
 
 /*# sourceMappingURL=long-form-base.css.map */

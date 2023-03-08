@@ -74,8 +74,26 @@ body {
   font-weight: 400;
   line-height: 1.85;
   color: #2d2d2d; }
-#main_container.page-not-found h2 {
-  font-family: "Oleo Script", cursive; }
+#main_container.page-not-found h1 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #003594;
+  text-transform: uppercase;
+  margin-bottom: 0; }
+  #main_container.page-not-found h1 a {
+    color: #003594 !important; }
+    #main_container.page-not-found h1 a:hover {
+      color: #003594 !important; }
+#main_container.page-not-found h1:after {
+  content: '';
+  border-top: 1px solid #003594;
+  margin: 0 0 0 20px;
+  flex: 1 0 20px;
+  width: 100%; }
 #main_container.page-not-found p {
   font-family: "Roboto", sans-serif; }
 

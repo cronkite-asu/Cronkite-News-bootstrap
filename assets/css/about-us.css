@@ -4,6 +4,26 @@
   100% {
     transform: translateY(0);
     opacity: 1; } }
+.page-header {
+  background: -webkit-linear-gradient(110deg, #003594 60%, #1852a4 60%);
+  background: -o-linear-gradient(110deg, #003594 60%, #1852a4 60%);
+  background: -moz-linear-gradient(110deg, #003594 60%, #1852a4 60%);
+  background: linear-gradient(110deg, #003594 60%, #1852a4 60%);
+  margin: 0px;
+  padding: 20px 0; }
+  .page-header .grid-container {
+    max-width: 80rem !important; }
+  .page-header h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 2.25rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 0; }
+  .page-header i {
+    color: #1852a4;
+    padding-left: 20px; }
+
 #main_container {
   /*.cn-locations img {
     filter: url('images/gray.svg#grayscale');
@@ -69,6 +89,29 @@
     @media only screen and (max-width: 660px) {
       #main_container h1.single-story-hdr {
         font-size: calc(16.4px + 2.5vw); } }
+  #main_container h4 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #003594;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    margin-top: 25px; }
+    #main_container h4.first {
+      margin-top: 0; }
+    #main_container h4 a {
+      color: #003594 !important; }
+      #main_container h4 a:hover {
+        color: #003594 !important; }
+  #main_container h4:after {
+    content: '';
+    border-top: 1px solid #003594;
+    margin: 0 0 0 20px;
+    flex: 1 0 20px;
+    width: 100%; }
   #main_container.about-us .about-details, #main_container.about-us .faculty-staff, #main_container.about-us .students {
     margin-bottom: 1.5rem; }
   #main_container.about-us ul {

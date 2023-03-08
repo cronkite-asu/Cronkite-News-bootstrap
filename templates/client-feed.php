@@ -56,6 +56,11 @@ while ( $loop->have_posts() ) { $loop->the_post();
     $apDateStory = ap_date();
     //$finalPubDateStory = mysql2date('D, d M Y H:i:s +0000', get_post_time('Y-m-d H:i:s', true), false);
     $finalPubDateStory = get_the_time('r');
+    if (in_category('noticias')) {
+      $categoryType = "noticias";
+    } else {
+      $categoryType = "news";
+    }
 ?>
   <item>
     <title><?php echo $clientTitle; ?></title>
@@ -141,12 +146,17 @@ while ( $loop->have_posts() ) { $loop->the_post();
     //echo get_field('post_author');
     echo $authorName;
     echo '</p>';
-	echo '<p>';
-	echo $apDateStory;
+  	echo '<p>';
+  	echo $apDateStory;
     echo '</p>';
     echo $content;
-    echo '<p>For more stories from Cronkite News, visit <a href="https://cronkitenews.azpbs.org/?utm_source=referral&utm_medium=referral&utm_campaign=client" target="_blank"> cronkitenews.azpbs.org. </a></p>';
-	echo ']]>';
+
+    if ($categoryType == 'noticias') {
+      echo '<p>Para más historias de Cronkite Noticias, visita <a href="https://cronkitenews.azpbs.org/noticias/?utm_source=referral&utm_medium=referral&utm_campaign=client" target="_blank">cronkitenews.azpbs.org/noticias</a>.</p>';
+    } else {
+      echo '<p>For more stories from Cronkite News, visit <a href="https://cronkitenews.azpbs.org/?utm_source=referral&utm_medium=referral&utm_campaign=client" target="_blank">cronkitenews.azpbs.org</a>.</p>';
+    }
+	  echo ']]>';
 	?>
     </description>
     <pubDate><?php echo $finalPubDateStory; ?></pubDate>

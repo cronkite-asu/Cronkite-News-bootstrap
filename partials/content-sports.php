@@ -94,7 +94,7 @@ $topStoriesArray = array();
                   // save top and bottom slide aside ID
                   $topStoriesArray[] = $mainStory;
       ?>
-                  <div class="large-12 medium-6 small-12 cell story">
+                  <div class="large-12 medium-6 small-6 cell story">
                     <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($mainStory); ?></a>
                     <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                   </div>
@@ -132,6 +132,9 @@ $topStoriesArray = array();
                   } else {
                     $title = get_the_title($mainStory);
                   }
+
+                  // save top and bottom slide aside ID
+                  $topStoriesArray[] = $mainStory;
       ?>
                   <li><a href="<?php echo $permalink; ?>" target="_blank"><?php echo $title; ?></a></li>
       <?php
@@ -161,6 +164,14 @@ $topStoriesArray = array();
             <div class="large-12 medium-12 small-12 cell story audio-block">
               <h4>Cronkite Sports in Focus</h4>
               <?php echo get_sub_field('sports-audio-embed', 180881); ?>
+            </div>
+          </div>
+    <?php } else if (get_row_layout() == 'sports-video-section') { ?>
+          <!-- Cronkite Sports Report -->
+          <div class="grid-x grid-padding-x">
+            <div class="large-12 medium-12 small-12 cell story audio-block">
+              <h4><?php echo get_sub_field('section-title', 180881); ?></h4>
+              <?php echo get_sub_field('video-embed', 180881); ?>
             </div>
           </div>
 
@@ -216,11 +227,11 @@ $topStoriesArray = array();
                     $title = get_the_title($curID);
                   }
               ?>
-                  <div class="large-8 medium-8 small-8 cell align-top">
+                  <div class="large-8 medium-8 small-7 cell align-top">
                     <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                     <p><?php echo $summary; ?></p>
                   </div>
-                  <div class="large-4 medium-4 small-4 cell">
+                  <div class="large-4 medium-4 small-5 cell">
                     <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($curID); ?></a>
                   </div>
                   <div class="large-12 medium-12 small-12 cell story"><hr /></div>
@@ -256,7 +267,7 @@ $topStoriesArray = array();
                     $title = get_the_title($mainStory);
                   }
             ?>
-                  <div class="large-4 medium-4 small-12 cell align-top">
+                  <div class="large-4 medium-4 small-7 cell align-top">
                     <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($mainStory); ?></a>
                     <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                   </div>
@@ -294,7 +305,7 @@ $topStoriesArray = array();
       ?>
             <div class="grid-x grid-padding-x twitter-embed">
               <div class="large-12 medium-12 small-12 cell story">
-                <h4>Cronkite Sports Twitter</h4>
+                <h4>Sports Twitter</h4>
               </div>
               <div class="large-12 medium-12 small-12 cell">
                 <?php echo get_sub_field('twitter_embed_code', 180881); ?>

@@ -1,5 +1,7 @@
 #intro-head-photo-overlay .main-photo {
   position: relative !important; }
+#intro-head-photo-overlay .photo-credit-width-1800 {
+  max-width: 48rem; }
 #intro-head-photo-overlay .intro-text {
   display: flex;
   flex-direction: column;
@@ -21,9 +23,9 @@
       padding-bottom: 2.5rem; } }
   #intro-head-photo-overlay .intro-text h1 {
     max-width: 550px;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 500;
-    line-height: 4.5rem;
+    line-height: 3.25rem;
     padding: 0;
     margin: 0px !important;
     margin-top: 50px !important;

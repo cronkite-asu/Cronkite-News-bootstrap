@@ -1,0 +1,14 @@
+.audio-block {
+  background-color: #efefef;
+  padding: 2rem;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 30px; }
+  .audio-block em {
+    display: block;
+    margin-bottom: 25px;
+    color: #003594; }
+
+/*# sourceMappingURL=children.css.map */

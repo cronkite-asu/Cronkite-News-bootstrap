@@ -1,0 +1,195 @@
+$tavirajFontFamily: 'Taviraj', serif;
+$merriweatherFontFamily: 'Merriweather', serif;
+$montserratFontFamily: 'Montserrat', sans-serif;
+$merriweatherSanFontFamily: 'Merriweather Sans', sans-serif;
+$robotoFontFamily: 'Roboto', sans-serif;
+$vollkornFontFamily: 'Vollkorn', serif;
+$ebGaramondFontFamily: 'EB Garamond', serif;
+$baskervilleFontFamily: 'Libre Baskerville', serif;
+$secularOneFontFamily: 'Secular One', sans-serif;
+$newsCycleFontFamily: 'News Cycle', sans-serif;
+$oswaldFontFamily: 'Oswald', sans-serif;
+
+$color: rgba(0,0,0,.08);
+$color2: rgba(0,0,0,.02);
+$cnBlue: #003594;
+$white: #ffffff;
+$black: #000;
+$grey: #D8D8D8;
+$footerHdr: #878792;
+$borderGrey: #F2F2F2;
+$transparency100: rgba(0, 53, 148, 1);
+$transparency75: rgba(0, 53, 148, 0.75);
+$colorSelect:#3694d7;
+$timing:.3s;
+$redAlert: #F31431;
+$caption: #6e6e6e;
+
+.merriweather {
+  font-family: $merriweatherFontFamily;
+}
+
+.montserrat {
+  font-family: $montserratFontFamily;
+}
+
+.roboto {
+  font-family: $robotoFontFamily;
+}
+
+.taviraj {
+  font-family: $tavirajFontFamily;
+}
+
+@mixin single-story-category-hdr {
+  max-width: 1160px;
+  font-weight: 600;
+  font-size: calc(16.4px + 1.55vw);
+  margin-top:18px;
+  @media only screen
+    and (max-width: 660px) {
+      font-size: calc(16.4px + 2.5vw);
+  }
+}
+
+@mixin attr-transition1 ($attr) {
+  -webkit-transition: $attr 0.25s;
+  -moz-transition: $attr 0.25s;
+  -o-transition: $attr 0.25s;
+  transition: $attr 0.25s;
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@mixin caption-text() {
+  max-width: 800px;
+  font-family: $montserratFontFamily;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: $caption;
+  padding-top: 10px;
+  letter-spacing: 0;
+  line-height: 1.2rem;
+}
+
+@mixin sidebar-header() {
+  font-family: $montserratFontFamily;
+  font-size: calc(12.4px + 0.3vw);
+  font-weight: 600;
+  color: $black;
+  border-left: 4px solid $cnBlue;
+  padding-left:15px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.fact-box-right {
+  float: right;
+  display: inline-flex;
+  flex-direction: column;
+  width:45%;
+  margin: 0.5em 0 0.5em 1em;
+  padding: 0.5em 0rem;
+  @media only screen
+    and (max-width: 660px) {
+      float: none;
+      display: flex;
+      width: 100%;
+      padding: 0;
+      margin-left: 0;
+      margin-bottom: 2.5rem;
+      margin-top:2.5rem;
+      .img-holder {
+        text-align: center;
+        img {
+          width: 60%;
+        }
+      }
+  }
+  h4 {
+    order:1;
+    width: 100%;
+    font-family: $robotoFontFamily;
+    @include sidebar-header;
+    font-size: 0.95rem;
+  }
+  p {
+    font-family: $montserratFontFamily;
+    color: $cnBlue;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem;
+    letter-spacing: 0;
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding:0.25rem 0.75rem 0.75rem;
+    &.attribution {
+      font-weight: 500;
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      margin: 0;
+      padding-top: 0;
+    }
+  }
+}
+
+blockquote {
+    display: flex;
+    position: relative;
+    font-family: $merriweatherSanFontFamily;
+    color: $black;
+    padding: 30px 0;
+    margin: 40px 0;
+    width: 100%;
+    z-index: 1;
+    align-self: center;
+    border: none;
+    border-top: solid 2px $cnBlue;
+    border-bottom: solid 2px $cnBlue;
+}
+
+/* Blockquote header */
+blockquote h3 {
+  position: relative;
+  color: $black;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+  margin: 0;
+  text-align: center;
+}
+
+/* Blockquote right double quotes */
+blockquote:after {
+    position: absolute;
+    content: "”";
+    font-family: $newsCycleFontFamily;
+    color: $cnBlue;
+    font-size: 6rem;
+    line-height: 0;
+    bottom: 10px;
+    right: 30px;
+}
+
+/* increase header size after 600px */
+@media all and (min-width: 600px) {
+    blockquote h3 {
+        font-size: 1.75rem;
+   }
+}
+
+/* Blockquote subheader */
+blockquote h4 {
+    position: relative;
+    color: #292a2b;
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+    padding-top: 20px;
+    z-index: 1;
+}

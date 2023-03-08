@@ -10,7 +10,7 @@
 	<?php
 	// get the category for GA
 	$post = get_post();
-	$categories = get_the_category ($post -> ID);
+	$categories = get_the_category ($post->ID);
 	$output = '';
 
 	if ( ! empty( $categories ) ) {
@@ -43,15 +43,8 @@
 
 	?>
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3145657-18"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			<?php //echo $output ?>
-			gtag('config', 'UA-3145657-18');
-		</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>
 
     <!-- Google Optimize -->
     <script src="https://www.googleoptimize.com/optimize.js?id=OPT-KJHZKHH"></script>
@@ -61,6 +54,9 @@
 	  <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
 
 
+    <?php if (get_field('hide_post', $post->ID) == 'yes') { ?>
+      <meta name="robots" content="noindex">
+    <?php } ?>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="theme-color" content="#216CB7">
 		<meta charset="utf-8">
@@ -71,9 +67,8 @@
     <link type="image/png" href="<?php the_field('favicon','options'); ?>" rel="shortcut icon">
     <link type="image/png" href="<?php the_field('favicon','options'); ?>"  rel="apple-touch-icon">
 
-
     <!-- Font Awesome -->
-    <script src="https://use.fontawesome.com/9e4502c156.js"></script>
+    <script src="https://kit.fontawesome.com/0f0514404d.js" crossorigin="anonymous"></script>
     <!-- AMP Analytics -->
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 
@@ -118,6 +113,8 @@
 		<link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 		<link href="<?php bloginfo('template_directory');?>/assets/css/hamburgers.css" rel="stylesheet">
@@ -155,6 +152,18 @@
     <link href="<?php bloginfo('template_directory');?>/assets/css/footer.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/js/vendor/plyr-master/dist/plyr.css" />
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/js/vendor/before-after/css/twentytwenty.css" />
+
+    <?php if (is_page(205978)) { ?>
+      <link rel="stylesheet" href="https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/css/long-form/story/borderlands/2022/tapachula.css">
+    <?php } ?>
+
+    <?php if (is_page(206436)) { ?>
+      <link rel="stylesheet" href="https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/css/superbowl2023.css">
+    <?php } ?>
+
+    <?php if (is_page(207425)) { ?>
+      <link rel="stylesheet" href="https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/css/weather.css">
+    <?php } ?>
 
     <style type='text/css'>
   	    body.admin-bar {margin-top:32px !important}
@@ -246,6 +255,7 @@
 							);
 						wp_nav_menu($args);
 					?>
+          <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sports/">Sports</a></li>
 					<li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sitenewscast/">Newscast</a></li>
           <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/audio/">Audio</a></li>
           <li class="top_links_m last"><a href="https://cronkitenews.azpbs.org/daily-newsletter-signup/">Subscribe</a></li>

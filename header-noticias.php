@@ -43,15 +43,8 @@
 
 	?>
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3145657-18"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			<?php //echo $output ?>
-			gtag('config', 'UA-3145657-18');
-		</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>
 
     <!-- Google Optimize -->
     <script src="https://www.googleoptimize.com/optimize.js?id=OPT-KJHZKHH"></script>
@@ -73,7 +66,7 @@
 
 
     <!-- Font Awesome -->
-    <script src="https://use.fontawesome.com/9e4502c156.js"></script>
+    <script src="https://kit.fontawesome.com/0f0514404d.js" crossorigin="anonymous"></script>
     <!-- AMP Analytics -->
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 
@@ -165,7 +158,7 @@
     </div>
 
     <!-- start header -->
-		<nav class="cn_navigation" role="navigation" aria-label="Cronkite News - Navigation">
+		<nav class="cn_navigation" role="navigation" aria-label="Cronkite Noticias - Navigation">
 
       <!-- navigation container -->
       <div class="main_nav_container">
@@ -173,7 +166,7 @@
         <div class="main_nav">
           <!-- logo -->
           <div class="logo">
-            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/assets/img/CN-PBS-EPS.svg" alt="Cronkite News" title="Cronkite News" /></a>
+            <a href="https://cronkitenews.azpbs.org/noticias/"><img src="<?php bloginfo('template_directory');?>/assets/img/cronkite_noticias.svg" alt="Cronkite Noticias" title="Cronkite Noticias" /></a>
           </div>
           <!-- main navigation -->
           <div class="nav_links">
@@ -192,7 +185,7 @@
             <ul class="top_links">
 							<?php
 								$args = array(
-									'menu' => 'Header Nav - 2019',
+									'menu' => 'Noticias header nav',
 									'container'     => false,
 									'items_wrap'    => '%3$s',
 									'depth'         => 1,
@@ -215,7 +208,7 @@
         </div>
       </div>
       <!-- verticals navigation -->
-      <div id="sub_nav" class="sub_nav drop-shadow animated slideInDown">
+      <div id="sub_nav" class="sub_nav drop-shadow animated slideInDown noticias">
         <ul>
           <li class="misc_links_m">
             <form method="get" class="navbar-form search" id="searchform" action="https://cronkitenews.azpbs.org/">
@@ -223,18 +216,7 @@
               <img src="<?php bloginfo('template_directory');?>/assets/img/search.svg" width="16" height="16" />
             </form>
           </li>
-          <?php
-						$args = array(
-							'menu' => 'Subnav - 2019',
-							'container'     => false,
-							'items_wrap'    => '%3$s',
-							'depth'         => 1,
-							'fallback_cb'   => false,
-							'menu_id' 			=> '',
-							'menu_class'		=> ''
-							);
-						wp_nav_menu($args);
-					?>
+          <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sports/">Sports</a></li>
 					<li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sitenewscast/">Newscast</a></li>
           <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/audio/">Audio</a></li>
           <li class="top_links_m last"><a href="https://cronkitenews.azpbs.org/daily-newsletter-signup/">Subscribe</a></li>

@@ -1,0 +1,290 @@
+$tavirajFontFamily: 'Taviraj', serif;
+$merriweatherFontFamily: 'Merriweather', serif;
+$montserratFontFamily: 'Montserrat', sans-serif;
+$merriweatherSanFontFamily: 'Merriweather Sans', sans-serif;
+$robotoFontFamily: 'Roboto', sans-serif;
+$vollkornFontFamily: 'Vollkorn', serif;
+$ebGaramondFontFamily: 'EB Garamond', serif;
+$baskervilleFontFamily: 'Libre Baskerville', serif;
+$secularOneFontFamily: 'Secular One', sans-serif;
+$newsCycleFontFamily: 'News Cycle', sans-serif;
+$oswaldFontFamily: 'Oswald', sans-serif;
+$loraFontFamily: 'Lora', serif;
+$leagueGothicFontFamily: 'League Gothic', sans-serif;
+$assistantFontFamily: 'Assistant', sans-serif;
+
+$color: rgba(0,0,0,.08);
+$color2: rgba(0,0,0,.02);
+$cnBlue: #003594;
+$white: #ffffff;
+$black: #000;
+$grey: #D8D8D8;
+$footerHdr: #878792;
+$borderGrey: #F2F2F2;
+$transparency100: rgba(0, 53, 148, 1);
+$transparency75: rgba(0, 53, 148, 0.75);
+$colorSelect:#3694d7;
+$timing:.3s;
+$redAlert: #F31431;
+$caption: #6e6e6e;
+
+//0a0a0a
+
+.merriweather {
+  font-family: $merriweatherFontFamily;
+}
+
+.montserrat {
+  font-family: $montserratFontFamily;
+}
+
+.roboto {
+  font-family: $robotoFontFamily;
+}
+
+.taviraj {
+  font-family: $tavirajFontFamily;
+}
+
+@mixin single-story-category-hdr {
+  max-width: 1160px;
+  font-weight: 600;
+  font-size: calc(16.4px + 1.55vw);
+  margin-top:18px;
+  @media only screen
+    and (max-width: 660px) {
+      font-size: calc(16.4px + 2.5vw);
+  }
+}
+
+@mixin attr-transition1 ($attr) {
+  -webkit-transition: $attr 0.25s;
+  -moz-transition: $attr 0.25s;
+  -o-transition: $attr 0.25s;
+  transition: $attr 0.25s;
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@mixin caption-text() {
+  max-width: 800px;
+  font-family: $montserratFontFamily;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: $caption;
+  padding-top: 10px;
+  letter-spacing: 0;
+  line-height: 1.2rem;
+}
+
+@mixin sidebar-header() {
+  font-family: $montserratFontFamily;
+  font-size: calc(12.4px + 0.3vw);
+  font-weight: 600;
+  color: $black;
+  border-left: 4px solid $cnBlue;
+  padding-left:15px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+#intro-animated-bg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:url('https://cronkitenews.azpbs.org/wp-content/uploads/2022/05/owl-bg.jpg') repeat;
+  overflow: hidden;
+  .bg {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: auto;
+    left:0;
+    top:0;
+    background:url('https://cronkitenews.azpbs.org/wp-content/uploads/2022/05/owl-bg.jpg') repeat;
+    -webkit-animation: infiniteScrollBg 45s linear infinite;
+    animation: infiniteScrollBg 45s linear infinite;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .owl-mosiac {
+    z-index: 1;
+    img {
+      max-width: 900px;
+      @media only screen
+        and (max-width: 800px) {
+          max-width: 700px;
+      }
+      @media only screen
+        and (max-width: 700px) {
+          max-width: 600px;
+      }
+      @media only screen
+        and (max-width: 520px) {
+          max-width: 480px;
+      }
+      @media only screen
+        and (max-width: 480px) {
+          max-width: 400px;
+      }
+      @media only screen
+        and (max-width: 390px) {
+          max-width: 340px;
+      }
+    }
+  }
+  .headline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    /*background:linear-gradient(to bottom, rgb(152, 57, 87), rgb(219, 39, 38));*/
+    padding-left: 5rem;
+    padding-right: 5rem;
+    &.absolute {
+      position: absolute;
+    }
+    @media only screen
+      and (max-width: 780px) {
+        padding-left: 1.45rem;
+        padding-right: 1.45rem;
+    }
+    @media only screen
+      and (max-width: 640px) {
+        padding-top: 2.5rem;
+        padding-bottom: 0.5rem;
+    }
+    a {
+      color: $white;
+      text-decoration: underline;
+      border-bottom: none;
+      padding-left: 4px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    h1 {
+      font-family: $merriweatherFontFamily;
+      max-width: 900px;
+      font-size: 2.5rem;
+      font-weight: 500;
+      line-height: 4rem;
+      padding:0;
+      color: $black;
+      margin: 40px 0 25px 0;
+      letter-spacing: -0.05rem;
+      &.absolute-text {
+        color: #ffffff !important;
+        text-shadow: 0px 2px 3px rgba(0,0,0,0.3),
+                     0px 4px 7px rgba(0,0,0,0.1),
+                     0px 9px 12px rgba(0,0,0,0.1);
+      }
+      @media only screen
+        and (max-width: 1200px) {
+          font-size: 2.5rem;
+          line-height: 3.5rem;
+          margin: 60px 0 25px 0;
+      }
+      @media only screen
+        and (max-width: 800px) {
+          font-size: 2rem;
+          line-height: 3rem;
+          margin: 40px 0 25px 0;
+      }
+      @media only screen
+        and (max-width: 660px) {
+          font-size: 1.75rem;
+          line-height: 2.75rem;
+          letter-spacing: 0;
+          margin: 20px 0 25px 0;
+      }
+      @media only screen
+        and (max-width: 400px) {
+          font-size: 1.5rem;
+          line-height: 2.5rem;
+          letter-spacing: 0;
+          margin: 0px 0 15px 0;
+      }
+    }
+    p {
+      max-width: 800px;
+      font-family: $merriweatherSanFontFamily;
+      color: #000;
+      font-size:1.25rem;
+      font-size: 300;
+      line-height: 2.25rem;
+      padding:0;
+      margin: 0;
+      margin-bottom:40px;
+      @media only screen
+        and (max-width: 780px) {
+          font-size: 1.15rem;
+          line-height: 2rem;
+      }
+      @media only screen
+        and (max-width: 600px) {
+          margin-bottom:0px;
+      }
+    }
+  }
+  .grid-padding-x > .cell {
+    &.photo-style-e2e {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .photo-style-fpp {
+
+    }
+  }
+  .photo-credit {
+    display: block;
+    padding:5px 10px;
+    margin:0 auto;
+    margin-top:6px;
+    @include caption-text();
+    text-align: left;
+    max-width: 100%;
+    a {
+      color: $black;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.intro-caption {
+  .photo-credit {
+    display: block;
+    padding:5px 10px;
+    margin:0 auto;
+    margin-top:6px;
+    @include caption-text();
+    font-family: "Roboto", sans-serif !important;
+    padding-top: 0px !important;
+    text-align: right;
+    max-width: 100%;
+    a {
+      color: #6e6e6e;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@keyframes infiniteScrollBg {
+  0% {
+    background-position: 50% 0;
+  }
+  100%{
+    background-position: 50% (-1080 * 2);
+  }
+}

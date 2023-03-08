@@ -52,15 +52,8 @@
 
 	?>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3145657-18"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		<?php //echo $output ?>
-		gtag('config', 'UA-3145657-18');
-	</script>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>
 
 	<!-- Chartbeat Analytics  -->
 	<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
@@ -98,7 +91,7 @@
 
 
     <!--    Font Awesome-->
-    <script src="https://use.fontawesome.com/9e4502c156.js"></script>
+    <script src="https://kit.fontawesome.com/0f0514404d.js" crossorigin="anonymous"></script>
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
 
@@ -208,7 +201,7 @@
           <!-- logo -->
           <div class="logo">
             <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/assets/img/CN-PBS-EPS.svg" alt="Cronkite News" title="Cronkite News" /></a>
-          </div>
+					</div>
           <!-- main navigation -->
           <div class="nav_links">
             <!-- language and search -->
@@ -270,6 +263,7 @@
 						wp_nav_menu($args);
 					?>
 					<li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sitenewscast/">Newscast</a></li>
+					<li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sports/">Sports</a></li>
           <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/audio/">Audio</a></li>
           <li class="top_links_m last"><a href="https://cronkitenews.azpbs.org/daily-newsletter-signup/">Subscribe</a></li>
           <li class="misc_links_m first"><a href="https://cronkitenews.azpbs.org/about-us/">About</a></li>

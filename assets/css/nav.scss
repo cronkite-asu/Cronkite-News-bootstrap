@@ -39,6 +39,12 @@ a {
   @include attr-transition(color);
 }
 
+.election-2022-logo {
+  margin-left: 25px;
+  padding-left: 25px;
+  border-left: 1px solid #f2f2f2;
+}
+
 /* The progress container (grey background) */
 .progress-container {
   position: fixed;

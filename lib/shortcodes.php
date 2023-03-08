@@ -529,6 +529,10 @@ function fact_box_right ( $atts, $content = null ) {
     if ($atts['content'] != '') {
       $result .= '<p>'.$atts['content'].'</p>';
     }
+
+    if ($atts['attribution'] != '') {
+      $result .= '<p class="attribution">'.$atts['attribution'].'</p>';
+    }
     $result .= '</div>';
 
     return $result;
@@ -554,3 +558,20 @@ function fact_box_left ( $atts, $content = null ) {
     return $result;
 }
 add_shortcode ('fact-box-left', 'fact_box_left');
+
+// Video embed right
+function video_embed_right ( $atts, $content = null ) {
+    $result = '<div class="video-embed-right">';
+
+    if ($atts['video'] != '') {
+      $result .= '<video autoplay muted playsinline crossorigin loop><source src="'.$atts['video'].'" type="video/mp4" /></video>';
+    }
+
+    if ($atts['credit'] != '' && $atts['caption'] != '' && $atts['credit-link'] != '' && $atts['asset-type'] != '') {
+      $result .= '<div class="wp-caption-text">'.$atts['caption'].' ('.$atts['asset-type'].' by <a href="'.$atts['credit-link'].'" target="_blank">'.$atts['credit'].'</a>/Cronkite News)</div>';
+    }
+    $result .= '</div>';
+
+    return $result;
+}
+add_shortcode ('video-embed-right', 'video_embed_right');

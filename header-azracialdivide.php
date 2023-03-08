@@ -1,13 +1,11 @@
 <?php
-
 /**
  * Header - Racial Divide
  */
-
 ?>
 <!DOCTYPE html>
 <!--[if IE]>
-    <script src="<?php bloginfo('template_url'); ?>/js/plugins/html5shiv.js"></script>
+	<script src="<?php bloginfo('template_url'); ?>/js/plugins/html5shiv.js"></script>
 <![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9 ie8" lang="en" ><![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
@@ -19,21 +17,21 @@
 
 <head>
 
-    <!-- Chartbeat Analytics  -->
-    <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
+	<!-- Chartbeat Analytics  -->
+	<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
 
    <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#216CB7">
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#216CB7">
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Add Favicon -->
-    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="icon">
-    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="shortcut icon">
-    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>"  rel="apple-touch-icon">
+    <link type="image/png" href="<?php the_field('favicon','options'); ?>" rel="icon">
+    <link type="image/png" href="<?php the_field('favicon','options'); ?>" rel="shortcut icon">
+    <link type="image/png" href="<?php the_field('favicon','options'); ?>"  rel="apple-touch-icon">
 
     <!-- Load Google Fonts -->
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -45,44 +43,31 @@
 
     <!-- Google Analytics Tracking Code  -->
 
-        <?php
-    // get the category for GA
-        $post = get_post();
-        $categories = get_the_category($post -> ID);
-        $output = '';
+		<?php
+	// get the category for GA
+		$post = get_post();
+		$categories = get_the_category ($post -> ID);
+		$output = '';
 
-        if (! empty($categories)) {
-            foreach ($categories as $category) {
-                if ($category->name == "Borderlands") {
-                    // $output = "ga('set', 'contentGroup1', '"  . esc_html( $category->name ) . "');";
-                    $output = "ga('set', 'contentGroup1', 'Borderlands');";
-                }
-                if ($category->name == "Sustainability") {
-                    // $output = "ga('set', 'contentGroup2', '"  . esc_html( $category->name ) . "');";
-                    $output = "ga('set', 'contentGroup2', 'My Group Name');";
-                }
-            }
-        }
+		if ( ! empty( $categories ) ) {
+			foreach( $categories as $category ) {
 
-        ?>
-    
-    
+			if ($category->name == "Borderlands") {
+			// $output = "ga('set', 'contentGroup1', '"  . esc_html( $category->name ) . "');";
+			$output = "ga('set', 'contentGroup1', 'Borderlands');";
+		}
+		if ($category->name == "Sustainability") {
+		// $output = "ga('set', 'contentGroup2', '"  . esc_html( $category->name ) . "');";
+		$output = "ga('set', 'contentGroup2', 'My Group Name');";
+	}
+	}
+}
 
-    <script>
-           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		?>
 
-           ga('create', 'UA-3145657-18', 'auto');
-           ga('send', 'pageview');
-                     <?php
-                        if ($output) {
-                            echo $output;
-                        }
-                        ?>
 
-       </script>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>
 
        <!-- Hotjar Tracking Code for http://cronkitenews.azpbs.org -->
        <script>
@@ -95,8 +80,8 @@
                a.appendChild(r);
            })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
        </script>
-    <!-- FB instant articles -->
-      <script>
+	<!-- FB instant articles -->
+	  <script>
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '511732915827177',
@@ -114,32 +99,32 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-    
+
     <meta property="fb:app_id" content="511732915827177" />
-    
-    <!-- FB instant articles -->
-    <meta property="fb:pages" content="305166330794" />
+
+	<!-- FB instant articles -->
+	<meta property="fb:pages" content="305166330794" />
 
     <?php wp_head(); ?>
-        <script src="<?php bloginfo('template_directory');?>/js/plugins/jquery.scrolldepth.js"></script>
-           
+		<script src="<?php bloginfo('template_directory');?>/js/plugins/jquery.scrolldepth.js"></script>
+
     <script>
-      $(document).ready(function() { 
+      $(document).ready(function() {
         $('.dropdown-toggle').dropdown();
         });
     </script>
 
-    
-     <script>
-     jQuery(function() {
-         jQuery.scrollDepth({
-          minHeight: 1000,
-          userTiming: false
-        });
+
+	 <script>
+	 jQuery(function() {
+		 jQuery.scrollDepth({
+		  minHeight: 1000,
+		  userTiming: false
+		});
 });
 
     </script>
-  
+
 
 </head>
 
@@ -172,13 +157,13 @@
     <li style=" background-color:#222;"><a href="https://cronkitenews.azpbs.org/2017/12/07/about-project-racial-divide/"> About the Project </a> </li>
   </ul>
 </div>
-        
-      
-  
-    
-        
-        
-     
+
+
+
+
+
+
+
   </div><!-- /.container-fluid -->
 </nav>
 </header>

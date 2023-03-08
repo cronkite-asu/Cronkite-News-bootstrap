@@ -7,6 +7,7 @@ $cnBlue: #003594;
 $white: #ffffff;
 $black: #0a0a0a;
 $grey: #D8D8D8;
+$border-color: #D8D8D8;
 $green: rgba(0,102,51, 1);
 $footerHdr: #878792;
 $borderGrey: #F2F2F2;
@@ -17,9 +18,11 @@ $timing:.3s;
 $redAlert: #F31431;
 $caption: #767676;
 $bgColor: #fafafa;
+$greyNav: #F2F2F2;
+$bg-grey: rgba($greyNav, 1);
 
 @mixin caption-text() {
-  max-width: 800px;
+  max-width: 100%;
   font-family: $robotoFontFamily;
   font-size: 0.8rem;
   font-weight: 400;
@@ -27,6 +30,130 @@ $bgColor: #fafafa;
   padding-top: 10px;
   letter-spacing: 0;
   line-height: 1.55;
+}
+
+.sub_nav, .sub_nav-alert {
+  display: flex;
+  background-color: $bg-grey;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  padding: 13px 0;
+  &.noticias {
+    display: none;
+  }
+  ul {
+    width:1248px;
+    /*font-size: 1.1125rem;*/
+    font-size: calc(12px + 0.2vw);
+    font-weight: 400;
+    letter-spacing: calc(0.5px + 0.01vw);
+    text-transform: uppercase;
+    /*padding:0 20px;*/
+    justify-content: space-between;
+    line-height: 1.2;
+    @media only screen
+      and (max-width: 1260px) {
+        font-size: calc(12px + 0.08vw);
+        padding:0 15px;
+        width: 100%;
+    }
+    @media only screen
+      and (max-width: 800px) {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: calc(14px + 0.4vw);
+        font-weight: 500;
+        letter-spacing: calc(0.5px + 0.1vw);
+    }
+    li {
+      &.last {
+        @media only screen
+          and (max-width: 800px) {
+            padding-bottom: 10px;
+        }
+      }
+      &.top_links_m {
+        &.first {
+          padding-top:10px;
+          border-top:1px solid $border-color;
+        }
+        display: none;
+        @media only screen
+          and (max-width: 800px) {
+            display: block;
+        }
+      }
+      &.misc_links_m {
+        font-weight: 300;
+        display: none;
+        &.first {
+          padding-top:10px;
+          border-top:1px solid $border-color;
+        }
+        .navbar-form {
+          display: flex;
+          align-items: baseline;
+          input[type="text"] {
+            width:95%;
+            height:30px;
+            background-color: #fff;
+          }
+          img {
+            margin: 0 10px;
+          }
+        }
+        @media only screen
+          and (max-width: 800px) {
+            display: block;
+        }
+      }
+      &.social_links_m {
+        padding-top:25px;
+        display: none;
+        a {
+          i {
+            color: $black;
+            padding-right: 10px;
+            background: none;
+            &:hover {
+              color: $cnBlue !important;
+            }
+          }
+        }
+        @media only screen
+          and (max-width: 800px) {
+            display: block;
+        }
+      }
+      &.copyright_m {
+        font-size: 9px;
+        font-weight:100;
+        display: none;
+        @media only screen
+          and (max-width: 800px) {
+            display: block;
+        }
+      }
+      @media only screen
+        and (max-width: 800px) {
+          width: 100%;
+          padding:3px 0;
+      }
+    }
+    a {
+      font-family: $robotoFontFamily;
+      color: $cnBlue;
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+  @media only screen
+    and (max-width: 800px) {
+      display: none;
+  }
 }
 
 #noticias-container {
@@ -52,7 +179,7 @@ $bgColor: #fafafa;
         font-family: $montserratFontFamily;
         font-weight: 700;
         font-size: 1.05rem;
-        color:  rgba(0,102,51, 1);
+        color: $cnBlue;
         text-transform: uppercase;
         a {
           color:$cnBlue !important;
@@ -63,7 +190,7 @@ $bgColor: #fafafa;
       }
       h4:after {
           content: '';
-          border-top: 1px solid rgba(0,102,51, 1);
+          border-top: 1px solid $cnBlue;
           margin: 0 0 0 20px;
           flex: 1 0 20px;
           width: 100%;
@@ -91,7 +218,7 @@ $bgColor: #fafafa;
           a {
             color: $black;
             &:hover {
-              color: $green;
+              color: $cnBlue;
             }
           }
         }
@@ -107,6 +234,11 @@ $bgColor: #fafafa;
       and (max-width: 1240px) {
         padding-left: 1.875rem;
         padding-right: 1.875rem;
+    }
+    @media only screen
+      and (max-width: 660px) {
+        padding-right: 0.625rem;
+        padding-left: 0.625rem;
     }
   }
 
@@ -131,7 +263,7 @@ $bgColor: #fafafa;
       a {
         color: $black;
         &:hover {
-          color: $green;
+          color: $cnBlue;
         }
       }
     }
@@ -144,7 +276,7 @@ $bgColor: #fafafa;
       a {
         color: $black;
         &:hover {
-          color: $green;
+          color: $cnBlue;
         }
       }
     }
@@ -156,11 +288,15 @@ $bgColor: #fafafa;
       font-family: $montserratFontFamily;
       font-weight: 700;
       font-size: 1rem;
-      color: $green;
+      color: $cnBlue;
       padding-top:15px;
       text-transform: uppercase;
-      margin-top: 25px;
+      /*margin-top: 25px;*/
       margin-bottom: 25px;
+      @media only screen
+        and (max-width: 660px) {
+          margin-top:0px;
+      }
       a {
         color:$cnBlue !important;
         &:hover {
@@ -170,7 +306,7 @@ $bgColor: #fafafa;
     }
     h4:after {
       content: '';
-      border-top: 1px solid rgba(0,102,51, 1);
+      border-top: 1px solid $cnBlue;
       margin: 0 0 0 20px;
       flex: 1 0 20px;
       width: 100%;
@@ -183,10 +319,17 @@ $bgColor: #fafafa;
             margin-top:0px;
         }
       }
+      .story {
+        margin-bottom:25px;
+      }
       @media only screen
         and (max-width: 900px) {
           padding-top:25px;
           padding-bottom:25px;
+      }
+      @media only screen
+        and (max-width: 660px) {
+          padding-bottom:0;
       }
     }
   }
@@ -214,7 +357,7 @@ $bgColor: #fafafa;
     }
     h4:after {
         content: '';
-        border-top: 1px solid rgba(0,102,51, 1);
+        border-top: 1px solid $cnBlue;
         margin: 0 0 0 20px;
         flex: 1 0 20px;
         width: 100%;
@@ -240,7 +383,7 @@ $bgColor: #fafafa;
       p {
         @include caption-text;
         a {
-          color: $green;
+          color: $cnBlue;
           &:hover {
             color: $black;
           }
@@ -254,21 +397,28 @@ $bgColor: #fafafa;
       font-family: $robotoFontFamily;
       font-weight: 500;
       font-size: 1rem;
-      color: $green;
+      color: $cnBlue;
       padding-top:15px;
       text-transform: none;
+      @media only screen
+        and (max-width: 660px) {
+          font-size: 1.35rem;
+          margin-bottom: 25px;
+      }
       a {
         color: $black;
         &:hover {
-          color: $green;
+          color: $cnBlue;
         }
       }
     }
   }
 
   .noticias-report {
+    margin-bottom:40px;
+    margin-top:40px;
     h3 {
-      padding-top:8px;
+      padding-top:0px;
     }
   }
 
@@ -277,6 +427,25 @@ $bgColor: #fafafa;
       .timeline-Widget .timeline-Header {
         border: 1px solid #ff0000 !important;
       }
+    }
+    @media only screen
+      and (max-width: 660px) {
+        text-align: center !important;
+    }
+  }
+
+  .social-accounts {
+    i {
+      color: $cnBlue;
+      font-size: 3.5rem;
+      padding-right: 18px;
+      &:hover {
+        color: $black;
+      }
+    }
+    @media only screen
+      and (max-width: 660px) {
+        text-align: center !important;
     }
   }
 
@@ -304,7 +473,7 @@ $bgColor: #fafafa;
     }
     h4:after {
         content: '';
-        border-top: 1px solid rgba(0,102,51, 1);
+        border-top: 1px solid $cnBlue;
         margin: 0 0 0 20px;
         flex: 1 0 20px;
         width: 100%;
@@ -319,7 +488,7 @@ $bgColor: #fafafa;
       a {
         color: $black;
         &:hover {
-          color: $green;
+          color: $cnBlue;
         }
       }
     }
@@ -327,10 +496,10 @@ $bgColor: #fafafa;
 }
 
 .page-header {
-  background: -webkit-linear-gradient(110deg, #006633 60%, #02763c 60%);
-  background: -o-linear-gradient(110deg, #006633 60%, #02763c 60%);
-  background: -moz-linear-gradient(110deg, #006633 60%, #02763c 60%);
-  background: linear-gradient(110deg, #006633 60%, #02763c 60%);
+  background: -webkit-linear-gradient(110deg, #003594 60%, #1852a4 60%);
+  background: -o-linear-gradient(110deg, #003594 60%, #1852a4 60%);
+  background: -moz-linear-gradient(110deg, #003594 60%, #1852a4 60%);
+  background: linear-gradient(110deg, #003594 60%, #1852a4 60%);
   margin: 0px;
   padding: 20px 0;
   .grid-container {
