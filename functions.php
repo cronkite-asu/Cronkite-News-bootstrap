@@ -3,11 +3,6 @@
  * Functions
  */
 
-/******************************************************************************
-                        Global Functions
-******************************************************************************/
-
-
 // Enable shortcodes
 require_once('lib/shortcodes.php');
 
@@ -19,9 +14,6 @@ add_editor_style();
 
 // Support for Featured Images
 add_theme_support( 'post-thumbnails' );
-
-// Support for Post Formats
-//add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
 
 // Custom Background
 add_theme_support( 'custom-background', array('default-color' => 'fff'));
@@ -41,12 +33,13 @@ add_image_size('awards_logo', 540, 304 );
 add_image_size('slider', 208, 180);
 add_image_size('vertical-homepage-img', 385.33, 216.73);
 add_image_size('audio-featured-singles', 212, 174, true);
+add_image_size('single-post', 840, 560, true );
 
 // Register Navigation Menu
 register_nav_menus( array(
     'header-menu' => 'Header Menu',
     'footer-menu' => 'Footer Menu'
-) );
+));
 
 /* Added: Sunday, Nov. 3rd, 2020 - Custom rss feed */
 add_action( 'init', 'newRSSFeed' );
@@ -250,7 +243,6 @@ function hook_parselyJSON() {
 }
 add_action('wp_head', 'hook_parselyJSON');
 
-
 function hook_parselyTrack() {
   ?>
   <!-- START Parse.ly Include: Standard -->
@@ -260,218 +252,168 @@ function hook_parselyTrack() {
 }
 add_action('wp_footer', 'hook_parselyTrack');
 
+/* Display Pages In Navigation Menu */
+if (!function_exists( 'bootstrap_menu' )) {
+  function bootstrap_menu() {
+  $pages_args = array(
+      'sort_column' => 'menu_order, post_title',
+      'menu_class'  => '',
+      'include'     => '',
+      'exclude'     => '',
+      'echo'        => true,
+      'show_home'   => false,
+      'link_before' => '',
+      'link_after'  => ''
+  );
 
-// Navigation Menu Adjustments
+  wp_page_menu($pages_args);
+  }
+}
 
-    /* Add class to navigation sub-menu */
-    class bootstrap_navigation extends Walker_Nav_Menu {
+// Create pagination
+function bootstrap_pagination() {
+    global $wp_query;
+    $big = 999999999;
 
-	function start_lvl(&$output, $depth = 0, $args = array()) {
-	   $output .= "\n<ul class=\"dropdown-menu\">\n";
-	}
+    $links = paginate_links( array(
+        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'format' => '?paged=%#%',
+        'prev_next' => true,
+        'prev_text' => '&laquo;',
+        'next_text' => '&raquo;',
+        'current' => max( 1, get_query_var('paged') ),
+        'total' => $wp_query->max_num_pages,
+        'type' => 'list'
+        )
+    );
 
-	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-	    $item_html = '';
-	    parent::start_el($item_html, $item, $depth, $args);
+    $pagination = str_replace("<ul class='page-numbers'>","<ul class='pagination text-center'>",$links);
+    echo $pagination;
+}
 
-	    if ( $item->is_dropdown && $depth === 0 ) {
-            $item_html = str_replace( '<a', '<a class="dropdown-toggle" data-toggle="dropdown"', $item_html );
-            $item_html = str_replace( '</a>', ' <b class="caret"></b></a>', $item_html );
-	    }
-	    $output .= $item_html;
-	 }
+// Register Sidebars
+/* Sidebar Right */
+register_sidebar( array(
+    'id' => 'sidebar_right',
+    'name' => __( 'Sidebar Right' ),
+    'description' => __( 'This sidebar is located on the right-hand side of each page.'),
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h5>',
+    'after_title' => '</h5>',
+));
 
-	function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
-	    if ( $element->current )
-            $element->classes[] = 'active';
-            $element->is_dropdown = !empty( $children_elements[$element->ID] );
+/* Sidebar Archive */
+register_sidebar( array(
+    'id' => 'sidebar_archive',
+    'name' => __( 'Sidebar Archive' ),
+    'description' => __( 'This sidebar is located on the right-hand side of each page.'),
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h5>',
+    'after_title' => '</h5>',
+));
 
-            if ( $element->is_dropdown ) {
-                if ( $depth === 0 ) {
-                    $element->classes[] = 'dropdown';
-                } elseif ( $depth === 1 ) {
-                    // Extra level of dropdown menu,
-                    // as seen in http://twitter.github.com/bootstrap/components.html#dropdowns
-                    $element->classes[] = 'dropdown-submenu';
-                }
-            }
-            parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
-	    }
-    }
+/* Sidebar Category */
+register_sidebar( array(
+    'id' => 'sidebar_category',
+    'name' => __( 'Sidebar Category' ),
+    'description' => __( 'This sidebar is located on the right-hand side of each page.'),
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h5>',
+    'after_title' => '</h5>',
+));
 
-    /* Display Pages In Navigation Menu */
-    if ( ! function_exists( 'bootstrap_menu' ) ) :
-	function bootstrap_menu() {
-		$pages_args = array(
-		    'sort_column' => 'menu_order, post_title',
-		    'menu_class'  => '',
-		    'include'     => '',
-		    'exclude'     => '',
-		    'echo'        => true,
-		    'show_home'   => false,
-		    'link_before' => '',
-		    'link_after'  => ''
-		);
+register_sidebar( array(
+    'id' => 'sidebar_newscast',
+    'name' => __( 'Sidebar Archive Newscast' ),
+    'description' => __( ''),
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h5>',
+    'after_title' => '</h5>',
+));
 
-		wp_page_menu($pages_args);
-	}
-    endif;
+register_sidebar( array(
+   'id' => 'sidebar_new_story',
+   'name' => __( 'Sidebar New Story Template - 2020' ),
+   'description' => __( ''),
+   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+   'after_widget' => '</aside>',
+   'before_title' => '<h5>',
+   'after_title' => '</h5>',
+));
 
-    /* Add CLASS attributes to the first <ul> occurence in wp_page_menu */
-    function add_menuclass( $ulclass ) {
-	    return preg_replace( '/<ul>/', '<ul class="nav navbar-nav">', $ulclass, 1 );
-    }
-    add_filter( 'wp_page_menu', 'add_menuclass' );
+register_sidebar( array(
+   'id' => 'sidebar_author',
+   'name' => __( 'Sidebar Author - 2020' ),
+   'description' => __( ''),
+   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+   'after_widget' => '</aside>',
+   'before_title' => '<h5>',
+   'after_title' => '</h5>',
+));
 
-    // Create pagination
-    function bootstrap_pagination() {
-        global $wp_query;
-        $big = 999999999;
+register_sidebar( array(
+   'id' => 'sidebar_health_insider',
+   'name' => __( 'Health Insider' ),
+   'description' => __( ''),
+   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+   'after_widget' => '</aside>',
+   'before_title' => '<h5>',
+   'after_title' => '</h5>',
+));
 
-        $links = paginate_links( array(
-            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-            'format' => '?paged=%#%',
-            'prev_next' => true,
-            'prev_text' => '&laquo;',
-            'next_text' => '&raquo;',
-            'current' => max( 1, get_query_var('paged') ),
-            'total' => $wp_query->max_num_pages,
-            'type' => 'list'
-            )
-        );
+register_sidebar( array(
+   'id' => 'sidebar_noticias',
+   'name' => __( 'Sidebar Noticias' ),
+   'description' => __( ''),
+   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+   'after_widget' => '</aside>',
+   'before_title' => '<h5>',
+   'after_title' => '</h5>',
+));
 
-        $pagination = str_replace("<ul class='page-numbers'>","<ul class='pagination text-center'>",$links);
-        echo $pagination;
-    }
-
-    // Register Sidebars
-    /* Sidebar Right */
-    register_sidebar( array(
-        'id' => 'sidebar_right',
-        'name' => __( 'Sidebar Right' ),
-        'description' => __( 'This sidebar is located on the right-hand side of each page.'),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h5>',
-        'after_title' => '</h5>',
-    ));
-
-    /* Sidebar Archive */
-    register_sidebar( array(
-        'id' => 'sidebar_archive',
-        'name' => __( 'Sidebar Archive' ),
-        'description' => __( 'This sidebar is located on the right-hand side of each page.'),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h5>',
-        'after_title' => '</h5>',
-    ));
-
-    /* Sidebar Category */
-    register_sidebar( array(
-        'id' => 'sidebar_category',
-        'name' => __( 'Sidebar Category' ),
-        'description' => __( 'This sidebar is located on the right-hand side of each page.'),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h5>',
-        'after_title' => '</h5>',
-    ));
-
-   register_sidebar( array(
-        'id' => 'sidebar_newscast',
-        'name' => __( 'Sidebar Archive Newscast' ),
-        'description' => __( ''),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h5>',
-        'after_title' => '</h5>',
-    ));
-
-    register_sidebar( array(
-       'id' => 'sidebar_new_story',
-       'name' => __( 'Sidebar New Story Template - 2020' ),
-       'description' => __( ''),
-       'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-       'after_widget' => '</aside>',
-       'before_title' => '<h5>',
-       'after_title' => '</h5>',
-    ));
-
-    register_sidebar( array(
-       'id' => 'sidebar_author',
-       'name' => __( 'Sidebar Author - 2020' ),
-       'description' => __( ''),
-       'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-       'after_widget' => '</aside>',
-       'before_title' => '<h5>',
-       'after_title' => '</h5>',
-    ));
-
-    register_sidebar( array(
-       'id' => 'sidebar_health_insider',
-       'name' => __( 'Health Insider' ),
-       'description' => __( ''),
-       'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-       'after_widget' => '</aside>',
-       'before_title' => '<h5>',
-       'after_title' => '</h5>',
-    ));
-
-    register_sidebar( array(
-       'id' => 'sidebar_noticias',
-       'name' => __( 'Sidebar Noticias' ),
-       'description' => __( ''),
-       'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-       'after_widget' => '</aside>',
-       'before_title' => '<h5>',
-       'after_title' => '</h5>',
-    ));
-
-
-    // Remove #more anchor from posts
-    function remove_more_jump_link($link) {
-        $offset = strpos($link, '#more-');
-        if ($offset) { $end = strpos($link, '"',$offset); }
-        if ($end) { $link = substr_replace($link, '', $offset, $end-$offset); }
-        return $link;
-    }
-    add_filter('the_content_more_link', 'remove_more_jump_link');
-
+// Remove #more anchor from posts
+function remove_more_jump_link($link) {
+    $offset = strpos($link, '#more-');
+    if ($offset) { $end = strpos($link, '"',$offset); }
+    if ($end) { $link = substr_replace($link, '', $offset, $end-$offset); }
+    return $link;
+}
+add_filter('the_content_more_link', 'remove_more_jump_link');
 
 // Custom Post Excerpt
-    if ( ! function_exists( 'bootstrap_excerpt' ) ) :
+if ( ! function_exists( 'bootstrap_excerpt' ) ) {
+  function content($limit) {
+    $content = explode(' ', get_the_content(), $limit);
+    if (count($content)>=$limit) {
+        array_pop($content);
+        $content = implode(" ",$content).'...<a href="'. get_permalink($post->ID) . '" class="read_more">The Latest</a>';
+    } else {
+        $content = implode(" ",$content);
+    }
 
-    function content($limit) {
-	    $content = explode(' ', get_the_content(), $limit);
-	    if (count($content)>=$limit) {
-	        array_pop($content);
-	        $content = implode(" ",$content).'...<a href="'. get_permalink($post->ID) . '" class="read_more">The Latest</a>';
-	    } else {
-	        $content = implode(" ",$content);
-	    }
-
-	    $content = preg_replace('/\[.+\]/','', $content);
-	    $content = apply_filters('the_content', $content);
-	    $content = str_replace(']]>', ']]&gt;', $content);
-	    return $content;
-	}
-
-    endif;
+    $content = preg_replace('/\[.+\]/','', $content);
+    $content = apply_filters('the_content', $content);
+    $content = str_replace(']]>', ']]&gt;', $content);
+    return $content;
+  }
+}
 
 /*Disable Theme Updates # 3.0+*/
-    remove_action( 'load-update-core.php', 'wp_update_themes' );
-    add_filter( 'pre_site_transient_update_themes', create_function( '$a', "return null;" ) );
-    wp_clear_scheduled_hook( 'wp_update_themes' );
-
+remove_action( 'load-update-core.php', 'wp_update_themes' );
+add_filter( 'pre_site_transient_update_themes', create_function( '$a', "return null;" ) );
+wp_clear_scheduled_hook( 'wp_update_themes' );
 
 // Disable wordpress jQuery
-    function modify_jquery() {
-        if (!is_admin()) {
-            wp_enqueue_script('jquery');
-        }
+function modify_jquery() {
+    if (!is_admin()) {
+        wp_enqueue_script('jquery');
     }
-    add_action('init', 'modify_jquery');
+}
+add_action('init', 'modify_jquery');
 
 /******************************************************************************************************************************
 			    Enqueue Scripts and Styles for Front-End
@@ -511,7 +453,7 @@ if (!is_admin()) {
         wp_enqueue_script( 'dropdown', get_template_directory_uri() . '/js/plugins/bootstrap-hover-dropdown.min.js', null, null, true );
       }
 
-  // Load Stylesheets
+      // Load Stylesheets
       //core
       wp_enqueue_style( 'normalize', get_template_directory_uri().'/css/core/normalize.css', null, '3.0.1' );
       if (is_single( 131130 )) {
@@ -530,11 +472,8 @@ if (!is_admin()) {
       wp_enqueue_style( 'owl-trans', get_template_directory_uri().'/css/plugins/owl.transitions.css', null, '1.3.2' );
       wp_enqueue_style( 'remodal', get_template_directory_uri().'/css/plugins/jquery.remodal.css', null, null );
 
-
       //Custom Styles
       wp_enqueue_style( 'fontello', get_template_directory_uri().'/css/plugins/fontello.css', null, null );
-
-
     }
   }
 
@@ -589,27 +528,24 @@ if (!is_admin()) {
 
       //Custom Styles
       wp_enqueue_style( 'fontello', get_template_directory_uri().'/css/plugins/fontello.css', null, null );
-
   }
 
   if (is_single(114724)) {
     add_action( 'wp_enqueue_scripts', 'bootstrap_scripts_and_styles_old' );
   }
-
 }
 
-
 // For ACF: Options add-on
-    add_filter('acf/options_page/settings', 'my_options_page_settings');
-    function my_options_page_settings($options) {
-        $options['title'] = __('Theme Settings');
-        $options['pages'] = array(
-            __('Header'),
-            __('Footer'),
-            //__('Home Slider')
-        );
-        return $options;
-    }
+add_filter('acf/options_page/settings', 'my_options_page_settings');
+function my_options_page_settings($options) {
+    $options['title'] = __('Theme Settings');
+    $options['pages'] = array(
+        __('Header'),
+        __('Footer'),
+        //__('Home Slider')
+    );
+    return $options;
+}
 
 /*********************** PUT YOUR FUNCTIONS BELOW ********************************/
 
@@ -640,26 +576,6 @@ if (!is_admin()) {
     add_action('wp_head', 'stick_admin_bar');
 }
 
-// Customize Login Screen
-function wordpress_login_styling() { ?>
-    <style type="text/css">
-        .login #login h1 a {
-            background-image: url('<?php echo get_header_image(); ?>');
-            background-size: contain;
-            width: auto;
-            height: 100px;
-        }
-        body.login{
-            background-color: #<?php echo get_background_color(); ?>;
-            background-image: url('<?php echo get_background_image(); ?>') !important;
-            background-repeat: repeat;
-            background-position: center center;
-        };
-
-    </style>
-<?php }
-add_action( 'login_enqueue_scripts', 'wordpress_login_styling' );
-
 function admin_logo_custom_url(){
     $site_url = get_bloginfo('url');
     return ($site_url);
@@ -671,9 +587,6 @@ function new_excerpt_more( $more ) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
-//http://cronkitenews.azpbs.org/category/education/
-
-
 add_filter('mce_css', 'tuts_mcekit_editor_style');
 function tuts_mcekit_editor_style($url) {
 
@@ -683,66 +596,8 @@ function tuts_mcekit_editor_style($url) {
     // Retrieves the plugin directory URL
     // Change the path here if using different directories
     $url .= trailingslashit( plugin_dir_url(__FILE__) ) . '/editor-styles.css';
-
     return $url;
 }
-
-/**
- * Add "Styles" drop-down
- */
-add_filter( 'mce_buttons_2', 'tuts_mce_editor_buttons' );
-
-function tuts_mce_editor_buttons( $buttons ) {
-    array_unshift( $buttons, 'styleselect' );
-    return $buttons;
-}
-
-/**
- * Add styles/classes to the "Styles" drop-down
- */
-add_filter( 'tiny_mce_before_init', 'tuts_mce_before_init' );
-
-function tuts_mce_before_init( $settings ) {
-
-    $style_formats = array(
-        array(
-            'title' => 'Title with transparent background',
-            'block' => 'h1',
-            'classes' => 'fadeInDown-1 light-color'
-        ),
-
-        array(
-            'title' => 'Title with background',
-            'block' => 'h1',
-            'classes' => 'fadeInDown-1 dark-bg light-color'
-        ),
-
-
-        array(
-            'title' => 'Link Button',
-            'block' => 'div',
-            'classes' => 'fadeInDown-3 btn-slider'
-        ),
-
-        array(
-            'title' => 'Other Text',
-            'block' => 'div',
-            'classes' => 'fadeInDown-2 light-color'
-        ),
-        array(
-            'title' => 'Red Uppercase Text',
-            'inline' => 'span',
-            'classes' => 'spanh1 fadeInDown-1 light-color',
-
-        )
-    );
-
-    $settings['style_formats'] = json_encode( $style_formats );
-
-    return $settings;
-
-}
-
 
 // Turn off visual editor for everything but sliders
 add_filter( 'user_can_richedit', 'disable_visual_editor' );
@@ -835,8 +690,6 @@ function ap_noticias_date() {
     return $thedate;
 }
 
-add_image_size( 'single-post', 840, 560, true );
-
 // Enable single category custom template. Currently for Big Boy template but others can be added
 // To use: Create a category, then name the template file single-cat-slug.php
 // From http://justintadlock.com/archives/2008/12/06/creating-single-post-templates-in-wordpress
@@ -859,202 +712,11 @@ add_action( 'after_setup_theme', 'my_remove_feeds' );
 
 /*******************************************************************************/
 
-
-// AMP functions
-
-add_filter( 'amp_customizer_is_enabled', '__return_false' );
-
-
-add_filter( 'amp_post_template_file', 'xyz_amp_set_custom_template', 10, 3 );
-
-function xyz_amp_set_custom_template( $file, $type, $post ) {
-	if ( 'single' === $type ) {
-		$file = dirname( __FILE__ ) . '/templates/template-amp.php';
-	}
-	return $file;
-}
-
-add_action( 'amp_post_template_css', 'xyz_amp_additional_css_styles' );
-
-function xyz_amp_additional_css_styles( $amp_template ) {
-	// only CSS here please...
-	?>
-	header.amp-wp-header {
-		padding: 0;
-		background: #234384;
-	}
-	header.amp-wp-header a {
-		background-image: url( 'https://cronkitenews.azpbs.org/wp-content/uploads/2017/11/FB_logo.png' );
-		background-repeat: no-repeat;
-		background-size: contain;
-		display: block;
-		height: 60px;
-		width: 300px;
-		margin: 0 auto;
-		text-indent: -9999px;
-	}
-
-    .amp-wp-byline amp-img {
-		display: none;
-	}
-
-    .amp-wp-footer div p
-    {
-    display: none;
-    }
-
-    .amp-wp-article-content div,   .amp-wp-article-content iframe
-    {
-        width: 100%;
-    }
-
-    .amp-wp-article-content div img
-    {
-        width: 100%;
-        height: 100%;
-    }
-    .embed-responsive-item
-    {
-        width: 100%;
-        height: 300px;
-    }
-    #amp-related-posts p amp-img {
-        margin-right:1em;
-        vertical-align: middle;
-    }
-    #amp-related-posts p {
-    padding-bottom: 10px;
-    }
-    #amp-related-posts p a, #amp-related-posts p a:visited
-    {
-        color: rgb(0, 0, 238);
-    }
-     #amp-related-posts p span
-    {
-        float: right;
-        width: 50%;
-    }
-    .master-slider-parent
-    {
-        display: none;
-    }
-    .amp-wp-footer div a, .amp-wp-footer div a:visited
-    {
-        color: rgb(0,0,238);
-    }
-    .menu-button
-    {
-    display: inline-block;
-    float:right;
-    margin-top: -60px;
-    }
-    #sidebar
-    {
-    background-color: #234384;
-    }
-    #sidebar ul li a
-    {
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-
-
-    }
-    #sidebar ul li
-    {
-    padding: 10px;
-    border-bottom: 1px solid white;
-    }
-     #sidebar ul li:last-child
-    {
-    background-color: red;
-    }
-    .amp-wp-footer
-    {
-    background: #234384;
-    }
-    .amp-wp-footer a, .amp-wp-footer div h2, .amp-wp-footer .back-to-top
-    {
-        color: white;
-    }
-    .no-amp
-    {
-        display:none;
-    }
-	<?php
-}
-
-add_filter( 'amp_post_template_analytics', 'xyz_amp_add_custom_analytics' );
-function xyz_amp_add_custom_analytics( $analytics ) {
-	if ( ! is_array( $analytics ) ) {
-		$analytics = array();
-	}
-
-	// https://developers.google.com/analytics/devguides/collection/amp-analytics/
-	$analytics['xyz-googleanalytics'] = array(
-		'type' => 'googleanalytics',
-		'attributes' => array(
-			// 'data-credentials' => 'include',
-		),
-		'config_data' => array(
-			'vars' => array(
-				'account' => "UA-3145657-18"
-			),
-			'triggers' => array(
-				'trackPageview' => array(
-					'on' => 'visible',
-					'request' => 'pageview',
-				),
-			),
-		),
-	);
-
-	// https://www.parsely.com/docs/integration/tracking/google-amp.html
-	$analytics['xyz-parsely'] = array(
-		'type' => 'parsely',
-		'attributes' => array(),
-		'config_data' => array(
-			'vars' => array(
-				'apikey' => 'cronkitenews.azpbs.org',
-			)
-		),
-	);
-
-	return $analytics;
-}
-
-/**
- * Add related posts to AMP amp_post_article_footer_meta
- */
-function my_amp_post_article_footer_meta( $parts ) {
-
-    $index = 1;
-
-    array_splice( $parts, $index, 0, array( 'my-related-posts' ) );
-
-    return $parts;
-}
-add_filter( 'amp_post_article_footer_meta', 'my_amp_post_article_footer_meta' );
-
-/**
- * Designate the template file for related posts
- */
-function my_amp_related_posts_path( $file, $template_type, $post ) {
-
-    if ( 'my-related-posts' === $template_type ) {
-        $file = get_stylesheet_directory() . '/templates/amp-related-posts.php';
-    }
-    return $file;
-}
-add_filter( 'amp_post_template_file', 'my_amp_related_posts_path', 10, 3 );
-
-
 // Move Yoast to bottom
 function wpcover_move_yoast() {
     return 'high';
 }
 add_filter( 'wpseo_metabox_prio', 'wpcover_move_yoast');
-
 
 // custom post type for students
 function students_CPT() {
