@@ -295,7 +295,7 @@ if (! class_exists('TGM_Plugin_Activation')) {
             }
 
             if (isset($_REQUEST['tab']) && 'plugin-information' == $_REQUEST['tab']) {
-                require_once ABSPATH . 'wp-admin/includes/plugin-install.php'; // Need for install_plugin_information().
+                include_once ABSPATH . 'wp-admin/includes/plugin-install.php'; // Need for install_plugin_information().
 
                 wp_enqueue_style('plugin-install');
 
@@ -464,8 +464,8 @@ if (! class_exists('TGM_Plugin_Activation')) {
                     return true;
                 }
 
-                require_once ABSPATH . 'wp-admin/includes/plugin-install.php'; // Need for plugins_api.
-                require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php'; // Need for upgrade classes.
+                include_once ABSPATH . 'wp-admin/includes/plugin-install.php'; // Need for plugins_api.
+                include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php'; // Need for upgrade classes.
 
                 // Set plugin source to WordPress API link if available.
                 if (isset($plugin['source']) && 'repo' == $plugin['source']) {
@@ -827,7 +827,7 @@ if (! class_exists('TGM_Plugin_Activation')) {
          *
          * @since 2.0.0
          *
-         * @param array $install_actions Existing array of actions.
+         * @param  array $install_actions Existing array of actions.
          * @return array                 Amended array of actions.
          */
         public function actions($install_actions)
@@ -872,7 +872,7 @@ if (! class_exists('TGM_Plugin_Activation')) {
          *
          * @since 2.0.0
          *
-         * @param string $slug Plugin slug (typically folder name) as provided by the developer.
+         * @param  string $slug Plugin slug (typically folder name) as provided by the developer.
          * @return string      Either file path for plugin if installed, or just the plugin slug.
          */
         protected function _get_plugin_basename_from_slug($slug)
@@ -896,8 +896,8 @@ if (! class_exists('TGM_Plugin_Activation')) {
          *
          * @since 2.1.0
          *
-         * @param string $name    Name of the plugin, as it was registered.
-         * @param string $data    Optional. Array key of plugin data to return. Default is slug.
+         * @param  string $name Name of the plugin, as it was registered.
+         * @param  string $data Optional. Array key of plugin data to return. Default is slug.
          * @return string|boolean Plugin slug if found, false otherwise.
          */
         protected function _get_plugin_data_from_name($name, $data = 'slug')
@@ -1050,7 +1050,7 @@ if (! function_exists('tgmpa')) {
  * @since 2.2.0
  */
 if (! class_exists('WP_List_Table')) {
-    require_once(ABSPATH . 'wp-admin/includes/class-wp-list-table.php');
+    include_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
 }
 
 if (! class_exists('TGMPA_List_Table')) {
@@ -1151,7 +1151,7 @@ if (! class_exists('TGMPA_List_Table')) {
                     // The plugin must be from a private repository.
                     if (preg_match('|^http(s)?://|', $plugin['source'])) {
                         $table_data[$i]['source'] = __('Private Repository', 'tgmpa');
-                    // The plugin is pre-packaged with the theme.
+                        // The plugin is pre-packaged with the theme.
                     } else {
                         $table_data[$i]['source'] = __('Pre-Packaged', 'tgmpa');
                     }
@@ -1212,8 +1212,8 @@ if (! class_exists('TGMPA_List_Table')) {
          *
          * @since 2.2.0
          *
-         * @param string $name Name of the plugin, as it was registered.
-         * @param string $data Optional. Array key of plugin data to return. Default is slug.
+         * @param  string $name Name of the plugin, as it was registered.
+         * @param  string $data Optional. Array key of plugin data to return. Default is slug.
          * @return string|boolean Plugin slug if found, false otherwise.
          */
         protected function _get_plugin_data_from_name($name, $data = 'slug')
@@ -1233,7 +1233,7 @@ if (! class_exists('TGMPA_List_Table')) {
          *
          * @since 2.2.0
          *
-         * @param array $item         Array of item data.
+         * @param array  $item        Array of item data.
          * @param string $column_name The name of the column.
          */
         public function column_default($item, $column_name)
@@ -1247,7 +1247,7 @@ if (! class_exists('TGMPA_List_Table')) {
          *
          * @since 2.2.0
          *
-         * @param array $item Array of item data.
+         * @param  array $item Array of item data.
          * @return string     The action hover links.
          */
         public function column_plugin($item)
@@ -1312,7 +1312,7 @@ if (! class_exists('TGMPA_List_Table')) {
          *
          * @since 2.2.0
          *
-         * @param array $item Array of item data.
+         * @param  array $item Array of item data.
          * @return string     The input checkbox with all necessary info.
          */
         public function column_cb($item)
@@ -1519,8 +1519,8 @@ if (! class_exists('TGMPA_List_Table')) {
                     return true;
                 }
 
-                require_once ABSPATH . 'wp-admin/includes/plugin-install.php'; // Need for plugins_api
-                require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php'; // Need for upgrade classes
+                include_once ABSPATH . 'wp-admin/includes/plugin-install.php'; // Need for plugins_api
+                include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php'; // Need for upgrade classes
 
                 // Store all information in arrays since we are processing a bulk installation.
                 $api          = array();
@@ -1661,7 +1661,7 @@ if (! class_exists('TGMPA_List_Table')) {
  * @since 2.2.0
  */
 if (! class_exists('WP_Upgrader') && (isset($_GET['page']) && TGM_Plugin_Activation::$instance->menu === $_GET['page'])) {
-    require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+    include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 
     if (! class_exists('TGM_Bulk_Installer')) {
         /**
@@ -1702,7 +1702,7 @@ if (! class_exists('WP_Upgrader') && (isset($_GET['page']) && TGM_Plugin_Activat
              *
              * @since 2.2.0
              *
-             * @param array $packages The plugin sources needed for installation.
+             * @param  array $packages The plugin sources needed for installation.
              * @return string|boolean Install confirmation messages on success, false on failure.
              */
             public function bulk_install($packages)
@@ -1777,7 +1777,7 @@ if (! class_exists('WP_Upgrader') && (isset($_GET['page']) && TGM_Plugin_Activat
              *
              * @since 2.2.0
              *
-             * @param array $options The installation config options
+             * @param  array $options The installation config options
              * @return null/array Return early if error, array of installation data on success
              */
             public function run($options)

@@ -136,9 +136,9 @@
   <?php
     $settings = get_field('longform-settings', get_the_ID());
     if ($settings['scripts-file'] != '') {
-  ?>
+        ?>
   <script src="<?php echo $settings['scripts-file']; ?>"></script>
-  <?php } ?>
+    <?php } ?>
 
   <script>
   /**
@@ -481,16 +481,16 @@
       });
 
       jQuery('.hamburger').click(function() {
-  			if (jQuery('.hamburger.is-active').length) {
-  				jQuery('#sub_nav').addClass('open').removeClass('close');
-  				jQuery('.sub_nav').removeClass('slideOutUp').addClass('slideInDown');
-  				jQuery('.sub_nav').css("display", "block");
-  			} else {
-  				jQuery('#sub_nav').addClass('close').removeClass('open');
-  				jQuery('.sub_nav').removeClass('slideInDown').addClass('slideOutUp');
+              if (jQuery('.hamburger.is-active').length) {
+                  jQuery('#sub_nav').addClass('open').removeClass('close');
+                  jQuery('.sub_nav').removeClass('slideOutUp').addClass('slideInDown');
+                  jQuery('.sub_nav').css("display", "block");
+              } else {
+                  jQuery('#sub_nav').addClass('close').removeClass('open');
+                  jQuery('.sub_nav').removeClass('slideInDown').addClass('slideOutUp');
           jQuery('.sub_nav').css("display", "none");
-  			}
-  		});
+              }
+          });
 
       $('.dropdown-el').click(function(e) {
         e.preventDefault();

@@ -134,7 +134,7 @@ get_header('photogallery'); ?>
               <div class="audio"><a class="audio-4"><i class="fas fa-volume-down"></i></a></div>
               <?php
                 echo '<audio id="audio-4" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/Moses.mp3">Your browser does not support the <code>audio</code> element.</audio>';
-              ?>
+                ?>
             </div>
             <div class="profile-content">
               <p>“I think the community was happy to see that a tribal member was there to help, and that, too, made them more comfortable.” </p>
@@ -148,7 +148,7 @@ get_header('photogallery'); ?>
               <div class="audio"><a class="audio-5"><i class="fas fa-volume-down"></i></a></div>
               <?php
                 echo '<audio id="audio-5" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/Dr.Close_.mp3">Your browser does not support the <code>audio</code> element.</audio>';
-              ?>
+                ?>
             </div>
             <div class="profile-content">
               <p>“We wouldn't have been able to … test, trace and chase the virus … if we didn't have buy-in from both the community and the community leadership.”</p>
@@ -162,7 +162,7 @@ get_header('photogallery'); ?>
               <div class="audio"><a class="audio-6"><i class="fas fa-volume-down"></i></a></div>
               <?php
                 echo '<audio id="audio-6" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/KParker.mp3">Your browser does not support the <code>audio</code> element.</audio>';
-              ?>
+                ?>
             </div>
             <div class="profile-content">
               <p>“Although our mortality rate has been low, each death is one too many and a tragedy.”</p>

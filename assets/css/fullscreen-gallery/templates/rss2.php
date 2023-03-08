@@ -40,7 +40,7 @@ print '<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http
         echo '<p>';
         echo the_title();
         echo '</p>';
-    //echo get_the_content();
+        //echo get_the_content();
         $content = explode('<hr style="width:100%;">', get_the_content());
         echo $content[0];
         echo ']]>';

@@ -1,9 +1,9 @@
 <?php
 
 /**
-* Template Name: Cronkite News Feed
-* Date: Sunday, Nov. 8th, 2020
-*/
+ * Template Name: Cronkite News Feed
+ * Date: Sunday, Nov. 8th, 2020
+ */
 
 //header("Content-Type: application/rss+xml; charset=UTF-8");
 

@@ -12,9 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Add Favicon -->
-    <link type="image/png" href="<?php the_field('favicon','options'); ?>" rel="icon">
-    <link type="image/png" href="<?php the_field('favicon','options'); ?>" rel="shortcut icon">
-    <link type="image/png" href="<?php the_field('favicon','options'); ?>"  rel="apple-touch-icon">
+    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="icon">
+    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="shortcut icon">
+    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>"  rel="apple-touch-icon">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>
@@ -32,29 +32,29 @@
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 
     <!-- FB App Configuration for Comment Moderation   -->
-		<script>
-			window.fbAsyncInit = function() {
-			FB.init({
-				appId      : '511732915827177',
-				xfbml      : true,
-				version    : 'v2.11'
-				});
-				FB.AppEvents.logPageView();
-			};
+        <script>
+            window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '511732915827177',
+                xfbml      : true,
+                version    : 'v2.11'
+                });
+                FB.AppEvents.logPageView();
+            };
 
-			(function(d, s, id){
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) {return;}
-				js = d.createElement(s); js.id = id;
-				js.src = "https://connect.facebook.net/en_US/sdk.js";
-				fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-		</script>
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
 
     <meta property="fb:app_id" content="511732915827177" />
 
-		<!-- FB instant articles -->
-		<meta property="fb:pages" content="305166330794" />
+        <!-- FB instant articles -->
+        <meta property="fb:pages" content="305166330794" />
 
     <?php wp_head(); ?>
 
@@ -68,8 +68,8 @@
 
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/long-form/foundation.css">
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-		<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/app.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/app.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/single-story-post.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/long-form/long-form-base.css">
     <link href="<?php bloginfo('template_directory');?>/assets/css/nav.css" rel="stylesheet">
@@ -81,15 +81,15 @@
     <?php } ?>
 
     <style type='text/css'>
-  	    body.admin-bar {margin-top:32px !important}
-  	    @media screen and (max-width: 782px) {
-  	        body.admin-bar { margin-top:0px !important }
-  	    }
-  	    @media screen and (max-width: 600px) {
-  	        body.admin-bar { margin-top:0px !important }
-  	        html #wpadminbar{ margin-top: -46px; }
-  	    }
-  	</style>
+          body.admin-bar {margin-top:32px !important}
+          @media screen and (max-width: 782px) {
+              body.admin-bar { margin-top:0px !important }
+          }
+          @media screen and (max-width: 600px) {
+              body.admin-bar { margin-top:0px !important }
+              html #wpadminbar{ margin-top: -46px; }
+          }
+      </style>
 
   </head>
 

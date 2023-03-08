@@ -43,7 +43,7 @@ echo '<?xml version="1.0"?><rss version="2.0">';
         echo '<![CDATA[';
         echo '<p>';
 
-    // retrieved author names
+        // retrieved author names
         $externalAuthorCount = 1;
         $internalAuthorCount = 0;
         $commaSeparator = ',';
@@ -114,9 +114,9 @@ echo '<?xml version="1.0"?><rss version="2.0">';
                 }
             }
         }
-    //wp_reset_query();
+        //wp_reset_query();
 
-    //echo get_field('post_author');
+        //echo get_field('post_author');
         echo $authorName;
         echo '</p>';
         echo '<p>';

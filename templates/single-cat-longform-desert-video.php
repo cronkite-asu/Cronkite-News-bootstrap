@@ -3,7 +3,7 @@
  * Template Name: Longform Desert Video 
  * Story template without sidebar with video top
  */
-get_header( 'desert' ); ?>
+get_header('desert'); ?>
 
 
 </script>
@@ -42,7 +42,7 @@ get_header( 'desert' ); ?>
                                     <?php if (have_posts()) : ?>
                                         <?php while (have_posts()) : the_post(); ?><!-- BEGIN of POST-->
                                             <article  id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  					
+                      
                             <h1><?php the_title(); ?></h1>                  
                        
                             <video class="video-top-bg" style="max-width:1100px;" poster=" <?php the_field('lv_image');?>" playsinline autoplay muted loop>
@@ -51,7 +51,7 @@ get_header( 'desert' ); ?>
                             </video>
                                    
                                 <div class="wp-caption-text" style="float:left; font-style:italic;">
-                                 <?php the_field('lv_caption'); ?>    
+                                            <?php the_field('lv_caption'); ?>    
                                 </div>
                                                 
                                                 
@@ -59,10 +59,10 @@ get_header( 'desert' ); ?>
                                 <h6 class="story-info"><?php if($postAuthor = get_field('post_author')) {?>
                                 <a href="<?php echo site_url(); ?>?s=<?php echo $postAuthor; ?>">
                                 By <?php echo $postAuthor; ?> |
-                                <?php } ?>
-                                <?php if( $siteTitle = get_field('site_title')) {?>
+                               <?php } ?>
+                                            <?php if($siteTitle = get_field('site_title')) {?>
                                     <a href="http://<?php the_field('site_url'); ?>"><?php echo $siteTitle; ?></a></h6>
-                                <?php } ?>
+                                            <?php } ?>
                                 <h6 class="story-info-date"><?php echo ap_date(); ?></h6>
 
                                                 <?php the_content(); ?>
@@ -79,7 +79,7 @@ get_header( 'desert' ); ?>
                             <div class="comment-form-wrapper">
                                 <h2>Leave a Comment</h2>
 
-					<?php echo do_shortcode('[fbcomments]'); ?>
+                    <?php echo do_shortcode('[fbcomments]'); ?>
 
                                 <div id="response"></div>
                             </div>

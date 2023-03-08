@@ -5,7 +5,7 @@
 ?>
 <!DOCTYPE html>
 <!--[if IE]>
-	<script src="<?php bloginfo('template_url'); ?>/js/plugins/html5shiv.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/plugins/html5shiv.js"></script>
 <![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9 ie8" lang="en" ><![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
@@ -17,19 +17,19 @@
 
 <head>
 
-	<!-- Chartbeat Analytics  -->
-	<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
+    <!-- Chartbeat Analytics  -->
+    <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
 <!--     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#216CB7">
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#216CB7">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Add Favicon -->
-    <link type="image/png" href="<?php the_field('favicon','options'); ?>" rel="icon">
-    <link type="image/png" href="<?php the_field('favicon','options'); ?>" rel="shortcut icon">
-    <link type="image/png" href="<?php the_field('favicon','options'); ?>"  rel="apple-touch-icon">
+    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="icon">
+    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="shortcut icon">
+    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>"  rel="apple-touch-icon">
 
     <!-- Load Google Fonts -->
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -38,30 +38,30 @@
 
     <!-- Google Analytics Tracking Code  -->
 
-		<?php
-	// get the category for GA
-		$post = get_post();
-		$categories = get_the_category ($post -> ID);
-		$output = '';
+        <?php
+        // get the category for GA
+        $post = get_post();
+        $categories = get_the_category($post -> ID);
+        $output = '';
 
-		if ( ! empty( $categories ) ) {
-			foreach( $categories as $category ) {
+        if (! empty($categories) ) {
+            foreach( $categories as $category ) {
 
-			if ($category->name == "Borderlands") {
-			// $output = "ga('set', 'contentGroup1', '"  . esc_html( $category->name ) . "');";
-			$output = "ga('set', 'contentGroup1', 'My Group Name');";
-		}
-		if ($category->name == "Sustainability") {
-		// $output = "ga('set', 'contentGroup2', '"  . esc_html( $category->name ) . "');";
-		$output = "ga('set', 'contentGroup2', 'My Group Name');";
-	}
-	}
-}
+                if ($category->name == "Borderlands") {
+                    // $output = "ga('set', 'contentGroup1', '"  . esc_html( $category->name ) . "');";
+                    $output = "ga('set', 'contentGroup1', 'My Group Name');";
+                }
+                if ($category->name == "Sustainability") {
+                    // $output = "ga('set', 'contentGroup2', '"  . esc_html( $category->name ) . "');";
+                    $output = "ga('set', 'contentGroup2', 'My Group Name');";
+                }
+            }
+        }
 
-		?>
+        ?>
 
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>
 
    <!-- Hotjar Tracking Code for http://cronkitenews.azpbs.org -->
    <script>
@@ -74,19 +74,19 @@
            a.appendChild(r);
        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
    </script>
-	<!-- FB instant articles -->
-	<meta property="fb:pages" content="305166330794" />
+    <!-- FB instant articles -->
+    <meta property="fb:pages" content="305166330794" />
 
     <?php wp_head(); ?>
-<!-- 		<script src="<?php bloginfo('template_directory');?>/js/plugins/jquery.scrolldepth.js"></script> -->
-	 <script>
-	 jQuery(function() {
-		 jQuery.scrollDepth({
-		  minHeight: 1000,
-		  userTiming: false
-		});
+<!--         <script src="<?php bloginfo('template_directory');?>/js/plugins/jquery.scrolldepth.js"></script> -->
+     <script>
+     jQuery(function() {
+         jQuery.scrollDepth({
+          minHeight: 1000,
+          userTiming: false
+        });
 });
-	 </script>
+     </script>
 
 </head>
 
@@ -109,11 +109,11 @@
 <!--
                     <ul class="social pull-right">
 
-                    <?php if( have_rows('social_box','options') ): ?>
-                        <?php while( have_rows('social_box','options') ): the_row();
+                    <?php if(have_rows('social_box', 'options') ) : ?>
+                        <?php while( have_rows('social_box', 'options') ): the_row();
                             // Declare variables below
-                            $icon = get_sub_field('social_icon','options');
-                            $link = get_sub_field('social_link','options');
+                            $icon = get_sub_field('social_icon', 'options');
+                            $link = get_sub_field('social_link', 'options');
                             // Use variables below ?>
                             <li>
                                 <a target="_blank" href="<?php echo $link; ?>"><img src="<?php echo $icon; ?>" /></a>
@@ -150,7 +150,7 @@
 
                                 <!-- ============================================================= MAIN NAVIGATION ============================================================= -->
                         <div class="menuClass">
-                          <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'fallback_cb' => 'bootstrap_menu', 'menu_class' => 'nav navbar-nav', 'walker' => new bootstrap_navigation() ) ); ?>
+                          <?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'fallback_cb' => 'bootstrap_menu', 'menu_class' => 'nav navbar-nav', 'walker' => new bootstrap_navigation() )); ?>
                                  </div>
                                 <!-- ============================================================= MAIN NAVIGATION : END ============================================================= -->
                       <div class="search-parent" id="header-search-parent">
@@ -159,8 +159,8 @@
                                <i class="icon-search"></i>
                                 <div class="dropdown-menu">
 -->
-                                   <form method="get" class="navbar-form search" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                                       <input type="text" class="form-control" name="s" id="s" placeholder="<?php esc_attr_e( 'Type to search' ); ?>" />
+                                   <form method="get" class="navbar-form search" id="searchform" action="<?php echo esc_url(home_url('/')); ?>">
+                                       <input type="text" class="form-control" name="s" id="s" placeholder="<?php esc_attr_e('Type to search'); ?>" />
                                        <button type="submit"  class="btn btn-default btn-submit icon-right-open" name="submit" id="searchsubmit"></button>
                                    </form>
 <!--                                </div>-->
@@ -169,7 +169,7 @@
                         <div class="sectionDropDown">
                             <button class="dbtn"><span class="glyphicon glyphicon-ok"></span> </button>
                             <div class="d-content">
-                          <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'fallback_cb' => 'bootstrap_menu', 'menu_class' => 'nav navbar-nav', 'walker' => new bootstrap_navigation() ) ); ?>
+                          <?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'fallback_cb' => 'bootstrap_menu', 'menu_class' => 'nav navbar-nav', 'walker' => new bootstrap_navigation() )); ?>
                         </div></div>
 
                     </div>

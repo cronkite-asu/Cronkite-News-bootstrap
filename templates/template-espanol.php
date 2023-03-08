@@ -31,14 +31,14 @@ get_header(); ?>
                                         <?php global $post;?>
         
                                         <?php $arg = array(
-                                            'post_type'	    => 'post',
-                                            'order'		    => 'DESC',
-                                            'orderby'	    => 'date',
+                                            'post_type'        => 'post',
+                                            'order'            => 'DESC',
+                                            'orderby'        => 'date',
                                             'posts_per_page'    => 1,
                                             'category_name' =>  'cronkite-sports-on-fox'
                                         );
-                                        $the_query = new WP_Query( $arg );
-                                        if ( $the_query->have_posts() ) : ?>
+                                        $the_query = new WP_Query($arg);
+if ($the_query->have_posts() ) : ?>
         
                                                 <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                                                            <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
@@ -51,21 +51,21 @@ get_header(); ?>
                                                            <?php the_excerpt(); ?>
                                                 <?php endwhile;?>
         
-                                        <?php endif; wp_reset_query(); ?>
+<?php endif; wp_reset_query(); ?>
                                     </div>
                                 </div>
                                 
                                 <div class="post-content post-content-news">
                                     <?php query_posts('post_type=post&category_name=cronkite-sports-on-fox&post_status=publish&posts_per_page=8&paged='. get_query_var('paged')); ?>
 
-                                    <?php if ( have_posts() ) : ?>
+                                    <?php if (have_posts() ) : ?>
                                         <?php $number = 0; ?>
 
                                         <?php while ( have_posts() ) : the_post(); ?>
                                             <div class="row news-box">
                                                 <div class="col-sm-3 inner-right-xs-archive text-left">
                                                     <figure>
-                                                        <a href="#modal-members" class="watch" member-number="<?= $number; ?>" >
+                                                        <a href="#modal-members" class="watch" member-number="<?php echo $number; ?>" >
                                                     <?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive')); ?>
                                                         </a>
                                                             </figure>
@@ -73,11 +73,11 @@ get_header(); ?>
                                                 <!-- /.col -->
 
                                                 <div class="col-sm-9 inner-top-xs inner-left-xs-archive">
-                                                    <a href="#modal-members" class="watch" member-number="<?= $number; ?>" >
+                                                    <a href="#modal-members" class="watch" member-number="<?php echo $number; ?>" >
                                                         <h2><span class="post-title"><?php the_title(); ?></span></h2>
                                                     </a>
                                                     <?php the_excerpt(); ?>
-                                                    <a href="#modal-members" member-number="<?= $number; ?>" class="watch"><i class="icon-videocam"></i></a>
+                                                    <a href="#modal-members" member-number="<?php echo $number; ?>" class="watch"><i class="icon-videocam"></i></a>
                                                 </div>
 
 
@@ -90,7 +90,7 @@ get_header(); ?>
 
                                     <div class="row">
                                         <div class="col-sm-12 inner-right-xs-archive text-left">
-                                            <div class="watch-icon"> <?php wp_get_archives( $args ); ?></div>
+                                            <div class="watch-icon"> <?php wp_get_archives($args); ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -102,8 +102,8 @@ get_header(); ?>
                             <figure>
                                 <figcaption class="author-details">
                                     <h3>Search for more stories and video:</h3>
-                                    <form method="get" class="navbar-form search" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                                        <input type="text" class="form-control" name="s" id="s" placeholder="<?php esc_attr_e( 'Search Stories and Videos' ); ?>" />
+                                    <form method="get" class="navbar-form search" id="searchform" action="<?php echo esc_url(home_url('/')); ?>">
+                                        <input type="text" class="form-control" name="s" id="s" placeholder="<?php esc_attr_e('Search Stories and Videos'); ?>" />
                                         <input type="hidden" name="post_type" value="news" />
                                         <button type="submit"  class="btn btn-default btn-submit icon-right-open" name="submit" id="searchsubmit"></button>
                                     </form>
@@ -145,15 +145,15 @@ get_header(); ?>
     <div class="remodal" data-remodal-id="modal-members" >
         <?php query_posts('post_type=post&category_name=cronkite-sports-on-fox&post_status=publish&posts_per_page=-1&paged='. get_query_var('paged')); ?>
 
-                <?php if ( have_posts() ) : ?>
+                <?php if (have_posts() ) : ?>
                     <?php $number = 0; ?>
 
                     <?php while ( have_posts() ) : the_post(); ?>
-                        <div class="popup-box" member-number="<?= $number; ?>">
+                        <div class="popup-box" member-number="<?php echo $number; ?>">
                             <?php the_field('video_file');?>
                         </div>
-                     <?php $number++; ?>
-                <?php endwhile; ?><!-- END of Post -->
+                        <?php $number++; ?>
+                    <?php endwhile; ?><!-- END of Post -->
                 <?php endif; wp_reset_query(); ?>
     </div>
 

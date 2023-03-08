@@ -13,22 +13,22 @@
 
 
   // get tapachula content
-  if ( have_rows('content') ) {
+if (have_rows('content') ) {
     while ( have_rows('content') ) { the_row();
-      if ( get_row_layout() == 'story' ) {
-          // get stories
-          $storyList = get_sub_field('story');
-          if ($storyList) {
-            foreach ($storyList as $story) {
-              $permalink = get_permalink( $story->ID );
-              $title = get_the_title( $story->ID );
-              $storyTease = get_field( 'story_tease', $story->ID );
-              $photo = get_the_post_thumbnail_url($story->ID);
-              $photoSmall = get_the_post_thumbnail($story->ID);
+        if (get_row_layout() == 'story' ) {
+            // get stories
+            $storyList = get_sub_field('story');
+            if ($storyList) {
+                foreach ($storyList as $story) {
+                    $permalink = get_permalink($story->ID);
+                    $title = get_the_title($story->ID);
+                    $storyTease = get_field('story_tease', $story->ID);
+                    $photo = get_the_post_thumbnail_url($story->ID);
+                    $photoSmall = get_the_post_thumbnail($story->ID);
+                }
             }
-          }
 
-        ?>
+            ?>
           <div class="grid-container tapachula-story">
             <div class="grid-x">
               <div class="large-6 medium-6 small-12 cell story-text">
@@ -45,20 +45,20 @@
               </div>
             </div>
           </div>
-    <?php }	elseif ( get_row_layout() == 'photo-story' ) {
-          // get stories
-          $storyList = get_sub_field('photo_story');
-          if ($storyList) {
-            foreach ($storyList as $story) {
-              $permalink = get_permalink( $story->ID );
-              $title = get_the_title( $story->ID );
-              $storyTease = get_field( 'story_tease', $story->ID );
-              $photo = get_the_post_thumbnail_url($story->ID);
-              $photoSmall = get_the_post_thumbnail($story->ID);
+        <?php }    elseif (get_row_layout() == 'photo-story' ) {
+            // get stories
+            $storyList = get_sub_field('photo_story');
+            if ($storyList) {
+                foreach ($storyList as $story) {
+                    $permalink = get_permalink($story->ID);
+                    $title = get_the_title($story->ID);
+                    $storyTease = get_field('story_tease', $story->ID);
+                    $photo = get_the_post_thumbnail_url($story->ID);
+                    $photoSmall = get_the_post_thumbnail($story->ID);
+                }
             }
-          }
 
-        ?>
+            ?>
           <div class="grid-container tapachula-story">
             <div class="grid-x">
               <div class="large-6 medium-6 small-12 cell story-text">
@@ -76,21 +76,21 @@
             </div>
           </div>
 
-    <?php }	elseif ( get_row_layout() == 'gallery' ) { ?>
-    <?php }	elseif ( get_row_layout() == 'video' ) {
-          // get stories
-          $storyList = get_sub_field('video_story');
-          if ($storyList) {
-            foreach ($storyList as $story) {
-              $permalink = get_permalink( $story->ID );
-              $title = get_the_title( $story->ID );
-              $storyTease = get_field( 'story_tease', $story->ID );
-              $photo = get_the_post_thumbnail_url($story->ID);
-              $photoSmall = get_the_post_thumbnail($story->ID);
+        <?php }    elseif (get_row_layout() == 'gallery' ) { ?>
+        <?php }    elseif (get_row_layout() == 'video' ) {
+            // get stories
+            $storyList = get_sub_field('video_story');
+            if ($storyList) {
+                foreach ($storyList as $story) {
+                    $permalink = get_permalink($story->ID);
+                    $title = get_the_title($story->ID);
+                    $storyTease = get_field('story_tease', $story->ID);
+                    $photo = get_the_post_thumbnail_url($story->ID);
+                    $photoSmall = get_the_post_thumbnail($story->ID);
+                }
             }
-          }
 
-        ?>
+            ?>
           <div class="grid-container tapachula-story">
             <div class="grid-x">
               <div class="large-6 medium-6 small-12 cell story-text">
@@ -108,8 +108,8 @@
             </div>
           </div>
 
-<?php
-      }
+            <?php
+        }
     }
-  }
+}
 ?>

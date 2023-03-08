@@ -67,7 +67,7 @@ wp_reset_query(); ?>
                                             <div class="row news-box">
                                                 <div class="col-sm-3 inner-right-xs-archive text-left">
                                                     <figure>
-                                                        <a href="#modal-members" class="watch" member-number="<?= $number; ?>" >
+                                                        <a href="#modal-members" class="watch" member-number="<?php echo $number; ?>" >
                                                     <?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive')); ?>
                                                         </a>
                                                             </figure>
@@ -75,11 +75,11 @@ wp_reset_query(); ?>
                                                 <!-- /.col -->
 
                                                 <div class="col-sm-9 inner-top-xs inner-left-xs-archive">
-                                                    <a href="#modal-members" class="watch" member-number="<?= $number; ?>" >
+                                                    <a href="#modal-members" class="watch" member-number="<?php echo $number; ?>" >
                                                         <h2><span class="post-title"><?php the_title(); ?></span></h2>
                                                     </a>
                                                     <?php the_excerpt(); ?>
-                                                    <a href="#modal-members" member-number="<?= $number; ?>" class="watch"><i class="icon-videocam"></i></a>
+                                                    <a href="#modal-members" member-number="<?php echo $number; ?>" class="watch"><i class="icon-videocam"></i></a>
                                                 </div>
 
 
@@ -153,7 +153,7 @@ wp_reset_query(); ?>
 
                     <?php while (have_posts()) :
                         the_post(); ?>
-                        <div class="popup-box" member-number="<?= $number; ?>">
+                        <div class="popup-box" member-number="<?php echo $number; ?>">
                             <?php the_field('video_file');?>
                         </div>
                         <?php $number++; ?>

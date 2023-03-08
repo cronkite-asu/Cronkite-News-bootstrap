@@ -17,19 +17,19 @@ function gridpost($item)
     $permalink = get_the_permalink($postid);
     $url_link = get_field("url_link", $item);
     $verticals = get_the_category($postid);
-//    $separator = ' | ';
-//    $output = '';
-//      if ( ! empty( $verticals ) ) {
-//        echo '<div style="font-size: 14px; font-weight: bold;">';
-//        foreach( $verticals as $category ) {
-//
-//          if (($category->name != "Uncategorized") && ($category->name != "Longform") && ($category->name != "Longform No Title") && ($category->name != "Sports")) {
-//        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ). '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . strtoupper(esc_html( $category->name )) . '</a>' . $separator;
-//      }
-//
-//    }
-//    echo trim( $output, $separator );
-//    echo "</div>";
+    //    $separator = ' | ';
+    //    $output = '';
+    //      if ( ! empty( $verticals ) ) {
+    //        echo '<div style="font-size: 14px; font-weight: bold;">';
+    //        foreach( $verticals as $category ) {
+    //
+    //          if (($category->name != "Uncategorized") && ($category->name != "Longform") && ($category->name != "Longform No Title") && ($category->name != "Sports")) {
+    //        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ). '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . strtoupper(esc_html( $category->name )) . '</a>' . $separator;
+    //      }
+    //
+    //    }
+    //    echo trim( $output, $separator );
+    //    echo "</div>";
     //}
 
     if ($url_link) : // post goes offsite (extremely rare)

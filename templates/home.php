@@ -4,7 +4,7 @@
  */
 get_header('new'); ?>
 
-<?php if( get_field('alternate_layout') == 'Yes' ): ?>
+<?php if(get_field('alternate_layout') == 'Yes' ) : ?>
 
   <section style="background-color:#FFF;">
       <?php if (get_field('breaking_headline')) : ?>
@@ -18,16 +18,16 @@ get_header('new'); ?>
 
     <?php
       $home_main_storyID = get_field('home_main_story', 24);
-      if ($home_main_storyID) {
+    if ($home_main_storyID) {
         // override $post
         $post = $home_main_storyID;
-        setup_postdata( $post );
-    ?>
+        setup_postdata($post);
+        ?>
       <div class="container">
       <div class="row">
       <div class="col-xs-12 col-md-8" style="padding:0;">
         <?php if (get_field('main_custom_photo', 24) == '') { ?>
-        <div class="item" style="background: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id($home_main_storyID)); ?>) center top no-repeat; background-size: cover;">
+        <div class="item" style="background: url(<?php echo wp_get_attachment_url(get_post_thumbnail_id($home_main_storyID)); ?>) center top no-repeat; background-size: cover;">
         <?php } else { ?>
         <div class="item" style="background: url(<?php echo get_field('main_custom_photo', 24); ?>) center top no-repeat; background-size: cover;">
         <?php } ?>
@@ -35,11 +35,11 @@ get_header('new'); ?>
           <div class="tinter" style="height: 501px;">
             <div class="hero-caption animated fadeIn">
                 <h1 class="animate fadeInDown light-color" style="margin-left: 0px;">
-                  <?php if (get_field('use_short_headline', $home_main_storyID) == 'yes' && get_field('homepage_headline', $home_main_storyID) != '') { ?>
+                <?php if (get_field('use_short_headline', $home_main_storyID) == 'yes' && get_field('homepage_headline', $home_main_storyID) != '') { ?>
                     <a href="<?php echo get_permalink($home_main_storyID); ?>"><?php echo get_field('homepage_headline', $home_main_storyID); ?></a>
-                  <?php } else { ?>
+                <?php } else { ?>
                     <a href="<?php echo get_permalink($home_main_storyID); ?>"><?php echo get_the_title($home_main_storyID); ?></a>
-                  <?php } ?>
+                <?php } ?>
                 </h1>
             </div>
             <!-- /.caption -->
@@ -49,7 +49,7 @@ get_header('new'); ?>
         <!-- tinter -->
 
           </div>
-     <?php } ?>
+    <?php } ?>
           <!-- END of Post -->
         <?php  wp_reset_query(); ?>
 
@@ -93,24 +93,24 @@ get_header('new'); ?>
 
                      <?php
                         $top_side_stories = get_field('top_side_stories');
-                        if( $top_side_stories ) {
-                     ?>
-                        <?php
+                        if($top_side_stories ) {
+                            ?>
+                            <?php
                             foreach( $top_side_stories as $post ) {
-                              // Setup this post for WP functions (variable must be named $post).
-                              setup_postdata($post);
-                        ?>
+                                // Setup this post for WP functions (variable must be named $post).
+                                setup_postdata($post);
+                                ?>
                             <li>
                               <a href="<?php the_permalink(); ?>">
                                 <?php the_title(); ?>
                               </a>
                             </li>
+                            <?php } ?>
+                            <?php
+                            // Reset the global post object so that the rest of the page works correctly.
+                            wp_reset_postdata();
+                            ?>
                         <?php } ?>
-                      <?php
-                        // Reset the global post object so that the rest of the page works correctly.
-                        wp_reset_postdata();
-                      ?>
-                      <?php } ?>
 
                    </ul>
             </div>
@@ -138,34 +138,34 @@ get_header('new'); ?>
 
     <?php
       $home_main_storyID = get_field('home_main_story', 24);
-      if ($home_main_storyID) {
+    if ($home_main_storyID) {
         // override $post
         $post = $home_main_storyID;
-        setup_postdata( $post );
-    ?>
+        setup_postdata($post);
+        ?>
     <!-- BEGIN of Post -->
     <div class="container">
       <div class="row">
       <div class="col-xs-12 col-md-8" style="padding:0;">
 
-          <?php if (get_field('main_custom_photo', 24) == '') { ?>
-          <div class="item" style="background: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id($home_main_storyID)); ?>) center top no-repeat; background-size: cover;">
-          <?php } else { ?>
+        <?php if (get_field('main_custom_photo', 24) == '') { ?>
+          <div class="item" style="background: url(<?php echo wp_get_attachment_url(get_post_thumbnail_id($home_main_storyID)); ?>) center top no-repeat; background-size: cover;">
+        <?php } else { ?>
           <div class="item" style="background: url(<?php echo get_field('main_custom_photo', 24); ?>) center top no-repeat; background-size: cover;">
-          <?php } ?>
+        <?php } ?>
           <div class="tinter" style="height: 501px;">
             <div class="hero-caption animated fadeIn">
                 <h1 class="animate fadeInDown light-color" style="margin-left: 0px;">
 
-                  <?php if (get_field('main_custom_photo', 24) == '') { ?>
+                <?php if (get_field('main_custom_photo', 24) == '') { ?>
                     <?php if (get_field('use_short_headline', $home_main_storyID) == 'yes' && get_field('homepage_headline', $home_main_storyID) != '') { ?>
                       <a href="<?php echo get_permalink($home_main_storyID); ?>"><?php echo get_field('homepage_headline', $home_main_storyID); ?></a>
                     <?php } else { ?>
                       <a href="<?php echo get_permalink($home_main_storyID); ?>"><?php echo get_the_title($home_main_storyID); ?></a>
                     <?php } ?>
-                  <?php } else { ?>
+                <?php } else { ?>
                     <a href="<?php echo get_field('main_custom_link', 24); ?>" target="_blank"><?php echo get_field('main_custom_title', 24); ?></a>
-                  <?php } ?>
+                <?php } ?>
 
 
                 </h1>
@@ -184,70 +184,71 @@ get_header('new'); ?>
 
 
      <?php
-   function feature_aside($item) {
+        function feature_aside($item)
+        {
 
 
-    $postid = $item -> ID;
-    $permalink = get_the_permalink($postid);
-    $url_link = get_field ("url_link", $item);
+            $postid = $item -> ID;
+            $permalink = get_the_permalink($postid);
+            $url_link = get_field("url_link", $item);
 
-    $output = '';
+            $output = '';
 
-    echo '<a href="' . $permalink  . ' ">' ;
-    echo ' <div class="image-cont-1" style="position:relative; left:1px;">';
-    echo  get_the_post_thumbnail($postid, 'large', array('class' => 'img-responsive home-aside'));
-    if (get_field('use_short_headline', $postid) == 'yes' && get_field('homepage_headline', $postid) != '') {
-      echo '<h4>' . get_field('homepage_headline', $postid).'</h4>';
-    } else {
-      echo '<h4>' . get_the_title($postid) .'</h4>';
-    }
-    echo '</div></a>';
-   }
+            echo '<a href="' . $permalink  . ' ">' ;
+            echo ' <div class="image-cont-1" style="position:relative; left:1px;">';
+            echo  get_the_post_thumbnail($postid, 'large', array('class' => 'img-responsive home-aside'));
+            if (get_field('use_short_headline', $postid) == 'yes' && get_field('homepage_headline', $postid) != '') {
+                echo '<h4>' . get_field('homepage_headline', $postid).'</h4>';
+            } else {
+                echo '<h4>' . get_the_title($postid) .'</h4>';
+            }
+            echo '</div></a>';
+        }
 
-  if( have_rows('slider_aside_box')): // check for repeater fields
-    while ( have_rows('slider_aside_box')) : the_row(); // loop through the repeater fields
-    $asposts = get_sub_field('aside_post_box'); // all the latest news is now loaded in $posts
-    endwhile;
-  endif;
+        if(have_rows('slider_aside_box')) : // check for repeater fields
+            while ( have_rows('slider_aside_box')) : the_row(); // loop through the repeater fields
+                $asposts = get_sub_field('aside_post_box'); // all the latest news is now loaded in $posts
+            endwhile;
+        endif;
 
-?>
+        ?>
 
 
 
       <div class="col-xs-12 col-md-4" style="padding:0;">
           <?php if (get_field('custom_slide_aside_title1', 24) != '') { ?>
           <div style="border-bottom:1px solid white;">
-            <?php
-              echo '<a href="' . get_field('custom_slide_aside_link1', 24)  . ' ">' ;
-              echo ' <div class="image-cont-1" style="position:relative; left:1px;">';
-              echo '<img src="'.get_field('custom_slide_aside_photo1', 24).'" class="img-responsive home-aside" />';
-              echo '<h4>' . get_field('custom_slide_aside_title1', 24) .'</h4>';
-              echo '</div></a>';
-            ?>
+                <?php
+                echo '<a href="' . get_field('custom_slide_aside_link1', 24)  . ' ">' ;
+                echo ' <div class="image-cont-1" style="position:relative; left:1px;">';
+                echo '<img src="'.get_field('custom_slide_aside_photo1', 24).'" class="img-responsive home-aside" />';
+                echo '<h4>' . get_field('custom_slide_aside_title1', 24) .'</h4>';
+                echo '</div></a>';
+                ?>
           </div>
-        <?php } else { ?>
+          <?php } else { ?>
           <div style="border-bottom:1px solid white;">
-            <?php feature_aside($asposts[0]); ?>
+              <?php feature_aside($asposts[0]); ?>
           </div>
-        <?php } ?>
+          <?php } ?>
 
 
           <?php if (get_field('custom_slide_aside_title2', 24) != '') { ?>
-            <?php
-              echo '<a href="' . get_field('custom_slide_aside_link2', 24)  . ' ">' ;
-              echo ' <div class="image-cont-1" style="position:relative; left:1px;">';
-              echo '<img src="'.get_field('custom_slide_aside_photo2', 24).'" class="img-responsive home-aside" />';
-              echo '<h4>' . get_field('custom_slide_aside_title2', 24) .'</h4>';
-              echo '</div></a>';
-            ?>
+                <?php
+                echo '<a href="' . get_field('custom_slide_aside_link2', 24)  . ' ">' ;
+                echo ' <div class="image-cont-1" style="position:relative; left:1px;">';
+                echo '<img src="'.get_field('custom_slide_aside_photo2', 24).'" class="img-responsive home-aside" />';
+                echo '<h4>' . get_field('custom_slide_aside_title2', 24) .'</h4>';
+                echo '</div></a>';
+                ?>
           <?php } else { ?>
-            <?php if (get_field('custom_slide_aside_title1', 24) != '' && get_field('custom_slide_aside_title2', 24) == '') { ?>
-              <?php feature_aside($asposts[0]); ?>
-            <?php } else if (get_field('custom_slide_aside_title1', 24) == '' && get_field('custom_slide_aside_title2', 24) != '') {  ?>
-              <?php feature_aside($asposts[0]); ?>
-            <?php } else { ?>
-              <?php feature_aside($asposts[1]); ?>
-            <?php } ?>
+              <?php if (get_field('custom_slide_aside_title1', 24) != '' && get_field('custom_slide_aside_title2', 24) == '') { ?>
+                    <?php feature_aside($asposts[0]); ?>
+              <?php } else if (get_field('custom_slide_aside_title1', 24) == '' && get_field('custom_slide_aside_title2', 24) != '') {  ?>
+                  <?php feature_aside($asposts[0]); ?>
+              <?php } else { ?>
+                  <?php feature_aside($asposts[1]); ?>
+              <?php } ?>
           <?php } ?>
       </div>
 
@@ -259,7 +260,7 @@ get_header('new'); ?>
 
     </section>
 
-    <?php endif; wp_reset_query(); ?>
+<?php endif; wp_reset_query(); ?>
 
 
   <!-- START Verticals Section  -->
@@ -273,22 +274,22 @@ get_header('new'); ?>
 
         <?php
           $vvid = get_field('v_video_or_newscast');
-          if( $vvid == 'Newscast') { ?>
+        if($vvid == 'Newscast') { ?>
 
-        <?php global $post;?>
+            <?php global $post;?>
 
-          <?php $arg = array(
-                  'post_type'	    => 'post',
-                  'order'		    => 'DESC',
-                  'orderby'	    => 'date',
-                  'posts_per_page'    => 1,
-                  'category_name' =>  'newscast'
-              );
-              $the_query = new WP_Query( $arg );
-              if ( $the_query->have_posts() ) : ?>
+            <?php $arg = array(
+                'post_type'        => 'post',
+                'order'            => 'DESC',
+                'orderby'        => 'date',
+                'posts_per_page'    => 1,
+                'category_name' =>  'newscast'
+            );
+            $the_query = new WP_Query($arg);
+if ($the_query->have_posts() ) : ?>
 
             <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-              <?php endwhile;?>
+            <?php endwhile;?>
 
                 <div class="col-xs-12 col-sm-4" style=" filter:drop-shadow(2px 2px 3px black);">
 
@@ -304,16 +305,16 @@ get_header('new'); ?>
 
                             <h3 class="art-h3" style="position: absolute;left: 0; top: 0px;color: white; padding: 5px;font-size: 14px; background-color:#5671c1 ;margin-bottom: 0;">   <a href="https://cronkitenews.azpbs.org" style="font-size:16px;">  NEWSCAST </a> </h3>
 
-                             <?php
-                                $desc = get_the_content();
-                             $frontdescription = rtrim($desc, '.'); ?>
+                 <?php
+                    $desc = get_the_content();
+                    $frontdescription = rtrim($desc, '.'); ?>
                         <a href="<?php the_permalink(); ?>">  <h3 class="art-h2" style="padding-top: 30px;"> <p style="font-size:20px;"> <?php echo $frontdescription; ?> </p></h3></a>
 
                     </div>
                 </div>
-                    <?php endif; wp_reset_query(); ?>
+<?php endif; wp_reset_query(); ?>
 
-          <?php } else { ?>
+        <?php } else { ?>
 
            <div class="col-xs-12 col-sm-4" style=" filter:drop-shadow(2px 2px 3px black);">
 
@@ -338,12 +339,12 @@ get_header('new'); ?>
 
 
 
-          <?php } ?>
+        <?php } ?>
 
                 <!--end of .col-->
 
-                <?php if( have_rows('area_works_box') ): ?>
-                  <?php while( have_rows('area_works_box') ): the_row();
+                <?php if(have_rows('area_works_box') ) : ?>
+                    <?php while( have_rows('area_works_box') ): the_row();
                         // Declare variables below
                         $icon = get_sub_field('area_works_image');
                         $postID = get_sub_field('area_works_link');
@@ -363,32 +364,32 @@ get_header('new'); ?>
                           <?php if($icon != '') { ?>
                             <img class="awards_image" src="<?php echo $icon['sizes']['awards_logo']; ?>" />
                           <?php } else { ?>
-                            <?php echo preg_replace( '/(height)=\"\d*\"\s/', "", get_the_post_thumbnail( $postID,  array( 486, 304), array( 'class' => 'awards_image' ) )); ?>
+                              <?php echo preg_replace('/(height)=\"\d*\"\s/', "", get_the_post_thumbnail($postID,  array( 486, 304), array( 'class' => 'awards_image' ))); ?>
                           <?php } ?>
                             </a>
 
 
                           <h3 class="art-h2" style="padding-top:30px;">
                             <?php if ($customTitle != '') { ?>
-                              <?php if($customLinks != '') { ?>
+                                <?php if($customLinks != '') { ?>
                                 <a href="<?php echo $customLinks; ?>" ><div class="pcont"> <?php echo $customTitle; ?> </div> </a>
-                              <?php } else { ?>
+                                <?php } else { ?>
                                 <a href="<?php echo get_permalink($postID); ?>" ><div class="pcont"> <?php echo $customTitle; ?> </div> </a>
-                              <?php } ?>
+                                <?php } ?>
                             <?php } else { ?>
 
-                              <?php if (get_field('use_short_headline', $postID) == 'yes' && get_field('homepage_headline', $postID) != '') { ?>
+                                <?php if (get_field('use_short_headline', $postID) == 'yes' && get_field('homepage_headline', $postID) != '') { ?>
                                 <a href="<?php echo get_permalink($postID); ?>" ><div class="pcont"> <?php echo get_field('homepage_headline', $postID); ?> </div> </a>
-                              <?php } else { ?>
+                                <?php } else { ?>
                                 <a href="<?php echo get_permalink($postID); ?>" ><div class="pcont"> <?php echo get_the_title($postID); ?> </div> </a>
-                              <?php } ?>
+                                <?php } ?>
                             <?php } ?>
                           </h3>
 
                         </div>
                     </div>
                     <!--end of .col-->
-                  <?php endwhile; ?>
+                    <?php endwhile; ?>
                 <?php endif; wp_reset_query(); ?>
 
       </div>
@@ -405,66 +406,67 @@ get_header('new'); ?>
 
   <?php
 
-  function gridpost($item) {
+    function gridpost($item)
+    {
 
-    echo '<div class="matchHeight item bordered no-top-border" style="padding:0 !important; padding-top:0 !important;background:transparent;"><figure>';
-  //echo 'test: ' . get_field ("url_link", $item);
-  //echo 'postid: ' . $item -> ID;
-    $postid = $item -> ID;
-    $permalink = get_the_permalink($postid);
-    $url_link = get_field ("url_link", $item);
+        echo '<div class="matchHeight item bordered no-top-border" style="padding:0 !important; padding-top:0 !important;background:transparent;"><figure>';
+        //echo 'test: ' . get_field ("url_link", $item);
+        //echo 'postid: ' . $item -> ID;
+        $postid = $item -> ID;
+        $permalink = get_the_permalink($postid);
+        $url_link = get_field("url_link", $item);
 
-      if( $url_link ): // post goes offsite (extremely rare)
+        if($url_link ) : // post goes offsite (extremely rare)
 
-        echo '<a target="_blank" href="//';
-          echo $url_link;
-          echo '">';
-          echo get_the_post_thumbnail($postid, 'full', array('class' => 'img-responsive'));
-          echo '</a>';
-        else:
-            echo '<a href="';
-            echo $permalink;
-            echo '">';
-          echo get_the_post_thumbnail($postid, 'full', array('class' => 'img-responsive'));
-            echo '</a>';
-        endif;
-
-        echo '<figcaption>';
-        echo '<div class="info"><h4 style="color:black; text-align:center; padding-left:10px; padding-right: 10px;">';
-
-      if( $url_link ): // post goes offsite (extremely rare)
             echo '<a target="_blank" href="//';
             echo $url_link;
             echo '">';
-            if (get_field('use_short_headline', $postid) == 'yes' && get_field('homepage_headline', $postid) != '') {
-              echo get_field('homepage_headline', $postid);
-            } else {
-              echo get_the_title($postid);
-            }
+            echo get_the_post_thumbnail($postid, 'full', array('class' => 'img-responsive'));
             echo '</a>';
           else:
-            echo '<a href="';
-            echo $permalink;
-            echo '">';
-            if (get_field('use_short_headline', $postid) == 'yes' && get_field('homepage_headline', $postid) != '') {
-              echo get_field('homepage_headline', $postid);
-            } else {
-              echo get_the_title($postid);
-            }
-            echo '</a>';
+              echo '<a href="';
+              echo $permalink;
+              echo '">';
+              echo get_the_post_thumbnail($postid, 'full', array('class' => 'img-responsive'));
+              echo '</a>';
           endif;
-          echo '</h4></div><!-- /.info --></figcaption></figure></div><!-- /item -->';
-  }
 
-  if( have_rows('latest_news_box')): // check for repeater fields
-  while ( have_rows('latest_news_box')) : the_row(); // loop through the repeater fields
+          echo '<figcaption>';
+          echo '<div class="info"><h4 style="color:black; text-align:center; padding-left:10px; padding-right: 10px;">';
 
-  $posts = get_sub_field('post_box'); // all the latest news is now loaded in $posts
+          if($url_link ) : // post goes offsite (extremely rare)
+              echo '<a target="_blank" href="//';
+              echo $url_link;
+              echo '">';
+              if (get_field('use_short_headline', $postid) == 'yes' && get_field('homepage_headline', $postid) != '') {
+                  echo get_field('homepage_headline', $postid);
+              } else {
+                  echo get_the_title($postid);
+              }
+              echo '</a>';
+            else:
+                echo '<a href="';
+                echo $permalink;
+                echo '">';
+                if (get_field('use_short_headline', $postid) == 'yes' && get_field('homepage_headline', $postid) != '') {
+                    echo get_field('homepage_headline', $postid);
+                } else {
+                    echo get_the_title($postid);
+                }
+                echo '</a>';
+            endif;
+            echo '</h4></div><!-- /.info --></figcaption></figure></div><!-- /item -->';
+    }
 
-  endwhile;
-  endif;
+    if(have_rows('latest_news_box')) : // check for repeater fields
+        while ( have_rows('latest_news_box')) : the_row(); // loop through the repeater fields
 
-?>
+            $posts = get_sub_field('post_box'); // all the latest news is now loaded in $posts
+
+        endwhile;
+    endif;
+
+    ?>
 
        <div class="latest-grid">
 
@@ -586,14 +588,14 @@ get_header('new'); ?>
                    <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2020/10/election-hp-1-feature.png" width="225" class="election-logo" style="margin:0 auto;" />
                  </center>
 
-                 <?php if( have_rows('stories', 'option') ): ?>
-                    <?php while( have_rows('stories', 'option') ): the_row(); ?>
+                 <?php if(have_rows('stories', 'option') ) : ?>
+                        <?php while( have_rows('stories', 'option') ): the_row(); ?>
                         <div class="content">
                             <img src="<?php the_sub_field('photo'); ?>" width="150" />
                             <a href="<?php the_sub_field('link'); ?>"><h3><?php the_sub_field('headline'); ?></h3></a>
                         </div>
-                    <?php endwhile; ?>
-                <?php endif; ?>
+                        <?php endwhile; ?>
+                 <?php endif; ?>
 
                </div>
              </div>

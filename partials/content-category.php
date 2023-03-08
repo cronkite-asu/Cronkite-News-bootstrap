@@ -3,7 +3,7 @@
   <div class="grid-container main-stories">
     <div class="grid-x grid-padding-x single-story-block">
       <div class="large-12 medium-12 small-12 cell">
-        <h1><?php single_cat_title( '', true );  ?></h1>
+        <h1><?php single_cat_title('', true);  ?></h1>
       </div>
     </div>
   </div>
@@ -21,10 +21,10 @@
           <?php
             $paged = get_query_var('paged');
 
-            if ( have_posts() ) {
-              while ( have_posts() ) {
+            if (have_posts() ) {
+            while ( have_posts() ) {
                 the_post();
-          ?>
+                ?>
                 <div class="grid-x grid-margin-x story-results-stack">
                   <div class="large-8 medium-8 small-8 cell">
                     <h4><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
@@ -34,7 +34,7 @@
                     </div>
                   </div>
                   <div class="large-4 medium-4 small-4 cell">
-                    <a href="<?php echo get_permalink(); ?>"><?php echo get_the_post_thumbnail( get_the_ID()); ?></a>
+                    <a href="<?php echo get_permalink(); ?>"><?php echo get_the_post_thumbnail(get_the_ID()); ?></a>
                   </div>
                   <div class="large-12 medium-12 small-12 cell">
                     <hr />
@@ -46,9 +46,9 @@
             } else {
           ?>
 
-          <?php
+                <?php
             }
-          ?>
+            ?>
             <div class="grid-x grid-margin-x story-results-stack">
               <div class="large-12 medium-12 small-12 cell">
                 <?php bootstrap_pagination(); ?>
@@ -56,7 +56,7 @@
             </div>
           <?php
             wp_reset_query();
-          ?>
+            ?>
 
         </div>
 

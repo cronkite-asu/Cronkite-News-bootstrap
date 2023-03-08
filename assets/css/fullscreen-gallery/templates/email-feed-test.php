@@ -3,7 +3,7 @@
 Template Name: Email TEST Feed
 Updated: Feb. 10, 2020 to support new home page
 */
-#$ACCEPTHOST = 'cn2.niclindh.com';
+// $ACCEPTHOST = 'cn2.niclindh.com';
 $ACCEPTHOST = 'cronkitenews.azpbs.org';
 //$ACCEPTHOST = 'cn.countzero.xyz';
 $NEWSCASTURL = '//' . $ACCEPTHOST . '/sitenewscast';
@@ -208,7 +208,7 @@ echo '<?xml version="1.0"?><rss version="2.0">';
                     $title = get_the_title();
                     $thepostid = url_to_postid($link);
 
-            // retrieved author names
+                    // retrieved author names
                     $externalSites = array('boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                                'colorado-public-radio' => "https://www.cpr.org/",
                                'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
@@ -386,7 +386,7 @@ echo '<?xml version="1.0"?><rss version="2.0">';
     $frontpage_id = get_option('page_on_front');
 
     if (have_rows('area_works_box', $frontpage_id)) :
-      //echo 'have rows';
+        //echo 'have rows';
         while (have_rows('area_works_box', $frontpage_id)) :
             the_row();
             // Declare variables below

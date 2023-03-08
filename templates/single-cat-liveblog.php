@@ -3,7 +3,7 @@
  * Template Name: New Template - 2020
  * Story template without sidebar
  */
-get_header( 'new2019' ); ?>
+get_header('new2019'); ?>
 
     <!-- main body container -->
     <div id="hdr-bg-title" class="grid-container full">
@@ -28,11 +28,11 @@ get_header( 'new2019' ); ?>
             );
 
             // Custom query.
-            $query = new WP_Query( $args );
-            if ( $query->have_posts() ) {
-            	while ( $query->have_posts() ) {
-            		$query->the_post();
-          ?>
+            $query = new WP_Query($args);
+            if ($query->have_posts() ) {
+                while ( $query->have_posts() ) {
+                    $query->the_post();
+                    ?>
                 <article>
                   <div class="pub_date">
                     <time datetime="2015-05-16 19:00"><wbr>Jan. 7, 2020</wbr> &ndash; <strong>4:29 p.m. MT</strong></time>
@@ -57,12 +57,12 @@ get_header( 'new2019' ); ?>
                     <span class="author_name">&mdash; <a href="#">Dylan Simard</a>, Cronkite News</span>
                   </div>
                 </article>
-          <?php
-            	}
+                    <?php
+                }
             }
             /* Restore original Post Data */
             wp_reset_postdata();
-          ?>
+            ?>
 
         </div>
 

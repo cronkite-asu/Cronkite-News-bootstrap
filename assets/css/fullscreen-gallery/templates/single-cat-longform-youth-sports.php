@@ -28,7 +28,7 @@ get_header('youth'); ?>
                                             <?php if (have_rows('top_full_image')) : ?>
                                                 <?php while (have_rows('top_full_image')) :
                                                     the_row();
-                                            // Declare variables below
+                                                    // Declare variables below
                                                     $icon = get_sub_field('fimage');
                                                     $text = get_sub_field('fcaption');  // Use variables below?>
                                                 <img  style="width:100%;height:auto;" src="<?php echo $icon; ?>" />
@@ -46,7 +46,7 @@ get_header('youth'); ?>
                                 <h6 class="story-info"><?php if ($postAuthor = get_field('post_author')) {?>
                                 <a href="<?php echo site_url(); ?>?s=<?php echo $postAuthor; ?>">
                                 By <?php echo $postAuthor; ?> |
-                                                       <?php } ?>
+                               <?php } ?>
                                             <?php if ($siteTitle = get_field('site_title')) {?>
                                     <a href="http://<?php the_field('site_url'); ?>"><?php echo $siteTitle; ?></a></h6>
                                             <?php } ?>

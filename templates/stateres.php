@@ -12,7 +12,7 @@ get_header(); ?>
     
     <section class="container-fluid" id="import-sec">
 <!-- <?php print file_get_contents("https://jrnfs3.jmc.asu.edu/election/results2016/web.html")?>    -->
-<?php include('https://jrnfs3.jmc.asu.edu/election/results2016/web.html') ?>
+<?php require 'https://jrnfs3.jmc.asu.edu/election/results2016/web.html' ?>
     </section>
 
   

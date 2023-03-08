@@ -2,7 +2,7 @@
 
 /**
  * Template Name: Longform No Title
-* Story template without sidebar and title
+ * Story template without sidebar and title
  */
 
 get_header(); ?>
@@ -42,7 +42,7 @@ get_header(); ?>
                                             <?php if (have_rows('slider_images')) : ?>
                                                 <?php while (have_rows('slider_images')) :
                                                     the_row();
-                                            // Declare variables below
+                                                    // Declare variables below
                                                     $icon = get_sub_field('images');
                                                     $text = get_sub_field('description');  // Use variables below?>
                                                 <div class="item">
@@ -61,7 +61,7 @@ get_header(); ?>
                                 <h6 class="story-info"><?php if ($postAuthor = get_field('post_author')) {?>
                                 <a href="<?php echo site_url(); ?>?s=<?php echo $postAuthor; ?>">
                                 By <?php echo $postAuthor; ?> |
-                                                       <?php } ?>
+                               <?php } ?>
                                             <?php if ($siteTitle = get_field('site_title')) {?>
                                     <a href="//<?php the_field('site_url'); ?>"><?php echo $siteTitle; ?></a></h6>
                                             <?php } ?>

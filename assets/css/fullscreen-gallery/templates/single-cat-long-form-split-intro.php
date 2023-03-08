@@ -34,7 +34,7 @@ function generateByline($currPostID, $currIntro, $publishDate)
             $cnStaffCount = 0;
             $newCheck = 0;
 
-      // bypass group not showing repeater field issue
+            // bypass group not showing repeater field issue
             $groupFields = get_field('byline_info');
             $externalAuthorRepeater = $groupFields['external_authors_repeater'];
 
@@ -174,7 +174,7 @@ if (have_rows('blocks')) {
             <?php echo get_sub_field('intro_summary'); ?>
     </div>
             <?php
-      // check photo and select credit width
+            // check photo and select credit width
             list($width, $height, $type, $attr) = getimagesize(get_sub_field('photo'));
             if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';
@@ -206,7 +206,7 @@ if (have_rows('blocks')) {
 <div id="intro-head-photo" class="grid-container full">
   <div class="grid-x grid-padding-x">
             <?php
-      // check photo and select credit width
+            // check photo and select credit width
             list($width, $height, $type, $attr) = getimagesize(get_sub_field('photo'));
             if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';

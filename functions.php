@@ -5,11 +5,11 @@
 
 /******************************************************************************
                         Global Functions
-******************************************************************************/
+ ******************************************************************************/
 
 
 // Enable shortcodes
-require_once('lib/shortcodes.php');
+require_once 'lib/shortcodes.php';
 
 //  Add widget support shortcodes
 add_filter('widget_text', 'do_shortcode');
@@ -18,51 +18,58 @@ add_filter('widget_text', 'do_shortcode');
 add_editor_style();
 
 // Support for Featured Images
-add_theme_support( 'post-thumbnails' );
+add_theme_support('post-thumbnails');
 
 // Support for Post Formats
 //add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
 
 // Custom Background
-add_theme_support( 'custom-background', array('default-color' => 'fff'));
+add_theme_support('custom-background', array('default-color' => 'fff'));
 
 // Custom Header
-add_theme_support( 'custom-header', array(
+add_theme_support(
+    'custom-header', array(
     'default-image' => get_template_directory_uri() . '/images/custom-logo.png',
     'height'        => '200',
     'flex-height'    => true,
     'uploads'       => true,
     'header-text'   => false
-) );
+    ) 
+);
 
 // custom image sizes
 add_image_size('related-story-photo', 400, 400);
-add_image_size('awards_logo', 540, 304 );
+add_image_size('awards_logo', 540, 304);
 add_image_size('slider', 208, 180);
 add_image_size('vertical-homepage-img', 385.33, 216.73);
 add_image_size('audio-featured-singles', 212, 174, true);
 
 // Register Navigation Menu
-register_nav_menus( array(
+register_nav_menus(
+    array(
     'header-menu' => 'Header Menu',
     'footer-menu' => 'Footer Menu'
-) );
+    ) 
+);
 
 /* Added: Sunday, Nov. 3rd, 2020 - Custom rss feed */
-add_action( 'init', 'newRSSFeed' );
-function newRSSFeed() {
-   add_feed( 'cronkitenewsfeed', 'newRSSFeedCallback' );
+add_action('init', 'newRSSFeed');
+function newRSSFeed()
+{
+    add_feed('cronkitenewsfeed', 'newRSSFeedCallback');
 }
 
 /* This code seeks the template for your RSS feed */
-function newRSSFeedCallback(){
-    get_template_part( 'rss', 'cronkitenewsfeed' ); // need to be in small case.
+function newRSSFeedCallback()
+{
+    get_template_part('rss', 'cronkitenewsfeed'); // need to be in small case.
 }
 
 // get author for stories
-function getStoryAuthors($getPID) {
-  $finalAuthors = '';
-  $externalSites = array('boise-state-public-radio' => "https://www.boisestatepublicradio.org",
+function getStoryAuthors($getPID)
+{
+    $finalAuthors = '';
+    $externalSites = array('boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                          'colorado-public-radio' => "https://www.cpr.org/",
                          'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
                          'elemental-reports' => "https://www.elementalreports.com/",
@@ -77,18 +84,18 @@ function getStoryAuthors($getPID) {
                          'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
                          'special-to-cronkite-news' => ""
                         );
-  $externalAuthorCount = 1;
-  $internalAuthorCount = 0;
-  $commaSeparator = ',';
-  $andSeparator = ' and ';
-  $cnStaffCount = 0;
-  $newCheck = 0;
+    $externalAuthorCount = 1;
+    $internalAuthorCount = 0;
+    $commaSeparator = ',';
+    $andSeparator = ' and ';
+    $cnStaffCount = 0;
+    $newCheck = 0;
 
-  // bypass group not showing repeater field issue
-  $groupFields = get_field('byline_info', $getPID);
-  $externalAuthorRepeater = $groupFields['external_authors_repeater'];
+    // bypass group not showing repeater field issue
+    $groupFields = get_field('byline_info', $getPID);
+    $externalAuthorRepeater = $groupFields['external_authors_repeater'];
 
-  $normalizeChars = array(
+    $normalizeChars = array(
      'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
      'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
      'Ï'=>'I', 'Ñ'=>'N', 'Ń'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
@@ -97,86 +104,87 @@ function getStoryAuthors($getPID) {
      'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ń'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
      'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f',
      'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
- );
+    );
 
- if (have_rows('byline_info', $getPID)) {
-    $sepCounter = 0;
-    while (have_rows('byline_info', $getPID)) {
-      the_row();
-      $staffID = get_sub_field('cn_staff');
-      $cnStaffCount = count($staffID);
+    if (have_rows('byline_info', $getPID)) {
+        $sepCounter = 0;
+        while (have_rows('byline_info', $getPID)) {
+            the_row();
+            $staffID = get_sub_field('cn_staff');
+            $cnStaffCount = count($staffID);
 
-      foreach ($staffID as $key => $val) {
-        $args = array(
+            foreach ($staffID as $key => $val) {
+                 $args = array(
                       'post_type'   => 'students',
                       'post_status' => 'publish',
                       'p' => $val
                     );
 
-        $staffDetails = new WP_Query( $args );
-        if ($staffDetails->have_posts()) {
-          while ($staffDetails->have_posts()) {
-            $staffDetails->the_post();
-            $sepCounter++;
+                 $staffDetails = new WP_Query($args);
+                 if ($staffDetails->have_posts()) {
+                     while ($staffDetails->have_posts()) {
+                         $staffDetails->the_post();
+                         $sepCounter++;
 
-            $staffNameURLSafe = str_replace(' ', '-', strtolower(get_the_title($val)));
-            $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
+                         $staffNameURLSafe = str_replace(' ', '-', strtolower(get_the_title($val)));
+                         $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
 
-            $finalAuthors .= get_the_title($val);
-            if ($sepCounter != $cnStaffCount) {
-              if ($sepCounter == ($cnStaffCount - 1)) {
-                $finalAuthors .= $andSeparator.' ';
-              } else {
-                $finalAuthors .=  $commaSeparator.' ';
-              }
+                         $finalAuthors .= get_the_title($val);
+                         if ($sepCounter != $cnStaffCount) {
+                             if ($sepCounter == ($cnStaffCount - 1)) {
+                                 $finalAuthors .= $andSeparator.' ';
+                             } else {
+                                 $finalAuthors .=  $commaSeparator.' ';
+                             }
+                         }
+                     }
+                 }
+                 $newCheck++;
             }
-          }
         }
-        $newCheck++;
-      }
-    }
 
 
-    if (count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
-      $extStaffCount = count($externalAuthorRepeater);
-      if ($groupFields['cn_staff'] != '') {
-        $finalAuthors .= ' and ';
-      }
-      $sepCounter = 0;
-      foreach ($externalAuthorRepeater as $key => $val ) {
-        $sepCounter++;
-        $finalAuthors .= $val['external_authors'];
+        if (count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
+            $extStaffCount = count($externalAuthorRepeater);
+            if ($groupFields['cn_staff'] != '') {
+                $finalAuthors .= ' and ';
+            }
+            $sepCounter = 0;
+            foreach ($externalAuthorRepeater as $key => $val ) {
+                $sepCounter++;
+                $finalAuthors .= $val['external_authors'];
 
-        if ($sepCounter != $extStaffCount) {
-          if ($sepCounter == ($extStaffCount - 1)) {
-            $finalAuthors .= $andSeparator.' ';
-          } else {
-            $finalAuthors .= $commaSeparator.' ';
-          }
+                if ($sepCounter != $extStaffCount) {
+                    if ($sepCounter == ($extStaffCount - 1)) {
+                        $finalAuthors .= $andSeparator.' ';
+                    } else {
+                        $finalAuthors .= $commaSeparator.' ';
+                    }
+                }
+            }
+            $newCheck++;
         }
-      }
-      $newCheck++;
     }
-  }
 
-  if ($newCheck == 0 && get_field('post_author') != '') {
-    //echo '<!--HERE BYLINE OLD-->';
-    //echo '<span class="author_name">By ';
-    if ($postAuthor = get_field('post_author')) {
-      $finalAuthors .= $postAuthor;
+    if ($newCheck == 0 && get_field('post_author') != '') {
+        //echo '<!--HERE BYLINE OLD-->';
+        //echo '<span class="author_name">By ';
+        if ($postAuthor = get_field('post_author')) {
+            $finalAuthors .= $postAuthor;
+        }
     }
-  }
-  wp_reset_query();
-  return $finalAuthors;
+    wp_reset_query();
+    return $finalAuthors;
 }
 
-function hook_parselyJSON() {
+function hook_parselyJSON()
+{
     if (is_page()) {
-      $pageType = 'WebPage';
-      $headline = get_the_title(get_the_ID());
-      $storyURL = addcslashes(get_the_permalink(get_the_ID()), '/');
-      $imgURL = '';
-  ?>
+        $pageType = 'WebPage';
+        $headline = get_the_title(get_the_ID());
+        $storyURL = addcslashes(get_the_permalink(get_the_ID()), '/');
+        $imgURL = '';
+        ?>
 
     <!-- BEGIN Parsely JSON-LD -->
     <meta name="wp-parsely_version" id="wp-parsely_version" content="2.2"/>
@@ -184,52 +192,52 @@ function hook_parselyJSON() {
       {"@context":"http:\/\/schema.org","@type":"<? echo $pageType; ?>","headline":"<? echo $headline; ?>","url":"<? echo $storyURL; ?>"}
     </script>
 
-  <?php
+        <?php
     } else if (is_single()) {
-      $pageType = 'NewsArticle';
-      $publisher = 'Cronkite News - Arizona PBS';
-      $headline = html_entity_decode(get_the_title(get_the_ID()));
-      $storyURL = addcslashes(get_the_permalink(get_the_ID()), '/');
-      $dateCreated = '';
-      $datePublished = get_the_time('c', get_the_ID());
-      $datePublished = new DateTime($datePublished);
-      $dateCreated = $datePublished->format(DateTime::ATOM);
-      $dateModified = $dateCreated;
+        $pageType = 'NewsArticle';
+        $publisher = 'Cronkite News - Arizona PBS';
+        $headline = html_entity_decode(get_the_title(get_the_ID()));
+        $storyURL = addcslashes(get_the_permalink(get_the_ID()), '/');
+        $dateCreated = '';
+        $datePublished = get_the_time('c', get_the_ID());
+        $datePublished = new DateTime($datePublished);
+        $dateCreated = $datePublished->format(DateTime::ATOM);
+        $dateModified = $dateCreated;
 
-      // keywords
-      $rawKeywords = get_the_tags(get_the_ID());
-      if ($rawKeywords) {
-        foreach($rawKeywords as $tag) {
-          $keywords .= '"'.$tag->name.'",';
+        // keywords
+        $rawKeywords = get_the_tags(get_the_ID());
+        if ($rawKeywords) {
+            foreach($rawKeywords as $tag) {
+                $keywords .= '"'.$tag->name.'",';
+            }
         }
-      }
-      $keywords = substr($keywords, 0, -1);
+        $keywords = substr($keywords, 0, -1);
 
-      // categories
-      $rawCats = wp_get_post_categories(get_the_ID());
-      foreach($rawCats as $cid){
-        $cat = get_category( $cid );
-        if ($cat->name != 'New Long Form' || $cat->name != "Editor's Picks" || $cat->name != "Big Boy" || $cat->name != "Longform hero image slim") {
-          $articleSection = $cat->name;
+        // categories
+        $rawCats = wp_get_post_categories(get_the_ID());
+        foreach($rawCats as $cid){
+            $cat = get_category($cid);
+            if ($cat->name != 'New Long Form' || $cat->name != "Editor's Picks" || $cat->name != "Big Boy" || $cat->name != "Longform hero image slim") {
+                $articleSection = $cat->name;
+            }
         }
-      }
 
-      // get authors
-      $rawAuthors = str_replace(' and ', ',', getStoryAuthors(get_the_ID()));
-      $splitAuthors = explode(',', $rawAuthors);
-      foreach ($splitAuthors as $k => $v) {
-        $creators .= '"'.trim($v).'",';
-        $authors .= '{"@type":"Person","name":"'. trim($v) . '"},';
-      }
-      $creators = substr($creators, 0, -1);
-      $authors = substr($authors, 0, -1);
+        // get authors
+        $rawAuthors = str_replace(' and ', ',', getStoryAuthors(get_the_ID()));
+        $splitAuthors = explode(',', $rawAuthors);
+        foreach ($splitAuthors as $k => $v) {
+            $creators .= '"'.trim($v).'",';
+            $authors .= '{"@type":"Person","name":"'. trim($v) . '"},';
+        }
+        $creators = substr($creators, 0, -1);
+        $authors = substr($authors, 0, -1);
 
-      // get image url
-      $imgURL = addcslashes(get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'), '/');
-  ?>
+        // get image url
+        $imgURL = addcslashes(get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'), '/');
+        ?>
       <!-- BEGIN Parsely JSON-LD -->
-    	<script type="application/ld+json">
-    		{"@context":"http:\/\/schema.org",
+        <script type="application/ld+json">
+            {"@context":"http:\/\/schema.org",
         "@type":"<? echo $pageType; ?>",
         "mainEntityOfPage":{"@type":"WebPage","@id":"<? echo $storyURL; ?>"},
         "headline":"<? echo $headline; ?>",
@@ -244,15 +252,16 @@ function hook_parselyJSON() {
         "creator":[<? echo $creators; ?>],
         "publisher":{"@type":"Organization","name":"<? echo $publisher; ?>"},
         "keywords":[<? echo $keywords; ?>]}
-    	</script>
-  <?php
+        </script>
+        <?php
     }
 }
 add_action('wp_head', 'hook_parselyJSON');
 
 
-function hook_parselyTrack() {
-  ?>
+function hook_parselyTrack()
+{
+    ?>
   <!-- START Parse.ly Include: Standard -->
   <script data-cfasync="false" id="parsely-cfg" data-parsely-site="cronkitenews.azpbs.org" src="//cdn.parsely.com/keys/cronkitenews.azpbs.org/p.js"></script>
   <!-- END Parse.ly Include: Standard -->
@@ -266,23 +275,23 @@ add_action('wp_footer', 'hook_parselyTrack');
     /* Add class to navigation sub-menu */
     class bootstrap_navigation extends Walker_Nav_Menu {
 
-	function start_lvl(&$output, $depth = 0, $args = array()) {
-	   $output .= "\n<ul class=\"dropdown-menu\">\n";
-	}
+    function start_lvl(&$output, $depth = 0, $args = array()) {
+       $output .= "\n<ul class=\"dropdown-menu\">\n";
+    }
 
-	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-	    $item_html = '';
-	    parent::start_el($item_html, $item, $depth, $args);
+    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+        $item_html = '';
+        parent::start_el($item_html, $item, $depth, $args);
 
-	    if ( $item->is_dropdown && $depth === 0 ) {
+        if ( $item->is_dropdown && $depth === 0 ) {
             $item_html = str_replace( '<a', '<a class="dropdown-toggle" data-toggle="dropdown"', $item_html );
             $item_html = str_replace( '</a>', ' <b class="caret"></b></a>', $item_html );
-	    }
-	    $output .= $item_html;
-	 }
+        }
+        $output .= $item_html;
+     }
 
-	function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
-	    if ( $element->current )
+    function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
+        if ( $element->current )
             $element->classes[] = 'active';
             $element->is_dropdown = !empty( $children_elements[$element->ID] );
 
@@ -296,30 +305,30 @@ add_action('wp_footer', 'hook_parselyTrack');
                 }
             }
             parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
-	    }
+        }
     }
 
     /* Display Pages In Navigation Menu */
     if ( ! function_exists( 'bootstrap_menu' ) ) :
-	function bootstrap_menu() {
-		$pages_args = array(
-		    'sort_column' => 'menu_order, post_title',
-		    'menu_class'  => '',
-		    'include'     => '',
-		    'exclude'     => '',
-		    'echo'        => true,
-		    'show_home'   => false,
-		    'link_before' => '',
-		    'link_after'  => ''
-		);
+    function bootstrap_menu() {
+        $pages_args = array(
+            'sort_column' => 'menu_order, post_title',
+            'menu_class'  => '',
+            'include'     => '',
+            'exclude'     => '',
+            'echo'        => true,
+            'show_home'   => false,
+            'link_before' => '',
+            'link_after'  => ''
+        );
 
-		wp_page_menu($pages_args);
-	}
+        wp_page_menu($pages_args);
+    }
     endif;
 
     /* Add CLASS attributes to the first <ul> occurence in wp_page_menu */
     function add_menuclass( $ulclass ) {
-	    return preg_replace( '/<ul>/', '<ul class="nav navbar-nav">', $ulclass, 1 );
+        return preg_replace( '/<ul>/', '<ul class="nav navbar-nav">', $ulclass, 1 );
     }
     add_filter( 'wp_page_menu', 'add_menuclass' );
 
@@ -443,19 +452,19 @@ add_action('wp_footer', 'hook_parselyTrack');
     if ( ! function_exists( 'bootstrap_excerpt' ) ) :
 
     function content($limit) {
-	    $content = explode(' ', get_the_content(), $limit);
-	    if (count($content)>=$limit) {
-	        array_pop($content);
-	        $content = implode(" ",$content).'...<a href="'. get_permalink($post->ID) . '" class="read_more">The Latest</a>';
-	    } else {
-	        $content = implode(" ",$content);
-	    }
+        $content = explode(' ', get_the_content(), $limit);
+        if (count($content)>=$limit) {
+            array_pop($content);
+            $content = implode(" ",$content).'...<a href="'. get_permalink($post->ID) . '" class="read_more">The Latest</a>';
+        } else {
+            $content = implode(" ",$content);
+        }
 
-	    $content = preg_replace('/\[.+\]/','', $content);
-	    $content = apply_filters('the_content', $content);
-	    $content = str_replace(']]>', ']]&gt;', $content);
-	    return $content;
-	}
+        $content = preg_replace('/\[.+\]/','', $content);
+        $content = apply_filters('the_content', $content);
+        $content = str_replace(']]>', ']]&gt;', $content);
+        return $content;
+    }
 
     endif;
 
@@ -474,7 +483,7 @@ add_action('wp_footer', 'hook_parselyTrack');
     add_action('init', 'modify_jquery');
 
 /******************************************************************************************************************************
-			    Enqueue Scripts and Styles for Front-End
+                Enqueue Scripts and Styles for Front-End
 *******************************************************************************************************************************/
 if (!is_admin()) {
 
@@ -658,15 +667,17 @@ function wordpress_login_styling() { ?>
 
     </style>
 <?php }
-add_action( 'login_enqueue_scripts', 'wordpress_login_styling' );
+add_action('login_enqueue_scripts', 'wordpress_login_styling');
 
-function admin_logo_custom_url(){
+function admin_logo_custom_url()
+{
     $site_url = get_bloginfo('url');
     return ($site_url);
 }
 add_filter('login_headerurl', 'admin_logo_custom_url');
 
-function new_excerpt_more( $more ) {
+function new_excerpt_more( $more )
+{
     return '.';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
@@ -675,14 +686,16 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
 
 add_filter('mce_css', 'tuts_mcekit_editor_style');
-function tuts_mcekit_editor_style($url) {
+function tuts_mcekit_editor_style($url)
+{
 
-    if ( !empty($url) )
+    if (!empty($url) ) {
         $url .= ',';
+    }
 
     // Retrieves the plugin directory URL
     // Change the path here if using different directories
-    $url .= trailingslashit( plugin_dir_url(__FILE__) ) . '/editor-styles.css';
+    $url .= trailingslashit(plugin_dir_url(__FILE__)) . '/editor-styles.css';
 
     return $url;
 }
@@ -690,19 +703,21 @@ function tuts_mcekit_editor_style($url) {
 /**
  * Add "Styles" drop-down
  */
-add_filter( 'mce_buttons_2', 'tuts_mce_editor_buttons' );
+add_filter('mce_buttons_2', 'tuts_mce_editor_buttons');
 
-function tuts_mce_editor_buttons( $buttons ) {
-    array_unshift( $buttons, 'styleselect' );
+function tuts_mce_editor_buttons( $buttons )
+{
+    array_unshift($buttons, 'styleselect');
     return $buttons;
 }
 
 /**
  * Add styles/classes to the "Styles" drop-down
  */
-add_filter( 'tiny_mce_before_init', 'tuts_mce_before_init' );
+add_filter('tiny_mce_before_init', 'tuts_mce_before_init');
 
-function tuts_mce_before_init( $settings ) {
+function tuts_mce_before_init( $settings )
+{
 
     $style_formats = array(
         array(
@@ -737,7 +752,7 @@ function tuts_mce_before_init( $settings ) {
         )
     );
 
-    $settings['style_formats'] = json_encode( $style_formats );
+    $settings['style_formats'] = json_encode($style_formats);
 
     return $settings;
 
@@ -745,16 +760,18 @@ function tuts_mce_before_init( $settings ) {
 
 
 // Turn off visual editor for everything but sliders
-add_filter( 'user_can_richedit', 'disable_visual_editor' );
-function disable_visual_editor() {
-  if ( 'slider' == get_post_type() ) {
-      return true;
-  }
-  return false;
+add_filter('user_can_richedit', 'disable_visual_editor');
+function disable_visual_editor()
+{
+    if ('slider' == get_post_type() ) {
+        return true;
+    }
+    return false;
 }
 
 // Make months AP style
-function ap_date() {
+function ap_date()
+{
     if (get_the_time('m')=='01') :
         $apmonth = 'Jan. ';
     elseif (get_the_time('m')=='02') :
@@ -778,7 +795,8 @@ function ap_date() {
 }
 
 // Make months AP style for audio/video
-function ap_audio_video_date($postID) {
+function ap_audio_video_date($postID)
+{
     if (get_the_time('m', $postID) =='01') :
         $apmonth = 'Jan. ';
     elseif (get_the_time('m', $postID) == '02') :
@@ -802,7 +820,8 @@ function ap_audio_video_date($postID) {
 }
 
 // Make months AP noticias style
-function ap_noticias_date() {
+function ap_noticias_date()
+{
     if (get_the_time('m')=='01') :
         $apmonth = 'Enero ';
     elseif (get_the_time('m')=='02') :
@@ -835,68 +854,73 @@ function ap_noticias_date() {
     return $thedate;
 }
 
-add_image_size( 'single-post', 840, 560, true );
+add_image_size('single-post', 840, 560, true);
 
 // Enable single category custom template. Currently for Big Boy template but others can be added
 // To use: Create a category, then name the template file single-cat-slug.php
 // From http://justintadlock.com/archives/2008/12/06/creating-single-post-templates-in-wordpress
 define('SINGLE_PATH', TEMPLATEPATH . '/templates');
 add_filter('single_template', 'my_single_template');
-function my_single_template($single) {
-	global $wp_query, $post;
-	foreach((array)get_the_category() as $cat) :
-		if(file_exists(SINGLE_PATH . '/single-cat-' . $cat->slug . '.php'))
-			return SINGLE_PATH . '/single-cat-' . $cat->slug . '.php';
-	endforeach;
-	return $single;
+function my_single_template($single)
+{
+    global $wp_query, $post;
+    foreach((array)get_the_category() as $cat) :
+        if(file_exists(SINGLE_PATH . '/single-cat-' . $cat->slug . '.php')) {
+            return SINGLE_PATH . '/single-cat-' . $cat->slug . '.php';
+        }
+    endforeach;
+    return $single;
 }
 // Remove auto generated feed links
-function my_remove_feeds() {
-	remove_action( 'wp_head', 'feed_links_extra', 3 );
-	remove_action( 'wp_head', 'feed_links', 2 );
+function my_remove_feeds()
+{
+    remove_action('wp_head', 'feed_links_extra', 3);
+    remove_action('wp_head', 'feed_links', 2);
 }
-add_action( 'after_setup_theme', 'my_remove_feeds' );
+add_action('after_setup_theme', 'my_remove_feeds');
 
 /*******************************************************************************/
 
 
 // AMP functions
 
-add_filter( 'amp_customizer_is_enabled', '__return_false' );
+add_filter('amp_customizer_is_enabled', '__return_false');
 
 
-add_filter( 'amp_post_template_file', 'xyz_amp_set_custom_template', 10, 3 );
+add_filter('amp_post_template_file', 'xyz_amp_set_custom_template', 10, 3);
 
-function xyz_amp_set_custom_template( $file, $type, $post ) {
-	if ( 'single' === $type ) {
-		$file = dirname( __FILE__ ) . '/templates/template-amp.php';
-	}
-	return $file;
+function xyz_amp_set_custom_template( $file, $type, $post )
+{
+    if ('single' === $type ) {
+        $file = dirname(__FILE__) . '/templates/template-amp.php';
+    }
+    return $file;
 }
 
-add_action( 'amp_post_template_css', 'xyz_amp_additional_css_styles' );
+add_action('amp_post_template_css', 'xyz_amp_additional_css_styles');
 
-function xyz_amp_additional_css_styles( $amp_template ) {
-	// only CSS here please...
-	?>
-	header.amp-wp-header {
-		padding: 0;
-		background: #234384;
-	}
-	header.amp-wp-header a {
-		background-image: url( 'https://cronkitenews.azpbs.org/wp-content/uploads/2017/11/FB_logo.png' );
-		background-repeat: no-repeat;
-		background-size: contain;
-		display: block;
-		height: 60px;
-		width: 300px;
-		margin: 0 auto;
-		text-indent: -9999px;
-	}
+function xyz_amp_additional_css_styles( $amp_template )
+{
+    // only CSS here please...
+    ?>
+    header.amp-wp-header {
+        padding: 0;
+        background: #234384;
+    }
+    header.amp-wp-header a {
+        background-image: url( 'https://cronkitenews.azpbs.org/wp-content/uploads/2017/11/FB_logo.png' );
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        height: 60px;
+        width: 300px;
+        margin: 0 auto;
+        text-indent: -9999px;
+    }
 
     .amp-wp-byline amp-img {
-		display: none;
-	}
+        display: none;
+    }
 
     .amp-wp-footer div p
     {
@@ -981,95 +1005,100 @@ function xyz_amp_additional_css_styles( $amp_template ) {
     {
         display:none;
     }
-	<?php
+    <?php
 }
 
-add_filter( 'amp_post_template_analytics', 'xyz_amp_add_custom_analytics' );
-function xyz_amp_add_custom_analytics( $analytics ) {
-	if ( ! is_array( $analytics ) ) {
-		$analytics = array();
-	}
+add_filter('amp_post_template_analytics', 'xyz_amp_add_custom_analytics');
+function xyz_amp_add_custom_analytics( $analytics )
+{
+    if (! is_array($analytics) ) {
+        $analytics = array();
+    }
 
-	// https://developers.google.com/analytics/devguides/collection/amp-analytics/
-	$analytics['xyz-googleanalytics'] = array(
-		'type' => 'googleanalytics',
-		'attributes' => array(
-			// 'data-credentials' => 'include',
-		),
-		'config_data' => array(
-			'vars' => array(
-				'account' => "UA-3145657-18"
-			),
-			'triggers' => array(
-				'trackPageview' => array(
-					'on' => 'visible',
-					'request' => 'pageview',
-				),
-			),
-		),
-	);
+    // https://developers.google.com/analytics/devguides/collection/amp-analytics/
+    $analytics['xyz-googleanalytics'] = array(
+    'type' => 'googleanalytics',
+    'attributes' => array(
+    // 'data-credentials' => 'include',
+    ),
+    'config_data' => array(
+    'vars' => array(
+                'account' => "UA-3145657-18"
+    ),
+    'triggers' => array(
+                'trackPageview' => array(
+                    'on' => 'visible',
+                    'request' => 'pageview',
+                ),
+    ),
+    ),
+    );
 
-	// https://www.parsely.com/docs/integration/tracking/google-amp.html
-	$analytics['xyz-parsely'] = array(
-		'type' => 'parsely',
-		'attributes' => array(),
-		'config_data' => array(
-			'vars' => array(
-				'apikey' => 'cronkitenews.azpbs.org',
-			)
-		),
-	);
+    // https://www.parsely.com/docs/integration/tracking/google-amp.html
+    $analytics['xyz-parsely'] = array(
+    'type' => 'parsely',
+    'attributes' => array(),
+    'config_data' => array(
+    'vars' => array(
+                'apikey' => 'cronkitenews.azpbs.org',
+    )
+    ),
+    );
 
-	return $analytics;
+    return $analytics;
 }
 
 /**
  * Add related posts to AMP amp_post_article_footer_meta
  */
-function my_amp_post_article_footer_meta( $parts ) {
+function my_amp_post_article_footer_meta( $parts )
+{
 
     $index = 1;
 
-    array_splice( $parts, $index, 0, array( 'my-related-posts' ) );
+    array_splice($parts, $index, 0, array( 'my-related-posts' ));
 
     return $parts;
 }
-add_filter( 'amp_post_article_footer_meta', 'my_amp_post_article_footer_meta' );
+add_filter('amp_post_article_footer_meta', 'my_amp_post_article_footer_meta');
 
 /**
  * Designate the template file for related posts
  */
-function my_amp_related_posts_path( $file, $template_type, $post ) {
+function my_amp_related_posts_path( $file, $template_type, $post )
+{
 
-    if ( 'my-related-posts' === $template_type ) {
+    if ('my-related-posts' === $template_type ) {
         $file = get_stylesheet_directory() . '/templates/amp-related-posts.php';
     }
     return $file;
 }
-add_filter( 'amp_post_template_file', 'my_amp_related_posts_path', 10, 3 );
+add_filter('amp_post_template_file', 'my_amp_related_posts_path', 10, 3);
 
 
 // Move Yoast to bottom
-function wpcover_move_yoast() {
+function wpcover_move_yoast()
+{
     return 'high';
 }
-add_filter( 'wpseo_metabox_prio', 'wpcover_move_yoast');
+add_filter('wpseo_metabox_prio', 'wpcover_move_yoast');
 
 
 // custom post type for students
-function students_CPT() {
+function students_CPT()
+{
     $cpt_students_labels = array(
-        'name'               => _x( 'Students', 'post type general name' ),
-        'singular_name'      => _x( 'Student', 'post type singular name' ),
-        'add_new'            => _x( 'Add New', 'Student' ),
-        'add_new_item'       => __( 'Add New' ),
-        'edit_item'          => __( 'Edit' ),
-        'new_item'           => __( 'New ' ),
-        'all_items'          => __( 'All' ),
-        'view_item'          => __( 'View' ),
-        'search_items'       => __( 'Search for a student' ),
-        'not_found'          => __( 'No student found' ),
-        'not_found_in_trash' => __( 'No student found in the Trash' ),
+        'name'               => _x('Students', 'post type general name'),
+        'singular_name'      => _x('Student', 'post type singular name'),
+        'add_new'            => _x('Add New', 'Student'),
+        'add_new_item'       => __('Add New'),
+        'edit_item'          => __('Edit'),
+        'new_item'           => __('New '),
+        'all_items'          => __('All'),
+        'view_item'          => __('View'),
+        'search_items'       => __('Search for a student'),
+        'not_found'          => __('No student found'),
+        'not_found_in_trash' => __('No student found in the Trash'),
         'parent_item_colon'  => '',
         'menu_name'          => 'Students'
     );
@@ -1077,38 +1106,41 @@ function students_CPT() {
         'labels'        => $cpt_students_labels,
         'description'   => 'Display Student',
         'public'        => true,
-        'menu_icon'	=> false,
+        'menu_icon'    => false,
         'menu_position' => 5,
         'has_archive'   => true,
         'hierarchical'  => true,
         'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields')
     );
-    register_post_type( 'students', $cpt_students_args );
+    register_post_type('students', $cpt_students_args);
 }
-add_action( 'init', 'students_CPT' );
+add_action('init', 'students_CPT');
 
-if ( function_exists( 'acf_add_options_sub_page' ) ){
-	acf_add_options_sub_page(array(
-		'title'      => 'Student Settings',
-		'parent'     => 'edit.php?post_type=students',
-		'capability' => 'manage_options'
-	));
+if (function_exists('acf_add_options_sub_page') ) {
+    acf_add_options_sub_page(
+        array(
+        'title'      => 'Student Settings',
+        'parent'     => 'edit.php?post_type=students',
+        'capability' => 'manage_options'
+        )
+    );
 }
 
 // custom post type for staff
-function staff_CPT() {
+function staff_CPT()
+{
     $cpt_staff_labels = array(
-        'name'               => _x( 'Staff', 'post type general name' ),
-        'singular_name'      => _x( 'Staff', 'post type singular name' ),
-        'add_new'            => _x( 'Add New', 'Staff' ),
-        'add_new_item'       => __( 'Add New' ),
-        'edit_item'          => __( 'Edit' ),
-        'new_item'           => __( 'New ' ),
-        'all_items'          => __( 'All' ),
-        'view_item'          => __( 'View' ),
-        'search_items'       => __( 'Search for a staff' ),
-        'not_found'          => __( 'No student found' ),
-        'not_found_in_trash' => __( 'No student found in the Trash' ),
+        'name'               => _x('Staff', 'post type general name'),
+        'singular_name'      => _x('Staff', 'post type singular name'),
+        'add_new'            => _x('Add New', 'Staff'),
+        'add_new_item'       => __('Add New'),
+        'edit_item'          => __('Edit'),
+        'new_item'           => __('New '),
+        'all_items'          => __('All'),
+        'view_item'          => __('View'),
+        'search_items'       => __('Search for a staff'),
+        'not_found'          => __('No student found'),
+        'not_found_in_trash' => __('No student found in the Trash'),
         'parent_item_colon'  => '',
         'menu_name'          => 'Cronkite Staff'
     );
@@ -1116,31 +1148,32 @@ function staff_CPT() {
         'labels'        => $cpt_staff_labels,
         'description'   => 'Display Staff',
         'public'        => true,
-        'menu_icon'	=> false,
+        'menu_icon'    => false,
         'menu_position' => 5,
         'has_archive'   => true,
         'hierarchical'  => true,
         'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields')
     );
-    register_post_type( 'cn_staff', $cpt_staff_args );
+    register_post_type('cn_staff', $cpt_staff_args);
 }
-add_action( 'init', 'staff_CPT' );
+add_action('init', 'staff_CPT');
 
 
 // custom tags for stories
-function storytags_CPT() {
+function storytags_CPT()
+{
     $storytags_labels = array(
-        'name'               => _x( 'Story Tags', 'post type general name' ),
-        'singular_name'      => _x( 'Story Tag', 'post type singular name' ),
-        'add_new'            => _x( 'Add New', 'Story Tag' ),
-        'add_new_item'       => __( 'Add New' ),
-        'edit_item'          => __( 'Edit' ),
-        'new_item'           => __( 'New ' ),
-        'all_items'          => __( 'All' ),
-        'view_item'          => __( 'View' ),
-        'search_items'       => __( 'Search for a story tag' ),
-        'not_found'          => __( 'No story tag found' ),
-        'not_found_in_trash' => __( 'No story tag found in the Trash' ),
+        'name'               => _x('Story Tags', 'post type general name'),
+        'singular_name'      => _x('Story Tag', 'post type singular name'),
+        'add_new'            => _x('Add New', 'Story Tag'),
+        'add_new_item'       => __('Add New'),
+        'edit_item'          => __('Edit'),
+        'new_item'           => __('New '),
+        'all_items'          => __('All'),
+        'view_item'          => __('View'),
+        'search_items'       => __('Search for a story tag'),
+        'not_found'          => __('No story tag found'),
+        'not_found_in_trash' => __('No story tag found in the Trash'),
         'parent_item_colon'  => '',
         'menu_name'          => 'Story Tags'
     );
@@ -1148,31 +1181,32 @@ function storytags_CPT() {
         'labels'        => $storytags_labels,
         'description'   => 'Display Story Tags',
         'public'        => true,
-        'menu_icon'	=> false,
+        'menu_icon'    => false,
         'menu_position' => 5,
         'has_archive'   => true,
         'hierarchical'  => true,
         'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields')
     );
-    register_post_type( 'storytags', $storytags_args );
+    register_post_type('storytags', $storytags_args);
 }
-add_action( 'init', 'storytags_CPT' );
+add_action('init', 'storytags_CPT');
 
 
 // in this series
-function inThisSeries_CPT() {
+function inThisSeries_CPT()
+{
     $inThisSeries_labels = array(
-        'name'               => _x( 'In This Series', 'post type general name' ),
-        'singular_name'      => _x( 'In This Series', 'post type singular name' ),
-        'add_new'            => _x( 'Add New', 'Series' ),
-        'add_new_item'       => __( 'Add New' ),
-        'edit_item'          => __( 'Edit' ),
-        'new_item'           => __( 'New ' ),
-        'all_items'          => __( 'All' ),
-        'view_item'          => __( 'View' ),
-        'search_items'       => __( 'Search for a series' ),
-        'not_found'          => __( 'No story tag found' ),
-        'not_found_in_trash' => __( 'No story tag found in the Trash' ),
+        'name'               => _x('In This Series', 'post type general name'),
+        'singular_name'      => _x('In This Series', 'post type singular name'),
+        'add_new'            => _x('Add New', 'Series'),
+        'add_new_item'       => __('Add New'),
+        'edit_item'          => __('Edit'),
+        'new_item'           => __('New '),
+        'all_items'          => __('All'),
+        'view_item'          => __('View'),
+        'search_items'       => __('Search for a series'),
+        'not_found'          => __('No story tag found'),
+        'not_found_in_trash' => __('No story tag found in the Trash'),
         'parent_item_colon'  => '',
         'menu_name'          => 'In This Series'
     );
@@ -1180,31 +1214,32 @@ function inThisSeries_CPT() {
         'labels'        => $inThisSeries_labels,
         'description'   => 'Display In This Series',
         'public'        => true,
-        'menu_icon'	=> false,
+        'menu_icon'    => false,
         'menu_position' => 5,
         'has_archive'   => true,
         'hierarchical'  => true,
         'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields')
     );
-    register_post_type( 'inthisseries', $inThisSeries_args );
+    register_post_type('inthisseries', $inThisSeries_args);
 }
-add_action( 'init', 'inThisSeries_CPT' );
+add_action('init', 'inThisSeries_CPT');
 
 
 // custom post type for staff
-function explore_CPT() {
+function explore_CPT()
+{
     $cpt_explore_labels = array(
-        'name'               => _x( 'Explores', 'post type general name' ),
-        'singular_name'      => _x( 'Explore', 'post type singular name' ),
-        'add_new'            => _x( 'Add New', 'Story' ),
-        'add_new_item'       => __( 'Add New' ),
-        'edit_item'          => __( 'Edit' ),
-        'new_item'           => __( 'New ' ),
-        'all_items'          => __( 'All' ),
-        'view_item'          => __( 'View' ),
-        'search_items'       => __( 'Search for a story' ),
-        'not_found'          => __( 'No student found' ),
-        'not_found_in_trash' => __( 'No student found in the Trash' ),
+        'name'               => _x('Explores', 'post type general name'),
+        'singular_name'      => _x('Explore', 'post type singular name'),
+        'add_new'            => _x('Add New', 'Story'),
+        'add_new_item'       => __('Add New'),
+        'edit_item'          => __('Edit'),
+        'new_item'           => __('New '),
+        'all_items'          => __('All'),
+        'view_item'          => __('View'),
+        'search_items'       => __('Search for a story'),
+        'not_found'          => __('No student found'),
+        'not_found_in_trash' => __('No student found in the Trash'),
         'parent_item_colon'  => '',
         'menu_name'          => 'Explore Section'
     );
@@ -1212,31 +1247,32 @@ function explore_CPT() {
         'labels'        => $cpt_explore_labels,
         'description'   => 'Display Stories',
         'public'        => true,
-        'menu_icon'	=> false,
+        'menu_icon'    => false,
         'menu_position' => 5,
         'has_archive'   => true,
         'hierarchical'  => true,
         'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields')
     );
-    register_post_type( 'explore_stories', $cpt_explore_args );
+    register_post_type('explore_stories', $cpt_explore_args);
 }
-add_action( 'init', 'explore_CPT' );
+add_action('init', 'explore_CPT');
 
 
 // custom post type for election2020
-function election2020_CPT() {
+function election2020_CPT()
+{
     $cpt_election2020_labels = array(
-        'name'               => _x( 'Election 2020', 'post type general name' ),
-        'singular_name'      => _x( 'Election 2020', 'post type singular name' ),
-        'add_new'            => _x( 'Add New', 'Election Post' ),
-        'add_new_item'       => __( 'Add New' ),
-        'edit_item'          => __( 'Edit' ),
-        'new_item'           => __( 'New ' ),
-        'all_items'          => __( 'All' ),
-        'view_item'          => __( 'View' ),
-        'search_items'       => __( 'Search for a Election Post' ),
-        'not_found'          => __( 'No posts found' ),
-        'not_found_in_trash' => __( 'No posts found in the Trash' ),
+        'name'               => _x('Election 2020', 'post type general name'),
+        'singular_name'      => _x('Election 2020', 'post type singular name'),
+        'add_new'            => _x('Add New', 'Election Post'),
+        'add_new_item'       => __('Add New'),
+        'edit_item'          => __('Edit'),
+        'new_item'           => __('New '),
+        'all_items'          => __('All'),
+        'view_item'          => __('View'),
+        'search_items'       => __('Search for a Election Post'),
+        'not_found'          => __('No posts found'),
+        'not_found_in_trash' => __('No posts found in the Trash'),
         'parent_item_colon'  => '',
         'menu_name'          => 'Election 2020'
     );
@@ -1244,38 +1280,41 @@ function election2020_CPT() {
         'labels'        => $cpt_election2020_labels,
         'description'   => 'All Posts',
         'public'        => true,
-        'menu_icon'	=> false,
+        'menu_icon'    => false,
         'menu_position' => 5,
         'has_archive'   => true,
         'hierarchical'  => true,
         'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields')
     );
-    register_post_type( 'election2020', $cpt_election2020_args );
+    register_post_type('election2020', $cpt_election2020_args);
 }
-add_action( 'init', 'election2020_CPT' );
+add_action('init', 'election2020_CPT');
 
-if ( function_exists( 'acf_add_options_sub_page' ) ){
-	acf_add_options_sub_page(array(
-		'title'      => 'Election Homepage',
-		'parent'     => 'edit.php?post_type=election2020',
-		'capability' => 'manage_options'
-	));
+if (function_exists('acf_add_options_sub_page') ) {
+    acf_add_options_sub_page(
+        array(
+        'title'      => 'Election Homepage',
+        'parent'     => 'edit.php?post_type=election2020',
+        'capability' => 'manage_options'
+        )
+    );
 }
 
 // custom post type for audio/video
-function audioVideo_CPT() {
+function audioVideo_CPT()
+{
     $cpt_audiovideo_labels = array(
-        'name'               => _x( 'Audio/Video', 'post type general name' ),
-        'singular_name'      => _x( 'Audio/Video', 'post type singular name' ),
-        'add_new'            => _x( 'Add New', 'Audio/Video' ),
-        'add_new_item'       => __( 'Add New' ),
-        'edit_item'          => __( 'Edit' ),
-        'new_item'           => __( 'New ' ),
-        'all_items'          => __( 'All' ),
-        'view_item'          => __( 'View' ),
-        'search_items'       => __( 'Search for a audio/video' ),
-        'not_found'          => __( 'No student found' ),
-        'not_found_in_trash' => __( 'No student found in the Trash' ),
+        'name'               => _x('Audio/Video', 'post type general name'),
+        'singular_name'      => _x('Audio/Video', 'post type singular name'),
+        'add_new'            => _x('Add New', 'Audio/Video'),
+        'add_new_item'       => __('Add New'),
+        'edit_item'          => __('Edit'),
+        'new_item'           => __('New '),
+        'all_items'          => __('All'),
+        'view_item'          => __('View'),
+        'search_items'       => __('Search for a audio/video'),
+        'not_found'          => __('No student found'),
+        'not_found_in_trash' => __('No student found in the Trash'),
         'parent_item_colon'  => '',
         'menu_name'          => 'Audio/Video'
     );
@@ -1283,78 +1322,85 @@ function audioVideo_CPT() {
         'labels'        => $cpt_audiovideo_labels,
         'description'   => 'Display Audio/Video',
         'public'        => true,
-        'menu_icon'	=> false,
+        'menu_icon'    => false,
         'menu_position' => 5,
         'has_archive'   => true,
         'hierarchical'  => true,
         'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields')
     );
-    register_post_type( 'audioVideoCPT', $cpt_audiovideo_args );
+    register_post_type('audioVideoCPT', $cpt_audiovideo_args);
 }
-add_action( 'init', 'audioVideo_CPT' );
+add_action('init', 'audioVideo_CPT');
 
 
-function cn_search_query( $query ) {
-	if ( !is_admin() && $query->is_main_query() ) {
-		if ( is_search() ) {
-			$query->set( 'orderby', 'date' );
-		}
-	}
+function cn_search_query( $query )
+{
+    if (!is_admin() && $query->is_main_query() ) {
+        if (is_search() ) {
+            $query->set('orderby', 'date');
+        }
+    }
 }
-add_action( 'pre_get_posts', 'cn_search_query' );
+add_action('pre_get_posts', 'cn_search_query');
 
-function add_file_types_to_uploads($file_types) {
-  $new_filetypes = array();
-  $new_filetypes['svg'] = 'image/svg+xml';
-  $file_types = array_merge($file_types, $new_filetypes );
-  return $file_types;
+function add_file_types_to_uploads($file_types)
+{
+    $new_filetypes = array();
+    $new_filetypes['svg'] = 'image/svg+xml';
+    $file_types = array_merge($file_types, $new_filetypes);
+    return $file_types;
 }
 add_action('upload_mimes', 'add_file_types_to_uploads');
 
-add_action( 'init', 'custom_init_storytags' );
-function custom_init_storytags() {
-	remove_post_type_support( 'storytags', 'comments' );
+add_action('init', 'custom_init_storytags');
+function custom_init_storytags()
+{
+    remove_post_type_support('storytags', 'comments');
 }
 
-function audiovideoCPT_remove_wp_seo_meta_box() {
-	remove_meta_box('wpseo_meta', audioVideoCPT, 'normal');
+function audiovideoCPT_remove_wp_seo_meta_box()
+{
+    remove_meta_box('wpseo_meta', audioVideoCPT, 'normal');
 }
 add_action('add_meta_boxes', 'audiovideoCPT_remove_wp_seo_meta_box', 100);
 
 /* URL rewrite rule for CN staff people page */
 add_filter('query_vars', 'add_staff_name_var', 0, 1);
-function add_staff_name_var($vars){
+function add_staff_name_var($vars)
+{
     $vars[] = 'staffname';
     return $vars;
 }
-add_rewrite_rule('^people/([^/]+)/?$','index.php?pagename=people&staffname=$matches[1]','top');
+add_rewrite_rule('^people/([^/]+)/?$', 'index.php?pagename=people&staffname=$matches[1]', 'top');
 
 /* URL rewrite rule for Audio story page */
 add_filter('query_vars', 'add_audio_story_var', 0, 1);
-function add_audio_story_var($vars){
+function add_audio_story_var($vars)
+{
     $vars[] = 'audio_id';
     $vars[] = 'audio_title';
     return $vars;
 }
-add_rewrite_rule('^audio/story/([^/]+)/([^/]+)/?$','index.php?page_id=175279&audio_id=$matches[1]&audio_title=$matches[2]','top');
+add_rewrite_rule('^audio/story/([^/]+)/([^/]+)/?$', 'index.php?page_id=175279&audio_id=$matches[1]&audio_title=$matches[2]', 'top');
 
 // change tags label to keywords
-function change_tax_object_label() {
-  global $wp_taxonomies;
-  $labels = &$wp_taxonomies['post_tag']->labels;
-  $labels->name = __('Keywords', 'framework');
-  $labels->singular_name = __('Keywords', 'framework');
-  $labels->search_items = __('Search Keywords', 'framework');
-  $labels->all_items = __('Keywords', 'framework');
-  $labels->separate_items_with_commas = __('Separate Keywords with commas', 'framework');
-  $labels->choose_from_most_used = __('Choose from the most used Keywords', 'framework');
-  $labels->popular_items = __('Popular Keywords', 'framework');
-  $labels->edit_item = __('Edit Keyword Name', 'framework');
-  $labels->view_item = __('View Keyword Name', 'framework');
-  $labels->update_item = __('Update Keyword Name', 'framework');
-  $labels->add_new_item = __('Add Your Keyword Name', 'framework');
-  $labels->new_item_name = __('Your New Keywords Name', 'framework');
+function change_tax_object_label()
+{
+    global $wp_taxonomies;
+    $labels = &$wp_taxonomies['post_tag']->labels;
+    $labels->name = __('Keywords', 'framework');
+    $labels->singular_name = __('Keywords', 'framework');
+    $labels->search_items = __('Search Keywords', 'framework');
+    $labels->all_items = __('Keywords', 'framework');
+    $labels->separate_items_with_commas = __('Separate Keywords with commas', 'framework');
+    $labels->choose_from_most_used = __('Choose from the most used Keywords', 'framework');
+    $labels->popular_items = __('Popular Keywords', 'framework');
+    $labels->edit_item = __('Edit Keyword Name', 'framework');
+    $labels->view_item = __('View Keyword Name', 'framework');
+    $labels->update_item = __('Update Keyword Name', 'framework');
+    $labels->add_new_item = __('Add Your Keyword Name', 'framework');
+    $labels->new_item_name = __('Your New Keywords Name', 'framework');
 }
-add_action( 'init', 'change_tax_object_label' );
+add_action('init', 'change_tax_object_label');
 
 ?>

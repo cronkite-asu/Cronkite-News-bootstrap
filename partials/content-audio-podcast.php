@@ -15,8 +15,8 @@
       <div class="grid-x grid-padding-x single-story-block">
         <div class="large-7 medium-12 small-12 cell">
           <audio id="main-audio-player" preload="auto" crossorigin playsinline>
-        		<source src="" type="audio/mp3">
-        	</audio>
+                <source src="" type="audio/mp3">
+            </audio>
         </div>
         <div class="large-5 medium-12 small-12 cell now-playing-notice medium-text-right">
           <p><strong>NOW PLAYING</strong></p>
@@ -33,31 +33,31 @@
       <div class="audio-featured-stories">
         <?php
           $newsStoriesList = get_field('featured_audios', 122187);
-          if ($newsStoriesList) {
+        if ($newsStoriesList) {
             $newsStoriesCounter = 0;
             foreach ($newsStoriesList as $newsStories) {
-              if ($newsStoriesCounter < 8) {
-                setup_postdata($newsStories);
-                //$permalink = get_permalink( $newsStories );
-                $audioFile = get_field('audio_video_file', $newsStories);
-                $newsFeaturedImg = get_the_post_thumbnail($newsStories);
-        ?>
+                if ($newsStoriesCounter < 8) {
+                    setup_postdata($newsStories);
+                    //$permalink = get_permalink( $newsStories );
+                    $audioFile = get_field('audio_video_file', $newsStories);
+                    $newsFeaturedImg = get_the_post_thumbnail($newsStories);
+                    ?>
               <div class="large-4 medium-4 small-12 cell">
-                <?php
-                  if (get_field('use_short_headline', $newsStories) == 'yes' && get_field('homepage_headline', $newsStories) != '') {
-                    $title = get_field('homepage_headline', $newsStories);
-                  } else {
-                    $title = get_the_title($newsStories);
-                  }
-                ?>
+                    <?php
+                    if (get_field('use_short_headline', $newsStories) == 'yes' && get_field('homepage_headline', $newsStories) != '') {
+                        $title = get_field('homepage_headline', $newsStories);
+                    } else {
+                        $title = get_the_title($newsStories);
+                    }
+                    ?>
                 <a class="audio-plyr" data-link="<?php echo $audioFile; ?>" data-title="<?php echo $title; ?>"><?php echo $newsFeaturedImg; ?></a>
                 <h3><a class="audio-plyr" data-link="<?php echo $audioFile; ?>" data-title="<?php echo $title; ?>"><i class="fas fa-play-circle"></i> <span><?php echo $title; ?><span></a></h3>
               </div>
-        <?php
-              }
-              $newsStoriesCounter++;
+                    <?php
+                }
+                $newsStoriesCounter++;
             }
-          }
+        }
         ?>
       </div>
     </div>
@@ -78,39 +78,39 @@
           <div class="large-4 medium-12 small-12 cell ever-green">
             <?php
               $sportsFeaturedStory = get_field('news_audio', 122187);
-              if ($sportsFeaturedStory) {
+            if ($sportsFeaturedStory) {
                 $sportsStoriesCounter = 0;
                 foreach ($sportsFeaturedStory as $sportsFeature) {
-                  if ($sportsStoriesCounter < 8) {
-                    setup_postdata($sportsFeature);
-                    $permalink = get_permalink( $sportsFeature );
-                    $audioFile = get_field('audio_video_file', $sportsFeature);
-                    $newsFeaturedImg = get_the_post_thumbnail_url($sportsFeature);
+                    if ($sportsStoriesCounter < 8) {
+                        setup_postdata($sportsFeature);
+                        $permalink = get_permalink($sportsFeature);
+                        $audioFile = get_field('audio_video_file', $sportsFeature);
+                        $newsFeaturedImg = get_the_post_thumbnail_url($sportsFeature);
 
-                    if ($newsFeaturedImg != '') {
-            ?>
+                        if ($newsFeaturedImg != '') {
+                            ?>
                       <img src="<?php echo $newsFeaturedImg; ?>" />
-            <?php
-                    }
-            ?>
+                            <?php
+                        }
+                        ?>
           </div>
 
           <div class="large-8 medium-12 small-12 cell ever-green">
-            <?php
-                    if (get_field('use_short_headline', $sportsFeature) == 'yes' && get_field('homepage_headline', $sportsFeature) != '') {
-                      $title = get_field('homepage_headline', $sportsFeature);
-                    } else {
-                      $title = get_the_title($sportsFeature);
-                    }
-            ?>
+                        <?php
+                        if (get_field('use_short_headline', $sportsFeature) == 'yes' && get_field('homepage_headline', $sportsFeature) != '') {
+                            $title = get_field('homepage_headline', $sportsFeature);
+                        } else {
+                            $title = get_the_title($sportsFeature);
+                        }
+                        ?>
                     <h3><a class="audio-plyr" data-link="<?php echo $audioFile; ?>" data-title="<?php echo $title; ?>"><?php echo $title; ?></a></h3>
                     <p><?php echo get_field('story_tease', $sportsFeature); ?></p>
-            <?php
-                  }
-                  $sportsStoriesCounter++;
+                        <?php
+                    }
+                    $sportsStoriesCounter++;
                 }
                 wp_reset_postdata();
-              }
+            }
             ?>
             <!-- https://cronkitenews.azpbs.org/wp-content/uploads/2021/06/Sharpe-Protection-Act-FINAL.mp3 -->
           </div>
@@ -126,31 +126,31 @@
           <?php
             $newsStoriesList = get_field('news_stories', 122187);
             if ($newsStoriesList) {
-              $newsStoriesCounter = 0;
-              foreach ($newsStoriesList as $newsStories) {
-                if ($newsStoriesCounter < 8) {
-                  $permalink = get_permalink( $newsStories );
-                  $audioFile = get_field('audio_video_file', $newsStories);
-          ?>
+                $newsStoriesCounter = 0;
+                foreach ($newsStoriesList as $newsStories) {
+                    if ($newsStoriesCounter < 8) {
+                        $permalink = get_permalink($newsStories);
+                        $audioFile = get_field('audio_video_file', $newsStories);
+                        ?>
                 <div class="large-12 medium-12 small-12 cell listed-stories">
-                  <?php
-                    if (get_field('use_short_headline', $newsStories) == 'yes' && get_field('homepage_headline', $newsStories) != '') {
-                      $title = get_field('homepage_headline', $newsStories);
-                    } else {
-                      $title = get_the_title($newsStories);
-                    }
-                  ?>
+                        <?php
+                        if (get_field('use_short_headline', $newsStories) == 'yes' && get_field('homepage_headline', $newsStories) != '') {
+                            $title = get_field('homepage_headline', $newsStories);
+                        } else {
+                            $title = get_the_title($newsStories);
+                        }
+                        ?>
                   <a class="show-for-medium audio-plyr" data-link="<?php echo $audioFile; ?>" data-title="<?php echo $title; ?>"><i class="fas fa-play-circle"></i> <?php echo $title; ?></a>
                 </div>
                 <div class="large-12 medium-12 small-12 cell align-self-middle show-for-small-only remove-margins">
                   <a class="audio-plyr" data-link="<?php echo $audioFile; ?>" data-title="<?php echo $title; ?>"><i class="fas fa-play-circle"></i> <?php echo $title; ?></a>
                 </div>
-          <?php
+                        <?php
+                    }
+                    $newsStoriesCounter++;
                 }
-                $newsStoriesCounter++;
-              }
             }
-          ?>
+            ?>
         </div>
       </div>
     </div>
@@ -184,39 +184,39 @@
           <div class="large-4 medium-12 small-12 cell ever-green">
             <?php
               $sportsFeaturedStory = get_field('sports_audio', 122187);
-              if ($sportsFeaturedStory) {
+            if ($sportsFeaturedStory) {
                 $sportsStoriesCounter = 0;
                 foreach ($sportsFeaturedStory as $sportsFeature) {
-                  if ($sportsStoriesCounter < 8) {
-                    setup_postdata($sportsFeature);
-                    $permalink = get_permalink( $sportsFeature );
-                    $audioFile = get_field('audio_video_file', $sportsFeature);
-                    $newsFeaturedImg = get_the_post_thumbnail_url($sportsFeature);
+                    if ($sportsStoriesCounter < 8) {
+                        setup_postdata($sportsFeature);
+                        $permalink = get_permalink($sportsFeature);
+                        $audioFile = get_field('audio_video_file', $sportsFeature);
+                        $newsFeaturedImg = get_the_post_thumbnail_url($sportsFeature);
 
-                    if ($newsFeaturedImg != '') {
-            ?>
+                        if ($newsFeaturedImg != '') {
+                            ?>
                       <img src="<?php echo $newsFeaturedImg; ?>" />
-            <?php
-                    }
-            ?>
+                            <?php
+                        }
+                        ?>
           </div>
 
           <div class="large-8 medium-12 small-12 cell ever-green">
-            <?php
-                    if (get_field('use_short_headline', $sportsFeature) == 'yes' && get_field('homepage_headline', $sportsFeature) != '') {
-                      $title = get_field('homepage_headline', $sportsFeature);
-                    } else {
-                      $title = get_the_title($sportsFeature);
-                    }
-            ?>
+                        <?php
+                        if (get_field('use_short_headline', $sportsFeature) == 'yes' && get_field('homepage_headline', $sportsFeature) != '') {
+                            $title = get_field('homepage_headline', $sportsFeature);
+                        } else {
+                            $title = get_the_title($sportsFeature);
+                        }
+                        ?>
                     <h3><a class="audio-plyr" data-link="<?php echo $audioFile; ?>" data-title="<?php echo $title; ?>"><?php echo $title; ?></a></h3>
                     <p><?php echo get_field('story_tease', $sportsFeature); ?></p>
-            <?php
-                  }
-                  $sportsStoriesCounter++;
+                        <?php
+                    }
+                    $sportsStoriesCounter++;
                 }
                 wp_reset_postdata();
-              }
+            }
             ?>
           </div>
           <div class="large-12 medium-12 small-12 cell remove-margin">
@@ -231,31 +231,31 @@
           <?php
             $sportsStoriesList = get_field('sports_stories', 122187);
             if ($sportsStoriesList) {
-              $sportsStoriesCounter = 0;
-              foreach ($sportsStoriesList as $sportsStories) {
-                if ($sportsStoriesCounter < 8) {
-                  $audioFile = get_field('audio_video_file', $sportsStories);
-                  $permalink = get_permalink( $sportsStories );
-          ?>
+                $sportsStoriesCounter = 0;
+                foreach ($sportsStoriesList as $sportsStories) {
+                    if ($sportsStoriesCounter < 8) {
+                        $audioFile = get_field('audio_video_file', $sportsStories);
+                        $permalink = get_permalink($sportsStories);
+                        ?>
                 <div class="large-12 medium-12 small-12 cell listed-stories">
-                  <?php
-                    if (get_field('use_short_headline', $sportsStories) == 'yes' && get_field('homepage_headline', $sportsStories) != '') {
-                      $title = get_field('homepage_headline', $sportsStories);
-                    } else {
-                      $title = get_the_title($sportsStories);
-                    }
-                  ?>
+                        <?php
+                        if (get_field('use_short_headline', $sportsStories) == 'yes' && get_field('homepage_headline', $sportsStories) != '') {
+                            $title = get_field('homepage_headline', $sportsStories);
+                        } else {
+                            $title = get_the_title($sportsStories);
+                        }
+                        ?>
                   <a class="show-for-medium audio-plyr" data-link="<?php echo $audioFile; ?>" data-title="<?php echo $title; ?>"><i class="fas fa-play-circle"></i> <?php echo $title; ?></a>
                 </div>
                 <div class="large-12 medium-12 small-12 cell align-self-middle show-for-small-only remove-margins">
                   <a class="audio-plyr" data-link="<?php echo $audioFile; ?>" data-title="<?php echo $title; ?>"><i class="fas fa-play-circle"></i> <?php echo $title; ?></a>
                 </div>
-          <?php
+                        <?php
+                    }
+                    $sportsStoriesCounter++;
                 }
-                $sportsStoriesCounter++;
-              }
             }
-          ?>
+            ?>
         </div>
       </div>
     </div>
@@ -279,15 +279,15 @@
            'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ń'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
            'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f',
            'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
-       );
+        );
         if ($audioStaffList) {
-          $audioStaffCounter = 0;
-          foreach ($audioStaffList as $audioStaff) {
-            $permalink = get_permalink( $audioStaff );
+            $audioStaffCounter = 0;
+            foreach ($audioStaffList as $audioStaff) {
+                $permalink = get_permalink($audioStaff);
 
-            $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($audioStaff)))));
-            $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
-      ?>
+                $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($audioStaff)))));
+                $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
+                ?>
 
             <div class="large-2 medium-2 small-6 cell text-center">
               <div class="author_bio post-holder">
@@ -297,11 +297,11 @@
                 </div>
               </div>
             </div>
-      <?php
-            $audioStaffCounter++;
-          }
+                <?php
+                $audioStaffCounter++;
+            }
         }
-      ?>
+        ?>
     </div>
 
     <div class="grid-x grid-padding-x single-story-block section-text">
@@ -316,19 +316,19 @@
       <?php
         $partnersList = get_field('partners', 122187);
         if ($partnersList) {
-          foreach ($partnersList as $partner) {
-            $logo = $partner['logo'];
-            $link = $partner['link'];
-            $title = $partner['title'];
-      ?>
+            foreach ($partnersList as $partner) {
+                $logo = $partner['logo'];
+                $link = $partner['link'];
+                $title = $partner['title'];
+                ?>
 
             <div class="large-4 medium-4 small-12 cell text-center partner-logos">
               <a href="<?php echo $link; ?>"><img src="<?php echo $logo; ?>" alt="<?php echo $title; ?>" /></a>
             </div>
-      <?php
-          }
+                <?php
+            }
         }
-      ?>
+        ?>
     </div>
 
     <div class="grid-x grid-padding-x single-story-block section-text">

@@ -7,41 +7,41 @@
 <html class="no-js" <?php language_attributes(); ?> dir="ltr">
   <head>
 
-	<?php
-	// get the category for GA
-	$post = get_post();
-	$categories = get_the_category ($post -> ID);
-	$output = '';
+    <?php
+    // get the category for GA
+    $post = get_post();
+    $categories = get_the_category($post -> ID);
+    $output = '';
 
-	if ( ! empty( $categories ) ) {
-		foreach( $categories as $category ) {
+    if (! empty($categories) ) {
+        foreach( $categories as $category ) {
 
-		if($output == '') {
-			if ($category->name == "Borderlands") {
-			 //$output = "ga('set', 'Borderlands', '"  . esc_html( $category->name ) . "');";
-			//$output = "ga('set', 'contentGroup1', 'Borderlands');";
-				$output = "gtag('set', {'contentGroup1': 'Borderlands'});";
-			}
-			if ($category->name == "Sustainability") {
-				//$output = "ga('set', 'contentGroup2', 'Sustainability');";
-				$output = "gtag('set', {'contentGroup2': 'Sustainability'});";
-			}
-			if ($category->name == "Education") {
-				//$output = "ga('set', 'contentGroup3', 'Education');";
-				$output = "gtag('set', {'contentGroup3': 'Education'});";
-			}
-			if ($category->name == "Consumer") {
-				//$output = "ga('set', 'contentGroup4', 'Consumer');";
-				$output = "gtag('set', {'contentGroup4': 'Consumer'});";
-			}
-			if ($category->name == "Future") {
-				$output = "ga('set', 'contentGroup5', 'Future');";
-			}
-		}
-	}
-}
+            if($output == '') {
+                if ($category->name == "Borderlands") {
+                    //$output = "ga('set', 'Borderlands', '"  . esc_html( $category->name ) . "');";
+                    //$output = "ga('set', 'contentGroup1', 'Borderlands');";
+                    $output = "gtag('set', {'contentGroup1': 'Borderlands'});";
+                }
+                if ($category->name == "Sustainability") {
+                    //$output = "ga('set', 'contentGroup2', 'Sustainability');";
+                    $output = "gtag('set', {'contentGroup2': 'Sustainability'});";
+                }
+                if ($category->name == "Education") {
+                    //$output = "ga('set', 'contentGroup3', 'Education');";
+                    $output = "gtag('set', {'contentGroup3': 'Education'});";
+                }
+                if ($category->name == "Consumer") {
+                    //$output = "ga('set', 'contentGroup4', 'Consumer');";
+                    $output = "gtag('set', {'contentGroup4': 'Consumer'});";
+                }
+                if ($category->name == "Future") {
+                    $output = "ga('set', 'contentGroup5', 'Future');";
+                }
+            }
+        }
+    }
 
-	?>
+    ?>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>
@@ -49,20 +49,20 @@
     <!-- Google Optimize -->
     <script src="https://www.googleoptimize.com/optimize.js?id=OPT-KJHZKHH"></script>
 
-		<!-- Chartbeat Analytics  -->
-		<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
-	  <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
+        <!-- Chartbeat Analytics  -->
+        <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
+      <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
 
 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="theme-color" content="#216CB7">
-		<meta charset="utf-8">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#216CB7">
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Add Favicon -->
-    <link type="image/png" href="<?php the_field('favicon','options'); ?>" rel="icon">
-    <link type="image/png" href="<?php the_field('favicon','options'); ?>" rel="shortcut icon">
-    <link type="image/png" href="<?php the_field('favicon','options'); ?>"  rel="apple-touch-icon">
+    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="icon">
+    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="shortcut icon">
+    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>"  rel="apple-touch-icon">
 
 
     <!-- Font Awesome -->
@@ -71,29 +71,29 @@
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 
     <!-- FB App Configuration for Comment Moderation   -->
-		<script>
-			window.fbAsyncInit = function() {
-			FB.init({
-				appId      : '511732915827177',
-				xfbml      : true,
-				version    : 'v2.11'
-				});
-				FB.AppEvents.logPageView();
-			};
+        <script>
+            window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '511732915827177',
+                xfbml      : true,
+                version    : 'v2.11'
+                });
+                FB.AppEvents.logPageView();
+            };
 
-			(function(d, s, id){
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) {return;}
-				js = d.createElement(s); js.id = id;
-				js.src = "https://connect.facebook.net/en_US/sdk.js";
-				fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-		</script>
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement(s); js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
 
     <meta property="fb:app_id" content="511732915827177" />
 
-		<!-- FB instant articles -->
-		<meta property="fb:pages" content="305166330794" />
+        <!-- FB instant articles -->
+        <meta property="fb:pages" content="305166330794" />
 
     <meta name="twitter:description" content="Cronkite News, Arizona PBS and Indian Country Today have teamed up to provide trusted, comprehensive coverage of the 2020 election." />
     <meta name="twitter:title" content="<?php wp_title(''); ?>" />
@@ -101,20 +101,20 @@
     <?php wp_head(); ?>
 
 
-		<!-- NEW NAV - 12/12/19 -->
-		<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/election2020/foundation.css">
-		<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+        <!-- NEW NAV - 12/12/19 -->
+        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/election2020/foundation.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-		<link href="<?php bloginfo('template_directory');?>/assets/css/hamburgers.css" rel="stylesheet">
-		<link href="<?php bloginfo('template_directory');?>/assets/css/all.min.css" rel="stylesheet"> <!--load all styles -->
-		<link href="<?php bloginfo('template_directory');?>/assets/css/print.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/css/tooltipster.bundle.min.css" />
+        <link href="<?php bloginfo('template_directory');?>/assets/css/hamburgers.css" rel="stylesheet">
+        <link href="<?php bloginfo('template_directory');?>/assets/css/all.min.css" rel="stylesheet"> <!--load all styles -->
+        <link href="<?php bloginfo('template_directory');?>/assets/css/print.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/css/tooltipster.bundle.min.css" />
 
-		<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/election2020/app.css">
+        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/election2020/app.css">
 
 
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick.css"/>
@@ -128,21 +128,21 @@
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/election2020/election2020.css">
 
     <style type='text/css'>
-  	    body.admin-bar {margin-top:32px !important}
-  	    @media screen and (max-width: 782px) {
-  	        body.admin-bar { margin-top:0px !important }
-  	    }
-  	    @media screen and (max-width: 600px) {
-  	        body.admin-bar { margin-top:0px !important }
-  	        html #wpadminbar{ margin-top: -46px; }
-  	    }
-  	</style>
+          body.admin-bar {margin-top:32px !important}
+          @media screen and (max-width: 782px) {
+              body.admin-bar { margin-top:0px !important }
+          }
+          @media screen and (max-width: 600px) {
+              body.admin-bar { margin-top:0px !important }
+              html #wpadminbar{ margin-top: -46px; }
+          }
+      </style>
 </head>
 
 <body <?php body_class(); ?>>
 
     <!-- start header -->
-		<nav class="cn_navigation" role="navigation" aria-label="Cronkite News - Navigation">
+        <nav class="cn_navigation" role="navigation" aria-label="Cronkite News - Navigation">
       <!-- navigation container -->
       <div class="main_nav_container">
         <!-- main navigation -->
@@ -166,18 +166,18 @@
             </ul>
             <!-- top navigation -->
             <ul class="top_links">
-							<?php
-								$args = array(
-									'menu' => 'Header Nav - 2019',
-									'container'     => false,
-									'items_wrap'    => '%3$s',
-									'depth'         => 1,
-									'fallback_cb'   => false,
-									'menu_id' 			=> '',
-									'menu_class'		=> ''
-									);
-								wp_nav_menu($args);
-							?>
+                            <?php
+                                $args = array(
+                                    'menu' => 'Header Nav - 2019',
+                                    'container'     => false,
+                                    'items_wrap'    => '%3$s',
+                                    'depth'         => 1,
+                                    'fallback_cb'   => false,
+                                    'menu_id'             => '',
+                                    'menu_class'        => ''
+                                    );
+                                wp_nav_menu($args);
+                                ?>
               <li><a href="https://cronkitenews.azpbs.org/election-2020"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2020/10/election2020-small-1-logo.png" alt="Election 2020" title="Election 2020" style="vertical-align:baseline;height:16px;" /></a></li>
             </ul>
           </div>
@@ -201,17 +201,17 @@
             </form>
           </li>
           <?php
-						$args = array(
-							'menu' => 'Subnav - 2019',
-							'container'     => false,
-							'items_wrap'    => '%3$s',
-							'depth'         => 1,
-							'fallback_cb'   => false,
-							'menu_id' 			=> '',
-							'menu_class'		=> ''
-							);
-						wp_nav_menu($args);
-					?>
+            $args = array(
+            'menu' => 'Subnav - 2019',
+            'container'     => false,
+            'items_wrap'    => '%3$s',
+            'depth'         => 1,
+            'fallback_cb'   => false,
+            'menu_id'             => '',
+            'menu_class'        => ''
+            );
+            wp_nav_menu($args);
+            ?>
           <li class="top_links_m first"><a href="https://cronkitenews.azpbs.org/election-2020"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2020/10/election2020-small-1-logo.png" alt="Election 2020" title="Election 2020" style="vertical-align:baseline;height:16px;" /></a></li>
           <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sports/">Sports</a></li>
           <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sitenewscast/">Newscast</a></li>

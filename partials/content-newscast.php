@@ -21,17 +21,17 @@
           <?php
             $paged = get_query_var('paged');
             $arg = array(
-                'post_type'	    => 'post',
-                'order'		    => 'DESC',
-                'orderby'	    => 'date',
+                'post_type'        => 'post',
+                'order'            => 'DESC',
+                'orderby'        => 'date',
                 'category_name' =>  'newscast'
             );
-            $newscast = new WP_Query( $arg );
+            $newscast = new WP_Query($arg);
 
-            if ( $newscast->have_posts() ) {
-              while ( $newscast->have_posts() ) {
+            if ($newscast->have_posts() ) {
+            while ( $newscast->have_posts() ) {
                 $newscast->the_post();
-          ?>
+                ?>
                 <div class="grid-x grid-margin-x story-results-stack">
                   <div class="large-8 medium-8 small-8 cell">
                     <h4><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
@@ -41,7 +41,7 @@
                     </div>
                   </div>
                   <div class="large-4 medium-4 small-4 cell">
-                    <a href="<?php echo get_permalink(); ?>"><?php echo get_the_post_thumbnail( get_the_ID()); ?></a>
+                    <a href="<?php echo get_permalink(); ?>"><?php echo get_the_post_thumbnail(get_the_ID()); ?></a>
                   </div>
                   <div class="large-12 medium-12 small-12 cell">
                     <hr />
@@ -53,9 +53,9 @@
             } else {
           ?>
 
-          <?php
+                <?php
             }
-          ?>
+            ?>
             <div class="grid-x grid-margin-x story-results-stack">
               <div class="large-12 medium-12 small-12 cell">
                 <?php bootstrap_pagination(); ?>
@@ -63,7 +63,7 @@
             </div>
           <?php
             wp_reset_query();
-          ?>
+            ?>
 
         </div>
 

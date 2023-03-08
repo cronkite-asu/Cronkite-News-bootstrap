@@ -5,7 +5,7 @@
 ?>
 <!DOCTYPE html>
 <!--[if IE]>
-	<script src="<?php bloginfo('template_url'); ?>/js/plugins/html5shiv.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/plugins/html5shiv.js"></script>
 <![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9 ie8" lang="en" ><![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
@@ -17,32 +17,32 @@
 
 <head>
 
-	<!-- Chartbeat Analytics  -->
-	<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
+    <!-- Chartbeat Analytics  -->
+    <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
 <!--     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
 
     <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
 
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#216CB7">
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#216CB7">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Add Favicon -->
-    <link type="image/png" href="<?php the_field('favicon','options'); ?>" rel="icon">
-    <link type="image/png" href="<?php the_field('favicon','options'); ?>" rel="shortcut icon">
-    <link type="image/png" href="<?php the_field('favicon','options'); ?>"  rel="apple-touch-icon">
+    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="icon">
+    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="shortcut icon">
+    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>"  rel="apple-touch-icon">
 
-		<!-- font awesome -->
-		<script src="https://kit.fontawesome.com/0f0514404d.js" crossorigin="anonymous"></script>
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
+        <!-- font awesome -->
+        <script src="https://kit.fontawesome.com/0f0514404d.js" crossorigin="anonymous"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
 
     <!-- Load Google Fonts -->
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href="//fonts.googleapis.com/css?family=Lato:400,900,300,700" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic" rel="stylesheet">
@@ -50,45 +50,44 @@
 
     <!-- Google Analytics Tracking Code  -->
 
-		<?php
-	// get the category for GA
-		$post = get_post();
-		$categories = get_the_category ($post -> ID);
-		$output = '';
+        <?php
+        // get the category for GA
+        $post = get_post();
+        $categories = get_the_category($post -> ID);
+        $output = '';
 
-		if ( ! empty( $categories ) ) {
-			foreach( $categories as $category ) {
+        if (! empty($categories) ) {
+            foreach( $categories as $category ) {
 
-                if($output == '')
-                {
-			if ($category->name == "Borderlands") {
-			 //$output = "ga('set', 'Borderlands', '"  . esc_html( $category->name ) . "');";
-			$output = "ga('set', 'contentGroup1', 'Borderlands');";
-		      }
-		if ($category->name == "Sustainability") {
+                if($output == '') {
+                    if ($category->name == "Borderlands") {
+                        //$output = "ga('set', 'Borderlands', '"  . esc_html( $category->name ) . "');";
+                        $output = "ga('set', 'contentGroup1', 'Borderlands');";
+                    }
+                    if ($category->name == "Sustainability") {
 
-		$output = "ga('set', 'contentGroup2', 'Sustainability');";
-	       }
-        if ($category->name == "Education") {
+                        $output = "ga('set', 'contentGroup2', 'Sustainability');";
+                    }
+                    if ($category->name == "Education") {
 
-		$output = "ga('set', 'contentGroup3', 'Education');";
-	       }
-            if ($category->name == "Consumer") {
+                        $output = "ga('set', 'contentGroup3', 'Education');";
+                    }
+                    if ($category->name == "Consumer") {
 
-		$output = "ga('set', 'contentGroup4', 'Consumer');";
-	       }
-            if ($category->name == "Future") {
+                        $output = "ga('set', 'contentGroup4', 'Consumer');";
+                    }
+                    if ($category->name == "Future") {
 
-		$output = "ga('set', 'contentGroup5', 'Future');";
-	       }
-	     }
+                        $output = "ga('set', 'contentGroup5', 'Future');";
+                    }
+                }
+            }
         }
-}
 
-		?>
+        ?>
 
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>
 
 
        <!-- Hotjar Tracking Code for http://cronkitenews.azpbs.org -->
@@ -102,20 +101,20 @@
                a.appendChild(r);
            })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
        </script>
-	<!-- FB instant articles -->
-	<meta property="fb:pages" content="305166330794" />
+    <!-- FB instant articles -->
+    <meta property="fb:pages" content="305166330794" />
 
     <?php wp_head(); ?>
-<!-- 		<script src="<?php bloginfo('template_directory');?>/js/plugins/jquery.scrolldepth.js"></script> -->
-	 <script>
-	 /*jQuery(function() {
-		 jQuery.scrollDepth({
-		  minHeight: 1000,
-		  userTiming: false
-		});
+<!--         <script src="<?php bloginfo('template_directory');?>/js/plugins/jquery.scrolldepth.js"></script> -->
+     <script>
+     /*jQuery(function() {
+         jQuery.scrollDepth({
+          minHeight: 1000,
+          userTiming: false
+        });
 });*/
-	 </script>
-	 <link rel='stylesheet' id='normalize-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/css/core/normalize.css' type='text/css' media='all' />
+     </script>
+     <link rel='stylesheet' id='normalize-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/css/core/normalize.css' type='text/css' media='all' />
 <link rel='stylesheet' id='bootstrap-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/css/plugins/bootstrap.css' type='text/css' media='all' />
 <link rel='stylesheet' id='slick-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/css/plugins/slick.css' type='text/css' media='all' />
 <link rel='stylesheet' id='bootstrap-customizer-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/css/core/customizer.css' type='text/css' media='all' />

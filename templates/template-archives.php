@@ -63,25 +63,25 @@ get_header(); ?>
                                     </div>
 
                                     <?php $args = array(
-                                        'post_type'	    => 'post',
-                                        'order'		    => 'ASC',
-                                        'orderby'	    => 'date',
+                                        'post_type'        => 'post',
+                                        'order'            => 'ASC',
+                                        'orderby'        => 'date',
                                         'posts_per_page'    => -1,
                                         'monthnum' => $month,
                                         'year' => $years,
 
                                     );
-                                    $the_query = new WP_Query( $args );
-                                    if ( $the_query->have_posts() ) : ?>
+                                    $the_query = new WP_Query($args);
+if ($the_query->have_posts() ) : ?>
 
                                             <?php while ( $the_query->have_posts() ) : $the_query->the_post();
-                                            $do_not_duplicate = $post->ID; ?><!-- BEGIN of POST -->
+                                                $do_not_duplicate = $post->ID; ?><!-- BEGIN of POST -->
                                             <div class="archive-list">
                                                 <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                                 <?php global $post;
                                                     $categories = get_the_category($post->ID);
                                                     $catPost =  $categories[0]->cat_name;
-                                                    $catID = get_cat_ID( $catPost )
+                                                    $catID = get_cat_ID($catPost)
                                                 ?>
                                                 <h5>Category: <?php echo $catPost ?></h5>
                                                 <ul>
@@ -102,8 +102,8 @@ get_header(); ?>
                             <figure>
                                 <figcaption class="author-details">
                                     <h3>Search for more stories and video:</h3>
-                                    <form method="get" class="navbar-form search" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                                        <input type="text" class="form-control" name="s" id="s" placeholder="<?php esc_attr_e( 'Search Stories and Video' ); ?>" />
+                                    <form method="get" class="navbar-form search" id="searchform" action="<?php echo esc_url(home_url('/')); ?>">
+                                        <input type="text" class="form-control" name="s" id="s" placeholder="<?php esc_attr_e('Search Stories and Video'); ?>" />
                                         <button type="submit"  class="btn btn-default btn-submit icon-right-open" name="submit" id="searchsubmit"></button>
                                     </form>
                                 </figcaption>
