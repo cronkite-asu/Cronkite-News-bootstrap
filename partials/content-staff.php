@@ -229,12 +229,12 @@
           <div class="large-4 medium-12 small-12 cell sidebar">
               <?php if ($staffChecker != 1) { ?>
                     <?php dynamic_sidebar('Sidebar Author - 2020'); ?>
-            <?php } ?>
+              <?php } ?>
           </div>
-        <?php 
+              <?php 
           } else {
-            if ($staffChecker != 1) {
-        ?>
+              if ($staffChecker != 1) {
+                    ?>
               <div id="latest-stories" class="large-8 medium-12 small-12 cell story-content">
                 <div class="grid-x grid-padding-x">
                   <div class="large-12 medium-12 small-12 cell">

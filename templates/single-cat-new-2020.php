@@ -123,9 +123,9 @@
                                         ucwords(str_replace('-', ' ', get_field('team'))).' '.ucwords(str_replace('-', ' ', get_field('role'))).', '.str_replace('Washington Dc', 'Washington, D.C.', ucwords(str_replace('-', ' ', get_field('bureau'))));
                                     }
 
-				    if (get_field('biography') != '') {
-					    get_field('biography')
-				    }
+                                    if (get_field('biography') != '') {
+                                        get_field('biography')
+                                    }
 
                                     if (have_rows('social_media_outlets') ) {
                                         while ( have_rows('social_media_outlets') ) {

@@ -54,9 +54,9 @@
             );
             $the_query = new WP_Query($args);
             if ($the_query->have_posts() ) {
-            while (  $the_query->have_posts() ) {
-                $the_query->the_post();
-                ?>
+                while (  $the_query->have_posts() ) {
+                    $the_query->the_post();
+                    ?>
                 <div class="grid-x grid-margin-x story-results-stack">
                   <div class="large-8 medium-8 small-8 cell">
                     <h4><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
@@ -73,10 +73,10 @@
                   </div>
                 </div>
 
-          <?php 
-              }
+                    <?php 
+                }
             } else {
-          ?>
+                ?>
 
                 <?php
             }

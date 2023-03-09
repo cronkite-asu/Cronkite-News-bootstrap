@@ -22,9 +22,9 @@
             $paged = get_query_var('paged');
 
             if (have_posts() ) {
-            while ( have_posts() ) {
-                the_post();
-                ?>
+                while ( have_posts() ) {
+                    the_post();
+                    ?>
                 <div class="grid-x grid-margin-x story-results-stack">
                   <div class="large-8 medium-8 small-8 cell">
                     <h4><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
@@ -41,10 +41,10 @@
                   </div>
                 </div>
 
-          <?php
-              }
+                    <?php
+                }
             } else {
-          ?>
+                ?>
 
                 <?php
             }

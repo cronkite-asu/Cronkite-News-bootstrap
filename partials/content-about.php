@@ -30,7 +30,7 @@
       <h4>Locations</h4>
       <?php if (have_rows('cn_locations') ) { ?>
           <ul class="cn-locations">
-          <?php
+            <?php
             while ( have_rows('cn_locations') ) {
                 the_row();
                 echo '<li><img src="'.get_sub_field('cn_location_photo').'" alt="'.get_sub_field('cn_location_name').'" />';
@@ -221,7 +221,7 @@
       <h4>Our partners</h4>
       <?php if (have_rows('our_partners') ) { ?>
           <ul class="our_partners">
-          <?php
+            <?php
             while ( have_rows('our_partners') ) {
                 the_row();
                 echo '<li><a href="'.get_sub_field('partner_link').'" target="_blank"><img src="'.get_sub_field('partner_logo').'" alt="'.get_sub_field('partners_name').'" /></a></li>';
