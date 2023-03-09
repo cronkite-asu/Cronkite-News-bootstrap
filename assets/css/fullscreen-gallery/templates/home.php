@@ -96,7 +96,7 @@ get_header('new'); ?>
                         if ($top_side_stories ) {
                             ?>
                             <?php
-                            foreach( $top_side_stories as $post ) {
+                            foreach ( $top_side_stories as $post ) {
                                 // Setup this post for WP functions (variable must be named $post).
                                 setup_postdata($post);
                                 ?>

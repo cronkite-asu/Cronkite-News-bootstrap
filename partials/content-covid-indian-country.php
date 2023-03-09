@@ -165,7 +165,7 @@ if (have_rows('layout') ) {
                 $featured_posts = get_sub_field('stories');
                 if ($featured_posts ) {
                     ?>
-                    <?php foreach( $featured_posts as $featured_post ) {
+                    <?php foreach ( $featured_posts as $featured_post ) {
                         $permalink = get_permalink($featured_post->ID);
                         $title = get_the_title($featured_post->ID);
                         $story_tease = get_field('story_tease', $featured_post->ID);

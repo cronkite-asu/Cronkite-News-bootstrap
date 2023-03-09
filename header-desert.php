@@ -53,7 +53,7 @@
         $output = '';
 
         if (! empty($categories) ) {
-            foreach( $categories as $category ) {
+            foreach ( $categories as $category ) {
 
                 if ($category->name == "Borderlands") {
                     // $output = "ga('set', 'contentGroup1', '"  . esc_html( $category->name ) . "');";

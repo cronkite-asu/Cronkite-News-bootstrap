@@ -38,7 +38,7 @@
                     $featured_posts = get_sub_field('stories');
                     if ($featured_posts ) {
 
-                        foreach( $featured_posts as $featured_post ) {
+                        foreach ( $featured_posts as $featured_post ) {
                             $permalink = get_permalink($featured_post->ID);
                             $title = get_the_title($featured_post->ID);
                             $story_tease = get_field('story_tease', $featured_post->ID);

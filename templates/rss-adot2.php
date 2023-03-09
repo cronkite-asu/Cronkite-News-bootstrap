@@ -57,7 +57,7 @@ echo '<?xml version="1.0"?><rss version="2.0">';
         // Query home page for the custom fields we need
     if (have_rows('latest_news_box', 24) ) : while ( have_rows('latest_news_box', 24) ) : the_row();
             $posts = get_sub_field('post_box');
-            if ($posts ) : foreach( $posts as $post): setup_postdata($post);
+            if ($posts ) : foreach ( $posts as $post): setup_postdata($post);
                     //echo 'loop! ';
                     //echo '<title>' . the_title() . '</title>';
                     $link = 'blank';

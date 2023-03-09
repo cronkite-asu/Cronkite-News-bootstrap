@@ -24,7 +24,7 @@ get_header(); ?>
                                             $separator = ' | ';
                                             $output = '';
                                             if (! empty($verticals) ) {
-                                                foreach( $verticals as $category ) {
+                                                foreach ( $verticals as $category ) {
 
                                                     if (($category->name != "Uncategorized") && ($category->name != "Longform") && ($category->name != "Longform No Title")) {
                                                                   $output .= '<a href="' . esc_url(get_category_link($category->term_id)). '" alt="' . esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)) . '">' . strtoupper(esc_html($category->name)) . '</a>' . $separator;

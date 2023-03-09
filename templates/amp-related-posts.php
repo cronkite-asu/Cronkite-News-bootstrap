@@ -58,7 +58,7 @@ if ($tax_term_ids ) {
         <div class="amp-wp-meta amp-wp-tax-tag">
             <h3>You May Also Like</h3>
             <div id="amp-related-posts">
-            <?php foreach( $related as $post) {
+            <?php foreach ( $related as $post) {
                 setup_postdata($post);
                 ?>
                 <p><a href="<?php echo esc_url(amp_get_permalink(get_the_id())); ?>"><?php 

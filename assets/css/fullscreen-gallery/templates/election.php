@@ -21,7 +21,7 @@ function gridpost($item)
     //    $output = '';
     //      if ( ! empty( $verticals ) ) {
     //        echo '<div style="font-size: 14px; font-weight: bold;">';
-    //        foreach( $verticals as $category ) {
+    //        foreach ( $verticals as $category ) {
     //
     //          if (($category->name != "Uncategorized") && ($category->name != "Longform") && ($category->name != "Longform No Title") && ($category->name != "Sports")) {
     //        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ). '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . strtoupper(esc_html( $category->name )) . '</a>' . $separator;
