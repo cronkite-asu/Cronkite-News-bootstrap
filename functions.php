@@ -290,7 +290,7 @@ add_action('wp_footer', 'hook_parselyTrack');
         $output .= $item_html;
      }
 
-    function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
+    function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output = '') {
         if ( $element->current )
             $element->classes[] = 'active';
             $element->is_dropdown = !empty( $children_elements[$element->ID] );
@@ -462,7 +462,7 @@ add_action('wp_footer', 'hook_parselyTrack');
 
 /*Disable Theme Updates # 3.0+*/
     remove_action( 'load-update-core.php', 'wp_update_themes' );
-    add_filter( 'pre_site_transient_update_themes', create_function( '$a', "return null;" ) );
+    add_filter( 'pre_site_transient_update_themes', function ($a) { return null; } );
     wp_clear_scheduled_hook( 'wp_update_themes' );
 
 
@@ -539,7 +539,7 @@ if (!is_admin()) {
     }
   }
 
-  $checkPeoplePage = explode('/', $_SERVER[REQUEST_URI]);
+  $checkPeoplePage = explode('/', $_SERVER['REQUEST_URI']);
 
   if (!is_search() && !is_single() && $checkPeoplePage[1] != 'people' && $checkPeoplePage[1] != 'category') {
     add_action( 'wp_enqueue_scripts', 'bootstrap_scripts_and_styles' );
