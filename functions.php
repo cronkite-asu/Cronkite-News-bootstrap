@@ -404,7 +404,7 @@ if ( ! function_exists( 'bootstrap_excerpt' ) ) {
 
 /*Disable Theme Updates # 3.0+*/
 remove_action( 'load-update-core.php', 'wp_update_themes' );
-add_filter( 'pre_site_transient_update_themes', create_function( '$a', "return null;" ) );
+add_filter( 'pre_site_transient_update_themes', function ($a) { return null; } );
 wp_clear_scheduled_hook( 'wp_update_themes' );
 
 // Disable wordpress jQuery
