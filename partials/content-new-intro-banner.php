@@ -48,7 +48,7 @@ if (have_rows('layout') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'intro-head-photo' ) {
+        } elseif (get_row_layout() == 'intro-head-photo' ) {
             $intro = get_sub_field('intro_summary');
             ?>
   <div id="intro-head-photo" class="grid-container full">
@@ -89,7 +89,7 @@ if (have_rows('layout') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'intro-gradient-photo' ) {
+        } elseif (get_row_layout() == 'intro-gradient-photo' ) {
             $intro = get_sub_field('intro_summary');
             ?>
   <div id="intro-head-photo" class="grid-container full">
@@ -129,7 +129,7 @@ if (have_rows('layout') ) {
   </div>
 
             <?php
-        }    elseif (get_row_layout() == 'plain-code-block' ) {
+        } elseif (get_row_layout() == 'plain-code-block' ) {
             ?>
 
     <div class="grid-container text-content">
@@ -142,7 +142,7 @@ if (have_rows('layout') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'text-block' ) {
+        } elseif (get_row_layout() == 'text-block' ) {
             ?>
 
   <div class="grid-container text-content">
@@ -154,7 +154,7 @@ if (have_rows('layout') ) {
   </div>
 
             <?php
-        }    elseif (get_row_layout() == 'stories-list' ) {
+        } elseif (get_row_layout() == 'stories-list' ) {
             ?>
             <?php $featured_posts = get_sub_field('stories'); ?>
     <div class="grid-container stories-list">

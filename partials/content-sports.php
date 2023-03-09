@@ -6,7 +6,7 @@ if (have_rows('sports_homepage') ) {
             $intro = get_sub_field('intro_summary');
 
 
-        }    elseif (get_row_layout() == 'intro-split-code' ) {
+        } elseif (get_row_layout() == 'intro-split-code' ) {
 
         }
     }

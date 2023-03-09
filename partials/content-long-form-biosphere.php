@@ -174,7 +174,7 @@ if (have_rows('blocks') ) {
             <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
 
             <?php
-        }    elseif (get_row_layout() == 'intro-split-code' ) {
+        } elseif (get_row_layout() == 'intro-split-code' ) {
             ?>
   <div id="intro" class="grid-container full">
     <div class="grid-x grid-padding-x">
@@ -367,7 +367,7 @@ if (have_rows('blocks') ) {
             <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
 
             <?php
-        }    elseif (get_row_layout() == 'fullscreen-video' ) {
+        } elseif (get_row_layout() == 'fullscreen-video' ) {
             ?>
 <div id="fullscreen-video" class="grid-container full <?php echo get_sub_field('custom-class'); ?>">
   <div class="grid-x grid-padding-x">
@@ -429,7 +429,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'intro-scale' ) {
+        } elseif (get_row_layout() == 'intro-scale' ) {
             ?>
 <div id="intro-scale" class="grid-container full show-for-medium">
   <div class="grid-x grid-padding-x">
@@ -467,7 +467,7 @@ if (have_rows('blocks') ) {
             <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
 
             <?php
-        }    elseif (get_row_layout() == 'intro-head-photo-overlay' ) {
+        } elseif (get_row_layout() == 'intro-head-photo-overlay' ) {
             $intro = get_sub_field('intro_summary');
             ?>
 <div id="intro-head-photo-overlay" class="grid-container full">
@@ -517,7 +517,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'intro-photo-story-headline' ) {
+        } elseif (get_row_layout() == 'intro-photo-story-headline' ) {
             ?>
 <div id="intro-photo-gallery-overlay" class="grid-container full">
   <div class="large-12 medium-12 small-12 cell intro-text text-center show-for-small-only">
@@ -567,7 +567,7 @@ if (have_rows('blocks') ) {
             <?php generateByline(get_the_ID(), $intro, $publishDate, 'author-open'); ?>
 
             <?php
-        }    elseif (get_row_layout() == 'intro-head-photo' ) {
+        } elseif (get_row_layout() == 'intro-head-photo' ) {
             $intro = get_sub_field('intro_summary');
             ?>
 <div id="intro-head-photo" class="grid-container full">
@@ -616,7 +616,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'intro-head-slider' ) {
+        } elseif (get_row_layout() == 'intro-head-slider' ) {
             $intro = get_sub_field('intro_summary');
             ?>
 <div id="intro-head-slider" class="grid-container">
@@ -674,7 +674,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'intro-code-only' ) {
+        } elseif (get_row_layout() == 'intro-code-only' ) {
             $intro = get_sub_field('intro_summary');
             $sectionClass = get_sub_field('class');
             ?>
@@ -697,7 +697,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'intro-head-video' ) {
+        } elseif (get_row_layout() == 'intro-head-video' ) {
             $intro = get_sub_field('intro_summary');
             ?>
 <div id="intro-head-photo" class="grid-container">
@@ -732,7 +732,7 @@ if (have_rows('blocks') ) {
             <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
 
             <?php
-        }    elseif (get_row_layout() == 'intro-fadeout-protrait-images' ) {
+        } elseif (get_row_layout() == 'intro-fadeout-protrait-images' ) {
             $intro = get_sub_field('intro_summary');
             ?>
 
@@ -780,7 +780,7 @@ if (have_rows('blocks') ) {
             <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
 
             <?php
-        }    elseif (get_row_layout() == 'text-block' ) {
+        } elseif (get_row_layout() == 'text-block' ) {
 
             $textBlockSettings = get_sub_field('settings');
             if ($textBlockSettings['regular'] == 'size') {
@@ -799,7 +799,7 @@ if (have_rows('blocks') ) {
   </div>
 
             <?php
-        }    elseif (get_row_layout() == 'video-embed' ) {
+        } elseif (get_row_layout() == 'video-embed' ) {
 
             $settings = get_sub_field('video-content-settings');
             if ($settings['width'] == 'large-width') {
@@ -882,7 +882,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'video-2up-content' ) {
+        } elseif (get_row_layout() == 'video-2up-content' ) {
 
             $settings = get_sub_field('settings');
             if ($settings['width'] == 'large-width') {
@@ -944,7 +944,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'single-photo-block' ) {
+        } elseif (get_row_layout() == 'single-photo-block' ) {
 
             $settings = get_sub_field('single-photo-settings');
             if ($settings['width'] == 'large-width') {
@@ -999,7 +999,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'single-photo-block-full-width' ) {
+        } elseif (get_row_layout() == 'single-photo-block-full-width' ) {
 
             $settings = get_sub_field('single-photo-full-width-settings');
             if ($settings['width'] == 'large-width') {
@@ -1054,7 +1054,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'photo-slideshow' ) {
+        } elseif (get_row_layout() == 'photo-slideshow' ) {
 
             $settings = get_sub_field('slideshow-settings');
             if ($settings['width'] == 'large-width') {
@@ -1088,7 +1088,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'fullscreen-slideshow' ) {
+        } elseif (get_row_layout() == 'fullscreen-slideshow' ) {
             ?>
 
     <div class="grid-container fullscreen-photo-content show-for-medium">
@@ -1140,7 +1140,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'table-photo-content' ) {
+        } elseif (get_row_layout() == 'table-photo-content' ) {
 
             $settings = get_sub_field('photo-content-sxs-settings');
             if ($settings['order'] == 'photo-left') {
@@ -1172,7 +1172,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'table-video-content' ) {
+        } elseif (get_row_layout() == 'table-video-content' ) {
 
             $settings = get_sub_field('photo-content-sxs-settings');
             if ($settings['order'] == 'photo-left') {
@@ -1205,7 +1205,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'photo-text-sxs' ) {
+        } elseif (get_row_layout() == 'photo-text-sxs' ) {
 
             $settings = get_sub_field('photo-text-sxs-settings');
             if ($settings['photo-position'] == 'photo-left') {
@@ -1238,7 +1238,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'data-viz-2up-content' ) {
+        } elseif (get_row_layout() == 'data-viz-2up-content' ) {
             ?>
 
     <div class="grid-container" style="padding:25px 0;">
@@ -1255,7 +1255,7 @@ if (have_rows('blocks') ) {
     </div>
 
             <?php
-        }    elseif (get_row_layout() == 'pure-code-block' ) {
+        } elseif (get_row_layout() == 'pure-code-block' ) {
             ?>
 
     <div class="grid-container full show-for-medium">
@@ -1278,7 +1278,7 @@ if (have_rows('blocks') ) {
                 <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
             <?php } ?>
             <?php
-        }    elseif (get_row_layout() == 'charts-doc' ) {
+        } elseif (get_row_layout() == 'charts-doc' ) {
 
             if (get_sub_field('chart-width') == 'full-width') {
                 $fullWidth = 'full';
@@ -1326,7 +1326,7 @@ if (have_rows('blocks') ) {
             <?php } ?>
 
             <?php
-        }    elseif (get_row_layout() == '2up-photos-block' ) {
+        } elseif (get_row_layout() == '2up-photos-block' ) {
             ?>
 
     <div class="grid-container photo-content">
@@ -1365,7 +1365,7 @@ if (have_rows('blocks') ) {
     </div>
 
             <?php
-        }    elseif (get_row_layout() == '3up-photos-block' ) {
+        } elseif (get_row_layout() == '3up-photos-block' ) {
 
             $settings = get_sub_field('3up-settings');
             if ($settings['full-width-no-padding'] == 'yes') {
@@ -1452,7 +1452,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'content-above-photo-audio' ) {
+        } elseif (get_row_layout() == 'content-above-photo-audio' ) {
             ?>
 
     <div id="profile-audio" class="grid-container">
@@ -1489,7 +1489,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        }    elseif (get_row_layout() == 'large-photo-2-verticals' ) {
+        } elseif (get_row_layout() == 'large-photo-2-verticals' ) {
             ?>
 
     <div class="grid-container large-photo-verticals">
@@ -1538,7 +1538,7 @@ if (have_rows('blocks') ) {
     </div>
 
             <?php
-        }    elseif (get_row_layout() == 'horizontal-photos-vertical' ) {
+        } elseif (get_row_layout() == 'horizontal-photos-vertical' ) {
             $verticalSettings = get_sub_field('vertical-photo');
             ?>
 

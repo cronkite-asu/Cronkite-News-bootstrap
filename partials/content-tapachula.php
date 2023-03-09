@@ -45,7 +45,7 @@ if (have_rows('content') ) {
               </div>
             </div>
           </div>
-        <?php }    elseif (get_row_layout() == 'photo-story' ) {
+        <?php } elseif (get_row_layout() == 'photo-story' ) {
             // get stories
             $storyList = get_sub_field('photo_story');
             if ($storyList) {
@@ -76,8 +76,8 @@ if (have_rows('content') ) {
             </div>
           </div>
 
-        <?php }    elseif (get_row_layout() == 'gallery' ) { ?>
-        <?php }    elseif (get_row_layout() == 'video' ) {
+        <?php } elseif (get_row_layout() == 'gallery' ) { ?>
+        <?php } elseif (get_row_layout() == 'video' ) {
             // get stories
             $storyList = get_sub_field('video_story');
             if ($storyList) {
