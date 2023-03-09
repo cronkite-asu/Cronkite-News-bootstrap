@@ -204,7 +204,7 @@
                         <?php echo $postAuthor; ?></a>/
                     <?php } ?>
                     <?php
-                    if($siteTitle = get_field('site_title')) {
+                    if ($siteTitle = get_field('site_title')) {
                         $url = get_field('site_url');
                         $url = esc_url($url);
                         ?><a href="<?php echo $url; ?>"><?php echo $siteTitle; ?></a>
@@ -239,7 +239,7 @@
 
              <!-- story photo/video/slideshow -->
              <?php
-                if(get_the_post_thumbnail_url($audio_id) != '') { ?>
+                if (get_the_post_thumbnail_url($audio_id) != '') { ?>
                  <div id="story-photo" class="story-photos">
                      <div>
                        <img src="<?php echo get_the_post_thumbnail_url($audio_id); ?>" width="800" alt="" title="" />
@@ -390,9 +390,9 @@
                               );
 
                     $storyTag = new WP_Query($args);
-                    if($storyTag->have_posts() ) {
+                    if ($storyTag->have_posts() ) {
                         echo '<div class="story_tag">';
-                        while( $storyTag->have_posts() ) {
+                        while ( $storyTag->have_posts() ) {
                             $storyTag->the_post();
                             if (get_field('story_html_tag') != '') {
                                 if (get_the_ID() == 147157) {
@@ -509,7 +509,7 @@
 
                                 echo '<div class="links-container">';
 
-                                if(have_rows('social_media_outlets') ) {
+                                if (have_rows('social_media_outlets') ) {
                                     echo '<div class="author_social_links">';
                                     while ( have_rows('social_media_outlets') ) {
                                         the_row();
@@ -607,7 +607,7 @@
 
                                 echo '<div class="links-container">';
 
-                                if(have_rows('social_media_outlets') ) {
+                                if (have_rows('social_media_outlets') ) {
                                     echo '<div class="author_social_links">';
                                     while ( have_rows('social_media_outlets') ) {
                                         the_row();
@@ -705,7 +705,7 @@
 
                                 echo '<div class="links-container">';
 
-                                if(have_rows('social_media_outlets') ) {
+                                if (have_rows('social_media_outlets') ) {
                                     echo '<div class="author_social_links">';
                                     while ( have_rows('social_media_outlets') ) {
                                         the_row();
@@ -804,7 +804,7 @@
 
                                 echo '<div class="links-container">';
 
-                                if(have_rows('social_media_outlets') ) {
+                                if (have_rows('social_media_outlets') ) {
                                     echo '<div class="author_social_links">';
                                     while ( have_rows('social_media_outlets') ) {
                                         the_row();

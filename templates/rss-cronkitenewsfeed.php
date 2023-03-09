@@ -57,7 +57,7 @@ $xmlWriter->startElement('channel');
                   'posts_per_page'    => $postCount
               );
     $loop = new WP_Query($args);
-    while($loop->have_posts()) { $loop->the_post();
+    while ($loop->have_posts()) { $loop->the_post();
 
         $content = wpautop($post->post_content);
         $content = strip_shortcodes($content);

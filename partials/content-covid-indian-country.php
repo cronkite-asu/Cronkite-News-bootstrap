@@ -158,12 +158,12 @@ if (have_rows('layout') ) {
             <?php $featured_posts = get_sub_field('stories'); ?>
     <div class="grid-container stories-list">
       <div class="grid-x grid-padding-x">
-            <?php if($featured_posts ) { ?>
+            <?php if ($featured_posts ) { ?>
                 <?php $counter = 0; ?>
 
                 <?php
                 $featured_posts = get_sub_field('stories');
-                if($featured_posts ) {
+                if ($featured_posts ) {
                     ?>
                     <?php foreach( $featured_posts as $featured_post ) {
                         $permalink = get_permalink($featured_post->ID);

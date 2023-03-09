@@ -4,7 +4,7 @@
  */
 get_header('new'); ?>
 
-<?php if(get_field('alternate_layout') == 'Yes' ) : ?>
+<?php if (get_field('alternate_layout') == 'Yes' ) : ?>
 
   <section style="background-color:#FFF;">
       <?php if (get_field('breaking_headline')) : ?>
@@ -93,7 +93,7 @@ get_header('new'); ?>
 
                      <?php
                         $top_side_stories = get_field('top_side_stories');
-                        if($top_side_stories ) {
+                        if ($top_side_stories ) {
                             ?>
                             <?php
                             foreach( $top_side_stories as $post ) {
@@ -205,7 +205,7 @@ get_header('new'); ?>
             echo '</div></a>';
         }
 
-        if(have_rows('slider_aside_box')) : // check for repeater fields
+        if (have_rows('slider_aside_box')) : // check for repeater fields
             while ( have_rows('slider_aside_box')) : the_row(); // loop through the repeater fields
                 $asposts = get_sub_field('aside_post_box'); // all the latest news is now loaded in $posts
             endwhile;
@@ -274,7 +274,7 @@ get_header('new'); ?>
 
         <?php
           $vvid = get_field('v_video_or_newscast');
-        if($vvid == 'Newscast') { ?>
+        if ($vvid == 'Newscast') { ?>
 
             <?php global $post;?>
 
@@ -343,8 +343,8 @@ if ($the_query->have_posts() ) : ?>
 
                 <!--end of .col-->
 
-                <?php if(have_rows('area_works_box') ) : ?>
-                    <?php while( have_rows('area_works_box') ): the_row();
+                <?php if (have_rows('area_works_box') ) : ?>
+                    <?php while ( have_rows('area_works_box') ): the_row();
                         // Declare variables below
                         $icon = get_sub_field('area_works_image');
                         $postID = get_sub_field('area_works_link');
@@ -355,13 +355,13 @@ if ($the_query->have_posts() ) : ?>
                      <div class="col-xs-12 col-sm-4"  style="filter:drop-shadow(2px 2px 3px black);">
                      <div class="paper">
 
-                          <?php if($customLinks != '') { ?>
+                          <?php if ($customLinks != '') { ?>
                             <a target="_blank" href="<?php echo $customLinks; ?>">
                           <?php } else { ?>
                             <a href="<?php echo get_permalink($postID); ?>" >
                           <?php } ?>
 
-                          <?php if($icon != '') { ?>
+                          <?php if ($icon != '') { ?>
                             <img class="awards_image" src="<?php echo $icon['sizes']['awards_logo']; ?>" />
                           <?php } else { ?>
                               <?php echo preg_replace('/(height)=\"\d*\"\s/', "", get_the_post_thumbnail($postID,  array( 486, 304), array( 'class' => 'awards_image' ))); ?>
@@ -371,7 +371,7 @@ if ($the_query->have_posts() ) : ?>
 
                           <h3 class="art-h2" style="padding-top:30px;">
                             <?php if ($customTitle != '') { ?>
-                                <?php if($customLinks != '') { ?>
+                                <?php if ($customLinks != '') { ?>
                                 <a href="<?php echo $customLinks; ?>" ><div class="pcont"> <?php echo $customTitle; ?> </div> </a>
                                 <?php } else { ?>
                                 <a href="<?php echo get_permalink($postID); ?>" ><div class="pcont"> <?php echo $customTitle; ?> </div> </a>
@@ -416,7 +416,7 @@ if ($the_query->have_posts() ) : ?>
         $permalink = get_the_permalink($postid);
         $url_link = get_field("url_link", $item);
 
-        if($url_link ) : // post goes offsite (extremely rare)
+        if ($url_link ) : // post goes offsite (extremely rare)
 
             echo '<a target="_blank" href="//';
             echo $url_link;
@@ -434,7 +434,7 @@ if ($the_query->have_posts() ) : ?>
           echo '<figcaption>';
           echo '<div class="info"><h4 style="color:black; text-align:center; padding-left:10px; padding-right: 10px;">';
 
-          if($url_link ) : // post goes offsite (extremely rare)
+          if ($url_link ) : // post goes offsite (extremely rare)
               echo '<a target="_blank" href="//';
               echo $url_link;
               echo '">';
@@ -458,7 +458,7 @@ if ($the_query->have_posts() ) : ?>
             echo '</h4></div><!-- /.info --></figcaption></figure></div><!-- /item -->';
     }
 
-    if(have_rows('latest_news_box')) : // check for repeater fields
+    if (have_rows('latest_news_box')) : // check for repeater fields
         while ( have_rows('latest_news_box')) : the_row(); // loop through the repeater fields
 
             $posts = get_sub_field('post_box'); // all the latest news is now loaded in $posts
@@ -588,8 +588,8 @@ if ($the_query->have_posts() ) : ?>
                    <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2020/10/election-hp-1-feature.png" width="225" class="election-logo" style="margin:0 auto;" />
                  </center>
 
-                 <?php if(have_rows('stories', 'option') ) : ?>
-                        <?php while( have_rows('stories', 'option') ): the_row(); ?>
+                 <?php if (have_rows('stories', 'option') ) : ?>
+                        <?php while ( have_rows('stories', 'option') ): the_row(); ?>
                         <div class="content">
                             <img src="<?php the_sub_field('photo'); ?>" width="150" />
                             <a href="<?php the_sub_field('link'); ?>"><h3><?php the_sub_field('headline'); ?></h3></a>

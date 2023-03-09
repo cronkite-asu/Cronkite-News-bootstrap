@@ -16,7 +16,7 @@ $size = 'thumbnail';
 $count = 3;
   
 // ignoring post formats
-if(( $key = array_search('post_format', $taxs) ) !== false ) {
+if (( $key = array_search('post_format', $taxs) ) !== false ) {
     unset($taxs[$key]);
 }
   

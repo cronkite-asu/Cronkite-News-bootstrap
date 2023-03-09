@@ -16,7 +16,7 @@
     if (! empty($categories) ) {
         foreach( $categories as $category ) {
 
-            if($output == '') {
+            if ($output == '') {
                 if ($category->name == "Borderlands") {
                     //$output = "ga('set', 'Borderlands', '"  . esc_html( $category->name ) . "');";
                     //$output = "ga('set', 'contentGroup1', 'Borderlands');";

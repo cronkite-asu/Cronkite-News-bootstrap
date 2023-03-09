@@ -57,7 +57,7 @@
     <!--    Font Awesome-->
     <script src="https://kit.fontawesome.com/0f0514404d.js" crossorigin="anonymous"></script>
 
-        <?php if(is_page('test-page')) { ?>
+        <?php if (is_page('test-page')) { ?>
             <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <?php } ?>
 
@@ -75,7 +75,7 @@
         if (! empty($categories) ) {
             foreach( $categories as $category ) {
 
-                if($output == '') {
+                if ($output == '') {
                     if ($category->name == "Borderlands") {
                         //$output = "ga('set', 'Borderlands', '"  . esc_html( $category->name ) . "');";
                         $output = "ga('set', 'contentGroup1', 'Borderlands');";
@@ -189,8 +189,8 @@
 <!--
                     <ul class="social pull-right">
 
-                    <?php if(have_rows('social_box', 'options') ) : ?>
-                        <?php while( have_rows('social_box', 'options') ): the_row();
+                    <?php if (have_rows('social_box', 'options') ) : ?>
+                        <?php while ( have_rows('social_box', 'options') ): the_row();
                             // Declare variables below
                             $icon = get_sub_field('social_icon', 'options');
                             $link = get_sub_field('social_link', 'options');

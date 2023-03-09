@@ -123,8 +123,8 @@ if (have_rows('weather_content') ) {
           </div>
           <div class="grid-x grid-padding-x">
             <?php
-            if(have_rows('video') ) {
-                while( have_rows('video') ) {
+            if (have_rows('video') ) {
+                while ( have_rows('video') ) {
                     the_row();
                     ?>
                   <div class="large-3 medium-3 small-12 cell">

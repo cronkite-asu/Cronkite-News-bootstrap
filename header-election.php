@@ -45,7 +45,7 @@
         $output = '';
 
         if (! empty($categories) ) {
-            foreach( $categories as $category ) {
+            foreach ( $categories as $category ) {
 
                 if ($category->name == "Borderlands") {
                     // $output = "ga('set', 'contentGroup1', '"  . esc_html( $category->name ) . "');";
@@ -109,8 +109,8 @@
 <!--
                     <ul class="social pull-right">
 
-                    <?php if(have_rows('social_box', 'options') ) : ?>
-                        <?php while( have_rows('social_box', 'options') ): the_row();
+                    <?php if (have_rows('social_box', 'options') ) : ?>
+                        <?php while ( have_rows('social_box', 'options') ): the_row();
                             // Declare variables below
                             $icon = get_sub_field('social_icon', 'options');
                             $link = get_sub_field('social_link', 'options');

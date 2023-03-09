@@ -28,7 +28,7 @@
 
       <!-- Cronkite News location -->
       <h4>Locations</h4>
-      <?php if(have_rows('cn_locations') ) { ?>
+      <?php if (have_rows('cn_locations') ) { ?>
           <ul class="cn-locations">
           <?php
             while ( have_rows('cn_locations') ) {
@@ -63,11 +63,11 @@
                      );
 
         $cnstaff = new WP_Query($args);
-        if($cnstaff->have_posts() ) {
+        if ($cnstaff->have_posts() ) {
             ?>
           <ul class="cn-staff-list">
             <?php
-            while( $cnstaff->have_posts() ) {
+            while ( $cnstaff->have_posts() ) {
                 $cnstaff->the_post();
                 ?>
                 <li>
@@ -95,7 +95,7 @@
                 ?>
                     <div class="staff-social-links">
                   <?php
-                    if(have_rows('cn_staff_contact') ) {
+                    if (have_rows('cn_staff_contact') ) {
                         while ( have_rows('cn_staff_contact') ) {
                             the_row();
                             if (get_sub_field('contact_outlet') != '' && get_sub_field('social_media_handle') != '') {
@@ -150,11 +150,11 @@
                      );
 
         $students = new WP_Query($args);
-        if($students->have_posts() ) {
+        if ($students->have_posts() ) {
             ?>
           <ul class="student-staff-list">
             <?php
-            while( $students->have_posts() ) {
+            while ( $students->have_posts() ) {
                 $students->the_post();
                 if ($currentSemester == get_field('semester')) {
                     ?>
@@ -181,7 +181,7 @@
                     ?>
                     <div class="staff-social-links">
                     <?php
-                    if(have_rows('social_media_outlets') ) {
+                    if (have_rows('social_media_outlets') ) {
                         while ( have_rows('social_media_outlets') ) {
                             the_row();
                             if (get_sub_field('social_media_type') != '' && get_sub_field('social_media_handle') != '') {
@@ -219,7 +219,7 @@
 
     <div class="large-12 medium-12 small-12 cell faculty-staff">
       <h4>Our partners</h4>
-      <?php if(have_rows('our_partners') ) { ?>
+      <?php if (have_rows('our_partners') ) { ?>
           <ul class="our_partners">
           <?php
             while ( have_rows('our_partners') ) {

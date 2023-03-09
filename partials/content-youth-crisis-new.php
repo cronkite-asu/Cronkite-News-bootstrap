@@ -33,8 +33,8 @@
     </div>
 
 
-    <?php if(have_rows('stories') ) : ?>
-        <?php while( have_rows('stories') ): the_row(); ?>
+    <?php if (have_rows('stories') ) : ?>
+        <?php while ( have_rows('stories') ): the_row(); ?>
           <div class="large-3 medium-3 small-6 cell">
             <a href="<?php echo get_sub_field('story_link'); ?>">
               <img src="<?php echo get_sub_field('photo'); ?>" />
@@ -45,8 +45,8 @@
         <?php endwhile; ?>
     <?php endif; ?>
 
-    <?php if(have_rows('videos') ) : ?>
-        <?php while( have_rows('videos') ): the_row(); ?>
+    <?php if (have_rows('videos') ) : ?>
+        <?php while ( have_rows('videos') ): the_row(); ?>
           <div class="large-3 medium-3 small-6 cell">
             <a href="<?php echo get_sub_field('video_link'); ?>">
               <img src="<?php echo get_sub_field('photo'); ?>" />

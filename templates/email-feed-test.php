@@ -188,15 +188,15 @@ echo '<?xml version="1.0"?><rss version="2.0">';
     wp_reset_query();
 
     // Query home page for the custom fields we need for slider aside
-    if(have_rows('slider_aside_box', 24) ) { while( have_rows('slider_aside_box', 24) ) : the_row();
+    if (have_rows('slider_aside_box', 24) ) { while ( have_rows('slider_aside_box', 24) ) : the_row();
             $posts = get_sub_field('aside_post_box');
 
-            if($posts ) : foreach( $posts as $post): setup_postdata($post);
+            if ($posts ) : foreach( $posts as $post): setup_postdata($post);
                     //echo 'loop! ';
                     //echo '<title>' . the_title() . '</title>';
 
                     $link = 'blank';
-                    if(get_field("url_link") ) {
+                    if (get_field("url_link") ) {
                         $link = get_field('url_link');
                     }
                     else {
@@ -386,9 +386,9 @@ echo '<?xml version="1.0"?><rss version="2.0">';
      // Get 2nd and 3rd story from verticals
     $frontpage_id = get_option('page_on_front');
 
-    if(have_rows('area_works_box', $frontpage_id) ) :
+    if (have_rows('area_works_box', $frontpage_id) ) :
         //echo 'have rows';
-        while( have_rows('area_works_box', $frontpage_id) ): the_row();
+        while ( have_rows('area_works_box', $frontpage_id) ): the_row();
             // Declare variables below
             //$icon = get_sub_field('area_works_image');
             //$title = get_sub_field('area_works_title');
@@ -529,7 +529,7 @@ echo '<?xml version="1.0"?><rss version="2.0">';
 
 
     // Query home page for the custom fields we need
-    if(have_rows('latest_news_box', 24) ) : while( have_rows('latest_news_box', 24) ) : the_row();
+    if (have_rows('latest_news_box', 24) ) : while ( have_rows('latest_news_box', 24) ) : the_row();
             $posts = get_sub_field('post_box');
 
             $i = 0;
@@ -538,12 +538,12 @@ echo '<?xml version="1.0"?><rss version="2.0">';
 
                 $i++;
 
-                if($i < 14) {
+                if ($i < 14) {
                     setup_postdata($post);
                     //echo 'loop! ';
                     //echo '<title>' . the_title() . '</title>';
                     $link = 'blank';
-                    if(get_field("url_link") ) {
+                    if (get_field("url_link") ) {
                         $link = get_field('url_link');
                     }
                     else {

@@ -767,9 +767,9 @@ if (have_rows('blocks') ) {
             ?>
 
     <div class="large-12 medium-12 small-12 cell text-center <?php echo $photoStyle; ?>">
-            <?php if(have_rows('photos') ) { ?>
+            <?php if (have_rows('photos') ) { ?>
                 <?php $counter = 0; ?>
-                <?php while( have_rows('photos') ) { the_row(); ?>
+                <?php while ( have_rows('photos') ) { the_row(); ?>
           <img src="<?php echo get_sub_field('photo'); ?>" class="img-<?php echo $counter++; ?>" alt="<?php echo strip_tags(get_sub_field('credits')); ?>" title="<?php echo strip_tags(get_sub_field('credits')); ?>" />
                 <?php } ?>
             <?php } ?>
@@ -1607,7 +1607,7 @@ if ($inthisseriesSettings['show'] == 'yes') {
 
                             }
 
-                            if(have_rows('social_media_outlets') ) {
+                            if (have_rows('social_media_outlets') ) {
                                   echo '<div class="author_social_links">';
                                 while ( have_rows('social_media_outlets') ) {
                                     the_row();
@@ -1684,7 +1684,7 @@ if ($inthisseriesSettings['show'] == 'yes') {
 
                             }
 
-                            if(have_rows('social_media_outlets') ) {
+                            if (have_rows('social_media_outlets') ) {
                                 echo '<div class="author_social_links">';
                                 while ( have_rows('social_media_outlets') ) {
                                     the_row();
@@ -1758,7 +1758,7 @@ if ($inthisseriesSettings['show'] == 'yes') {
 
                             }
 
-                            if(have_rows('social_media_outlets') ) {
+                            if (have_rows('social_media_outlets') ) {
                                 echo '<div class="author_social_links">';
                                 while ( have_rows('social_media_outlets') ) {
                                     the_row();
@@ -1831,7 +1831,7 @@ if ($inthisseriesSettings['show'] == 'yes') {
 
                             }
 
-                            if(have_rows('social_media_outlets') ) {
+                            if (have_rows('social_media_outlets') ) {
                                 echo '<div class="author_social_links">';
                                 while ( have_rows('social_media_outlets') ) {
                                     the_row();

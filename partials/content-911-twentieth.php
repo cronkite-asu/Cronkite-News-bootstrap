@@ -36,7 +36,7 @@
             while ( have_rows('layout') ) { the_row();
                 if (get_row_layout() == 'stories-list' ) {
                     $featured_posts = get_sub_field('stories');
-                    if($featured_posts ) {
+                    if ($featured_posts ) {
 
                         foreach( $featured_posts as $featured_post ) {
                             $permalink = get_permalink($featured_post->ID);

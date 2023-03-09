@@ -90,7 +90,7 @@
 
                     }
 
-                    if(have_rows('social_media_outlets') ) {
+                    if (have_rows('social_media_outlets') ) {
                         echo '<div class="author_social_links_lg">';
                         while ( have_rows('social_media_outlets') ) {
                             the_row();
@@ -115,7 +115,7 @@
                         echo '</div>';
                     }
 
-                    if(have_rows('cn_staff_contact') ) {
+                    if (have_rows('cn_staff_contact') ) {
                         echo '<div class="author_social_links_lg">';
                         while ( have_rows('cn_staff_contact') ) {
                             the_row();

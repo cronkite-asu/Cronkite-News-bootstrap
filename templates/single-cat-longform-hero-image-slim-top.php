@@ -21,7 +21,7 @@ get_header( 'longformhero' ); ?>
 
 
 
-                                    <?php if(get_field('autoplay_bg_video')) { ?>
+                                    <?php if (get_field('autoplay_bg_video')) { ?>
                                     <div class="desktop-only">
                             <video autoplay muted loop style="z-index:-1;width:2000px; overflow-x:hidden; height:auto;">
                                 <source src="<?php the_field('autoplay_bg_video'); ?>" type="video/mp4">
@@ -32,13 +32,13 @@ get_header( 'longformhero' ); ?>
 
                             <div class="small-devices-only">
                                 <div id="top-img-holder">
-                                    <?php if( have_rows('top_full_image') ): ?>
-                                        <?php while( have_rows('top_full_image') ): the_row();
+                                    <?php if ( have_rows('top_full_image') ): ?>
+                                        <?php while ( have_rows('top_full_image') ): the_row();
                                             // Declare variables below
                                             $icon = get_sub_field('fimage');
                                             $text = get_sub_field('fcaption');  // Use variables below ?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
-                                        <?php if($imgheadline = get_field('headline_over_image')) {?>
+                                        <?php if ($imgheadline = get_field('headline_over_image')) {?>
                                         <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image');?>;font-size:<?php the_field('headline_over_image_font_size');?>;<?php the_field('additional_headline_over_image_styling');?>"> <?php the_field('headline_over_image'); ?> </h1>
                                         <?php } ?>
                                         <div class="carousel-captions" style="padding-left:20px; padding-right:20px;"> <!--         captions -->
@@ -55,13 +55,13 @@ get_header( 'longformhero' ); ?>
 								<div id="top-img-holder" class="col-xs-12 col-md-offset-2 col-md-8">
 
                                   <h1 style="font-family: 'Libre Baskerville', serif;color:#111;font-size:calc(16.4px + 2.5vw);margin-top:calc(16.4px + 5vw);text-align:center;"><?php the_field('lf_custom_title');?></h1>
-                                    <?php if( have_rows('top_full_image') ): ?>
-                                        <?php while( have_rows('top_full_image') ): the_row();
+                                    <?php if ( have_rows('top_full_image') ): ?>
+                                        <?php while ( have_rows('top_full_image') ): the_row();
                                             // Declare variables below
                                             $icon = get_sub_field('fimage');
                                             $text = get_sub_field('fcaption');  // Use variables below ?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
-                                        <?php if($imgheadline = get_field('headline_over_image')) {?>
+                                        <?php if ($imgheadline = get_field('headline_over_image')) {?>
                                         <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image');?>;font-size:<?php the_field('headline_over_image_font_size');?>;<?php the_field('additional_headline_over_image_styling');?>"> <?php the_field('headline_over_image'); ?> </h1>
                                         <?php } ?>
                                         <div class="carousel-captions"  style="padding: 0px 20px; padding-bottom:10px;"> <!--         captions -->
@@ -200,9 +200,9 @@ get_header( 'longformhero' ); ?>
 
                                         } else {
                                     ?>
-                                        <h6 class="story-info"><?php if($postAuthor = get_field('post_author')) {?>
+                                        <h6 class="story-info"><?php if ($postAuthor = get_field('post_author')) {?>
                                         <a href="<?php echo site_url(); ?>?s=<?php echo $postAuthor; ?>">
-                                        By <?php echo $postAuthor; ?>/<?php } ?></a><?php if( $siteTitle = get_field('site_title')) {
+                                        By <?php echo $postAuthor; ?>/<?php } ?></a><?php if ( $siteTitle = get_field('site_title')) {
                                              $url = get_field('site_url');
                                              $url = esc_url( $url ); ?><a href="<?php echo $url; ?>"><?php echo $siteTitle; ?></a>
                                         <?php } ?>

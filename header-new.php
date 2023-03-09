@@ -25,7 +25,7 @@
     if (! empty($categories) ) {
         foreach( $categories as $category ) {
 
-            if($output == '') {
+            if ($output == '') {
                 if ($category->name == "Borderlands") {
                     //$output = "ga('set', 'Borderlands', '"  . esc_html( $category->name ) . "');";
                     //$output = "ga('set', 'contentGroup1', 'Borderlands');";
@@ -95,7 +95,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
 
-        <?php if(is_page('test-page')) { ?>
+        <?php if (is_page('test-page')) { ?>
             <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <?php } ?>
 

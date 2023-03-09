@@ -33,7 +33,7 @@ function gridpost($item)
     //    echo "</div>";
     //}
 
-    if($url_link ) : // post goes offsite (extremely rare)
+    if ($url_link ) : // post goes offsite (extremely rare)
 
         echo '<a target="_blank" href="//';
         echo $url_link;
@@ -51,7 +51,7 @@ function gridpost($item)
         echo '<figcaption>';
         echo '<div class="info"><h4>';
 
-        if($url_link ) : // post goes offsite (extremely rare)
+        if ($url_link ) : // post goes offsite (extremely rare)
             echo '<a target="_blank" href="//';
             echo $url_link;
             echo '">';
@@ -67,7 +67,7 @@ function gridpost($item)
           echo '</h4></div><!-- /.info --></figcaption></figure></div><!-- /item -->';
 }
 
-if(have_rows('latest_news_box')) : // check for repeater fields
+if (have_rows('latest_news_box')) : // check for repeater fields
     while ( have_rows('latest_news_box')) : the_row(); // loop through the repeater fields
 
         $posts = get_sub_field('post_box'); // all the latest news is now loaded in $posts
@@ -129,8 +129,8 @@ endif;
 <!--     -->
 
                     
-                <?php if(have_rows('horizon_box') ) : ?>
-                    <?php while( have_rows('horizon_box') ): the_row();
+                <?php if (have_rows('horizon_box') ) : ?>
+                    <?php while ( have_rows('horizon_box') ): the_row();
                         // Declare variables below
                         $icon = get_sub_field('horizon_box_image');
                         $title = get_sub_field('horizon_box_title');
@@ -142,7 +142,7 @@ endif;
                     <div class="col-xs-12 col-sm-4 inner-top-sm ">
                       <div class="kicker-modern" id="horizon_box">
     
-                        <?php if($customLinks) { ?>
+                        <?php if ($customLinks) { ?>
                           <a target="_blank" href='https://www.azpbs.org/arizonahorizon'>
                              <h3> ARIZONA HORIZON </h3></a>
                           <a target="_blank" href="//<?php echo $customLinks; ?>">
@@ -195,8 +195,8 @@ endif;
     <div class="container inner">
       <div class="row">
 
-                <?php if(have_rows('area_works_box') ) : ?>
-                    <?php while( have_rows('area_works_box') ): the_row();
+                <?php if (have_rows('area_works_box') ) : ?>
+                    <?php while ( have_rows('area_works_box') ): the_row();
                         // Declare variables below
                         $icon = get_sub_field('area_works_image');
                         $title = get_sub_field('area_works_title');
@@ -208,7 +208,7 @@ endif;
                     <div class="col-sm-4 inner-top-sm ">
                       <div class="kicker-modern">
     
-                        <?php if($customLinks) { ?>
+                        <?php if ($customLinks) { ?>
                           <a target="_blank" href="//<?php echo $customLinks; ?>">
                                          <img class='awards_image' src="<?php echo $icon['sizes']['awards_logo']; ?>" />
                                     </a>
@@ -358,8 +358,8 @@ endif;
             <div class="col-sm-8 inner-top-sm">
               <div class="row thumbs gap-xs pbsthumbs">
 
-                <?php if(have_rows('images_box') ) : ?>
-                    <?php while( have_rows('images_box') ): the_row();
+                <?php if (have_rows('images_box') ) : ?>
+                    <?php while ( have_rows('images_box') ): the_row();
                                     // Declare variables below
                                     $icon = get_sub_field('arizona_images');
                                     $link = get_sub_field('arizona_links');

@@ -512,20 +512,20 @@ function social_icons( $atts, $content = null )
 
     $result = '<div class="row"><div class="col-xs-12"> <h3> Connect with us:</h3> <br>';
 
-    if($atts[ 'facebook' ] == "yes" ) {
+    if ($atts[ 'facebook' ] == "yes" ) {
          $result .='<a href="https://www.facebook.com/cronkitenewsazpbs/" target="_blank"> <span class="fa fa-facebook tag-social-icons" style="padding-left:20px;padding-right: 20px;"></span></a>';
     }
-    if($atts[ 'twitter' ] == "yes"  ) {
+    if ($atts[ 'twitter' ] == "yes"  ) {
         $result .='<a href="https://twitter.com/cronkitenews" target="_blank"><span class="fa fa-twitter tag-social-icons"></span></a>';
 
     }
-    if($atts[ 'instagram' ] == "yes"  ) {
+    if ($atts[ 'instagram' ] == "yes"  ) {
         $result .= '<a href="https://www.instagram.com/cronkitenews/" target="_blank">  <span class="fa fa-instagram tag-social-icons"></span></a>' ;
     }
-    if($atts[ 'youtube' ] == "yes"  ) {
+    if ($atts[ 'youtube' ] == "yes"  ) {
         $result .= '<a href="https://www.youtube.com/user/CronkiteNewsWatch" target="_blank">  <span class="fa fa-youtube tag-social-icons"></span></a>' ;
     }
-    if($atts[ 'snapchat' ] == "yes"  ) {
+    if ($atts[ 'snapchat' ] == "yes"  ) {
         $result .= ' <a href="#" data-featherlight=\'<img src="https://cronkitenews.azpbs.org/wp-content/uploads/2018/01/IMG_C77BE6BD8B91-1.jpeg">\'> <span class="fa fa-snapchat-ghost tag-social-icons"></span></a>';
     }
     $result .= '</div></div>';

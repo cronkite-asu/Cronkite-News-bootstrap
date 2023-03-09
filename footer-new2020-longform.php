@@ -152,7 +152,7 @@
    * @param {Array|Object|NodeList} scope=null - Object/NodeList/Array that forEach is iterating over, to use as the this value when executing callback.
    * @returns {}
    */
-    var forEach=function(t,o,r){if("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
+    var forEach=function(t,o,r){if ("[object Object]"===Object.prototype.toString.call(t))for(var c in t)Object.prototype.hasOwnProperty.call(t,c)&&o.call(r,t[c],c,t);else for(var e=0,l=t.length;l>e;e++)o.call(r,t[e],e,t)};
 
     var hamburgers = document.querySelectorAll(".hamburger");
     if (hamburgers.length > 0) {
@@ -167,7 +167,7 @@
     $('.search-box img').click(function() {
 
       $('#searchform input[type=text]').blur(function() {
-        if($.trim(this.value).length > 0) {
+        if ($.trim(this.value).length > 0) {
           $("#searchform").submit();
         } else {
         }
