@@ -5,7 +5,8 @@
 
         <?php
         if (have_rows('layout') ) {
-            while ( have_rows('layout') ) { the_row();
+            while ( have_rows('layout') ) {
+                the_row();
                 if (get_row_layout() == 'intro-half' ) {
                     ?>
                 <div class="large-7 medium-7 small-12 cell">
@@ -33,7 +34,8 @@
     <div class="grid-x grid-padding-x single-story-block">
       <?php
         if (have_rows('layout') ) {
-            while ( have_rows('layout') ) { the_row();
+            while ( have_rows('layout') ) {
+                the_row();
                 if (get_row_layout() == 'stories-list' ) {
                     $featured_posts = get_sub_field('stories');
                     if ($featured_posts ) {

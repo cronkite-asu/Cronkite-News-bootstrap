@@ -1,6 +1,7 @@
 <?php
 if (have_rows('sports_homepage') ) {
-    while ( have_rows('sports_homepage') ) { the_row();
+    while ( have_rows('sports_homepage') ) {
+        the_row();
         // top section
         if (get_row_layout() == 'sports-main-stories' ) {
             $intro = get_sub_field('intro_summary');
@@ -39,7 +40,8 @@ $topStoriesArray = array();
 
       <?php
         if (have_rows('sports_homepage') ) {
-            while ( have_rows('sports_homepage') ) { the_row();
+            while ( have_rows('sports_homepage') ) {
+                the_row();
                 // top section
                 if (get_row_layout() == 'sports-main-stories' ) {
                     $mainStoryList = get_sub_field('main_stories', 180881);
@@ -76,7 +78,8 @@ $topStoriesArray = array();
           <div class="grid-x grid-padding-x">
       <?php
         if (have_rows('sports_homepage') ) {
-            while ( have_rows('sports_homepage') ) { the_row();
+            while ( have_rows('sports_homepage') ) {
+                the_row();
                 // top section
                 if (get_row_layout() == 'sports-main-stories' ) {
                     $mainStoryList = get_sub_field('sports_slide_aside', 180881);
@@ -115,7 +118,8 @@ $topStoriesArray = array();
       <h4>Top Stories</h4>
       <?php
         if (have_rows('sports_homepage') ) {
-            while ( have_rows('sports_homepage') ) { the_row();
+            while ( have_rows('sports_homepage') ) {
+                the_row();
                 // top section
                 if (get_row_layout() == 'sports-top-stories' ) {
                     $mainStoryList = get_sub_field('stories', 180881);
@@ -155,7 +159,8 @@ $topStoriesArray = array();
 
     <?php
     if (have_rows('sports_homepage') ) {
-        while ( have_rows('sports_homepage') ) { the_row();
+        while ( have_rows('sports_homepage') ) {
+            the_row();
             // top section
             if (get_row_layout() == 'sports-audio' ) {
                 ?>
@@ -287,7 +292,8 @@ $topStoriesArray = array();
     <div class="large-3 medium-12 small-12 cell">
       <?php
         if (have_rows('sports_homepage') ) {
-            while ( have_rows('sports_homepage') ) { the_row();
+            while ( have_rows('sports_homepage') ) {
+                the_row();
                 // top section
                 if (get_row_layout() == 'sports-report' ) {
                     ?>

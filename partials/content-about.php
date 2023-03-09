@@ -18,7 +18,8 @@
     <div class="large-12 medium-12 small-12 cell about-details">
 
       <?php if (have_posts()) { ?>
-            <?php while (have_posts()) { the_post(); ?>
+            <?php while (have_posts()) {
+                the_post(); ?>
                 <?php the_content(); ?>
             <?php } ?>
       <?php } ?>

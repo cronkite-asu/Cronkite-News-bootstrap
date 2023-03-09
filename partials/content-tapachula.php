@@ -14,7 +14,8 @@
 
   // get tapachula content
 if (have_rows('content') ) {
-    while ( have_rows('content') ) { the_row();
+    while ( have_rows('content') ) {
+        the_row();
         if (get_row_layout() == 'story' ) {
             // get stories
             $storyList = get_sub_field('story');

@@ -1,6 +1,7 @@
 <?php
 if (have_rows('noticias_homepage') ) {
-    while ( have_rows('noticias_homepage') ) { the_row();
+    while ( have_rows('noticias_homepage') ) {
+        the_row();
         // top section
         if (get_row_layout() == 'noticias-main-stories' ) {
             $intro = get_sub_field('intro_summary');
@@ -28,7 +29,8 @@ $topStoriesArray = array();
 
       <?php
         if (have_rows('noticias_homepage') ) {
-            while ( have_rows('noticias_homepage') ) { the_row();
+            while ( have_rows('noticias_homepage') ) {
+                the_row();
                 // top section
                 if (get_row_layout() == 'noticias-main-stories' ) {
                     $mainStoryList = get_sub_field('main_stories', 181966);
@@ -82,7 +84,8 @@ $topStoriesArray = array();
           <div class="grid-x grid-padding-x">
       <?php
         if (have_rows('noticias_homepage') ) {
-            while ( have_rows('noticias_homepage') ) { the_row();
+            while ( have_rows('noticias_homepage') ) {
+                the_row();
                 // top section
                 if (get_row_layout() == 'noticias-main-stories' ) {
                     $mainStoryList = get_sub_field('noticias_slide_aside', 181966);
@@ -177,7 +180,8 @@ $topStoriesArray = array();
 
     <?php
     if (have_rows('noticias_homepage') ) {
-        while ( have_rows('noticias_homepage') ) { the_row();
+        while ( have_rows('noticias_homepage') ) {
+            the_row();
             // top section
             if (get_row_layout() == 'noticias-audio' ) {
                 ?>
@@ -268,7 +272,8 @@ $topStoriesArray = array();
       </div>
       <?php
         if (have_rows('noticias_homepage') ) {
-            while ( have_rows('noticias_homepage') ) { the_row();
+            while ( have_rows('noticias_homepage') ) {
+                the_row();
                 // top section
                 if (get_row_layout() == 'noticias-twitter' ) {
                     ?>

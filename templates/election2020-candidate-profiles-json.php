@@ -11,7 +11,8 @@ header("Content-Type: application/json; charset=UTF-8");
     $json = array();
 
 if (have_rows('candidate_profiles', 'option')) {
-    while (have_rows('candidate_profiles', 'option')) { the_row();
+    while (have_rows('candidate_profiles', 'option')) {
+        the_row();
         $it = array(
         'headline' => get_sub_field('headline'),
         'image' => get_sub_field('photo'),

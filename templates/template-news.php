@@ -79,7 +79,8 @@ get_header('new2019'); ?>
         <?php
           query_posts('post_type=post&category_name=newscast&post_status=publish&posts_per_page=8&paged='. get_query_var('paged'));
         if (have_posts() ) {
-            while ( have_posts() ) { the_post();
+            while ( have_posts() ) {
+                the_post();
                 ?>
             <div class="grid-x grid-margin-x story-results-stack">
               <div class="large-8 medium-12 small-12 cell">

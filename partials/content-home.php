@@ -200,7 +200,8 @@
       <div class="grid-x grid-margin-x">
 
         <?php if (have_rows('area_works_box', 24)) { ?>
-            <?php while (have_rows('area_works_box', 24)) { the_row(); ?>
+            <?php while (have_rows('area_works_box', 24)) {
+ the_row(); ?>
           <div class="large-4 medium-4 small-5 cell stories show-for-small-only">
                 <?php
                 $image = get_sub_field('area_works_image');
@@ -278,7 +279,8 @@
         </div>
 
         <?php if (have_rows('area_works_box', 24)) { ?>
-            <?php while (have_rows('area_works_box', 24)) { the_row(); ?>
+            <?php while (have_rows('area_works_box', 24)) {
+ the_row(); ?>
           <div class="large-4 medium-4 small-5 cell stories show-for-medium">
                 <?php
                 $image = get_sub_field('area_works_image');
@@ -342,7 +344,8 @@
 
           <div class="homepage-special-projects">
             <?php if (have_rows('projects', 24)) { ?>
-                <?php while (have_rows('projects', 24)) { the_row(); ?>
+                <?php while (have_rows('projects', 24)) {
+ the_row(); ?>
                   <div class="large-4 medium-4 small-12 cell text-center special-projects">
                     <?php
                     if (get_sub_field('photo') != '') {

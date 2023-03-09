@@ -96,7 +96,8 @@ get_header('longformhero'); ?>
                     ?>
                     <?php
                     if ($query->have_posts() ) {
-                        while ( $query->have_posts() ) { $query->the_post();
+                        while ( $query->have_posts() ) {
+                            $query->the_post();
                             echo "<!-- ".get_the_ID()."-->";
                             ?>
                   <!-- show all posts -->

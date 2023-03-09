@@ -10,7 +10,8 @@ $args = array(
               'posts_per_page'    => 1
           );
 $loop = new WP_Query($args);
-while ( $loop->have_posts() ) { $loop->the_post();
+while ( $loop->have_posts() ) {
+    $loop->the_post();
     $lastStoryPosted = get_the_time('r');
 }
 ?>
@@ -35,7 +36,8 @@ while ( $loop->have_posts() ) { $loop->the_post();
             $content = get_the_content();
         } else {
             if (have_rows('blocks') ) {
-                while ( have_rows('blocks') ) { the_row();
+                while ( have_rows('blocks') ) {
+                    the_row();
                     if (get_row_layout() == 'text-block' ) {
                         $content .= get_sub_field('content');
                     }

@@ -291,7 +291,8 @@ if ($slideAsideList) {
 
 if (have_rows('area_works_box', $frontpage_id)) {
     //echo 'have rows';
-    while (have_rows('area_works_box', $frontpage_id)) { the_row();
+    while (have_rows('area_works_box', $frontpage_id)) {
+        the_row();
             // Declare variables below
             //$icon = get_sub_field('area_works_image');
             //$title = get_sub_field('area_works_title');

@@ -8,7 +8,8 @@ get_header('new2019'); ?>
 
 <?php
 if (have_rows('layout') ) {
-    while ( have_rows('layout') ) { the_row();
+    while ( have_rows('layout') ) {
+        the_row();
         if (get_row_layout() == 'intro-split' ) {
             $intro = get_sub_field('intro_summary');
             ?>

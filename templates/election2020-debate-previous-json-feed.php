@@ -11,7 +11,8 @@ header("Content-Type: application/json; charset=UTF-8");
     $json = array();
 
 if (have_rows('previous_debates', 'option')) {
-    while (have_rows('previous_debates', 'option')) { the_row();
+    while (have_rows('previous_debates', 'option')) {
+        the_row();
         $it = array(
         'title' => get_sub_field('debate'),
         'link' => get_sub_field('link'),

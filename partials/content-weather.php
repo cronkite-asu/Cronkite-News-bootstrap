@@ -17,7 +17,8 @@
 
   // get super bowl content
 if (have_rows('weather_content') ) {
-    while ( have_rows('weather_content') ) { the_row();
+    while ( have_rows('weather_content') ) {
+        the_row();
         if (get_row_layout() == 'weather_report' ) {
             // get stories
             $mainStoryCounter = 1;

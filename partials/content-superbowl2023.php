@@ -12,7 +12,8 @@
 
   // get super bowl content
 if (have_rows('super_bowl_content') ) {
-    while ( have_rows('super_bowl_content') ) { the_row();
+    while ( have_rows('super_bowl_content') ) {
+        the_row();
         if (get_row_layout() == 'stories-list' ) {
             // get stories
             $mainStoryCounter = 1;

@@ -11,7 +11,8 @@ header("Content-Type: application/json; charset=UTF-8");
     $json = array();
 
 if (have_rows('house_ads_videos', 'option')) {
-    while (have_rows('house_ads_videos', 'option')) { the_row();
+    while (have_rows('house_ads_videos', 'option')) {
+        the_row();
         $it = array(
         'image' => get_sub_field('image'),
         'link' => get_sub_field('link'),

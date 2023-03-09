@@ -153,7 +153,8 @@ function generateByline($currPostID, $currIntro, $publishDate, $style)
 
 
 if (have_rows('blocks') ) {
-    while ( have_rows('blocks') ) { the_row();
+    while ( have_rows('blocks') ) {
+        the_row();
         if (get_row_layout() == 'intro-split' ) {
             $intro = get_sub_field('intro_summary');
             ?>
@@ -592,7 +593,8 @@ if (have_rows('blocks') ) {
     <div class="large-12 medium-12 small-12 cell text-center <?php echo $photoStyle; ?>">
             <?php if (have_rows('photos') ) { ?>
                 <?php $counter = 0; ?>
-                <?php while ( have_rows('photos') ) { the_row(); ?>
+                <?php while ( have_rows('photos') ) {
+                    the_row(); ?>
           <img src="<?php echo get_sub_field('photo'); ?>" class="img-<?php echo $counter++; ?>" alt="<?php echo strip_tags(get_sub_field('credits')); ?>" title="<?php echo strip_tags(get_sub_field('credits')); ?>" />
                 <?php } ?>
             <?php } ?>
@@ -727,7 +729,8 @@ if (have_rows('blocks') ) {
             <?php
             $captionCounter = 0;
             if (have_rows('photos') ) {
-                while ( have_rows('photos') ) { the_row();
+                while ( have_rows('photos') ) {
+                    the_row();
                     ?>
                           <div class="large-12 medium-12 small-12 cell text-center">
                               <img src="<?php echo get_sub_field('photo'); ?>" <?php echo $removeShadow; ?>  />
@@ -782,7 +785,8 @@ if (have_rows('blocks') ) {
             <?php
             $captionCounter = 0;
             if (have_rows('photos') ) {
-                while ( have_rows('photos') ) { the_row();
+                while ( have_rows('photos') ) {
+                    the_row();
                     ?>
                           <div class="large-12 medium-12 small-12 cell text-center">
                               <img src="<?php echo get_sub_field('photo'); ?>" <?php echo $removeShadow; ?>  />
@@ -834,7 +838,8 @@ if (have_rows('blocks') ) {
                 ?>
           <div id="story-slideshow" class="story-slideshow">
                 <?php
-                while ( have_rows('photos') ) { the_row();
+                while ( have_rows('photos') ) {
+                    the_row();
                     ?>
                 <div>
                   <img src="<?php echo get_sub_field('photo'); ?>" />
@@ -860,7 +865,8 @@ if (have_rows('blocks') ) {
             if (have_rows('photos') ) {
                 ?>
               <div class="fullscreen-slideshow">
-                <?php while ( have_rows('photos') ) { the_row(); ?>
+                <?php while ( have_rows('photos') ) {
+                    the_row(); ?>
                 <div>
                   <img src="<?php echo get_sub_field('photo'); ?>" />
                 </div>
@@ -978,7 +984,8 @@ if (have_rows('blocks') ) {
             <?php
             $captionCounter = 0;
             if (have_rows('photos') ) {
-                while ( have_rows('photos') ) { the_row();
+                while ( have_rows('photos') ) {
+                    the_row();
                     ?>
                           <div class="large-6 medium-6 small-6 cell">
                                   <img src="<?php echo get_sub_field('photo'); ?>"  />
@@ -1024,7 +1031,8 @@ if (have_rows('blocks') ) {
             <?php
             $captionCounter = 0;
             if (have_rows('photos') ) {
-                while ( have_rows('photos') ) { the_row();
+                while ( have_rows('photos') ) {
+                    the_row();
                     ?>
                         <div class="large-4 medium-4 small-12 cell">
                                 <img src="<?php echo get_sub_field('photo'); ?>"  />
@@ -1070,7 +1078,8 @@ if (have_rows('blocks') ) {
             <?php
             $audioCounter = 0;
             if (have_rows('photo-group') ) {
-                while ( have_rows('photo-group') ) { the_row();
+                while ( have_rows('photo-group') ) {
+                    the_row();
                     ?>
                           <div class="large-4 medium-4 small-12 cell">
                 <div class="profiles">
@@ -1108,7 +1117,8 @@ if (have_rows('blocks') ) {
             <?php
             $captionCounter = 0;
             if (have_rows('vertical-photos') ) {
-                while ( have_rows('vertical-photos') ) { the_row();
+                while ( have_rows('vertical-photos') ) {
+                    the_row();
                     ?>
               <div class="grid-x grid-padding-x">
                 <div class="large-12 medium-12 small-6 cell">

@@ -11,7 +11,8 @@ header("Content-Type: application/json; charset=UTF-8");
     $json = array();
 
 if (have_rows('standing_pieces', 'option')) {
-    while (have_rows('standing_pieces', 'option')) { the_row();
+    while (have_rows('standing_pieces', 'option')) {
+        the_row();
         $it = array(
         'title' => get_sub_field('headline'),
         'description' => get_sub_field('summary'),

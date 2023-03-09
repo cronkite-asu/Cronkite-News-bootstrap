@@ -11,7 +11,8 @@ header("Content-Type: application/json; charset=UTF-8");
     $json = array();
 
 if (have_rows('videos', 'option')) {
-    while (have_rows('videos', 'option')) { the_row();
+    while (have_rows('videos', 'option')) {
+        the_row();
         $source = ucwords(str_replace('-', ' ', get_sub_field('source')));
         $it = array(
         'title' => get_sub_field('headline'),
