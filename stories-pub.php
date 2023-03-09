@@ -27,7 +27,7 @@ get_header('new2019'); ?>
 
 <?php if ($query->have_posts() ) : ?>
     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-    <p><a href="<? echo get_permalink(); ?>" target="_blank"><?php echo get_the_title(); ?></a> <strong>by</strong> <?php echo $author = get_the_author(); ?></p>
+    <p><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_the_title(); ?></a> <strong>by</strong> <?php echo $author = get_the_author(); ?></p>
 
     <?php endwhile; ?>
 <?php endif; ?>
@@ -55,7 +55,7 @@ get_header('new2019'); ?>
 
 <?php if ($query->have_posts() ) : ?>
     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-    <p><a href="<? echo get_permalink(); ?>" target="_blank"><?php echo get_the_title(); ?></a> <strong>by</strong> <?php echo $author = get_the_author(); ?></p>
+    <p><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_the_title(); ?></a> <strong>by</strong> <?php echo $author = get_the_author(); ?></p>
 
     <?php endwhile; ?>
 <?php endif; ?>

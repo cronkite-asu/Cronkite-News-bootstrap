@@ -229,9 +229,9 @@
           <div class="large-4 medium-12 small-12 cell sidebar">
               <?php if ($staffChecker != 1) { ?>
                     <?php dynamic_sidebar('Sidebar Author - 2020'); ?>
-            <? } ?>
+            <?php } ?>
           </div>
-        <?
+        <?php 
           } else {
             if ($staffChecker != 1) {
         ?>

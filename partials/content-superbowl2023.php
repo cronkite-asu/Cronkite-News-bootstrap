@@ -131,12 +131,12 @@ if (have_rows('super_bowl_content') ) {
     <?php if ($query->have_posts() ) : ?>
         <?php while ( $query->have_posts() ) : $query->the_post(); ?>
         <div class="large-4 medium-4 small-12 cell story-text">
-          <a href="<? echo get_permalink(); ?>" target="_blank"><?php echo get_the_post_thumbnail(); ?></a>
+          <a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_the_post_thumbnail(); ?></a>
         </div>
         <div class="large-8 medium-8 small-12 cell story-text">
-          <h3><a href="<? echo get_permalink(); ?>" target="_blank"><?php echo get_the_title(); ?></a></h3>
+          <h3><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_the_title(); ?></a></h3>
           <p><?php echo get_field('story_tease'); ?></p>
-          <a href="<? echo get_permalink(); ?>" class="button">Read More <i class="fa-regular fa-angle-right"></i></a>
+          <a href="<?php echo get_permalink(); ?>" class="button">Read More <i class="fa-regular fa-angle-right"></i></a>
         </div>
         <div class="large-12 medium-12 small-12 cell divider"></div>
         <?php endwhile; ?>

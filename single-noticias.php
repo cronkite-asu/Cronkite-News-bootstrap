@@ -989,7 +989,7 @@
                  <ul class="aside-latest-news">
                     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                    <li>
-                     <a href="<? echo get_permalink(); ?>" target="_self">
+                     <a href="<?php echo get_permalink(); ?>" target="_self">
                        <img class="" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'post-thumbnail'); ?>" alt="<?php echo get_the_title(); ?>" loading="lazy" decoding="async">
                        <h3><?php echo get_the_title(); ?></h3>
                        <time class="published" datetime="<?php echo ap_date(); ?>"><?php echo ap_date(); ?></time>
