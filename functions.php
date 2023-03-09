@@ -130,7 +130,7 @@ function getStoryAuthors($getPID) {
     }
 
 
-    if (count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
+    if (is_countable($externalAuthorRepeater) && count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
       $extStaffCount = count($externalAuthorRepeater);
       if ($groupFields['cn_staff'] != '') {
         $finalAuthors .= ' and ';
@@ -174,7 +174,7 @@ function hook_parselyJSON() {
     <!-- BEGIN Parsely JSON-LD -->
     <meta name="wp-parsely_version" id="wp-parsely_version" content="2.2"/>
     <script type="application/ld+json">
-      {"@context":"http:\/\/schema.org","@type":"<? echo $pageType; ?>","headline":"<? echo $headline; ?>","url":"<? echo $storyURL; ?>"}
+      {"@context":"http:\/\/schema.org","@type":"<?php echo $pageType; ?>","headline":"<?php echo $headline; ?>","url":"<?php echo $storyURL; ?>"}
     </script>
 
   <?php
@@ -192,7 +192,7 @@ function hook_parselyJSON() {
       // keywords
       $rawKeywords = get_the_tags(get_the_ID());
       if ($rawKeywords) {
-        foreach($rawKeywords as $tag) {
+        foreach ($rawKeywords as $tag) {
           $keywords .= '"'.$tag->name.'",';
         }
       }
@@ -200,7 +200,7 @@ function hook_parselyJSON() {
 
       // categories
       $rawCats = wp_get_post_categories(get_the_ID());
-      foreach($rawCats as $cid){
+      foreach ($rawCats as $cid){
         $cat = get_category( $cid );
         if ($cat->name != 'New Long Form' || $cat->name != "Editor's Picks" || $cat->name != "Big Boy" || $cat->name != "Longform hero image slim") {
           $articleSection = $cat->name;
@@ -223,20 +223,20 @@ function hook_parselyJSON() {
       <!-- BEGIN Parsely JSON-LD -->
     	<script type="application/ld+json">
     		{"@context":"http:\/\/schema.org",
-        "@type":"<? echo $pageType; ?>",
-        "mainEntityOfPage":{"@type":"WebPage","@id":"<? echo $storyURL; ?>"},
-        "headline":"<? echo $headline; ?>",
-        "url":"<? echo $storyURL; ?>",
-        "thumbnailUrl":"<? echo $imgURL; ?>",
-        "image":{"@type":"ImageObject","url":"<? echo $imgURL; ?>"},
-        "dateCreated":"<? echo $dateCreated; ?>",
-        "datePublished":"<? echo $dateCreated; ?>",
-        "dateModified":"<? echo $dateModified; ?>",
-        "articleSection":"<? echo $articleSection; ?>",
-        "author":[<? echo $authors; ?>],
-        "creator":[<? echo $creators; ?>],
-        "publisher":{"@type":"Organization","name":"<? echo $publisher; ?>"},
-        "keywords":[<? echo $keywords; ?>]}
+        "@type":"<?php echo $pageType; ?>",
+        "mainEntityOfPage":{"@type":"WebPage","@id":"<?php echo $storyURL; ?>"},
+        "headline":"<?php echo $headline; ?>",
+        "url":"<?php echo $storyURL; ?>",
+        "thumbnailUrl":"<?php echo $imgURL; ?>",
+        "image":{"@type":"ImageObject","url":"<?php echo $imgURL; ?>"},
+        "dateCreated":"<?php echo $dateCreated; ?>",
+        "datePublished":"<?php echo $dateCreated; ?>",
+        "dateModified":"<?php echo $dateModified; ?>",
+        "articleSection":"<?php echo $articleSection; ?>",
+        "author":[<?php echo $authors; ?>],
+        "creator":[<?php echo $creators; ?>],
+        "publisher":{"@type":"Organization","name":"<?php echo $publisher; ?>"},
+        "keywords":[<?php echo $keywords; ?>]}
     	</script>
   <?php
     }
@@ -248,7 +248,7 @@ function hook_parselyTrack() {
   <!-- START Parse.ly Include: Standard -->
   <script data-cfasync="false" id="parsely-cfg" data-parsely-site="cronkitenews.azpbs.org" src="//cdn.parsely.com/keys/cronkitenews.azpbs.org/p.js"></script>
   <!-- END Parse.ly Include: Standard -->
-  <?
+  <?php 
 }
 add_action('wp_footer', 'hook_parselyTrack');
 
@@ -388,7 +388,7 @@ add_filter('the_content_more_link', 'remove_more_jump_link');
 if ( ! function_exists( 'bootstrap_excerpt' ) ) {
   function content($limit) {
     $content = explode(' ', get_the_content(), $limit);
-    if (count($content)>=$limit) {
+    if (is_countable($content) && count($content)>=$limit) {
         array_pop($content);
         $content = implode(" ",$content).'...<a href="'. get_permalink($post->ID) . '" class="read_more">The Latest</a>';
     } else {
@@ -697,8 +697,8 @@ define('SINGLE_PATH', TEMPLATEPATH . '/templates');
 add_filter('single_template', 'my_single_template');
 function my_single_template($single) {
 	global $wp_query, $post;
-	foreach((array)get_the_category() as $cat) :
-		if(file_exists(SINGLE_PATH . '/single-cat-' . $cat->slug . '.php'))
+	foreach ((array)get_the_category() as $cat) :
+		if (file_exists(SINGLE_PATH . '/single-cat-' . $cat->slug . '.php'))
 			return SINGLE_PATH . '/single-cat-' . $cat->slug . '.php';
 	endforeach;
 	return $single;
