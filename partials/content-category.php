@@ -41,7 +41,7 @@
                   </div>
                 </div>
 
-          <?php 
+          <?php
               }
             } else {
           ?>
@@ -61,8 +61,7 @@
         </div>
 
         <div class="large-4 medium-12 small-12 cell sidebar">
-            <?php dynamic_sidebar('Sidebar Author - 2020'); ?>
-
+            <?php dynamic_sidebar('Sidebar New Story Template - 2020'); ?>
             <?php if ($category_id == 7022) { ?>
             <div class="large-4 medium-12 small-12 cell sidebar">
                 <?php dynamic_sidebar('Health Insider'); ?>
