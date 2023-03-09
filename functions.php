@@ -144,7 +144,7 @@ function getStoryAuthors($getPID)
         }
 
 
-        if (count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
+        if (is_countable($externalAuthorRepeater) && count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
             $extStaffCount = count($externalAuthorRepeater);
             if ($groupFields['cn_staff'] != '') {
                 $finalAuthors .= ' and ';
@@ -445,7 +445,7 @@ add_action('wp_footer', 'hook_parselyTrack');
 
     function content($limit) {
         $content = explode(' ', get_the_content(), $limit);
-        if (count($content)>=$limit) {
+        if (is_countable($content) && count($content)>=$limit) {
             array_pop($content);
             $content = implode(" ",$content).'...<a href="'. get_permalink($post->ID) . '" class="read_more">The Latest</a>';
         } else {

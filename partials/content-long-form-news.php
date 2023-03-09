@@ -107,7 +107,7 @@
                   }
                 }
 
-                if (count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
+                if (is_countable($externalAuthorRepeater) && count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
                   $extStaffCount = count($externalAuthorRepeater);
                   if ($groupFields['cn_staff'] != '') {
                     echo ' and ';

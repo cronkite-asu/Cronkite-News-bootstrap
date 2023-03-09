@@ -123,7 +123,9 @@
                                         ucwords(str_replace('-', ' ', get_field('team'))).' '.ucwords(str_replace('-', ' ', get_field('role'))).', '.str_replace('Washington Dc', 'Washington, D.C.', ucwords(str_replace('-', ' ', get_field('bureau'))));
                                     }
 
-                                    if (get_field('biography') != '') { get_field('biography') }
+				    if (get_field('biography') != '') {
+					    get_field('biography')
+				    }
 
                                     if (have_rows('social_media_outlets') ) {
                                         while ( have_rows('social_media_outlets') ) {
@@ -160,7 +162,7 @@
                     }
                     //wp_reset_query();
 
-                    if (count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
+                    if (is_countable($externalAuthorRepeater) && count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
                         $extStaffCount = count($externalAuthorRepeater);
                         if ($groupFields['cn_staff'] != '') {
                             echo ' and ';

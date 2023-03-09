@@ -136,7 +136,7 @@ get_header('new2019'); ?>
                   }
                   //wp_reset_query();
 
-                  if (count($externalAuthorRepeater) > 0) {
+                  if (is_countable($externalAuthorRepeater) && count($externalAuthorRepeater) > 0) {
                       $extStaffCount = count($externalAuthorRepeater);
                       if ($groupFields['cn_staff'] != '') {
                           echo ' and ';
