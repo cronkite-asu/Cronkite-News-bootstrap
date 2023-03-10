@@ -104,35 +104,38 @@ function getStoryAuthors($getPID)
         while (have_rows('byline_info', $getPID)) {
             the_row();
             $staffID = get_sub_field('cn_staff');
-            $cnStaffCount = count($staffID);
 
-            foreach ($staffID as $key => $val) {
-                 $args = array(
-                      'post_type'   => 'students',
-                      'post_status' => 'publish',
-                      'p' => $val
+            if (is_countable($staffID)) {
+                $cnStaffCount = count($staffID);
+
+                foreach ($staffID as $key => $val) {
+                    $args = array(
+                    'post_type'   => 'students',
+                    'post_status' => 'publish',
+                    'p' => $val
                     );
 
-                 $staffDetails = new WP_Query($args);
-                 if ($staffDetails->have_posts()) {
-                     while ($staffDetails->have_posts()) {
-                         $staffDetails->the_post();
-                         $sepCounter++;
+                    $staffDetails = new WP_Query($args);
+                    if ($staffDetails->have_posts()) {
+                        while ($staffDetails->have_posts()) {
+                            $staffDetails->the_post();
+                            $sepCounter++;
 
-                         $staffNameURLSafe = str_replace(' ', '-', strtolower(get_the_title($val)));
-                         $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
+                            $staffNameURLSafe = str_replace(' ', '-', strtolower(get_the_title($val)));
+                            $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
 
-                         $finalAuthors .= get_the_title($val);
-                         if ($sepCounter != $cnStaffCount) {
-                             if ($sepCounter == ($cnStaffCount - 1)) {
-                                 $finalAuthors .= $andSeparator.' ';
-                             } else {
-                                 $finalAuthors .=  $commaSeparator.' ';
-                             }
-                         }
-                     }
-                 }
-                 $newCheck++;
+                            $finalAuthors .= get_the_title($val);
+                            if ($sepCounter != $cnStaffCount) {
+                                if ($sepCounter == ($cnStaffCount - 1)) {
+                                    $finalAuthors .= $andSeparator.' ';
+                                } else {
+                                    $finalAuthors .=  $commaSeparator.' ';
+                                }
+                            }
+                        }
+                    }
+                    $newCheck++;
+                }
             }
         }
 
@@ -198,8 +201,8 @@ function hook_parselyJSON()
         $dateModified = $dateCreated;
 
         // keywords
-	$keywords = "";
-	$rawKeywords = get_the_tags(get_the_ID());
+        $keywords = "";
+        $rawKeywords = get_the_tags(get_the_ID());
         if ($rawKeywords) {
             foreach ($rawKeywords as $tag) {
                 $keywords .= '"'.$tag->name.'",';
@@ -217,8 +220,8 @@ function hook_parselyJSON()
         }
 
         // get authors
-	$creators = "";
-	$authors = "";
+        $creators = "";
+        $authors = "";
         $rawAuthors = str_replace(' and ', ',', getStoryAuthors(get_the_ID()));
         $splitAuthors = explode(',', $rawAuthors);
         foreach ($splitAuthors as $k => $v) {
