@@ -198,7 +198,8 @@ function hook_parselyJSON()
         $dateModified = $dateCreated;
 
         // keywords
-        $rawKeywords = get_the_tags(get_the_ID());
+	$keywords = "";
+	$rawKeywords = get_the_tags(get_the_ID());
         if ($rawKeywords) {
             foreach ($rawKeywords as $tag) {
                 $keywords .= '"'.$tag->name.'",';
@@ -216,6 +217,8 @@ function hook_parselyJSON()
         }
 
         // get authors
+	$creators = "";
+	$authors = "";
         $rawAuthors = str_replace(' and ', ',', getStoryAuthors(get_the_ID()));
         $splitAuthors = explode(',', $rawAuthors);
         foreach ($splitAuthors as $k => $v) {

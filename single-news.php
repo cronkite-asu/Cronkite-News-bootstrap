@@ -549,7 +549,7 @@
                         while ( $storyTag->have_posts() ) {
                             $storyTag->the_post();
                             if (get_field('story_html_tag') != '') {
-                                if ($healthStory == true) {
+                                if (!empty($healthStory)) {
                                     echo '<!--HERE HEALTH-->';
                                     echo '<div class="health-newsletter">'.strip_tags(get_field('story_html_tag', 170703), '<em><img><a><i><div><br>').'</div>';
                                 } else {

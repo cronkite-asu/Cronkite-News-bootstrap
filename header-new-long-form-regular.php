@@ -161,12 +161,14 @@
           }
       </style>
 
+    <?php if (isset($bgColor)) { ?>
     <!-- generate custom story settings -->
     <style tyle="text/css">
       body {
         background:<?php echo $bgColor; ?> !important;
       }
     </style>
+    <?php } ?>
 </head>
 
 <body <?php body_class(); ?>>
