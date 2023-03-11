@@ -440,11 +440,11 @@ add_shortcode('related-story-left', 'related_box_left');
 
 function related_box_right( $atts, $content = null )
 {
-    if ($atts[ 'target' ]) {
+    if (isset($atts[ 'target' ])) {
         $target = 'target="'.$atts[ 'target' ].'"';
     }
 
-    if ($atts[ 'show-option' ] == 'plain-text') {
+    if (isset($atts[ 'show-option' ]) && $atts[ 'show-option' ] == 'plain-text') {
         $result = '<div class="related-story-box-right"><h4><strong>' . $atts[ 'box-title' ] . '</strong></h4>';
         $result .= '<div class="story">';
         $result .= '<div class="img"><a href="'. $atts[ 'link' ] . '" target="_blank"><img src="'. $atts[ 'image' ] . '" style="width:100%;"/></a></div>';

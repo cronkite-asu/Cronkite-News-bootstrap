@@ -100,7 +100,7 @@
     <?php
       $settings = get_field('page-settings', get_the_ID());
 
-    if ($settings['text-color'] != '') {
+    if (isset($settings['text-color']) && $settings['text-color'] != '') {
         $textColor = $settings['text-color'];
     }
     ?>

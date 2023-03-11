@@ -873,7 +873,7 @@
   }	elseif ( get_row_layout() == 'text-block' ) {
 
     $textBlockSettings = get_sub_field('settings');
-    if ($textBlockSettings['regular'] == 'size') {
+    if (isset($textBlockSettings['regular']) && $textBlockSettings['regular'] == 'size') {
       $textWidth = '';
     } else {
       $textWidth = 'full';
