@@ -287,7 +287,7 @@ class bootstrap_navigation extends Walker_Nav_Menu
         $output .= $item_html;
     }
 
-    function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output)
+    function display_element($element, &$children_elements, $max_depth, $depth = 0, $args = null, &$output = null)
     {
         if ($element->current ) {
             $element->classes[] = 'active';
