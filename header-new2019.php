@@ -102,7 +102,7 @@
     <?php
       $settings = get_field('page-settings', get_the_ID());
 
-    if ($settings['text-color'] != '') {
+    if ($settings && $settings['text-color'] != '') {
         $textColor = $settings['text-color'];
     }
     ?>
@@ -146,7 +146,7 @@
     <?php if (is_page('covid-in-indian-country') || is_page('wildfire-pandemic')) {?>
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/long-form/long-form-base.css">
     <?php } ?>
-    <?php if ($settings['stylesheet'] != '') { ?>
+    <?php if ($settings && $settings['stylesheet'] != '') { ?>
     <link rel="stylesheet" href="<?php echo $settings['stylesheet']; ?>" />
     <?php } ?>
     <link href="<?php bloginfo('template_directory');?>/assets/css/footer.css" rel="stylesheet">
