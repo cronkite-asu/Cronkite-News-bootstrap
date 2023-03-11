@@ -212,7 +212,7 @@
                 <?php } else { ?>
                 <a href="<?php echo get_permalink($postID); ?>" >
                 <?php } ?>
-                <?php if ($image['url'] == '') { ?>
+                <?php if ($image === false || $image['url'] == '') { ?>
                   <img src="<?php echo get_the_post_thumbnail_url($postID); ?>" />
                 <?php } else { ?>
                   <img src="<?php echo $image['url']; ?>" />
@@ -304,7 +304,7 @@
                 <?php } else { ?>
               <a href="<?php echo get_permalink($postID); ?>" >
                 <?php } ?>
-                <?php if ($image['url'] == '' ) { ?>
+                <?php if ($image === false || $image['url'] == '' ) { ?>
                 <img src="<?php echo get_the_post_thumbnail_url($postID); ?>" />
                 <?php } else { ?>
                 <img src="<?php echo $image['url']; ?>" />
