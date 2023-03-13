@@ -165,51 +165,54 @@
                     while (have_rows('byline_info')) {
                         the_row();
                         $staffID = get_sub_field('cn_staff');
-                        $cnStaffCount = count($staffID);
 
-                        foreach ($staffID as $key => $val) {
-                            $args = array(
-                                   'post_type'   => 'students',
-                                   'post_status' => 'publish',
-                                   'p' => $val
-                                 );
+                        if (is_countable($staffID)) {
+                                             $cnStaffCount = count($staffID);
 
-                            $staffDetails = new WP_Query($args);
-                            if ($staffDetails->have_posts()) {
-                                while ($staffDetails->have_posts()) {
-                                    $staffDetails->the_post();
-                                    $sepCounter++;
+                            foreach ($staffID as $key => $val) {
+                                $args = array(
+                                'post_type'   => 'students',
+                                'post_status' => 'publish',
+                                'p' => $val
+                                );
 
-                                    $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))));
-                                    $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
+                                $staffDetails = new WP_Query($args);
+                                if ($staffDetails->have_posts()) {
+                                    while ($staffDetails->have_posts()) {
+                                        $staffDetails->the_post();
+                                        $sepCounter++;
 
-                                    if (get_field('student_photo') != '') {
-                                          echo '<div class="author_photo post">';
-                                        if ($staffNameURLSafe == 'staff') {
-                                            echo '<img src="'.get_field('student_photo').'" class="cn-staff-bio-circular-sm staff" alt="'.get_the_title($staffID).'" />';
-                                        } else {
-                                            echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank"><img src="'.get_field('student_photo').'" class="cn-staff-bio-circular-sm" alt="'.get_the_title($staffID).'" /></a>';
+                                        $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))));
+                                        $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
+
+                                        if (get_field('student_photo') != '') {
+                                              echo '<div class="author_photo post">';
+                                            if ($staffNameURLSafe == 'staff') {
+                                                echo '<img src="'.get_field('student_photo').'" class="cn-staff-bio-circular-sm staff" alt="'.get_the_title($staffID).'" />';
+                                            } else {
+                                                echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank"><img src="'.get_field('student_photo').'" class="cn-staff-bio-circular-sm" alt="'.get_the_title($staffID).'" /></a>';
+                                            }
+                                            echo '</div>';
                                         }
-                                        echo '</div>';
-                                    }
 
-                                    echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank">'.get_the_title($val).'</a>';
-                                    if ($sepCounter != $cnStaffCount) {
-                                        if ($sepCounter == ($cnStaffCount - 1)) {
-                                            echo $andSeparator.' ';
-                                        } else {
-                                            echo $commaSeparator.' ';
+                                        echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank">'.get_the_title($val).'</a>';
+                                        if ($sepCounter != $cnStaffCount) {
+                                            if ($sepCounter == ($cnStaffCount - 1)) {
+                                                echo $andSeparator.' ';
+                                            } else {
+                                                echo $commaSeparator.' ';
+                                            }
                                         }
                                     }
                                 }
+                                $newCheck++;
                             }
-                            $newCheck++;
-                        }
-                        if ($cnStaffCount > 0 && $staffID != '') {
-                            if (get_sub_field('cn_project') != '') {
-                                echo '/'.str_replace('Pbs', 'PBS', str_replace(' For ', ' for ', ucwords(str_replace('-', ' ', get_sub_field('cn_project')))));
-                            } else {
-                                echo '/Cronkite Noticias</span>';
+                            if ($cnStaffCount > 0 && $staffID != '') {
+                                if (get_sub_field('cn_project') != '') {
+                                    echo '/'.str_replace('Pbs', 'PBS', str_replace(' For ', ' for ', ucwords(str_replace('-', ' ', get_sub_field('cn_project')))));
+                                } else {
+                                    echo '/Cronkite Noticias</span>';
+                                }
                             }
                         }
                     }
