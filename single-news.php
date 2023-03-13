@@ -153,7 +153,7 @@
 
                 // bypass group not showing repeater field issue
                 $groupFields = get_field('byline_info');
-                $externalAuthorRepeater = $groupFields['external_authors_repeater'];
+                $externalAuthorRepeater = $isset($groupFields['external_authors_repeater']) ? $groupFields['external_authors_repeater'] : "";
 
                 $normalizeChars = array(
                   'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
@@ -329,8 +329,16 @@
                     $host = parse_url($isvid);
                     $isjpg = false;
 
-                    if ($host['host'] == 'www.youtube.com' || $host['host'] == 'youtu.be' || $host['host'] == 'www.youtu.be' || $host['host'] == 'youtube.com') {
-                        $embedVideoURL = getYoutubeID($isvid);
+                    if ( $isset($host[ 'host' ]) && $host['host'] == 'www.youtube.com') {
+                        $id = linkifyYouTubeURLs($isvid);                   
+                        $videoBaseLink = 'https://www.youtube.com/embed/';
+                        $breakQuery = parse_url($isvid, PHP_URL_QUERY);
+                        if (isset($breakQuery)) {
+                            $videoID = explode('=', $breakQuery);
+                            $embedVideoURL = $isset($videoBaseLink.$videoID[1]) ? $videoBaseLink.$videoID[1] : "";
+                        } else {
+                            $embedVideoURL = $isvid;
+                        }
                         echo '<div id="video-holder">';
                         echo '<div class="video-wrap">';
                         echo '<div class="video">';
