@@ -697,20 +697,22 @@ if (have_rows('blocks') ) {
   </div>
   <div class="grid-x grid-padding-x">
             <?php
-              // check photo and select credit width
+            // check photo and select credit width
+	    if (is_string(get_sub_field('photo'))) {
               list($width, $height, $type, $attr) = getimagesize(get_sub_field('photo'));
-            if ($width == 1200) {
+              if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';
-            } else {
+              } else {
                 $introPhotoWidth = 'photo-credit-width-1800';
-            }
+              }
 
-            // check photo style
-            if (get_sub_field('photo_size') == 'photo-style-e2e') {
+              // check photo style
+              if (get_sub_field('photo_size') == 'photo-style-e2e') {
                 $photoStyle = get_sub_field('photo_size');
-            } else {
+              } else {
                 $photoStyle = get_sub_field('photo_size');
-            }
+              }
+	    }
             ?>
 
     <div class="large-12 medium-12 small-12 cell text-center main-photo <?php echo $photoStyle; ?>">
