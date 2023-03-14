@@ -381,7 +381,7 @@
 
              <!-- story tags -->
              <?php
-                if (get_field('st_html', $audio_id)['tags'] != '' && get_field('st_html', $audio_id)['tags'] != 0) {
+                if (get_field('st_html', $audio_id) && get_field('st_html', $audio_id)['tags'] != '' && get_field('st_html', $audio_id)['tags'] != 0) {
                     $args = array(
                                'post_type'   => 'storytags',
                                'post_status' => 'publish',

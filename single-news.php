@@ -546,7 +546,7 @@
 
              <!-- story tags -->
              <?php
-                if (get_field('st_html')['tags'] != '' && get_field('st_html')['tags'] != 0) {
+                if (get_field('st_html') && get_field('st_html')['tags'] != '' && get_field('st_html')['tags'] != 0) {
                     $args = array(
                                'post_type'   => 'storytags',
                                'post_status' => 'publish',
