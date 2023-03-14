@@ -137,7 +137,7 @@
 
                 // bypass group not showing repeater field issue
                 $groupFields = get_field('byline_info', $audio_id);
-                $externalAuthorRepeater =  $isset($groupFields[ 'external_authors_repeater' ]) ? $groupFields['external_authors_repeater'] : "";
+                $externalAuthorRepeater = $groupFields['external_authors_repeater'] ?? "";
 
                 $normalizeChars = array(
                   'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
@@ -243,7 +243,7 @@
                  <div id="story-photo" class="story-photos">
                      <div>
                        <img src="<?php echo get_the_post_thumbnail_url($audio_id); ?>" width="800" alt="" title="" />
-                       <div class="asset-caption"><?php echo $photoCaption; ?></div>
+                       <div class="asset-caption"><?php echo $photoCaption ?? ""; ?></div>
                      </div>
                  </div>
                 <?php } ?>
@@ -272,7 +272,7 @@
              <?php
                 // in this series settings
                 $inthisseriesSettings = get_field('in-this-series-stories');
-                if ($isset($inthisseriesSettings['show']) && $inthisseriesSettings['show'] == 'yes') {
+                if (isset($inthisseriesSettings['show']) && $inthisseriesSettings['show'] == 'yes') {
                     if ($inthisseriesSettings['story-status'] == 'coming-soon') {
                         if ($inthisseriesSettings['title'] != '') {
                             $seriesTitle = ': '.$inthisseriesSettings['title'];

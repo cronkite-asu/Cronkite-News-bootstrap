@@ -174,7 +174,7 @@ if (have_rows('blocks') ) {
       </div>
     </div>
   </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
             <?php
         } elseif (get_row_layout() == 'intro-split-code' ) {
@@ -367,7 +367,7 @@ if (have_rows('blocks') ) {
       </div>
     </div>
   </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
             <?php
         } elseif (get_row_layout() == 'fullscreen-video' ) {
@@ -428,7 +428,7 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
             <?php
@@ -467,7 +467,7 @@ if (have_rows('blocks') ) {
             <?php } ?>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
             <?php
         } elseif (get_row_layout() == 'intro-head-photo-overlay' ) {
@@ -515,7 +515,7 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
 
@@ -567,7 +567,7 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, 'author-open'); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, 'author-open'); ?>
 
             <?php
         } elseif (get_row_layout() == 'intro-head-photo' ) {
@@ -615,7 +615,7 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
             <?php
@@ -673,7 +673,7 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
             <?php
@@ -696,7 +696,7 @@ if (have_rows('blocks') ) {
             ?>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
             <?php
@@ -732,7 +732,7 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
             <?php
         } elseif (get_row_layout() == 'intro-fadeout-protrait-images' ) {
@@ -781,13 +781,13 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
             <?php
         } elseif (get_row_layout() == 'text-block' ) {
 
             $textBlockSettings = get_sub_field('settings');
-            if ($isset($textBlockSettings['regular']) && $textBlockSettings['regular'] == 'size') {
+            if (isset($textBlockSettings['regular']) && $textBlockSettings['regular'] == 'size') {
                 $textWidth = '';
             } else {
                 $textWidth = 'full';
@@ -1125,7 +1125,7 @@ if (have_rows('blocks') ) {
       </div>
     </div>
 
-    <div class="grid-container photo-content single <?php echo $photoWidth; ?> show-for-small-only">
+    <div class="grid-container photo-content single <?php echo $photoWidth ?? ''; ?> show-for-small-only">
       <div class="grid-x grid-padding-x">
         <div class="large-12 medium-12 small-12 cell">
             <?php
@@ -1285,7 +1285,7 @@ if (have_rows('blocks') ) {
     </div>
 
             <?php if (is_single(166978)) { ?>
-                <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+                <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
             <?php } ?>
             <?php
         } elseif (get_row_layout() == 'charts-doc' ) {

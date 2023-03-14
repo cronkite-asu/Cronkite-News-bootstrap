@@ -153,7 +153,7 @@
 
                 // bypass group not showing repeater field issue
                 $groupFields = get_field('byline_info');
-                $externalAuthorRepeater = $isset($groupFields['external_authors_repeater']) ? $groupFields['external_authors_repeater'] : "";
+                $externalAuthorRepeater = $groupFields['external_authors_repeater'] ?? "";
 
                 $normalizeChars = array(
                   'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
@@ -329,13 +329,13 @@
                     $host = parse_url($isvid);
                     $isjpg = false;
 
-                    if ($isset($host[ 'host' ]) && $host['host'] == 'www.youtube.com') {
+                    if (isset($host[ 'host' ]) && $host['host'] == 'www.youtube.com') {
                         $id = linkifyYouTubeURLs($isvid);                   
                         $videoBaseLink = 'https://www.youtube.com/embed/';
                         $breakQuery = parse_url($isvid, PHP_URL_QUERY);
                         if (isset($breakQuery)) {
                             $videoID = explode('=', $breakQuery);
-                            $embedVideoURL = $isset($videoBaseLink.$videoID[1]) ? $videoBaseLink.$videoID[1] : "";
+                            $embedVideoURL = $videoBaseLink.$videoID[1] ?? "";
                         } else {
                             $embedVideoURL = $isvid;
                         }
@@ -437,7 +437,7 @@
              <?php
                 // in this series settings
                 $inthisseriesSettings = get_field('in-this-series-stories');
-                if ($isset($inthisseriesSettings['show']) && $inthisseriesSettings['show'] == 'yes') {
+                if (isset($inthisseriesSettings['show']) && $inthisseriesSettings['show'] == 'yes') {
                     if ($inthisseriesSettings['story-status'] == 'coming-soon') {
                         if ($inthisseriesSettings['title'] != '') {
                             $seriesTitle = ': '.$inthisseriesSettings['title'];

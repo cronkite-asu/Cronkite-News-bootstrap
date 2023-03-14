@@ -100,11 +100,11 @@
 
     <?php
       $settings = get_field('longform-settings', get_the_ID());
-    if ($isset($settings['background-color']) && $settings['background-color'] != '') {
+    if (isset($settings['background-color']) && $settings['background-color'] != '') {
         $bgColor = $settings['background-color'];
     }
 
-    if ($isset($settings['text-color']) && $settings['text-color'] != '') {
+    if (isset($settings['text-color']) && $settings['text-color'] != '') {
         $textColor = $settings['text-color'];
     }
     ?>
@@ -140,7 +140,7 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick-theme.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/single-story-post.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/long-form/long-form-base.css">
-    <?php if ($isset($settings['stylesheet']) && $settings['stylesheet'] != '') { ?>
+    <?php if (isset($settings['stylesheet']) && $settings['stylesheet'] != '') { ?>
     <link rel="stylesheet" href="<?php echo $settings['stylesheet']; ?>" />
     <?php } ?>
     <link href="<?php bloginfo('template_directory');?>/assets/css/nav.css" rel="stylesheet">

@@ -86,7 +86,7 @@ function getStoryAuthors($getPID)
 
     // bypass group not showing repeater field issue
     $groupFields = get_field('byline_info', $getPID);
-    $externalAuthorRepeater =  $isset($groupFields['external_authors_repeater']) ? $groupFields['external_authors_repeater'] : "";
+    $externalAuthorRepeater = $groupFields['external_authors_repeater'] ?? "";
 
     $normalizeChars = array(
      'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
@@ -246,7 +246,7 @@ function hook_parselyJSON()
         "dateCreated":"<?php echo $dateCreated; ?>",
         "datePublished":"<?php echo $dateCreated; ?>",
         "dateModified":"<?php echo $dateModified; ?>",
-        "articleSection":"<?php echo $articleSection; ?>",
+        "articleSection":"<?php echo $articleSection ?? ''; ?>",
         "author":[<?php echo $authors; ?>],
         "creator":[<?php echo $creators; ?>],
         "publisher":{"@type":"Organization","name":"<?php echo $publisher; ?>"},

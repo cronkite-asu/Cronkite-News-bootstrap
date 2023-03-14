@@ -1,6 +1,6 @@
 <?php
   $settings = get_field('longform-settings');
-if ($isset($settings['header']) && $settings['header'] == 'longform') {
+if (isset($settings['header']) && $settings['header'] == 'longform') {
     get_header('new-long-form');
 } else {
     get_header('new-long-form-regular');
@@ -184,7 +184,7 @@ if (have_rows('blocks') ) {
       </div>
     </div>
   </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
             <?php
         }    elseif (get_row_layout() == 'intro-split-code' ) {
@@ -377,7 +377,7 @@ if (have_rows('blocks') ) {
       </div>
     </div>
   </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
             <?php
         }    elseif (get_row_layout() == 'fullscreen-video' ) {
@@ -438,7 +438,7 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
             <?php
         }    elseif (get_row_layout() == 'intro-animated-bg' ) {
@@ -468,12 +468,12 @@ if (have_rows('blocks') ) {
 </div>
 <div class="grid-container full intro-caption">
   <div class="grid-x grid-margin-x">
-    <div class="large-12 medium-12 small-12 cell text-right <?php echo $introPhotoWidth; ?>">
+    <div class="large-12 medium-12 small-12 cell text-right <?php echo $introPhotoWidth ?? ''; ?>">
       <span class="photo-credit"><?php echo get_sub_field('credits'); ?></span>
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
             <?php
@@ -523,7 +523,7 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
             <?php
@@ -574,7 +574,7 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, 'author-open'); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, 'author-open'); ?>
 
             <?php
         }    elseif (get_row_layout() == 'intro-head-photo' ) {
@@ -622,7 +622,7 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
             <?php
@@ -680,7 +680,7 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
             <?php
@@ -715,7 +715,7 @@ if (have_rows('blocks') ) {
 	    }
             ?>
 
-    <div class="large-12 medium-12 small-12 cell text-center main-photo <?php echo $photoStyle; ?>">
+    <div class="large-12 medium-12 small-12 cell text-center main-photo <?php echo $photoStyle ?? ''; ?>">
       <div class="large-12 medium-12 small-12 cell intro-text text-center show-for-medium">
             <?php if (get_sub_field('headline') == '') { ?>
           <h1 class="absolute-text"><?php echo get_the_title(); ?></h1>
@@ -740,7 +740,7 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
             <?php
@@ -763,7 +763,7 @@ if (have_rows('blocks') ) {
             ?>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
             <?php
@@ -794,12 +794,12 @@ if (have_rows('blocks') ) {
             }
             ?>
     </div>
-    <div class="large-12 medium-12 small-12 cell text-center <?php echo $introPhotoWidth; ?>">
+    <div class="large-12 medium-12 small-12 cell text-center <?php echo $introPhotoWidth ?? ''; ?>">
       <span class="photo-credit"><?php echo get_sub_field('credits'); ?></span>
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
             <?php
         }    elseif (get_row_layout() == 'intro-fadeout-protrait-images' ) {
@@ -827,7 +827,7 @@ if (have_rows('blocks') ) {
 	    }
             ?>
 
-    <div class="large-12 medium-12 small-12 cell text-center <?php echo $photoStyle; ?>">
+    <div class="large-12 medium-12 small-12 cell text-center <?php echo $photoStyle ?? ''; ?>">
             <?php if (have_rows('photos') ) { ?>
                 <?php $counter = 0; ?>
                 <?php while ( have_rows('photos') ) {
@@ -836,7 +836,7 @@ if (have_rows('blocks') ) {
                 <?php } ?>
             <?php } ?>
     </div>
-    <div class="large-12 medium-12 small-12 cell text-center <?php echo $introPhotoWidth; ?>">
+    <div class="large-12 medium-12 small-12 cell text-center <?php echo $introPhotoWidth ?? ''; ?>">
       <span class="photo-credit"><?php echo get_sub_field('credits'); ?></span>
     </div>
 
@@ -850,7 +850,7 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
             <?php
         }    elseif (get_row_layout() == 'series-intro' ) {
@@ -1014,11 +1014,11 @@ if (have_rows('blocks') ) {
                 }
 
                 if ($captionCounter == 1) {
-                    $combinedCaption = str_replace('<strong>Left:</strong>', '', $combinedCaption);
+                    $combinedCaption = str_replace('<strong>Left:</strong>', '', $combinedCaption ?? "");
                 }
                 ?>
         <div class="large-12 cell">
-                <?php echo '<div class="wp-caption-text"><p>'.$combinedCaption.'</p></div>'; ?>
+                <?php echo '<div class="wp-caption-text"><p>'.($combinedCaption ?? '').'</p></div>'; ?>
         </div>
             <?php } ?>
       </div>
@@ -1070,11 +1070,11 @@ if (have_rows('blocks') ) {
                 }
 
                 if ($captionCounter == 1) {
-                    $combinedCaption = str_replace('<strong>Left:</strong>', '', $combinedCaption);
+                    $combinedCaption = str_replace('<strong>Left:</strong>', '', isset($combinedCaption) ? $combinedCaption : "");
                 }
                 ?>
         <div class="large-12 cell">
-                <?php echo '<div class="wp-caption-text"><p>'.$combinedCaption.'</p></div>'; ?>
+                <?php echo '<div class="wp-caption-text"><p>'.($combinedCaption ?? '').'</p></div>'; ?>
         </div>
             <?php } ?>
       </div>
@@ -1245,7 +1245,7 @@ if (have_rows('blocks') ) {
     </div>
 
             <?php if (is_single(166978)) { ?>
-                <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+                <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
             <?php } ?>
             <?php
         }    elseif (get_row_layout() == 'charts-doc' ) {
@@ -1330,11 +1330,11 @@ if (have_rows('blocks') ) {
                 }
 
                 if ($captionCounter == 1) {
-                    $combinedCaption = str_replace('<strong>Left:</strong>', '', $combinedCaption);
+                    $combinedCaption = str_replace('<strong>Left:</strong>', '', isset($combinedCaption) ? $combinedCaption : "");
                 }
                 ?>
         <div class="large-12 cell show-for-medium">
-                <?php echo '<div class="wp-caption-text"><p>'.$combinedCaption.'</p></div>'; ?>
+                <?php echo '<div class="wp-caption-text"><p>'.($combinedCaption ?? '').'</p></div>'; ?>
         </div>
             <?php } ?>
       </div>
@@ -1562,7 +1562,7 @@ if (have_rows('blocks') ) {
 <?php
  // in this series settings
  $inthisseriesSettings = get_field('in-this-series-stories');
-if ($isset($inthisseriesSettings['show']) && $inthisseriesSettings['show'] == 'yes') {
+if (isset($inthisseriesSettings['show']) && $inthisseriesSettings['show'] == 'yes') {
     if ($inthisseriesSettings['story-status'] == 'coming-soon') {
         if ($inthisseriesSettings['title'] != '') {
             $seriesTitle = ': '.$inthisseriesSettings['title'];

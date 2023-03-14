@@ -18,7 +18,7 @@
             echo '<div class="author_bio">';
 
             $args = array(
-                 'name'           => '"'.$search_staff_name.'"',
+                 'name'           => '"'. (isset($search_staff_name) ? $search_staff_name : "") .'"',
                  'post_type'      => array('students', 'cn_staff'),
                  'post_status'    => 'publish',
                  'posts_per_page' => 1
@@ -36,17 +36,17 @@
                         echo '<div class="author_photo">';
                         if (get_field('cn_staff_photo') != '') {
                               $staffChecker = 1;
-                              echo '<img src="'.get_field('cn_staff_photo').'" class="cn-staff-bio-circular-large" alt="'.get_the_title($staffID).'" />';
+                              echo '<img src="'.get_field('cn_staff_photo').'" class="cn-staff-bio-circular-large" alt="'.(isset($staffID) ? get_the_title($staffID) : null).'" />';
                         } else {
                             $staffChecker = 0;
-                            echo '<img src="'.get_field('student_photo').'" class="cn-staff-bio-circular-large" alt="'.get_the_title($staffID).'" />';
+                            echo '<img src="'.get_field('student_photo').'" class="cn-staff-bio-circular-large" alt="'. (isset($staffID) ? get_the_title($staffID) : null) .'" />';
                         }
                         echo '</div>';
                     }
 
                     echo '<div class="bio">';
                     echo '<div class="name_container">';
-                    if (get_the_title($val) != '') {
+                    if (isset($val) && get_the_title($val) != '') {
                         echo '<span class="name-lg">'.get_the_title($val).'</span>';
                     } else {
                         echo '<span class="name-lg">'.'No author name found.'.'</span>';
@@ -61,10 +61,10 @@
                         }
                         echo '<span class="pronunciation">';
                         ?>
-                        <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php 
+                        <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe ?? ''; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php 
                         } ?> <?php echo $pronunciationHolder; ?></span>
                         <?php
-                        echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
+                        echo '<audio id="pronunciation-audio-'. (isset($staffNameURLSafe) ? $staffNameURLSafe : "") .'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
                     }
 
                     // show name pronoun
