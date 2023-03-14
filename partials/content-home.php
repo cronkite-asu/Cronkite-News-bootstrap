@@ -290,7 +290,7 @@
 
         <?php if (have_rows('area_works_box', 24)) { ?>
             <?php while (have_rows('area_works_box', 24)) {
- the_row(); ?>
+                the_row(); ?>
           <div class="large-4 medium-4 small-5 cell stories show-for-medium">
                 <?php
                 $image = get_sub_field('area_works_image');
@@ -355,7 +355,7 @@
           <div class="homepage-special-projects">
             <?php if (have_rows('projects', 24)) { ?>
                 <?php while (have_rows('projects', 24)) {
- the_row(); ?>
+                    the_row(); ?>
                   <div class="large-4 medium-4 small-12 cell text-center special-projects">
                     <?php
                     if (get_sub_field('photo') != '') {
@@ -379,12 +379,17 @@
             $seriesURL = get_field('page_url', 24);
             ?>
               <div class="large-4 medium-12 small-12 cell description">
-                <h5><?php if ($seriesTitle != '') { echo $seriesTitle;
-} ?></h5>
-                <?php if ($seriesDescription != '') { echo $seriesDescription;
-                } ?>
-                <?php if ($seriesURL != '') { echo '<a class="read-more" href="'.$seriesURL.'" target="_blank">READ MORE <i class="fa-regular fa-arrow-right-long"></i></a>';
-                } ?>
+          <h5>
+            <?php if ($seriesTitle != '') { 
+                   echo $seriesTitle; 
+            } ?>
+          </h5>
+            <?php if ($seriesDescription != '') {
+                echo $seriesDescription;
+            } ?>
+            <?php if ($seriesURL != '') {
+                echo '<a class="read-more" href="'.$seriesURL.'" target="_blank">READ MORE <i class="fa-regular fa-arrow-right-long"></i></a>';
+            } ?>
               </div>
 
               <div class="large-8 medium-12 small-12 cell series-stories">
