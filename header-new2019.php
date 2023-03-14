@@ -9,8 +9,7 @@
 
     <?php
     // get the category for GA
-    $post = get_post();
-    $categories = get_the_category($post->ID);
+    $categories = get_the_category();
     $output = '';
 
     if (! empty($categories) ) {
@@ -54,7 +53,7 @@
       <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
 
 
-    <?php if (get_field('hide_post', $post->ID) == 'yes') { ?>
+    <?php if (get_field('hide_post', get_the_ID()) == 'yes') { ?>
       <meta name="robots" content="noindex">
     <?php } ?>
         <meta name="viewport" content="width=device-width, initial-scale=1">
