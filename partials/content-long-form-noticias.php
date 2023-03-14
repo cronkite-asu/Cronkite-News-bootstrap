@@ -1568,6 +1568,7 @@ if ($inthisseriesSettings['show'] == 'yes') {
                 $broadcastID = get_sub_field('cn_broadcast_reporters');
                 $dataVisualizerID = get_sub_field('cn_data_visualizer');
 
+		if (is_countable($staffID)) {
                 foreach ($staffID as $key => $val) {
                     echo '<div class="author_bio">';
                     $args = array(
@@ -1643,7 +1644,9 @@ if ($inthisseriesSettings['show'] == 'yes') {
                     }
                     echo '</div>';
                 }
+		}
 
+		if (is_countable($broadcastID)) {
                 // show broadcast
                 foreach ($broadcastID as $key => $val) {
                     echo '<div class="author_bio">';
@@ -1720,8 +1723,9 @@ if ($inthisseriesSettings['show'] == 'yes') {
                     }
                     echo '</div>';
                 }
+		}
 
-
+if (is_countable($photogID)) {
                 // show photogs
                 foreach ($photogID as $key => $val) {
                     echo '<div class="author_bio">';
@@ -1794,7 +1798,9 @@ if ($inthisseriesSettings['show'] == 'yes') {
                     }
                     echo '</div>';
                 }
+}
 
+if (is_countable($dataVisualizerID)) {
                 // show data viz
                 foreach ($dataVisualizerID as $key => $val) {
                     echo '<div class="author_bio">';
@@ -1866,6 +1872,7 @@ if ($inthisseriesSettings['show'] == 'yes') {
                     echo '</div>';
                 }
             }
+	    }
         }
           wp_reset_query();
         ?>

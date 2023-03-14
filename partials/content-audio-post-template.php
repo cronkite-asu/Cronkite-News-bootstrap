@@ -536,6 +536,7 @@
                         echo '</div>';
                     }
 
+		    if (is_countable($broadcastID)) {
                     // show broadcast
                     foreach ($broadcastID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
@@ -633,8 +634,9 @@
                         }
                         echo '</div>';
                     }
+		}
 
-
+if (is_countable($photogID)) {
                     // show photogs
                     foreach ($photogID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
@@ -731,8 +733,9 @@
                         }
                         echo '</div>';
                     }
+}
 
-
+if (is_countable($dataVisualizerID)) {
                     // show data visualizers
                     foreach ($dataVisualizerID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
@@ -830,6 +833,7 @@
                         }
                         echo '</div>';
                     }
+}
                 }
             }
              wp_reset_query();
