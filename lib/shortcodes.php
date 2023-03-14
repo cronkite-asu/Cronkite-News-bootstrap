@@ -455,7 +455,7 @@ function related_box_right( $atts, $content = null )
         $result = '<div class="related-story-box-right"><h4><strong>' .  $isset($atts[ 'box-title' ]) ? $atts[ 'box-title' ] : "" . '</strong></h4>';
         $result .= '<div class="story">';
         $result .= '<div class="img"><a href="'.  $isset($atts[ 'link' ]) ? $atts[ 'link' ] : "" . '" target="_blank"><img src="'.  $isset($atts[ 'image' ]) ? $atts[ 'image' ] : "" . '" style="width:100%;"/></a></div>';
-        if ( $isset($atts[ 'headline' ]) && $atts[ 'headline' ] != '') {
+        if ($isset($atts[ 'headline' ]) && $atts[ 'headline' ] != '') {
             $result .= '<div class="headline"><p><a href="'.  $isset($atts[ 'link' ]) ? $atts[ 'link' ] : "" . '" target="_blank">'. $atts[ 'headline' ] .' <i class="fas fa-angle-right"></i></a></p></div>';
         } else {
             $result .= '<div class="caption"><p>' .  $isset($atts[ 'caption' ]) ? $atts[ 'caption' ] : "" . '</p></div>';
@@ -525,7 +525,7 @@ function social_icons( $atts, $content = null )
     if ($atts[ 'youtube' ] == "yes"  ) {
         $result .= '<a href="https://www.youtube.com/user/CronkiteNewsWatch" target="_blank">  <span class="fa fa-youtube tag-social-icons"></span></a>' ;
     }
-    if ( $isset($atts[ 'snapchat' ]) && $atts[ 'snapchat' ] == "yes"  ) {
+    if ($isset($atts[ 'snapchat' ]) && $atts[ 'snapchat' ] == "yes"  ) {
         $result .= ' <a href="#" data-featherlight=\'<img src="https://cronkitenews.azpbs.org/wp-content/uploads/2018/01/IMG_C77BE6BD8B91-1.jpeg">\'> <span class="fa fa-snapchat-ghost tag-social-icons"></span></a>';
     }
     $result .= '</div></div>';

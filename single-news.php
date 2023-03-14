@@ -329,7 +329,7 @@
                     $host = parse_url($isvid);
                     $isjpg = false;
 
-                    if ( $isset($host[ 'host' ]) && $host['host'] == 'www.youtube.com') {
+                    if ($isset($host[ 'host' ]) && $host['host'] == 'www.youtube.com') {
                         $id = linkifyYouTubeURLs($isvid);                   
                         $videoBaseLink = 'https://www.youtube.com/embed/';
                         $breakQuery = parse_url($isvid, PHP_URL_QUERY);
