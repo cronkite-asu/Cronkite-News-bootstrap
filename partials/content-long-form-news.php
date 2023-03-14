@@ -1,6 +1,6 @@
 <?php
   $settings = get_field('longform-settings');
-if ($settings['header'] == 'longform') {
+if ($isset($settings['header']) && $settings['header'] == 'longform') {
     get_header('new-long-form');
 } else {
     get_header('new-long-form-regular');
@@ -1562,7 +1562,7 @@ if (have_rows('blocks') ) {
 <?php
  // in this series settings
  $inthisseriesSettings = get_field('in-this-series-stories');
-if ($inthisseriesSettings['show'] == 'yes') {
+if ($isset($inthisseriesSettings['show']) && $inthisseriesSettings['show'] == 'yes') {
     if ($inthisseriesSettings['story-status'] == 'coming-soon') {
         if ($inthisseriesSettings['title'] != '') {
             $seriesTitle = ': '.$inthisseriesSettings['title'];

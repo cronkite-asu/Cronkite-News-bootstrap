@@ -272,7 +272,7 @@
              <?php
                 // in this series settings
                 $inthisseriesSettings = get_field('in-this-series-stories');
-                if ($inthisseriesSettings['show'] == 'yes') {
+                if ($isset($inthisseriesSettings['show']) && $inthisseriesSettings['show'] == 'yes') {
                     if ($inthisseriesSettings['story-status'] == 'coming-soon') {
                         if ($inthisseriesSettings['title'] != '') {
                             $seriesTitle = ': '.$inthisseriesSettings['title'];

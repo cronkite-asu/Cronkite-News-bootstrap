@@ -132,7 +132,7 @@
 
   <?php
     $settings = get_field('longform-settings', get_the_ID());
-    if ($settings['scripts-file'] != '') {
+    if (isset($settings['scripts-file']) && $settings['scripts-file'] != '') {
         ?>
   <script src="<?php echo $settings['scripts-file']; ?>"></script>
     <?php } ?>
