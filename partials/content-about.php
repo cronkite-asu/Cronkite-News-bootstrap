@@ -161,7 +161,7 @@
                     ?>
                 <li>
                     <?php
-                    $staffNameURLSafe = str_replace('’', '', str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', isset($val) ? strtolower(get_the_title($val) : null)))));
+                    $staffNameURLSafe = str_replace('’', '', str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', isset($val) ? strtolower(get_the_title($val)) : null))));
                     $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
                     if (get_field('student_photo') != '') {
                         echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/"><img src="'.get_field('student_photo').'" class="cn-staff-circular" /></a>';
