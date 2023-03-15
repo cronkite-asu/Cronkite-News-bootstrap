@@ -28,7 +28,7 @@
    <li> <a href="https://cronkitenews.azpbs.org/category/future/">Future</a></li>
    <li> <a href="https://cronkitenews.azpbs.org/category/government/">Government</a></li>
    <li> <a href="https://cronkitenews.azpbs.org/category/health/">Health </a></li>
-   <li> <a href="https://cronkitenews.azpbs.org/category/indian-country/">Indian Country</a></li>
+   <li> <a href="https://cronkitenews.azpbs.org/category/indigenous-communities/">Indian Country</a></li>
    <li> <a href="https://cronkitenews.azpbs.org/category/justice/">Justice</a></li>
    <li> <a href="https://cronkitenews.azpbs.org/category/money/">Money</a></li>
    <li><a href="https://cronkitenews.azpbs.org/category/sustainability/">Sustainability</a></li>

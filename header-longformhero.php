@@ -157,7 +157,7 @@
    <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/future/" style="display:block;">Future</a></li>
    <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/government/" style="display:block;">Government</a></li>
    <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/health/" style="display:block;">Health</a></li>
-   <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/indian-country/" style="display:block;">Indian Country</a></li>
+   <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/indigenous-communities/" style="display:block;">Indian Country</a></li>
    <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/justice/" style="display:block;">Justice</a></li>
    <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/money/" style="display:block;">Money</a></li>
    <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/sustainability/" style="display:block;">Sustainability</a></li>
