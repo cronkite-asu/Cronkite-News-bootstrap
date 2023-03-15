@@ -335,7 +335,7 @@
                         $breakQuery = parse_url($isvid, PHP_URL_QUERY);
                         if (isset($breakQuery)) {
                             $videoID = explode('=', $breakQuery);
-                            $embedVideoURL = $videoBaseLink.$videoID[1] ?? "";
+                            $embedVideoURL = $videoBaseLink.$videoID[1];
                         } else {
                             $embedVideoURL = $isvid;
                         }
