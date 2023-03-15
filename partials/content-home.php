@@ -133,30 +133,27 @@
                         ?>
                         <?php if (get_field('main_custom_photo', 24) == '' && get_field('main_custom_photo_url', 24) == '') { ?>
                             <?php if (get_field('use_short_headline', $main_story[0]) == 'yes' && get_field('homepage_headline', $main_story[0]) != '') { ?>
-                <!-- here 21 -->
-                <a href="<?php echo get_permalink($main_story[0]); ?>">
-                  <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($main_story[0])); ?>" />
-                  <h2><?php echo get_field('homepage_headline', $main_story[0]); ?></h2>
-                </a>
-                <p class="show-for-small-only main-story-summary-mobile"><?php echo get_field('story_tease', $main_story[0]); ?></p>
+                              <a href="<?php echo get_permalink($main_story[0]); ?>">
+                                <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($main_story[0])); ?>" />
+                                <h2><?php echo get_field('homepage_headline', $main_story[0]); ?></h2>
+                              </a>
+                              <p class="show-for-small-only main-story-summary-mobile"><?php echo get_field('story_tease', $main_story[0]); ?></p>
                             <?php } else { ?>
-                <!-- here 22 -->
-                <a href="<?php echo get_permalink($main_story[0]); ?>">
-                  <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($main_story[0])); ?>" />
-                  <h2><?php echo get_the_title($main_story[0]); ?></h2>
-                </a>
-                <p class="show-for-small-only main-story-summary-mobile"><?php echo get_field('story_tease', $main_story[0]); ?></p>
+                              <a href="<?php echo get_permalink($main_story[0]); ?>">
+                                <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($main_story[0])); ?>" />
+                                <h2><?php echo get_the_title($main_story[0]); ?></h2>
+                              </a>
+                              <p class="show-for-small-only main-story-summary-mobile"><?php echo get_field('story_tease', $main_story[0]); ?></p>
                             <?php } ?>
                         <?php } else { ?>
-              <!-- HERE updated! -->
-              <a href="<?php echo get_field('main_custom_link', 24); ?>" target="_blank">
-                            <?php if (get_field('main_custom_photo_url', 24) != '') { ?>
-                  <img src="<?php echo get_field('main_custom_photo_url', 24); ?>" />
-                            <?php } else { ?>
-                  <img src="<?php echo get_field('main_custom_photo', 24); ?>" />
-                            <?php } ?>
-                <h2><?php echo get_field('main_custom_title', 24); ?></h2>
-              </a>
+                            <a href="<?php echo get_field('main_custom_link', 24); ?>" target="_blank">
+                                          <?php if (get_field('main_custom_photo_url', 24) != '') { ?>
+                                <img src="<?php echo get_field('main_custom_photo_url', 24); ?>" />
+                                          <?php } else { ?>
+                                <img src="<?php echo get_field('main_custom_photo', 24); ?>" />
+                                          <?php } ?>
+                              <h2><?php echo get_field('main_custom_title', 24); ?></h2>
+                            </a>
                         <?php } ?>
                     <?php } ?>
                     <?php $counter++; ?>
@@ -201,7 +198,7 @@
 
         <?php if (have_rows('area_works_box', 24)) { ?>
             <?php while (have_rows('area_works_box', 24)) {
- the_row(); ?>
+                the_row(); ?>
           <div class="large-4 medium-4 small-5 cell stories show-for-small-only">
                 <?php
                 $image = get_sub_field('area_works_image');
@@ -224,11 +221,11 @@
               </div>
             </div>
             <div class="small-7 cell stories remove-padding-left align-self-middle show-for-small-only">
-                <?php if ($customTitle != '' || $customLinks != '') { echo 'EHERE!' ?>
+                <?php if ($customTitle != '' || $customLinks != '') { ?>
 
-                    <?php if ($customLinks != '') { echo 'EHERE 1!' ?>
+                    <?php if ($customLinks != '') { ?>
                   <a href="<?php echo $customLinks; ?>"><h3><?php echo $customTitle; ?></h3></a>
-                    <?php } else { echo 'EHERE 2!' ?>
+                    <?php } else { ?>
                   <a href="<?php echo get_permalink($postID); ?>"><h3><?php echo $customTitle; ?></h3></a>
                     <?php } ?>
                 <?php } else { ?>
@@ -261,16 +258,29 @@
                 if ($the_query->have_posts()) {
                     while ($the_query->have_posts()) {
                         $the_query->the_post();
-                        $videoURL = get_field('video_file', false, false);
                         $videoTitle = rtrim(get_the_content(), '.');
-                        $vURLid = explode('/', $videoURL);
-                        ?>
+
+                        if (get_field('video_url') != '') {
+                          $videoURL = get_field('video_url', false, false);
+                        } else {
+                          $videoURL = get_field('video_file', false, false);
+                        }
+
+                        $videoBaseLink = 'https://www.youtube.com/embed/';
+                        $breakQuery = parse_url($videoURL, PHP_URL_QUERY);
+                        if (isset($breakQuery)) {
+                            $videoID = explode('=', $breakQuery);
+                            $embedVideoURL = $videoBaseLink.$videoID[1];
+                        } else {
+                            $embedVideoURL = $videoURL;
+                        }
+          ?>
                     <div id="video-holder">
                       <style>.embed-container { position: relative; padding-bottom: 62.5%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
                       <div class="embed-container"><iframe src="<?php echo $videoURL; ?>" frameborder="0" allowfullscreen></iframe></div>
-                      <div class="asset-caption"><a href="https://www.youtube.com/watch?v=<?php echo $vURLid[4]; ?>"><h3><?php echo $videoTitle; ?></h3></a></div>
+                      <div class="asset-caption"><a href="<?php echo $embedVideoURL; ?>"><h3><?php echo $videoTitle; ?></h3></a></div>
                     </div>
-                        <?php
+            <?php
                     }
                 }
                 wp_reset_query();
