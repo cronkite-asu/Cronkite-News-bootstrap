@@ -400,23 +400,14 @@ body {
     margin-top: 15px !important;
     background: rgba(28, 28, 28, 0.45);
     background-repeat: no-repeat;
+    background-image: url('https://cronkitenews.azpbs.org/wp-content/uploads/2023/03/baseball.png');
+    background-position: right -12% bottom 170%;
 
     @media only screen
-      and (max-width: 1024px) {
-        background-position: 130% 0%;
+      and (max-width: 800px) {
+        background-image: none;
     }
-    @media only screen
-      and (max-width: 1220px) {
-        background-position: 280% 320px;
-    }
-    @media only screen
-      and (max-width: 1024px) {
-        background-position: 98% 150px;
-    }
-    @media only screen
-      and (max-width: 660px) {
-        background-position: 280% 320px;
-    }
+
     .description {
       padding-right:20px;
       @media only screen

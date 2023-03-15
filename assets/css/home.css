@@ -253,19 +253,12 @@ body {
     margin: 0 auto !important;
     margin-top: 15px !important;
     background: rgba(28, 28, 28, 0.45);
-    background-repeat: no-repeat; }
-    @media only screen and (max-width: 1024px) {
+    background-repeat: no-repeat;
+    background-image: url("https://cronkitenews.azpbs.org/wp-content/uploads/2023/03/baseball.png");
+    background-position: right -12% bottom 170%; }
+    @media only screen and (max-width: 800px) {
       .featured-stories .latest-series {
-        background-position: 130% 0%; } }
-    @media only screen and (max-width: 1220px) {
-      .featured-stories .latest-series {
-        background-position: 280% 320px; } }
-    @media only screen and (max-width: 1024px) {
-      .featured-stories .latest-series {
-        background-position: 98% 150px; } }
-    @media only screen and (max-width: 660px) {
-      .featured-stories .latest-series {
-        background-position: 280% 320px; } }
+        background-image: none; } }
     .featured-stories .latest-series .description {
       padding-right: 20px; }
       @media only screen and (max-width: 1024px) {

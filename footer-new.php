@@ -45,6 +45,7 @@
             <li><a title="Archives" href="/archives/">Archives</a></li>
             <li><a href="http://cronkitenewsonline.com/archives-by-month/index.html" target="_blank">Archives 2011-2014</a></li>
             <li><a href="/rss-feed">RSS</a></li>
+            <li><a href="/weather">Weather</a></li>
           </ul>
         </div>
 
