@@ -452,7 +452,7 @@ function related_box_right( $atts, $content = null )
         $result .= '</div>';
         $result .= '</div>';
     } else {
-        $result = '<div class="related-story-box-right"><h4><strong>' .  isset($atts[ 'box-title' ]) ? $atts[ 'box-title' ] : "" . '</strong></h4>';
+        $result = '<div class="related-story-box-right"><h4><strong>' .  (isset($atts[ 'box-title' ]) ? $atts[ 'box-title' ] : "") . '</strong></h4>';
         $result .= '<div class="story">';
         $result .= '<div class="img"><a href="'. (isset($atts[ 'link' ]) ? $atts[ 'link' ] : "") . '" target="_blank"><img src="'. (isset($atts[ 'image' ]) ? $atts[ 'image' ] : "") . '" style="width:100%;"/></a></div>';
         if (isset($atts[ 'headline' ]) && $atts[ 'headline' ] != '') {
