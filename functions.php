@@ -1099,7 +1099,7 @@ function custom_init_storytags()
 
 function audiovideoCPT_remove_wp_seo_meta_box()
 {
-    remove_meta_box('wpseo_meta', audioVideoCPT, 'normal');
+    remove_meta_box('wpseo_meta', 'audioVideoCPT', 'normal');
 }
 add_action('add_meta_boxes', 'audiovideoCPT_remove_wp_seo_meta_box', 100);
 
