@@ -273,11 +273,11 @@
                             $embedVideoURL = $videoBaseLink.$videoID[1];
                         } else {
                             $embedVideoURL = $videoURL;
-                        }
+                        }                        
           ?>
                     <div id="video-holder">
                       <style>.embed-container { position: relative; padding-bottom: 62.5%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-                      <div class="embed-container"><iframe src="<?php echo $videoURL; ?>" frameborder="0" allowfullscreen></iframe></div>
+                      <div class="embed-container"><iframe src="<?php echo $embedVideoURL; ?>" frameborder="0" allowfullscreen></iframe></div>
                       <div class="asset-caption"><a href="<?php echo $embedVideoURL; ?>"><h3><?php echo $videoTitle; ?></h3></a></div>
                     </div>
             <?php
