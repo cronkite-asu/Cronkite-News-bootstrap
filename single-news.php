@@ -276,8 +276,8 @@
            </div>
 
 
-           <?php if (get_field('hide_right_sidebar') == 'yes') { $hideSidebarClass = "photo-essay"; 
-           } else { $hideSidebarClass = ''; 
+           <?php if (get_field('hide_right_sidebar') == 'yes') { $hideSidebarClass = "photo-essay";
+           } else { $hideSidebarClass = '';
            } ?>
 
            <div class="date-social <?php echo $hideSidebarClass; ?>">
@@ -303,6 +303,18 @@
 
              <!-- story photo/video/slideshow -->
              <?php
+                function getYoutubeID ($isvid) {
+                  $videoBaseLink = 'https://www.youtube.com/embed/';
+                  $breakQuery = parse_url($isvid, PHP_URL_QUERY);
+                  if (isset($breakQuery)) {
+                      $videoID = explode('=', $breakQuery);
+                      $finalVideoURL = $videoBaseLink.$videoID[1];
+                  } else {
+                      $finalVideoURL = $isvid;
+                  }
+                  return $finalVideoURL;
+                }
+
                 if (get_field('video_url') != '') {
                     $isvid = get_field('video_url', false, false);
                 } else {
@@ -310,64 +322,22 @@
                 }
 
                 if ($isvid ) { // if we have a video load the video instead of the carousel
-
-                    function linkifyYouTubeURLs($text)
-                    {
-                        $text = preg_replace(
-                            '~(?#!js YouTubeId Rev:20160125_1800)
-                         # Match non-linked youtube URL in the wild. (Rev:20130823)
-                         https?://          # Required scheme. Either http or https.
-                         (?:[0-9A-Z-]+\.)?  # Optional subdomain.
-                         (?:                # Group host alternatives.
-                           youtu\.be/       # Either youtu.be,
-                         | youtube          # or youtube.com or
-                           (?:-nocookie)?   # youtube-nocookie.com
-                           \.com            # followed by
-                           \S*?             # Allow anything up to VIDEO_ID,
-                           [^\w\s-]         # but char before ID is non-ID char.
-                         )                  # End host alternatives.
-                         ([\w-]{11})        # $1: VIDEO_ID is exactly 11 chars.
-                         (?=[^\w-]|$)       # Assert next char is non-ID or EOS.
-                         (?!                # Assert URL is not pre-linked.
-                           [?=&+%\w.-]*     # Allow URL (query) remainder.
-                           (?:              # Group pre-linked alternatives.
-                             [\'"][^<>]*>   # Either inside a start tag,
-                           | </a>           # or inside <a> element text contents.
-                           )                # End recognized pre-linked alts.
-                         )                  # End negative lookahead assertion.
-                         [?=&+%\w.-]*       # Consume any URL (query) remainder.
-                         ~ix', '$1',
-                            $text
-                        );
-                         return $text;
-                    }
-
                     $host = parse_url($isvid);
                     $isjpg = false;
 
-                    if ($host['host'] == 'www.youtube.com') {
-                        $id = linkifyYouTubeURLs($isvid);                   
-                        $videoBaseLink = 'https://www.youtube.com/embed/';
-                        $breakQuery = parse_url($isvid, PHP_URL_QUERY);
-                        if (isset($breakQuery)) {
-                            $videoID = explode('=', $breakQuery);
-                            $embedVideoURL = $videoBaseLink.$videoID[1];
-                        } else {
-                            $embedVideoURL = $isvid;
-                        }
+                    if ($host['host'] == 'www.youtube.com' || $host['host'] == 'youtu.be' || $host['host'] == 'www.youtu.be' || $host['host'] == 'youtube.com') {
+                        $embedVideoURL = getYoutubeID ($isvid);
                         echo '<div id="video-holder">';
-
                         echo '<div class="video-wrap">';
                         echo '<div class="video">';
                         echo '<div class="close-video"><i class="fas fa-times"></i></div>';
                         echo '<div class="plyr__video-embed responsive-embed widescreen" id="player">';
-                        //echo '<iframe width="800" height="500" src="'.$vidlink.'?rel=0" frameborder="0" gesture="media" allowfullscreen></iframe>';
                         echo '<iframe
-                       src="'.$embedVideoURL.'?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-                       allowfullscreen
-                       allowtransparency
-                       allow="autoplay"
-                   ></iframe>';
+                         src="'.$embedVideoURL.'?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                         allowfullscreen
+                         allowtransparency
+                         allow="autoplay"
+                         ></iframe>';
                         echo '</div>';
                         echo '<div class="asset-caption">'.strip_tags(get_field('video_caption'), '<a>').'</div>';
                         echo '</div>';
@@ -380,32 +350,29 @@
                         echo '</div>';
                     }
                 } else if (have_rows('slider_images') ) { ?>
-                 <div id="story-photo" class="story-photos">
+                   <div id="story-photo" class="story-photos">
+                      <?php
+                        while ( have_rows('slider_images') ) {
+                          the_row();
+                          $imageCount = count(get_field('slider_images'));
+                          $postImages = get_sub_field('images');
+                          $photoCaption = get_sub_field('description');
+                          if ($imageCount == 1) {
+                      ?>
+                         <div>
+                           <img src="<?php echo $postImages; ?>" width="800" alt="" title="" />
+                           <div class="asset-caption"><?php echo $photoCaption; ?></div>
+                         </div>
+                      <?php } else { ?>
+                         <div>
+                           <img src="<?php echo $postImages; ?>" width="100%" alt="" title="" />
+                           <div class="asset-caption"><?php echo $photoCaption; ?></div>
+                         </div>
                     <?php
-                    while ( have_rows('slider_images') ) {
-                        the_row();
-                        $imageCount = count(get_field('slider_images'));
-                        $postImages = get_sub_field('images');
-                        $photoCaption = get_sub_field('description');
-
-                        if ($imageCount == 1) {
-                            ?>
-                     <div>
-                       <img src="<?php echo $postImages; ?>" width="800" alt="" title="" />
-                       <div class="asset-caption"><?php echo $photoCaption; ?></div>
-                     </div>
-                            <?php
-                        } else {
-                            ?>
-                     <div>
-                       <img src="<?php echo $postImages; ?>" width="100%" alt="" title="" />
-                       <div class="asset-caption"><?php echo $photoCaption; ?></div>
-                     </div>
-                            <?php
                         }
-                    }
+                      }
                     ?>
-                 </div>
+                   </div>
                     <?php
                 } else if (get_field('before_after_slider')) {
                     $beforeAfterAssets = get_field('before_after_slider');
@@ -422,23 +389,36 @@
                     echo "<br />";
                 }
                 wp_reset_query();
-                ?>
-
-
-             <?php if (current_user_can('administrator')) { ?>
-             <!-- new social box/translation box -->
-             <div class="grid-x grid-padding-x utility-box">
-               <div class="large-6 medium-6 small-6 cell">
-
-               </div>
-               <div class="large-6 medium-6 small-6 cell">
-
-               </div>
-             </div>
-             <?php } ?>
+             ?>
 
              <!-- story content -->
-             <?php the_content(); ?>
+             <?php //the_content(); ?>
+             <?php
+             //if (current_user_can('administrator')) {
+                $compareDate = strtotime('Mar 21, 2023');
+                $postDate = strtotime(get_the_date());
+                if ($postDate >= $compareDate) {
+                  $storyContent = wpautop(get_the_content());
+
+                  function getVideoUrlsFromString($storyContent) {
+                    $patternID = '#(?<=v=|v\/|vi=|vi\/|youtu.be\/)[a-zA-Z0-9_-]{11}#';
+                    $patternURL = '~(?:https?://)?(?:www.)?(?:youtube.com|youtu.be)/(?:watch\?v=)?([^\s]+)~';
+                    // find all youtube links
+                    preg_match_all($patternURL, $storyContent, $ytLinks);
+
+                    for ($i = 0; $i < count($ytLinks[0]); $i++) {
+                      $responseYTembeds = "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/".strip_tags($ytLinks[1][$i])."' frameborder='0' allowfullscreen></iframe></div>";
+                      $storyContent = str_replace(strip_tags($ytLinks[0][$i]), $responseYTembeds, $storyContent);
+                    }
+                    return $storyContent;
+                  }
+                  $finalStoryContent = getVideoUrlsFromString($storyContent);
+                  echo $finalStoryContent = apply_filters('the_content', $finalStoryContent);
+                } else {
+                  the_content();
+                }
+             //}
+             ?>
 
              <?php
                 // in this series settings
@@ -450,7 +430,7 @@
                         } else {
                             $seriesTitle = $inthisseriesSettings['title'];
                         }
-                        ?>
+             ?>
                <!-- in this series -->
                <div class="grid-x grid-padding-x series-block">
                  <div class="large-12 medium-12 small-12 cell">
@@ -661,7 +641,7 @@
                                 if (get_field('pronunciation')) {
                                     echo '<span class="pronunciation">';
                                     ?>
-                                    <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php 
+                                    <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php
                                     } ?> <?php echo get_field('pronunciation') ?></span>
                                     <?php
                                     echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
@@ -762,7 +742,7 @@
                                 if (get_field('pronunciation')) {
                                      echo '<span class="pronunciation">';
                                     ?>
-                                     <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php 
+                                     <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php
                                      } ?> <?php echo get_field('pronunciation') ?></span>
                                        <?php
                                           echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
@@ -863,7 +843,7 @@
                                 if (get_field('pronunciation')) {
                                      echo '<span class="pronunciation">';
                                     ?>
-                                     <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php 
+                                     <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php
                                      } ?> <?php echo get_field('pronunciation') ?></span>
                                        <?php
                                         echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
@@ -963,7 +943,7 @@
                                 if (get_field('pronunciation')) {
                                       echo '<span class="pronunciation">';
                                     ?>
-                                      <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php 
+                                      <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php
                                       } ?> <?php echo get_field('pronunciation') ?></span>
                                     <?php
                                       echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
@@ -1022,36 +1002,6 @@
             }
              wp_reset_query();
             ?>
-
-          <!-- Comments section -->
-          <?php if ($currentPID == 133845) { echo '<!-- COMMENT DISQUS -->'; ?>
-
-            <div id="disqus_thread"></div>
-            <script>
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-
-                var disqus_config = function () {
-                this.page.url = '<?php echo get_permalink(); ?>';  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = '<?php echo get_permalink(); ?>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://cronkitenews.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-          <?php } else { ?>
-            <div class="comment-form-wrapper">
-              <h2>Leave a Comment</h2>
-              <?php echo do_shortcode('[fbcomments]'); ?>
-              <div id="response"></div>
-            </div>
-          <?php } ?>
 
          </div>
 

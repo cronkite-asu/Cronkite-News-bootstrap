@@ -2041,17 +2041,4 @@ if ($inthisseriesSettings['show'] == 'yes') {
   </div>
 </div>
 
-<div class="grid-container text-content fb-comments">
-  <div class="grid-x grid-padding-x">
-    <div class="large-12 cell">
-      <!-- Comments section -->
-      <div class="comment-form-wrapper">
-        <h2>Leave a Comment</h2>
-        <?php echo do_shortcode('[fbcomments]'); ?>
-        <div id="response"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <?php get_footer('new2020-longform'); ?>
