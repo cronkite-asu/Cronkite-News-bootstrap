@@ -34,8 +34,8 @@
           <ul class="no-bullet">
             <li><a href="https://cronkitenews.azpbs.org/noticias" target="_blank">Cronkite Noticias</a></li>
             <li><a href="http://news21.com/" target="_blank">Carnegie-Knight News21</a></li>
-            <li><a href="/category/special-reports/">Special Reports</a></li>
-            <li><a href="/?p=637">Cronkite Sports on FOX Sports Arizona</a></li>
+            <li><a href="/category/special-reports/">Special Reports</a></li>            
+            <li><a title="Archives" href="/archives/">Archivos</a></li>
             <li><a href="http://cronkitenewsonline.com/archives-by-month/index.html" target="_blank">Archivos 2011-2014</a></li>
             <li><a href="/rss-feed">RSS</a></li>
           </ul>
