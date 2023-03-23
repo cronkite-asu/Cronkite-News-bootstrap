@@ -275,7 +275,7 @@
       function checkWidth() {
           var windowsize = $window.width();
           if (windowsize > 800) {
-              $(window).scroll(function (event) {
+              jQuery(window).scroll(function (event) {
                   var scroll = $(window).scrollTop();
                   if (scroll >= 250) {
                     $('#sub_nav').removeClass('slideInDown').addClass('slideOutUp');

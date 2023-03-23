@@ -33,6 +33,6 @@ function checkWidthScrollTrigger() {
 // Execute on load
 checkWidthScrollTrigger();
 // Bind event listener
-$(window).resize(checkWidthScrollTrigger);
+jQuery(window).resize(checkWidthScrollTrigger);
 
 });
