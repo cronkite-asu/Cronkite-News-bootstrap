@@ -127,7 +127,7 @@ get_header('longformhero'); ?>
                       <div class="col-md-3 col-lg-3"></div>
                   </div>
                   <!-- END of .row-->
-                <?php }?>
+                <?php } ?>
 
                 <?php wp_reset_query(); ?>
                 <?php if (get_the_ID() != 119536) { ?>

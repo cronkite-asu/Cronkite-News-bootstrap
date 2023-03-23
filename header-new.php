@@ -57,7 +57,7 @@
 
     <!-- Chartbeat Analytics  -->
     <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
-  <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/js/jquery-3.2.1.min.js"></script>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,12 +71,12 @@
     <link type="image/png" href="<?php the_field('favicon', 'options'); ?>"  rel="apple-touch-icon">
 
 
-    <script src="<?php bloginfo('template_directory');?>/js/featherlight.min.js"></script>
-    <link href="<?php bloginfo('template_directory');?>/css/featherlight.min.css" rel="stylesheet">
+    <script src="<?php bloginfo('template_directory'); ?>/js/featherlight.min.js"></script>
+    <link href="<?php bloginfo('template_directory'); ?>/css/featherlight.min.css" rel="stylesheet">
 
 
       <?php if (is_front_page() ) { ?>
-            <link href="<?php bloginfo('template_directory');?>/css/hstyle.css" rel="stylesheet">
+            <link href="<?php bloginfo('template_directory'); ?>/css/hstyle.css" rel="stylesheet">
       <?php } ?>
 
     <!-- Load Google Fonts -->
@@ -166,11 +166,11 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-    <link href="<?php bloginfo('template_directory');?>/assets/css/hamburgers.css" rel="stylesheet">
-    <link href="<?php bloginfo('template_directory');?>/assets/css/all.min.css" rel="stylesheet"> <!--load all styles -->
-    <link href="<?php bloginfo('template_directory');?>/assets/css/nav.css" rel="stylesheet">
-    <link href="<?php bloginfo('template_directory');?>/assets/css/print.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/css/tooltipster.bundle.min.css" />
+    <link href="<?php bloginfo('template_directory'); ?>/assets/css/hamburgers.css" rel="stylesheet">
+    <link href="<?php bloginfo('template_directory'); ?>/assets/css/all.min.css" rel="stylesheet"> <!--load all styles -->
+    <link href="<?php bloginfo('template_directory'); ?>/assets/css/nav.css" rel="stylesheet">
+    <link href="<?php bloginfo('template_directory'); ?>/assets/css/print.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/css/tooltipster.bundle.min.css" />
     <style type='text/css'>
         body.admin-bar {margin-top:32px !important}
         @media screen and (max-width: 782px) {
@@ -200,7 +200,7 @@
         <div class="main_nav">
           <!-- logo -->
           <div class="logo">
-            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/assets/img/CN-PBS-EPS.svg" alt="Cronkite News" title="Cronkite News" /></a>
+            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/img/CN-PBS-EPS.svg" alt="Cronkite News" title="Cronkite News" /></a>
                     </div>
           <!-- main navigation -->
           <div class="nav_links">
@@ -210,7 +210,7 @@
                 <div class="search-box">
                   <form method="get" class="navbar-form search" id="searchform" action="https://cronkitenews.azpbs.org/">
                     <input type="text" placeholder="Search" name="s" autocomplete="off" />
-                    <img src="<?php bloginfo('template_directory');?>/assets/img/search.svg" width="16" height="16" />
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/search.svg" width="16" height="16" />
                   </form>
                 </div>
               </li>
@@ -247,7 +247,7 @@
                     <li class="misc_links_m">
             <form method="get" class="navbar-form search" id="searchform" action="https://cronkitenews.azpbs.org/">
               <input type="text" placeholder="Search" name="s" autocomplete="off" />
-              <img src="<?php bloginfo('template_directory');?>/assets/img/search.svg" width="16" height="16" />
+              <img src="<?php bloginfo('template_directory'); ?>/assets/img/search.svg" width="16" height="16" />
             </form>
           </li>
           <?php

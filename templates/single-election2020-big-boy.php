@@ -11,12 +11,12 @@ get_header('election2020'); ?>
       <div class="grid-container election-hdr">
         <div class="grid-x grid-padding-x">
           <div class="large-4 medium-4 small-4 cell">
-            <img src="<?php bloginfo('template_directory');?>/assets/img/election2020/election-hdr-name.png" alt="Election 2020 - Cronkite News" title="Election 2020 - Cronkite News" />
+            <img src="<?php bloginfo('template_directory'); ?>/assets/img/election2020/election-hdr-name.png" alt="Election 2020 - Cronkite News" title="Election 2020 - Cronkite News" />
           </div>
           <div class="large-8 medium-8 small-8 cell text-right logos">
-            <img src="<?php bloginfo('template_directory');?>/assets/img/election2020/azpbs-logo.png" alt="Arizona PBS" title="Arizona PBS" />
-            <img src="<?php bloginfo('template_directory');?>/assets/img/election2020/cn-logo.png" alt="Cronkite News" title="Cronkite News" />
-            <img src="<?php bloginfo('template_directory');?>/assets/img/election2020/ict-logo.png" alt="Indian Country Today" title="Indian Country Today" />
+            <img src="<?php bloginfo('template_directory'); ?>/assets/img/election2020/azpbs-logo.png" alt="Arizona PBS" title="Arizona PBS" />
+            <img src="<?php bloginfo('template_directory'); ?>/assets/img/election2020/cn-logo.png" alt="Cronkite News" title="Cronkite News" />
+            <img src="<?php bloginfo('template_directory'); ?>/assets/img/election2020/ict-logo.png" alt="Indian Country Today" title="Indian Country Today" />
           </div>
         </div>
       </div>

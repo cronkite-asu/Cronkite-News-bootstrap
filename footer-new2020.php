@@ -67,7 +67,7 @@
   <?php } ?>
 
   <!-- scripts -->
-  <!--<script src="<?php bloginfo('template_directory');?>/assets/js/vendor/jquery.js"></script>-->
+  <!--<script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/jquery.js"></script>-->
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
   <?php wp_footer(); ?>
@@ -112,14 +112,14 @@
   </script>
   <!-- End AlertMe website tag code -->
 
-  <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/what-input.js"></script>
-  <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/foundation.js"></script>
-  <script src="<?php bloginfo('template_directory');?>/assets/js/app.js"></script>
-  <script type="text/javascript" src="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick.min.js"></script>
-  <script type="text/javascript" src="<?php bloginfo('template_directory');?>/assets/js/vendor/smooth-scroll/dist/smooth-scroll.js"></script>
-  <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/plyr-master/dist/plyr.js"></script>
-  <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/before-after/js/jquery.event.move.js"></script>
-  <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/before-after/js/jquery.twentytwenty.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/what-input.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/foundation.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/assets/js/app.js"></script>
+  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/slick/slick.min.js"></script>
+  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/smooth-scroll/dist/smooth-scroll.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/plyr-master/dist/plyr.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/before-after/js/jquery.event.move.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/before-after/js/jquery.twentytwenty.js"></script>
 
   <?php if (current_user_can('administrator')) { ?>
   <script src="https://webreader.naturalreaders.com/nr-webreader.js" defer></script>

@@ -10,8 +10,8 @@ get_header('photogallery'); ?>
       <div class="slide image-1">
         <div class="bg-text-gradient">
           <div class="summary first-slide">
-            <h5><img src="<?php bloginfo('template_directory');?>/assets/img/eye-icon.svg" class="visual-story-icon" alt="Visual Story" title="Visual Story" />Visual Story</h5>
-            <?php $titleSplit = explode(':', get_the_title())?>
+            <h5><img src="<?php bloginfo('template_directory'); ?>/assets/img/eye-icon.svg" class="visual-story-icon" alt="Visual Story" title="Visual Story" />Visual Story</h5>
+            <?php $titleSplit = explode(':', get_the_title()) ?>
             <h1><?php echo $titleSplit[0]; ?>:</h1>
             <h2 style="max-width:48rem;"><?php echo $titleSplit[1]; ?></h2>
             <?php echo $content = apply_filters('the_content', get_the_content()); ?>
@@ -232,8 +232,8 @@ get_header('photogallery'); ?>
     <div id="covid-gallery-mobile" class="">
       <div class="image-1">
           <div class="summary first-slide">
-            <h5><img src="<?php bloginfo('template_directory');?>/assets/img/eye-icon.svg" class="visual-story-icon" alt="Visual Story" title="Visual Story" />Visual Story</h5>
-            <?php $titleSplit = explode(':', get_the_title())?>
+            <h5><img src="<?php bloginfo('template_directory'); ?>/assets/img/eye-icon.svg" class="visual-story-icon" alt="Visual Story" title="Visual Story" />Visual Story</h5>
+            <?php $titleSplit = explode(':', get_the_title()) ?>
             <h1><?php echo $titleSplit[0]; ?>:</h1>
             <h2><?php echo $titleSplit[1]; ?></h2>
             <p>The coronavirus pandemic hit Native Americans especially hard. But as the spotlight turned to larger communities like the Navajo Nation, the much smaller White Mountain Apache Tribe, in eastern Arizona, quietly battled to save its people.</p>

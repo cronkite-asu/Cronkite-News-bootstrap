@@ -16,44 +16,54 @@ get_header(); ?>
                         <div class="post format-single clearfix">
 
                             <div id="owl-work" class="owl-carousel owl-inner-pagination owl-inner-nav post-media">
-                                <?php if (have_rows('slider_images')) : ?>
-                                    <?php while (have_rows('slider_images')) :
+                                <?php if (have_rows('slider_images')) :
+                                    while (have_rows('slider_images')) :
                                         the_row();
                                         // Declare variables below
                                         $icon = get_sub_field('images');
-                                        $text = get_sub_field('author_text');  // Use variables below?>
+                                        $text = get_sub_field('author_text');  // Use variables below
+                                ?>
                                         <div class="item">
                                             <img src="<?php echo $icon; ?>" />
                                             <div class="custom-line">
-                                                <?php if ($labelInfo  = get_field('label_info')) : ?>
-                                                    <?php echo $labelInfo; ?>
-                                                <?php endif; ?>
-                                                <?php if ($postAuthor = get_field('post_author')) {?>
-                                                    <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo $postAuthor; ?> | </a>
-                                                <?php } ?>
-                                                <?php if ($siteTitle = get_field('site_title')) {?>
+                                                <?php
+                                                if ($labelInfo  = get_field('label_info')) {
+                                                    echo $labelInfo;
+                                                }
+                                                if ($postAuthor = get_field('post_author')) {
+                                                ?>
+                                                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo $postAuthor; ?> | </a>
+                                                <?php
+                                                }
+                                                if ($siteTitle = get_field('site_title')) {
+                                                ?>
                                                     <a href="<?php the_field('site_url'); ?>"><?php echo $siteTitle; ?> | </a>
-                                                <?php } ?>
-                                                <?php if ($twitterTitle = get_field('twitter_title')) {?>
+                                                <?php
+                                                }
+                                                if ($twitterTitle = get_field('twitter_title')) {
+                                                ?>
                                                     <a href="<?php the_field('twitter_url'); ?>" class="custom-line-links"> <i class="icon-twitter"></i> <?php echo $twitterTitle; ?> </a>
-                                                <?php } ?>
+                                                <?php 
+                                                }
+                                                ?>
 
                                             </div>
 
                                         </div>
-                                    <?php endwhile; ?>
-                                <?php endif;
-                                wp_reset_query(); ?>
+                                    <?php endwhile;
+                                endif;
+                                wp_reset_query();
+                                ?>
                             </div>
 
                             <div class="post-content post-content-single clearfix">
-                                <?php if (have_posts()) : ?>
-                                    <?php while (have_posts()) :
+                                <?php if (have_posts()) :
+                                    while (have_posts()) :
                                         the_post(); ?><!-- BEGIN of POST-->
                                         <article  id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                                             <h2><?php the_title(); ?></h2>
                                             <h6 class="story-info">
-                                                <?php if ($postAuthor = get_field('post_author')) {?>
+                                                <?php if ($postAuthor = get_field('post_author')) { ?>
                                                     By   <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo $postAuthor; ?> | </a>
                                                 <?php } ?>
                                                 <span> <?php echo ap_date(); ?></span>

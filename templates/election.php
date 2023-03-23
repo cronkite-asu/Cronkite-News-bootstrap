@@ -91,7 +91,7 @@ endif;
                 <div class="col-xs-12 col-sm-6">
                   
                   <div class="img-responsive main_head_image">
-                  <?php the_field('special_area_image');?>
+                  <?php the_field('special_area_image'); ?>
                       <h2 style="color: black; padding-top: 0; padding-bottom: 10px; font-size: 26px; font-weight: 600; margin-top: 8px; font-family: 'Source Sans Pro', sans-serif;"><?php the_field('special_area_title'); ?></h2>
                 </div>
                 </div>
@@ -100,7 +100,7 @@ endif;
                 <div class="info">
                   <figcaption id="voter_desc">
                         <h3>LATEST ELECTION NEWS</h3>
-                    <b><?php the_field('special_area_description');?></b>
+                    <b><?php the_field('special_area_description'); ?></b>
 
                 </figcaption>
                 </div>
@@ -263,7 +263,7 @@ endif;
               <div class="row">
                 <div class="col-xs-12 col-sm-6">
                   <div class="img-responsive main_head_image">
-                  <?php the_field('voter_area_image');?>
+                  <?php the_field('voter_area_image'); ?>
                 </div>
                 </div>
                 <div class="col-xs-12 col-sm-6">
@@ -271,7 +271,7 @@ endif;
                 <div class="info" style="padding-top: 20px;">
                   <figcaption id="voter_desc">
 <h2 style="color: black; padding-top: 0; margin-top:0; padding-bottom: 10px; font-size: 26px;"><?php the_field('voter_resources_title'); ?></h2>
-                    <?php the_field('voter_area_description');?>
+                    <?php the_field('voter_area_description'); ?>
 
                 </figcaption>
                 </div>
@@ -351,7 +351,7 @@ endif;
           <div class="row">
             <div class="col-sm-4 inner-top-sm">
               <div class="caption vertical-top text-center azpbs">
-                <h1 class="fadeInDown-1 light-color"><?php the_field('arizona_area_title');?></h1>
+                <h1 class="fadeInDown-1 light-color"><?php the_field('arizona_area_title'); ?></h1>
                 <h2 class="fadeInDown-2 dark-color"><?php the_field('arizona_area_sub_title'); ?></h2>
               </div>
             </div>

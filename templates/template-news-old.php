@@ -28,7 +28,7 @@ get_header('new'); ?>
 
                                 <div class="format-news">
                                     <div class="content-blog">
-                                        <?php global $post;?>
+                                        <?php global $post; ?>
 
                                             <?php $arg = array(
                                             'post_type'        => 'post',
@@ -70,7 +70,7 @@ if ($the_query->have_posts() ) : ?>
 
                                                     <h3 style="padding-left: 10px;"><strong> <?php the_title(); ?></strong></h3>
                                                     <?php the_excerpt(); ?>
-                                                <?php endwhile;?>
+                                                <?php endwhile; ?>
 
 <?php endif; wp_reset_query(); ?>
                                     </div>

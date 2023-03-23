@@ -21,7 +21,7 @@
     <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
 <!--     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
 
-    <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/js/jquery-3.2.1.min.js"></script>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,12 +35,12 @@
     <link type="image/png" href="<?php the_field('favicon', 'options'); ?>"  rel="apple-touch-icon">
 
 
-    <script src="<?php bloginfo('template_directory');?>/js/featherlight.min.js"></script>
-    <link href="<?php bloginfo('template_directory');?>/css/featherlight.min.css" rel="stylesheet">
+    <script src="<?php bloginfo('template_directory'); ?>/js/featherlight.min.js"></script>
+    <link href="<?php bloginfo('template_directory'); ?>/css/featherlight.min.css" rel="stylesheet">
 
 
       <?php if (is_front_page() ) { ?>
-            <link href="<?php bloginfo('template_directory');?>/css/hstyle.css" rel="stylesheet">
+            <link href="<?php bloginfo('template_directory'); ?>/css/hstyle.css" rel="stylesheet">
       <?php } ?>
 
     <!-- Load Google Fonts -->
@@ -156,7 +156,7 @@
     <meta property="fb:pages" content="305166330794" />
 
     <?php wp_head(); ?>
-<!--         <script src="<?php bloginfo('template_directory');?>/js/plugins/jquery.scrolldepth.js"></script> -->
+<!--         <script src="<?php bloginfo('template_directory'); ?>/js/plugins/jquery.scrolldepth.js"></script> -->
      <script>
      jQuery(function() {
          jQuery.scrollDepth({

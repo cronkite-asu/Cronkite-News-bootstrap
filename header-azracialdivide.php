@@ -20,7 +20,7 @@
     <!-- Chartbeat Analytics  -->
     <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
 
-   <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
+   <script src="<?php bloginfo('template_directory'); ?>/js/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -106,7 +106,7 @@
     <meta property="fb:pages" content="305166330794" />
 
     <?php wp_head(); ?>
-        <script src="<?php bloginfo('template_directory');?>/js/plugins/jquery.scrolldepth.js"></script>
+        <script src="<?php bloginfo('template_directory'); ?>/js/plugins/jquery.scrolldepth.js"></script>
 
     <script>
       $(document).ready(function() {

@@ -88,7 +88,7 @@
     <meta property="fb:pages" content="305166330794" />
 
     <?php wp_head(); ?>
-        <script src="<?php bloginfo('template_directory');?>/js/plugins/jquery.scrolldepth.js"></script>
+        <script src="<?php bloginfo('template_directory'); ?>/js/plugins/jquery.scrolldepth.js"></script>
 
     <script>
       $(document).ready(function() {

@@ -276,7 +276,7 @@ get_header('new'); ?>
           $vvid = get_field('v_video_or_newscast');
         if ($vvid == 'Newscast') { ?>
 
-            <?php global $post;?>
+            <?php global $post; ?>
 
             <?php $arg = array(
                 'post_type'        => 'post',
@@ -289,7 +289,7 @@ get_header('new'); ?>
 if ($the_query->have_posts() ) : ?>
 
             <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-            <?php endwhile;?>
+            <?php endwhile; ?>
 
                 <div class="col-xs-12 col-sm-4" style=" filter:drop-shadow(2px 2px 3px black);">
 
@@ -604,8 +604,8 @@ if ($the_query->have_posts() ) : ?>
              <div class="long-term-feature">
                <div class="content">
                  <h3>FEATURED SERIES</h3>
-                 <h4><?php the_field('special_area_title');?></h4>
-                 <?php the_field('special_area_description');?>
+                 <h4><?php the_field('special_area_title'); ?></h4>
+                 <?php the_field('special_area_description'); ?>
                 </div>
              </div>
            </div>

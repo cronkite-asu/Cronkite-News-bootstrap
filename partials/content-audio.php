@@ -7,7 +7,7 @@
           <h1><?php echo get_the_title(); ?></h1>
         <?php } else { ?>
           <h1><?php echo get_the_title(); ?> <i class="fas fa-video"></i></h1>
-        <?php }?>
+        <?php } ?>
       </div>
     </div>
   </div>

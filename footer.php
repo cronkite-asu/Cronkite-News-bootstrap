@@ -25,19 +25,23 @@
                 <br><br>
                 <ul class="social">
 
-                    <?php if (have_rows('social_box', 'options')) : ?>
-                        <?php while (have_rows('social_box', 'options')) :
+                    <?php
+                    if (have_rows('social_box', 'options')) :
+                        while (have_rows('social_box', 'options')) :
                             the_row();
                             // Declare variables below
                             $icon = get_sub_field('social_icon', 'options');
                             $link = get_sub_field('social_link', 'options');
-                            // Use variables below?>
+                            // Use variables below
+                    ?>
                             <li>
                                 <a target="_blank" href="<?php echo $link; ?>"><img src="<?php echo $icon; ?>" /></a>
                             </li>
-                        <?php endwhile; ?>
-                    <?php endif;
-                    wp_reset_query(); ?>
+                    <?php
+                        endwhile;
+                    endif;
+                    wp_reset_query();
+                    ?>
 
                 </ul>
                 <br>
@@ -62,7 +66,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="copyright-box">
-                        <?php echo str_replace('<p>', '<p>&copy; ' . date('Y') . ' ', get_field('copyright', 'options'));?>
+                        <?php echo str_replace('<p>', '<p>&copy; ' . date('Y') . ' ', get_field('copyright', 'options')); ?>
                     </div>
                 </div>
             </div>

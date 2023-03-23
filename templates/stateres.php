@@ -11,7 +11,7 @@ get_header(); ?>
     <h2 style="text-align:center; font-family: 'Libre Baskerville', serif; padding-top:20px; font-size:200%;"> Arizona Election Results </h2>
     
     <section class="container-fluid" id="import-sec">
-<!-- <?php print file_get_contents("https://jrnfs3.jmc.asu.edu/election/results2016/web.html")?>    -->
+<!-- <?php print file_get_contents("https://jrnfs3.jmc.asu.edu/election/results2016/web.html") ?>    -->
 <?php require 'https://jrnfs3.jmc.asu.edu/election/results2016/web.html' ?>
     </section>
 

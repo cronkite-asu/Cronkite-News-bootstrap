@@ -24,7 +24,7 @@
 
     <!-- Chartbeat Analytics  -->
     <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
-    <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/js/jquery-3.2.1.min.js"></script>
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/0f0514404d.js" crossorigin="anonymous"></script>
@@ -61,9 +61,9 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400&family=Taviraj:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/mlk/css/foundation.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/mlk/css/app.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/mlk/css/mlk.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/mlk/css/foundation.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/mlk/css/app.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/mlk/css/mlk.css">
     <script src="https://kit.fontawesome.com/d3e0178cac.js" crossorigin="anonymous"></script>
 
     <style type='text/css'>

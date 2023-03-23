@@ -7,7 +7,7 @@
 ?>
 
     <!-- scripts -->
-    <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/jquery.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/jquery.js"></script>
     <?php wp_footer(); ?>
     <script type='text/javascript'>
         var _sf_async_config={};
@@ -90,13 +90,13 @@
         </script>
     </div>
 
-    <script src="<?php bloginfo('template_directory');?>/assets/js/mlk/js/vendor/jquery.js"></script>
-    <script src="<?php bloginfo('template_directory');?>/assets/js/mlk/js/vendor/what-input.js"></script>
-    <script src="<?php bloginfo('template_directory');?>/assets/js/mlk/js/vendor/foundation.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/assets/js/mlk/js/vendor/jquery.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/assets/js/mlk/js/vendor/what-input.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/assets/js/mlk/js/vendor/foundation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
-    <script src="<?php bloginfo('template_directory');?>/assets/js/mlk/js/vendor/waypoints-master/lib/jquery.waypoints.min.js"></script>
-    <script src="<?php bloginfo('template_directory');?>/assets/js/mlk/js/vendor/waypoints-master/lib/shortcuts/inview.js"></script>
-    <script src="<?php bloginfo('template_directory');?>/assets/js/mlk/js/app.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/assets/js/mlk/js/vendor/waypoints-master/lib/jquery.waypoints.min.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/assets/js/mlk/js/vendor/waypoints-master/lib/shortcuts/inview.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/assets/js/mlk/js/app.js"></script>
 
   </body>
 </html>

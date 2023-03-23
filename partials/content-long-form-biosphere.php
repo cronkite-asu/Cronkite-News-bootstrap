@@ -169,7 +169,7 @@ if (have_rows('blocks') ) {
                 <?php echo get_sub_field('intro_summary'); ?>
             <?php } ?>
       </div>
-      <div class="large-6 medium-6 small-12 cell background-img" <?php echo 'style="background:url('.get_sub_field('photo').')"';?>>
+      <div class="large-6 medium-6 small-12 cell background-img" <?php echo 'style="background:url('.get_sub_field('photo').')"'; ?>>
         <span class="photo-credit"><?php echo get_sub_field('credits'); ?></span>
       </div>
     </div>
@@ -359,7 +359,7 @@ if (have_rows('blocks') ) {
             <?php } ?>
 
       </div>
-      <div class="large-6 medium-12 small-12 cell background-img" <?php echo 'style="background:url('.get_sub_field('photo').')"';?>>
+      <div class="large-6 medium-12 small-12 cell background-img" <?php echo 'style="background:url('.get_sub_field('photo').')"'; ?>>
             <?php echo get_sub_field('code-block'); ?>
             <?php if (get_sub_field('credits') != '') { ?>
         <span class="photo-credit"><?php echo get_sub_field('credits'); ?></span>

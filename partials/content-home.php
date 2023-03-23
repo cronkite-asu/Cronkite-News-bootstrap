@@ -364,7 +364,7 @@
                         $storyPhoto = get_sub_field('photo_url');
                     }
                     ?>
-                    <a href="<?php echo get_sub_field('link')?>" target="_blank"><img src="<?php echo $storyPhoto; ?>" /></a>
+                    <a href="<?php echo get_sub_field('link') ?>" target="_blank"><img src="<?php echo $storyPhoto; ?>" /></a>
                   </div>
                 <?php } ?>
             <?php } ?>

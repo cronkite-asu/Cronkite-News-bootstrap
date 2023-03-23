@@ -5,7 +5,7 @@
  */
 get_header('longformhero'); ?>
 
-<script src="<?php bloginfo('template_directory');?>/js/jquery.waypoints.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/jquery.waypoints.min.js"></script>
     <main>
         <section id="blog-post">
             <div class="container-fluid" style="padding:0px;">
@@ -38,8 +38,8 @@ get_header('longformhero'); ?>
                                                         $icon = get_sub_field('fimage');
                                                         $text = get_sub_field('fcaption');  // Use variables below ?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
-                                                        <?php if ($imgheadline = get_field('headline_over_image')) {?>
-                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image');?>;font-size:<?php the_field('headline_over_image_font_size');?>;<?php the_field('additional_headline_over_image_styling');?>"> <?php the_field('headline_over_image'); ?> </h1>
+                                                        <?php if ($imgheadline = get_field('headline_over_image')) { ?>
+                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image'); ?>;font-size:<?php the_field('headline_over_image_font_size'); ?>;<?php the_field('additional_headline_over_image_styling'); ?>"> <?php the_field('headline_over_image'); ?> </h1>
                                                         <?php } ?>
                                         <div class="carousel-captions" style="padding-left:20px; padding-right:20px;"> <!--         captions -->
                                                         <?php echo $text; ?>
@@ -59,8 +59,8 @@ get_header('longformhero'); ?>
                                                         $icon = get_sub_field('fimage');
                                                         $text = get_sub_field('fcaption');  // Use variables below ?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
-                                                        <?php if ($imgheadline = get_field('headline_over_image')) {?>
-                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image');?>;font-size:<?php the_field('headline_over_image_font_size');?>;<?php the_field('additional_headline_over_image_styling');?>"> <?php the_field('headline_over_image'); ?> </h1>
+                                                        <?php if ($imgheadline = get_field('headline_over_image')) { ?>
+                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image'); ?>;font-size:<?php the_field('headline_over_image_font_size'); ?>;<?php the_field('additional_headline_over_image_styling'); ?>"> <?php the_field('headline_over_image'); ?> </h1>
                                                         <?php } ?>
                                         <div class="carousel-captions"  style="padding: 0px 20px; padding-bottom:10px;"> <!--         captions -->
                                                         <?php echo $text; ?>
@@ -202,7 +202,7 @@ get_header('longformhero'); ?>
 
                                             } else {
                                                 ?>
-                                        <h6 class="story-info"><?php if ($postAuthor = get_field('post_author')) {?>
+                                        <h6 class="story-info"><?php if ($postAuthor = get_field('post_author')) { ?>
                                         <a href="<?php echo site_url(); ?>?s=<?php echo $postAuthor; ?>">
                                             By <?php echo $postAuthor; ?>/
                                        <?php } ?></a>

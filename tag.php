@@ -67,7 +67,7 @@ get_header(); ?>
                                             </a>
                                         </h2>
                                         <h6 class="story-info">
-                                            <?php if ($postAuthor = get_field('post_author')) {?>
+                                            <?php if ($postAuthor = get_field('post_author')) { ?>
                                                 By   <?php echo $postAuthor; ?> |
                                             <?php } ?>
                                             <span> <?php echo ap_date(); ?></span>

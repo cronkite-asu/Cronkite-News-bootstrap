@@ -4,8 +4,8 @@
  */
 get_header(); ?>
 
-<script src="<?php bloginfo('template_directory');?>/js/featherlight.min.js"></script>
-<link href="<?php bloginfo('template_directory');?>/css/featherlight.min.css" rel="stylesheet">
+<script src="<?php bloginfo('template_directory'); ?>/js/featherlight.min.js"></script>
+<link href="<?php bloginfo('template_directory'); ?>/css/featherlight.min.css" rel="stylesheet">
 
 
 <main>

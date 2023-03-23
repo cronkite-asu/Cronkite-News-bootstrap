@@ -14,47 +14,47 @@
     <div class="large-12 cell">
       <div class="headshot-slider">
         <div>
-          <a href="#tom-ohalleran"><img src="<?php bloginfo('template_directory');?>/assets/img/headshots/tom_ohalleran-01.svg" width="180" alt="Tom O'halleran" title="Tom O'halleran" /></a>
+          <a href="#tom-ohalleran"><img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/tom_ohalleran-01.svg" width="180" alt="Tom O'halleran" title="Tom O'halleran" /></a>
           <h6>Tom<br />O'halleran</h6>
         </div>
         <div>
-          <a href="#ann-kirkpatrick"><img src="<?php bloginfo('template_directory');?>/assets/img/headshots/ann_kirkpatrick-01.svg" width="180" alt="Ann Kirkpatrick" title="Ann Kirkpatrick" /></a>
+          <a href="#ann-kirkpatrick"><img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/ann_kirkpatrick-01.svg" width="180" alt="Ann Kirkpatrick" title="Ann Kirkpatrick" /></a>
           <h6>Ann<br />Kirkpatrick</h6>
         </div>
         <div>
-          <a href="#raul-grijalva"><img src="<?php bloginfo('template_directory');?>/assets/img/headshots/raul_grijalva-01.svg" width="180" alt="Raul Grijalva" title="Raul Grijalva" /></a>
+          <a href="#raul-grijalva"><img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/raul_grijalva-01.svg" width="180" alt="Raul Grijalva" title="Raul Grijalva" /></a>
           <h6>Raúl<br />Grijalva</h6>
         </div>
         <div>
-          <a href="#paul-gosar"><img src="<?php bloginfo('template_directory');?>/assets/img/headshots/paul_gosar-01.svg" width="180" alt="Paul Gosar" title="Paul Gosar" /></a>
+          <a href="#paul-gosar"><img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/paul_gosar-01.svg" width="180" alt="Paul Gosar" title="Paul Gosar" /></a>
           <h6>Paul<br />Gosar</h6>
         </div>
         <div>
-          <a href="#andy-biggs"><img src="<?php bloginfo('template_directory');?>/assets/img/headshots/andy_biggs-01.svg" width="180" alt="Andy Biggs" title="Andy Biggs" /></a>
+          <a href="#andy-biggs"><img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/andy_biggs-01.svg" width="180" alt="Andy Biggs" title="Andy Biggs" /></a>
           <h6>Andy<br />Biggs</h6>
         </div>
         <div>
-          <a href="#david-schweikert"><img src="<?php bloginfo('template_directory');?>/assets/img/headshots/david_schweikert-01.svg" width="180" alt="David Schweikert" title="David Schweikert" /></a>
+          <a href="#david-schweikert"><img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/david_schweikert-01.svg" width="180" alt="David Schweikert" title="David Schweikert" /></a>
           <h6>David<br />Schweikert</h6>
         </div>
         <div>
-          <a href="#ruben-gallego"><img src="<?php bloginfo('template_directory');?>/assets/img/headshots/ruben_gallego-01.svg" width="180" alt="Ruben Gallego" title="Ruben Gallego" /></a>
+          <a href="#ruben-gallego"><img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/ruben_gallego-01.svg" width="180" alt="Ruben Gallego" title="Ruben Gallego" /></a>
           <h6>Ruben<br />Gallego</h6>
         </div>
         <div>
-          <a href="#debbie-lesko"><img src="<?php bloginfo('template_directory');?>/assets/img/headshots/debbie_lesko-01.svg" width="180" alt="Debbie Lesko" title="Debbie Lesko" /></a>
+          <a href="#debbie-lesko"><img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/debbie_lesko-01.svg" width="180" alt="Debbie Lesko" title="Debbie Lesko" /></a>
           <h6>Debbie<br />Lesko</h6>
         </div>
         <div>
-          <a href="#greg-stanton"><img src="<?php bloginfo('template_directory');?>/assets/img/headshots/greg_stanton-01.svg" width="180" alt="Greg Stanton" title="Greg Stanton" /></a>
+          <a href="#greg-stanton"><img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/greg_stanton-01.svg" width="180" alt="Greg Stanton" title="Greg Stanton" /></a>
           <h6>Greg<br />Stanton</h6>
         </div>
         <div>
-          <a href="#kyrsten-sinema"><img src="<?php bloginfo('template_directory');?>/assets/img/headshots/kyrsten_sinema-01.svg" width="180" alt="Kyrsten Sinema" title="Kyrsten Sinema" /></a>
+          <a href="#kyrsten-sinema"><img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/kyrsten_sinema-01.svg" width="180" alt="Kyrsten Sinema" title="Kyrsten Sinema" /></a>
           <h6>Kyrsten<br />Sinema</h6>
         </div>
         <div>
-          <a href="#martha-mcsally"><img src="<?php bloginfo('template_directory');?>/assets/img/headshots/martha_mcsally-01.svg" width="180" alt="Martha McSally" title="Martha McSally" /></a>
+          <a href="#martha-mcsally"><img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/martha_mcsally-01.svg" width="180" alt="Martha McSally" title="Martha McSally" /></a>
           <h6>Martha<br />McSally</h6>
         </div>
       </div>
@@ -67,9 +67,9 @@
     <div class="large-12 cell text-center">
       <h6 class="under-below key">KEY</h6>
       <ul class="no-bullet key">
-        <li><img src="<?php bloginfo('template_directory');?>/assets/img/check_mark.svg" width="30" height="30" /> Leans toward impeachment</li>
-        <li><img src="<?php bloginfo('template_directory');?>/assets/img/cross_mark.svg" width="30" height="30" /> Leans against impeachment</li>
-        <li><img src="<?php bloginfo('template_directory');?>/assets/img/question_mark.svg" width="30" height="30" /> Unknown, has not publicly stated</li>
+        <li><img src="<?php bloginfo('template_directory'); ?>/assets/img/check_mark.svg" width="30" height="30" /> Leans toward impeachment</li>
+        <li><img src="<?php bloginfo('template_directory'); ?>/assets/img/cross_mark.svg" width="30" height="30" /> Leans against impeachment</li>
+        <li><img src="<?php bloginfo('template_directory'); ?>/assets/img/question_mark.svg" width="30" height="30" /> Unknown, has not publicly stated</li>
       </ul>
     </div>
   </div>
@@ -78,7 +78,7 @@
 <div id="main_container" class="grid-container impeachment-container">
   <div id="tom-ohalleran" class="grid-x grid-padding-x profile-section first">
     <div class="large-3 medium-3 small-3 cell large-text-right medium-text-center">
-      <img src="<?php bloginfo('template_directory');?>/assets/img/headshots/tom_ohalleran-01.svg" alt="Tom O'halleran" title="Tom O'halleran" width="150" />
+      <img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/tom_ohalleran-01.svg" alt="Tom O'halleran" title="Tom O'halleran" width="150" />
     </div>
     <div class="large-6 medium-6 small-6 cell text-center">
       <h1 class="profile-title">Rep. Tom O'Halleran</h1>
@@ -90,7 +90,7 @@
     </div>
     <div class="large-3 medium-3 small-3 cell text-center">
       <ul class="no-bullet sentiment-list">
-        <li><img src="<?php bloginfo('template_directory');?>/assets/img/check_mark.svg" width="125" height="125" alt="Leans toward impeachment" title="Leans toward impeachment" /></li>
+        <li><img src="<?php bloginfo('template_directory'); ?>/assets/img/check_mark.svg" width="125" height="125" alt="Leans toward impeachment" title="Leans toward impeachment" /></li>
       </ul>
     </div>
     <div class="large-12 cell">
@@ -98,7 +98,7 @@
         <tbody>
           <tr>
             <td><strong class="date-impeach">12/13/2019</strong><br />“I will vote to impeach the President because this bribery and abuse of power violated the constitution and put our national security and our international relationships at risk.”</td>
-            <td class="text-center"><a href="https://az01to.congressnewsletter.net/mail/util.cfm?gpiv=2100157617.248727.9&gen=1" target="_blank"><img src="<?php bloginfo('template_directory');?>/assets/img/article.svg" width="30" /></a></td>
+            <td class="text-center"><a href="https://az01to.congressnewsletter.net/mail/util.cfm?gpiv=2100157617.248727.9&gen=1" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/assets/img/article.svg" width="30" /></a></td>
           </tr>
           <tr>
             <td><strong class="date-impeach">10/31/2019</strong><br />“#AZ01: I voted in favor of today's resolution to ensure that this ongoing inquiry remains transparent to the American people and allows them to form their own judgments based on fact. My full statement: [<a href="https://ohalleran.house.gov/newsroom/press-releases/o-halleran-statement-house-vote-open-impeachment-inquiry-public-hearings" target="_blank">here</a>.]”</td>
@@ -111,7 +111,7 @@
 
   <div id="ann-kirkpatrick" class="grid-x grid-padding-x profile-section">
     <div class="large-3 medium-3 small-3 cell text-right">
-      <img src="<?php bloginfo('template_directory');?>/assets/img/headshots/ann_kirkpatrick-01.svg" alt="Ann Kirkpatrick" title="Ann Kirkpatrick" width="150" />
+      <img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/ann_kirkpatrick-01.svg" alt="Ann Kirkpatrick" title="Ann Kirkpatrick" width="150" />
     </div>
     <div class="large-6 medium-6 small-6 cell text-center">
       <h1 class="profile-title">Rep. Ann Kirkpatrick</h1>
@@ -123,7 +123,7 @@
     </div>
     <div class="large-3 medium-3 small-3 cell text-center">
       <ul class="no-bullet sentiment-list">
-        <li><img src="<?php bloginfo('template_directory');?>/assets/img/check_mark.svg" width="125" height="125" alt="Leans toward impeachment" title="Leans toward impeachment" /></li>
+        <li><img src="<?php bloginfo('template_directory'); ?>/assets/img/check_mark.svg" width="125" height="125" alt="Leans toward impeachment" title="Leans toward impeachment" /></li>
       </ul>
     </div>
     <div class="large-12 cell">
@@ -144,7 +144,7 @@
 
     <div id="raul-grijalva" class="grid-x grid-padding-x profile-section">
       <div class="large-3 medium-3 small-3 cell text-right">
-        <img src="<?php bloginfo('template_directory');?>/assets/img/headshots/raul_grijalva-01.svg" alt="Raul Grijalva" title="Raul Grijalva" width="150" />
+        <img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/raul_grijalva-01.svg" alt="Raul Grijalva" title="Raul Grijalva" width="150" />
       </div>
       <div class="large-6 medium-6 small-6 cell text-center">
         <h1 class="profile-title">Rep. Raúl Grijalva</h1>
@@ -156,7 +156,7 @@
       </div>
       <div class="large-3 medium-3 small-3 cell text-center">
         <ul class="no-bullet sentiment-list">
-          <li><img src="<?php bloginfo('template_directory');?>/assets/img/check_mark.svg" width="125" height="125" alt="Leans toward impeachment" title="Leans toward impeachment" /></li>
+          <li><img src="<?php bloginfo('template_directory'); ?>/assets/img/check_mark.svg" width="125" height="125" alt="Leans toward impeachment" title="Leans toward impeachment" /></li>
         </ul>
       </div>
       <div class="large-12 cell">
@@ -185,7 +185,7 @@
 
     <div id="paul-gosar" class="grid-x grid-padding-x profile-section">
       <div class="large-3 medium-3 small-3 cell text-right">
-        <img src="<?php bloginfo('template_directory');?>/assets/img/headshots/paul_gosar-01.svg" alt="Paul Gosar" title="Paul Gosar" width="150" />
+        <img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/paul_gosar-01.svg" alt="Paul Gosar" title="Paul Gosar" width="150" />
       </div>
       <div class="large-6 medium-6 small-6 cell text-center">
         <h1 class="profile-title">Rep. Paul Gosar</h1>
@@ -197,7 +197,7 @@
       </div>
       <div class="large-3 medium-3 small-3 cell text-center">
         <ul class="no-bullet sentiment-list">
-          <li><img src="<?php bloginfo('template_directory');?>/assets/img/cross_mark.svg" width="125" height="125" alt="Leans against impeachment" title="Leans against impeachment" /></li>
+          <li><img src="<?php bloginfo('template_directory'); ?>/assets/img/cross_mark.svg" width="125" height="125" alt="Leans against impeachment" title="Leans against impeachment" /></li>
         </ul>
       </div>
       <div class="large-12 cell">
@@ -230,7 +230,7 @@
 
     <div id="andy-biggs" class="grid-x grid-padding-x profile-section">
       <div class="large-3 medium-3 small-3 cell text-right">
-        <img src="<?php bloginfo('template_directory');?>/assets/img/headshots/andy_biggs-01.svg" alt="Andy Biggs" title="Andy Biggs" width="150" />
+        <img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/andy_biggs-01.svg" alt="Andy Biggs" title="Andy Biggs" width="150" />
       </div>
       <div class="large-6 medium-6 small-6 cell text-center">
         <h1 class="profile-title">Rep. Andy Biggs</h1>
@@ -242,7 +242,7 @@
       </div>
       <div class="large-3 medium-3 small-3 cell text-center">
         <ul class="no-bullet sentiment-list">
-          <li><img src="<?php bloginfo('template_directory');?>/assets/img/cross_mark.svg" width="125" height="125" alt="Leans against impeachment" title="Leans against impeachment" /></li>
+          <li><img src="<?php bloginfo('template_directory'); ?>/assets/img/cross_mark.svg" width="125" height="125" alt="Leans against impeachment" title="Leans against impeachment" /></li>
         </ul>
       </div>
       <div class="large-12 cell">
@@ -278,7 +278,7 @@
             </tr>
             <tr>
               <td><strong class="date-impeach">12/4/19</strong><br />During the House Judiciary Committee hearing:<br />“What I’m suggesting to you today is a reckless bias coming in here, not fact witnesses,” Biggs said to the hearing witnesses, after reading out their past campaign donations and snippets of news stories in which they have been quoted about impeachment.<br /><br />“You’re supposed to be talking about what the law is, but you came in with a preconceived notion and bias,” Biggs said.</td>
-              <td class="text-center"><a href="https://cronkitenews.azpbs.org/2019/12/04/arizona-lawmakers-follow-party-line-in-impeachment-hearing-questioning/" target="_blank"><img src="<?php bloginfo('template_directory');?>/assets/img/cn-logo.svg" width="140" alt="Cronkite News" title="Cronkite News" /></a></td>
+              <td class="text-center"><a href="https://cronkitenews.azpbs.org/2019/12/04/arizona-lawmakers-follow-party-line-in-impeachment-hearing-questioning/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/assets/img/cn-logo.svg" width="140" alt="Cronkite News" title="Cronkite News" /></a></td>
             </tr>
           </tbody>
         </table>
@@ -287,7 +287,7 @@
 
     <div id="david-schweikert" class="grid-x grid-padding-x profile-section">
       <div class="large-3 medium-3 small-3 cell text-right">
-        <img src="<?php bloginfo('template_directory');?>/assets/img/headshots/david_schweikert-01.svg" alt="David Schweikert" title="David Schweikert" width="150" />
+        <img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/david_schweikert-01.svg" alt="David Schweikert" title="David Schweikert" width="150" />
       </div>
       <div class="large-6 medium-6 small-6 cell text-center">
         <h1 class="profile-title">Rep. David Schweikert</h1>
@@ -299,7 +299,7 @@
       </div>
       <div class="large-3 medium-3 small-3 cell text-center">
         <ul class="no-bullet sentiment-list">
-          <li><img src="<?php bloginfo('template_directory');?>/assets/img/cross_mark.svg" width="125" height="125" alt="Leans against impeachment" title="Leans against impeachment" /></li>
+          <li><img src="<?php bloginfo('template_directory'); ?>/assets/img/cross_mark.svg" width="125" height="125" alt="Leans against impeachment" title="Leans against impeachment" /></li>
         </ul>
       </div>
       <div class="large-12 cell">
@@ -315,7 +315,7 @@
             </tr>
             <tr>
               <td><strong class="date-impeach">10/31/2019</strong><br />NAY vote on House of Representatives Resolution 660: “Directing certain committees to continue their ongoing investigations as part of the existing House of Representatives inquiry into whether sufficient grounds exist for the House of Representatives to exercise its Constitutional power to impeach Donald John Trump, President of the United States of America”.</td>
-              <td class="text-center"><a href="http://clerk.house.gov/evs/2019/roll604.xml" target="_blank"><img src="<?php bloginfo('template_directory');?>/assets/img/article.svg" width="30" /></a></td>
+              <td class="text-center"><a href="http://clerk.house.gov/evs/2019/roll604.xml" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/assets/img/article.svg" width="30" /></a></td>
             </tr>
           </tbody>
         </table>
@@ -324,7 +324,7 @@
 
     <div id="ruben-gallego" class="grid-x grid-padding-x profile-section">
       <div class="large-3 medium-3 small-3 cell text-right">
-        <img src="<?php bloginfo('template_directory');?>/assets/img/headshots/ruben_gallego-01.svg" alt="Ruben Gallego" title="Ruben Gallego" width="150" />
+        <img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/ruben_gallego-01.svg" alt="Ruben Gallego" title="Ruben Gallego" width="150" />
       </div>
       <div class="large-6 medium-6 small-6 cell text-center">
         <h1 class="profile-title">Rep. Ruben Gallego</h1>
@@ -336,7 +336,7 @@
       </div>
       <div class="large-3 medium-3 small-3 cell text-center">
         <ul class="no-bullet sentiment-list">
-          <li><img src="<?php bloginfo('template_directory');?>/assets/img/check_mark.svg" width="125" height="125" alt="Leans toward impeachment" title="Leans toward impeachment" /></li>
+          <li><img src="<?php bloginfo('template_directory'); ?>/assets/img/check_mark.svg" width="125" height="125" alt="Leans toward impeachment" title="Leans toward impeachment" /></li>
         </ul>
       </div>
       <div class="large-12 cell">
@@ -373,7 +373,7 @@
 
     <div id="debbie-lesko" class="grid-x grid-padding-x profile-section">
       <div class="large-3 medium-3 small-3 cell text-right">
-        <img src="<?php bloginfo('template_directory');?>/assets/img/headshots/debbie_lesko-01.svg" alt="Debbie Lesko" title="Debbie Lesko" width="150" />
+        <img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/debbie_lesko-01.svg" alt="Debbie Lesko" title="Debbie Lesko" width="150" />
       </div>
       <div class="large-6 medium-6 small-6 cell text-center">
         <h1 class="profile-title">Rep. Debbie Lesko</h1>
@@ -385,7 +385,7 @@
       </div>
       <div class="large-3 medium-3 small-3 cell text-center">
         <ul class="no-bullet sentiment-list">
-          <li><img src="<?php bloginfo('template_directory');?>/assets/img/cross_mark.svg" width="125" height="125" alt="Leans against impeachment" title="Leans against impeachment" /></li>
+          <li><img src="<?php bloginfo('template_directory'); ?>/assets/img/cross_mark.svg" width="125" height="125" alt="Leans against impeachment" title="Leans against impeachment" /></li>
         </ul>
       </div>
       <div class="large-12 cell">
@@ -431,7 +431,7 @@
 
     <div id="greg-stanton" class="grid-x grid-padding-x profile-section">
       <div class="large-3 medium-3 small-3 cell text-right">
-        <img src="<?php bloginfo('template_directory');?>/assets/img/headshots/greg_stanton-01.svg" alt="Greg Stanton" title="Greg Stanton" width="150" />
+        <img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/greg_stanton-01.svg" alt="Greg Stanton" title="Greg Stanton" width="150" />
       </div>
       <div class="large-6 medium-6 small-6 cell text-center">
         <h1 class="profile-title">Rep. Greg Stanton</h1>
@@ -443,7 +443,7 @@
       </div>
       <div class="large-3 medium-3 small-3 cell text-center">
         <ul class="no-bullet sentiment-list">
-          <li><img src="<?php bloginfo('template_directory');?>/assets/img/check_mark.svg" width="125" height="125" alt="Leans toward impeachment" title="Leans toward impeachment" /></li>
+          <li><img src="<?php bloginfo('template_directory'); ?>/assets/img/check_mark.svg" width="125" height="125" alt="Leans toward impeachment" title="Leans toward impeachment" /></li>
         </ul>
       </div>
       <div class="large-12 cell">
@@ -451,11 +451,11 @@
           <tbody>
             <tr>
               <td><strong class="date-impeach">12/11/19</strong><br />“... This President must be impeached, and he must be removed.  Not because he has been offensive, or because of policy disagreements.  Impeachment is necessary because this President does not believe the law applies to him. . . because he poses a clear and present danger to our democracy. ...”</td>
-              <td class="text-center"><a href="https://stanton.house.gov/media/press-releases/stanton-statement-house-judiciary-committee-markup-articles-impeachment" target="_blank"><img src="<?php bloginfo('template_directory');?>/assets/img/article.svg" width="30" /></a></td>
+              <td class="text-center"><a href="https://stanton.house.gov/media/press-releases/stanton-statement-house-judiciary-committee-markup-articles-impeachment" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/assets/img/article.svg" width="30" /></a></td>
             </tr>
             <tr>
               <td><strong class="date-impeach">12/4/19</strong><br />During the House Judiciary Committee hearing:<br /><br />“The obstruction we’re looking at today is far worse than President Nixon’s behavior,” Stanton said. “Future generations will measure us, every single member of this committee by how we choose to answer that question. I hope we get it right.”</td>
-              <td class="text-center"><a href="https://cronkitenews.azpbs.org/2019/12/04/arizona-lawmakers-follow-party-line-in-impeachment-hearing-questioning/" target="_blank"><img src="<?php bloginfo('template_directory');?>/assets/img/cn-logo.svg" width="140" alt="Cronkite News" title="Cronkite News" /></a></td>
+              <td class="text-center"><a href="https://cronkitenews.azpbs.org/2019/12/04/arizona-lawmakers-follow-party-line-in-impeachment-hearing-questioning/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/assets/img/cn-logo.svg" width="140" alt="Cronkite News" title="Cronkite News" /></a></td>
             </tr>
           </tbody>
         </table>
@@ -464,7 +464,7 @@
 
     <div id="kyrsten-sinema" class="grid-x grid-padding-x profile-section">
       <div class="large-3 medium-3 small-3 cell text-right">
-        <img src="<?php bloginfo('template_directory');?>/assets/img/headshots/kyrsten_sinema-01.svg" alt="Kyrsten Sinema" title="Kyrsten Sinema" width="150" />
+        <img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/kyrsten_sinema-01.svg" alt="Kyrsten Sinema" title="Kyrsten Sinema" width="150" />
       </div>
       <div class="large-6 medium-6 small-6 cell text-center">
         <h1 class="profile-title">Sen. Kyrsten Sinema</h1>
@@ -475,7 +475,7 @@
       </div>
       <div class="large-3 medium-3 small-3 cell text-center">
         <ul class="no-bullet sentiment-list">
-          <li><img src="<?php bloginfo('template_directory');?>/assets/img/question_mark.svg" width="125" height="125" alt="Unknown, has not publicly shared" title="Unknown, has not publicly shared" /></li>
+          <li><img src="<?php bloginfo('template_directory'); ?>/assets/img/question_mark.svg" width="125" height="125" alt="Unknown, has not publicly shared" title="Unknown, has not publicly shared" /></li>
         </ul>
       </div>
       <div class="large-12 cell">
@@ -492,7 +492,7 @@
 
     <div id="martha-mcsally" class="grid-x grid-padding-x profile-section">
       <div class="large-3 medium-3 small-3 cell text-right">
-        <img src="<?php bloginfo('template_directory');?>/assets/img/headshots/martha_mcsally-01.svg" alt="Martha McSally" title="Martha McSally" width="150" />
+        <img src="<?php bloginfo('template_directory'); ?>/assets/img/headshots/martha_mcsally-01.svg" alt="Martha McSally" title="Martha McSally" width="150" />
       </div>
       <div class="large-6 medium-6 small-6 cell text-center">
         <h1 class="profile-title">Sen. Martha McSally</h1>
@@ -503,7 +503,7 @@
       </div>
       <div class="large-3 medium-3 small-3 cell text-center">
         <ul class="no-bullet sentiment-list">
-          <li><img src="<?php bloginfo('template_directory');?>/assets/img/question_mark.svg" width="125" height="125" alt="Unknown, has not publicly shared" title="Unknown, has not publicly shared" /></li>
+          <li><img src="<?php bloginfo('template_directory'); ?>/assets/img/question_mark.svg" width="125" height="125" alt="Unknown, has not publicly shared" title="Unknown, has not publicly shared" /></li>
         </ul>
       </div>
       <div class="large-12 cell">

@@ -10,7 +10,7 @@ get_header('photogallery'); ?>
       <div class="slide image-1">
         <div class="bg-text-gradient">
           <div class="summary first-slide">
-            <h5><img src="<?php bloginfo('template_directory');?>/assets/img/eye-icon.svg" class="visual-story-icon" alt="Visual Story" title="Visual Story" />Visual Story</h5>
+            <h5><img src="<?php bloginfo('template_directory'); ?>/assets/img/eye-icon.svg" class="visual-story-icon" alt="Visual Story" title="Visual Story" />Visual Story</h5>
             <h1><?php echo get_the_title(); ?></h1>
             <?php echo $content = apply_filters('the_content', get_the_content()); ?>
             <p class="byline">By Caitlynn McDaniel/Cronkite News | June 18, 2020</p>

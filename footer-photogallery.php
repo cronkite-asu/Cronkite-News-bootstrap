@@ -5,7 +5,7 @@
 ?>
 
     <!-- scripts -->
-    <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/jquery.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/jquery.js"></script>
     <?php wp_footer(); ?>
     <script type='text/javascript'>
         var _sf_async_config={};
@@ -49,7 +49,7 @@
     <!-- End AlertMe website tag code -->
 
     <!-- scripts -->
-    <script type="text/javascript" src="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick.min.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/slick/slick.min.js"></script>
     <script>
       $(document).ready(function(){
 

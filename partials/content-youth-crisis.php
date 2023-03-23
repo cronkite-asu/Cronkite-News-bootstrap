@@ -11,7 +11,7 @@
   <!-- featured area - medium -->
   <div class="grid-x grid-padding-x featured-img-block-md show-for-medium-only">
     <div class="large-12 cell">
-      <img src="<?php bloginfo('template_directory');?>/assets/img/youth-crisis/qchs-1.jpg" />
+      <img src="<?php bloginfo('template_directory'); ?>/assets/img/youth-crisis/qchs-1.jpg" />
     </div>
   </div>
 
@@ -39,7 +39,7 @@
     <div class="large-3 medium-3 small-12 cell sp-stories-sm">
       <div class="single-story">
         <div class="image vignette">
-          <img src="<?php bloginfo('template_directory');?>/assets/img/youth-crisis/HandDrum2.jpg" />
+          <img src="<?php bloginfo('template_directory'); ?>/assets/img/youth-crisis/HandDrum2.jpg" />
         </div>
         <a href="https://cronkitenews.azpbs.org/2019/10/16/native-americans-battle-suicide/" target="_blank"><h6>Breaking the silence: Native American suicide</h6></a>
         <p>Native Americans have the highest suicide rates in the nation and young Native Americans face an even greater risk. Here in the Southwest, efforts are under way to overcome the stigma of talking about mental health issues, and to help native youth build resiliency and connect with their culture. <a class="read-more" href="https://cronkitenews.azpbs.org/2019/10/16/native-americans-battle-suicide/" target="_blank">Read more</a></p>
@@ -49,7 +49,7 @@
     <div class="large-3 medium-3 small-12 cell sp-stories-sm">
       <div class="single-story">
         <div class="image vignette">
-          <img src="<?php bloginfo('template_directory');?>/assets/img/youth-crisis/saving-teen-lives.png" />
+          <img src="<?php bloginfo('template_directory'); ?>/assets/img/youth-crisis/saving-teen-lives.png" />
         </div>
         <a href="https://www.youtube.com/watch?v=m8baszSAGn4" target="_blank"><h6>Teens write 13,000 messages of hope to prevent suicide</h6></a>
         <p>Students and advocates for preventing teen suicide  gathered at the Arizona Capitol to mark Teen Suicide Prevention Awareness Month in September. “We wanted students to create encouraging messages, messages of hope,” said Nikki Kontz, the clinical director at Teen Lifeline in Phoenix. <a class="read-more" href="https://www.youtube.com/watch?v=m8baszSAGn4"  target="_blank">Read more</a></p>
@@ -59,7 +59,7 @@
     <div class="large-3 medium-3 small-12 cell sp-stories-sm">
       <div class="single-story">
         <div class="image vignette">
-          <img src="<?php bloginfo('template_directory');?>/assets/img/youth-crisis/police-officer.jpg" />
+          <img src="<?php bloginfo('template_directory'); ?>/assets/img/youth-crisis/police-officer.jpg" />
         </div>
         <a href="https://cronkitenews.azpbs.org/2019/08/28/experts-20-million-for-school-suicide-prevention-welcome-more-needed/" target="_blank"><h6>Experts: $20 million for school suicide prevention welcome</h6></a>
         <p>Education and government officials called a $20 million grant for suicide prevention programs in Arizona schools an important first step to deal with a growing problem, even as they said much more needs to be done. The funds will be used to hire additional counselors, social workers or school resource officers. <a class="read-more" href="https://cronkitenews.azpbs.org/2019/08/28/experts-20-million-for-school-suicide-prevention-welcome-more-needed/" target="_blank">Read more</a></p>

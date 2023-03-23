@@ -60,7 +60,7 @@ if (have_rows('weather_content') ) {
                     <a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a>
                         <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
                       <h3><a href="<?php echo $permalink; ?>"><?php echo get_field('homepage_headline', $story->ID); ?></a></h3>
-                        <?php } else {?>
+                        <?php } else { ?>
                       <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                         <?php } ?>
                   </div>
@@ -104,7 +104,7 @@ if (have_rows('weather_content') ) {
                     <a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a>
                 <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
                       <h3><a href="<?php echo $permalink; ?>"><?php echo get_field('homepage_headline', $story->ID); ?></a></h3>
-                <?php } else {?>
+                <?php } else { ?>
                       <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                 <?php } ?>
                   </div>

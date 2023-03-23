@@ -57,7 +57,7 @@ if (have_rows('layout') ) {
                 <?php $font = "font-family:".get_sub_field('font-family').";" ?>
             <?php } else { ?>
                 <?php $font = "font-family:".get_sub_field('font-family').";" ?>
-            <?php }?>
+            <?php } ?>
 
             <?php if (get_sub_field('photo_position_leftright') != '') { ?>
                 <?php $position = "background-position:".get_sub_field('photo_position_leftright')." center !important"; ?>
@@ -69,7 +69,7 @@ if (have_rows('layout') ) {
         <h1 style="<?php echo $color; echo $capitalize; echo $font; ?>"><?php echo get_sub_field('headline'); ?></h1>
             <?php echo get_sub_field('intro_summary'); ?>
       </div>
-      <div class="large-6 medium-12 small-12 cell background-img" <?php echo 'style="background:url('.get_sub_field('photo').')"';?>>
+      <div class="large-6 medium-12 small-12 cell background-img" <?php echo 'style="background:url('.get_sub_field('photo').')"'; ?>>
         <span class="photo-credit"><?php echo get_sub_field('credits'); ?></span>
       </div>
     </div>

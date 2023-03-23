@@ -55,11 +55,11 @@ get_header(); ?>
                                             <?php endif; wp_reset_query(); ?>
                                 </div>
 
-                                <h6 class="story-info"><?php if ($postAuthor = get_field('post_author')) {?>
+                                <h6 class="story-info"><?php if ($postAuthor = get_field('post_author')) { ?>
                                 <a href="<?php echo site_url(); ?>?s=<?php echo $postAuthor; ?>">
                                 By <?php echo $postAuthor; ?> |
                                <?php } ?>
-                                            <?php if ($siteTitle = get_field('site_title')) {?>
+                                            <?php if ($siteTitle = get_field('site_title')) { ?>
                                     <a href="//<?php the_field('site_url'); ?>"><?php echo $siteTitle; ?></a></h6>
                                             <?php } ?>
                                 <h6 class="story-info-date"><?php echo ap_date(); ?></h6>

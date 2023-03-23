@@ -60,7 +60,7 @@
   <?php } ?>
 
   <!-- scripts -->
-  <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/jquery.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/jquery.js"></script>
 
   <?php wp_footer(); ?>
   <script type='text/javascript'>
@@ -104,18 +104,18 @@
   </script>
   <!-- End AlertMe website tag code -->
 
-  <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/what-input.js"></script>
-  <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/foundation.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/what-input.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/foundation.js"></script>
 
   <!-- Greensock -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
-  <script src="<?php bloginfo('template_directory');?>/assets/js/app.js"></script>
-  <script type="text/javascript" src="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick.min.js"></script>
-  <script type="text/javascript" src="<?php bloginfo('template_directory');?>/assets/js/vendor/smooth-scroll/dist/smooth-scroll.js"></script>
-  <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/plyr-master/dist/plyr.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/assets/js/app.js"></script>
+  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/slick/slick.min.js"></script>
+  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/smooth-scroll/dist/smooth-scroll.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/plyr-master/dist/plyr.js"></script>
 
   <?php if (current_user_can('administrator')) { ?>
   <script src="https://webreader.naturalreaders.com/nr-webreader.js" defer></script>

@@ -8,7 +8,7 @@ get_header('azracialdivide'); ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 
-<script src="<?php bloginfo('template_directory');?>/js/jquery.waypoints.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/jquery.waypoints.min.js"></script>
     <main style=" background-color:#222;">
         <section id="blog-post" class="racial-divide">
             <div class="container-fluid" style="padding:0px;">
@@ -40,8 +40,8 @@ get_header('azracialdivide'); ?>
                                                         $icon = get_sub_field('fimage');
                                                         $text = get_sub_field('fcaption');  // Use variables below ?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
-                                                        <?php if ($imgheadline = get_field('headline_over_image')) {?>
-                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image');?>;font-size:<?php the_field('headline_over_image_font_size');?>;<?php the_field('additional_headline_over_image_styling');?>"> <?php the_field('headline_over_image'); ?> </h1>
+                                                        <?php if ($imgheadline = get_field('headline_over_image')) { ?>
+                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image'); ?>;font-size:<?php the_field('headline_over_image_font_size'); ?>;<?php the_field('additional_headline_over_image_styling'); ?>"> <?php the_field('headline_over_image'); ?> </h1>
                                                         <?php } ?>
                                         <div class="carousel-captions"> <!--         captions -->
                                                         <?php echo $text; ?>
@@ -62,8 +62,8 @@ get_header('azracialdivide'); ?>
                                                         $icon = get_sub_field('fimage');
                                                         $text = get_sub_field('fcaption');  // Use variables below ?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
-                                                        <?php if ($imgheadline = get_field('headline_over_image')) {?>
-                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image');?>;font-size:<?php the_field('headline_over_image_font_size');?>;<?php the_field('additional_headline_over_image_styling');?>"> <?php the_field('headline_over_image'); ?> </h1>
+                                                        <?php if ($imgheadline = get_field('headline_over_image')) { ?>
+                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image'); ?>;font-size:<?php the_field('headline_over_image_font_size'); ?>;<?php the_field('additional_headline_over_image_styling'); ?>"> <?php the_field('headline_over_image'); ?> </h1>
                                                         <?php } ?>
                                         <div class="carousel-captions"> <!--         captions -->
                                                         <?php echo $text; ?>
@@ -80,11 +80,11 @@ get_header('azracialdivide'); ?>
                                         <h3 style="color:rgba(255,255,255,0.9);padding-top:10px;"> <?php the_field('text_before_headline'); ?>   </h3>
                                       <h1 id="main-headline" style="color:rgba(255,255,255,0.9);"><?php the_title(); ?></h1> 
                                     
-                                <h6 class="story-info" style="color:rgba(255,255,255,0.9);"><?php if ($postAuthor = get_field('post_author')) {?>
+                                <h6 class="story-info" style="color:rgba(255,255,255,0.9);"><?php if ($postAuthor = get_field('post_author')) { ?>
                                 <a href="<?php echo site_url(); ?>?s=<?php echo $postAuthor; ?>">
                                     <?php echo $postAuthor; ?> |
                                <?php } ?>
-                                            <?php if ($siteTitle = get_field('site_title')) {?>
+                                            <?php if ($siteTitle = get_field('site_title')) { ?>
                                     <a href="http://<?php the_field('site_url'); ?>"><?php echo $siteTitle; ?></a></h6>
                                             <?php } ?>
                                 <h6 class="story-info-date" style="color:rgba(255,255,255,0.9);"><?php echo ap_date(); ?></h6>

@@ -51,7 +51,7 @@
 
         <!-- Chartbeat Analytics  -->
         <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
-      <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
+      <script src="<?php bloginfo('template_directory'); ?>/js/jquery-3.2.1.min.js"></script>
 
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -109,7 +109,7 @@
     }
     ?>
 
-        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/long-form/foundation.css">
+        <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/long-form/foundation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
@@ -132,19 +132,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-        <link href="<?php bloginfo('template_directory');?>/assets/css/hamburgers.css" rel="stylesheet">
-        <link href="<?php bloginfo('template_directory');?>/assets/css/print.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/css/tooltipster.bundle.min.css" />
-        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/app.css">
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick-theme.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/single-story-post.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/long-form/long-form-base.css">
+        <link href="<?php bloginfo('template_directory'); ?>/assets/css/hamburgers.css" rel="stylesheet">
+        <link href="<?php bloginfo('template_directory'); ?>/assets/css/print.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/css/tooltipster.bundle.min.css" />
+        <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/single-story-post.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/long-form/long-form-base.css">
     <?php if (isset($settings['stylesheet']) && $settings['stylesheet'] != '') { ?>
     <link rel="stylesheet" href="<?php echo $settings['stylesheet']; ?>" />
     <?php } ?>
-    <link href="<?php bloginfo('template_directory');?>/assets/css/nav.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/js/vendor/plyr-master/dist/plyr.css" />
+    <link href="<?php bloginfo('template_directory'); ?>/assets/css/nav.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/plyr-master/dist/plyr.css" />
 
     <?php if (is_single()) { ?>
       <link href='https://cdn.knightlab.com/libs/soundcite/latest/css/player.css' rel='stylesheet' type='text/css'><script type='text/javascript' src='https://cdn.knightlab.com/libs/soundcite/latest/js/soundcite.min.js'></script>
@@ -181,7 +181,7 @@
         <div class="main_nav">
           <!-- logo -->
           <div class="logo">
-            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/assets/img/CN-PBS-EPS.svg" alt="Cronkite News" title="Cronkite News" /></a>
+            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/img/CN-PBS-EPS.svg" alt="Cronkite News" title="Cronkite News" /></a>
           </div>
           <!-- main navigation -->
           <div class="nav_links">
@@ -191,7 +191,7 @@
                 <div class="search-box">
                   <form method="get" class="navbar-form search" id="searchform" action="https://cronkitenews.azpbs.org/">
                     <input type="text" placeholder="Search" name="s" autocomplete="off" />
-                    <img src="<?php bloginfo('template_directory');?>/assets/img/search.svg" width="16" height="16" />
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/search.svg" width="16" height="16" />
                   </form>
                 </div>
               </li>
@@ -228,7 +228,7 @@
           <li class="misc_links_m">
             <form method="get" class="navbar-form search" id="searchform" action="https://cronkitenews.azpbs.org/">
               <input type="text" placeholder="Search" name="s" autocomplete="off" />
-              <img src="<?php bloginfo('template_directory');?>/assets/img/search.svg" width="16" height="16" />
+              <img src="<?php bloginfo('template_directory'); ?>/assets/img/search.svg" width="16" height="16" />
             </form>
           </li>
           <?php
