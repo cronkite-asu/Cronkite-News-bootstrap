@@ -206,14 +206,14 @@
 
       var scroll = new SmoothScroll('a[href*="#"]');
 
-      var $window = $(window);
-      var $videoWrap = $('.video-wrap');
-      var $video = $('.video');
+      var $window = jQuery(window);
+      var $videoWrap = jQuery('.video-wrap');
+      var $video = jQuery('.video');
       var videoHeight = $video.outerHeight();
       var userClosed = false;
 
 
-      if ($('.video-wrap').length) {
+      if (jQuery('.video-wrap').length) {
         $window.on('scroll',  function() {
           var windowScrollTop = $window.scrollTop();
           var videoBottom = videoHeight + $videoWrap.offset().top;
@@ -227,7 +227,7 @@
           }
         });
 
-        $('.close-video').click(function() {
+        jQuery('.close-video').click(function() {
           userClosed = true;
           $videoWrap.height('auto');
           $video.removeClass('stuck');
@@ -235,7 +235,7 @@
       }
 
       // before and after photo slider
-      $(window).on('load', function() {
+      jQuery(window).on('load', function() {
         $('.before-after-photos .photos').twentytwenty();
       });
 
@@ -250,7 +250,7 @@
         }
       });
 
-      $('.debate-carousel').slick({
+      jQuery('.debate-carousel').slick({
         infinite: true,
         dots: false,
         centerMode: false,
@@ -279,7 +279,7 @@
       });
 
       // audio player sticky
-      $(window).scroll(function(){
+      jQuery(window).scroll(function(){
         var sticky = $('.audio-player-container'),
             scroll = $(window).scrollTop();
 
@@ -291,7 +291,7 @@
       });
 
       // audio page player
-      $('.audio-plyr').click(function () {
+      jQuery('.audio-plyr').click(function () {
         console.log($(this).data("link"));
         console.log($(this).data("title"));
         $('#main-audio-player').attr("src", $(this).data("link"));
@@ -311,13 +311,13 @@
               }
           });
 
-      $('.dropdown-el').click(function(e) {
+      jQuery('.dropdown-el').click(function(e) {
         e.preventDefault();
         e.stopPropagation();
         $(this).toggleClass('expanded');
         $('#'+$(e.target).attr('for')).prop('checked',true);
       });
-      $(document).click(function() {
+      jQuery(document).click(function() {
         $('.dropdown-el').removeClass('expanded');
       });
 
@@ -382,12 +382,12 @@
     };
     BackgroundLazyLoader();
 
-      var $window = $(window);
+      var $window = jQuery(window);
 
       function checkWidth() {
           var windowsize = $window.width();
           if (windowsize > 800) {
-              $(window).scroll(function (event) {
+              jQuery(window).scroll(function (event) {
                   var scroll = $(window).scrollTop();
                   if (scroll >= 250) {
                     $('#sub_nav').removeClass('slideInDown').addClass('slideOutUp');
@@ -400,7 +400,7 @@
       // Execute on load
       checkWidth();
       // Bind event listener
-      $(window).resize(checkWidth);
+      jQuery(window).resize(checkWidth);
     });
   </script>
 

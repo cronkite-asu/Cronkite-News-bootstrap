@@ -305,7 +305,7 @@ get_header('longformhero'); ?>
                                       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
                                       crossorigin="anonymous"></script>
                                     <script>
-                                    $(window).on('load', function() {
+                                    jQuery(window).on('load', function() {
                                         $(".trigger_popup_fricc1").click(function(){
                                            $('.hover_bkgr_fricc1').show();
                                         });

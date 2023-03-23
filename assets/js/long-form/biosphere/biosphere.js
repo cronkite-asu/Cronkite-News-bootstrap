@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-var $window = $(window);
+var $window = jQuery(window);
 
 function checkWidthScrollTrigger() {
     var windowsize = $window.width();

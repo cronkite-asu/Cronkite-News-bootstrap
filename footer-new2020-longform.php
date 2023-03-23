@@ -263,7 +263,7 @@
         });
 
         // long form intro slider
-        $('.intro-slider').slick({
+        jQuery('.intro-slider').slick({
           infinite: true,
           dots: false,
           centerMode: false,
@@ -328,14 +328,14 @@
       const audioPlayer8 = new Plyr('#player-yvette-syverson', { quality });
       const audioPlayer9 = new Plyr('#player-steve-harmon', { quality });
 
-      $('#play-audio').on( "click", function() {
+      jQuery('#play-audio').on( "click", function() {
         $(this).addClass('hide');
         $('#pause-audio').removeClass('hide');
         $('#pause-audio').show();
         audioPlayer7.play();
       });
 
-      $('#pause-audio').on( "click", function() {
+      jQuery('#pause-audio').on( "click", function() {
         $(this).addClass('hide');
         $('#play-audio').removeClass('hide');
         $('#play-audio').show();
@@ -343,21 +343,21 @@
       });
 
 
-      $(".play-btn").on( "click", function() {
-        $('.movie-poster-overlay').hide();
+      jQuery(".play-btn").on( "click", function() {
+        jQuery('.movie-poster-overlay').hide();
         player.play();
       });
 
       var scroll = new SmoothScroll('a[href*="#"]');
 
-      var $window = $(window);
-      var $videoWrap = $('.video-wrap');
-      var $video = $('.video');
+      var $window = jQuery(window);
+      var $videoWrap = jQuery('.video-wrap');
+      var $video = jQuery('.video');
       var videoHeight = $video.outerHeight();
       var userClosed = false;
 
 
-      if ($('.video-wrap').length) {
+      if (jQuery('.video-wrap').length) {
         $window.on('scroll',  function() {
           var windowScrollTop = $window.scrollTop();
           var videoBottom = videoHeight + $videoWrap.offset().top;
@@ -371,7 +371,7 @@
           }
         });
 
-        $('.close-video').click(function() {
+        jQuery('.close-video').click(function() {
           userClosed = true;
           $videoWrap.height('auto');
           $video.removeClass('stuck');
@@ -383,13 +383,13 @@
         var windowScrollTop = $window.scrollTop();
 
         if ((windowScrollTop >= 500)) {
-          $('.sidebar-staff').fadeIn("slow");
+          jQuery('.sidebar-staff').fadeIn("slow");
         } else {
-          $('.sidebar-staff').fadeOut("slow");
+          jQuery('.sidebar-staff').fadeOut("slow");
         }
       });
 
-      $('.story-photos').slick({
+      jQuery('.story-photos').slick({
         infinite: true,
         dots: false,
         centerMode: false,
@@ -397,7 +397,7 @@
         autoplaySpeed: 6000
       });
 
-      $('.story-slideshow').slick({
+      jQuery('.story-slideshow').slick({
         infinite: true,
         dots: false,
         centerMode: false,
@@ -405,7 +405,7 @@
         autoplaySpeed: 6000
       });
 
-      $('.in-this-series').slick({
+      jQuery('.in-this-series').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: false,
@@ -438,7 +438,7 @@
         ]
       });
 
-      $('.headshot-slider').slick({
+      jQuery('.headshot-slider').slick({
         infinite: true,
         slidesToShow: 11,
         slidesToScroll: 1,
@@ -489,13 +489,13 @@
               }
           });
 
-      $('.dropdown-el').click(function(e) {
+      jQuery('.dropdown-el').click(function(e) {
         e.preventDefault();
         e.stopPropagation();
         $(this).toggleClass('expanded');
         $('#'+$(e.target).attr('for')).prop('checked',true);
       });
-      $(document).click(function() {
+      jQuery(document).click(function() {
         $('.dropdown-el').removeClass('expanded');
       });
 
@@ -561,12 +561,12 @@
 
     BackgroundLazyLoader();
 
-      var $window = $(window);
+      var $window = jQuery(window);
 
       function checkWidth() {
           var windowsize = $window.width();
           if (windowsize > 800) {
-              $(window).scroll(function (event) {
+              jQuery(window).scroll(function (event) {
                   var scroll = $(window).scrollTop();
                   if (scroll >= 250) {
                     $('#sub_nav').removeClass('slideInDown').addClass('slideOutUp');
@@ -579,7 +579,7 @@
       // Execute on load
       checkWidth();
       // Bind event listener
-      $(window).resize(checkWidth);
+      jQuery(window).resize(checkWidth);
     });
   </script>
 

@@ -161,7 +161,7 @@ twq('track','PageView');
         });
 
 
-        var $window = $(window);
+        var $window = jQuery(window);
 
         function checkWidth() {
                 var windowsize = $window.width();

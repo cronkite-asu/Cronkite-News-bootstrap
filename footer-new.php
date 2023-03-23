@@ -270,7 +270,7 @@
 
     BackgroundLazyLoader();
 
-      var $window = $(window);
+      var $window = jQuery(window);
 
       function checkWidth() {
           var windowsize = $window.width();
@@ -288,7 +288,7 @@
       // Execute on load
       checkWidth();
       // Bind event listener
-      $(window).resize(checkWidth);
+      jQuery(window).resize(checkWidth);
     });
   </script>
 
