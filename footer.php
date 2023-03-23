@@ -130,7 +130,7 @@ twq('track','PageView');
     }
 
   // Search: expand on click
-  $('.search-box img').click(function() {
+  jQuery('.search-box img').click(function() {
 
     $('#searchform input[type=text]').blur(function() {
       if ($.trim(this.value).length > 0) {

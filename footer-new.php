@@ -128,9 +128,9 @@
     }
 
     // Search: expand on click
-    $('.search-box img').click(function() {
+    jQuery('.search-box img').click(function() {
 
-      $('#searchform input[type=text]').blur(function() {
+      jQuery('#searchform input[type=text]').blur(function() {
         if ($.trim(this.value).length > 0) {
           $("#searchform").submit();
         } else {
@@ -144,7 +144,7 @@
       }
     });
 
-    $(document).ready(function() {
+    jQuery(document).ready(function() {
       var scroll = new SmoothScroll('a[href*="#"]');
 
       $('.headshot-slider').slick({

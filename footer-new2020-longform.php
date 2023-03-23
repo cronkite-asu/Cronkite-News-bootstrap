@@ -161,7 +161,7 @@
     }
 
     // Search: expand on click
-    $('.search-box img').click(function() {
+    jQuery('.search-box img').click(function() {
 
       $('#searchform input[type=text]').blur(function() {
         if ($.trim(this.value).length > 0) {
@@ -178,7 +178,7 @@
     });
 
 
-    $(document).ready(function() {
+    jQuery(document).ready(function() {
 
       $(window).scroll(function () {
           $(window).scrollTop() > 1600 ? ($("#back-to-top").addClass("show")) : ($("#back-to-top").removeClass("show"));
