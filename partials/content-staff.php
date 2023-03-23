@@ -149,34 +149,34 @@
 
         <?php
           $args = array(
-            'post_type'      => array('post', 'audioVideoCPT'),
-            'post_status'    => 'publish',
+            'post_type'        => array('post', 'audioVideoCPT'),
+            'post_status'      => 'publish',
             'suppress_filters' => false,
-            'posts_per_page' => -1,
-            'meta_query'    => array(
+            'posts_per_page'   => -1,
+            'meta_query'       => array(
               'relation' => 'OR',
-                  array(
-                      'key'        => 'byline_info_cn_staff',
-                      'compare'    => 'LIKE',
-                      'value'        => '"'.$staffProID[0]->ID.'"'
-                  ),
+              array(
+                'key'        => 'byline_info_cn_staff',
+                'compare'    => 'LIKE',
+                'value'        => '"'.($staffProID[0]->ID ?? null).'"'
+              ),
               array(
                 'key'        => 'byline_info_cn_photographers',
                 'compare'    => 'LIKE',
-                'value'        => '"'.$staffProID[0]->ID.'"'
+                'value'        => '"'.($staffProID[0]->ID ?? null).'"'
               ),
               array(
                 'key'        => 'byline_info_cn_broadcast_reporters',
                 'compare'    => 'LIKE',
-                'value'        => '"'.$staffProID[0]->ID.'"'
+                'value'        => '"'.($staffProID[0]->ID ?? null).'"'
               ),
               array(
                 'key'        => 'byline_info_cn_data_visualizer',
                 'compare'    => 'LIKE',
-                'value'        => '"'.$staffProID[0]->ID.'"'
+                'value'        => '"'.($staffProID[0]->ID ?? null).'"'
               )
-              )
-           );
+            )
+          );
 
           $staffStories = new WP_Query($args);
 
