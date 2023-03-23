@@ -510,7 +510,7 @@ if (!is_admin()) {
     {
         if (!is_page('youth-suicide') && !is_page('impeachment-sentiment') && !is_single() && !is_search() && !is_page('about-us')) {
             // Load JavaScripts
-            wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/plugins/bootstrap.js', array( 'jquery' ), '5.3.0', true);
+            wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/plugins/bootstrap.js', array( 'jquery' ), '5.3.0-alpha1', true);
             if (!is_single(132417)) {
                 wp_enqueue_script('global', get_template_directory_uri() . '/js/global.js', null, null, true);
             }
@@ -546,7 +546,7 @@ if (!is_admin()) {
             if (is_single(131130)) {
 
             } else {
-                wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/plugins/bootstrap.css', null, '5.3.0');
+                wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/plugins/bootstrap.css', null, '5.3.0-alpha1');
             }
             wp_enqueue_style('slick', get_template_directory_uri().'/css/plugins/slick.css', null, null);
             wp_enqueue_style('bootstrap-customizer', get_template_directory_uri().'/css/core/customizer.css', null, null);
