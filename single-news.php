@@ -326,10 +326,10 @@
                 }
 
                 if ($isvid ) { // if we have a video load the video instead of the carousel
-                    $host = parse_url($isvid);
+                    $host = parse_url($isvid, PHP_URL_HOST);
                     $isjpg = false;
 
-                    if (isset($host[ 'host' ]) && $host['host'] == 'www.youtube.com' || $host['host'] == 'youtu.be' || $host['host'] == 'www.youtu.be' || $host['host'] == 'youtube.com') {
+                    if ($host == 'www.youtube.com' || $host == 'youtu.be' || $host == 'www.youtu.be' || $host == 'youtube.com') {
                         $embedVideoURL = getYoutubeID($isvid);
                         echo '<div id="video-holder">';
                         echo '<div class="video-wrap">';
@@ -428,7 +428,7 @@
              <?php
                 // in this series settings
                 $inthisseriesSettings = get_field('in-this-series-stories');
-                if (isset($inthisseriesSettings['show']) && $inthisseriesSettings['show'] == 'yes') {
+                if (($inthisseriesSettings['show'] ?? false) && $inthisseriesSettings['show'] == 'yes') {
                     if ($inthisseriesSettings['story-status'] == 'coming-soon') {
                         if ($inthisseriesSettings['title'] != '') {
                             $seriesTitle = ': '.$inthisseriesSettings['title'];
