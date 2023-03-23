@@ -175,7 +175,7 @@
                         $staffID = get_sub_field('cn_staff');
 
                         if (is_countable($staffID)) {
-                                           $cnStaffCount = count($staffID);
+                            $cnStaffCount = count($staffID);
 
                             foreach ($staffID as $key => $val) {
                                 $args = array(
@@ -710,7 +710,7 @@
                     }
                 }
 
-                if (is_countable($broadcastID)) {
+                if (isset($broadcastID) && is_countable($broadcastID)) {
                                     // show broadcast
                     foreach ($broadcastID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
@@ -818,7 +818,7 @@
                 }
             }
 
-            if (is_countable($photogID)) {
+            if (isset($photogID) && is_countable($photogID)) {
                                 // show photogs
                 foreach ($photogID as $key => $val) {
                     echo '<div class="author_bio post-holder">';
@@ -924,7 +924,7 @@
                     echo '</div>';
             }
 
-            if (is_countable($dataVisualizerID)) {
+            if (isset($dataVisualizerID) && is_countable($dataVisualizerID)) {
                                 // show data visualizers
                 foreach ($dataVisualizerID as $key => $val) {
                     echo '<div class="author_bio post-holder">';
