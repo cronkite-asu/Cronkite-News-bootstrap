@@ -67,7 +67,7 @@
 }
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width : 480px) {
+@media only screen and (max-width: 480px) {
 	.hero-caption {
 		/*height: 170px;*/
     height: auto;
@@ -76,14 +76,14 @@
 	}
 }
 
-@media only screen and (min-width : 480px) {
+@media only screen and (min-width: 480px) {
 	.hero-caption {
 		/*height: 90px;*/
 	}
 }
 
 /* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width: 768px) {
 	.hero-caption {
 		/*height: 110px;*/
     padding: 10px 30px;
@@ -92,7 +92,7 @@
 }
 
 /* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
+@media only screen and (min-width: 992px) {
 	.hero-caption {
 		/*height: 110px;*/
 	}
@@ -111,7 +111,7 @@
 }
 
 /* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
+@media only screen and (min-width: 1200px) {
 	.hero-caption {
 		/*height: 105px;*/
 	}
@@ -6186,8 +6186,8 @@ a.changecolor {
 
 
 @media only screen
-and (min-width : 375px)
-and (max-width : 667px) {
+and (min-width: 375px)
+and (max-width: 667px) {
 
 
     .navbar-brand {
@@ -6236,7 +6236,7 @@ header h1 {
     margin-bottom:10px;
 }
 
-@media only screen and (min-width : 375px) and (max-width : 667px) {
+@media only screen and (min-width: 375px) and (max-width: 667px) {
 
 
     .search-parent {
