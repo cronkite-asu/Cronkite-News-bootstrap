@@ -261,9 +261,9 @@
                         $videoTitle = rtrim(get_the_content(), '.');
 
                         if (get_field('video_url') != '') {
-                          $videoURL = get_field('video_url', false, false);
+                            $videoURL = get_field('video_url', false, false);
                         } else {
-                          $videoURL = get_field('video_file', false, false);
+                            $videoURL = get_field('video_file', false, false);
                         }
 
                         $videoBaseLink = 'https://www.youtube.com/embed/';
@@ -274,13 +274,13 @@
                         } else {
                             $embedVideoURL = $videoURL;
                         }                        
-          ?>
+                        ?>
                     <div id="video-holder">
                       <style>.embed-container { position: relative; padding-bottom: 62.5%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
                       <div class="embed-container"><iframe src="<?php echo $embedVideoURL; ?>" frameborder="0" allowfullscreen></iframe></div>
                       <div class="asset-caption"><a href="<?php echo $embedVideoURL; ?>"><h3><?php echo $videoTitle; ?></h3></a></div>
                     </div>
-            <?php
+                        <?php
                     }
                 }
                 wp_reset_query();
