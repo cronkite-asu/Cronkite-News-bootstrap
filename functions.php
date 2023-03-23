@@ -510,7 +510,7 @@ if (!is_admin()) {
     {
         if (!is_page('youth-suicide') && !is_page('impeachment-sentiment') && !is_single() && !is_search() && !is_page('about-us')) {
             // Load JavaScripts
-            wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/plugins/bootstrap.js', array( 'jquery' ), '3.3.1', true);
+            wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/plugins/bootstrap.js', array( 'jquery' ), '5.3.0', true);
             if (!is_single(132417)) {
                 wp_enqueue_script('global', get_template_directory_uri() . '/js/global.js', null, null, true);
             }
@@ -546,7 +546,7 @@ if (!is_admin()) {
             if (is_single(131130)) {
 
             } else {
-                wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/plugins/bootstrap.css', null, '3.3.1');
+                wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/plugins/bootstrap.css', null, '5.3.0');
             }
             wp_enqueue_style('slick', get_template_directory_uri().'/css/plugins/slick.css', null, null);
             wp_enqueue_style('bootstrap-customizer', get_template_directory_uri().'/css/core/customizer.css', null, null);
@@ -574,7 +574,7 @@ if (!is_admin()) {
     function bootstrap_scripts_and_styles_old()
     {
         // Load JavaScripts
-        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/plugins/bootstrap.js', array( 'jquery' ), '3.3.1', true);
+        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/plugins/bootstrap.js', array( 'jquery' ), '5.3.0', true);
         wp_enqueue_script('global', get_template_directory_uri() . '/js/global.js', null, null, true);
         wp_enqueue_script('respond', get_template_directory_uri() . '/js/plugins/respond.js', null, '1.4.0', true);
         wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/plugins/modernizr.js', null, '2.6.2', true);
@@ -602,7 +602,7 @@ if (!is_admin()) {
         // Load Stylesheets
         //core
         wp_enqueue_style('normalize', get_template_directory_uri().'/css/core/normalize.css', null, '3.0.1');
-        wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/plugins/bootstrap.css', null, '3.3.1');
+        wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/plugins/bootstrap.css', null, '5.3.0');
         wp_enqueue_style('slick', get_template_directory_uri().'/css/plugins/slick.css', null, null);
         wp_enqueue_style('bootstrap-customizer', get_template_directory_uri().'/css/core/customizer.css', null, null);
         //plugins
