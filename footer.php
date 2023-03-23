@@ -22,7 +22,9 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 inner">
                 <h4><?php the_field('area_3_title', 'options'); ?></h4>
                 <a href="/daily-newsletter-signup/">Sign up</a> for daily headlines
-                <br><br>
+                <br>
+<!-- 
+                <br>
                 <ul class="social">
 
                     <?php
@@ -44,6 +46,7 @@
                     ?>
 
                 </ul>
+ -->
                 <br>
                 <?php the_field('area_3_description', 'options'); ?>
             </div><!-- END of .col -->
