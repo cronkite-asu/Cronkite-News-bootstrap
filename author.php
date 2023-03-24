@@ -22,7 +22,7 @@ get_header(); ?>
                                         // Declare variables below
                                         $icon = get_sub_field('images');
                                         $text = get_sub_field('author_text');  // Use variables below
-                                ?>
+                                        ?>
                                         <div class="item">
                                             <img src="<?php echo $icon; ?>" />
                                             <div class="custom-line">
@@ -31,19 +31,19 @@ get_header(); ?>
                                                     echo $labelInfo;
                                                 }
                                                 if ($postAuthor = get_field('post_author')) {
-                                                ?>
+                                                    ?>
                                                 <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo $postAuthor; ?> | </a>
-                                                <?php
+                                                    <?php
                                                 }
                                                 if ($siteTitle = get_field('site_title')) {
-                                                ?>
+                                                    ?>
                                                     <a href="<?php the_field('site_url'); ?>"><?php echo $siteTitle; ?> | </a>
-                                                <?php
+                                                    <?php
                                                 }
                                                 if ($twitterTitle = get_field('twitter_title')) {
-                                                ?>
+                                                    ?>
                                                     <a href="<?php the_field('twitter_url'); ?>" class="custom-line-links"> <i class="icon-twitter"></i> <?php echo $twitterTitle; ?> </a>
-                                                <?php 
+                                                    <?php 
                                                 }
                                                 ?>
 

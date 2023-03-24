@@ -35,11 +35,11 @@
                             $icon = get_sub_field('social_icon', 'options');
                             $link = get_sub_field('social_link', 'options');
                             // Use variables below
-                    ?>
+                            ?>
                             <li>
                                 <a target="_blank" href="<?php echo $link; ?>"><img src="<?php echo $icon; ?>" /></a>
                             </li>
-                    <?php
+                            <?php
                         endwhile;
                     endif;
                     wp_reset_query();
