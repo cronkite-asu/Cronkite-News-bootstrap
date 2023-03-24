@@ -396,9 +396,7 @@
                 ?>
 
              <!-- story content -->
-             <?php //the_content(); ?>
              <?php
-                //if (current_user_can('administrator')) {
                 $compareDate = strtotime('Mar 21, 2023');
                 $postDate = strtotime(get_the_date());
                 if ($postDate >= $compareDate) {
@@ -415,6 +413,10 @@
                             $responseYTembeds = "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/".strip_tags($ytLinks[1][$i])."' frameborder='0' allowfullscreen></iframe></div>";
                             $storyContent = str_replace(strip_tags($ytLinks[0][$i]), $responseYTembeds, $storyContent);
                         }
+
+                        $storyContent = str_replace('<p><style>.embed-container', '<style>.embed-container', $storyContent);
+                        $storyContent = str_replace('</iframe></div></p>', '</iframe></div>', $storyContent);
+
                         return $storyContent;
                     }
                     $finalStoryContent = getVideoUrlsFromString($storyContent);
@@ -422,13 +424,12 @@
                 } else {
                     the_content();
                 }
-                //}
                 ?>
 
              <?php
                 // in this series settings
                 $inthisseriesSettings = get_field('in-this-series-stories');
-                if (($inthisseriesSettings['show'] ?? false) && $inthisseriesSettings['show'] == 'yes') {
+                if ($inthisseriesSettings['show'] == 'yes') {
                     if ($inthisseriesSettings['story-status'] == 'coming-soon') {
                         if ($inthisseriesSettings['title'] != '') {
                             $seriesTitle = ': '.$inthisseriesSettings['title'];
@@ -665,16 +666,8 @@
                                         echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('team'))).' '.ucwords(str_replace('-', ' ', get_field('role'))).', '.str_replace('Washington Dc', 'Washington, D.C.', ucwords(str_replace('-', ' ', get_field('bureau')))).'</span>';
                                     }
 
-                                    // show name pronunciation
-                                    if (get_field('pronunciation')) {
-                                        echo '<span class="pronunciation">';
-                                        ?>
-                                        <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php
-                                        } ?> <?php echo get_field('pronunciation') ?></span>
-                                        <?php
-                                        echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
-                                    }
-
+                                if (get_field('biography') != '') {
+                                    echo '<span class="member-bio post">'.get_field('biography').'</span>';
                                 }
 
                                     echo '<div class="links-container">';
@@ -774,16 +767,8 @@
                                     echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('team'))).' '.ucwords(str_replace('-', ' ', get_field('role'))).', '.str_replace('Washington Dc', 'Washington, D.C.', ucwords(str_replace('-', ' ', get_field('bureau')))).'</span>';
                                 }
 
-                                // show name pronunciation
-                                if (get_field('pronunciation')) {
-                                     echo '<span class="pronunciation">';
-                                    ?>
-                                     <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php
-                                     } ?> <?php echo get_field('pronunciation') ?></span>
-                                       <?php
-                                          echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
-                                }
-
+                                if (get_field('biography') != '') {
+                                    echo '<span class="member-bio post">'.get_field('biography').'</span>';
                             }
 
                                 echo '<div class="links-container">';
@@ -881,16 +866,8 @@
                                 echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('team'))).' '.ucwords(str_replace('-', ' ', get_field('role'))).', '.str_replace('Washington Dc', 'Washington, D.C.', ucwords(str_replace('-', ' ', get_field('bureau')))).'</span>';
                             }
 
-                            // show name pronunciation
-                            if (get_field('pronunciation')) {
-                                     echo '<span class="pronunciation">';
-                                ?>
-                                     <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php
-                                     } ?> <?php echo get_field('pronunciation') ?></span>
-                                               <?php
-                                                echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
-                            }
-
+                                if (get_field('biography') != '') {
+                                    echo '<span class="member-bio post">'.get_field('biography').'</span>';
                         }
 
                             echo '<div class="links-container">';
@@ -988,16 +965,8 @@
                                 echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('team'))).' '.ucwords(str_replace('-', ' ', get_field('role'))).', '.str_replace('Washington Dc', 'Washington, D.C.', ucwords(str_replace('-', ' ', get_field('bureau')))).'</span>';
                             }
 
-                            // show name pronunciation
-                            if (get_field('pronunciation')) {
-                                      echo '<span class="pronunciation">';
-                                ?>
-                                      <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php
-                                      } ?> <?php echo get_field('pronunciation') ?></span>
-                                            <?php
-                                              echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
-                            }
-
+                                if (get_field('biography') != '') {
+                                    echo '<span class="member-bio post">'.get_field('biography').'</span>';
                         }
 
                             echo '<div class="links-container">';
