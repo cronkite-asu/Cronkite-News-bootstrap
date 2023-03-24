@@ -532,8 +532,6 @@ if (!is_admin()) {
             if (!is_single(132417)) {
                 wp_enqueue_script('viewport', get_template_directory_uri() . '/js/plugins/viewport-units-buggyfill.js', null, '0.4.2', true);
                 // wp_enqueue_script( 'google', get_template_directory_uri() . '/js/plugins/_google.maps.api.v3.js', null, null, true );
-                wp_enqueue_script('scroll', get_template_directory_uri() . '/js/plugins/skrollr.js', null, '0.6.29', true);
-                wp_enqueue_script('scroll_style', get_template_directory_uri() . '/js/plugins/skrollr.stylesheets.js', null, '0.0.4', true);
                 wp_enqueue_script('waypoints', get_template_directory_uri() . '/js/plugins/waypoints.js', null, '2.0.3', true);
                 wp_enqueue_script('waypoints-sticky', get_template_directory_uri() . '/js/plugins/waypoints-sticky.js', null, '2.0.3', true);
 
@@ -593,8 +591,6 @@ if (!is_admin()) {
         //Custom Scripts
         wp_enqueue_script('viewport', get_template_directory_uri() . '/js/plugins/viewport-units-buggyfill.js', null, '0.4.2', true);
         // wp_enqueue_script( 'google', get_template_directory_uri() . '/js/plugins/_google.maps.api.v3.js', null, null, true );
-        wp_enqueue_script('scroll', get_template_directory_uri() . '/js/plugins/skrollr.js', null, '0.6.29', true);
-        wp_enqueue_script('scroll_style', get_template_directory_uri() . '/js/plugins/skrollr.stylesheets.js', null, '0.0.4', true);
         wp_enqueue_script('waypoints', get_template_directory_uri() . '/js/plugins/waypoints.js', null, '2.0.3', true);
         wp_enqueue_script('waypoints-sticky', get_template_directory_uri() . '/js/plugins/waypoints-sticky.js', null, '2.0.3', true);
         wp_enqueue_script('dropdown', get_template_directory_uri() . '/js/plugins/bootstrap-hover-dropdown.min.js', null, null, true);

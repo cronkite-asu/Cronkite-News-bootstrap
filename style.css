@@ -6144,47 +6144,6 @@ a.changecolor {
     cursor: pointer;
 }
 
-/*===================================================================================*/
-/*	SKROLLR ANIMATIONS
-/*===================================================================================*/
-
-.navbar .navbar-collapse {
-    -skrollr-animation-name: shrink-header;
-}
-
-.navbar .navbar-brand img {
-    -skrollr-animation-name: shrink-logo;
-}
-
-@-skrollr-keyframes shrink-header {
-40 {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    -webkit-box-shadow: 0 10px 10px rgba(0,0,0,0);
-    -moz-box-shadow: 0 10px 10px rgba(0,0,0,0.0);
-    box-shadow: 0 10px 10px rgba(0,0,0,0);
-}
-
-300 {
-    padding-top: 0;
-    padding-bottom: 0;
-    -webkit-box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-    -moz-box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-}
-}
-
-@-skrollr-keyframes shrink-logo {
-40 {
-    max-height: 91px;
-}
-
-300 {
-    max-height: 91px;
-}
-}
-
-
 @media only screen
 and (min-width: 375px)
 and (max-width: 667px) {
