@@ -392,9 +392,7 @@
              ?>
 
              <!-- story content -->
-             <?php //the_content(); ?>
              <?php
-             //if (current_user_can('administrator')) {
                 $compareDate = strtotime('Mar 21, 2023');
                 $postDate = strtotime(get_the_date());
                 if ($postDate >= $compareDate) {
@@ -410,6 +408,10 @@
                       $responseYTembeds = "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/".strip_tags($ytLinks[1][$i])."' frameborder='0' allowfullscreen></iframe></div>";
                       $storyContent = str_replace(strip_tags($ytLinks[0][$i]), $responseYTembeds, $storyContent);
                     }
+
+                    $storyContent = str_replace('<p><style>.embed-container', '<style>.embed-container', $storyContent);
+                    $storyContent = str_replace('</iframe></div></p>', '</iframe></div>', $storyContent);
+
                     return $storyContent;
                   }
                   $finalStoryContent = getVideoUrlsFromString($storyContent);
@@ -417,7 +419,6 @@
                 } else {
                   the_content();
                 }
-             //}
              ?>
 
              <?php
