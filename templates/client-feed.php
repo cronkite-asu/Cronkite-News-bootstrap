@@ -1,7 +1,7 @@
 <?php
-/*
-Template Name: Client Site Feed
-*/
+/**
+ * Template Name: Client Site Feed
+ */
 header("Content-Type: application/rss+xml; charset=UTF-8");
 echo '<?xml version="1.0"?><rss version="2.0">';
 

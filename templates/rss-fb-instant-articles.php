@@ -1,7 +1,7 @@
 <?php
-/*
-Template Name: FB Instant Articles Feed
-*/
+/**
+ * Template Name: FB Instant Articles Feed
+ */
 header("Content-Type: application/rss+xml; charset=UTF-8");
 echo '<rss version="2.0" xmlns:content="https://purl.org/rss/1.0/modules/content/">
 ';

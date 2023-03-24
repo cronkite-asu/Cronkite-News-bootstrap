@@ -1,8 +1,8 @@
 <?php
-/*
-Template Name: Alexa Feed
-Created: Mon Jul 2, 2018
-*/
+/**
+ * Template Name: Alexa Feed
+ * Created: Mon Jul 2, 2018
+ */
 
 header("Content-Type: application/rss+xml; charset=UTF-8");
 echo '<?xml version="1.0"?><rss version="2.0">';

@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: Explainer videos
-*/
+/**
+ * Template Name: Explainer videos
+ */
 
 get_header('new2019'); ?>
 

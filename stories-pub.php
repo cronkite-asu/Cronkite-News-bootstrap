@@ -1,7 +1,7 @@
 <?php
-/*
-  Template Name: Story pub
-*/
+/**
+ * Template Name: Story pub
+ */
 get_header('new2019'); ?>
 
 

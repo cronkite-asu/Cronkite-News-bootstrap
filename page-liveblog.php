@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: Live Blog
-*/
+/**
+ * Template Name: Live Blog
+ */
 
 get_header('new2019'); ?>
 

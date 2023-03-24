@@ -1,8 +1,7 @@
 <?php
-/*
-* Template Name: Blank
-
-*/
+/**
+ * Template Name: Blank
+ */
 
 get_header('new2019'); ?>
     <main>

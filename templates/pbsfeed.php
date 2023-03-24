@@ -1,8 +1,8 @@
 <?php
-/*
-Template Name: PBS Feed
-Created: Tuesday May 25, 2017
-*/
+/**
+ * Template Name: PBS Feed
+ * Created: Tuesday May 25, 2017
+ */
 
 $ACCEPTHOST = 'cronkitenews.azpbs.org';
 

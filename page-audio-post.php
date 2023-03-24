@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: Audio Post Template
-*/
+/**
+ * Template Name: Audio Post Template
+ */
 
 get_header('new2019'); ?>
 

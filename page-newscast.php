@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: Newscast Listing Template
-*/
+/**
+ * Template Name: Newscast Listing Template
+ */
 
 get_header('new2019'); ?>
 

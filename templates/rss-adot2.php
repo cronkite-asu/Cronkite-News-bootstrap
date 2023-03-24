@@ -1,7 +1,7 @@
 <?php
-/*
-Template Name: ADOT RSS2
-*/
+/**
+ * Template Name: ADOT RSS2
+ */
 $ACCEPTHOST = 'cronkitenews.azpbs.org';
 $NEWSCASTURL = $ACCEPTHOST . '/sitenewscast/';
 

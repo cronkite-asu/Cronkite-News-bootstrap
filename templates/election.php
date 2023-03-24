@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Template Name: Election Page
  */
 get_header('election'); ?>

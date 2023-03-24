@@ -1,7 +1,7 @@
 <?php
-/*
-Template name: ADOT RSS feed
-*/
+/**
+ * Template name: ADOT RSS feed
+ */
 
 header("Content-Type: application/rss+xml; charset=UTF-8");
 print '<?xml version="1.0"?><rss version="2.0">';

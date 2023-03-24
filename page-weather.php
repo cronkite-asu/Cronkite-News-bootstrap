@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: Weather page
-*/
+/**
+ * Template Name: Weather page
+ */
 
 get_header('new2019'); ?>
 

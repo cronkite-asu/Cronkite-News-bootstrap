@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: About Us
-*/
+/**
+ * Template Name: About Us
+ */
 
 get_header('new2019'); ?>
 

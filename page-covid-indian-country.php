@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: COVID in Indian Country
-*/
+/**
+ * Template Name: COVID in Indian Country
+ */
 
 get_header('new2019'); ?>
 

@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: Super Bowl 2023
-*/
+/**
+ * Template Name: Super Bowl 2023
+ */
 
 get_header('superbowl'); ?>
 

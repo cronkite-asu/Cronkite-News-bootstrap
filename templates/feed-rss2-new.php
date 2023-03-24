@@ -1,8 +1,8 @@
 <?php
-/*
-  Template Name: Custom RSS feed
-    Creation: October 29, 2020
-*/
+/**
+ * Template Name: Custom RSS feed
+ * Creation: October 29, 2020
+ */
 
 header('Content-Type: ' . feed_content_type('rss2') . '; charset=' . get_option('blog_charset'), true);
 $more = 1;

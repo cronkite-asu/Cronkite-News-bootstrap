@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: Tapachula
-*/
+/**
+ * Template Name: Tapachula
+ */
 
 get_header('new2019'); ?>
 

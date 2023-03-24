@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Template Name: State Results Page
  */
 get_header(); ?>

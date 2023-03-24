@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: Noticias pages
-*/
+/**
+ * Template Name: Noticias pages
+ */
 
 get_header('noticias'); ?>
 

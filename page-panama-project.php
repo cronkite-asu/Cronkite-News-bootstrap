@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: Panama Project
-*/
+/**
+ * Template Name: Panama Project
+ */
 
 get_header('new2019'); ?>
 

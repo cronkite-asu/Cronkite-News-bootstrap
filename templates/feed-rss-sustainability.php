@@ -1,8 +1,8 @@
 <?php
-/*
-  Template Name: Sustainability Custom Feed
-    Creation: June 20, 2022
-*/
+/**
+ * Template Name: Sustainability Custom Feed
+ * Creation: June 20, 2022
+ */
 
 header('Content-Type: ' . feed_content_type('rss2') . '; charset=' . get_option('blog_charset'), true);
 $more = 1;

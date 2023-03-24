@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: 9/11 twentieth anniversary
-*/
+/**
+ * Template Name: 9/11 twentieth anniversary
+ */
 
 get_header('new2019'); ?>
 

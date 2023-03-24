@@ -1,8 +1,8 @@
 <?php
-/*
-Template Name: Election 2020 JSON Feed
-Created: Friday, Sept. 11, 2020
-*/
+/**
+ * Template Name: Election 2020 JSON Feed
+ * Created: Friday, Sept. 11, 2020
+ */
 
 header("Content-Type: application/json; charset=UTF-8");
 ?>

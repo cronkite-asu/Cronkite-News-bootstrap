@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: Impeachment
-*/
+/**
+ * Template Name: Impeachment
+ */
 
 get_header('new2019'); ?>
 

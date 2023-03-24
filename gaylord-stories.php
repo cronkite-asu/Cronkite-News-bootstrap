@@ -1,7 +1,7 @@
 <?php
-/*
-  Template Name: Gaylord Stories
-*/
+/**
+ * Template Name: Gaylord Stories
+ */
 get_header('new2019'); ?>
 
 <?php

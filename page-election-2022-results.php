@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: Election 2022 results page
-*/
+/**
+ * Template Name: Election 2022 results page
+ */
 
 get_header('election2022'); ?>
 

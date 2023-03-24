@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Template Name: En Espanol
  * Newscast archive
  */

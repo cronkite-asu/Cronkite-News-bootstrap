@@ -1,8 +1,8 @@
 <?php
-/*
-  Template Name: Sports Custom Feed
-    Creation: May 25, 2022
-*/
+/**
+ * Template Name: Sports Custom Feed
+ * Creation: May 25, 2022
+ */
 
 header('Content-Type: ' . feed_content_type('rss2') . '; charset=' . get_option('blog_charset'), true);
 $more = 1;

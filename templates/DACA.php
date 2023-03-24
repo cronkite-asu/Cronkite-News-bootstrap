@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Template Name: DACA
  */
 get_header(); ?>

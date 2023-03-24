@@ -1,8 +1,8 @@
 <?php
-/*
-Template Name: Email TEST Feed
-Updated: Feb. 10, 2020 to support new home page
-*/
+/**
+ * Template Name: Email TEST Feed
+ * Updated: Feb. 10, 2020 to support new home page
+ */
 // $ACCEPTHOST = 'cn2.niclindh.com';
 $ACCEPTHOST = 'cronkitenews.azpbs.org';
 //$ACCEPTHOST = 'cn.countzero.xyz';

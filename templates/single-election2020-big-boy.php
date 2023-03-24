@@ -1,9 +1,9 @@
 <?php
-/*
-* Template Name: Election 2020 Big Boy
-*
-* Testing embedded React for election 2020
-*/
+/**
+ * Template Name: Election 2020 Big Boy
+ *
+ * Testing embedded React for election 2020
+ */
 
 get_header('election2020'); ?>
 

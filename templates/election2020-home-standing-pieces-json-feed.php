@@ -1,8 +1,8 @@
 <?php
-/*
-Template Name: Election 2020 - Standing Pieces JSON Feed
-Created: Friday, Sept. 24, 2020
-*/
+/**
+ * Template Name: Election 2020 - Standing Pieces JSON Feed
+ * Created: Friday, Sept. 24, 2020
+ */
 
 header("Content-Type: application/json; charset=UTF-8");
 ?>
