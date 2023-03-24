@@ -303,16 +303,17 @@
 
              <!-- story photo/video/slideshow -->
              <?php
-                function getYoutubeID ($isvid) {
-                  $videoBaseLink = 'https://www.youtube.com/embed/';
-                  $breakQuery = parse_url($isvid, PHP_URL_QUERY);
-                  if (isset($breakQuery)) {
-                      $videoID = explode('=', $breakQuery);
-                      $finalVideoURL = $videoBaseLink.$videoID[1];
-                  } else {
-                      $finalVideoURL = $isvid;
-                  }
-                  return $finalVideoURL;
+                function getYoutubeID($isvid)
+                {
+                    $videoBaseLink = 'https://www.youtube.com/embed/';
+                    $breakQuery = parse_url($isvid, PHP_URL_QUERY);
+                    if (isset($breakQuery)) {
+                        $videoID = explode('=', $breakQuery);
+                        $finalVideoURL = $videoBaseLink.$videoID[1];
+                    } else {
+                        $finalVideoURL = $isvid;
+                    }
+                    return $finalVideoURL;
                 }
 
                 if (get_field('video_url') != '') {
@@ -326,7 +327,7 @@
                     $isjpg = false;
 
                     if ($host['host'] == 'www.youtube.com' || $host['host'] == 'youtu.be' || $host['host'] == 'www.youtu.be' || $host['host'] == 'youtube.com') {
-                        $embedVideoURL = getYoutubeID ($isvid);
+                        $embedVideoURL = getYoutubeID($isvid);
                         echo '<div id="video-holder">';
                         echo '<div class="video-wrap">';
                         echo '<div class="video">';
@@ -353,25 +354,25 @@
                    <div id="story-photo" class="story-photos">
                       <?php
                         while ( have_rows('slider_images') ) {
-                          the_row();
-                          $imageCount = count(get_field('slider_images'));
-                          $postImages = get_sub_field('images');
-                          $photoCaption = get_sub_field('description');
-                          if ($imageCount == 1) {
-                      ?>
+                            the_row();
+                            $imageCount = count(get_field('slider_images'));
+                            $postImages = get_sub_field('images');
+                            $photoCaption = get_sub_field('description');
+                            if ($imageCount == 1) {
+                                ?>
                          <div>
                            <img src="<?php echo $postImages; ?>" width="800" alt="" title="" />
                            <div class="asset-caption"><?php echo $photoCaption; ?></div>
                          </div>
-                      <?php } else { ?>
+                            <?php } else { ?>
                          <div>
                            <img src="<?php echo $postImages; ?>" width="100%" alt="" title="" />
                            <div class="asset-caption"><?php echo $photoCaption; ?></div>
                          </div>
-                    <?php
+                                <?php
+                            }
                         }
-                      }
-                    ?>
+                        ?>
                    </div>
                     <?php
                 } else if (get_field('before_after_slider')) {
@@ -389,37 +390,38 @@
                     echo "<br />";
                 }
                 wp_reset_query();
-             ?>
+                ?>
 
              <!-- story content -->
              <?php
                 $compareDate = strtotime('Mar 21, 2023');
                 $postDate = strtotime(get_the_date());
                 if ($postDate >= $compareDate) {
-                  $storyContent = wpautop(get_the_content());
+                    $storyContent = wpautop(get_the_content());
 
-                  function getVideoUrlsFromString($storyContent) {
-                    $patternID = '#(?<=v=|v\/|vi=|vi\/|youtu.be\/)[a-zA-Z0-9_-]{11}#';
-                    $patternURL = '~(?:https?://)?(?:www.)?(?:youtube.com|youtu.be)/(?:watch\?v=)?([^\s]+)~';
-                    // find all youtube links
-                    preg_match_all($patternURL, $storyContent, $ytLinks);
+                    function getVideoUrlsFromString($storyContent)
+                    {
+                        $patternID = '#(?<=v=|v\/|vi=|vi\/|youtu.be\/)[a-zA-Z0-9_-]{11}#';
+                        $patternURL = '~(?:https?://)?(?:www.)?(?:youtube.com|youtu.be)/(?:watch\?v=)?([^\s]+)~';
+                        // find all youtube links
+                        preg_match_all($patternURL, $storyContent, $ytLinks);
 
-                    for ($i = 0; $i < count($ytLinks[0]); $i++) {
-                      $responseYTembeds = "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/".strip_tags($ytLinks[1][$i])."' frameborder='0' allowfullscreen></iframe></div>";
-                      $storyContent = str_replace(strip_tags($ytLinks[0][$i]), $responseYTembeds, $storyContent);
+                        for ($i = 0; $i < count($ytLinks[0]); $i++) {
+                            $responseYTembeds = "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/".strip_tags($ytLinks[1][$i])."' frameborder='0' allowfullscreen></iframe></div>";
+                            $storyContent = str_replace(strip_tags($ytLinks[0][$i]), $responseYTembeds, $storyContent);
+                        }
+
+                        $storyContent = str_replace('<p><style>.embed-container', '<style>.embed-container', $storyContent);
+                        $storyContent = str_replace('</iframe></div></p>', '</iframe></div>', $storyContent);
+
+                        return $storyContent;
                     }
-
-                    $storyContent = str_replace('<p><style>.embed-container', '<style>.embed-container', $storyContent);
-                    $storyContent = str_replace('</iframe></div></p>', '</iframe></div>', $storyContent);
-
-                    return $storyContent;
-                  }
-                  $finalStoryContent = getVideoUrlsFromString($storyContent);
-                  echo $finalStoryContent = apply_filters('the_content', $finalStoryContent);
+                    $finalStoryContent = getVideoUrlsFromString($storyContent);
+                    echo $finalStoryContent = apply_filters('the_content', $finalStoryContent);
                 } else {
-                  the_content();
+                    the_content();
                 }
-             ?>
+                ?>
 
              <?php
                 // in this series settings
@@ -431,7 +433,7 @@
                         } else {
                             $seriesTitle = $inthisseriesSettings['title'];
                         }
-             ?>
+                        ?>
                <!-- in this series -->
                <div class="grid-x grid-padding-x series-block">
                  <div class="large-12 medium-12 small-12 cell">
