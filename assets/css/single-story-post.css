@@ -337,6 +337,12 @@ body {
           width: 100% !important;
           margin: 0;
           text-align: center; } }
+      @media only screen and (max-width: 660px) {
+        #main_container .single-story-block .wp-caption.alignright img, #top-ten .single-story-block .wp-caption.alignright img {
+          width: 100% !important; } }
+      @media only screen and (max-width: 660px) {
+        #main_container .single-story-block .wp-caption.alignright .wp-caption-text, #top-ten .single-story-block .wp-caption.alignright .wp-caption-text {
+          text-align: left; } }
     #main_container .single-story-block .wp-caption.alignleft, #top-ten .single-story-block .wp-caption.alignleft {
       float: left;
       margin: 15px 25px 0 0; }
@@ -786,10 +792,13 @@ body {
         height: 20px !important; }
   #main_container .single-story-block .story-photos, #main_container .single-story-block #video-holder, #main_container .single-story-block .before-after-photos, #top-ten .single-story-block .story-photos, #top-ten .single-story-block #video-holder, #top-ten .single-story-block .before-after-photos {
     max-width: 800px;
-    /*max-width: 100%;*/
     margin-top: 25px;
     margin-bottom: 25px;
-    overflow: hidden; }
+    overflow: hidden;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text; }
     #main_container .single-story-block .story-photos .asset-caption p, #main_container .single-story-block #video-holder .asset-caption p, #main_container .single-story-block .before-after-photos .asset-caption p, #top-ten .single-story-block .story-photos .asset-caption p, #top-ten .single-story-block #video-holder .asset-caption p, #top-ten .single-story-block .before-after-photos .asset-caption p {
       /*max-width: 800px;*/
       max-width: 100%;
