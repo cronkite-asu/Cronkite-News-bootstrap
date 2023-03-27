@@ -124,7 +124,7 @@
                                     }
 
                                     if (get_field('biography') != '') {
-                                        get_field('biography')
+                                        get_field('biography');
                                     }
 
                                     if (have_rows('social_media_outlets') ) {
