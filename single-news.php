@@ -590,13 +590,6 @@
 
            <!-- author biography -->
            <?php
-
-            if (have_rows('byline_info')) {
-                while (have_rows('byline_info')) {
-                    the_row();
-                }
-            }
-
             if (have_rows('byline_info')) {
                 while (have_rows('byline_info')) {
                     the_row();
