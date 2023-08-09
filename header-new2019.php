@@ -48,18 +48,18 @@
     <!-- Google Optimize -->
     <script src="https://www.googleoptimize.com/optimize.js?id=OPT-KJHZKHH"></script>
 
-        <!-- Chartbeat Analytics  -->
-        <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
-      <script src="<?php bloginfo('template_directory'); ?>/js/jquery-3.2.1.min.js"></script>
+    <!-- Chartbeat Analytics  -->
+    <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
+    <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
 
 
     <?php if (get_field('hide_post', get_the_ID()) == 'yes') { ?>
       <meta name="robots" content="noindex">
     <?php } ?>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#216CB7">
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#216CB7">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Add Favicon -->
     <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="icon">
@@ -71,66 +71,44 @@
     <!-- AMP Analytics -->
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 
-    <!-- FB App Configuration for Comment Moderation   -->
-        <script>
-            window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '511732915827177',
-                xfbml      : true,
-                version    : 'v2.11'
-                });
-                FB.AppEvents.logPageView();
-            };
-
-            (function(d, s, id){
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) {return;}
-                js = d.createElement(s); js.id = id;
-                js.src = "https://connect.facebook.net/en_US/sdk.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        </script>
-
     <meta property="fb:app_id" content="511732915827177" />
-
-        <!-- FB instant articles -->
-        <meta property="fb:pages" content="305166330794" />
+    <!-- FB instant articles -->
+    <meta property="fb:pages" content="305166330794" />
 
     <?php wp_head(); ?>
 
     <?php
       $settings = get_field('page-settings', get_the_ID());
-
-    if (isset($settings['text-color']) && $settings['text-color'] != '') {
-        $textColor = $settings['text-color'];
-    }
+      if (isset($settings['text-color']) && $settings['text-color'] != '') {
+          $textColor = $settings['text-color'];
+      }
     ?>
 
-        <!-- NEW NAV - 12/12/19 -->
-        <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/foundation.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <!-- NEW NAV - 12/12/19 -->
+    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/foundation.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-        <link href="<?php bloginfo('template_directory'); ?>/assets/css/hamburgers.css" rel="stylesheet">
-        <link href="<?php bloginfo('template_directory'); ?>/assets/css/all.min.css" rel="stylesheet"> <!--load all styles -->
-        <link href="<?php bloginfo('template_directory'); ?>/assets/css/print.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/css/tooltipster.bundle.min.css" />
+    <link href="<?php bloginfo('template_directory');?>/assets/css/hamburgers.css" rel="stylesheet">
+    <link href="<?php bloginfo('template_directory');?>/assets/css/all.min.css" rel="stylesheet"> <!--load all styles -->
+    <link href="<?php bloginfo('template_directory');?>/assets/css/print.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/css/tooltipster.bundle.min.css" />
 
     <?php if (get_the_ID() == 143506 || get_the_ID() == 127403 || get_the_ID() == 152159 || get_the_ID() == 143528 || get_the_ID() == 156485) { ?>
         <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/youth-suicide/youth-suicide.css">
     <?php } ?>
 
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/slick/slick-theme.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/impeachment.css">
-    <link href="<?php bloginfo('template_directory'); ?>/assets/css/nav.css" rel="stylesheet">
-    <?php if (is_page(18) || is_single() || is_category() || is_page('people') || is_search() || is_page(158103) || is_page(122187) || is_page(83139) || is_page(83161) || is_page(1131) || is_page(175279)) { ?>
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/single-story-post.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/impeachment.css">
+    <link href="<?php bloginfo('template_directory');?>/assets/css/nav.css" rel="stylesheet">
+    <?php if (is_page(18) || is_single() || is_category() || is_tag() || is_page('people') || is_search() || is_page(158103) || is_page(122187) || is_page(83139) || is_page(83161) || is_page(1131) || is_page(175279)) {?>
+    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/single-story-post.css">
     <?php } ?>
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/about-us.css">
     <?php if (is_page(18) || is_page(159870) || is_page(122187) || is_page(166546) || is_page(126223) || is_page(1131) || is_page(83139) || is_page(174126)) { ?>
@@ -164,6 +142,10 @@
       <link rel="stylesheet" href="https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/css/weather.css">
     <?php } ?>
 
+    <?php if (is_page(209554)) { ?>
+      <link rel="stylesheet" href="https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/css/health.css">
+    <?php } ?>
+
     <style type='text/css'>
           body.admin-bar {margin-top:32px !important}
           @media screen and (max-width: 782px) {
@@ -184,7 +166,7 @@
     </div>
 
     <!-- start header -->
-        <nav class="cn_navigation" role="navigation" aria-label="Cronkite News - Navigation">
+    <nav class="cn_navigation" role="navigation" aria-label="Cronkite News - Navigation">
 
       <!-- navigation container -->
       <div class="main_nav_container">
@@ -192,7 +174,7 @@
         <div class="main_nav">
           <!-- logo -->
           <div class="logo">
-            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/img/CN-PBS-EPS.svg" alt="Cronkite News" title="Cronkite News" /></a>
+            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/assets/img/cronkite-news.svg" alt="Cronkite News" title="Cronkite News" /></a>
           </div>
           <!-- main navigation -->
           <div class="nav_links">

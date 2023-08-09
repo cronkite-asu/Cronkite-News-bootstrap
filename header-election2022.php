@@ -162,7 +162,7 @@
         <div class="main_nav">
           <!-- logo -->
           <div class="logo">
-            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/img/CN-PBS-EPS.svg" alt="Cronkite News" title="Cronkite News" /></a>
+            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/assets/img/cronkite-news.svg" alt="Cronkite News" title="Cronkite News" /></a>
             <a class="election-2022-logo" href="https://www.azpbs.org/" target="_blank"><img src="https://azpbs.org/wp-content/themes/pbs/img/azpbs-logo-2020.png" /></a>
             <a class="election-2022-logo" href="https://cronkitenews.azpbs.org/election-2022"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2022/04/election-2022-logo-sm.png" alt="Election 2022" title="Election 2022" /></a>
           </div>

@@ -109,12 +109,12 @@
     }
     ?>
 
-        <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/long-form/foundation.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/long-form/foundation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -130,18 +130,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-        <link href="<?php bloginfo('template_directory'); ?>/assets/css/hamburgers.css" rel="stylesheet">
-        <link href="<?php bloginfo('template_directory'); ?>/assets/css/print.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/css/tooltipster.bundle.min.css" />
-        <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/app.css">
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/slick/slick-theme.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/single-story-post.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/long-form/long-form-base.css">
-    <?php if (isset($settings['stylesheet']) && $settings['stylesheet'] != '') { ?>
-    <link rel="stylesheet" href="<?php echo $settings['stylesheet']; ?>" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link href="<?php bloginfo('template_directory');?>/assets/css/hamburgers.css" rel="stylesheet">
+    <link href="<?php bloginfo('template_directory');?>/assets/css/print.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/css/tooltipster.bundle.min.css" />
+    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/single-story-post.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/long-form/long-form-base.css">
+    <?php if ($settings['stylesheet'] != '') { ?>
+      <link rel="stylesheet" href="<?php echo $settings['stylesheet']; ?>" />
     <?php } ?>
     <link href="<?php bloginfo('template_directory'); ?>/assets/css/nav.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/plyr-master/dist/plyr.css" />
@@ -181,7 +180,7 @@
         <div class="main_nav">
           <!-- logo -->
           <div class="logo">
-            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/img/CN-PBS-EPS.svg" alt="Cronkite News" title="Cronkite News" /></a>
+            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/assets/img/cronkite-news.svg" alt="Cronkite News" title="Cronkite News" /></a>
           </div>
           <!-- main navigation -->
           <div class="nav_links">

@@ -1,0 +1,57 @@
+$tavirajFontFamily: 'Taviraj', serif;
+$merriweatherFontFamily: 'Merriweather', serif;
+$montserratFontFamily: 'Montserrat', sans-serif;
+$merriweatherSanFontFamily: 'Merriweather Sans', sans-serif;
+$robotoFontFamily: 'Roboto', sans-serif;
+$vollkornFontFamily: 'Vollkorn', serif;
+$ebGaramondFontFamily: 'EB Garamond', serif;
+$baskervilleFontFamily: 'Libre Baskerville', serif;
+$secularOneFontFamily: 'Secular One', sans-serif;
+$newsCycleFontFamily: 'News Cycle', sans-serif;
+$oswaldFontFamily: 'Oswald', sans-serif;
+
+$color: rgba(0,0,0,.08);
+$color2: rgba(0,0,0,.02);
+$cnBlue: #003594;
+$white: #ffffff;
+$black: #000;
+$grey: #D8D8D8;
+$footerHdr: #878792;
+$borderGrey: #F2F2F2;
+$transparency100: rgba(0, 53, 148, 1);
+$transparency75: rgba(0, 53, 148, 0.75);
+$colorSelect:#3694d7;
+$timing:.3s;
+$redAlert: #F31431;
+$caption: #6e6e6e;
+
+
+#intro-photo-gallery-overlay {
+  .intro-text {
+    background-color: initial !important;
+    opacity: 1;
+    &.absolute {
+      left: 20px;
+      margin-top: 20px;
+    }
+    h1 {
+      max-width: 800px;
+      font-family: $merriweatherSanFontFamily;
+      font-size: 2.75rem;
+      line-height: 3.75rem;
+      @media only screen
+        and (max-width: 1300px) {
+          max-width: 600px;
+          font-size: 2rem;
+          line-height: 2.75rem;
+          margin: 0;
+      }
+      @media only screen
+        and (max-width: 800px) {
+          font-size: 1.75rem;
+          line-height: 2.5rem;
+          margin: 0;
+      }
+    }
+  }
+}

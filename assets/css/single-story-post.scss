@@ -1706,4 +1706,47 @@ blockquote {
       margin-bottom:10px !important;
     }
   }
+  &.key-points {
+    strong {
+      margin-left: 10px;
+      text-transform: uppercase;
+    }
+    ul {
+      text-indent: -20px !important;
+      margin-left: 30px !important;
+      margin-bottom: 0px !important;
+      margin-top: -6px !important;
+      li {
+        font-family: $robotoFontFamily !important;
+        font-size: 0.9rem !important;
+        margin-bottom: 0px;
+        color: #3f3f3f !important;
+        &:last-child {
+          margin-bottom: 0px !important;
+        }
+      }
+    }
+  }
+}
+
+.sources {
+  strong {
+    margin-left: 10px;
+    text-transform: uppercase;
+  }
+  &.key-points {
+    text-indent: -20px !important;
+    margin-left: 30px !important;
+    margin-bottom: 15px !important;
+    margin-top:-10px !important;
+    li {
+      font-family: $robotoFontFamily !important;
+      font-size: 0.9rem !important;
+      margin-bottom: 0px;
+      color: #3f3f3f !important;
+      &:last-child {
+        margin-bottom: 0px !important;
+      }
+    }
+  }
 }

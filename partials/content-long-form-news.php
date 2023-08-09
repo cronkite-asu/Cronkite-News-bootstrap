@@ -514,7 +514,8 @@ if (have_rows('blocks') ) {
           <h1 class="absolute-text"><?php echo get_the_title(); ?></h1>
             <?php } else { ?>
           <h1 class="absolute-text"><?php echo get_sub_field('headline'); ?></h1>
-            <?php } ?>
+          <?php if (get_sub_field('intro_summary') != '') { echo get_sub_field('intro_summary'); } ?>
+        <?php } ?>
       </div>
       <img src="<?php echo get_sub_field('photo'); ?>" alt="<?php echo strip_tags(get_sub_field('credits')); ?>" title="<?php echo strip_tags(get_sub_field('credits')); ?>" />
     </div>
@@ -1297,33 +1298,42 @@ if (have_rows('blocks') ) {
     </div>
             <?php } ?>
 
-            <?php
-        }    elseif (get_row_layout() == '2up-photos-block' ) {
-            ?>
+<?php
+  }	elseif ( get_row_layout() == '2up-photos-block' ) {
+
+    $settings = get_sub_field('2up-settings');
+
+    if ($settings['no_shadow'] == 'yes') {
+      $removeShadow = 'class="no-shadow"';
+    } else {
+      $removeShadow = '';
+    }
+
+?>
 
     <div class="grid-container photo-content">
       <div class="grid-x grid-padding-x">
 
-            <?php
-            $captionCounter = 0;
-            if (have_rows('photos') ) {
-                while ( have_rows('photos') ) {
-                    the_row();
-                    ?>
-                          <div class="large-6 medium-6 small-12 cell">
-                                  <img src="<?php echo get_sub_field('photo'); ?>"  />
-                    <?php
-                    if (get_sub_field('caption') != '') {
-                        if ($captionCounter == 0 && get_sub_field('caption') != '') {
-                            $combinedCaption = '<strong>Left:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
-                        } elseif ($captionCounter == 1 && get_sub_field('caption') != '') {
-                            $combinedCaption .= ' <strong>Right:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
-                        }
-                                  $captionCounter++;
-                    }
-                    ?>
-                          </div>
-                    <?php if (get_sub_field('caption') != '') { ?>
+        <?php
+  				$captionCounter = 0;
+  				if ( have_rows('photos') ) {
+  						while ( have_rows('photos') ) {
+                the_row();
+  			?>
+  						<div class="large-6 medium-6 small-12 cell">
+  						        <img src="<?php echo get_sub_field('photo'); ?>" <?php echo $removeShadow; ?>  />
+  			<?php
+  							if (get_sub_field('caption') != '') {
+  								if ($captionCounter == 0 && get_sub_field('caption') != '') {
+  									$combinedCaption = '<strong>Left:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
+  								} elseif ($captionCounter == 1 && get_sub_field('caption') != '') {
+  									$combinedCaption .= ' <strong>Right:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
+  							  }
+  								$captionCounter++;
+  							}
+  			?>
+  						</div>
+              <?php if (get_sub_field('caption') != '') { ?>
               <div class="large-12 cell show-for-small-only">
                         <?php echo '<div class="wp-caption-text">'.get_sub_field('caption').'</div>'; ?>
               </div>
