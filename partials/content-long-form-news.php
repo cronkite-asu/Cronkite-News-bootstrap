@@ -510,6 +510,7 @@
           <h1 class="absolute-text"><?php echo get_the_title(); ?></h1>
         <?php } else { ?>
           <h1 class="absolute-text"><?php echo get_sub_field('headline'); ?></h1>
+          <?php if (get_sub_field('intro_summary') != '') { echo get_sub_field('intro_summary'); } ?>
         <?php } ?>
       </div>
       <img src="<?php echo get_sub_field('photo'); ?>" alt="<?php echo strip_tags(get_sub_field('credits')); ?>" title="<?php echo strip_tags(get_sub_field('credits')); ?>" />
@@ -1288,6 +1289,15 @@
 
 <?php
   }	elseif ( get_row_layout() == '2up-photos-block' ) {
+
+    $settings = get_sub_field('2up-settings');
+
+    if ($settings['no_shadow'] == 'yes') {
+      $removeShadow = 'class="no-shadow"';
+    } else {
+      $removeShadow = '';
+    }
+
 ?>
 
     <div class="grid-container photo-content">
@@ -1297,10 +1307,10 @@
   				$captionCounter = 0;
   				if ( have_rows('photos') ) {
   						while ( have_rows('photos') ) {
- the_row();
+                the_row();
   			?>
   						<div class="large-6 medium-6 small-12 cell">
-  						        <img src="<?php echo get_sub_field('photo'); ?>"  />
+  						        <img src="<?php echo get_sub_field('photo'); ?>" <?php echo $removeShadow; ?>  />
   			<?php
   							if (get_sub_field('caption') != '') {
   								if ($captionCounter == 0 && get_sub_field('caption') != '') {

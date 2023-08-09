@@ -12,7 +12,7 @@
       <div class="grid-x grid-padding-x">
         <div class="large-3 cell">
           <h6>Who we are</h6>
-          <p>Cronkite News is the news division of <a href="https://azpbs.org/" target="_blank">Arizona PBS</a>. The daily news products are produced by the <a href="https://cronkite.asu.edu/" target="_blank">Walter Cronkite School of Journalism and Mass Communication</a> at <a href="https://www.asu.edu/" target="_blank">Arizona State University</a>.</p>
+          <p>Cronkite News is produced by the <a href="https://cronkite.asu.edu/" target="_blank">Walter Cronkite School of Journalism and Mass Communication</a> at <a href="https://www.asu.edu/" target="_blank">Arizona State University</a>.</p>
           <p>Find a staff list and description of our beats <a href="https://cronkitenews.azpbs.org/about-us/" target="_blank">here</a>.</p>
           <p><a href="https://www.asu.edu/privacy/" target="_blank">Privacy statement</a></p>
         </div>
@@ -40,7 +40,7 @@
           <ul class="no-bullet">
             <li><a href="https://cronkitenoticias.azpbs.org/" target="_blank">Cronkite Noticias</a></li>
             <li><a href="http://news21.com/" target="_blank">Carnegie-Knight News21</a></li>
-            <li><a href="/category/special-reports/">Special Reports</a></li>            
+            <li><a href="/category/special-reports/">Special Reports</a></li>
             <li><a href="/rss-feed">RSS</a></li>
           </ul>
         </div>

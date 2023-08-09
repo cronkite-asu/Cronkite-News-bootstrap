@@ -1,0 +1,313 @@
+.montserrat {
+  font-family: "Montserrat", sans-serif; }
+
+.roboto {
+  font-family: "Roboto", sans-serif; }
+
+.taviraj {
+  font-family: "Taviraj", serif; }
+
+.lightGold {
+  color: #e0a845 !important; }
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+#intro {
+  /**/ }
+  #intro .grid-padding-x {
+    height: 90vh; }
+    @media only screen and (max-width: 1024px) {
+      #intro .grid-padding-x {
+        height: auto; } }
+  #intro .intro-text {
+    background-color: #453923 !important;
+    order: 1; }
+    @media only screen and (max-width: 1200px) {
+      #intro .intro-text {
+        order: 2;
+        padding-left: 2rem;
+        padding-right: 2rem; } }
+    @media only screen and (max-width: 1024px) {
+      #intro .intro-text {
+        padding-top: 4rem;
+        padding-bottom: 2rem; } }
+    @media only screen and (max-width: 640px) {
+      #intro .intro-text {
+        height: auto; } }
+    #intro .intro-text h1 {
+      max-width: 80% !important;
+      font-family: "Oswald", sans-serif !important;
+      font-weight: 600 !important;
+      font-size: 2.5rem !important;
+      line-height: 3.25rem !important;
+      color: #ffce00;
+      margin: 0 auto;
+      margin-bottom: 30px !important;
+      text-transform: uppercase; }
+      #intro .intro-text h1 .lightGold {
+        color: #e0a845 !important;
+        margin-bottom: 0 !important; }
+      @media only screen and (max-width: 1520px) {
+        #intro .intro-text h1 {
+          max-width: 100% !important; } }
+      @media only screen and (max-width: 1224px) {
+        #intro .intro-text h1 {
+          font-size: 2rem !important;
+          line-height: 2.5rem !important; } }
+      @media only screen and (max-width: 1024px) {
+        #intro .intro-text h1 {
+          max-width: 66% !important; } }
+      @media only screen and (max-width: 980px) {
+        #intro .intro-text h1 {
+          max-width: 80% !important; } }
+      @media only screen and (max-width: 860px) {
+        #intro .intro-text h1 {
+          max-width: 90% !important; } }
+      @media only screen and (max-width: 760px) {
+        #intro .intro-text h1 {
+          max-width: 100% !important; } }
+    #intro .intro-text p {
+      max-width: 80% !important;
+      margin: 0 auto;
+      font-family: "Cardo", serif;
+      font-size: 1.45rem;
+      line-height: 2.5rem;
+      color: #fff; }
+      @media only screen and (max-width: 1520px) {
+        #intro .intro-text p {
+          max-width: 100% !important; } }
+      @media only screen and (max-width: 1024px) {
+        #intro .intro-text p {
+          max-width: 66% !important; } }
+      @media only screen and (max-width: 980px) {
+        #intro .intro-text p {
+          max-width: 80% !important; } }
+      @media only screen and (max-width: 860px) {
+        #intro .intro-text p {
+          max-width: 90% !important; } }
+      @media only screen and (max-width: 760px) {
+        #intro .intro-text p {
+          max-width: 100% !important; } }
+    #intro .intro-text .audio-holder {
+      display: flex;
+      flex-direction: row;
+      background-color: #1f190e;
+      padding: 35px 50px;
+      max-width: 640px;
+      margin: 0 auto; }
+      @media only screen and (max-width: 1520px) {
+        #intro .intro-text .audio-holder {
+          padding: 25px 40px; } }
+      @media only screen and (max-width: 1425px) {
+        #intro .intro-text .audio-holder {
+          padding: 25px 20px; } }
+      @media only screen and (max-width: 1375px) {
+        #intro .intro-text .audio-holder {
+          padding: 25px 15px; } }
+      @media only screen and (max-width: 760px) {
+        #intro .intro-text .audio-holder {
+          flex-direction: column; } }
+      #intro .intro-text .audio-holder.in-content {
+        margin-top: 35px;
+        margin-bottom: 40px; }
+      #intro .intro-text .audio-holder .player-btn {
+        display: flex;
+        max-width: 210px;
+        height: 80px; }
+        @media only screen and (max-width: 1345px) {
+          #intro .intro-text .audio-holder .player-btn {
+            max-width: 190px; } }
+        @media only screen and (max-width: 760px) {
+          #intro .intro-text .audio-holder .player-btn {
+            margin: 0 auto; } }
+        #intro .intro-text .audio-holder .player-btn:after {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #ffce00;
+          font-weight: 600;
+          content: " AUDIO ";
+          padding: 0 26px 0 15px;
+          margin-right: 26px;
+          border-right: 2px solid #f7f4e9;
+          letter-spacing: 2px; }
+          @media only screen and (max-width: 1345px) {
+            #intro .intro-text .audio-holder .player-btn:after {
+              font-size: 1rem;
+              margin-right: 18px;
+              padding: 0 15px 0 15px; } }
+          @media only screen and (max-width: 1240px) {
+            #intro .intro-text .audio-holder .player-btn:after {
+              font-size: 0.85rem !important;
+              margin-right: 14px;
+              padding: 0 14px 0 0px; } }
+          @media only screen and (max-width: 760px) {
+            #intro .intro-text .audio-holder .player-btn:after {
+              border-right: none;
+              display: none; } }
+        #intro .intro-text .audio-holder .player-btn svg {
+          max-width: 112px;
+          width: 112px;
+          opacity: 0.75;
+          -webkit-transition: opacity 0.25s;
+          -moz-transition: opacity 0.25s;
+          -o-transition: opacity 0.25s;
+          transition: opacity 0.25s; }
+          #intro .intro-text .audio-holder .player-btn svg:hover {
+            opacity: 1;
+            cursor: pointer; }
+        #intro .intro-text .audio-holder .player-btn .hide {
+          display: none; }
+      #intro .intro-text .audio-holder .title-player-holder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; }
+        #intro .intro-text .audio-holder .title-player-holder .audio-title {
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          #intro .intro-text .audio-holder .title-player-holder .audio-title p {
+            max-width: 100% !important;
+            font-family: "Montserrat", sans-serif !important;
+            font-size: 0.925rem !important;
+            font-weight: 500 !important;
+            letter-spacing: 2px !important;
+            line-height: 1.5rem;
+            color: #f7f4e9;
+            margin-bottom: 10px;
+            text-transform: uppercase; }
+            @media only screen and (max-width: 1240px) {
+              #intro .intro-text .audio-holder .title-player-holder .audio-title p {
+                font-size: 0.85rem !important; } }
+          @media only screen and (max-width: 760px) {
+            #intro .intro-text .audio-holder .title-player-holder .audio-title {
+              padding-top: 25px; } }
+        #intro .intro-text .audio-holder .title-player-holder .audio-player {
+          display: flex;
+          align-items: center;
+          max-width: 330px !important;
+          width: 330px; }
+          @media only screen and (max-width: 1345px) {
+            #intro .intro-text .audio-holder .title-player-holder .audio-player {
+              max-width: 300px !important;
+              width: 300px; } }
+          @media only screen and (max-width: 1240px) {
+            #intro .intro-text .audio-holder .title-player-holder .audio-player {
+              max-width: 280px !important;
+              width: 280px; } }
+          @media only screen and (max-width: 1024px) {
+            #intro .intro-text .audio-holder .title-player-holder .audio-player {
+              max-width: initial !important;
+              width: 100%; } }
+          @media only screen and (max-width: 760px) {
+            #intro .intro-text .audio-holder .title-player-holder .audio-player {
+              padding-top: 25px; } }
+          #intro .intro-text .audio-holder .title-player-holder .audio-player .plyr--audio .plyr__controls {
+            background: none;
+            padding: 0;
+            color: #ffffff !important; }
+          #intro .intro-text .audio-holder .title-player-holder .audio-player .plyr__menu button, #intro .intro-text .audio-holder .title-player-holder .audio-player .plyr__volume button, #intro .intro-text .audio-holder .title-player-holder .audio-player .plyr__controls .plyr__controls__item:first-child, #intro .intro-text .audio-holder .title-player-holder .audio-player .plyr--audio .plyr__control.plyr__tab-focus, #intro .intro-text .audio-holder .title-player-holder .audio-player .plyr--audio .plyr__control:hover, #intro .intro-text .audio-holder .title-player-holder .audio-player .plyr--audio .plyr__control[aria-expanded=true] {
+            display: none; }
+          #intro .intro-text .audio-holder .title-player-holder .audio-player .plyr__controls .plyr__controls__item.plyr__progress__container {
+            padding-left: 0px !important; }
+          #intro .intro-text .audio-holder .title-player-holder .audio-player .plyr__volume input[type=range]:after {
+            display: block;
+            content: " ";
+            background: url("https://cronkitenews.azpbs.org/wp-content/uploads/2020/12/audio-plyr-volume.png");
+            width: 25px;
+            height: 18px;
+            opacity: 0.65;
+            margin-left: 4px;
+            background-repeat: no-repeat; }
+  #intro .background-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d5d5d5 !important;
+    padding-bottom: 0px !important;
+    order: 2; }
+    @media only screen and (max-width: 1200px) {
+      #intro .background-img {
+        height: auto; } }
+    @media only screen and (max-width: 1024px) {
+      #intro .background-img {
+        padding-top: 4rem;
+        padding-bottom: 4rem; } }
+    @media only screen and (max-width: 900px) {
+      #intro .background-img {
+        order: 1;
+        height: 50vh; } }
+  #intro .arizona-focus-grid-2020 {
+    max-width: 700px;
+    max-height: 590px;
+    margin: 0 auto; }
+    @media only screen and (max-width: 760px) {
+      #intro .arizona-focus-grid-2020 {
+        max-width: 100%;
+        max-height: auto; } }
+    #intro .arizona-focus-grid-2020 .cell {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      #intro .arizona-focus-grid-2020 .cell h2 {
+        font-family: "Oswald", sans-serif !important;
+        font-weight: 600 !important;
+        font-size: 4rem !important;
+        line-height: 5rem !important;
+        color: #000;
+        margin-bottom: 40px;
+        text-transform: uppercase; }
+        #intro .arizona-focus-grid-2020 .cell h2:after {
+          display: block;
+          background-color: #ffce00;
+          content: "Science & Technology";
+          font-size: 1.85rem;
+          font-weight: 300;
+          height: 40px;
+          color: #fff;
+          text-align: center;
+          line-height: 2.4rem; }
+        @media only screen and (max-width: 760px) {
+          #intro .arizona-focus-grid-2020 .cell h2 {
+            font-size: 2.5rem !important;
+            line-height: 3.5rem !important; } }
+      #intro .arizona-focus-grid-2020 .cell img {
+        max-width: 400px; }
+        @media only screen and (max-width: 1200px) {
+          #intro .arizona-focus-grid-2020 .cell img {
+            max-width: 280px; } }
+        @media only screen and (max-width: 760px) {
+          #intro .arizona-focus-grid-2020 .cell img {
+            max-width: 275px; } }
+
+.poem {
+  font-family: "Cardo", serif;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+  padding: 0 60px;
+  margin-top: -40px; }
+  @media only screen and (max-width: 760px) {
+    .poem {
+      padding: 0; } }
+
+@media only screen and (max-width: 760px) {
+  #intro .intro-text .audio-holder .title-player-holder .audio-title {
+    order: 1; } }
+
+@media only screen and (max-width: 760px) {
+  #intro .intro-text .audio-holder .title-player-holder .audio-player {
+    order: 2; } }
+
+#intro .intro-text .audio-holder .title-player-holder .audio-player .plyr {
+  width: 100%; }
+
+#intro .background-img .photo-credit {
+  width: 100%;
+  text-align: center; }
+
+/*# sourceMappingURL=anita-yellowhair.css.map */

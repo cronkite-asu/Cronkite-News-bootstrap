@@ -1333,5 +1333,36 @@ blockquote.pullquote.style1 {
 .callout.roboto hr {
   margin-top: 10px !important;
   margin-bottom: 10px !important; }
+.callout.key-points strong {
+  margin-left: 10px;
+  text-transform: uppercase; }
+.callout.key-points ul {
+  text-indent: -20px !important;
+  margin-left: 30px !important;
+  margin-bottom: 0px !important;
+  margin-top: -6px !important; }
+  .callout.key-points ul li {
+    font-family: "Roboto", sans-serif !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 0px;
+    color: #3f3f3f !important; }
+    .callout.key-points ul li:last-child {
+      margin-bottom: 0px !important; }
+
+.sources strong {
+  margin-left: 10px;
+  text-transform: uppercase; }
+.sources.key-points {
+  text-indent: -20px !important;
+  margin-left: 30px !important;
+  margin-bottom: 15px !important;
+  margin-top: -10px !important; }
+  .sources.key-points li {
+    font-family: "Roboto", sans-serif !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 0px;
+    color: #3f3f3f !important; }
+    .sources.key-points li:last-child {
+      margin-bottom: 0px !important; }
 
 /*# sourceMappingURL=single-story-post.css.map */

@@ -10,7 +10,7 @@
       <div class="grid-x grid-padding-x">
         <div class="large-3 medium-3 small-6 cell">
           <h6>Who we are</h6>
-          <p>Cronkite News, the news division of <a href="https://azpbs.org/" target="_blank">Arizona PBS</a>, is produced by the <a href="https://cronkite.asu.edu/" target="_blank">Walter Cronkite School of Journalism and Mass Communication</a> at <a href="https://www.asu.edu/" target="_blank">Arizona State University</a>.</p>
+          <p>Cronkite News is produced by the <a href="https://cronkite.asu.edu/" target="_blank">Walter Cronkite School of Journalism and Mass Communication</a> at <a href="https://www.asu.edu/" target="_blank">Arizona State University</a>.</p>
           <p>Staff members are listed <a href="https://cronkitenews.azpbs.org/about-us/" target="_blank">here</a>.</p>
         </div>
 
@@ -34,7 +34,7 @@
           <ul class="no-bullet">
             <li><a href="https://cronkitenoticias.azpbs.org/" target="_blank">Cronkite Noticias</a></li>
             <li><a href="http://news21.com/" target="_blank">Carnegie-Knight News21</a></li>
-            <li><a href="/category/special-reports/">Special Reports</a></li>            
+            <li><a href="/category/special-reports/">Special Reports</a></li>
             <li><a href="/rss-feed">RSS</a></li>
             <li><a href="/weather">Weather</a></li>
           </ul>
@@ -127,7 +127,40 @@
       window.addEventListener("DOMContentLoaded", function() {
           if (typeof NRWebReader != 'undefined') {
               window['NRWebReader'] = new NRWebReader({
-              widget_id: "3m7ptr3zhp"  // DO NOT REMOVE. This is your widget ID for your WebReader
+              widget_id: "v1q337yx97",  // DO NOT REMOVE. This is your widget ID for your WebReader
+              icon: {
+                  icon_name: "headphone", /*Optional: Alternative icon to show as the widget icon*/
+                  icon_position: "bottom-left", /*Optional: Position for the the widget to show up at*/
+              //    icon_position_offsets: {/*Optional: Custom position offsets for the the widget to show up at*/
+              //        left:""
+              //        right:""
+              //        top:""
+              //        bottom:""
+              //    }
+              //    icon_color: "#0555B8", /*Optional: Color of the icon*/
+              //    icon_size: {width: "60px", height: "60px"}, /*Optional: icon size. Above 50px is recommended.*/
+              //    text_box: true, /*Optional: false if you don't want to have a greeting text box*/
+              //    text_box_greeting: "Listen", /*Optional: Your greeting text in the text box*/
+              //    text_box_background_color: "#ffffff", /*Optional: Background color of text box*/
+              //    text_box_font_color: "#0555B8", /*Optional: Color of the icon*/
+              //    text_box_font_size: "18px", /*Optional: Font size of the text in text box*/
+              //    show_in_mobile: true, /*Optional: false if you don't want the widget to show up on mobile*/
+              //    mob_icon_position: "bottom-left", /*Optional: Position for the the widget to show up at on mobile*/
+              //    mob_icon_position_offsets: {/*Optional: Custom position offsets for the the widget to show up at on mobile*/
+              //        left:""
+              //        right:""
+              //        top:""
+              //        bottom:""
+              //    }
+              //    mob_icon_size: {width: "30px", height: "30px"}, /*Optional: icon size on mobile. Above 30px is recommended.*/
+              //    mob_text_box: false /*Optional: false if you don't want to have a greeting text box on mobile*/
+              },
+              bar : {
+              //    settings_default_voice: "Matthew *", /*Optional: Default voice for TTS*/
+              //    settings_default_speed: 1, /*Optional: Default speed for TTS*/
+              //    settings_highlight_colour_scheme: "dark" /*Optional: Default color scheme for highlighting text being read on page*/
+              },
+              custom_text_source: ".story-content" /*Optional: only read the text inside the HTML element with the id or class */
               });
           }
       });
@@ -487,6 +520,33 @@
           // settings: "unslick"
           // instead of a settings object
         ]
+      });
+
+      $('.featured-health-stories').slick({
+        infinite: true,
+        dots: false,
+        centerMode: false,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        arrows: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+           {
+             breakpoint: 768,
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1
+             }
+           },
+           {
+             breakpoint: 480,
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1
+             }
+           }
+         ]
       });
 
       // audio player sticky

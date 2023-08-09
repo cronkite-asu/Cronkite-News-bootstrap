@@ -286,96 +286,80 @@
            <article id="story-post">
              <!-- story photo/video/slideshow -->
              <?php
-                $isvid = get_field('video_file', false, false);
+                function getYoutubeID ($isvid) {
+                  $videoBaseLink = 'https://www.youtube.com/embed/';
+                  $breakQuery = parse_url($isvid, PHP_URL_QUERY);
+                  if (isset($breakQuery)) {
+                      $videoID = explode('=', $breakQuery);
+                      $finalVideoURL = $videoBaseLink.$videoID[1];
+                  } else {
+                      $finalVideoURL = $isvid;
+                  }
+                  return $finalVideoURL;
+                }
+
+                if (get_field('video_url') != '') {
+                    $isvid = get_field('video_url', false, false);
+                } else {
+                    $isvid = get_field('video_file', false, false);
+                }
+
                 if ($isvid ) { // if we have a video load the video instead of the carousel
-
-                    function linkifyYouTubeURLs($text)
-                    {
-                        $text = preg_replace(
-                            '~(?#!js YouTubeId Rev:20160125_1800)
-                         # Match non-linked youtube URL in the wild. (Rev:20130823)
-                         https?://          # Required scheme. Either http or https.
-                         (?:[0-9A-Z-]+\.)?  # Optional subdomain.
-                         (?:                # Group host alternatives.
-                           youtu\.be/       # Either youtu.be,
-                         | youtube          # or youtube.com or
-                           (?:-nocookie)?   # youtube-nocookie.com
-                           \.com            # followed by
-                           \S*?             # Allow anything up to VIDEO_ID,
-                           [^\w\s-]         # but char before ID is non-ID char.
-                         )                  # End host alternatives.
-                         ([\w-]{11})        # $1: VIDEO_ID is exactly 11 chars.
-                         (?=[^\w-]|$)       # Assert next char is non-ID or EOS.
-                         (?!                # Assert URL is not pre-linked.
-                           [?=&+%\w.-]*     # Allow URL (query) remainder.
-                           (?:              # Group pre-linked alternatives.
-                             [\'"][^<>]*>   # Either inside a start tag,
-                           | </a>           # or inside <a> element text contents.
-                           )                # End recognized pre-linked alts.
-                         )                  # End negative lookahead assertion.
-                         [?=&+%\w.-]*       # Consume any URL (query) remainder.
-                         ~ix', '$1',
-                            $text
-                        );
-                         return $text;
-                    }
-
                     $host = parse_url($isvid);
                     $isjpg = false;
 
-                    if ($host['host'] == 'www.youtube.com') {
-                        $id = linkifyYouTubeURLs($isvid);
-                        $vidlink = $isvid;
+                    if ($host['host'] == 'www.youtube.com' || $host['host'] == 'youtu.be' || $host['host'] == 'www.youtu.be' || $host['host'] == 'youtube.com') {
+                        $embedVideoURL = getYoutubeID ($isvid);
                         echo '<div id="video-holder">';
-
                         echo '<div class="video-wrap">';
                         echo '<div class="video">';
                         echo '<div class="close-video"><i class="fas fa-times"></i></div>';
                         echo '<div class="plyr__video-embed responsive-embed widescreen" id="player">';
-                        //echo '<iframe width="800" height="500" src="'.$vidlink.'?rel=0" frameborder="0" gesture="media" allowfullscreen></iframe>';
                         echo '<iframe
-                       src="'.$vidlink.'?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-                       allowfullscreen
-                       allowtransparency
-                       allow="autoplay"
-                   ></iframe>';
+                         src="'.$embedVideoURL.'?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                         allowfullscreen
+                         allowtransparency
+                         allow="autoplay"
+                         ></iframe>';
                         echo '</div>';
                         echo '<div class="asset-caption">'.strip_tags(get_field('video_caption'), '<a>').'</div>';
                         echo '</div>';
                         echo '</div>';
                         echo '</div>';
+                    } else {
+                        echo '<div id="video-holder">';
+                        echo get_field('video_file', false, false);
+                        echo '<div class="asset-caption">'.strip_tags(get_field('video_caption'), '<a>').'</div>';
+                        echo '</div>';
                     }
                 } else if (have_rows('slider_images') ) { ?>
-                 <div id="story-photo" class="story-photos">
+                   <div id="story-photo" class="story-photos">
+                      <?php
+                        while ( have_rows('slider_images') ) {
+                          the_row();
+                          $imageCount = count(get_field('slider_images'));
+                          $postImages = get_sub_field('images');
+                          $photoCaption = get_sub_field('description');
+                          if ($imageCount == 1) {
+                      ?>
+                         <div>
+                           <img src="<?php echo $postImages; ?>" width="800" alt="" title="" />
+                           <div class="asset-caption"><?php echo $photoCaption; ?></div>
+                         </div>
+                      <?php } else { ?>
+                         <div>
+                           <img src="<?php echo $postImages; ?>" width="100%" alt="" title="" />
+                           <div class="asset-caption"><?php echo $photoCaption; ?></div>
+                         </div>
                     <?php
-                    while ( have_rows('slider_images') ) {
-                        the_row();
-                        $imageCount = count(get_field('slider_images'));
-                        $postImages = get_sub_field('images');
-                        $photoCaption = get_sub_field('description');
-
-                        if ($imageCount == 1) {
-                            ?>
-                     <div>
-                       <img src="<?php echo $postImages; ?>" width="800" alt="" title="" />
-                       <div class="asset-caption"><?php echo $photoCaption; ?></div>
-                     </div>
-                            <?php
-                        } else {
-                            ?>
-                     <div>
-                       <img src="<?php echo $postImages; ?>" width="100%" alt="" title="" />
-                       <div class="asset-caption"><?php echo $photoCaption; ?></div>
-                     </div>
-                            <?php
                         }
-                    }
+                      }
                     ?>
-                 </div>
+                   </div>
                     <?php
                 } else if (get_field('before_after_slider')) {
                     $beforeAfterAssets = get_field('before_after_slider');
-                    ?>
+                ?>
                  <div class="before-after-photos" class="twentytwenty-container">
                    <div class="photos">
                      <img src="<?php echo $beforeAfterAssets['first_image']; ?>" />
@@ -388,10 +372,52 @@
                     echo "<br />";
                 }
                 wp_reset_query();
-                ?>
+             ?>
 
              <!-- story content -->
-             <?php the_content(); ?>
+             <?php
+                // check if story is a translation by ChatGPT
+                if (get_field('original-content') == 'no' && get_field('chatgpt_translation') == 'yes') {
+             ?>
+                  <div class="callout secondary roboto" style="margin-bottom:50px;max-width:800px;border:none;box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);">
+                    <div class="grid-x align-middle">
+                      <div class="cell small-12">
+                        <p><strong>EDITOR'S NOTE:</strong> This story was translated from English to Spanish using <a href="https://chat.openai.com/" rel="noopener" target="_blank">ChatGPT</a>. A Cronkite News editor reviewed the translation. Find the original story <a href="<?php echo get_field('original_story_link'); ?>" rel="noopener" target="_blank">here</a>. See any errors? Please let us know. Contact <a href="mailto:julio.cisneros@asu.edu" rel="noopener" target="_blank">julio.cisneros@asu.edu</a>.</p>
+                        <hr />
+                        <p><strong>NOTA DEL EDITOR:</strong> Este reportaje fue traducido del inglés al español usando <a href="https://chat.openai.com/" rel="noopener" target="_blank">ChatGPT</a>. Un editor de Cronkite News revisó la traducción. Encuentra el reportaje original <a href="<?php echo get_field('original_story_link'); ?>" rel="noopener" target="_blank">aquí</a>. ¿Ves algún error? Por favor, déjanoslo saber. Contacta a <a href="mailto:julio.cisneros@asu.edu" rel="noopener" target="_blank">julio.cisneros@asu.edu</a>.</p>
+                      </div>
+                    </div>
+                  </div>
+              <?php
+                }
+
+                $compareDate = strtotime('Mar 21, 2023');
+                $postDate = strtotime(get_the_date());
+                if ($postDate >= $compareDate) {
+                  $storyContent = wpautop(get_the_content());
+
+                  function getVideoUrlsFromString($storyContent) {
+                    $patternID = '#(?<=v=|v\/|vi=|vi\/|youtu.be\/)[a-zA-Z0-9_-]{11}#';
+                    $patternURL = '~(?:https?://)?(?:www.)?(?:youtube.com|youtu.be)/(?:watch\?v=)?([^\s]+)~';
+                    // find all youtube links
+                    preg_match_all($patternURL, $storyContent, $ytLinks);
+
+                    for ($i = 0; $i < count($ytLinks[0]); $i++) {
+                      $responseYTembeds = "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/".strip_tags($ytLinks[1][$i])."' frameborder='0' allowfullscreen></iframe></div>";
+                      $storyContent = str_replace(strip_tags($ytLinks[0][$i]), $responseYTembeds, $storyContent);
+                    }
+
+                    $storyContent = str_replace('<p><style>.embed-container', '<style>.embed-container', $storyContent);
+                    $storyContent = str_replace('</iframe></div></p>', '</iframe></div>', $storyContent);
+
+                    return $storyContent;
+                  }
+                  $finalStoryContent = getVideoUrlsFromString($storyContent);
+                  echo $finalStoryContent = apply_filters('the_content', $finalStoryContent);
+                } else {
+                  the_content();
+                }
+             ?>
 
              <?php
                 // in this series settings
@@ -606,7 +632,7 @@
                                 if (get_field('pronunciation')) {
                                     echo '<span class="pronunciation">';
                                     ?>
-                                    <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php 
+                                    <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php
                                     } ?> <?php echo get_field('pronunciation') ?></span>
                                     <?php
                                     echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
@@ -706,7 +732,7 @@
                                 if (get_field('pronunciation')) {
                                      echo '<span class="pronunciation">';
                                     ?>
-                                     <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php 
+                                     <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php
                                      } ?> <?php echo get_field('pronunciation') ?></span>
                                        <?php
                                         echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
@@ -806,7 +832,7 @@
                                 if (get_field('pronunciation')) {
                                      echo '<span class="pronunciation">';
                                     ?>
-                                     <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php 
+                                     <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php
                                      } ?> <?php echo get_field('pronunciation') ?></span>
                                        <?php
                                         echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
@@ -905,7 +931,7 @@
                                 if (get_field('pronunciation')) {
                                       echo '<span class="pronunciation">';
                                     ?>
-                                      <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php 
+                                      <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php
                                       } ?> <?php echo get_field('pronunciation') ?></span>
                                     <?php
                                       echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';

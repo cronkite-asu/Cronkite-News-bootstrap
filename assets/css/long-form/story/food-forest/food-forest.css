@@ -1,0 +1,30 @@
+.intro-text h1 {
+  font-family: "Merriweather", serif;
+  max-width: 1000px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 4rem;
+  padding: 0;
+  color: #000;
+  margin: 40px auto; }
+.intro-text .wp-caption-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #6e6e6e;
+  padding-top: 0;
+  letter-spacing: 0;
+  line-height: 1.2rem;
+  max-width: 90rem;
+  margin: 0 auto; }
+  .intro-text .wp-caption-text a {
+    color: #6e6e6e;
+    border-bottom: 1px solid #757575;
+    -webkit-transition: border 0.25s;
+    -moz-transition: border 0.25s;
+    -o-transition: border 0.25s;
+    transition: border 0.25s; }
+    .intro-text .wp-caption-text a:hover {
+      border: none; }
+
+/*# sourceMappingURL=food-forest.css.map */

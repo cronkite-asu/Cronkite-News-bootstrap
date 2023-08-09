@@ -252,10 +252,7 @@ body {
     padding: 30px 20px;
     margin: 0 auto !important;
     margin-top: 15px !important;
-    background: rgba(28, 28, 28, 0.45);
-    background-repeat: no-repeat;
-    background-image: url("https://cronkitenews.azpbs.org/wp-content/uploads/2023/03/baseball.png");
-    background-position: right -12% bottom 170%; }
+    background: rgba(28, 28, 28, 0.45); }
     @media only screen and (max-width: 800px) {
       .featured-stories .latest-series {
         background-image: none; } }
