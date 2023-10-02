@@ -567,12 +567,11 @@
  wp_reset_query();
  ?>
 
+            <?php if (current_user_can('administrator')) { ?>
              <div class="social_share last">
-               <div class="social"><span><strong>Comparte el artículo:</strong></span> <div class="addthis_inline_share_toolbox"></div></div>
-               <?php if (current_user_can('administrator')) { ?>
-               <div class="report-typo"><a class="hollow button" href="#">Reporta un error</a></div>
-               <?php } ?>
+               <div class="report-typo"><a class="hollow button" href="#">Report a Typo</a></div>
              </div>
+            <?php } ?>
 
            </article>
 

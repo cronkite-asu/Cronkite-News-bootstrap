@@ -1365,4 +1365,47 @@ blockquote.pullquote.style1 {
     .sources.key-points li:last-child {
       margin-bottom: 0px !important; }
 
+#social-icons-desktop, #social-icons-mobile {
+  background-color: #dadada;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -khtml-border-radius: 12px;
+  border-radius: 12px;
+  padding: 4px; }
+  #social-icons-desktop .a2a_svg, #social-icons-mobile .a2a_svg {
+    width: 26px;
+    height: 26px; }
+    #social-icons-desktop .a2a_svg:hover, #social-icons-mobile .a2a_svg:hover {
+      background-color: black; }
+
+#social-icons-mobile {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000; }
+  #back-to-top svg {
+    font-size: 2rem;
+    color: #0a0a0a;
+    -webkit-transition: opacity 0.25s;
+    -moz-transition: opacity 0.25s;
+    -o-transition: opacity 0.25s;
+    transition: opacity 0.25s;
+    opacity: 0.4; }
+    #back-to-top svg:hover {
+      opacity: 1; }
+  #back-to-top.show {
+    opacity: 0.5;
+    visibility: visible; }
+  @media only screen and (max-width: 660px) {
+    #back-to-top {
+      display: none !important; } }
+
 /*# sourceMappingURL=single-story-post.css.map */

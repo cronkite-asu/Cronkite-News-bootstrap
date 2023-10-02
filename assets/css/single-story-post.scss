@@ -1750,3 +1750,52 @@ blockquote {
     }
   }
 }
+
+#social-icons-desktop, #social-icons-mobile {
+  background-color: #dadada;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -khtml-border-radius: 12px;
+  border-radius: 12px;
+  padding:4px;
+  .a2a_svg {
+    width: 26px;
+    height: 26px;
+    &:hover {
+      background-color: rgba(0,0,0,1);
+    }
+  }
+}
+
+#social-icons-mobile {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  svg {
+    font-size: 2rem;
+    color: $black;
+    @include attr-transition1(opacity);
+    opacity: 0.4;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &.show {
+    opacity: 0.5;
+    visibility: visible;
+  }
+  @media only screen
+    and (max-width: 660px) {
+      display: none !important;
+  }
+}

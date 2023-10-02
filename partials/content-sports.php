@@ -60,11 +60,11 @@ $topStoriesArray = array();
                                 // save main story ID
                                 $topStoriesArray[] = $mainStory;
                                 ?>
-                    <div class="large-8 medium-12 small-12 cell story">
-                      <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($mainStory); ?></a>
-                      <h2><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h2>
-                      <p><?php echo $summary; ?></p>
-                    </div>
+                                <div class="large-8 medium-12 small-12 cell story">
+                                  <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($mainStory); ?></a>
+                                  <h2><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h2>
+                                  <p><?php echo $summary; ?></p>
+                                </div>
                                 <?php
                             }
                         }
@@ -167,7 +167,7 @@ if (have_rows('sports_homepage')) {
           <!-- Cronkite Sports in Focus -->
           <div class="grid-x grid-padding-x">
             <div class="large-12 medium-12 small-12 cell story audio-block">
-              <h4>Cronkite Sports in Focus</h4>
+              <h4>The Sweet Spot</h4>
                 <?php echo get_sub_field('sports-audio-embed', 180881); ?>
             </div>
           </div>
