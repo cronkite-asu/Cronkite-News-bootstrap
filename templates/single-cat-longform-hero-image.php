@@ -21,11 +21,11 @@ get_header('longformhero'); ?>
              
 
                                 <div id="top-img-holder"> 
-                                            <?php if (have_rows('top_full_image') ) : ?>
-                                                <?php while ( have_rows('top_full_image') ): the_row();
+                                            <?php if (have_rows('top_full_image')) : ?>
+                                                <?php while (have_rows('top_full_image')): the_row();
                                                     // Declare variables below
                                                     $icon = get_sub_field('fimage');
-                                                    $text = get_sub_field('fcaption');  // Use variables below ?>
+                                                    $text = get_sub_field('fcaption');  // Use variables below?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
                                                     <?php if ($imgheadline = get_field('headline_over_image')) {?>
                                         <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image');?>;font-size:<?php the_field('headline_over_image_font_size');?>;<?php the_field('additional_headline_over_image_styling');?>"> <?php the_field('headline_over_image'); ?> </h1>
@@ -36,7 +36,8 @@ get_header('longformhero'); ?>
                                                 </div>
                                                 </div>
                                                 <?php endwhile; ?>
-                                            <?php endif; wp_reset_query(); ?>
+                                            <?php endif;
+                                            wp_reset_query(); ?>
                                                 
                                               
                               

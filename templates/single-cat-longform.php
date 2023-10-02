@@ -23,11 +23,11 @@ get_header(); ?>
                                             $verticals = get_the_category();
                                             $separator = ' | ';
                                             $output = '';
-                                            if (! empty($verticals) ) {
-                                                foreach ( $verticals as $category ) {
+                                            if (! empty($verticals)) {
+                                                foreach ($verticals as $category) {
 
                                                     if (($category->name != "Uncategorized") && ($category->name != "Longform")) {
-                                                                  $output .= '<a href="' . esc_url(get_category_link($category->term_id)). '" alt="' . esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)) . '">' . strtoupper(esc_html($category->name)) . '</a>' . $separator;
+                                                        $output .= '<a href="' . esc_url(get_category_link($category->term_id)). '" alt="' . esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)) . '">' . strtoupper(esc_html($category->name)) . '</a>' . $separator;
                                                     }
 
                                                 }
@@ -39,11 +39,11 @@ get_header(); ?>
               <h1><?php the_title(); ?></h1>
 
                                             <div id="top-img-holder"> 
-                                            <?php if (have_rows('top_full_image') ) : ?>
-                                                <?php while ( have_rows('top_full_image') ): the_row();
+                                            <?php if (have_rows('top_full_image')) : ?>
+                                                <?php while (have_rows('top_full_image')): the_row();
                                                     // Declare variables below
                                                     $icon = get_sub_field('fimage');
-                                                    $text = get_sub_field('fcaption');  // Use variables below ?>
+                                                    $text = get_sub_field('fcaption');  // Use variables below?>
                                                 <img  style="width:100%;height:auto;" src="<?php echo $icon; ?>" />
 
                                                 <div class="carousel-captions"> <!-- captions -->
@@ -52,7 +52,8 @@ get_header(); ?>
                                                 </div>
                                                 </div>
                                                 <?php endwhile; ?>
-                                            <?php endif; wp_reset_query(); ?>
+                                            <?php endif;
+                                            wp_reset_query(); ?>
                                 </div>
                                 <div class="col-xs-12 col-md-offset-2 col-md-8">
                                 <h6 class="story-info"><?php if ($postAuthor = get_field('post_author')) {?>

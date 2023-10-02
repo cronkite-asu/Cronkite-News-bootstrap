@@ -28,10 +28,10 @@
 </div>
 
 <?php
-if (have_rows('layout') ) {
-    while ( have_rows('layout') ) {
+if (have_rows('layout')) {
+    while (have_rows('layout')) {
         the_row();
-        if (get_row_layout() == 'intro-split' ) {
+        if (get_row_layout() == 'intro-split') {
             $intro = get_sub_field('intro_summary');
             ?>
   <div id="intro" class="grid-container full">
@@ -51,9 +51,9 @@ if (have_rows('layout') ) {
 
             <?php if (get_sub_field('font-family') == 'merriweather') { ?>
                 <?php $font = "font-family:".get_sub_field('font-family').";" ?>
-            <?php } else if (get_sub_field('font-family') == 'montserrat') { ?>
+            <?php } elseif (get_sub_field('font-family') == 'montserrat') { ?>
                 <?php $font = "font-family:".get_sub_field('font-family').";" ?>
-            <?php } else if (get_sub_field('font-family') == 'roboto') { ?>
+            <?php } elseif (get_sub_field('font-family') == 'roboto') { ?>
                 <?php $font = "font-family:".get_sub_field('font-family').";" ?>
             <?php } else { ?>
                 <?php $font = "font-family:".get_sub_field('font-family').";" ?>
@@ -66,7 +66,9 @@ if (have_rows('layout') ) {
             <?php } ?>
 
 
-        <h1 style="<?php echo $color; echo $capitalize; echo $font; ?>"><?php echo get_sub_field('headline'); ?></h1>
+        <h1 style="<?php echo $color;
+            echo $capitalize;
+            echo $font; ?>"><?php echo get_sub_field('headline'); ?></h1>
             <?php echo get_sub_field('intro_summary'); ?>
       </div>
       <div class="large-6 medium-12 small-12 cell background-img" <?php echo 'style="background:url('.get_sub_field('photo').')"';?>>
@@ -77,7 +79,7 @@ if (have_rows('layout') ) {
 
 
             <?php
-        } elseif (get_row_layout() == 'intro-head-photo' ) {
+        } elseif (get_row_layout() == 'intro-head-photo') {
             $intro = get_sub_field('intro_summary');
             ?>
   <div id="intro-head-photo" class="grid-container full">
@@ -118,7 +120,7 @@ if (have_rows('layout') ) {
 
 
             <?php
-        } elseif (get_row_layout() == 'intro-gradient-photo' ) {
+        } elseif (get_row_layout() == 'intro-gradient-photo') {
             $intro = get_sub_field('intro_summary');
             ?>
   <div id="intro-head-photo" class="grid-container full">
@@ -158,7 +160,7 @@ if (have_rows('layout') ) {
   </div>
 
             <?php
-        } elseif (get_row_layout() == 'plain-code-block' ) {
+        } elseif (get_row_layout() == 'plain-code-block') {
             ?>
 
     <div class="grid-container text-content">
@@ -171,7 +173,7 @@ if (have_rows('layout') ) {
 
 
             <?php
-        } elseif (get_row_layout() == 'text-block' ) {
+        } elseif (get_row_layout() == 'text-block') {
             ?>
 
   <div class="grid-container text-content">
@@ -183,19 +185,19 @@ if (have_rows('layout') ) {
   </div>
 
             <?php
-        } elseif (get_row_layout() == 'stories-list' ) {
+        } elseif (get_row_layout() == 'stories-list') {
             ?>
             <?php $featured_posts = get_sub_field('stories'); ?>
     <div class="grid-container stories-list">
       <div class="grid-x grid-padding-x">
-            <?php if ($featured_posts ) { ?>
+            <?php if ($featured_posts) { ?>
                 <?php $counter = 0; ?>
 
                 <?php
                 $featured_posts = get_sub_field('stories');
-                if ($featured_posts ) {
+                if ($featured_posts) {
                     ?>
-                    <?php foreach ( $featured_posts as $featured_post ) {
+                    <?php foreach ($featured_posts as $featured_post) {
                         $permalink = get_permalink($featured_post->ID);
                         $title = get_the_title($featured_post->ID);
                         $story_tease = get_field('story_tease', $featured_post->ID);

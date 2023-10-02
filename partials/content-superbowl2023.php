@@ -10,56 +10,56 @@
   // save main story ID
   $latestStoriesArray = array();
 
-  // get super bowl content
-if (have_rows('super_bowl_content') ) {
-    while ( have_rows('super_bowl_content') ) {
-        the_row();
-        if (get_row_layout() == 'stories-list' ) {
-            // get stories
-            $mainStoryCounter = 1;
-            $counter = 0;
-            $storyList = get_sub_field('stories');
-            ?>
+      // get super bowl content
+      if (have_rows('super_bowl_content')) {
+          while (have_rows('super_bowl_content')) {
+              the_row();
+              if (get_row_layout() == 'stories-list') {
+                  // get stories
+                  $mainStoryCounter = 1;
+                  $counter = 0;
+                  $storyList = get_sub_field('stories');
+                  ?>
           <div class="grid-container content">
             <div class="grid-x">
               <div class="large-5 medium-5 small-12 cell story-text">
                 <?php
-                if ($storyList) {
-                    foreach ($storyList as $story) {
-                        $permalink = get_permalink($story->ID);
-                        $title = get_the_title($story->ID);
-                        $storyTease = get_field('story_tease', $story->ID);
-                        $photoURL = get_the_post_thumbnail_url($story->ID);
-                        $photoImg = get_the_post_thumbnail($story->ID);
+                      if ($storyList) {
+                          foreach ($storyList as $story) {
+                              $permalink = get_permalink($story->ID);
+                              $title = get_the_title($story->ID);
+                              $storyTease = get_field('story_tease', $story->ID);
+                              $photoURL = get_the_post_thumbnail_url($story->ID);
+                              $photoImg = get_the_post_thumbnail($story->ID);
 
-                        // save main story ID
-                        $latestStoriesArray[] = $story->ID;
-                        ?>
+                              // save main story ID
+                              $latestStoriesArray[] = $story->ID;
+                              ?>
                         <?php if ($counter == 0) { ?>
                       <a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a>
                       <h3 class="main"><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                         <?php } ?>
                         <?php
-                        $counter++;
-                    }
-                }
-                ?>
+                              $counter++;
+                          }
+                      }
+                  ?>
 
               </div>
               <div class="large-7 medium-7 small-12 cell">
                 <div class="grid-x">
                   <?php
-                    $counter = 0;
-                    foreach ($storyList as $story) {
-                        $permalink = get_permalink($story->ID);
-                        $title = get_the_title($story->ID);
-                        $storyTease = get_field('story_tease', $story->ID);
-                        $photoURL = get_the_post_thumbnail_url($story->ID);
-                        $photoImg = get_the_post_thumbnail($story->ID);
-                        $counter++;
+                      $counter = 0;
+                  foreach ($storyList as $story) {
+                      $permalink = get_permalink($story->ID);
+                      $title = get_the_title($story->ID);
+                      $storyTease = get_field('story_tease', $story->ID);
+                      $photoURL = get_the_post_thumbnail_url($story->ID);
+                      $photoImg = get_the_post_thumbnail($story->ID);
+                      $counter++;
 
-                        if ($counter > 1) {
-                            ?>
+                      if ($counter > 1) {
+                          ?>
                       <div class="large-4 medium-4 small-6 cell story-text">
                         <a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a>
                             <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
@@ -69,19 +69,19 @@ if (have_rows('super_bowl_content') ) {
                             <?php } ?>
                       </div>
                             <?php
-                        }
-                    }
-                    ?>
+                      }
+                  }
+                  ?>
                 </div>
               </div>
             </div>
           </div>
 
             <?php
-        } elseif (get_row_layout() == 'videos-list' ) {
-            // get videos
-            $videoList = get_sub_field('videos');
-            ?>
+              } elseif (get_row_layout() == 'videos-list') {
+                  // get videos
+                  $videoList = get_sub_field('videos');
+                  ?>
 
           <!-- videos -->
           <div class="grid-container video">
@@ -91,25 +91,25 @@ if (have_rows('super_bowl_content') ) {
               </div>
 
               <?php
-                if ($videoList) {
-                    foreach ($videoList as $video) {
-                        ?>
+                      if ($videoList) {
+                          foreach ($videoList as $video) {
+                              ?>
                   <div class="large-3 medium-3 small-6 cell story-text">
                     <a class="img-preview" href="<?php echo $video['url']; ?>" target="_blank"><img src="<?php echo $video['photo']; ?>" />
                     <div class="overlay"><i class="fa-sharp fa-solid fa-play"></i></div></a>
                     <h3><a href="<?php echo $video['url']; ?>" target="_blank"><?php echo $video['video_headline']; ?></a></h3>
                   </div>
                         <?php
-                    }
-                }
-                ?>
+                          }
+                      }
+                  ?>
             </div>
           </div>
             <?php
-        }
-    }
-}
-?>
+              }
+          }
+      }
+      ?>
 
 <!-- all super bowl stories -->
 <div class="grid-container stories">
@@ -119,18 +119,18 @@ if (have_rows('super_bowl_content') ) {
     </div>
 
     <?php
-      $args = array(
-        'cat' => '29133',
-        'post_type' => 'post',
-        'post_status' => 'publish',
-        'post__not_in' => $latestStoriesArray,
-        'posts_per_page' => -1
-      );
+            $args = array(
+              'cat' => '29133',
+              'post_type' => 'post',
+              'post_status' => 'publish',
+              'post__not_in' => $latestStoriesArray,
+              'posts_per_page' => -1
+            );
       $query = new WP_Query($args);
-        ?>
+      ?>
 
-    <?php if ($query->have_posts() ) : ?>
-        <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+    <?php if ($query->have_posts()) : ?>
+        <?php while ($query->have_posts()) : $query->the_post(); ?>
         <div class="large-4 medium-4 small-12 cell story-text">
           <a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_the_post_thumbnail(); ?></a>
         </div>

@@ -34,7 +34,7 @@ get_header(); ?>
 
 
                                         <?php  $startYear = 2014;
-                                        $curYear = date('Y'); ?>
+$curYear = date('Y'); ?>
 
                                         <form id="form-filter" method="get">
                                             <select name="monthOption">
@@ -64,15 +64,15 @@ get_header(); ?>
                                     </div>
 
                                     <?php $args = array(
-                                        'post_type'     => 'post',
-                                        'order'         => 'ASC',
-                                        'orderby'       => 'date',
-                                        'posts_per_page'    => -1,
-                                        'monthnum' => $month,
-                                        'year' => $years,
+'post_type'     => 'post',
+'order'         => 'ASC',
+'orderby'       => 'date',
+'posts_per_page'    => -1,
+'monthnum' => $month,
+'year' => $years,
 
                                     );
-                                    $the_query = new WP_Query($args);
+$the_query = new WP_Query($args);
 if ($the_query->have_posts()) : ?>
                                             <?php while ($the_query->have_posts()) :
                                                 $the_query->the_post();
@@ -80,9 +80,9 @@ if ($the_query->have_posts()) : ?>
                                             <div class="archive-list">
                                                 <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                                 <?php global $post;
-                                                    $categories = get_the_category($post->ID);
-                                                    $catPost =  $categories[0]->cat_name;
-                                                    $catID = get_cat_ID($catPost)
+                                                $categories = get_the_category($post->ID);
+                                                $catPost =  $categories[0]->cat_name;
+                                                $catID = get_cat_ID($catPost)
                                                 ?>
                                                 <h5>Category: <?php echo $catPost ?></h5>
                                                 <ul>

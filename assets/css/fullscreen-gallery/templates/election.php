@@ -39,15 +39,15 @@ function gridpost($item)
         echo get_the_post_thumbnail($postid, 'full', array('class' => 'img-responsive'));
         echo '</a>';
     else :
-            echo '<a href="';
+        echo '<a href="';
         echo $permalink;
         echo '">';
         echo get_the_post_thumbnail($postid, 'full', array('class' => 'img-responsive'));
         echo '</a>';
     endif;
 
-        echo '<figcaption>';
-        echo '<div class="info"><h4>';
+    echo '<figcaption>';
+    echo '<div class="info"><h4>';
 
     if ($url_link) : // post goes offsite (extremely rare)
         echo '<a target="_blank" href="//';
@@ -56,13 +56,13 @@ function gridpost($item)
         echo get_the_title($postid);
         echo '</a>';
     else :
-                echo '<a href="';
-            echo $permalink;
-            echo '">';
-            echo get_the_title($postid);
-            echo '</a>';
+        echo '<a href="';
+        echo $permalink;
+        echo '">';
+        echo get_the_title($postid);
+        echo '</a>';
     endif;
-          echo '</h4></div><!-- /.info --></figcaption></figure></div><!-- /item -->';
+    echo '</h4></div><!-- /.info --></figcaption></figure></div><!-- /item -->';
 }
 
 if (have_rows('latest_news_box')) : // check for repeater fields
@@ -165,7 +165,7 @@ endif;
                     <!--end of .col-->
                     <?php endwhile; ?>
                 <?php endif;
-                wp_reset_query(); ?>
+wp_reset_query(); ?>
                     
                     
                     
@@ -229,7 +229,7 @@ endif;
                     <!--end of .col-->
                     <?php endwhile; ?>
                 <?php endif;
-                wp_reset_query(); ?>
+wp_reset_query(); ?>
 
       </div>
       <!-- /.row -->
@@ -363,10 +363,10 @@ endif;
                 <?php if (have_rows('images_box')) : ?>
                     <?php while (have_rows('images_box')) :
                         the_row();
-                                    // Declare variables below
-                                    $icon = get_sub_field('arizona_images');
-                                    $link = get_sub_field('arizona_links');
-                                    // Use variables below?>
+                        // Declare variables below
+                        $icon = get_sub_field('arizona_images');
+                        $link = get_sub_field('arizona_links');
+                        // Use variables below?>
                     <div class="col-xs-3 thumb">
                       <figure> <a href="<?php echo $link; ?>" target="_blank">
                                                 <img src="<?php  echo $icon; ?>" alt="">
@@ -375,7 +375,7 @@ endif;
                     </div>
                     <?php endwhile; ?>
                 <?php endif;
-                wp_reset_query(); ?>
+wp_reset_query(); ?>
 
                         <!-- /.thumb -->
 

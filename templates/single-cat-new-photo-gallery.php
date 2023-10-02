@@ -1,5 +1,5 @@
 <?php
-  get_header('new-long-form-regular');
+get_header('new-long-form-regular');
 ?>
 
 <div id="intro" class="grid-container full">

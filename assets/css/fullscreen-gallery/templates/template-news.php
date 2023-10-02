@@ -37,7 +37,7 @@ get_header('new'); ?>
                                             'posts_per_page'    => 1,
                                             'category_name' =>  'newscast'
                                         );
-                                        $the_query = new WP_Query($arg);
+$the_query = new WP_Query($arg);
 if ($the_query->have_posts()) : ?>
                                                 <?php while ($the_query->have_posts()) :
                                                     $the_query->the_post(); ?>
@@ -63,9 +63,9 @@ if ($the_query->have_posts()) : ?>
                                                     <div class='embed-container'>
                                                       <?php
                                                         $vid = get_field('video_file', false, false);
-                                                         echo '<iframe src="';
-                                                         echo $vid . '" allowfullscreen></iframe>';
-                                                        ?>
+                                                    echo '<iframe src="';
+                                                    echo $vid . '" allowfullscreen></iframe>';
+                                                    ?>
                                                     </div>
 
                                                     <h3 style="padding-left: 10px;"><strong> <?php the_title(); ?></strong></h3>
@@ -118,7 +118,7 @@ wp_reset_query(); ?>
                                                             </div>
 
                                         <?php endif;
-                                        wp_reset_query(); ?>
+wp_reset_query(); ?>
 
                                                                 <div class="row">
                                                                     <div class="col-sm-12 inner-right-xs-archive text-left">

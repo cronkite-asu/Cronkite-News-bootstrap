@@ -10,21 +10,21 @@ $taxs = get_object_taxonomies($post);
 if (! $taxs) {
     return;
 }
- 
+
 $size = 'thumbnail';
- 
+
 $count = 3;
-  
+
 // ignoring post formats
 if (($key = array_search('post_format', $taxs)) !== false) {
     unset($taxs[$key]);
 }
-  
+
 // try tags first
   
 
 // if no tags, then by cat or custom tax
-  
+
 if (empty($tax_term_ids)) {
     // remove post_tag to leave only the category or custom tax
     if ($tag_key !== false) {
@@ -35,7 +35,7 @@ if (empty($tax_term_ids)) {
     $tax = $taxs[0];
     $tax_term_ids = wp_get_object_terms($post->ID, $tax, array('fields' => 'ids'));
 }
-  
+
 if ($tax_term_ids) {
     $args = array(
         'post_type' => $post->post_type,

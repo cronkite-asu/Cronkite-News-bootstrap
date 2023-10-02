@@ -22,5 +22,4 @@ if (have_rows('candidate_profiles', 'option')) {
         $json[] = $it;
     }
 }
-    echo(json_encode($json, JSON_PRETTY_PRINT));
-
+echo(json_encode($json, JSON_PRETTY_PRINT));

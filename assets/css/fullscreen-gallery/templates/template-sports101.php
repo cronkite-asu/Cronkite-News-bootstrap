@@ -37,7 +37,7 @@ get_header(); ?>
                                             'posts_per_page'    => 1,
                                             'category_name' =>  'cronkite-news-en-espanol'
                                         );
-                                        $the_query = new WP_Query($arg);
+$the_query = new WP_Query($arg);
 if ($the_query->have_posts()) : ?>
                                                 <?php while ($the_query->have_posts()) :
                                                     $the_query->the_post(); ?>
@@ -89,7 +89,7 @@ wp_reset_query(); ?>
                                         <div class="blog-pagination"> <?php bootstrap_pagination(); ?></div>
 
                                     <?php endif;
-                                    wp_reset_query(); ?>
+wp_reset_query(); ?>
 
                                     <div class="row">
                                         <div class="col-sm-12 inner-right-xs-archive text-left">
@@ -159,7 +159,7 @@ wp_reset_query(); ?>
                         <?php $number++; ?>
                     <?php endwhile; ?><!-- END of Post -->
                 <?php endif;
-                wp_reset_query(); ?>
+wp_reset_query(); ?>
     </div>
 
 <?php get_footer(); ?>

@@ -7,7 +7,7 @@
 ?>
 
 <?php
-  $post = $wp_query->post;  
+  $post = $wp_query->post;
 if (in_category('noticias')) {
     ?>
     <?php get_template_part('single', 'noticias'); ?>

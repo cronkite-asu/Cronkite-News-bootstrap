@@ -22,10 +22,10 @@ echo '<?xml version="1.0"?><rss version="2.0">';
                 'posts_per_page' => 4,
                 'category__not_in' => array(11)
             );
-    $loop = new WP_Query($args);
-    while ( $loop->have_posts() ) : $loop->the_post();
+$loop = new WP_Query($args);
+while ($loop->have_posts()) : $loop->the_post();
 
-        ?>
+    ?>
   <item>
     <title><?php echo the_title(); ?></title>
     <link><?php echo the_permalink(); ?></link>

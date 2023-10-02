@@ -4,10 +4,10 @@
       <div class="grid-x grid-padding-x single-story-block align-middle">
 
         <?php
-        if (have_rows('layout') ) {
-            while ( have_rows('layout') ) {
+        if (have_rows('layout')) {
+            while (have_rows('layout')) {
                 the_row();
-                if (get_row_layout() == 'intro-half' ) {
+                if (get_row_layout() == 'intro-half') {
                     ?>
                 <div class="large-7 medium-7 small-12 cell">
                     <?php if (get_sub_field('photo') != '') { ?>
@@ -33,14 +33,14 @@
 
     <div class="grid-x grid-padding-x single-story-block">
       <?php
-        if (have_rows('layout') ) {
-            while ( have_rows('layout') ) {
+        if (have_rows('layout')) {
+            while (have_rows('layout')) {
                 the_row();
-                if (get_row_layout() == 'stories-list' ) {
+                if (get_row_layout() == 'stories-list') {
                     $featured_posts = get_sub_field('stories');
-                    if ($featured_posts ) {
+                    if ($featured_posts) {
 
-                        foreach ( $featured_posts as $featured_post ) {
+                        foreach ($featured_posts as $featured_post) {
                             $permalink = get_permalink($featured_post->ID);
                             $title = get_the_title($featured_post->ID);
                             $story_tease = get_field('story_tease', $featured_post->ID);

@@ -21,5 +21,4 @@ if (have_rows('house_ads_videos', 'option')) {
         $json[] = $it;
     }
 }
-    echo(json_encode($json, JSON_PRETTY_PRINT));
-
+echo(json_encode($json, JSON_PRETTY_PRINT));

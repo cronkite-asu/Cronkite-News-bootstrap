@@ -43,7 +43,7 @@ get_header(); ?>
                                         </div>
                                     <?php endwhile; ?>
                                 <?php endif;
-                                wp_reset_query(); ?>
+wp_reset_query(); ?>
                             </div>
 
                             <div class="post-content post-content-single clearfix">

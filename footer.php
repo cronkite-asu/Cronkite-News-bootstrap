@@ -37,7 +37,7 @@
                             </li>
                         <?php endwhile; ?>
                     <?php endif;
-                    wp_reset_query(); ?>
+wp_reset_query(); ?>
 
                 </ul>
                 <br>

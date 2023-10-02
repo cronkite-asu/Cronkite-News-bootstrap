@@ -20,11 +20,11 @@ echo '<rss version="2.0" xmlns:content="https://purl.org/rss/1.0/modules/content
                 'post_type'        => 'post',
                 'posts_per_page'    => 10
             );
-    $loop = new WP_Query($args);
-    while ( $loop->have_posts() ) : $loop->the_post();
-        $content = wpautop(get_the_content());
+$loop = new WP_Query($args);
+while ($loop->have_posts()) : $loop->the_post();
+    $content = wpautop(get_the_content());
    
-        ?>
+    ?>
   <item>
     <title><?php echo the_title(); ?></title>
     <link><?php echo the_permalink(); ?></link>
@@ -48,12 +48,12 @@ echo '<rss version="2.0" xmlns:content="https://purl.org/rss/1.0/modules/content
               <header>
                       <h1><?php echo the_title(); ?></h1>
                       <time class="op-published" datetime="<?php
-                        echo date("c", strtotime(mysql2date('D, d M Y H:i:s +0000', get_post_time('Y-m-d H:i:s', true), false))); ?>"><?php
+                    echo date("c", strtotime(mysql2date('D, d M Y H:i:s +0000', get_post_time('Y-m-d H:i:s', true), false))); ?>"><?php
     echo date("c", strtotime(mysql2date('D, d M Y H:i:s +0000', get_post_time('Y-m-d H:i:s', true), false))); ?></time>
 
                       <address><a><?php echo get_field('post_author'); ?></a></address>
                       <h3 class="op-kicker"><?php echo get_the_category_list(' | '); ?></h3>
-                    <?php if (has_post_thumbnail() ) { ?>
+                    <?php if (has_post_thumbnail()) { ?>
 
                     <figure data-feedback="fb:likes, fb:comments">
                         <?php echo the_post_thumbnail(); ?>

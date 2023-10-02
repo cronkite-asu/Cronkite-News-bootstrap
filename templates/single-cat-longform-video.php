@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Longform Video 
+ * Template Name: Longform Video
  * Story template without sidebar with video top
  */
 get_header(); ?>

@@ -25,5 +25,5 @@ if (have_rows('main_stories', 'option')) {
         $json[] = $it;
     }
 }
-    echo(json_encode($json, JSON_PRETTY_PRINT));
+echo(json_encode($json, JSON_PRETTY_PRINT));
 ?>

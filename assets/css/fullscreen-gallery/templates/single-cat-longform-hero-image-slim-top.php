@@ -38,7 +38,7 @@ get_header('longformhero'); ?>
                                                 <?php if (have_rows('top_full_image')) : ?>
                                                     <?php while (have_rows('top_full_image')) :
                                                         the_row();
-                                            // Declare variables below
+                                                        // Declare variables below
                                                         $icon = get_sub_field('fimage');
                                                         $text = get_sub_field('fcaption');  // Use variables below?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
@@ -61,7 +61,7 @@ get_header('longformhero'); ?>
                                                 <?php if (have_rows('top_full_image')) : ?>
                                                     <?php while (have_rows('top_full_image')) :
                                                         the_row();
-                                            // Declare variables below
+                                                        // Declare variables below
                                                         $icon = get_sub_field('fimage');
                                                         $text = get_sub_field('fcaption');  // Use variables below?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
@@ -206,11 +206,11 @@ get_header('longformhero'); ?>
                                         <h6 class="story-info"><?php if ($postAuthor = get_field('post_author')) {?>
                                         <a href="<?php echo site_url(); ?>?s=<?php echo $postAuthor; ?>">
                                         By <?php echo $postAuthor; ?>/<?php
-                                                               } ?></a><?php if ($siteTitle = get_field('site_title')) {
-                                                $url = get_field('site_url');
-                                                $url = esc_url($url); ?><a href="<?php echo $url; ?>"><?php echo $siteTitle; ?></a>
+                                        } ?></a><?php if ($siteTitle = get_field('site_title')) {
+                                            $url = get_field('site_url');
+                                            $url = esc_url($url); ?><a href="<?php echo $url; ?>"><?php echo $siteTitle; ?></a>
                                                                                                            <?php
-                                                               } ?>
+                                        } ?>
                                                 <?php
                                             } ?>
                                             <?php wp_reset_query(); ?>

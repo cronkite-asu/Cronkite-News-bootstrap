@@ -27,99 +27,99 @@ function generateByline($currPostID, $currIntro, $publishDate)
                                    'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
                                    'special-to-cronkite-news' => ""
                                   );
-            $externalAuthorCount = 1;
-            $internalAuthorCount = 0;
-            $commaSeparator = ',';
-            $andSeparator = ' and ';
-            $cnStaffCount = 0;
-            $newCheck = 0;
+    $externalAuthorCount = 1;
+    $internalAuthorCount = 0;
+    $commaSeparator = ',';
+    $andSeparator = ' and ';
+    $cnStaffCount = 0;
+    $newCheck = 0;
 
-            // bypass group not showing repeater field issue
-            $groupFields = get_field('byline_info');
-            $externalAuthorRepeater = $groupFields['external_authors_repeater'];
+    // bypass group not showing repeater field issue
+    $groupFields = get_field('byline_info');
+    $externalAuthorRepeater = $groupFields['external_authors_repeater'];
 
-            $normalizeChars = array(
-               'Š' => 'S', 'š' => 's', 'Ð' => 'Dj','Ž' => 'Z', 'ž' => 'z', 'À' => 'A', 'Á' => 'A', 'Â' => 'A', 'Ã' => 'A', 'Ä' => 'A',
-               'Å' => 'A', 'Æ' => 'A', 'Ç' => 'C', 'È' => 'E', 'É' => 'E', 'Ê' => 'E', 'Ë' => 'E', 'Ì' => 'I', 'Í' => 'I', 'Î' => 'I',
-               'Ï' => 'I', 'Ñ' => 'N', 'Ń' => 'N', 'Ò' => 'O', 'Ó' => 'O', 'Ô' => 'O', 'Õ' => 'O', 'Ö' => 'O', 'Ø' => 'O', 'Ù' => 'U', 'Ú' => 'U',
-               'Û' => 'U', 'Ü' => 'U', 'Ý' => 'Y', 'Þ' => 'B', 'ß' => 'Ss','à' => 'a', 'á' => 'a', 'â' => 'a', 'ã' => 'a', 'ä' => 'a',
-               'å' => 'a', 'æ' => 'a', 'ç' => 'c', 'è' => 'e', 'é' => 'e', 'ê' => 'e', 'ë' => 'e', 'ì' => 'i', 'í' => 'i', 'î' => 'i',
-               'ï' => 'i', 'ð' => 'o', 'ñ' => 'n', 'ń' => 'n', 'ò' => 'o', 'ó' => 'o', 'ô' => 'o', 'õ' => 'o', 'ö' => 'o', 'ø' => 'o', 'ù' => 'u',
-               'ú' => 'u', 'û' => 'u', 'ü' => 'u', 'ý' => 'y', 'ý' => 'y', 'þ' => 'b', 'ÿ' => 'y', 'ƒ' => 'f',
-               'ă' => 'a', 'î' => 'i', 'â' => 'a', 'ș' => 's', 'ț' => 't', 'Ă' => 'A', 'Î' => 'I', 'Â' => 'A', 'Ș' => 'S', 'Ț' => 'T',
-            );
+    $normalizeChars = array(
+       'Š' => 'S', 'š' => 's', 'Ð' => 'Dj','Ž' => 'Z', 'ž' => 'z', 'À' => 'A', 'Á' => 'A', 'Â' => 'A', 'Ã' => 'A', 'Ä' => 'A',
+       'Å' => 'A', 'Æ' => 'A', 'Ç' => 'C', 'È' => 'E', 'É' => 'E', 'Ê' => 'E', 'Ë' => 'E', 'Ì' => 'I', 'Í' => 'I', 'Î' => 'I',
+       'Ï' => 'I', 'Ñ' => 'N', 'Ń' => 'N', 'Ò' => 'O', 'Ó' => 'O', 'Ô' => 'O', 'Õ' => 'O', 'Ö' => 'O', 'Ø' => 'O', 'Ù' => 'U', 'Ú' => 'U',
+       'Û' => 'U', 'Ü' => 'U', 'Ý' => 'Y', 'Þ' => 'B', 'ß' => 'Ss','à' => 'a', 'á' => 'a', 'â' => 'a', 'ã' => 'a', 'ä' => 'a',
+       'å' => 'a', 'æ' => 'a', 'ç' => 'c', 'è' => 'e', 'é' => 'e', 'ê' => 'e', 'ë' => 'e', 'ì' => 'i', 'í' => 'i', 'î' => 'i',
+       'ï' => 'i', 'ð' => 'o', 'ñ' => 'n', 'ń' => 'n', 'ò' => 'o', 'ó' => 'o', 'ô' => 'o', 'õ' => 'o', 'ö' => 'o', 'ø' => 'o', 'ù' => 'u',
+       'ú' => 'u', 'û' => 'u', 'ü' => 'u', 'ý' => 'y', 'ý' => 'y', 'þ' => 'b', 'ÿ' => 'y', 'ƒ' => 'f',
+       'ă' => 'a', 'î' => 'i', 'â' => 'a', 'ș' => 's', 'ț' => 't', 'Ă' => 'A', 'Î' => 'I', 'Â' => 'A', 'Ș' => 'S', 'Ț' => 'T',
+    );
 
-            if (have_rows('byline_info')) {
-                $sepCounter = 0;
-                //echo '<!--HERE BYLINE NEW-->';
-                echo '<span class="author_name">By ';
-                while (have_rows('byline_info')) {
-                    the_row();
-                    $staffID = get_sub_field('cn_staff');
-                    $cnStaffCount = count($staffID);
+    if (have_rows('byline_info')) {
+        $sepCounter = 0;
+        //echo '<!--HERE BYLINE NEW-->';
+        echo '<span class="author_name">By ';
+        while (have_rows('byline_info')) {
+            the_row();
+            $staffID = get_sub_field('cn_staff');
+            $cnStaffCount = count($staffID);
 
-                    foreach ($staffID as $key => $val) {
-                        $args = array(
-                                  'post_type'   => 'students',
-                                  'post_status' => 'publish',
-                                  'p' => $val
-                                );
+            foreach ($staffID as $key => $val) {
+                $args = array(
+                          'post_type'   => 'students',
+                          'post_status' => 'publish',
+                          'p' => $val
+                        );
 
-                        $staffDetails = new WP_Query($args);
-                        if ($staffDetails->have_posts()) {
-                            while ($staffDetails->have_posts()) {
-                                $staffDetails->the_post();
-                                $sepCounter++;
-
-                                $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))));
-                                $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
-
-                                echo '<a href="https://cronkitenews.azpbs.org/people/' . $staffNameURLSafe . '/">' . get_the_title($val) . '</a>';
-                                if ($sepCounter != $cnStaffCount) {
-                                    if ($sepCounter == ($cnStaffCount - 1)) {
-                                        echo $andSeparator . ' ';
-                                    } else {
-                                        echo $commaSeparator . ' ';
-                                    }
-                                }
-                            }
-                        }
-                        $newCheck++;
-                    }
-                    if ($cnStaffCount > 0 && $staffID != '') {
-                        echo '/Cronkite News</span>';
-                    }
-                }
-                //wp_reset_query();
-
-                if (is_countable($externalAuthorRepeater) && count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
-                    $extStaffCount = count($externalAuthorRepeater);
-                    if ($groupFields['cn_staff'] != '') {
-                        echo ' and ';
-                    }
-                    $sepCounter = 0;
-                    foreach ($externalAuthorRepeater as $key => $val) {
+                $staffDetails = new WP_Query($args);
+                if ($staffDetails->have_posts()) {
+                    while ($staffDetails->have_posts()) {
+                        $staffDetails->the_post();
                         $sepCounter++;
-                        echo $val['external_authors'];
-                        if ($val['author_title_site'] != '' || $val['author_title_site'] != 'other') {
-                            if (array_key_exists($val['author_title_site'], $externalSites) == true) {
-                                echo '/<a href="' . $externalSites[$val['author_title_site']] . '" target="_blank">' . ucwords(str_replace('-', ' ', $val['author_title_site'])) . '</a>';
-                            } else {
-                                echo '/' . str_replace('For', 'for', ucwords(str_replace('-', ' ', $val['author_title_site'])));
-                            }
-                        }
-                        if ($sepCounter != $extStaffCount) {
-                            if ($sepCounter == ($extStaffCount - 1)) {
+
+                        $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))));
+                        $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
+
+                        echo '<a href="https://cronkitenews.azpbs.org/people/' . $staffNameURLSafe . '/">' . get_the_title($val) . '</a>';
+                        if ($sepCounter != $cnStaffCount) {
+                            if ($sepCounter == ($cnStaffCount - 1)) {
                                 echo $andSeparator . ' ';
                             } else {
                                 echo $commaSeparator . ' ';
                             }
                         }
                     }
-                    echo '</span>';
-                    $newCheck++;
                 }
-            } ?>
+                $newCheck++;
+            }
+            if ($cnStaffCount > 0 && $staffID != '') {
+                echo '/Cronkite News</span>';
+            }
+        }
+        //wp_reset_query();
+
+        if (is_countable($externalAuthorRepeater) && count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
+            $extStaffCount = count($externalAuthorRepeater);
+            if ($groupFields['cn_staff'] != '') {
+                echo ' and ';
+            }
+            $sepCounter = 0;
+            foreach ($externalAuthorRepeater as $key => $val) {
+                $sepCounter++;
+                echo $val['external_authors'];
+                if ($val['author_title_site'] != '' || $val['author_title_site'] != 'other') {
+                    if (array_key_exists($val['author_title_site'], $externalSites) == true) {
+                        echo '/<a href="' . $externalSites[$val['author_title_site']] . '" target="_blank">' . ucwords(str_replace('-', ' ', $val['author_title_site'])) . '</a>';
+                    } else {
+                        echo '/' . str_replace('For', 'for', ucwords(str_replace('-', ' ', $val['author_title_site'])));
+                    }
+                }
+                if ($sepCounter != $extStaffCount) {
+                    if ($sepCounter == ($extStaffCount - 1)) {
+                        echo $andSeparator . ' ';
+                    } else {
+                        echo $commaSeparator . ' ';
+                    }
+                }
+            }
+            echo '</span>';
+            $newCheck++;
+        }
+    } ?>
           </span>
         <?php wp_reset_postdata(); ?>
           <span class="pubdate">
@@ -289,13 +289,13 @@ if (have_rows('blocks')) {
                     <?php
                     if (get_sub_field('caption') != '') {
                         if ($captionCounter == 0 && get_sub_field('caption') != '') {
-                                  $combinedCaption = '<strong>Left:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
+                            $combinedCaption = '<strong>Left:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
                         } elseif ($captionCounter == 1 && get_sub_field('caption') != '') {
-                              $combinedCaption .= ' <strong>Center:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
+                            $combinedCaption .= ' <strong>Center:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
                         } elseif ($captionCounter == 2 && get_sub_field('caption') != '') {
                             $combinedCaption .= ' <strong>Right:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
                         }
-                              $captionCounter++;
+                        $captionCounter++;
                     } ?>
                         </div>
                     <?php
@@ -371,11 +371,11 @@ if (have_rows('blocks')) {
                     <?php
                     if (get_sub_field('caption') != '') {
                         if ($captionCounter == 0 && get_sub_field('caption') != '') {
-                                  $combinedCaption = '<strong>Left:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
+                            $combinedCaption = '<strong>Left:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
                         } elseif ($captionCounter == 1 && get_sub_field('caption') != '') {
-                              $combinedCaption .= ' <strong>Right:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
+                            $combinedCaption .= ' <strong>Right:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
                         }
-                              $captionCounter++;
+                        $captionCounter++;
                     } ?>
                         </div>
                     <?php
@@ -409,13 +409,13 @@ if (have_rows('blocks')) {
                     <?php
                     if (get_sub_field('caption') != '') {
                         if ($captionCounter == 0 && get_sub_field('caption') != '') {
-                                  $combinedCaption = '<strong>Left:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
+                            $combinedCaption = '<strong>Left:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
                         } elseif ($captionCounter == 1 && get_sub_field('caption') != '') {
-                              $combinedCaption .= ' <strong>Center:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
+                            $combinedCaption .= ' <strong>Center:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
                         } elseif ($captionCounter == 2 && get_sub_field('caption') != '') {
                             $combinedCaption .= ' <strong>Right:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
                         }
-                              $captionCounter++;
+                        $captionCounter++;
                     } ?>
                         </div>
                     <?php
@@ -455,13 +455,13 @@ if (have_rows('blocks')) {
                     <?php
                     if (get_sub_field('caption') != '') {
                         if ($captionCounter == 0 && get_sub_field('caption') != '') {
-                                  $combinedCaption = '<strong>Left:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
+                            $combinedCaption = '<strong>Left:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
                         } elseif ($captionCounter == 1 && get_sub_field('caption') != '') {
-                              $combinedCaption .= ' <strong>Center:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
+                            $combinedCaption .= ' <strong>Center:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
                         } elseif ($captionCounter == 2 && get_sub_field('caption') != '') {
                             $combinedCaption .= ' <strong>Right:</strong> ' . strip_tags(get_sub_field('caption'), '<a>');
                         }
-                              $captionCounter++;
+                        $captionCounter++;
                     } ?>
                         </div>
                     <?php
@@ -762,7 +762,7 @@ if (have_rows('blocks')) {
             }
         }
           wp_reset_query();
-        ?>
+?>
     </div>
   </div>
 </div>
