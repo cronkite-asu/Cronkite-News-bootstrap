@@ -4,6 +4,33 @@
  */
 ?>
 
+  <?php if(current_user_can('administrator')) { ?>
+  <!-- back to top -->
+  <a id="back-to-top">
+    <i class="fa-solid fa-circle-chevron-up"></i>
+  </a>
+
+  <!-- social icons -->
+  <div id="social-icons-desktop" class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style show-for-medium" data-a2a-scroll-show="0,0" style="bottom:30px; left:30px;">
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_linkedin"></a>
+      <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+  </div>
+  <div id="social-icons-mobile" class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style show-for-small-only" data-a2a-scroll-show="100,100" style="bottom:0px; left:50%; transform:translateX(-50%);">
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_linkedin"></a>
+      <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+  </div>
+  <script>
+    var a2a_config = a2a_config || {};
+    a2a_config.track_links = 'ga';
+    a2a_config.icon_color = "#dadada,white";
+    a2a_config.color_link_text_hover = "646464";
+  </script>
+  <?php } ?>
+
   <!-- footer -->
   <div id="footer">
     <footer class="grid-container full-width">
@@ -67,7 +94,6 @@
   <?php } ?>
 
   <!-- scripts -->
-  <!--<script src="<?php bloginfo('template_directory');?>/assets/js/vendor/jquery.js"></script>-->
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
   <?php wp_footer(); ?>
@@ -114,58 +140,13 @@
 
   <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/what-input.js"></script>
   <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/foundation.js"></script>
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
   <script src="<?php bloginfo('template_directory');?>/assets/js/app.js"></script>
   <script type="text/javascript" src="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick.min.js"></script>
   <script type="text/javascript" src="<?php bloginfo('template_directory');?>/assets/js/vendor/smooth-scroll/dist/smooth-scroll.js"></script>
   <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/plyr-master/dist/plyr.js"></script>
   <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/before-after/js/jquery.event.move.js"></script>
   <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/before-after/js/jquery.twentytwenty.js"></script>
-
-  <?php if (current_user_can('administrator')) { ?>
-  <script src="https://webreader.naturalreaders.com/nr-webreader.js" defer></script>
-  <script>
-      window.addEventListener("DOMContentLoaded", function() {
-          if (typeof NRWebReader != 'undefined') {
-              window['NRWebReader'] = new NRWebReader({
-              widget_id: "v1q337yx97",  // DO NOT REMOVE. This is your widget ID for your WebReader
-              icon: {
-                  icon_name: "headphone", /*Optional: Alternative icon to show as the widget icon*/
-                  icon_position: "bottom-left", /*Optional: Position for the the widget to show up at*/
-              //    icon_position_offsets: {/*Optional: Custom position offsets for the the widget to show up at*/
-              //        left:""
-              //        right:""
-              //        top:""
-              //        bottom:""
-              //    }
-              //    icon_color: "#0555B8", /*Optional: Color of the icon*/
-              //    icon_size: {width: "60px", height: "60px"}, /*Optional: icon size. Above 50px is recommended.*/
-              //    text_box: true, /*Optional: false if you don't want to have a greeting text box*/
-              //    text_box_greeting: "Listen", /*Optional: Your greeting text in the text box*/
-              //    text_box_background_color: "#ffffff", /*Optional: Background color of text box*/
-              //    text_box_font_color: "#0555B8", /*Optional: Color of the icon*/
-              //    text_box_font_size: "18px", /*Optional: Font size of the text in text box*/
-              //    show_in_mobile: true, /*Optional: false if you don't want the widget to show up on mobile*/
-              //    mob_icon_position: "bottom-left", /*Optional: Position for the the widget to show up at on mobile*/
-              //    mob_icon_position_offsets: {/*Optional: Custom position offsets for the the widget to show up at on mobile*/
-              //        left:""
-              //        right:""
-              //        top:""
-              //        bottom:""
-              //    }
-              //    mob_icon_size: {width: "30px", height: "30px"}, /*Optional: icon size on mobile. Above 30px is recommended.*/
-              //    mob_text_box: false /*Optional: false if you don't want to have a greeting text box on mobile*/
-              },
-              bar : {
-              //    settings_default_voice: "Matthew *", /*Optional: Default voice for TTS*/
-              //    settings_default_speed: 1, /*Optional: Default speed for TTS*/
-              //    settings_highlight_colour_scheme: "dark" /*Optional: Default color scheme for highlighting text being read on page*/
-              },
-              custom_text_source: ".story-content" /*Optional: only read the text inside the HTML element with the id or class */
-              });
-          }
-      });
-  </script>
-  <?php } ?>
 
   <script>
   /**

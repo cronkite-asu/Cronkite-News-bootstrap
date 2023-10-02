@@ -260,50 +260,6 @@
       </div>
     </div>
 
-    <div class="grid-x grid-padding-x single-story-block section remove-margin">
-      <div style="margin-top:25px;margin-bottom:25px;" class="large-12 medium-12 small-12 cell story-content">
-        <hr />
-      </div>
-
-      <div class="large-12 medium-12 small-12 cell story-content">
-        <h2>Hosts</h2>
-      </div>
-      <?php
-        $audioStaffList = get_field('audio_staff', 122187);
-        $normalizeChars = array(
-           'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
-           'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
-           'Ï'=>'I', 'Ñ'=>'N', 'Ń'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
-           'Û'=>'U', 'Ü'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'Ss','à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a',
-           'å'=>'a', 'æ'=>'a', 'ç'=>'c', 'è'=>'e', 'é'=>'e', 'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i',
-           'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ń'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
-           'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f',
-           'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
-        );
-        if ($audioStaffList) {
-            $audioStaffCounter = 0;
-            foreach ($audioStaffList as $audioStaff) {
-                $permalink = get_permalink($audioStaff);
-
-                $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($audioStaff)))));
-                $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
-                ?>
-
-            <div class="large-2 medium-2 small-6 cell text-center">
-              <div class="author_bio post-holder">
-                <div class="author_photo post">
-                  <a href="https://cronkitenews.azpbs.org/people/<?php echo $staffNameURLSafe; ?>" target="_blank"><img src="<?php echo get_field('student_photo', $audioStaff); ?>" class="cn-staff-bio-circular-large staff" alt="<?php echo get_the_title($audioStaff); ?>" /></a>
-                  <h3><a href="https://cronkitenews.azpbs.org/people/<?php echo $staffNameURLSafe; ?>" target="_blank"><?php echo get_the_title($audioStaff); ?></a></h3>
-                </div>
-              </div>
-            </div>
-                <?php
-                $audioStaffCounter++;
-            }
-        }
-        ?>
-    </div>
-
     <div class="grid-x grid-padding-x single-story-block section-text">
       <div style="margin-top:25px;margin-bottom:25px;" class="large-12 medium-12 small-12 cell story-content">
         <hr />

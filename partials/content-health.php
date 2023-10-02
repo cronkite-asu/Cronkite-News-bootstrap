@@ -232,25 +232,17 @@
                   <?php echo get_sub_field('content'); ?>
 
                   <div class="grid-x">
-                    <div class="large-4 medium-4 small-4 cell">
+                    <div class="large-6 medium-6 small-6 cell">
                       <div class="author_bio post-holder">
                         <div class="author_photo post faculty">
-                          <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2019/09/christina-leonard.jpg" class="cn-staff-bio-circular-large staff" alt="Christina Leonard" />
-                          <h3>Christina Leonard</h3>
+                          <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2023/08/EBY1XTCCR-U05L141RGMD-a3a273171f1e-512.jpeg" class="cn-staff-bio-circular-large staff" alt="Catherine Williams" />
+                          <h3>Catherine Williams</h3>
                         </div>
                       </div>
                     </div>
 
-                    <div class="large-4 medium-4 small-4 cell">
-                      <div class="author_bio post-holder">
-                        <div class="author_photo post faculty">
-                          <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2023/01/Venita_Hawthorne_James.jpg" class="cn-staff-bio-circular-large staff" alt="Venita Hawthorne James" />
-                          <h3>Venita Hawthorne James</h3>
-                        </div>
-                      </div>
-                    </div>
 
-                    <div class="large-4 medium-4 small-4 cell">
+                    <div class="large-6 medium-6 small-6 cell">
                       <div class="author_bio post-holder">
                         <div class="author_photo post faculty">
                           <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2019/09/Julio_Cisneros.jpg" class="cn-staff-bio-circular-large staff" alt="Julio Cisneros" />

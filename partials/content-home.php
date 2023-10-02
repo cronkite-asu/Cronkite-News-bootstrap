@@ -373,14 +373,17 @@
             </div>
 
               <div class="show-for-medium">
-                <?php if ($customTitle != '' || $customLinks != '') { ?>
+
+                <?php echo '<!--HERE-->'; if ($customTitle != '' || $customLinks != '') { ?>
                     <?php if ($customLinks != '') { ?>
-                      <a href="<?php echo $customLinks; ?>"><h3><?php echo get_the_title($postID); ?></h3></a>
+                      <a href="<?php echo $customLinks; ?>" target="_blank"><h3><?php echo $customTitle; ?></h3></a>
                     <?php } else { ?>
-                      <?php if (get_field('redirect_story', $postID) == 'yes' && get_field('redirect_url', $postID) != '') { ?>
+                      <?php if ($customTitle != '') { ?>
+                        <!--HERE 1-->
                         <a href="<?php echo get_permalink($postID); ?>" target="_blank"><h3><?php echo $customTitle; ?></h3></a>
                       <?php } else { ?>
-                        <a href="<?php echo get_permalink($postID); ?>"><h3><?php echo $customTitle; ?></h3></a>
+                        <!--HERE 2-->
+                        <a href="<?php echo get_permalink($postID); ?>"><h3><?php echo get_the_title($postID); ?></h3></a>
                       <?php } ?>
                     <?php } ?>
                 <?php } else { ?>

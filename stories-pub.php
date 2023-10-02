@@ -16,7 +16,7 @@ get_header('new2019'); ?>
     'category__not_in' => array( 11 ),
     'date_query' => array(
                       array(
-                          'after'     => 'August 18, 2022',
+                          'after'     => 'August 1, 2023',
                           'before'    => 'today',
                           'inclusive' => true
                     ))
@@ -44,7 +44,7 @@ get_header('new2019'); ?>
     /*'category__not_in' => array( 11 ),*/
     'date_query' => array(
                       array(
-                          'after'     => 'August 18, 2022',
+                          'after'     => 'August 1, 2023',
                           'before'    => 'today',
                           'inclusive' => true
                     ))
