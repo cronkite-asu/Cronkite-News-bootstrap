@@ -331,74 +331,74 @@
                     $host = parse_url($isvid, PHP_URL_HOST);
                     $isjpg = false;
 
-                      if ($host['host'] == 'www.youtube.com' || $host['host'] == 'youtu.be' || $host['host'] == 'www.youtu.be' || $host['host'] == 'youtube.com') {
-                          $embedVideoURL = getYoutubeID ($isvid);
-                          echo '<div id="video-holder">';
-                          echo '<div class="video-wrap">';
-                          echo '<div class="video">';
-                          echo '<div class="close-video"><i class="fas fa-times"></i></div>';
-                          echo '<div class="plyr__video-embed responsive-embed widescreen" id="player">';
-                          echo '<iframe
+                    if ($host['host'] == 'www.youtube.com' || $host['host'] == 'youtu.be' || $host['host'] == 'www.youtu.be' || $host['host'] == 'youtube.com') {
+                        $embedVideoURL = getYoutubeID($isvid);
+                        echo '<div id="video-holder">';
+                        echo '<div class="video-wrap">';
+                        echo '<div class="video">';
+                        echo '<div class="close-video"><i class="fas fa-times"></i></div>';
+                        echo '<div class="plyr__video-embed responsive-embed widescreen" id="player">';
+                        echo '<iframe
                            src="'.$embedVideoURL.'?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
                            allowfullscreen
                            allowtransparency
                            allow="autoplay"
                            ></iframe>';
-                          echo '</div>';
-                          echo '<div class="asset-caption">'.strip_tags(get_field('video_caption'), '<a>').'</div>';
-                          echo '</div>';
-                          echo '</div>';
-                          echo '</div>';
-                      } else {
-                          echo '<div id="video-holder">';
-                          echo get_field('video_file', false, false);
-                          echo '<div class="asset-caption">'.strip_tags(get_field('video_caption'), '<a>').'</div>';
-                          echo '</div>';
-                      }
-                    } else if (have_rows('video-carousel-content') && get_field('video-carousel') == 'yes') {
-              ?>
+                        echo '</div>';
+                        echo '<div class="asset-caption">'.strip_tags(get_field('video_caption'), '<a>').'</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                    } else {
+                        echo '<div id="video-holder">';
+                        echo get_field('video_file', false, false);
+                        echo '<div class="asset-caption">'.strip_tags(get_field('video_caption'), '<a>').'</div>';
+                        echo '</div>';
+                    }
+                } elseif (have_rows('video-carousel-content') && get_field('video-carousel') == 'yes') {
+                    ?>
                     <div id="story-photo" class="story-photos">
                        <?php
-                         while ( have_rows('video-carousel-content') ) {
-                           the_row();
-                           $videoCount = count(get_field('video-carousel-content'));
-                           $videoURL = get_sub_field('video-url');
-                           $videoCaption = get_sub_field('credits');
-                           $embedVideoURL = getYoutubeID ($videoURL);
-                       ?>
+                               while (have_rows('video-carousel-content')) {
+                                   the_row();
+                                   $videoCount = count(get_field('video-carousel-content'));
+                                   $videoURL = get_sub_field('video-url');
+                                   $videoCaption = get_sub_field('credits');
+                                   $embedVideoURL = getYoutubeID($videoURL);
+                                   ?>
                           <div>
                        <?php
-                           echo '<div id="video-holder">';
-                           echo '<div class="video-wrap">';
-                           echo '<div class="video">';
-                           echo '<div class="close-video"><i class="fas fa-times"></i></div>';
-                           echo '<div class="plyr__video-embed responsive-embed widescreen" id="player">';
-                           echo '<iframe
+                                       echo '<div id="video-holder">';
+                                   echo '<div class="video-wrap">';
+                                   echo '<div class="video">';
+                                   echo '<div class="close-video"><i class="fas fa-times"></i></div>';
+                                   echo '<div class="plyr__video-embed responsive-embed widescreen" id="player">';
+                                   echo '<iframe
                             src="'.$embedVideoURL.'?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
                             allowfullscreen
                             allowtransparency
                             allow="autoplay"
                             ></iframe>';
-                           echo '</div>';
-                           echo '<div class="asset-caption">'.strip_tags($videoCaption, '<a>').'</div>';
-                           echo '</div>';
-                           echo '</div>';
-                           echo '</div>';
-                       ?>
+                                   echo '</div>';
+                                   echo '<div class="asset-caption">'.strip_tags($videoCaption, '<a>').'</div>';
+                                   echo '</div>';
+                                   echo '</div>';
+                                   echo '</div>';
+                                   ?>
                           </div>
                        <?php } ?>
                     </div>
-                <?php } else if (have_rows('slider_images')) { ?>
+                <?php } elseif (have_rows('slider_images')) { ?>
 
                    <div id="story-photo" class="story-photos">
                       <?php
-                        while ( have_rows('slider_images')) {
-                          the_row();
-                          $imageCount = count(get_field('slider_images'));
-                          $postImages = get_sub_field('images');
-                          $photoCaption = get_sub_field('description');
-                          if ($imageCount == 1) {
-                      ?>
+                                    while (have_rows('slider_images')) {
+                                        the_row();
+                                        $imageCount = count(get_field('slider_images'));
+                                        $postImages = get_sub_field('images');
+                                        $photoCaption = get_sub_field('description');
+                                        if ($imageCount == 1) {
+                                            ?>
                          <div>
                            <img src="<?php echo $postImages; ?>" width="800" alt="" title="" />
                            <div class="asset-caption"><?php echo $photoCaption; ?></div>
@@ -410,12 +410,12 @@
                          </div>
                     <?php
                       }
-                        }
+                                    }
                     ?>
                    </div>
 
                 <?php
-                } else if (get_field('before_after_slider')) {
+                } elseif (get_field('before_after_slider')) {
                     $beforeAfterAssets = get_field('before_after_slider');
                     ?>
                  <div class="before-after-photos" class="twentytwenty-container">
@@ -454,53 +454,54 @@
  if ($postDate >= $compareDate) {
      $storyContent = wpautop(get_the_content());
 
-                  function getVideoUrlsFromString($storyContent) {
+     function getVideoUrlsFromString($storyContent)
+     {
 
-                      $regex = '/<(?:[^\'">=]*|=\'[^\']*\'|="[^"]*"|=[^\'"][^\s>]*)*>|((?:[\w-]+:\/\/?|www[.])[^\s()<>]+(?:\([\w\d]+\)|(?:[^[:punct:]\s]|\/)))/ims';
-                      $storyContent = preg_replace_callback(
-                          $regex,
-                          function ($matches) {
-                            if (array_key_exists (1, $matches)) {
-                                $patternURL = '~(?:https?://)?(?:www.)?(?:youtube.com|youtu.be)/(?:watch\?v=)?([^\s]+)~';
-                                preg_match_all($patternURL, $matches[1], $ytLinks);
-                                if ($ytLinks[1][0] != '') {
-                                  return "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/".strip_tags($ytLinks[1][0])."' frameborder='0' allowfullscreen></iframe></div>";
-                                } else {
-                                  return $matches[0];
-                                }
-                            }
-                            return $matches[0];
-                          },
-                          $storyContent
-                      );
+         $regex = '/<(?:[^\'">=]*|=\'[^\']*\'|="[^"]*"|=[^\'"][^\s>]*)*>|((?:[\w-]+:\/\/?|www[.])[^\s()<>]+(?:\([\w\d]+\)|(?:[^[:punct:]\s]|\/)))/ims';
+         $storyContent = preg_replace_callback(
+             $regex,
+             function ($matches) {
+                 if (array_key_exists(1, $matches)) {
+                     $patternURL = '~(?:https?://)?(?:www.)?(?:youtube.com|youtu.be)/(?:watch\?v=)?([^\s]+)~';
+                     preg_match_all($patternURL, $matches[1], $ytLinks);
+                     if ($ytLinks[1][0] != '') {
+                         return "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/".strip_tags($ytLinks[1][0])."' frameborder='0' allowfullscreen></iframe></div>";
+                     } else {
+                         return $matches[0];
+                     }
+                 }
+                 return $matches[0];
+             },
+             $storyContent
+         );
 
-                      $storyContent = str_replace('<p><style>.embed-container', '<style>.embed-container', $storyContent);
-                      $storyContent = str_replace('</iframe></div></p>', '</iframe></div>', $storyContent);
+         $storyContent = str_replace('<p><style>.embed-container', '<style>.embed-container', $storyContent);
+         $storyContent = str_replace('</iframe></div></p>', '</iframe></div>', $storyContent);
 
-                      return $storyContent;
+         return $storyContent;
 
-                      /*$patternID = '#(?<=v=|v\/|vi=|vi\/|youtu.be\/)[a-zA-Z0-9_-]{11}#';
-                      $patternURL = '~(?:https?://)?(?:www.)?(?:youtube.com|youtu.be)/(?:watch\?v=)?([^\s]+)~';
-                      // find all youtube links
-                      preg_match_all($patternURL, $storyContent, $ytLinks);
+         /*$patternID = '#(?<=v=|v\/|vi=|vi\/|youtu.be\/)[a-zA-Z0-9_-]{11}#';
+         $patternURL = '~(?:https?://)?(?:www.)?(?:youtube.com|youtu.be)/(?:watch\?v=)?([^\s]+)~';
+         // find all youtube links
+         preg_match_all($patternURL, $storyContent, $ytLinks);
 
-                      for ($i = 0; $i < count($ytLinks[0]); $i++) {
-                        $responseYTembeds = "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/".strip_tags($ytLinks[1][$i])."' frameborder='0' allowfullscreen></iframe></div>";
-                        $storyContent = str_replace(strip_tags($ytLinks[0][$i]), $responseYTembeds, $storyContent);
-                      }
+         for ($i = 0; $i < count($ytLinks[0]); $i++) {
+           $responseYTembeds = "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/".strip_tags($ytLinks[1][$i])."' frameborder='0' allowfullscreen></iframe></div>";
+           $storyContent = str_replace(strip_tags($ytLinks[0][$i]), $responseYTembeds, $storyContent);
+         }
 
-                      $storyContent = str_replace('<p><style>.embed-container', '<style>.embed-container', $storyContent);
-                      $storyContent = str_replace('</iframe></div></p>', '</iframe></div>', $storyContent);
+         $storyContent = str_replace('<p><style>.embed-container', '<style>.embed-container', $storyContent);
+         $storyContent = str_replace('</iframe></div></p>', '</iframe></div>', $storyContent);
 
-                      return $storyContent;*/
+         return $storyContent;*/
 
-                  }
-                  $finalStoryContent = getVideoUrlsFromString($storyContent);
-                  echo $finalStoryContent = apply_filters('the_content', $finalStoryContent);
-                } else {
-                  the_content();
-                }
-             ?>
+     }
+     $finalStoryContent = getVideoUrlsFromString($storyContent);
+     echo $finalStoryContent = apply_filters('the_content', $finalStoryContent);
+ } else {
+     the_content();
+ }
+ ?>
 
              <?php
     // in this series settings

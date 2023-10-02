@@ -53,7 +53,7 @@ while ($loop->have_posts()) : $loop->the_post();
     }
 endwhile;
 wp_reset_query();
-                
+
 // Query home page for the custom fields we need
 if (have_rows('latest_news_box', 24)) : while (have_rows('latest_news_box', 24)) : the_row();
     $posts = get_sub_field('post_box');

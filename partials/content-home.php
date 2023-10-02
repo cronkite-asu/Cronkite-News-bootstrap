@@ -374,7 +374,8 @@
 
               <div class="show-for-medium">
 
-                <?php echo '<!--HERE-->'; if ($customTitle != '' || $customLinks != '') { ?>
+                <?php echo '<!--HERE-->';
+                if ($customTitle != '' || $customLinks != '') { ?>
                     <?php if ($customLinks != '') { ?>
                       <a href="<?php echo $customLinks; ?>" target="_blank"><h3><?php echo $customTitle; ?></h3></a>
                     <?php } else { ?>
