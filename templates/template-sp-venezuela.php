@@ -95,8 +95,8 @@ get_header('longformhero'); ?>
                     $query = new WP_Query($args);
                     ?>
                     <?php
-                    if ($query->have_posts() ) {
-                        while ( $query->have_posts() ) {
+                    if ($query->have_posts()) {
+                        while ($query->have_posts()) {
                             $query->the_post();
                             echo "<!-- ".get_the_ID()."-->";
                             ?>

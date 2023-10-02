@@ -39,7 +39,7 @@
     <link href="<?php bloginfo('template_directory'); ?>/css/featherlight.min.css" rel="stylesheet">
 
 
-      <?php if (is_front_page() ) { ?>
+      <?php if (is_front_page()) { ?>
             <link href="<?php bloginfo('template_directory'); ?>/css/hstyle.css" rel="stylesheet">
       <?php } ?>
 
@@ -69,38 +69,38 @@
         <?php
         // get the category for GA
         $post = get_post();
-        $categories = get_the_category($post -> ID);
-        $output = '';
+$categories = get_the_category($post -> ID);
+$output = '';
 
-        if (! empty($categories) ) {
-            foreach ( $categories as $category ) {
+if (! empty($categories)) {
+    foreach ($categories as $category) {
 
-                if ($output == '') {
-                    if ($category->name == "Borderlands") {
-                        //$output = "ga('set', 'Borderlands', '"  . esc_html( $category->name ) . "');";
-                        $output = "ga('set', 'contentGroup1', 'Borderlands');";
-                    }
-                    if ($category->name == "Sustainability") {
+        if ($output == '') {
+            if ($category->name == "Borderlands") {
+                //$output = "ga('set', 'Borderlands', '"  . esc_html( $category->name ) . "');";
+                $output = "ga('set', 'contentGroup1', 'Borderlands');";
+            }
+            if ($category->name == "Sustainability") {
 
-                        $output = "ga('set', 'contentGroup2', 'Sustainability');";
-                    }
-                    if ($category->name == "Education") {
+                $output = "ga('set', 'contentGroup2', 'Sustainability');";
+            }
+            if ($category->name == "Education") {
 
-                        $output = "ga('set', 'contentGroup3', 'Education');";
-                    }
-                    if ($category->name == "Consumer") {
+                $output = "ga('set', 'contentGroup3', 'Education');";
+            }
+            if ($category->name == "Consumer") {
 
-                        $output = "ga('set', 'contentGroup4', 'Consumer');";
-                    }
-                    if ($category->name == "Future") {
+                $output = "ga('set', 'contentGroup4', 'Consumer');";
+            }
+            if ($category->name == "Future") {
 
-                        $output = "ga('set', 'contentGroup5', 'Future');";
-                    }
-                }
+                $output = "ga('set', 'contentGroup5', 'Future');";
             }
         }
+    }
+}
 
-        ?>
+?>
 
     <script>
            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -189,17 +189,18 @@
 <!--
                     <ul class="social pull-right">
 
-                    <?php if (have_rows('social_box', 'options') ) : ?>
-                        <?php while ( have_rows('social_box', 'options') ): the_row();
+                    <?php if (have_rows('social_box', 'options')) : ?>
+                        <?php while (have_rows('social_box', 'options')): the_row();
                             // Declare variables below
                             $icon = get_sub_field('social_icon', 'options');
                             $link = get_sub_field('social_link', 'options');
-                            // Use variables below ?>
+                            // Use variables below?>
                             <li>
                                 <a target="_blank" href="<?php echo $link; ?>"><img src="<?php echo $icon; ?>" /></a>
                             </li>
                         <?php endwhile; ?>
-                    <?php endif; wp_reset_query(); ?>
+                    <?php endif;
+wp_reset_query(); ?>
 
                     </ul>
 -->

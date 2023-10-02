@@ -26,14 +26,15 @@ get_header(); ?>
                         <div class="sidemeta">
                             <div class="post format-archives ">
                                 <div class="post-content post-content-news">
-                                    <?php //dynamic_sidebar4'Sidebar Archive'); ?>
+                                    <?php //dynamic_sidebar4'Sidebar Archive');?>
                                     <div class="filter-box clearfix">
 
-                                        <?php $month = ( isset($_GET['monthOption']) && !empty($_GET['monthOption']) ) ? $_GET['monthOption']: ""; ?>
-                                        <?php $years = ( isset($_GET['yearOption']) && !empty($_GET['yearOption']) ) ? $_GET['yearOption']: ""; ?>
+                                        <?php $month = (isset($_GET['monthOption']) && !empty($_GET['monthOption'])) ? $_GET['monthOption']: ""; ?>
+                                        <?php $years = (isset($_GET['yearOption']) && !empty($_GET['yearOption'])) ? $_GET['yearOption']: ""; ?>
 
 
-                                        <?php  $startYear = 2014; $curYear = date('Y'); ?>
+                                        <?php  $startYear = 2014;
+$curYear = date('Y'); ?>
 
                                         <form id="form-filter" method="get">
                                             <select name="monthOption">
@@ -63,25 +64,25 @@ get_header(); ?>
                                     </div>
 
                                     <?php $args = array(
-                                        'post_type'        => 'post',
-                                        'order'            => 'ASC',
-                                        'orderby'        => 'date',
-                                        'posts_per_page'    => -1,
-                                        'monthnum' => $month,
-                                        'year' => $years,
+'post_type'        => 'post',
+'order'            => 'ASC',
+'orderby'        => 'date',
+'posts_per_page'    => -1,
+'monthnum' => $month,
+'year' => $years,
 
                                     );
-                                    $the_query = new WP_Query($args);
-if ($the_query->have_posts() ) : ?>
+$the_query = new WP_Query($args);
+if ($the_query->have_posts()) : ?>
 
-                                            <?php while ( $the_query->have_posts() ) : $the_query->the_post();
+                                            <?php while ($the_query->have_posts()) : $the_query->the_post();
                                                 $do_not_duplicate = $post->ID; ?><!-- BEGIN of POST -->
                                             <div class="archive-list">
                                                 <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                                 <?php global $post;
-                                                    $categories = get_the_category($post->ID);
-                                                    $catPost =  $categories[0]->cat_name;
-                                                    $catID = get_cat_ID($catPost)
+                                                $categories = get_the_category($post->ID);
+                                                $catPost =  $categories[0]->cat_name;
+                                                $catID = get_cat_ID($catPost)
                                                 ?>
                                                 <h5>Category: <?php echo $catPost ?></h5>
                                                 <ul>

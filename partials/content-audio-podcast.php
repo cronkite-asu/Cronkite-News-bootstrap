@@ -78,40 +78,40 @@
           <div class="large-4 medium-12 small-12 cell ever-green">
             <?php
               $sportsFeaturedStory = get_field('news_audio', 122187);
-            if ($sportsFeaturedStory) {
-                $sportsStoriesCounter = 0;
-                foreach ($sportsFeaturedStory as $sportsFeature) {
-                    if ($sportsStoriesCounter < 8) {
-                        setup_postdata($sportsFeature);
-                        $permalink = get_permalink($sportsFeature);
-                        $audioFile = get_field('audio_video_file', $sportsFeature);
-                        $newsFeaturedImg = get_the_post_thumbnail_url($sportsFeature);
+        if ($sportsFeaturedStory) {
+            $sportsStoriesCounter = 0;
+            foreach ($sportsFeaturedStory as $sportsFeature) {
+                if ($sportsStoriesCounter < 8) {
+                    setup_postdata($sportsFeature);
+                    $permalink = get_permalink($sportsFeature);
+                    $audioFile = get_field('audio_video_file', $sportsFeature);
+                    $newsFeaturedImg = get_the_post_thumbnail_url($sportsFeature);
 
-                        if ($newsFeaturedImg != '') {
-                            ?>
+                    if ($newsFeaturedImg != '') {
+                        ?>
                       <img src="<?php echo $newsFeaturedImg; ?>" />
                             <?php
-                        }
-                        ?>
+                    }
+                    ?>
           </div>
 
           <div class="large-8 medium-12 small-12 cell ever-green">
                         <?php
-                        if (get_field('use_short_headline', $sportsFeature) == 'yes' && get_field('homepage_headline', $sportsFeature) != '') {
-                            $title = get_field('homepage_headline', $sportsFeature);
-                        } else {
-                            $title = get_the_title($sportsFeature);
-                        }
-                        ?>
+                    if (get_field('use_short_headline', $sportsFeature) == 'yes' && get_field('homepage_headline', $sportsFeature) != '') {
+                        $title = get_field('homepage_headline', $sportsFeature);
+                    } else {
+                        $title = get_the_title($sportsFeature);
+                    }
+                    ?>
                     <h3><a class="audio-plyr" data-link="<?php echo $audioFile; ?>" data-title="<?php echo $title; ?>"><?php echo $title; ?></a></h3>
                     <p><?php echo get_field('story_tease', $sportsFeature); ?></p>
                         <?php
-                    }
-                    $sportsStoriesCounter++;
                 }
-                wp_reset_postdata();
+                $sportsStoriesCounter++;
             }
-            ?>
+            wp_reset_postdata();
+        }
+        ?>
             <!-- https://cronkitenews.azpbs.org/wp-content/uploads/2021/06/Sharpe-Protection-Act-FINAL.mp3 -->
           </div>
           <div class="large-12 medium-12 small-12 cell remove-margin">
@@ -124,33 +124,33 @@
             <h3>Keep listening</h3>
           </div>
           <?php
-            $newsStoriesList = get_field('news_stories', 122187);
-            if ($newsStoriesList) {
-                $newsStoriesCounter = 0;
-                foreach ($newsStoriesList as $newsStories) {
-                    if ($newsStoriesCounter < 8) {
-                        $permalink = get_permalink($newsStories);
-                        $audioFile = get_field('audio_video_file', $newsStories);
-                        ?>
+        $newsStoriesList = get_field('news_stories', 122187);
+        if ($newsStoriesList) {
+            $newsStoriesCounter = 0;
+            foreach ($newsStoriesList as $newsStories) {
+                if ($newsStoriesCounter < 8) {
+                    $permalink = get_permalink($newsStories);
+                    $audioFile = get_field('audio_video_file', $newsStories);
+                    ?>
                 <div class="large-12 medium-12 small-12 cell listed-stories">
                         <?php
-                        if (get_field('use_short_headline', $newsStories) == 'yes' && get_field('homepage_headline', $newsStories) != '') {
-                            $title = get_field('homepage_headline', $newsStories);
-                        } else {
-                            $title = get_the_title($newsStories);
-                        }
-                        ?>
+                    if (get_field('use_short_headline', $newsStories) == 'yes' && get_field('homepage_headline', $newsStories) != '') {
+                        $title = get_field('homepage_headline', $newsStories);
+                    } else {
+                        $title = get_the_title($newsStories);
+                    }
+                    ?>
                   <a class="show-for-medium audio-plyr" data-link="<?php echo $audioFile; ?>" data-title="<?php echo $title; ?>"><i class="fas fa-play-circle"></i> <?php echo $title; ?></a>
                 </div>
                 <div class="large-12 medium-12 small-12 cell align-self-middle show-for-small-only remove-margins">
                   <a class="audio-plyr" data-link="<?php echo $audioFile; ?>" data-title="<?php echo $title; ?>"><i class="fas fa-play-circle"></i> <?php echo $title; ?></a>
                 </div>
                         <?php
-                    }
-                    $newsStoriesCounter++;
                 }
+                $newsStoriesCounter++;
             }
-            ?>
+        }
+        ?>
         </div>
       </div>
     </div>
@@ -183,41 +183,41 @@
         <div class="grid-x grid-padding-x">
           <div class="large-4 medium-12 small-12 cell ever-green">
             <?php
-              $sportsFeaturedStory = get_field('sports_audio', 122187);
-            if ($sportsFeaturedStory) {
-                $sportsStoriesCounter = 0;
-                foreach ($sportsFeaturedStory as $sportsFeature) {
-                    if ($sportsStoriesCounter < 8) {
-                        setup_postdata($sportsFeature);
-                        $permalink = get_permalink($sportsFeature);
-                        $audioFile = get_field('audio_video_file', $sportsFeature);
-                        $newsFeaturedImg = get_the_post_thumbnail_url($sportsFeature);
+          $sportsFeaturedStory = get_field('sports_audio', 122187);
+        if ($sportsFeaturedStory) {
+            $sportsStoriesCounter = 0;
+            foreach ($sportsFeaturedStory as $sportsFeature) {
+                if ($sportsStoriesCounter < 8) {
+                    setup_postdata($sportsFeature);
+                    $permalink = get_permalink($sportsFeature);
+                    $audioFile = get_field('audio_video_file', $sportsFeature);
+                    $newsFeaturedImg = get_the_post_thumbnail_url($sportsFeature);
 
-                        if ($newsFeaturedImg != '') {
-                            ?>
+                    if ($newsFeaturedImg != '') {
+                        ?>
                       <img src="<?php echo $newsFeaturedImg; ?>" />
                             <?php
-                        }
-                        ?>
+                    }
+                    ?>
           </div>
 
           <div class="large-8 medium-12 small-12 cell ever-green">
                         <?php
-                        if (get_field('use_short_headline', $sportsFeature) == 'yes' && get_field('homepage_headline', $sportsFeature) != '') {
-                            $title = get_field('homepage_headline', $sportsFeature);
-                        } else {
-                            $title = get_the_title($sportsFeature);
-                        }
-                        ?>
+                    if (get_field('use_short_headline', $sportsFeature) == 'yes' && get_field('homepage_headline', $sportsFeature) != '') {
+                        $title = get_field('homepage_headline', $sportsFeature);
+                    } else {
+                        $title = get_the_title($sportsFeature);
+                    }
+                    ?>
                     <h3><a class="audio-plyr" data-link="<?php echo $audioFile; ?>" data-title="<?php echo $title; ?>"><?php echo $title; ?></a></h3>
                     <p><?php echo get_field('story_tease', $sportsFeature); ?></p>
                         <?php
-                    }
-                    $sportsStoriesCounter++;
                 }
-                wp_reset_postdata();
+                $sportsStoriesCounter++;
             }
-            ?>
+            wp_reset_postdata();
+        }
+        ?>
           </div>
           <div class="large-12 medium-12 small-12 cell remove-margin">
             <hr />
@@ -229,33 +229,33 @@
             <h3>Keep listening</h3>
           </div>
           <?php
-            $sportsStoriesList = get_field('sports_stories', 122187);
-            if ($sportsStoriesList) {
-                $sportsStoriesCounter = 0;
-                foreach ($sportsStoriesList as $sportsStories) {
-                    if ($sportsStoriesCounter < 8) {
-                        $audioFile = get_field('audio_video_file', $sportsStories);
-                        $permalink = get_permalink($sportsStories);
-                        ?>
+        $sportsStoriesList = get_field('sports_stories', 122187);
+        if ($sportsStoriesList) {
+            $sportsStoriesCounter = 0;
+            foreach ($sportsStoriesList as $sportsStories) {
+                if ($sportsStoriesCounter < 8) {
+                    $audioFile = get_field('audio_video_file', $sportsStories);
+                    $permalink = get_permalink($sportsStories);
+                    ?>
                 <div class="large-12 medium-12 small-12 cell listed-stories">
                         <?php
-                        if (get_field('use_short_headline', $sportsStories) == 'yes' && get_field('homepage_headline', $sportsStories) != '') {
-                            $title = get_field('homepage_headline', $sportsStories);
-                        } else {
-                            $title = get_the_title($sportsStories);
-                        }
-                        ?>
+                    if (get_field('use_short_headline', $sportsStories) == 'yes' && get_field('homepage_headline', $sportsStories) != '') {
+                        $title = get_field('homepage_headline', $sportsStories);
+                    } else {
+                        $title = get_the_title($sportsStories);
+                    }
+                    ?>
                   <a class="show-for-medium audio-plyr" data-link="<?php echo $audioFile; ?>" data-title="<?php echo $title; ?>"><i class="fas fa-play-circle"></i> <?php echo $title; ?></a>
                 </div>
                 <div class="large-12 medium-12 small-12 cell align-self-middle show-for-small-only remove-margins">
                   <a class="audio-plyr" data-link="<?php echo $audioFile; ?>" data-title="<?php echo $title; ?>"><i class="fas fa-play-circle"></i> <?php echo $title; ?></a>
                 </div>
                         <?php
-                    }
-                    $sportsStoriesCounter++;
                 }
+                $sportsStoriesCounter++;
             }
-            ?>
+        }
+        ?>
         </div>
       </div>
     </div>

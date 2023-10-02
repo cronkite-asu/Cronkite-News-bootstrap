@@ -21,10 +21,10 @@
           <?php
             $paged = get_query_var('paged');
 
-            if (have_posts() ) {
-                while ( have_posts() ) {
-                    the_post();
-                    ?>
+        if (have_posts()) {
+            while (have_posts()) {
+                the_post();
+                ?>
                 <div class="grid-x grid-margin-x story-results-stack">
                   <div class="large-8 medium-8 small-8 cell">
                     <h4><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
@@ -42,21 +42,21 @@
                 </div>
 
                     <?php
-                }
-            } else {
-                ?>
+            }
+        } else {
+            ?>
 
                 <?php
-            }
-            ?>
+        }
+        ?>
             <div class="grid-x grid-margin-x story-results-stack">
               <div class="large-12 medium-12 small-12 cell">
                 <?php bootstrap_pagination(); ?>
               </div>
             </div>
           <?php
-            wp_reset_query();
-            ?>
+        wp_reset_query();
+        ?>
 
         </div>
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Longform Desert Video 
+ * Template Name: Longform Desert Video
  * Story template without sidebar with video top
  */
 get_header('desert'); ?>

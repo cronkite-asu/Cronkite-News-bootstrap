@@ -16,7 +16,7 @@
 
 
           <?php  $startYear = 2014;
-            $curYear = date('Y'); ?>
+          $curYear = date('Y'); ?>
 
           <form id="form-filter" method="get">
               <select name="monthOption">
@@ -43,20 +43,20 @@
               </select>
           </form>
           <?php
-            $args = array(
-              'post_type'        => 'post',
-              'order'            => 'ASC',
-              'orderby'        => 'date',
-              'posts_per_page'    => -1,
-              'monthnum' => $month,
-              'year' => $years,
+          $args = array(
+            'post_type'        => 'post',
+            'order'            => 'ASC',
+            'orderby'        => 'date',
+            'posts_per_page'    => -1,
+            'monthnum' => $month,
+            'year' => $years,
 
-            );
-            $the_query = new WP_Query($args);
-            if ($the_query->have_posts() ) {
-                while (  $the_query->have_posts() ) {
-                    $the_query->the_post();
-                    ?>
+          );
+          $the_query = new WP_Query($args);
+          if ($the_query->have_posts()) {
+              while ($the_query->have_posts()) {
+                  $the_query->the_post();
+                  ?>
                 <div class="grid-x grid-margin-x story-results-stack">
                   <div class="large-8 medium-8 small-8 cell">
                     <h4><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
@@ -73,22 +73,22 @@
                   </div>
                 </div>
 
-                    <?php 
-                }
-            } else {
-                ?>
+                    <?php
+              }
+          } else {
+              ?>
 
                 <?php
-            }
-            ?>
+          }
+          ?>
             <div class="grid-x grid-margin-x story-results-stack">
               <div class="large-12 medium-12 small-12 cell">
                 <?php bootstrap_pagination(); ?>
               </div>
             </div>
           <?php
-            wp_reset_query();
-            ?>
+          wp_reset_query();
+          ?>
 
         </div>
 

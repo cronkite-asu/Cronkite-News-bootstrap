@@ -27,12 +27,12 @@ get_header('new2019'); ?>
               'post_type' => 'post'
             );
 
-            // Custom query.
-            $query = new WP_Query($args);
-            if ($query->have_posts() ) {
-                while ( $query->have_posts() ) {
-                    $query->the_post();
-                    ?>
+// Custom query.
+$query = new WP_Query($args);
+if ($query->have_posts()) {
+    while ($query->have_posts()) {
+        $query->the_post();
+        ?>
                 <article>
                   <div class="pub_date">
                     <time datetime="2015-05-16 19:00"><wbr>Jan. 7, 2020</wbr> &ndash; <strong>4:29 p.m. MT</strong></time>
@@ -58,11 +58,11 @@ get_header('new2019'); ?>
                   </div>
                 </article>
                     <?php
-                }
-            }
-            /* Restore original Post Data */
-            wp_reset_postdata();
-            ?>
+    }
+}
+/* Restore original Post Data */
+wp_reset_postdata();
+?>
 
         </div>
 

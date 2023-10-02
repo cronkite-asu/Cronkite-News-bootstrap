@@ -32,11 +32,11 @@ get_header('longformhero'); ?>
 
                             <div class="small-devices-only">
                                 <div id="top-img-holder">
-                                                <?php if (have_rows('top_full_image') ) : ?>
-                                                    <?php while ( have_rows('top_full_image') ): the_row();
+                                                <?php if (have_rows('top_full_image')) : ?>
+                                                    <?php while (have_rows('top_full_image')): the_row();
                                                         // Declare variables below
                                                         $icon = get_sub_field('fimage');
-                                                        $text = get_sub_field('fcaption');  // Use variables below ?>
+                                                        $text = get_sub_field('fcaption');  // Use variables below?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
                                                         <?php if ($imgheadline = get_field('headline_over_image')) { ?>
                                         <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image'); ?>;font-size:<?php the_field('headline_over_image_font_size'); ?>;<?php the_field('additional_headline_over_image_styling'); ?>"> <?php the_field('headline_over_image'); ?> </h1>
@@ -46,7 +46,8 @@ get_header('longformhero'); ?>
                                                 </div>
                                                 </div>
                                                     <?php endwhile; ?>
-                                                <?php endif; wp_reset_query(); ?>‘’
+                                                <?php endif;
+                                                wp_reset_query(); ?>‘’
 
                                       </div>
                                             <?php } else { ?>
@@ -55,11 +56,11 @@ get_header('longformhero'); ?>
                                 <div id="top-img-holder" class="col-xs-12 col-md-offset-2 col-md-8">
 
                                   <h1 style="font-family: 'Libre Baskerville', serif;color:#111;font-size:calc(16.4px + 2.5vw);margin-top:calc(16.4px + 5vw);text-align:center;"><?php the_field('lf_custom_title'); ?></h1>
-                                                <?php if (have_rows('top_full_image') ) : ?>
-                                                    <?php while ( have_rows('top_full_image') ): the_row();
+                                                <?php if (have_rows('top_full_image')) : ?>
+                                                    <?php while (have_rows('top_full_image')): the_row();
                                                         // Declare variables below
                                                         $icon = get_sub_field('fimage');
-                                                        $text = get_sub_field('fcaption');  // Use variables below ?>
+                                                        $text = get_sub_field('fcaption');  // Use variables below?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
                                                         <?php if ($imgheadline = get_field('headline_over_image')) { ?>
                                         <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image'); ?>;font-size:<?php the_field('headline_over_image_font_size'); ?>;<?php the_field('additional_headline_over_image_styling'); ?>"> <?php the_field('headline_over_image'); ?> </h1>
@@ -70,7 +71,8 @@ get_header('longformhero'); ?>
                                                 </div>
                                                 </div>
                                                     <?php endwhile; ?>
-                                                <?php endif; wp_reset_query(); ?>
+                                                <?php endif;
+                                                wp_reset_query(); ?>
 
                                             <?php } ?>
 
@@ -160,19 +162,19 @@ get_header('longformhero'); ?>
                                                     }
                                                     echo '/Cronkite News</span>';
                                                 }
-                                            } else if ($externalStaffTotalCounter > 0) {
+                                            } elseif ($externalStaffTotalCounter > 0) {
 
                                                 if (have_rows('byline_info')) {
                                                     $sepCounter = 0;
                                                     echo '<h6 class="story-info">By ';
                                                     while (have_rows('byline_info')) {
                                                         the_row();
-                                                        if (have_rows('external_authors_repeater') ) {
+                                                        if (have_rows('external_authors_repeater')) {
                                                             if ($cnStaffTotalCounter > 0) {
-                                                                  echo ' and ';
+                                                                echo ' and ';
                                                             }
                                                             $sepCounter = 0;
-                                                            while ( have_rows('external_authors_repeater') ) {
+                                                            while (have_rows('external_authors_repeater')) {
                                                                 the_row();
                                                                 $sepCounter++;
                                                                 echo '<!--'.$sepCounter.'-->';
@@ -180,7 +182,7 @@ get_header('longformhero'); ?>
 
                                                                 if ($sepCounter != $externalStaffTotalCounter) {
                                                                     if ($sepCounter == ($externalStaffTotalCounter - 1)) {
-                                                                          echo $andSeparator.' ';
+                                                                        echo $andSeparator.' ';
                                                                     } else {
                                                                         echo $commaSeparator.' ';
                                                                     }
@@ -206,8 +208,8 @@ get_header('longformhero'); ?>
                                        <?php } ?>
                     </a>
                                                 <?php if ($siteTitle = get_field('site_title')) {
-                                                                                         $url = get_field('site_url');
-                                                                                         $url = esc_url($url); ?><a href="<?php echo $url; ?>"><?php echo $siteTitle; ?></a>
+                                                    $url = get_field('site_url');
+                                                    $url = esc_url($url); ?><a href="<?php echo $url; ?>"><?php echo $siteTitle; ?></a>
                                                 <?php } ?>
                                             <?php } ?>
                                             <?php wp_reset_query(); ?>

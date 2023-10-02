@@ -22,11 +22,11 @@ get_header('desert'); ?>
                                                 <h1><?php the_title(); ?></h1>
 
                                             <div id="top-img-holder"> 
-                                            <?php if (have_rows('top_full_image') ) : ?>
-                                                <?php while ( have_rows('top_full_image') ): the_row();
+                                            <?php if (have_rows('top_full_image')) : ?>
+                                                <?php while (have_rows('top_full_image')): the_row();
                                                     // Declare variables below
                                                     $icon = get_sub_field('fimage');
-                                                    $text = get_sub_field('fcaption');  // Use variables below ?>
+                                                    $text = get_sub_field('fcaption');  // Use variables below?>
                                                 <img  style="width:100%;height:auto;" src="<?php echo $icon; ?>" />
 
                                                 <div class="carousel-captions"> <!-- captions -->
@@ -35,7 +35,8 @@ get_header('desert'); ?>
                                                 </div>
                                                 </div>
                                                 <?php endwhile; ?>
-                                            <?php endif; wp_reset_query(); ?>
+                                            <?php endif;
+                                            wp_reset_query(); ?>
                                 </div>
                                 <div class="col-xs-12 col-md-offset-2 col-md-8">
                                 <h6 class="story-info"><?php if ($postAuthor = get_field('post_author')) { ?>

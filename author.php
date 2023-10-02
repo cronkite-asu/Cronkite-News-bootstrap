@@ -43,17 +43,17 @@ get_header(); ?>
                                                 if ($twitterTitle = get_field('twitter_title')) {
                                                     ?>
                                                     <a href="<?php the_field('twitter_url'); ?>" class="custom-line-links"> <i class="icon-twitter"></i> <?php echo $twitterTitle; ?> </a>
-                                                    <?php 
+                                                    <?php
                                                 }
-                                                ?>
+                                        ?>
 
                                             </div>
 
                                         </div>
                                     <?php endwhile;
                                 endif;
-                                wp_reset_query();
-                                ?>
+wp_reset_query();
+?>
                             </div>
 
                             <div class="post-content post-content-single clearfix">

@@ -20,18 +20,18 @@
         <div id="latest-stories" class="large-8 medium-12 small-12 cell story-content">
           <?php
             $paged = get_query_var('paged');
-            $arg = array(
-                'post_type'        => 'post',
-                'order'            => 'DESC',
-                'orderby'        => 'date',
-                'category_name' =>  'newscast'
-            );
-            $newscast = new WP_Query($arg);
+        $arg = array(
+            'post_type'        => 'post',
+            'order'            => 'DESC',
+            'orderby'        => 'date',
+            'category_name' =>  'newscast'
+        );
+        $newscast = new WP_Query($arg);
 
-            if ($newscast->have_posts() ) {
-                while ( $newscast->have_posts() ) {
-                    $newscast->the_post();
-                    ?>
+        if ($newscast->have_posts()) {
+            while ($newscast->have_posts()) {
+                $newscast->the_post();
+                ?>
                 <div class="grid-x grid-margin-x story-results-stack">
                   <div class="large-8 medium-8 small-8 cell">
                     <h4><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
@@ -48,22 +48,22 @@
                   </div>
                 </div>
 
-                    <?php 
-                }
-            } else {
-                ?>
+                    <?php
+            }
+        } else {
+            ?>
 
                 <?php
-            }
-            ?>
+        }
+        ?>
             <div class="grid-x grid-margin-x story-results-stack">
               <div class="large-12 medium-12 small-12 cell">
                 <?php bootstrap_pagination(); ?>
               </div>
             </div>
           <?php
-            wp_reset_query();
-            ?>
+        wp_reset_query();
+        ?>
 
         </div>
 

@@ -17,7 +17,7 @@ get_header(); ?>
                     $blog_page_id = get_option('page_for_posts');
                     echo '<h1>' . get_page($blog_page_id)->post_title . '</h1>';
                 }
-                ?>
+?>
             </div>
             <!-- /.col -->
         </div>
@@ -36,12 +36,12 @@ get_header(); ?>
 
 
                             <?php
-                            if (is_home() && get_option('page_for_posts')) {
-                                $blog_page_id = get_option('page_for_posts');
-                                echo '<div class="content-blog">' . get_page($blog_page_id)->post_content . '</div>'; ?>
+            if (is_home() && get_option('page_for_posts')) {
+                $blog_page_id = get_option('page_for_posts');
+                echo '<div class="content-blog">' . get_page($blog_page_id)->post_content . '</div>'; ?>
 
                                 <?php
-                            }  ?>
+            }  ?>
 
                             <div class="custom-line">
                                 <?php if ($labelInfo  = get_field('label_info')) : ?>

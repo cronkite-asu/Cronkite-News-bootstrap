@@ -32,11 +32,11 @@ get_header('longformhero'); ?>
 
                             <div class="small-devices-only">
                                 <div id="top-img-holder">
-                                                <?php if (have_rows('top_full_image') ) : ?>
-                                                    <?php while ( have_rows('top_full_image') ): the_row();
+                                                <?php if (have_rows('top_full_image')) : ?>
+                                                    <?php while (have_rows('top_full_image')): the_row();
                                                         // Declare variables below
                                                         $icon = get_sub_field('fimage');
-                                                        $text = get_sub_field('fcaption');  // Use variables below ?>
+                                                        $text = get_sub_field('fcaption');  // Use variables below?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
                                                         <?php if ($imgheadline = get_field('headline_over_image')) { ?>
                                         <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image'); ?>;font-size:<?php the_field('headline_over_image_font_size'); ?>;<?php the_field('additional_headline_over_image_styling'); ?>"> <?php the_field('headline_over_image'); ?> </h1>
@@ -46,18 +46,19 @@ get_header('longformhero'); ?>
                                                 </div>
                                                 </div>
                                                     <?php endwhile; ?>
-                                                <?php endif; wp_reset_query(); ?>
+                                                <?php endif;
+                                                wp_reset_query(); ?>
 
                                       </div>
                                             <?php } else { ?>
 
 
                                 <div id="top-img-holder">
-                                                <?php if (have_rows('top_full_image') ) : ?>
-                                                    <?php while ( have_rows('top_full_image') ): the_row();
+                                                <?php if (have_rows('top_full_image')) : ?>
+                                                    <?php while (have_rows('top_full_image')): the_row();
                                                         // Declare variables below
                                                         $icon = get_sub_field('fimage');
-                                                        $text = get_sub_field('fcaption');  // Use variables below ?>
+                                                        $text = get_sub_field('fcaption');  // Use variables below?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
                                                         <?php if ($imgheadline = get_field('headline_over_image')) { ?>
                                         <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image'); ?>;font-size:<?php the_field('headline_over_image_font_size'); ?>;<?php the_field('additional_headline_over_image_styling'); ?>"> <?php the_field('headline_over_image'); ?> </h1>
@@ -68,7 +69,8 @@ get_header('longformhero'); ?>
                                                 </div>
                                                 </div>
                                                     <?php endwhile; ?>
-                                                <?php endif; wp_reset_query(); ?>
+                                                <?php endif;
+                                                wp_reset_query(); ?>
 
                                             <?php } ?>
 
@@ -158,7 +160,7 @@ get_header('longformhero'); ?>
                                                     }
                                                     echo '/Cronkite News</span>';
                                                 }
-                                            } else if ($externalStaffTotalCounter > 0) {
+                                            } elseif ($externalStaffTotalCounter > 0) {
 
                                                 if (have_rows('byline_info')) {
                                                     $sepCounter = 0;
@@ -169,12 +171,12 @@ get_header('longformhero'); ?>
                                                     }
                                                     while (have_rows('byline_info')) {
                                                         the_row();
-                                                        if (have_rows('external_authors_repeater') ) {
+                                                        if (have_rows('external_authors_repeater')) {
                                                             if ($cnStaffTotalCounter > 0) {
                                                                 echo ' and ';
                                                             }
                                                             $sepCounter = 0;
-                                                            while ( have_rows('external_authors_repeater') ) {
+                                                            while (have_rows('external_authors_repeater')) {
                                                                 the_row();
                                                                 $sepCounter++;
                                                                 echo '<!--'.$sepCounter.'-->';
@@ -207,8 +209,8 @@ get_header('longformhero'); ?>
                                             By <?php echo $postAuthor; ?>/
                                        <?php } ?></a>
                                                 <?php if ($siteTitle = get_field('site_title')) {
-                                                                                         $url = get_field('site_url');
-                                                                                         $url = esc_url($url); ?><a href="<?php echo $url; ?>"><?php echo $siteTitle; ?></a>
+                                                    $url = get_field('site_url');
+                                                    $url = esc_url($url); ?><a href="<?php echo $url; ?>"><?php echo $siteTitle; ?></a>
                                                 <?php } ?>
                                             <?php } ?>
                                             <?php wp_reset_query(); ?>
@@ -233,9 +235,9 @@ get_header('longformhero'); ?>
                                                                    );
 
                                                         $storyTag = new WP_Query($args);
-                                                        if ($storyTag->have_posts() ) {
+                                                        if ($storyTag->have_posts()) {
 
-                                                            while ( $storyTag->have_posts() ) {
+                                                            while ($storyTag->have_posts()) {
                                                                 $storyTag->the_post();
 
                                                                 if (get_field('story_html_tag') != '') {
@@ -245,7 +247,7 @@ get_header('longformhero'); ?>
                                                         }
                                                     }
                                                 }
-                                                ?>
+                                            ?>
 
                                             </article>
                                         <?php endwhile; ?><!-- END of POST-->

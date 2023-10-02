@@ -23,11 +23,11 @@ get_header(); ?>
                                             $verticals = get_the_category();
                                             $separator = ' | ';
                                             $output = '';
-                                            if (! empty($verticals) ) {
-                                                foreach ( $verticals as $category ) {
+                                            if (! empty($verticals)) {
+                                                foreach ($verticals as $category) {
 
                                                     if (($category->name != "Uncategorized") && ($category->name != "Longform") && ($category->name != "Longform No Title")) {
-                                                                  $output .= '<a href="' . esc_url(get_category_link($category->term_id)). '" alt="' . esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)) . '">' . strtoupper(esc_html($category->name)) . '</a>' . $separator;
+                                                        $output .= '<a href="' . esc_url(get_category_link($category->term_id)). '" alt="' . esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)) . '">' . strtoupper(esc_html($category->name)) . '</a>' . $separator;
                                                     }
 
                                                 }
@@ -38,11 +38,11 @@ get_header(); ?>
 
 
                                             <div id="owl-work" class="owl-carousel owl-inner-pagination owl-inner-nav post-media">
-                                            <?php if (have_rows('slider_images') ) : ?>
-                                                <?php while ( have_rows('slider_images') ): the_row();
+                                            <?php if (have_rows('slider_images')) : ?>
+                                                <?php while (have_rows('slider_images')): the_row();
                                                     // Declare variables below
                                                     $icon = get_sub_field('images');
-                                                    $text = get_sub_field('description');  // Use variables below ?>
+                                                    $text = get_sub_field('description');  // Use variables below?>
                                                 <div class="item">
                                                 <img src="<?php echo $icon; ?>" />
 
@@ -52,7 +52,8 @@ get_header(); ?>
                                                 </div>
                                                 </div>
                                                 <?php endwhile; ?>
-                                            <?php endif; wp_reset_query(); ?>
+                                            <?php endif;
+                                            wp_reset_query(); ?>
                                 </div>
 
                                 <h6 class="story-info"><?php if ($postAuthor = get_field('post_author')) { ?>

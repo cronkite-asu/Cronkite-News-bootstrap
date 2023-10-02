@@ -42,8 +42,8 @@
                             <?php
                         endwhile;
                     endif;
-                    wp_reset_query();
-                    ?>
+wp_reset_query();
+?>
 
                 </ul>
  -->

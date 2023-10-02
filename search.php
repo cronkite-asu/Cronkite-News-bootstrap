@@ -3,7 +3,7 @@
  * The template for displaying Search Results pages.
  */
 
- get_header('new2019'); ?>
+get_header('new2019'); ?>
 
    <?php get_template_part('partials/content', 'search'); ?>
 
