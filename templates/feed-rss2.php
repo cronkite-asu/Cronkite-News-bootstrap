@@ -34,7 +34,7 @@ do_action('rss_tag_pre', 'rss2');
      * @since 2.0.0
      */
     do_action('rss2_ns');
-    ?>
+?>
 >
 
 <channel>
@@ -46,49 +46,49 @@ do_action('rss_tag_pre', 'rss2');
     <language><?php bloginfo_rss('language'); ?></language>
     <sy:updatePeriod>
     <?php
-    $duration = 'hourly';
+$duration = 'hourly';
 
-    /**
-     * Filters how often to update the RSS feed.
-     *
-     * @since 2.1.0
-     *
-     * @param string $duration The update period. Accepts 'hourly', 'daily', 'weekly', 'monthly',
-     *                         'yearly'. Default 'hourly'.
-     */
-    echo apply_filters('rss_update_period', $duration);
-    ?>
+/**
+ * Filters how often to update the RSS feed.
+ *
+ * @since 2.1.0
+ *
+ * @param string $duration The update period. Accepts 'hourly', 'daily', 'weekly', 'monthly',
+ *                         'yearly'. Default 'hourly'.
+ */
+echo apply_filters('rss_update_period', $duration);
+?>
     </sy:updatePeriod>
     <sy:updateFrequency>
     <?php
-    $frequency = '1';
+$frequency = '1';
 
-    /**
-     * Filters the RSS update frequency.
-     *
-     * @since 2.1.0
-     *
-     * @param string $frequency An integer passed as a string representing the frequency
-     *                          of RSS updates within the update period. Default '1'.
-     */
-    echo apply_filters('rss_update_frequency', $frequency);
-    ?>
+/**
+ * Filters the RSS update frequency.
+ *
+ * @since 2.1.0
+ *
+ * @param string $frequency An integer passed as a string representing the frequency
+ *                          of RSS updates within the update period. Default '1'.
+ */
+echo apply_filters('rss_update_frequency', $frequency);
+?>
     </sy:updateFrequency>
     <?php
-    /**
-     * Fires at the end of the RSS2 Feed Header.
-     *
-     * @since 2.0.0
-     */
-    do_action('rss2_head');
+/**
+ * Fires at the end of the RSS2 Feed Header.
+ *
+ * @since 2.0.0
+ */
+do_action('rss2_head');
 
-    while ( have_posts() ) :
-        the_post();
-        ?>
+while (have_posts()) :
+    the_post();
+    ?>
     <item>
         <title><?php the_title_rss(); ?></title>
         <link><?php the_permalink_rss(); ?></link>
-        <?php if (get_comments_number() || comments_open() ) : ?>
+        <?php if (get_comments_number() || comments_open()) : ?>
             <comments><?php comments_link_feed(); ?></comments>
         <?php endif; ?>
 
@@ -97,19 +97,19 @@ do_action('rss_tag_pre', 'rss2');
         <?php the_category_rss('rss2'); ?>
         <guid isPermaLink="false"><?php the_guid(); ?></guid>
 
-        <?php if (get_option('rss_use_excerpt') ) : ?>
+        <?php if (get_option('rss_use_excerpt')) : ?>
             <description><![CDATA[<?php the_excerpt_rss(); ?>]]></description>
         <?php else : ?>
             <description><![CDATA[<?php the_excerpt_rss(); ?>]]></description>
             <?php $content = get_the_content_feed('rss2'); ?>
-            <?php if (strlen($content) > 0 ) : ?>
+            <?php if (strlen($content) > 0) : ?>
                 <content:encoded><![CDATA[<?php echo $content; ?>]]></content:encoded>
             <?php else : ?>
                 <content:encoded><![CDATA[<?php the_excerpt_rss(); ?>]]></content:encoded>
             <?php endif; ?>
         <?php endif; ?>
 
-        <?php if (get_comments_number() || comments_open() ) : ?>
+        <?php if (get_comments_number() || comments_open()) : ?>
             <wfw:commentRss><?php echo esc_url(get_post_comments_feed_link(null, 'rss2')); ?></wfw:commentRss>
             <slash:comments><?php echo get_comments_number(); ?></slash:comments>
         <?php endif; ?>
@@ -117,13 +117,13 @@ do_action('rss_tag_pre', 'rss2');
         <?php rss_enclosure(); ?>
 
         <?php
-        /**
-         * Fires at the end of each RSS2 feed item.
-         *
-         * @since 2.0.0
-         */
-        do_action('rss2_item');
-        ?>
+    /**
+     * Fires at the end of each RSS2 feed item.
+     *
+     * @since 2.0.0
+     */
+    do_action('rss2_item');
+    ?>
     </item>
     <?php endwhile; ?>
 </channel>

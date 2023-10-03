@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: Story removed
-*/
+/**
+ * Template Name: Story removed
+ */
 
 get_header('new2019'); ?>
 

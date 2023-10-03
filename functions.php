@@ -20,13 +20,14 @@ add_theme_support('custom-background', array('default-color' => 'fff'));
 
 // Custom Header
 add_theme_support(
-    'custom-header', array(
+    'custom-header',
+    array(
     'default-image' => get_template_directory_uri() . '/images/custom-logo.png',
     'height'        => '200',
     'flex-height'    => true,
     'uploads'       => true,
     'header-text'   => false
-    ) 
+    )
 );
 
 // custom image sizes
@@ -86,7 +87,7 @@ function getStoryAuthors($getPID)
 
     // bypass group not showing repeater field issue
     $groupFields = get_field('byline_info', $getPID);
-    $externalAuthorRepeater = $groupFields['external_authors_repeater'];
+    $externalAuthorRepeater = $groupFields['external_authors_repeater'] ?? "";
 
     $normalizeChars = array(
      'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
@@ -146,7 +147,7 @@ function getStoryAuthors($getPID)
                 $finalAuthors .= ' and ';
             }
             $sepCounter = 0;
-            foreach ($externalAuthorRepeater as $key => $val ) {
+            foreach ($externalAuthorRepeater as $key => $val) {
                 $sepCounter++;
                 $finalAuthors .= $val['external_authors'];
 
@@ -189,7 +190,7 @@ function hook_parselyJSON()
     </script>
 
         <?php
-    } else if (is_single()) {
+    } elseif (is_single()) {
         $pageType = 'NewsArticle';
         $publisher = 'Cronkite News - Arizona PBS';
         $headline = html_entity_decode(get_the_title(get_the_ID()));
@@ -212,7 +213,7 @@ function hook_parselyJSON()
 
         // categories
         $rawCats = wp_get_post_categories(get_the_ID());
-        foreach ($rawCats as $cid){
+        foreach ($rawCats as $cid) {
             $cat = get_category($cid);
             if ($cat->name != 'New Long Form' || $cat->name != "Editor's Picks" || $cat->name != "Big Boy" || $cat->name != "Longform hero image slim") {
                 $articleSection = $cat->name;
@@ -246,7 +247,7 @@ function hook_parselyJSON()
         "dateCreated":"<?php echo $dateCreated; ?>",
         "datePublished":"<?php echo $dateCreated; ?>",
         "dateModified":"<?php echo $dateModified; ?>",
-        "articleSection":"<?php echo $articleSection; ?>",
+        "articleSection":"<?php echo $articleSection ?? ''; ?>",
         "author":[<?php echo $authors; ?>],
         "creator":[<?php echo $creators; ?>],
         "publisher":{"@type":"Organization","name":"<?php echo $publisher; ?>"},
@@ -263,53 +264,53 @@ function hook_parselyTrack()
   <!-- START Parse.ly Include: Standard -->
   <script data-cfasync="false" id="parsely-cfg" data-parsely-site="cronkitenews.azpbs.org" src="//cdn.parsely.com/keys/cronkitenews.azpbs.org/p.js"></script>
   <!-- END Parse.ly Include: Standard -->
-    <?php 
+    <?php
 }
 add_action('wp_footer', 'hook_parselyTrack');
 
 // Navigation Menu Adjustments
 
-    /* Add class to navigation sub-menu */
+/* Add class to navigation sub-menu */
 class bootstrap_navigation extends Walker_Nav_Menu
 {
 
-    function start_lvl(&$output, $depth = 0, $args = array())
+    public function start_lvl(&$output, $depth = 0, $args = array())
     {
         $output .= "\n<ul class=\"dropdown-menu\">\n";
     }
 
-    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+    public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
     {
         $item_html = '';
         parent::start_el($item_html, $item, $depth, $args);
 
-        if ($item->is_dropdown && $depth === 0 ) {
+        if ($item->is_dropdown && $depth === 0) {
             $item_html = str_replace('<a', '<a class="dropdown-toggle" data-toggle="dropdown"', $item_html);
             $item_html = str_replace('</a>', ' <b class="caret"></b></a>', $item_html);
         }
         $output .= $item_html;
     }
 
-    function display_element($element, &$children_elements, $max_depth, $depth = 0, $args = null, &$output = null)
+    public function display_element($element, &$children_elements, $max_depth, $depth = 0, $args = null, &$output = null)
     {
-        if ($element->current ) {
+        if ($element->current) {
             $element->classes[] = 'active';
         }
-            $element->is_dropdown = !empty($children_elements[$element->ID]);
+        $element->is_dropdown = !empty($children_elements[$element->ID]);
 
-        if ($element->is_dropdown ) {
-            if ($depth === 0 ) {
+        if ($element->is_dropdown) {
+            if ($depth === 0) {
                 $element->classes[] = 'dropdown';
-            } elseif ($depth === 1 ) {
+            } elseif ($depth === 1) {
                 // Extra level of dropdown menu,
                 // as seen in http://twitter.github.com/bootstrap/components.html#dropdowns
                 $element->classes[] = 'dropdown-submenu';
             }
         }
-            parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
+        parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
     }
 }
-     
+
 /* Display Pages In Navigation Menu */
 if (!function_exists('bootstrap_menu')) {
     function bootstrap_menu()
@@ -456,16 +457,18 @@ register_sidebar(
 function remove_more_jump_link($link)
 {
     $offset = strpos($link, '#more-');
-    if ($offset) { $end = strpos($link, '"', $offset); 
+    if ($offset) {
+        $end = strpos($link, '"', $offset);
     }
-    if ($end) { $link = substr_replace($link, '', $offset, $end-$offset); 
+    if ($end) {
+        $link = substr_replace($link, '', $offset, $end-$offset);
     }
     return $link;
 }
 add_filter('the_content_more_link', 'remove_more_jump_link');
 
 // Custom Post Excerpt
-if (! function_exists('bootstrap_excerpt') ) {
+if (! function_exists('bootstrap_excerpt')) {
     function content($limit)
     {
         $content = explode(' ', get_the_content(), $limit);
@@ -486,8 +489,9 @@ if (! function_exists('bootstrap_excerpt') ) {
 /*Disable Theme Updates # 3.0+*/
 remove_action('load-update-core.php', 'wp_update_themes');
 add_filter(
-    'pre_site_transient_update_themes', function ($a) {
-        return null; 
+    'pre_site_transient_update_themes',
+    function ($a) {
+        return null;
     }
 );
 wp_clear_scheduled_hook('wp_update_themes');
@@ -510,7 +514,7 @@ if (!is_admin()) {
     {
         if (!is_page('youth-suicide') && !is_page('impeachment-sentiment') && !is_single() && !is_search() && !is_page('about-us')) {
             // Load JavaScripts
-            wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/plugins/bootstrap.js', array( 'jquery' ), '3.3.1', true);
+            wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/plugins/bootstrap.js', array( 'jquery' ), '5.3.0-alpha1', true);
             if (!is_single(132417)) {
                 wp_enqueue_script('global', get_template_directory_uri() . '/js/global.js', null, null, true);
             }
@@ -532,8 +536,6 @@ if (!is_admin()) {
             if (!is_single(132417)) {
                 wp_enqueue_script('viewport', get_template_directory_uri() . '/js/plugins/viewport-units-buggyfill.js', null, '0.4.2', true);
                 // wp_enqueue_script( 'google', get_template_directory_uri() . '/js/plugins/_google.maps.api.v3.js', null, null, true );
-                wp_enqueue_script('scroll', get_template_directory_uri() . '/js/plugins/skrollr.js', null, '0.6.29', true);
-                wp_enqueue_script('scroll_style', get_template_directory_uri() . '/js/plugins/skrollr.stylesheets.js', null, '0.0.4', true);
                 wp_enqueue_script('waypoints', get_template_directory_uri() . '/js/plugins/waypoints.js', null, '2.0.3', true);
                 wp_enqueue_script('waypoints-sticky', get_template_directory_uri() . '/js/plugins/waypoints-sticky.js', null, '2.0.3', true);
 
@@ -542,11 +544,11 @@ if (!is_admin()) {
 
             // Load Stylesheets
             //core
-            wp_enqueue_style('normalize', get_template_directory_uri().'/css/core/normalize.css', null, '3.0.1');
+            wp_enqueue_style('normalize', get_template_directory_uri().'/css/core/normalize.css', null, '8.0.1');
             if (is_single(131130)) {
 
             } else {
-                wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/plugins/bootstrap.css', null, '3.3.1');
+                wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/plugins/bootstrap.css', null, '5.3.0-alpha1');
             }
             wp_enqueue_style('slick', get_template_directory_uri().'/css/plugins/slick.css', null, null);
             wp_enqueue_style('bootstrap-customizer', get_template_directory_uri().'/css/core/customizer.css', null, null);
@@ -567,14 +569,14 @@ if (!is_admin()) {
     //$checkPeoplePage = explode('/', $_SERVER[REQUEST_URI]);
     $checkPeoplePage = explode('/', $_SERVER['REQUEST_URI']);
 
-    if (!is_search() && !is_single() && $checkPeoplePage[1] != 'people' && $checkPeoplePage[1] != 'category') {
+    if (!is_search() && !is_single() && isset($checkPeoplePage[1]) && $checkPeoplePage[1] != 'people' && $checkPeoplePage[1] != 'category') {
         add_action('wp_enqueue_scripts', 'bootstrap_scripts_and_styles');
     }
 
     function bootstrap_scripts_and_styles_old()
     {
         // Load JavaScripts
-        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/plugins/bootstrap.js', array( 'jquery' ), '3.3.1', true);
+        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/plugins/bootstrap.js', array( 'jquery' ), '5.3.0', true);
         wp_enqueue_script('global', get_template_directory_uri() . '/js/global.js', null, null, true);
         wp_enqueue_script('respond', get_template_directory_uri() . '/js/plugins/respond.js', null, '1.4.0', true);
         wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/plugins/modernizr.js', null, '2.6.2', true);
@@ -593,16 +595,14 @@ if (!is_admin()) {
         //Custom Scripts
         wp_enqueue_script('viewport', get_template_directory_uri() . '/js/plugins/viewport-units-buggyfill.js', null, '0.4.2', true);
         // wp_enqueue_script( 'google', get_template_directory_uri() . '/js/plugins/_google.maps.api.v3.js', null, null, true );
-        wp_enqueue_script('scroll', get_template_directory_uri() . '/js/plugins/skrollr.js', null, '0.6.29', true);
-        wp_enqueue_script('scroll_style', get_template_directory_uri() . '/js/plugins/skrollr.stylesheets.js', null, '0.0.4', true);
         wp_enqueue_script('waypoints', get_template_directory_uri() . '/js/plugins/waypoints.js', null, '2.0.3', true);
         wp_enqueue_script('waypoints-sticky', get_template_directory_uri() . '/js/plugins/waypoints-sticky.js', null, '2.0.3', true);
         wp_enqueue_script('dropdown', get_template_directory_uri() . '/js/plugins/bootstrap-hover-dropdown.min.js', null, null, true);
 
         // Load Stylesheets
         //core
-        wp_enqueue_style('normalize', get_template_directory_uri().'/css/core/normalize.css', null, '3.0.1');
-        wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/plugins/bootstrap.css', null, '3.3.1');
+        wp_enqueue_style('normalize', get_template_directory_uri().'/css/core/normalize.css', null, '8.0.1');
+        wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/plugins/bootstrap.css', null, '5.3.0');
         wp_enqueue_style('slick', get_template_directory_uri().'/css/plugins/slick.css', null, null);
         wp_enqueue_style('bootstrap-customizer', get_template_directory_uri().'/css/core/customizer.css', null, null);
         //plugins
@@ -637,7 +637,7 @@ function my_options_page_settings($options)
 }
 
 /***********************
- * PUT YOUR FUNCTIONS BELOW 
+ * PUT YOUR FUNCTIONS BELOW
 ********************************/
 
 // Stick Admin Bar To The Top
@@ -676,7 +676,7 @@ function admin_logo_custom_url()
 }
 add_filter('login_headerurl', 'admin_logo_custom_url');
 
-function new_excerpt_more( $more )
+function new_excerpt_more($more)
 {
     return '.';
 }
@@ -686,7 +686,7 @@ add_filter('mce_css', 'tuts_mcekit_editor_style');
 function tuts_mcekit_editor_style($url)
 {
 
-    if (!empty($url) ) {
+    if (!empty($url)) {
         $url .= ',';
     }
 
@@ -700,7 +700,7 @@ function tuts_mcekit_editor_style($url)
 add_filter('user_can_richedit', 'disable_visual_editor');
 function disable_visual_editor()
 {
-    if ('slider' == get_post_type() ) {
+    if ('slider' == get_post_type()) {
         return true;
     }
     return false;
@@ -855,7 +855,7 @@ function students_CPT()
 }
 add_action('init', 'students_CPT');
 
-if (function_exists('acf_add_options_sub_page') ) {
+if (function_exists('acf_add_options_sub_page')) {
     acf_add_options_sub_page(
         array(
         'title'      => 'Student Settings',
@@ -1029,7 +1029,7 @@ function election2020_CPT()
 }
 add_action('init', 'election2020_CPT');
 
-if (function_exists('acf_add_options_sub_page') ) {
+if (function_exists('acf_add_options_sub_page')) {
     acf_add_options_sub_page(
         array(
         'title'      => 'Election Homepage',
@@ -1072,10 +1072,10 @@ function audioVideo_CPT()
 add_action('init', 'audioVideo_CPT');
 
 
-function cn_search_query( $query )
+function cn_search_query($query)
 {
-    if (!is_admin() && $query->is_main_query() ) {
-        if (is_search() ) {
+    if (!is_admin() && $query->is_main_query()) {
+        if (is_search()) {
             $query->set('orderby', 'date');
         }
     }
@@ -1099,7 +1099,7 @@ function custom_init_storytags()
 
 function audiovideoCPT_remove_wp_seo_meta_box()
 {
-    remove_meta_box('wpseo_meta', audioVideoCPT, 'normal');
+    remove_meta_box('wpseo_meta', 'audioVideoCPT', 'normal');
 }
 add_action('add_meta_boxes', 'audiovideoCPT_remove_wp_seo_meta_box', 100);
 

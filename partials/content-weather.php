@@ -15,11 +15,11 @@
   // save main story ID
   $repeatStoriesArray = array();
 
-  // get super bowl content
-if (have_rows('weather_content') ) {
-    while ( have_rows('weather_content') ) {
+// get super bowl content
+if (have_rows('weather_content')) {
+    while (have_rows('weather_content')) {
         the_row();
-        if (get_row_layout() == 'weather_report' ) {
+        if (get_row_layout() == 'weather_report') {
             // get stories
             $mainStoryCounter = 1;
             $counter = 0;
@@ -36,7 +36,7 @@ if (have_rows('weather_content') ) {
             <?php } ?>
           </div>
 
-        <?php } elseif (get_row_layout() == 'top_stories' ) { ?>
+        <?php } elseif (get_row_layout() == 'top_stories') { ?>
 
           <div class="large-5 medium-5 small-12 cell top-stories">
             <div class="grid-x grid-padding-x">
@@ -47,28 +47,28 @@ if (have_rows('weather_content') ) {
             <div class="grid-x grid-padding-x">
               <?php
                 $counter = 0;
-                $storyList = get_sub_field('story_list');
-                foreach ($storyList as $story) {
-                    if ($counter < 2) {
-                        $permalink = get_permalink($story->ID);
-                        $title = get_the_title($story->ID);
-                        $storyTease = get_field('story_tease', $story->ID);
-                        $photoURL = get_the_post_thumbnail_url($story->ID);
-                        $photoImg = get_the_post_thumbnail($story->ID);
-                        ?>
+            $storyList = get_sub_field('story_list');
+            foreach ($storyList as $story) {
+                if ($counter < 2) {
+                    $permalink = get_permalink($story->ID);
+                    $title = get_the_title($story->ID);
+                    $storyTease = get_field('story_tease', $story->ID);
+                    $photoURL = get_the_post_thumbnail_url($story->ID);
+                    $photoImg = get_the_post_thumbnail($story->ID);
+                    ?>
                   <div class="large-6 medium-6 small-12 cell">
                     <a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a>
                         <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
                       <h3><a href="<?php echo $permalink; ?>"><?php echo get_field('homepage_headline', $story->ID); ?></a></h3>
-                        <?php } else {?>
+                        <?php } else { ?>
                       <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                         <?php } ?>
                   </div>
                         <?php
-                    }
-                    $counter++;
                 }
-                ?>
+                $counter++;
+            }
+            ?>
             </div>
             <div class="grid-x grid-padding-x">
               <div class="large-12 medium-12 small-12 cell">
@@ -81,7 +81,7 @@ if (have_rows('weather_content') ) {
           </div>
         </div>
 
-        <?php } elseif (get_row_layout() == 'stories' ) { ?>
+        <?php } elseif (get_row_layout() == 'stories') { ?>
 
         <div class="large-12 medium-12 small-12 cell">
           <div class="grid-x">
@@ -91,8 +91,8 @@ if (have_rows('weather_content') ) {
           </div>
           <div class="grid-x grid-padding-x">
             <?php
-                $counter = 0;
-                $storyList = get_sub_field('story_list');
+            $counter = 0;
+            $storyList = get_sub_field('story_list');
             foreach ($storyList as $story) {
                 $permalink = get_permalink($story->ID);
                 $title = get_the_title($story->ID);
@@ -104,7 +104,7 @@ if (have_rows('weather_content') ) {
                     <a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a>
                 <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
                       <h3><a href="<?php echo $permalink; ?>"><?php echo get_field('homepage_headline', $story->ID); ?></a></h3>
-                <?php } else {?>
+                <?php } else { ?>
                       <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                 <?php } ?>
                   </div>
@@ -114,7 +114,7 @@ if (have_rows('weather_content') ) {
           </div>
         </div>
 
-        <?php } elseif (get_row_layout() == 'videos' ) { ?>
+        <?php } elseif (get_row_layout() == 'videos') { ?>
 
         <div class="large-12 medium-12 small-12 cell video">
           <div class="grid-x">
@@ -124,8 +124,8 @@ if (have_rows('weather_content') ) {
           </div>
           <div class="grid-x grid-padding-x">
             <?php
-            if (have_rows('video') ) {
-                while ( have_rows('video') ) {
+            if (have_rows('video')) {
+                while (have_rows('video')) {
                     the_row();
                     ?>
                   <div class="large-3 medium-3 small-12 cell">
@@ -138,7 +138,7 @@ if (have_rows('weather_content') ) {
           </div>
         </div>
 
-        <?php } elseif (get_row_layout() == 'embeds' ) { ?>
+        <?php } elseif (get_row_layout() == 'embeds') { ?>
 
             <?php
         }

@@ -1,8 +1,8 @@
 <?php
 
-/*
-* Template Name: New - Page with intro banner 2
-*/
+/**
+ * Template Name: New - Page with intro banner 2
+ */
 
 get_header('new2019'); ?>
 

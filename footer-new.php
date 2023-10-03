@@ -40,9 +40,7 @@
           <ul class="no-bullet">
             <li><a href="https://cronkitenoticias.azpbs.org/" target="_blank">Cronkite Noticias</a></li>
             <li><a href="http://news21.com/" target="_blank">Carnegie-Knight News21</a></li>
-            <li><a href="/category/special-reports/">Special Reports</a></li>
-            <li><a href="/?p=637">Cronkite Sports on FOX Sports Arizona</a></li>
-            <li><a title="Archives" href="/archives/">Archives</a></li>
+            <li><a href="/category/special-reports/">Special Reports</a></li>            
             <li><a href="http://cronkitenewsonline.com/archives-by-month/index.html" target="_blank">Archives 2011-2014</a></li>
             <li><a href="/rss-feed">RSS</a></li>
             <li><a href="/weather">Weather</a></li>
@@ -56,7 +54,7 @@
     </div>
   </footer>
 
-<script src="<?php bloginfo('template_directory');?>/assets/js/vendor/jquery.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/jquery.js"></script>
   <?php wp_footer(); ?>
   <script type='text/javascript'>
       var _sf_async_config={};
@@ -99,11 +97,11 @@
   </script>
   <!-- End AlertMe website tag code -->
 
-  <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/what-input.js"></script>
-  <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/foundation.js"></script>
-  <script src="<?php bloginfo('template_directory');?>/assets/js/app.js"></script>
-  <script type="text/javascript" src="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick.min.js"></script>
-  <script type="text/javascript" src="<?php bloginfo('template_directory');?>/assets/js/vendor/smooth-scroll/dist/smooth-scroll.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/what-input.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/foundation.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/assets/js/app.js"></script>
+  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/slick/slick.min.js"></script>
+  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/smooth-scroll/dist/smooth-scroll.js"></script>
 
   <script>
   /**
@@ -129,9 +127,9 @@
     }
 
     // Search: expand on click
-    $('.search-box img').click(function() {
+    jQuery('.search-box img').click(function() {
 
-      $('#searchform input[type=text]').blur(function() {
+      jQuery('#searchform input[type=text]').blur(function() {
         if ($.trim(this.value).length > 0) {
           $("#searchform").submit();
         } else {
@@ -145,7 +143,7 @@
       }
     });
 
-    $(document).ready(function() {
+    jQuery(document).ready(function() {
       var scroll = new SmoothScroll('a[href*="#"]');
 
       $('.headshot-slider').slick({
@@ -271,12 +269,12 @@
 
     BackgroundLazyLoader();
 
-      var $window = $(window);
+      var $window = jQuery(window);
 
       function checkWidth() {
           var windowsize = $window.width();
           if (windowsize > 800) {
-              $(window).scroll(function (event) {
+              jQuery(window).scroll(function (event) {
                   var scroll = $(window).scrollTop();
                   if (scroll >= 250) {
                     $('#sub_nav').removeClass('slideInDown').addClass('slideOutUp');
@@ -289,7 +287,7 @@
       // Execute on load
       checkWidth();
       // Bind event listener
-      $(window).resize(checkWidth);
+      jQuery(window).resize(checkWidth);
     });
   </script>
 

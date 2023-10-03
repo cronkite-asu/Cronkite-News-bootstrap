@@ -1,0 +1,127 @@
+.merriweather {
+  font-family: "Merriweather", serif; }
+
+.montserrat {
+  font-family: "Montserrat", sans-serif; }
+
+.roboto {
+  font-family: "Roboto", sans-serif; }
+
+.taviraj {
+  font-family: "Taviraj", serif; }
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+#intro-head-photo-overlay .grid-padding-x > .cell.photo-style-e2e {
+  position: relative; }
+
+#intro-head-photo-overlay .intro-text {
+  background-image: linear-gradient(to bottom, transparent, #000); }
+  @media only screen and (max-width: 660px) {
+    #intro-head-photo-overlay .intro-text {
+      background-image: none; } }
+
+#intro-head-photo-overlay .intro-text.absolute {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0; }
+
+#intro-head-photo-overlay .intro-text p {
+  /*position: absolute;
+  bottom: 0;
+  left: 0;*/
+  max-width: 660px;
+  width: 100%;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 2rem; }
+
+#intro-head-photo-overlay .intro-text h1 {
+  /*position: absolute;
+  bottom: 0;
+  left: 0;*/
+  max-width: 800px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 2.25rem !important;
+  line-height: 3.25rem;
+  margin-top: 16px;
+  margin-bottom: 0px;
+  padding: 4rem 0 1rem 0;
+  color: #ffffff; }
+  @media only screen and (max-width: 660px) {
+    #intro-head-photo-overlay .intro-text h1 {
+      color: #000;
+      font-size: 1.9rem !important;
+      line-height: 2.75rem;
+      padding: 0rem;
+      margin: 0; } }
+
+#intro-head-photo-overlay .photo-credit {
+  text-align: center; }
+  @media only screen and (max-width: 660px) {
+    #intro-head-photo-overlay .photo-credit {
+      text-align: left; } }
+
+@media only screen and (max-width: 660px) {
+  .text-content .wp-caption.alignright {
+    max-width: 100% !important; }
+    .text-content .wp-caption.alignright img {
+      max-width: 100% !important; } }
+
+.alignright {
+  float: right;
+  max-width: 600px !important;
+  margin-top: 10px;
+  margin-right: -200px;
+  padding-left: 25px;
+  padding-bottom: 15px; }
+  @media only screen and (max-width: 660px) {
+    .alignright {
+      max-width: 100%;
+      margin-top: 0; } }
+  .alignright img {
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    max-width: 600px !important; }
+    @media only screen and (max-width: 660px) {
+      .alignright img {
+        float: none;
+        max-width: 100%; } }
+  .alignright a {
+    color: #757575;
+    border-bottom: 1px solid #757575;
+    -webkit-transition: border 0.25s;
+    -moz-transition: border 0.25s;
+    -o-transition: border 0.25s;
+    transition: border 0.25s; }
+    .alignright a:hover {
+      border: none; }
+  .alignright.rect iframe {
+    width: 400px;
+    height: 225px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
+  .alignright.square iframe {
+    width: 400px;
+    height: 400px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
+  .alignright .wp-caption-text {
+    max-width: 100%; }
+  @media only screen and (max-width: 1080px) {
+    .alignright {
+      margin-right: -10%; } }
+  @media only screen and (max-width: 900px) {
+    .alignright {
+      margin-right: -8%; } }
+  @media only screen and (max-width: 860px) {
+    .alignright {
+      float: none;
+      margin-right: 0;
+      margin: 40px auto;
+      padding: 0; } }
+
+/*# sourceMappingURL=haitian-immigration.css.map */

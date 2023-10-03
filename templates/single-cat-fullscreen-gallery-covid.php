@@ -10,8 +10,8 @@ get_header('photogallery'); ?>
       <div class="slide image-1">
         <div class="bg-text-gradient">
           <div class="summary first-slide">
-            <h5><img src="<?php bloginfo('template_directory');?>/assets/img/eye-icon.svg" class="visual-story-icon" alt="Visual Story" title="Visual Story" />Visual Story</h5>
-            <?php $titleSplit = explode(':', get_the_title())?>
+            <h5><img src="<?php bloginfo('template_directory'); ?>/assets/img/eye-icon.svg" class="visual-story-icon" alt="Visual Story" title="Visual Story" />Visual Story</h5>
+            <?php $titleSplit = explode(':', get_the_title()) ?>
             <h1><?php echo $titleSplit[0]; ?>:</h1>
             <h2 style="max-width:48rem;"><?php echo $titleSplit[1]; ?></h2>
             <?php echo $content = apply_filters('the_content', get_the_content()); ?>
@@ -87,7 +87,7 @@ get_header('photogallery'); ?>
                 <div class="audio"><a class="audio-1"><i class="fas fa-volume-down"></i></a></div>
                 <?php
                   echo '<audio id="audio-1" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/D.Reed_.mp3">Your browser does not support the <code>audio</code> element.</audio>';
-                ?>
+?>
               </div>
               <div class="profile-content">
                 <p>“As nurses we are taught to develop trust with our patients, and that has never been more needed than now.”</p>
@@ -100,8 +100,8 @@ get_header('photogallery'); ?>
                 <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/WMATPortraits_02182021_Mariani-004-800x1200-1.jpg"  />
                 <div class="audio"><a class="audio-2"><i class="fas fa-volume-down"></i></a></div>
                 <?php
-                  echo '<audio id="audio-2" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/A.Twarkins.mp3">Your browser does not support the <code>audio</code> element.</audio>';
-                ?>
+  echo '<audio id="audio-2" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/A.Twarkins.mp3">Your browser does not support the <code>audio</code> element.</audio>';
+?>
               </div>
               <div class="profile-content">
                 <p>“I realize how many lives have been saved due to seeing them before the symptoms are too bad.”</p>
@@ -114,8 +114,8 @@ get_header('photogallery'); ?>
                 <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/WMATPortraits_02182021_Mariani-003-800x1200-1.jpg"  />
                 <div class="audio"><a class="audio-3"><i class="fas fa-volume-down"></i></a></div>
                 <?php
-                  echo '<audio id="audio-3" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/J.Tafoya.mp3">Your browser does not support the <code>audio</code> element.</audio>';
-                ?>
+  echo '<audio id="audio-3" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/J.Tafoya.mp3">Your browser does not support the <code>audio</code> element.</audio>';
+?>
               </div>
               <div class="profile-content">
                 <p>“The pandemic has strengthened our relationship with the community we serve, the people we work with and those in our homes.”</p>
@@ -133,8 +133,8 @@ get_header('photogallery'); ?>
               <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/WMATPortraits_02182021_Mariani-006-800x1200-1.jpg"  />
               <div class="audio"><a class="audio-4"><i class="fas fa-volume-down"></i></a></div>
               <?php
-                echo '<audio id="audio-4" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/Moses.mp3">Your browser does not support the <code>audio</code> element.</audio>';
-                ?>
+echo '<audio id="audio-4" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/Moses.mp3">Your browser does not support the <code>audio</code> element.</audio>';
+?>
             </div>
             <div class="profile-content">
               <p>“I think the community was happy to see that a tribal member was there to help, and that, too, made them more comfortable.” </p>
@@ -147,8 +147,8 @@ get_header('photogallery'); ?>
               <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/WMATPortraits_02182021_Mariani-001-800x1200-1.jpg"  />
               <div class="audio"><a class="audio-5"><i class="fas fa-volume-down"></i></a></div>
               <?php
-                echo '<audio id="audio-5" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/Dr.Close_.mp3">Your browser does not support the <code>audio</code> element.</audio>';
-                ?>
+echo '<audio id="audio-5" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/Dr.Close_.mp3">Your browser does not support the <code>audio</code> element.</audio>';
+?>
             </div>
             <div class="profile-content">
               <p>“We wouldn't have been able to … test, trace and chase the virus … if we didn't have buy-in from both the community and the community leadership.”</p>
@@ -161,8 +161,8 @@ get_header('photogallery'); ?>
               <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/WMATPortraits_02182021_Mariani-002-800x1200-1.jpg"  />
               <div class="audio"><a class="audio-6"><i class="fas fa-volume-down"></i></a></div>
               <?php
-                echo '<audio id="audio-6" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/KParker.mp3">Your browser does not support the <code>audio</code> element.</audio>';
-                ?>
+echo '<audio id="audio-6" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/KParker.mp3">Your browser does not support the <code>audio</code> element.</audio>';
+?>
             </div>
             <div class="profile-content">
               <p>“Although our mortality rate has been low, each death is one too many and a tragedy.”</p>
@@ -232,8 +232,8 @@ get_header('photogallery'); ?>
     <div id="covid-gallery-mobile" class="">
       <div class="image-1">
           <div class="summary first-slide">
-            <h5><img src="<?php bloginfo('template_directory');?>/assets/img/eye-icon.svg" class="visual-story-icon" alt="Visual Story" title="Visual Story" />Visual Story</h5>
-            <?php $titleSplit = explode(':', get_the_title())?>
+            <h5><img src="<?php bloginfo('template_directory'); ?>/assets/img/eye-icon.svg" class="visual-story-icon" alt="Visual Story" title="Visual Story" />Visual Story</h5>
+            <?php $titleSplit = explode(':', get_the_title()) ?>
             <h1><?php echo $titleSplit[0]; ?>:</h1>
             <h2><?php echo $titleSplit[1]; ?></h2>
             <p>The coronavirus pandemic hit Native Americans especially hard. But as the spotlight turned to larger communities like the Navajo Nation, the much smaller White Mountain Apache Tribe, in eastern Arizona, quietly battled to save its people.</p>
@@ -283,7 +283,7 @@ get_header('photogallery'); ?>
             <div class="audio"><a class="m-audio-1"><i class="fas fa-volume-down"></i></a></div>
             <?php
               echo '<audio id="m-audio-1" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/D.Reed_.mp3">Your browser does not support the <code>audio</code> element.</audio>';
-            ?>
+?>
           </div>
           <div class="profile-content">
             <p>“As nurses we are taught to develop trust with our patients, and that has never been more needed than now.”</p>
@@ -296,8 +296,8 @@ get_header('photogallery'); ?>
             <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/WMATPortraits_02182021_Mariani-004-800x1200-1.jpg"  />
             <div class="audio"><a class="m-audio-2"><i class="fas fa-volume-down"></i></a></div>
             <?php
-              echo '<audio id="m-audio-2" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/A.Twarkins.mp3">Your browser does not support the <code>audio</code> element.</audio>';
-            ?>
+  echo '<audio id="m-audio-2" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/A.Twarkins.mp3">Your browser does not support the <code>audio</code> element.</audio>';
+?>
           </div>
           <div class="profile-content">
             <p>“I realize how many lives have been saved due to seeing them before the symptoms are too bad.”</p>
@@ -310,8 +310,8 @@ get_header('photogallery'); ?>
             <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/WMATPortraits_02182021_Mariani-003-800x1200-1.jpg"  />
             <div class="audio"><a class="m-audio-3"><i class="fas fa-volume-down"></i></a></div>
             <?php
-              echo '<audio id="m-audio-3" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/J.Tafoya.mp3">Your browser does not support the <code>audio</code> element.</audio>';
-            ?>
+  echo '<audio id="m-audio-3" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/J.Tafoya.mp3">Your browser does not support the <code>audio</code> element.</audio>';
+?>
           </div>
           <div class="profile-content">
             <p>“The pandemic has strengthened our relationship with the community we serve, the people we work with and those in our homes.”</p>
@@ -324,8 +324,8 @@ get_header('photogallery'); ?>
             <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/WMATPortraits_02182021_Mariani-006-800x1200-1.jpg"  />
             <div class="audio"><a class="m-audio-4"><i class="fas fa-volume-down"></i></a></div>
             <?php
-              echo '<audio id="m-audio-4" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/Moses.mp3">Your browser does not support the <code>audio</code> element.</audio>';
-            ?>
+  echo '<audio id="m-audio-4" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/Moses.mp3">Your browser does not support the <code>audio</code> element.</audio>';
+?>
           </div>
           <div class="profile-content">
             <p>“I think the community was happy to see that a tribal member was there to help, and that, too, made them more comfortable.”</p>
@@ -338,8 +338,8 @@ get_header('photogallery'); ?>
             <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/WMATPortraits_02182021_Mariani-001-800x1200-1.jpg"  />
             <div class="audio"><a class="m-audio-5"><i class="fas fa-volume-down"></i></a></div>
             <?php
-              echo '<audio id="m-audio-5" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/Dr.Close_.mp3">Your browser does not support the <code>audio</code> element.</audio>';
-            ?>
+  echo '<audio id="m-audio-5" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/Dr.Close_.mp3">Your browser does not support the <code>audio</code> element.</audio>';
+?>
           </div>
           <div class="profile-content">
             <p>“We wouldn't have been able to … test, trace and chase the virus … if we didn't have buy-in from both the community and the community leadership.”</p>
@@ -352,8 +352,8 @@ get_header('photogallery'); ?>
             <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/WMATPortraits_02182021_Mariani-002-800x1200-1.jpg"  />
             <div class="audio"><a class="m-audio-6"><i class="fas fa-volume-down"></i></a></div>
             <?php
-              echo '<audio id="m-audio-6" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/KParker.mp3">Your browser does not support the <code>audio</code> element.</audio>';
-            ?>
+  echo '<audio id="m-audio-6" src="https://cronkitenews.azpbs.org/wp-content/uploads/2021/04/KParker.mp3">Your browser does not support the <code>audio</code> element.</audio>';
+?>
           </div>
           <div class="profile-content">
             <p>“Although our mortality rate has been low, each death is one too many and a tragedy.”</p>

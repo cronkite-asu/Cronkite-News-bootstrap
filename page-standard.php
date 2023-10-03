@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: Standard Page
-*/
+/**
+ * Template Name: Standard Page
+ */
 
 get_header('new2019'); ?>
 

@@ -1,8 +1,8 @@
 <?php
-/*
-Template Name: Election 2020 - Propositions Sidebar
-Created: Monday, Sept. 28, 2020
-*/
+/**
+ * Template Name: Election 2020 - Propositions Sidebar
+ * Created: Monday, Sept. 28, 2020
+ */
 
 header("Content-Type: application/json; charset=UTF-8");
 ?>
@@ -21,5 +21,5 @@ if (have_rows('propositions', 'option')) {
         $json[] = $it;
     }
 }
-    echo(json_encode($json, JSON_PRETTY_PRINT));
+echo(json_encode($json, JSON_PRETTY_PRINT));
 ?>

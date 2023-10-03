@@ -28,7 +28,7 @@
    <li> <a href="https://cronkitenews.azpbs.org/category/future/">Future</a></li>
    <li> <a href="https://cronkitenews.azpbs.org/category/government/">Government</a></li>
    <li> <a href="https://cronkitenews.azpbs.org/category/health/">Health </a></li>
-   <li> <a href="https://cronkitenews.azpbs.org/category/indian-country/">Indian Country</a></li>
+   <li> <a href="https://cronkitenews.azpbs.org/category/indigenous-communities/">Indian Country</a></li>
    <li> <a href="https://cronkitenews.azpbs.org/category/justice/">Justice</a></li>
    <li> <a href="https://cronkitenews.azpbs.org/category/money/">Money</a></li>
    <li><a href="https://cronkitenews.azpbs.org/category/sustainability/">Sustainability</a></li>
@@ -54,7 +54,7 @@
     
 <?php
 $isvid = get_field('video_file', false, false);
-if ($isvid ) { // if we have a video load the video instead of the carousel
+if ($isvid) { // if we have a video load the video instead of the carousel
 
     function linkifyYouTubeURLs($text)
     {
@@ -81,7 +81,8 @@ if ($isvid ) { // if we have a video load the video instead of the carousel
               )                # End recognized pre-linked alts.
             )                  # End negative lookahead assertion.
             [?=&+%\w.-]*       # Consume any URL (query) remainder.
-            ~ix', '$1',
+            ~ix',
+            '$1',
             $text
         );
         return $text;
@@ -107,8 +108,7 @@ if ($isvid ) { // if we have a video load the video instead of the carousel
 
 
     <?php
-}
-else { ?>
+} else { ?>
   
     <?php $this->load_parts(array( 'featured-image' )); ?>
     
@@ -116,7 +116,7 @@ else { ?>
     
 
     <div class="amp-wp-article-content">
-        <?php echo $this->get('post_amp_content'); // amphtml content; no kses ?>
+        <?php echo $this->get('post_amp_content'); // amphtml content; no kses?>
         
         
     </div>

@@ -465,6 +465,18 @@ body {
             margin: 0;
             text-align: center;
         }
+        img {
+          @media only screen
+            and (max-width: 660px) {
+              width: 100% !important;
+          }
+        }
+        .wp-caption-text {
+          @media only screen
+            and (max-width: 660px) {
+              text-align: left;
+          }
+        }
       }
       &.alignleft {
         float:left;
@@ -1033,10 +1045,13 @@ body {
     }
     .story-photos, #video-holder, .before-after-photos {
       max-width: 800px;
-      /*max-width: 100%;*/
       margin-top: 25px;
       margin-bottom: 25px;
       overflow: hidden;
+      -webkit-user-select: text;
+      -moz-user-select: text;
+      -ms-user-select: text;
+      user-select: text;
       .asset-caption {
         p {
           @include caption-text;
@@ -1690,5 +1705,97 @@ blockquote {
       margin-top:10px !important;
       margin-bottom:10px !important;
     }
+  }
+  &.key-points {
+    strong {
+      margin-left: 10px;
+      text-transform: uppercase;
+    }
+    ul {
+      text-indent: -20px !important;
+      margin-left: 30px !important;
+      margin-bottom: 0px !important;
+      margin-top: -6px !important;
+      li {
+        font-family: $robotoFontFamily !important;
+        font-size: 0.9rem !important;
+        margin-bottom: 0px;
+        color: #3f3f3f !important;
+        &:last-child {
+          margin-bottom: 0px !important;
+        }
+      }
+    }
+  }
+}
+
+.sources {
+  strong {
+    margin-left: 10px;
+    text-transform: uppercase;
+  }
+  &.key-points {
+    text-indent: -20px !important;
+    margin-left: 30px !important;
+    margin-bottom: 15px !important;
+    margin-top:-10px !important;
+    li {
+      font-family: $robotoFontFamily !important;
+      font-size: 0.9rem !important;
+      margin-bottom: 0px;
+      color: #3f3f3f !important;
+      &:last-child {
+        margin-bottom: 0px !important;
+      }
+    }
+  }
+}
+
+#social-icons-desktop, #social-icons-mobile {
+  background-color: #dadada;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -khtml-border-radius: 12px;
+  border-radius: 12px;
+  padding:4px;
+  .a2a_svg {
+    width: 26px;
+    height: 26px;
+    &:hover {
+      background-color: rgba(0,0,0,1);
+    }
+  }
+}
+
+#social-icons-mobile {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  svg {
+    font-size: 2rem;
+    color: $black;
+    @include attr-transition1(opacity);
+    opacity: 0.4;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &.show {
+    opacity: 0.5;
+    visibility: visible;
+  }
+  @media only screen
+    and (max-width: 660px) {
+      display: none !important;
   }
 }

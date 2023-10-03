@@ -4,13 +4,40 @@
  */
 ?>
 
+  <?php if(current_user_can('administrator')) { ?>
+  <!-- back to top -->
+  <a id="back-to-top">
+    <i class="fa-solid fa-circle-chevron-up"></i>
+  </a>
+
+  <!-- social icons -->
+  <div id="social-icons-desktop" class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style show-for-medium" data-a2a-scroll-show="0,0" style="bottom:30px; left:30px;">
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_linkedin"></a>
+      <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+  </div>
+  <div id="social-icons-mobile" class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style show-for-small-only" data-a2a-scroll-show="100,100" style="bottom:0px; left:50%; transform:translateX(-50%);">
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_linkedin"></a>
+      <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+  </div>
+  <script>
+    var a2a_config = a2a_config || {};
+    a2a_config.track_links = 'ga';
+    a2a_config.icon_color = "#dadada,white";
+    a2a_config.color_link_text_hover = "646464";
+  </script>
+  <?php } ?>
+
   <!-- footer -->
   <div id="footer">
     <footer class="grid-container full-width">
       <div class="grid-x grid-padding-x">
         <div class="large-3 medium-3 small-6 cell">
           <h6>Who we are</h6>
-          <p>Cronkite News, the news division of <a href="https://azpbs.org/" target="_blank">Arizona PBS</a>, is produced by the <a href="https://cronkite.asu.edu/" target="_blank">Walter Cronkite School of Journalism and Mass Communication</a> at <a href="https://www.asu.edu/" target="_blank">Arizona State University</a>.</p>
+          <p>Cronkite News is produced by the <a href="https://cronkite.asu.edu/" target="_blank">Walter Cronkite School of Journalism and Mass Communication</a> at <a href="https://www.asu.edu/" target="_blank">Arizona State University</a>.</p>
           <p>Staff members are listed <a href="https://cronkitenews.azpbs.org/about-us/" target="_blank">here</a>.</p>
         </div>
 
@@ -35,7 +62,6 @@
             <li><a href="https://cronkitenoticias.azpbs.org/" target="_blank">Cronkite Noticias</a></li>
             <li><a href="http://news21.com/" target="_blank">Carnegie-Knight News21</a></li>
             <li><a href="/category/special-reports/">Special Reports</a></li>
-            <li><a href="/?p=637">Cronkite Sports on FOX Sports Arizona</a></li>
             <li><a href="/rss-feed">RSS</a></li>
             <li><a href="/weather">Weather</a></li>
           </ul>
@@ -63,12 +89,11 @@
   <!-- Add This Social Sharing -->
   <?php if (is_single()) { ?>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-555a00cd1124129e" async="async"></script>
-  <?php } else if (!is_page('impeachment-sentiment')) { ?>
+  <?php } elseif (!is_page('impeachment-sentiment')) { ?>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-555a00cd1124129e" async="async"></script>
   <?php } ?>
 
   <!-- scripts -->
-  <!--<script src="<?php bloginfo('template_directory');?>/assets/js/vendor/jquery.js"></script>-->
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
   <?php wp_footer(); ?>
@@ -115,25 +140,13 @@
 
   <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/what-input.js"></script>
   <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/foundation.js"></script>
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
   <script src="<?php bloginfo('template_directory');?>/assets/js/app.js"></script>
   <script type="text/javascript" src="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick.min.js"></script>
   <script type="text/javascript" src="<?php bloginfo('template_directory');?>/assets/js/vendor/smooth-scroll/dist/smooth-scroll.js"></script>
   <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/plyr-master/dist/plyr.js"></script>
   <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/before-after/js/jquery.event.move.js"></script>
   <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/before-after/js/jquery.twentytwenty.js"></script>
-
-  <?php if (current_user_can('administrator')) { ?>
-  <script src="https://webreader.naturalreaders.com/nr-webreader.js" defer></script>
-  <script>
-      window.addEventListener("DOMContentLoaded", function() {
-          if (typeof NRWebReader != 'undefined') {
-              window['NRWebReader'] = new NRWebReader({
-              widget_id: "3m7ptr3zhp"  // DO NOT REMOVE. This is your widget ID for your WebReader
-              });
-          }
-      });
-  </script>
-  <?php } ?>
 
   <script>
   /**
@@ -159,7 +172,7 @@
     }
 
     // Search: expand on click
-    $('.search-box img').click(function() {
+    jQuery('.search-box img').click(function() {
       $('#searchform input[type=text]').blur(function() {
         if ($.trim(this.value).length > 0) {
           $("#searchform").submit();
@@ -175,7 +188,7 @@
     });
 
 
-    $(document).ready(function() {
+    jQuery(document).ready(function() {
 
       // video player
       const controls = [
@@ -206,14 +219,14 @@
 
       var scroll = new SmoothScroll('a[href*="#"]');
 
-      var $window = $(window);
-      var $videoWrap = $('.video-wrap');
-      var $video = $('.video');
+      var $window = jQuery(window);
+      var $videoWrap = jQuery('.video-wrap');
+      var $video = jQuery('.video');
       var videoHeight = $video.outerHeight();
       var userClosed = false;
 
 
-      if ($('.video-wrap').length) {
+      if (jQuery('.video-wrap').length) {
         $window.on('scroll',  function() {
           var windowScrollTop = $window.scrollTop();
           var videoBottom = videoHeight + $videoWrap.offset().top;
@@ -227,7 +240,7 @@
           }
         });
 
-        $('.close-video').click(function() {
+        jQuery('.close-video').click(function() {
           userClosed = true;
           $videoWrap.height('auto');
           $video.removeClass('stuck');
@@ -235,7 +248,7 @@
       }
 
       // before and after photo slider
-      $(window).on('load', function() {
+      jQuery(window).on('load', function() {
         $('.before-after-photos .photos').twentytwenty();
       });
 
@@ -244,13 +257,13 @@
         var windowScrollTop = $window.scrollTop();
 
         if ((windowScrollTop >= 500)) {
-          $('.sidebar-staff').fadeIn("slow");
+          jQuery('.sidebar-staff').fadeIn("slow");
         } else {
-          $('.sidebar-staff').fadeOut("slow");
+          jQuery('.sidebar-staff').fadeOut("slow");
         }
       });
 
-      $('.story-photos').slick({
+      jQuery('.story-photos').slick({
         infinite: true,
         dots: false,
         centerMode: false,
@@ -258,7 +271,7 @@
         autoplaySpeed: 6000
       });
 
-      $('.homepage-slider').slick({
+      jQuery('.homepage-slider').slick({
         infinite: true,
         dots: true,
         centerMode: false,
@@ -267,7 +280,7 @@
         arrows: true
       });
 
-      $('.homepage-special-projects').slick({
+      jQuery('.homepage-special-projects').slick({
         infinite: true,
         dots: false,
         centerMode: false,
@@ -296,7 +309,7 @@
       });
 
       // sports featured photos
-      $('.sports-featured-photos').slick({
+      jQuery('.sports-featured-photos').slick({
         infinite: true,
         dots: false,
         centerMode: false,
@@ -326,7 +339,7 @@
       });
 
       // homepage featured photos
-      $('.news-featured-photos').slick({
+      jQuery('.news-featured-photos').slick({
         infinite: true,
         dots: false,
         centerMode: false,
@@ -355,7 +368,7 @@
          ]
       });
 
-      $('.media-literacy-slideshow').slick({
+      jQuery('.media-literacy-slideshow').slick({
         infinite: true,
         dots: false,
         centerMode: false,
@@ -383,7 +396,7 @@
          ]
       });
 
-      $('.audio-featured-stories').slick({
+      jQuery('.audio-featured-stories').slick({
         infinite: true,
         dots: true,
         centerMode: false,
@@ -410,7 +423,7 @@
          ]
       });
 
-      $('.story-slideshow').slick({
+      jQuery('.story-slideshow').slick({
         infinite: true,
         dots: false,
         centerMode: false,
@@ -418,7 +431,7 @@
         autoplaySpeed: 6000
       });
 
-      $('.in-this-series').slick({
+      jQuery('.in-this-series').slick({
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: false,
@@ -451,7 +464,7 @@
         ]
       });
 
-      $('.headshot-slider').slick({
+      jQuery('.headshot-slider').slick({
         infinite: true,
         slidesToShow: 11,
         slidesToScroll: 1,
@@ -490,8 +503,35 @@
         ]
       });
 
+      $('.featured-health-stories').slick({
+        infinite: true,
+        dots: false,
+        centerMode: false,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        arrows: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+           {
+             breakpoint: 768,
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1
+             }
+           },
+           {
+             breakpoint: 480,
+             settings: {
+               slidesToShow: 1,
+               slidesToScroll: 1
+             }
+           }
+         ]
+      });
+
       // audio player sticky
-      $(window).scroll(function(){
+      jQuery(window).scroll(function(){
         var sticky = $('.audio-player-container'),
             scroll = $(window).scrollTop();
 
@@ -503,7 +543,7 @@
       });
 
       // audio page player
-      $('.audio-plyr').click(function () {
+      jQuery('.audio-plyr').click(function () {
         console.log($(this).data("link"));
         console.log($(this).data("title"));
         $('#main-audio-player').attr("src", $(this).data("link"));
@@ -523,13 +563,13 @@
               }
           });
 
-      $('.dropdown-el').click(function(e) {
+      jQuery('.dropdown-el').click(function(e) {
         e.preventDefault();
         e.stopPropagation();
         $(this).toggleClass('expanded');
         $('#'+$(e.target).attr('for')).prop('checked',true);
       });
-      $(document).click(function() {
+      jQuery(document).click(function() {
         $('.dropdown-el').removeClass('expanded');
       });
 
@@ -594,12 +634,12 @@
     };
     BackgroundLazyLoader();
 
-      var $window = $(window);
+      var $window = jQuery(window);
 
       function checkWidth() {
           var windowsize = $window.width();
           if (windowsize > 800) {
-              $(window).scroll(function (event) {
+              jQuery(window).scroll(function (event) {
                   var scroll = $(window).scrollTop();
                   if (scroll >= 250) {
                     $('#sub_nav').removeClass('slideInDown').addClass('slideOutUp');
@@ -612,7 +652,7 @@
       // Execute on load
       checkWidth();
       // Bind event listener
-      $(window).resize(checkWidth);
+      jQuery(window).resize(checkWidth);
     });
   </script>
 

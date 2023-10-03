@@ -10,13 +10,13 @@
 
         <div id="latest-stories" class="large-12 medium-12 small-12 cell story-content">
           <?php
-            if (have_posts() ) {
-                while ( have_posts() ) {
+            if (have_posts()) {
+                while (have_posts()) {
                     the_post();
                     the_content();
                 }
             }
-            ?>
+          ?>
         </div>
       </div>
     </div>

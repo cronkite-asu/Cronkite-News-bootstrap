@@ -95,8 +95,8 @@ get_header('longformhero'); ?>
                     $query = new WP_Query($args);
                     ?>
                     <?php
-                    if ($query->have_posts() ) {
-                        while ( $query->have_posts() ) {
+                    if ($query->have_posts()) {
+                        while ($query->have_posts()) {
                             $query->the_post();
                             echo "<!-- ".get_the_ID()."-->";
                             ?>
@@ -127,7 +127,7 @@ get_header('longformhero'); ?>
                       <div class="col-md-3 col-lg-3"></div>
                   </div>
                   <!-- END of .row-->
-                <?php }?>
+                <?php } ?>
 
                 <?php wp_reset_query(); ?>
                 <?php if (get_the_ID() != 119536) { ?>

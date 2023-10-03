@@ -337,6 +337,12 @@ body {
           width: 100% !important;
           margin: 0;
           text-align: center; } }
+      @media only screen and (max-width: 660px) {
+        #main_container .single-story-block .wp-caption.alignright img, #top-ten .single-story-block .wp-caption.alignright img {
+          width: 100% !important; } }
+      @media only screen and (max-width: 660px) {
+        #main_container .single-story-block .wp-caption.alignright .wp-caption-text, #top-ten .single-story-block .wp-caption.alignright .wp-caption-text {
+          text-align: left; } }
     #main_container .single-story-block .wp-caption.alignleft, #top-ten .single-story-block .wp-caption.alignleft {
       float: left;
       margin: 15px 25px 0 0; }
@@ -786,10 +792,13 @@ body {
         height: 20px !important; }
   #main_container .single-story-block .story-photos, #main_container .single-story-block #video-holder, #main_container .single-story-block .before-after-photos, #top-ten .single-story-block .story-photos, #top-ten .single-story-block #video-holder, #top-ten .single-story-block .before-after-photos {
     max-width: 800px;
-    /*max-width: 100%;*/
     margin-top: 25px;
     margin-bottom: 25px;
-    overflow: hidden; }
+    overflow: hidden;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text; }
     #main_container .single-story-block .story-photos .asset-caption p, #main_container .single-story-block #video-holder .asset-caption p, #main_container .single-story-block .before-after-photos .asset-caption p, #top-ten .single-story-block .story-photos .asset-caption p, #top-ten .single-story-block #video-holder .asset-caption p, #top-ten .single-story-block .before-after-photos .asset-caption p {
       /*max-width: 800px;*/
       max-width: 100%;
@@ -1324,5 +1333,79 @@ blockquote.pullquote.style1 {
 .callout.roboto hr {
   margin-top: 10px !important;
   margin-bottom: 10px !important; }
+.callout.key-points strong {
+  margin-left: 10px;
+  text-transform: uppercase; }
+.callout.key-points ul {
+  text-indent: -20px !important;
+  margin-left: 30px !important;
+  margin-bottom: 0px !important;
+  margin-top: -6px !important; }
+  .callout.key-points ul li {
+    font-family: "Roboto", sans-serif !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 0px;
+    color: #3f3f3f !important; }
+    .callout.key-points ul li:last-child {
+      margin-bottom: 0px !important; }
+
+.sources strong {
+  margin-left: 10px;
+  text-transform: uppercase; }
+.sources.key-points {
+  text-indent: -20px !important;
+  margin-left: 30px !important;
+  margin-bottom: 15px !important;
+  margin-top: -10px !important; }
+  .sources.key-points li {
+    font-family: "Roboto", sans-serif !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 0px;
+    color: #3f3f3f !important; }
+    .sources.key-points li:last-child {
+      margin-bottom: 0px !important; }
+
+#social-icons-desktop, #social-icons-mobile {
+  background-color: #dadada;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -khtml-border-radius: 12px;
+  border-radius: 12px;
+  padding: 4px; }
+  #social-icons-desktop .a2a_svg, #social-icons-mobile .a2a_svg {
+    width: 26px;
+    height: 26px; }
+    #social-icons-desktop .a2a_svg:hover, #social-icons-mobile .a2a_svg:hover {
+      background-color: black; }
+
+#social-icons-mobile {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000; }
+  #back-to-top svg {
+    font-size: 2rem;
+    color: #0a0a0a;
+    -webkit-transition: opacity 0.25s;
+    -moz-transition: opacity 0.25s;
+    -o-transition: opacity 0.25s;
+    transition: opacity 0.25s;
+    opacity: 0.4; }
+    #back-to-top svg:hover {
+      opacity: 1; }
+  #back-to-top.show {
+    opacity: 0.5;
+    visibility: visible; }
+  @media only screen and (max-width: 660px) {
+    #back-to-top {
+      display: none !important; } }
 
 /*# sourceMappingURL=single-story-post.css.map */

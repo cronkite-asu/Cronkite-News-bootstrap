@@ -24,7 +24,7 @@
 
     <!-- Chartbeat Analytics  -->
     <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
-    <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/js/jquery-3.2.1.min.js"></script>
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/0f0514404d.js" crossorigin="anonymous"></script>
@@ -62,22 +62,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <script src="https://kit.fontawesome.com/d3e0178cac.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick.css">
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/slick/slick-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/long-form/foundation.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/long-form/foundation.css">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/app.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/single-story-post.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/long-form/long-form-base.css">
-    <link href="<?php bloginfo('template_directory');?>/assets/css/nav.css" rel="stylesheet">
+        <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/app.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/single-story-post.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/long-form/long-form-base.css">
+    <link href="<?php bloginfo('template_directory'); ?>/assets/css/nav.css" rel="stylesheet">
 
     <?php if (is_single(162517)) { ?>
-      <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/css/fullscreen-gallery/covid-gallery.css">
+      <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/css/fullscreen-gallery/covid-gallery.css">
     <?php } else { ?>
-      <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/css/fullscreen-gallery/app.css">
+      <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/css/fullscreen-gallery/app.css">
     <?php } ?>
 
     <style type='text/css'>
@@ -98,6 +98,6 @@
     <!-- main navigation -->
     <nav>
       <div class="logo">
-        <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/assets/img/cn-logo-white.svg" alt="Cronkite News" title="Cronkite News" /></a>
+        <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory'); ?>/assets/img/cn-logo-white.svg" alt="Cronkite News" title="Cronkite News" /></a>
       </div>
     </nav>

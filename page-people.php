@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: CN Staff result page
-*/
+/**
+ * Template Name: CN Staff result page
+ */
 
 get_header('new2019'); ?>
 

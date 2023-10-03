@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: Misc Template
-*/
+/**
+ * Template Name: Misc Template
+ */
 
 get_header('new'); ?>
 

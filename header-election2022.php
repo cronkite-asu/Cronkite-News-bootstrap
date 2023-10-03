@@ -10,38 +10,38 @@
     <?php
     // get the category for GA
     $post = get_post();
-    $categories = get_the_category($post -> ID);
-    $output = '';
+$categories = get_the_category($post -> ID);
+$output = '';
 
-    if (! empty($categories) ) {
-        foreach ( $categories as $category ) {
+if (! empty($categories)) {
+    foreach ($categories as $category) {
 
-            if ($output == '') {
-                if ($category->name == "Borderlands") {
-                    //$output = "ga('set', 'Borderlands', '"  . esc_html( $category->name ) . "');";
-                    //$output = "ga('set', 'contentGroup1', 'Borderlands');";
-                    $output = "gtag('set', {'contentGroup1': 'Borderlands'});";
-                }
-                if ($category->name == "Sustainability") {
-                    //$output = "ga('set', 'contentGroup2', 'Sustainability');";
-                    $output = "gtag('set', {'contentGroup2': 'Sustainability'});";
-                }
-                if ($category->name == "Education") {
-                    //$output = "ga('set', 'contentGroup3', 'Education');";
-                    $output = "gtag('set', {'contentGroup3': 'Education'});";
-                }
-                if ($category->name == "Consumer") {
-                    //$output = "ga('set', 'contentGroup4', 'Consumer');";
-                    $output = "gtag('set', {'contentGroup4': 'Consumer'});";
-                }
-                if ($category->name == "Future") {
-                    $output = "ga('set', 'contentGroup5', 'Future');";
-                }
+        if ($output == '') {
+            if ($category->name == "Borderlands") {
+                //$output = "ga('set', 'Borderlands', '"  . esc_html( $category->name ) . "');";
+                //$output = "ga('set', 'contentGroup1', 'Borderlands');";
+                $output = "gtag('set', {'contentGroup1': 'Borderlands'});";
+            }
+            if ($category->name == "Sustainability") {
+                //$output = "ga('set', 'contentGroup2', 'Sustainability');";
+                $output = "gtag('set', {'contentGroup2': 'Sustainability'});";
+            }
+            if ($category->name == "Education") {
+                //$output = "ga('set', 'contentGroup3', 'Education');";
+                $output = "gtag('set', {'contentGroup3': 'Education'});";
+            }
+            if ($category->name == "Consumer") {
+                //$output = "ga('set', 'contentGroup4', 'Consumer');";
+                $output = "gtag('set', {'contentGroup4': 'Consumer'});";
+            }
+            if ($category->name == "Future") {
+                $output = "ga('set', 'contentGroup5', 'Future');";
             }
         }
     }
+}
 
-    ?>
+?>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>
@@ -51,7 +51,7 @@
 
         <!-- Chartbeat Analytics  -->
         <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
-      <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
+      <script src="<?php bloginfo('template_directory'); ?>/js/jquery-3.2.1.min.js"></script>
 
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,41 +98,41 @@
     <?php wp_head(); ?>
 
     <?php
-      $settings = get_field('page-settings', get_the_ID());
+  $settings = get_field('page-settings', get_the_ID());
 
-    if ($settings['text-color'] != '') {
-        $textColor = $settings['text-color'];
-    }
-    ?>
+if (isset($settings['text-color']) && $settings['text-color'] != '') {
+    $textColor = $settings['text-color'];
+}
+?>
 
         <!-- NEW NAV - 12/12/19 -->
-        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/foundation.css">
+        <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/foundation.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-        <link href="<?php bloginfo('template_directory');?>/assets/css/hamburgers.css" rel="stylesheet">
-        <link href="<?php bloginfo('template_directory');?>/assets/css/all.min.css" rel="stylesheet"> <!--load all styles -->
-        <link href="<?php bloginfo('template_directory');?>/assets/css/print.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/css/tooltipster.bundle.min.css" />
+        <link href="<?php bloginfo('template_directory'); ?>/assets/css/hamburgers.css" rel="stylesheet">
+        <link href="<?php bloginfo('template_directory'); ?>/assets/css/all.min.css" rel="stylesheet"> <!--load all styles -->
+        <link href="<?php bloginfo('template_directory'); ?>/assets/css/print.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/css/tooltipster.bundle.min.css" />
 
     <?php if (get_the_ID() == 143506 || get_the_ID() == 127403 || get_the_ID() == 152159 || get_the_ID() == 143528 || get_the_ID() == 156485) { ?>
-        <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/youth-suicide/youth-suicide.css">
+        <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/youth-suicide/youth-suicide.css">
     <?php } ?>
 
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick-theme.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/impeachment.css">
-    <link href="<?php bloginfo('template_directory');?>/assets/css/nav.css" rel="stylesheet">
-    <link href="<?php bloginfo('template_directory');?>/assets/css/election2022.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/slick/slick-theme.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/impeachment.css">
+    <link href="<?php bloginfo('template_directory'); ?>/assets/css/nav.css" rel="stylesheet">
+    <link href="<?php bloginfo('template_directory'); ?>/assets/css/election2022.css" rel="stylesheet">
     <?php if ($settings['stylesheet'] != '') { ?>
     <link rel="stylesheet" href="<?php echo $settings['stylesheet']; ?>" />
     <?php } ?>
-    <link href="<?php bloginfo('template_directory');?>/assets/css/footer.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/js/vendor/plyr-master/dist/plyr.css" />
-    <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/js/vendor/before-after/css/twentytwenty.css" />
+    <link href="<?php bloginfo('template_directory'); ?>/assets/css/footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/plyr-master/dist/plyr.css" />
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/before-after/css/twentytwenty.css" />
 
     <style type='text/css'>
           body.admin-bar {margin-top:32px !important}
@@ -162,7 +162,7 @@
         <div class="main_nav">
           <!-- logo -->
           <div class="logo">
-            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/assets/img/CN-PBS-EPS.svg" alt="Cronkite News" title="Cronkite News" /></a>
+            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/assets/img/cronkite-news.svg" alt="Cronkite News" title="Cronkite News" /></a>
             <a class="election-2022-logo" href="https://www.azpbs.org/" target="_blank"><img src="https://azpbs.org/wp-content/themes/pbs/img/azpbs-logo-2020.png" /></a>
             <a class="election-2022-logo" href="https://cronkitenews.azpbs.org/election-2022"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2022/04/election-2022-logo-sm.png" alt="Election 2022" title="Election 2022" /></a>
           </div>
@@ -174,7 +174,7 @@
                 <div class="search-box">
                   <form method="get" class="navbar-form search" id="searchform" action="https://cronkitenews.azpbs.org/">
                     <input type="text" placeholder="Search" name="s" autocomplete="off" />
-                    <img src="<?php bloginfo('template_directory');?>/assets/img/search.svg" width="16" height="16" />
+                    <img src="<?php bloginfo('template_directory'); ?>/assets/img/search.svg" width="16" height="16" />
                   </form>
                 </div>
               </li>
@@ -182,17 +182,17 @@
             <!-- top navigation -->
             <ul class="top_links">
                             <?php
-                                $args = array(
-                                    'menu' => 'Header Nav - 2019',
-                                    'container'     => false,
-                                    'items_wrap'    => '%3$s',
-                                    'depth'         => 1,
-                                    'fallback_cb'   => false,
-                                    'menu_id'             => '',
-                                    'menu_class'        => ''
-                                    );
-                                wp_nav_menu($args);
-                                ?>
+                            $args = array(
+                                'menu' => 'Header Nav - 2019',
+                                'container'     => false,
+                                'items_wrap'    => '%3$s',
+                                'depth'         => 1,
+                                'fallback_cb'   => false,
+                                'menu_id'             => '',
+                                'menu_class'        => ''
+                                );
+wp_nav_menu($args);
+?>
             </ul>
           </div>
           <!-- hamburger icon -->
@@ -211,7 +211,7 @@
           <li class="misc_links_m">
             <form method="get" class="navbar-form search" id="searchform" action="https://cronkitenews.azpbs.org/">
               <input type="text" placeholder="Search" name="s" autocomplete="off" />
-              <img src="<?php bloginfo('template_directory');?>/assets/img/search.svg" width="16" height="16" />
+              <img src="<?php bloginfo('template_directory'); ?>/assets/img/search.svg" width="16" height="16" />
             </form>
           </li>
           <?php
@@ -224,8 +224,8 @@
             'menu_id'             => '',
             'menu_class'        => ''
             );
-            wp_nav_menu($args);
-            ?>
+wp_nav_menu($args);
+?>
           <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sports/">Sports</a></li>
                     <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sitenewscast/">Newscast</a></li>
           <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/audio/">Audio</a></li>

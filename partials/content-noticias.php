@@ -1,13 +1,13 @@
 <?php
-if (have_rows('noticias_homepage') ) {
-    while ( have_rows('noticias_homepage') ) {
+if (have_rows('noticias_homepage')) {
+    while (have_rows('noticias_homepage')) {
         the_row();
         // top section
-        if (get_row_layout() == 'noticias-main-stories' ) {
+        if (get_row_layout() == 'noticias-main-stories') {
             $intro = get_sub_field('intro_summary');
 
 
-        } elseif (get_row_layout() == 'intro-split-code' ) {
+        } elseif (get_row_layout() == 'intro-split-code') {
 
         }
     }
@@ -28,11 +28,11 @@ $topStoriesArray = array();
       <div class="grid-x grid-padding-x">
 
       <?php
-        if (have_rows('noticias_homepage') ) {
-            while ( have_rows('noticias_homepage') ) {
+        if (have_rows('noticias_homepage')) {
+            while (have_rows('noticias_homepage')) {
                 the_row();
                 // top section
-                if (get_row_layout() == 'noticias-main-stories' ) {
+                if (get_row_layout() == 'noticias-main-stories') {
                     $mainStoryList = get_sub_field('main_stories', 181966);
                     if ($mainStoryList) {
                         $mainStoryCounter = 0;
@@ -52,17 +52,17 @@ $topStoriesArray = array();
                                 // build clean URL
                                 $storyCleanURL = str_replace("&#8217;", "", str_replace('’', '', str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($mainStory))))));
                                 if (get_field('video_location', $mainStory) != '') {
-                                      $assetLocation = get_field('video_location', $mainStory);
-                                      $target = 'target="_blank"';
-                                } else if (get_field('audio_video_file', $mainStory) != '') {
+                                    $assetLocation = get_field('video_location', $mainStory);
+                                    $target = 'target="_blank"';
+                                } elseif (get_field('audio_video_file', $mainStory) != '') {
                                     $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".$mainStory."/".$storyCleanURL;
                                     $target = "";
-                                } else if (get_field('external_link', $mainStory) != '') {
+                                } elseif (get_field('external_link', $mainStory) != '') {
                                     $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".$mainStory."/".$storyCleanURL;
                                     $target = 'target="_blank"';
                                 } else {
-                                      $assetLocation = get_the_permalink($mainStory);
-                                      $target = "";
+                                    $assetLocation = get_the_permalink($mainStory);
+                                    $target = "";
                                 }
 
                                 ?>
@@ -78,58 +78,58 @@ $topStoriesArray = array();
                 }
             }
         }
-        ?>
+?>
 
         <div class="large-4 medium-12 small-12 cell story slide-aside">
           <div class="grid-x grid-padding-x">
       <?php
-        if (have_rows('noticias_homepage') ) {
-            while ( have_rows('noticias_homepage') ) {
-                the_row();
-                // top section
-                if (get_row_layout() == 'noticias-main-stories' ) {
-                    $mainStoryList = get_sub_field('noticias_slide_aside', 181966);
-                    if ($mainStoryList) {
-                        $mainStoryCounter = 0;
-                        foreach ($mainStoryList as $mainStory) {
-                            $permalink = get_permalink($mainStory);
-                            $summary = get_field('story_tease', $mainStory);
-                            if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
-                                $title = get_field('homepage_headline', $mainStory);
-                            } else {
-                                $title = get_the_title($mainStory);
-                            }
+if (have_rows('noticias_homepage')) {
+    while (have_rows('noticias_homepage')) {
+        the_row();
+        // top section
+        if (get_row_layout() == 'noticias-main-stories') {
+            $mainStoryList = get_sub_field('noticias_slide_aside', 181966);
+            if ($mainStoryList) {
+                $mainStoryCounter = 0;
+                foreach ($mainStoryList as $mainStory) {
+                    $permalink = get_permalink($mainStory);
+                    $summary = get_field('story_tease', $mainStory);
+                    if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
+                        $title = get_field('homepage_headline', $mainStory);
+                    } else {
+                        $title = get_the_title($mainStory);
+                    }
 
-                            // save top and bottom slide aside ID
-                            $topStoriesArray[] = $mainStory;
+                    // save top and bottom slide aside ID
+                    $topStoriesArray[] = $mainStory;
 
-                            // build clean URL
-                            $storyCleanURL = str_replace("&#8217;", "", str_replace('’', '', str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($mainStory))))));
-                            if (get_field('video_location', $mainStory) != '') {
-                                $assetLocation = get_field('video_location', $mainStory);
-                                $target = 'target="_blank"';
-                            } else if (get_field('audio_video_file', $mainStory) != '') {
-                                $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".$mainStory."/".$storyCleanURL;
-                                $target = "";
-                            } else if (get_field('external_link', $mainStory) != '') {
-                                $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".$mainStory."/".$storyCleanURL;
-                                $target = 'target="_blank"';
-                            } else {
-                                      $assetLocation = get_the_permalink($mainStory);
-                                      $target = "";
-                            }
-                            ?>
+                    // build clean URL
+                    $storyCleanURL = str_replace("&#8217;", "", str_replace('’', '', str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($mainStory))))));
+                    if (get_field('video_location', $mainStory) != '') {
+                        $assetLocation = get_field('video_location', $mainStory);
+                        $target = 'target="_blank"';
+                    } elseif (get_field('audio_video_file', $mainStory) != '') {
+                        $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".$mainStory."/".$storyCleanURL;
+                        $target = "";
+                    } elseif (get_field('external_link', $mainStory) != '') {
+                        $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".$mainStory."/".$storyCleanURL;
+                        $target = 'target="_blank"';
+                    } else {
+                        $assetLocation = get_the_permalink($mainStory);
+                        $target = "";
+                    }
+                    ?>
                   <div class="large-12 medium-6 small-12 cell story">
                     <a href="<?php echo $assetLocation; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?></a>
                     <h3><a href="<?php echo $assetLocation; ?>" target="_blank"><?php echo $title; ?></a></h3>
                   </div>
                             <?php
-                        }
-                    }
                 }
             }
         }
-        ?>
+    }
+}
+?>
           </div>
         </div>
       </div>
@@ -140,38 +140,38 @@ $topStoriesArray = array();
       <h4>Lo más destacado</h4>
 
       <?php
-        $args = array(
-                      'post_type'   => 'post',
-                      'post_status' => 'publish',
-                      'post__not_in' => $topStoriesArray,
-                      'posts_per_page' => 7,
-                      'cat' => 22877,
-                      'order' => 'DESC',
-                     );
+$args = array(
+              'post_type'   => 'post',
+              'post_status' => 'publish',
+              'post__not_in' => $topStoriesArray,
+              'posts_per_page' => 7,
+              'cat' => 22877,
+              'order' => 'DESC',
+             );
 
-        $latestNews = new WP_Query($args);
-        if ($latestNews->have_posts()) {
-            ?>
+$latestNews = new WP_Query($args);
+if ($latestNews->have_posts()) {
+    ?>
           <ul class="no-bullet top-stories">
             <?php
-            while ($latestNews->have_posts()) {
-                $latestNews->the_post();
-                $curID = get_the_ID();
-                $permalink = get_permalink($curID);
-                $summary = get_field('story_tease', $curID);
-                if (get_field('use_short_headline', $curID) == 'yes' && get_field('homepage_headline', $curID) != '') {
-                    $title = get_field('homepage_headline', $curID);
-                } else {
-                    $title = get_the_title($curID);
-                }
-                ?>
+    while ($latestNews->have_posts()) {
+        $latestNews->the_post();
+        $curID = get_the_ID();
+        $permalink = get_permalink($curID);
+        $summary = get_field('story_tease', $curID);
+        if (get_field('use_short_headline', $curID) == 'yes' && get_field('homepage_headline', $curID) != '') {
+            $title = get_field('homepage_headline', $curID);
+        } else {
+            $title = get_the_title($curID);
+        }
+        ?>
             <li><a href="<?php echo $permalink; ?>" target="_blank"><?php echo $title; ?></a></li>
             <?php } ?>
           </ul>
             <?php
-        }
-        wp_reset_query();
-        ?>
+}
+wp_reset_query();
+?>
     </div>
   </div>
 
@@ -179,11 +179,11 @@ $topStoriesArray = array();
     <div class="large-9 medium-12 small-12 cell">
 
     <?php
-    if (have_rows('noticias_homepage') ) {
-        while ( have_rows('noticias_homepage') ) {
+    if (have_rows('noticias_homepage')) {
+        while (have_rows('noticias_homepage')) {
             the_row();
             // top section
-            if (get_row_layout() == 'noticias-audio' ) {
+            if (get_row_layout() == 'noticias-audio') {
                 ?>
           <!-- Cronkite Noticias in Focus -->
           <div class="grid-x grid-padding-x">
@@ -193,7 +193,7 @@ $topStoriesArray = array();
             </div>
           </div>
 
-            <?php } else if (get_row_layout() == 'noticias-custom-section') { ?>
+            <?php } elseif (get_row_layout() == 'noticias-custom-section') { ?>
           <!-- latest stories -->
           <div class="grid-x grid-padding-x custom-section">
             <div class="large-12 medium-12 small-12 cell story">
@@ -218,10 +218,10 @@ $topStoriesArray = array();
                         if (get_field('video_location', $mainStory) != '') {
                             $assetLocation = get_field('video_location', $mainStory);
                             $target = 'target="_blank"';
-                        } else if (get_field('audio_video_file', $mainStory) != '') {
+                        } elseif (get_field('audio_video_file', $mainStory) != '') {
                             $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".$mainStory."/".$storyCleanURL;
                             $target = "";
-                        } else if (get_field('external_link', $mainStory) != '') {
+                        } elseif (get_field('external_link', $mainStory) != '') {
                             $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".$mainStory."/".$storyCleanURL;
                             $target = 'target="_blank"';
                         } else {
@@ -238,7 +238,7 @@ $topStoriesArray = array();
                 }
                 ?>
           </div>
-            <?php } else if (get_row_layout() == 'noticias-report') { ?>
+            <?php } elseif (get_row_layout() == 'noticias-report') { ?>
           <div class="grid-x grid-padding-x noticias-report">
             <div class="large-12 medium-12 small-12 cell story">
               <h4>Noticiero Cronkite Noticias</h4>
@@ -247,7 +247,7 @@ $topStoriesArray = array();
                 <?php echo get_sub_field('noticias_broadcast_embed', 181966); ?>
             </div>
             <div class="large-4 medium-4 small-12 cell">
-              <!--<h3><?php //echo get_sub_field('newscast-title', 181966); ?></h3>-->
+              <!--<h3><?php //echo get_sub_field('newscast-title', 181966);?></h3>-->
                 <?php echo get_sub_field('description', 181966); ?>
             </div>
           </div>
@@ -255,7 +255,7 @@ $topStoriesArray = array();
             }
         }
     }
-    ?>
+?>
     </div>
 
     <div class="large-3 medium-12 small-12 cell">
@@ -271,12 +271,12 @@ $topStoriesArray = array();
         </div>
       </div>
       <?php
-        if (have_rows('noticias_homepage') ) {
-            while ( have_rows('noticias_homepage') ) {
-                the_row();
-                // top section
-                if (get_row_layout() == 'noticias-twitter' ) {
-                    ?>
+    if (have_rows('noticias_homepage')) {
+        while (have_rows('noticias_homepage')) {
+            the_row();
+            // top section
+            if (get_row_layout() == 'noticias-twitter') {
+                ?>
             <div class="grid-x grid-padding-x twitter-embed">
               <div class="large-12 medium-12 small-12 cell story">
                 <h4>Twitter</h4>
@@ -286,10 +286,10 @@ $topStoriesArray = array();
               </div>
             </div>
                     <?php
-                }
             }
         }
-        ?>
+    }
+?>
     </div>
   </div>
 </div>

@@ -6,7 +6,7 @@ get_header('mlk'); ?>
 
   <div class="full-screen-intro">
       <div class="intro">
-        <a href="<?php echo home_url(); ?>"><img class="logo" src="<?php bloginfo('template_directory');?>/assets/img/cn-logo-white.svg" alt="Cronkite News" title="Cronkite News" /></a>
+        <a href="<?php echo home_url(); ?>"><img class="logo" src="<?php bloginfo('template_directory'); ?>/assets/img/cn-logo-white.svg" alt="Cronkite News" title="Cronkite News" /></a>
         <h1>MLK to BLM</h1>
         <p class="byline">By <a href="https://cronkitenews.azpbs.org/people/misha-jones/" target="_blank">Misha Jones</a>/Cronkite News | July 3, 2020</p>
         <div class="social-icons">

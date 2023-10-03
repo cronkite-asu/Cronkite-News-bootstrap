@@ -1,11 +1,11 @@
 <?php
-/*
-* Template Name: Big Boy
-*
-* Updated 02/18/2016 with support for secondary text field
-* so Big Boy stories can go in the rotator and not break
-* the newsletter.
-*/
+/**
+ * Template Name: Big Boy
+ *
+ * Updated 02/18/2016 with support for secondary text field
+ * so Big Boy stories can go in the rotator and not break
+ * the newsletter.
+ */
 
 get_header(); ?>
     <main>

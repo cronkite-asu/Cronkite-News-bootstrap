@@ -1,8 +1,8 @@
 <?php
-/*
-Template Name: PBS Feed
-Created: Tuesday May 25, 2017
-*/
+/**
+ * Template Name: PBS Feed
+ * Created: Tuesday May 25, 2017
+ */
 
 $ACCEPTHOST = 'cronkitenews.azpbs.org';
 
@@ -25,11 +25,11 @@ echo '<?xml version="1.0"?><rss version="2.0">';
                 'category_name'  => 'editors-picks',
                 'post_status'    => 'publish'
             );
-    $loop = new WP_Query($args);
-    while ($loop->have_posts()) :
-        $loop->the_post();
+$loop = new WP_Query($args);
+while ($loop->have_posts()) :
+    $loop->the_post();
 
-        ?>
+    ?>
   <item>
     <title><?php echo the_title(); ?></title>
     <link><?php echo the_permalink(); ?></link>
@@ -37,19 +37,19 @@ echo '<?xml version="1.0"?><rss version="2.0">';
     <image> <?php echo $featureimage; ?> </image>
     <description>
         <?php
-        echo '<![CDATA[';
-        echo '<h2>';
-        echo the_title();
-        echo '</h2>';
-        echo '<p>';
-        echo get_field('post_author');
-        echo '</p>';
-        echo '<p>';
-        echo ap_date();
-        echo '</p>';
-        echo get_field('story_tease');
-        echo $featureimage;
-        echo ']]>';    ?>
+    echo '<![CDATA[';
+    echo '<h2>';
+    echo the_title();
+    echo '</h2>';
+    echo '<p>';
+    echo get_field('post_author');
+    echo '</p>';
+    echo '<p>';
+    echo ap_date();
+    echo '</p>';
+    echo get_field('story_tease');
+    echo $featureimage;
+    echo ']]>';    ?>
     </description>
     <pubDate><?php echo date("D, j M Y G:i:s +0000", get_post_timestamp()); ?></pubDate>
     <guid><?php echo get_permalink($post->ID); ?></guid>

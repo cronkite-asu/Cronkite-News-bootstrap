@@ -1,42 +1,6 @@
 ;(function ($) {
 
 /*===================================================================================*/
-/*	HEADER SHRINK
- /*===================================================================================*/
-
-$(document).ready(function() {
-
-    var s = skrollr;
-    var sActive = false;
-
-    if ($(window).width() > 1024) {
-        s.init({
-            mobileCheck: function() {
-                return false;
-            }
-        });
-        sActive = true;
-    }
-
-    $(window).on('resize', function() {
-        if ($(window).width() < 1024 && sActive) {
-            s.init().destroy();
-            sActive = false;
-        }
-        else if ($(window).width() > 1024) {
-            s.init({
-                mobileCheck: function() {
-                    return false;
-                }
-            });
-            sActive = true;
-        }
-    });
-
-});
-
-
-/*===================================================================================*/
 /*	STICKY NAVIGATION
  /*===================================================================================*/
 

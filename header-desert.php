@@ -49,24 +49,24 @@
         <?php
         // get the category for GA
         $post = get_post();
-        $categories = get_the_category($post -> ID);
-        $output = '';
+$categories = get_the_category($post -> ID);
+$output = '';
 
-        if (! empty($categories) ) {
-            foreach ( $categories as $category ) {
+if (! empty($categories)) {
+    foreach ($categories as $category) {
 
-                if ($category->name == "Borderlands") {
-                    // $output = "ga('set', 'contentGroup1', '"  . esc_html( $category->name ) . "');";
-                    $output = "ga('set', 'contentGroup1', 'Borderlands');";
-                }
-                if ($category->name == "Sustainability") {
-                    // $output = "ga('set', 'contentGroup2', '"  . esc_html( $category->name ) . "');";
-                    $output = "ga('set', 'contentGroup2', 'My Group Name');";
-                }
-            }
+        if ($category->name == "Borderlands") {
+            // $output = "ga('set', 'contentGroup1', '"  . esc_html( $category->name ) . "');";
+            $output = "ga('set', 'contentGroup1', 'Borderlands');";
         }
+        if ($category->name == "Sustainability") {
+            // $output = "ga('set', 'contentGroup2', '"  . esc_html( $category->name ) . "');";
+            $output = "ga('set', 'contentGroup2', 'My Group Name');";
+        }
+    }
+}
 
-        ?>
+?>
 
 
 
@@ -88,7 +88,7 @@
     <meta property="fb:pages" content="305166330794" />
 
     <?php wp_head(); ?>
-        <script src="<?php bloginfo('template_directory');?>/js/plugins/jquery.scrolldepth.js"></script>
+        <script src="<?php bloginfo('template_directory'); ?>/js/plugins/jquery.scrolldepth.js"></script>
 
     <script>
       $(document).ready(function() {

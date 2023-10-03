@@ -17,7 +17,7 @@ get_header(); ?>
                     $blog_page_id = get_option('page_for_posts');
                     echo '<h1>' . get_page($blog_page_id)->post_title . '</h1>';
                 }
-                ?>
+?>
             </div>
             <!-- /.col -->
         </div>
@@ -36,24 +36,24 @@ get_header(); ?>
 
 
                             <?php
-                            if (is_home() && get_option('page_for_posts')) {
-                                $blog_page_id = get_option('page_for_posts');
-                                echo '<div class="content-blog">' . get_page($blog_page_id)->post_content . '</div>'; ?>
+            if (is_home() && get_option('page_for_posts')) {
+                $blog_page_id = get_option('page_for_posts');
+                echo '<div class="content-blog">' . get_page($blog_page_id)->post_content . '</div>'; ?>
 
                                 <?php
-                            }  ?>
+            }  ?>
 
                             <div class="custom-line">
                                 <?php if ($labelInfo  = get_field('label_info')) : ?>
                                     <?php echo $labelInfo; ?>
                                 <?php endif; ?>
-                                <?php if ($postAuthor = get_field('post_author')) {?>
+                                <?php if ($postAuthor = get_field('post_author')) { ?>
                                     <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo $postAuthor; ?> | </a>
                                 <?php } ?>
-                                <?php if ($siteTitle = get_field('site_title')) {?>
+                                <?php if ($siteTitle = get_field('site_title')) { ?>
                                     <a href="<?php the_field('site_url'); ?>"><?php echo $siteTitle; ?> | </a>
                                 <?php } ?>
-                                <?php if ($twitterTitle = get_field('twitter_title')) {?>
+                                <?php if ($twitterTitle = get_field('twitter_title')) { ?>
                                     <a href="<?php the_field('twitter_url'); ?>" class="custom-line-links"> <i class="icon-twitter"></i> <?php echo $twitterTitle; ?> </a>
                                 <?php } ?>
 
@@ -71,7 +71,7 @@ get_header(); ?>
                                             </h3>
 
                                             <h6 class="story-info">
-                                                <?php if ($postAuthor = get_field('post_author')) {?>
+                                                <?php if ($postAuthor = get_field('post_author')) { ?>
                                                     By   <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo $postAuthor; ?> | </a>
                                                 <?php } ?>
                                                 <span> <?php echo ap_date(); ?></span>

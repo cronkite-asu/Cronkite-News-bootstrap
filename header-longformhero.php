@@ -21,7 +21,7 @@
     <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
 <!--     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
 
-    <script src="<?php bloginfo('template_directory');?>/js/jquery-3.2.1.min.js"></script>
+    <script src="<?php bloginfo('template_directory'); ?>/js/jquery-3.2.1.min.js"></script>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,38 +53,38 @@
         <?php
         // get the category for GA
         $post = get_post();
-        $categories = get_the_category($post -> ID);
-        $output = '';
+$categories = get_the_category($post -> ID);
+$output = '';
 
-        if (! empty($categories) ) {
-            foreach ( $categories as $category ) {
+if (! empty($categories)) {
+    foreach ($categories as $category) {
 
-                if ($output == '') {
-                    if ($category->name == "Borderlands") {
-                        //$output = "ga('set', 'Borderlands', '"  . esc_html( $category->name ) . "');";
-                        $output = "ga('set', 'contentGroup1', 'Borderlands');";
-                    }
-                    if ($category->name == "Sustainability") {
+        if ($output == '') {
+            if ($category->name == "Borderlands") {
+                //$output = "ga('set', 'Borderlands', '"  . esc_html( $category->name ) . "');";
+                $output = "ga('set', 'contentGroup1', 'Borderlands');";
+            }
+            if ($category->name == "Sustainability") {
 
-                        $output = "ga('set', 'contentGroup2', 'Sustainability');";
-                    }
-                    if ($category->name == "Education") {
+                $output = "ga('set', 'contentGroup2', 'Sustainability');";
+            }
+            if ($category->name == "Education") {
 
-                        $output = "ga('set', 'contentGroup3', 'Education');";
-                    }
-                    if ($category->name == "Consumer") {
+                $output = "ga('set', 'contentGroup3', 'Education');";
+            }
+            if ($category->name == "Consumer") {
 
-                        $output = "ga('set', 'contentGroup4', 'Consumer');";
-                    }
-                    if ($category->name == "Future") {
+                $output = "ga('set', 'contentGroup4', 'Consumer');";
+            }
+            if ($category->name == "Future") {
 
-                        $output = "ga('set', 'contentGroup5', 'Future');";
-                    }
-                }
+                $output = "ga('set', 'contentGroup5', 'Future');";
             }
         }
+    }
+}
 
-        ?>
+?>
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>
@@ -105,7 +105,7 @@
     <meta property="fb:pages" content="305166330794" />
 
     <?php wp_head(); ?>
-<!--         <script src="<?php bloginfo('template_directory');?>/js/plugins/jquery.scrolldepth.js"></script> -->
+<!--         <script src="<?php bloginfo('template_directory'); ?>/js/plugins/jquery.scrolldepth.js"></script> -->
      <script>
      /*jQuery(function() {
          jQuery.scrollDepth({
@@ -157,7 +157,7 @@
    <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/future/" style="display:block;">Future</a></li>
    <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/government/" style="display:block;">Government</a></li>
    <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/health/" style="display:block;">Health</a></li>
-   <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/indian-country/" style="display:block;">Indian Country</a></li>
+   <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/indigenous-communities/" style="display:block;">Indian Country</a></li>
    <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/justice/" style="display:block;">Justice</a></li>
    <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/money/" style="display:block;">Money</a></li>
    <li style="display:block;"><a href="https://cronkitenews.azpbs.org/category/sustainability/" style="display:block;">Sustainability</a></li>

@@ -41,24 +41,24 @@
         <?php
         // get the category for GA
         $post = get_post();
-        $categories = get_the_category($post -> ID);
-        $output = '';
+$categories = get_the_category($post -> ID);
+$output = '';
 
-        if (! empty($categories) ) {
-            foreach ( $categories as $category ) {
+if (! empty($categories)) {
+    foreach ($categories as $category) {
 
-                if ($category->name == "Borderlands") {
-                    // $output = "ga('set', 'contentGroup1', '"  . esc_html( $category->name ) . "');";
-                    $output = "ga('set', 'contentGroup1', 'My Group Name');";
-                }
-                if ($category->name == "Sustainability") {
-                    // $output = "ga('set', 'contentGroup2', '"  . esc_html( $category->name ) . "');";
-                    $output = "ga('set', 'contentGroup2', 'My Group Name');";
-                }
-            }
+        if ($category->name == "Borderlands") {
+            // $output = "ga('set', 'contentGroup1', '"  . esc_html( $category->name ) . "');";
+            $output = "ga('set', 'contentGroup1', 'My Group Name');";
         }
+        if ($category->name == "Sustainability") {
+            // $output = "ga('set', 'contentGroup2', '"  . esc_html( $category->name ) . "');";
+            $output = "ga('set', 'contentGroup2', 'My Group Name');";
+        }
+    }
+}
 
-        ?>
+?>
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>
@@ -78,7 +78,7 @@
     <meta property="fb:pages" content="305166330794" />
 
     <?php wp_head(); ?>
-<!--         <script src="<?php bloginfo('template_directory');?>/js/plugins/jquery.scrolldepth.js"></script> -->
+<!--         <script src="<?php bloginfo('template_directory'); ?>/js/plugins/jquery.scrolldepth.js"></script> -->
      <script>
      jQuery(function() {
          jQuery.scrollDepth({
@@ -109,17 +109,18 @@
 <!--
                     <ul class="social pull-right">
 
-                    <?php if (have_rows('social_box', 'options') ) : ?>
-                        <?php while ( have_rows('social_box', 'options') ): the_row();
+                    <?php if (have_rows('social_box', 'options')) : ?>
+                        <?php while (have_rows('social_box', 'options')): the_row();
                             // Declare variables below
                             $icon = get_sub_field('social_icon', 'options');
                             $link = get_sub_field('social_link', 'options');
-                            // Use variables below ?>
+                            // Use variables below?>
                             <li>
                                 <a target="_blank" href="<?php echo $link; ?>"><img src="<?php echo $icon; ?>" /></a>
                             </li>
                         <?php endwhile; ?>
-                    <?php endif; wp_reset_query(); ?>
+                    <?php endif;
+wp_reset_query(); ?>
 
                     </ul>
 -->

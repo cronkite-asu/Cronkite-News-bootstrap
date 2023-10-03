@@ -15,17 +15,25 @@
                     if ($counter < 1) {
                         ?>
                         <?php if (get_field('use_short_headline', $main_story[0]) == 'yes' && get_field('homepage_headline', $main_story[0]) != '') { ?>
-                <a href="<?php echo get_permalink($main_story[0]); ?>">
-                  <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($main_story[0])); ?>" />
-                  <h2><?php echo get_field('homepage_headline', $main_story[0]); ?></h2>
-                </a>
-                        <?php } else { ?>
-                <a href="<?php echo get_permalink($main_story[0]); ?>">
-                  <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($main_story[0])); ?>" />
-                  <h2><?php echo get_the_title($main_story[0]); ?></h2>
-                </a>
-                            <?php
-                        }
+                          <?php if (get_field('redirect_story', $main_story[0]) == 'yes' && get_field('redirect_url', $main_story[0]) != '') { ?>
+                            <a href="<?php echo get_permalink($main_story[0]); ?>" target="_blank">
+                          <?php } else { ?>
+                            <a href="<?php echo get_permalink($main_story[0]); ?>">
+                          <?php } ?>
+                            <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($main_story[0])); ?>" />
+                            <h2><?php echo get_field('homepage_headline', $main_story[0]); ?></h2>
+                          </a>
+                          <?php } else { ?>
+                            <?php if (get_field('redirect_story', $main_story[0]) == 'yes' && get_field('redirect_url', $main_story[0]) != '') { ?>
+                              <a href="<?php echo get_permalink($main_story[0]); ?>" target="_blank">
+                            <?php } else { ?>
+                              <a href="<?php echo get_permalink($main_story[0]); ?>">
+                            <?php } ?>
+                            <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($main_story[0])); ?>" />
+                            <h2><?php echo get_the_title($main_story[0]); ?></h2>
+                          </a>
+                        <?php
+                          }
                     }
                     $counter++;
                 }
@@ -54,17 +62,24 @@
                     foreach ($topSlideAsideList as $slideAsideList) {
                         $permalink = get_permalink($slideAsideList);
                         ?>
-              <li>
-                        <?php
-                        if (get_field('use_short_headline', $slideAsideList) == 'yes' && get_field('homepage_headline', $slideAsideList) != '') {
-                            $title = get_field('homepage_headline', $slideAsideList);
-                        } else {
-                            $title = get_the_title($slideAsideList);
-                        }
+                        <li>
+                          <?php
+                            if (get_field('use_short_headline', $slideAsideList) == 'yes' && get_field('homepage_headline', $slideAsideList) != '') {
+                                $title = get_field('homepage_headline', $slideAsideList);
+                            } else {
+                                $title = get_the_title($slideAsideList);
+                            }
+
+                            if (get_field('redirect_story', $main_story[0]) == 'yes' && get_field('redirect_url', $main_story[0]) != '') {
+                                $linkTarget = 'target="_blank"';
+                            } else {
+                                $linkTarget = '';
+                            }
                         ?>
-                <a href="<?php echo $permalink; ?>"><?php echo $title; ?></a>
-                <a href="<?php echo $permalink; ?>"><img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($slideAsideList)); ?>" /></a>
-              </li>
+
+                          <a href="<?php echo $permalink; ?>" <?php echo $linkTarget; ?>><?php echo $title; ?></a>
+                          <a href="<?php echo $permalink; ?>" <?php echo $linkTarget; ?>><img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($slideAsideList)); ?>" /></a>
+                        </li>
                         <?php
                     }
                 }
@@ -81,17 +96,25 @@
                 foreach ($slideAsideList as $slideAside) {
                     $permalink = get_permalink($slideAside);
                     ?>
-              <div class="large-12 medium-12 small-12 cell">
-                <a href="<?php echo $permalink; ?>"><img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($slideAside)); ?>" /></a>
-                    <?php
-                    if (get_field('use_short_headline', $slideAside) == 'yes' && get_field('homepage_headline', $slideAside) != '') {
-                        $title = get_field('homepage_headline', $slideAside);
-                    } else {
-                        $title = get_the_title($slideAside);
-                    }
+                    <div class="large-12 medium-12 small-12 cell">
+                      <?php if (get_field('redirect_story', $slideAside) == 'yes' && get_field('redirect_url', $slideAside) != '') { ?>
+                        <a href="<?php echo $permalink; ?>" target="_blank"><img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($slideAside)); ?>" /></a>
+                      <?php } else { ?>
+                        <a href="<?php echo $permalink; ?>"><img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($slideAside)); ?>" /></a>
+                      <?php } ?>
+                          <?php
+                          if (get_field('use_short_headline', $slideAside) == 'yes' && get_field('homepage_headline', $slideAside) != '') {
+                              $title = get_field('homepage_headline', $slideAside);
+                          } else {
+                              $title = get_the_title($slideAside);
+                          }
                     ?>
-                <a href="<?php echo $permalink; ?>"><h2><?php echo $title; ?></h2></a>
-              </div>
+                          <?php if (get_field('redirect_story', $slideAside) == 'yes' && get_field('redirect_url', $slideAside) != '') { ?>
+                            <a href="<?php echo $permalink; ?>" target="_blank"><h2><?php echo $title; ?></h2></a>
+                          <?php } else { ?>
+                            <a href="<?php echo $permalink; ?>"><h2><?php echo $title; ?></h2></a>
+                          <?php } ?>
+                    </div>
                     <?php
                 }
             }
@@ -126,20 +149,29 @@
         <div class="large-12 medium-12 small-12 cell slide-aside-main-small show-for-small-only">
           <?php
               $home_main_storyID = get_field('main_story_settings', 24);
-            if ($home_main_storyID) {
-                $counter = 0;
-                foreach ($home_main_story as $main_story) {
-                    if ($counter < 1) {
-                        ?>
+        if ($home_main_storyID) {
+            $counter = 0;
+            foreach ($home_main_story as $main_story) {
+                if ($counter < 1) {
+                    ?>
                         <?php if (get_field('main_custom_photo', 24) == '' && get_field('main_custom_photo_url', 24) == '') { ?>
                             <?php if (get_field('use_short_headline', $main_story[0]) == 'yes' && get_field('homepage_headline', $main_story[0]) != '') { ?>
-                              <a href="<?php echo get_permalink($main_story[0]); ?>">
+
+                              <?php if (get_field('redirect_story', $main_story[0]) == 'yes' && get_field('redirect_url', $main_story[0]) != '') { ?>
+                                <a href="<?php echo get_permalink($main_story[0]); ?>" target="_blank">
+                              <?php } else { ?>
+                                <a href="<?php echo get_permalink($main_story[0]); ?>">
+                              <?php } ?>
                                 <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($main_story[0])); ?>" />
                                 <h2><?php echo get_field('homepage_headline', $main_story[0]); ?></h2>
                               </a>
                               <p class="show-for-small-only main-story-summary-mobile"><?php echo get_field('story_tease', $main_story[0]); ?></p>
                             <?php } else { ?>
-                              <a href="<?php echo get_permalink($main_story[0]); ?>">
+                              <?php if (get_field('redirect_story', $main_story[0]) == 'yes' && get_field('redirect_url', $main_story[0]) != '') { ?>
+                                <a href="<?php echo get_permalink($main_story[0]); ?>" target="_blank">
+                              <?php } else { ?>
+                                <a href="<?php echo get_permalink($main_story[0]); ?>">
+                              <?php } ?>
                                 <img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($main_story[0])); ?>" />
                                 <h2><?php echo get_the_title($main_story[0]); ?></h2>
                               </a>
@@ -165,28 +197,36 @@
         <div class="small-12 cell show-for-small-only"><hr></div>
           <?php
             $slideAsideList = get_field('slide_aside', 24);
-            if ($slideAsideList) {
-                foreach ($slideAsideList as $slideAside) {
-                    $permalink = get_permalink($slideAside);
-                    ?>
+        if ($slideAsideList) {
+            foreach ($slideAsideList as $slideAside) {
+                $permalink = get_permalink($slideAside);
+                ?>
                 <div class="large-4 medium-4 small-6 cell slide-aside-small show-for-small-only">
-                  <a href="<?php echo $permalink; ?>">
+                  <?php if (get_field('redirect_story', $slideAside) == 'yes' && get_field('redirect_url', $slideAside) != '') { ?>
+                    <a href="<?php echo $permalink; ?>" target="_blank">
+                  <?php } else { ?>
+                    <a href="<?php echo $permalink; ?>">
+                  <?php } ?>
                     <?php echo get_the_post_thumbnail($slideAside, 'full', array('class' => 'img-responsive')); ?>
                   </a>
                     <?php
-                    if (get_field('use_short_headline', $slideAside) == 'yes' && get_field('homepage_headline', $slideAside) != '') {
-                        $title = get_field('homepage_headline', $slideAside);
-                    } else {
-                        $title = get_the_title($slideAside);
-                    }
-                    ?>
-                  <a href="<?php echo $permalink; ?>"><h2><?php echo $title; ?></h2></a>
+                if (get_field('use_short_headline', $slideAside) == 'yes' && get_field('homepage_headline', $slideAside) != '') {
+                    $title = get_field('homepage_headline', $slideAside);
+                } else {
+                    $title = get_the_title($slideAside);
+                }
+                ?>
+                    <?php if (get_field('redirect_story', $slideAside) == 'yes' && get_field('redirect_url', $slideAside) != '') { ?>
+                      <a href="<?php echo $permalink; ?>" target="_blank"><h2><?php echo $title; ?></h2></a>
+                    <?php } else { ?>
+                      <a href="<?php echo $permalink; ?>"><h2><?php echo $title; ?></h2></a>
+                    <?php } ?>
                 </div>
                     <?php
-                }
             }
-             wp_reset_query();
-            ?>
+        }
+        wp_reset_query();
+        ?>
         <div class="small-12 cell show-for-small-only"><hr></div>
       </div>
     </div>
@@ -210,7 +250,11 @@
                 <?php if ($customLinks != '') { ?>
                 <a target="_blank" href="<?php echo $customLinks; ?>">
                 <?php } else { ?>
-                <a href="<?php echo get_permalink($postID); ?>" >
+                  <?php if (get_field('redirect_story', $postID) == 'yes' && get_field('redirect_url', $postID) != '') { ?>
+                    <a href="<?php echo get_permalink($postID); ?>" target="_blank" >
+                  <?php } else { ?>
+                    <a href="<?php echo get_permalink($postID); ?>" >
+                  <?php } ?>
                 <?php } ?>
                 <?php if ($image === false || $image['url'] == '') { ?>
                   <img src="<?php echo get_the_post_thumbnail_url($postID); ?>" />
@@ -226,14 +270,26 @@
                     <?php if ($customLinks != '') { ?>
                   <a href="<?php echo $customLinks; ?>"><h3><?php echo $customTitle; ?></h3></a>
                     <?php } else { ?>
-                  <a href="<?php echo get_permalink($postID); ?>"><h3><?php echo $customTitle; ?></h3></a>
+                      <?php if (get_field('redirect_story', $postID) == 'yes' && get_field('redirect_url', $postID) != '') { ?>
+                        <a href="<?php echo get_permalink($postID); ?>" target="_blank"><h3><?php echo $customTitle; ?></h3></a>
+                      <?php } else { ?>
+                        <a href="<?php echo get_permalink($postID); ?>"><h3><?php echo $customTitle; ?></h3></a>
+                      <?php } ?>
                     <?php } ?>
                 <?php } else { ?>
 
                     <?php if (get_field('use_short_headline', $postID) == 'yes' && get_field('homepage_headline', $postID) != '') { ?>
-                  <a href="<?php echo get_permalink($postID); ?>" ><h3><?php echo get_field('homepage_headline', $postID); ?></h3></a>
+                      <?php if (get_field('redirect_story', $postID) == 'yes' && get_field('redirect_url', $postID) != '') { ?>
+                        <a href="<?php echo get_permalink($postID); ?>" target="_blank"><h3><?php echo get_field('homepage_headline', $postID); ?></h3></a>
+                      <?php } else { ?>
+                        <a href="<?php echo get_permalink($postID); ?>" ><h3><?php echo get_field('homepage_headline', $postID); ?></h3></a>
+                      <?php } ?>
                     <?php } else { ?>
-                  <a href="<?php echo get_permalink($postID); ?>" ><h3><?php echo get_the_title($postID); ?></h3></a>
+                      <?php if (get_field('redirect_story', $postID) == 'yes' && get_field('redirect_url', $postID) != '') { ?>
+                        <a href="<?php echo get_permalink($postID); ?>" target="_blank"><h3><?php echo get_the_title($postID); ?></h3></a>
+                      <?php } else { ?>
+                        <a href="<?php echo get_permalink($postID); ?>"><h3><?php echo get_the_title($postID); ?></h3></a>
+                      <?php } ?>
                     <?php } ?>
                 <?php } ?>
             </div>
@@ -244,53 +300,53 @@
         <div class="large-4 medium-4 small-12 cell newscast-block">
           <?php
             $videoSetting = get_field('v_video_or_newscast', 24);
-            if ($videoSetting == 'Newscast') {
+        if ($videoSetting == 'Newscast') {
 
-                $arg = array(
-                    'post_type'        => 'post',
-                    'order'            => 'DESC',
-                    'orderby'        => 'date',
-                    'posts_per_page'    => 1,
-                    'category_name' =>  'newscast'
-                );
+            $arg = array(
+                'post_type'        => 'post',
+                'order'            => 'DESC',
+                'orderby'        => 'date',
+                'posts_per_page'    => 1,
+                'category_name' =>  'newscast'
+            );
 
-                $the_query = new WP_Query($arg);
-                if ($the_query->have_posts()) {
-                    while ($the_query->have_posts()) {
-                        $the_query->the_post();
-                        $videoTitle = rtrim(get_the_content(), '.');
+            $the_query = new WP_Query($arg);
+            if ($the_query->have_posts()) {
+                while ($the_query->have_posts()) {
+                    $the_query->the_post();
+                    $videoTitle = rtrim(get_the_content(), '.');
 
-                        if (get_field('video_url') != '') {
-                          $videoURL = get_field('video_url', false, false);
-                        } else {
-                          $videoURL = get_field('video_file', false, false);
-                        }
+                    if (get_field('video_url') != '') {
+                        $videoURL = get_field('video_url', false, false);
+                    } else {
+                        $videoURL = get_field('video_file', false, false);
+                    }
 
-                        $videoBaseLink = 'https://www.youtube.com/embed/';
-                        $breakQuery = parse_url($videoURL, PHP_URL_QUERY);
-                        if (isset($breakQuery)) {
-                            $videoID = explode('=', $breakQuery);
-                            $embedVideoURL = $videoBaseLink.$videoID[1];
-                        } else {
-                            $embedVideoURL = $videoURL;
-                        }                        
-          ?>
+                    $videoBaseLink = 'https://www.youtube.com/embed/';
+                    $breakQuery = parse_url($videoURL, PHP_URL_QUERY);
+                    if (isset($breakQuery)) {
+                        $videoID = explode('=', $breakQuery);
+                        $embedVideoURL = $videoBaseLink.$videoID[1];
+                    } else {
+                        $embedVideoURL = $videoURL;
+                    }
+                    ?>
                     <div id="video-holder">
                       <style>.embed-container { position: relative; padding-bottom: 62.5%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
                       <div class="embed-container"><iframe src="<?php echo $embedVideoURL; ?>" frameborder="0" allowfullscreen></iframe></div>
                       <div class="asset-caption"><a href="<?php echo $embedVideoURL; ?>"><h3><?php echo $videoTitle; ?></h3></a></div>
                     </div>
-            <?php
-                    }
+                        <?php
                 }
-                wp_reset_query();
             }
-            ?>
+            wp_reset_query();
+        }
+        ?>
         </div>
 
         <?php if (have_rows('area_works_box', 24)) { ?>
             <?php while (have_rows('area_works_box', 24)) {
- the_row(); ?>
+                the_row(); ?>
           <div class="large-4 medium-4 small-5 cell stories show-for-medium">
                 <?php
                 $image = get_sub_field('area_works_image');
@@ -300,11 +356,15 @@
                 ?>
             <div class="img-holder">
                 <?php if ($customLinks != '') { ?>
-              <a target="_blank" href="<?php echo $customLinks; ?>">
+                  <a target="_blank" href="<?php echo $customLinks; ?>">
                 <?php } else { ?>
-              <a href="<?php echo get_permalink($postID); ?>" >
+                  <?php if (get_field('redirect_story', $postID) == 'yes' && get_field('redirect_url', $postID) != '') { ?>
+                    <a href="<?php echo get_permalink($postID); ?>" target="_blank">
+                  <?php } else { ?>
+                    <a href="<?php echo get_permalink($postID); ?>">
+                  <?php } ?>
                 <?php } ?>
-                <?php if ($image === false || $image['url'] == '' ) { ?>
+                <?php if ($image === false || $image['url'] == '') { ?>
                 <img src="<?php echo get_the_post_thumbnail_url($postID); ?>" />
                 <?php } else { ?>
                 <img src="<?php echo $image['url']; ?>" />
@@ -313,18 +373,34 @@
             </div>
 
               <div class="show-for-medium">
-                <?php if ($customTitle != '' || $customLinks != '') { ?>
+
+                <?php echo '<!--HERE-->';
+                if ($customTitle != '' || $customLinks != '') { ?>
                     <?php if ($customLinks != '') { ?>
-                  <a href="<?php echo $customLinks; ?>"><h3><?php echo get_the_title($postID); ?></h3></a>
+                      <a href="<?php echo $customLinks; ?>" target="_blank"><h3><?php echo $customTitle; ?></h3></a>
                     <?php } else { ?>
-                  <a href="<?php echo get_permalink($postID); ?>"><h3><?php echo $customTitle; ?></h3></a>
+                      <?php if ($customTitle != '') { ?>
+                        <!--HERE 1-->
+                        <a href="<?php echo get_permalink($postID); ?>" target="_blank"><h3><?php echo $customTitle; ?></h3></a>
+                      <?php } else { ?>
+                        <!--HERE 2-->
+                        <a href="<?php echo get_permalink($postID); ?>"><h3><?php echo get_the_title($postID); ?></h3></a>
+                      <?php } ?>
                     <?php } ?>
                 <?php } else { ?>
 
                     <?php if (get_field('use_short_headline', $postID) == 'yes' && get_field('homepage_headline', $postID) != '') { ?>
-                  <a href="<?php echo get_permalink($postID); ?>" ><h3><?php echo get_field('homepage_headline', $postID); ?></h3></a>
+                      <?php if (get_field('redirect_story', $postID) == 'yes' && get_field('redirect_url', $postID) != '') { ?>
+                        <a href="<?php echo get_permalink($postID); ?>" target="_blank"><h3><?php echo get_field('homepage_headline', $postID); ?></h3></a>
+                      <?php } else { ?>
+                        <a href="<?php echo get_permalink($postID); ?>"><h3><?php echo get_field('homepage_headline', $postID); ?></h3></a>
+                      <?php } ?>
                     <?php } else { ?>
-                  <a href="<?php echo get_permalink($postID); ?>" ><h3><?php echo get_the_title($postID); ?></h3></a>
+                      <?php if (get_field('redirect_story', $postID) == 'yes' && get_field('redirect_url', $postID) != '') { ?>
+                        <a href="<?php echo get_permalink($postID); ?>" target="_blank"><h3><?php echo get_the_title($postID); ?></h3></a>
+                      <?php } else { ?>
+                        <a href="<?php echo get_permalink($postID); ?>"><h3><?php echo get_the_title($postID); ?></h3></a>
+                      <?php } ?>
                     <?php } ?>
                 <?php } ?>
               </div>
@@ -355,7 +431,7 @@
           <div class="homepage-special-projects">
             <?php if (have_rows('projects', 24)) { ?>
                 <?php while (have_rows('projects', 24)) {
- the_row(); ?>
+                    the_row(); ?>
                   <div class="large-4 medium-4 small-12 cell text-center special-projects">
                     <?php
                     if (get_sub_field('photo') != '') {
@@ -364,7 +440,7 @@
                         $storyPhoto = get_sub_field('photo_url');
                     }
                     ?>
-                    <a href="<?php echo get_sub_field('link')?>" target="_blank"><img src="<?php echo $storyPhoto; ?>" /></a>
+                    <a href="<?php echo get_sub_field('link') ?>" target="_blank"><img src="<?php echo $storyPhoto; ?>" /></a>
                   </div>
                 <?php } ?>
             <?php } ?>
@@ -379,12 +455,17 @@
             $seriesURL = get_field('page_url', 24);
             ?>
               <div class="large-4 medium-12 small-12 cell description">
-                <h5><?php if ($seriesTitle != '') { echo $seriesTitle;
-} ?></h5>
-                <?php if ($seriesDescription != '') { echo $seriesDescription;
-                } ?>
-                <?php if ($seriesURL != '') { echo '<a class="read-more" href="'.$seriesURL.'" target="_blank">READ MORE <i class="fa-regular fa-arrow-right-long"></i></a>';
-                } ?>
+          <h5>
+            <?php if ($seriesTitle != '') {
+                echo $seriesTitle;
+            } ?>
+          </h5>
+            <?php if ($seriesDescription != '') {
+                echo $seriesDescription;
+            } ?>
+            <?php if ($seriesURL != '') {
+                echo '<a class="read-more" href="'.$seriesURL.'" target="_blank">READ MORE <i class="fa-regular fa-arrow-right-long"></i></a>';
+            } ?>
               </div>
 
               <div class="large-8 medium-12 small-12 cell series-stories">
@@ -411,7 +492,7 @@
                         $seriesCounter++;
                     }
                 }
-                ?>
+            ?>
                 </ul>
               </div>
         </div>
@@ -435,7 +516,13 @@
                     $permalink = get_permalink($latestNews);
                     ?>
               <div class="large-3 medium-6 small-5 cell">
-                <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($latestNews); ?></a>
+
+                  <?php if (get_field('redirect_story', $latestNews) == 'yes' && get_field('redirect_url', $latestNews) != '') { ?>
+                    <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($latestNews); ?></a>
+                  <?php } else { ?>
+                    <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($latestNews); ?></a>
+                  <?php } ?>
+
                     <?php
                     if (get_field('use_short_headline', $latestNews) == 'yes' && get_field('homepage_headline', $latestNews) != '') {
                         $title = get_field('homepage_headline', $latestNews);
@@ -443,10 +530,19 @@
                         $title = get_the_title($latestNews);
                     }
                     ?>
-                <h3 class="show-for-medium"><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+
+                    <?php if (get_field('redirect_story', $latestNews) == 'yes' && get_field('redirect_url', $latestNews) != '') { ?>
+                      <h3 class="show-for-medium"><a href="<?php echo $permalink; ?>" target="_blank"><?php echo $title; ?></a></h3>
+                    <?php } else { ?>
+                      <h3 class="show-for-medium"><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+                    <?php } ?>
               </div>
               <div class="large-3 medium-6 small-7 cell align-self-middle show-for-small-only">
-                <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+                <?php if (get_field('redirect_story', $latestNews) == 'yes' && get_field('redirect_url', $latestNews) != '') { ?>
+                  <h3><a href="<?php echo $permalink; ?>" target="_blank"><?php echo $title; ?></a></h3>
+                <?php } else { ?>
+                  <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+                <?php } ?>
               </div>
                     <?php
                 }

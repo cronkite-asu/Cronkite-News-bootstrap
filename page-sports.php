@@ -1,8 +1,8 @@
 <?php
 
-/*
-  Template Name: Sports pages
-*/
+/**
+ * Template Name: Sports pages
+ */
 
 get_header('sports'); ?>
 

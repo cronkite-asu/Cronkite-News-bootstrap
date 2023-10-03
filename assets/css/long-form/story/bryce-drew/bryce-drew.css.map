@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAgCI,qBAAG;EACD,WAAW,EApBK,uBAAuB;EAqBvC,SAAS,EAAE,MAAM;EACjB,WAAW,EAAE,MAAM;;AAKzB,aAAc;EACZ,MAAM,EAAC,eAAe",
+"sources": ["bryce-drew.scss"],
+"names": [],
+"file": "bryce-drew.css"
+}

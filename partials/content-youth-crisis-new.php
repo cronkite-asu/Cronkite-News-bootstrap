@@ -33,8 +33,8 @@
     </div>
 
 
-    <?php if (have_rows('stories') ) : ?>
-        <?php while ( have_rows('stories') ): the_row(); ?>
+    <?php if (have_rows('stories')) : ?>
+        <?php while (have_rows('stories')): the_row(); ?>
           <div class="large-3 medium-3 small-6 cell">
             <a href="<?php echo get_sub_field('story_link'); ?>">
               <img src="<?php echo get_sub_field('photo'); ?>" />
@@ -45,8 +45,8 @@
         <?php endwhile; ?>
     <?php endif; ?>
 
-    <?php if (have_rows('videos') ) : ?>
-        <?php while ( have_rows('videos') ): the_row(); ?>
+    <?php if (have_rows('videos')) : ?>
+        <?php while (have_rows('videos')): the_row(); ?>
           <div class="large-3 medium-3 small-6 cell">
             <a href="<?php echo get_sub_field('video_link'); ?>">
               <img src="<?php echo get_sub_field('photo'); ?>" />
@@ -118,8 +118,8 @@
       <div class="separador"></div>
     </div>
     <div class="large-12 cell text-center">
-      <a href="https://www.azfoundation.org/" target="_blank" style="margin-right:60px;"><img src="<?php bloginfo('template_directory');?>/assets/img/youth-crisis/azcommunityfoundation-logo.png" alt="Arizona Community Foundation" title="Arizona Community Foundation" /></a>
-      <a href="https://azbroadcasters.org/" target="_blank"><img src="<?php bloginfo('template_directory');?>/assets/img/youth-crisis/aba-logo.jpg" alt="Arizona Broadcasters Association" title="Arizona Broadcasters Association" /></a>
+      <a href="https://www.azfoundation.org/" target="_blank" style="margin-right:60px;"><img src="<?php bloginfo('template_directory'); ?>/assets/img/youth-crisis/azcommunityfoundation-logo.png" alt="Arizona Community Foundation" title="Arizona Community Foundation" /></a>
+      <a href="https://azbroadcasters.org/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/assets/img/youth-crisis/aba-logo.jpg" alt="Arizona Broadcasters Association" title="Arizona Broadcasters Association" /></a>
     </div>
   </div>
 </div>

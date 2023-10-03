@@ -1,13 +1,13 @@
 <?php
-if (have_rows('sports_homepage') ) {
-    while ( have_rows('sports_homepage') ) {
+if (have_rows('sports_homepage')) {
+    while (have_rows('sports_homepage')) {
         the_row();
         // top section
-        if (get_row_layout() == 'sports-main-stories' ) {
+        if (get_row_layout() == 'sports-main-stories') {
             $intro = get_sub_field('intro_summary');
 
 
-        } elseif (get_row_layout() == 'intro-split-code' ) {
+        } elseif (get_row_layout() == 'intro-split-code') {
 
         }
     }
@@ -39,11 +39,11 @@ $topStoriesArray = array();
       <div class="grid-x grid-padding-x">
 
       <?php
-        if (have_rows('sports_homepage') ) {
-            while ( have_rows('sports_homepage') ) {
+        if (have_rows('sports_homepage')) {
+            while (have_rows('sports_homepage')) {
                 the_row();
                 // top section
-                if (get_row_layout() == 'sports-main-stories' ) {
+                if (get_row_layout() == 'sports-main-stories') {
                     $mainStoryList = get_sub_field('main_stories', 180881);
                     if ($mainStoryList) {
                         $mainStoryCounter = 0;
@@ -60,11 +60,11 @@ $topStoriesArray = array();
                                 // save main story ID
                                 $topStoriesArray[] = $mainStory;
                                 ?>
-                    <div class="large-8 medium-12 small-12 cell story">
-                      <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($mainStory); ?></a>
-                      <h2><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h2>
-                      <p><?php echo $summary; ?></p>
-                    </div>
+                                <div class="large-8 medium-12 small-12 cell story">
+                                  <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($mainStory); ?></a>
+                                  <h2><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h2>
+                                  <p><?php echo $summary; ?></p>
+                                </div>
                                 <?php
                             }
                         }
@@ -72,42 +72,42 @@ $topStoriesArray = array();
                 }
             }
         }
-        ?>
+?>
 
         <div class="large-4 medium-12 small-12 cell story slide-aside">
           <div class="grid-x grid-padding-x">
       <?php
-        if (have_rows('sports_homepage') ) {
-            while ( have_rows('sports_homepage') ) {
-                the_row();
-                // top section
-                if (get_row_layout() == 'sports-main-stories' ) {
-                    $mainStoryList = get_sub_field('sports_slide_aside', 180881);
-                    if ($mainStoryList) {
-                        $mainStoryCounter = 0;
-                        foreach ($mainStoryList as $mainStory) {
-                            $permalink = get_permalink($mainStory);
-                            $summary = get_field('story_tease', $mainStory);
-                            if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
-                                $title = get_field('homepage_headline', $mainStory);
-                            } else {
-                                $title = get_the_title($mainStory);
-                            }
+if (have_rows('sports_homepage')) {
+    while (have_rows('sports_homepage')) {
+        the_row();
+        // top section
+        if (get_row_layout() == 'sports-main-stories') {
+            $mainStoryList = get_sub_field('sports_slide_aside', 180881);
+            if ($mainStoryList) {
+                $mainStoryCounter = 0;
+                foreach ($mainStoryList as $mainStory) {
+                    $permalink = get_permalink($mainStory);
+                    $summary = get_field('story_tease', $mainStory);
+                    if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
+                        $title = get_field('homepage_headline', $mainStory);
+                    } else {
+                        $title = get_the_title($mainStory);
+                    }
 
-                            // save top and bottom slide aside ID
-                            $topStoriesArray[] = $mainStory;
-                            ?>
+                    // save top and bottom slide aside ID
+                    $topStoriesArray[] = $mainStory;
+                    ?>
                   <div class="large-12 medium-6 small-6 cell story">
                     <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($mainStory); ?></a>
                     <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                   </div>
                             <?php
-                        }
-                    }
                 }
             }
         }
-        ?>
+    }
+}
+?>
           </div>
         </div>
       </div>
@@ -117,40 +117,40 @@ $topStoriesArray = array();
     <div class="large-3 medium-12 small-12 cell left-column">
       <h4>Top Stories</h4>
       <?php
-        if (have_rows('sports_homepage') ) {
-            while ( have_rows('sports_homepage') ) {
-                the_row();
-                // top section
-                if (get_row_layout() == 'sports-top-stories' ) {
-                    $mainStoryList = get_sub_field('stories', 180881);
-                    ?>
+if (have_rows('sports_homepage')) {
+    while (have_rows('sports_homepage')) {
+        the_row();
+        // top section
+        if (get_row_layout() == 'sports-top-stories') {
+            $mainStoryList = get_sub_field('stories', 180881);
+            ?>
               <ul class="no-bullet top-stories">
                     <?php
-                    if ($mainStoryList) {
-                        $mainStoryCounter = 0;
-                        foreach ($mainStoryList as $mainStory) {
-                            $permalink = get_permalink($mainStory);
-                            $summary = get_field('story_tease', $mainStory);
-                            if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
-                                $title = get_field('homepage_headline', $mainStory);
-                            } else {
-                                $title = get_the_title($mainStory);
-                            }
+            if ($mainStoryList) {
+                $mainStoryCounter = 0;
+                foreach ($mainStoryList as $mainStory) {
+                    $permalink = get_permalink($mainStory);
+                    $summary = get_field('story_tease', $mainStory);
+                    if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
+                        $title = get_field('homepage_headline', $mainStory);
+                    } else {
+                        $title = get_the_title($mainStory);
+                    }
 
-                            // save top and bottom slide aside ID
-                            $topStoriesArray[] = $mainStory;
-                            ?>
+                    // save top and bottom slide aside ID
+                    $topStoriesArray[] = $mainStory;
+                    ?>
                   <li><a href="<?php echo $permalink; ?>" target="_blank"><?php echo $title; ?></a></li>
                             <?php
-                        }
-                    }
-                    ?>
-              </ul>
-                    <?php
                 }
             }
+            ?>
+              </ul>
+                    <?php
         }
-        ?>
+    }
+}
+?>
     </div>
   </div>
 
@@ -158,20 +158,20 @@ $topStoriesArray = array();
     <div class="large-9 medium-12 small-12 cell">
 
     <?php
-    if (have_rows('sports_homepage') ) {
-        while ( have_rows('sports_homepage') ) {
+    if (have_rows('sports_homepage')) {
+        while (have_rows('sports_homepage')) {
             the_row();
             // top section
-            if (get_row_layout() == 'sports-audio' ) {
+            if (get_row_layout() == 'sports-audio') {
                 ?>
           <!-- Cronkite Sports in Focus -->
           <div class="grid-x grid-padding-x">
             <div class="large-12 medium-12 small-12 cell story audio-block">
-              <h4>Cronkite Sports in Focus</h4>
+              <h4>The Sweet Spot</h4>
                 <?php echo get_sub_field('sports-audio-embed', 180881); ?>
             </div>
           </div>
-            <?php } else if (get_row_layout() == 'sports-video-section') { ?>
+            <?php } elseif (get_row_layout() == 'sports-video-section') { ?>
           <!-- Cronkite Sports Report -->
           <div class="grid-x grid-padding-x">
             <div class="large-12 medium-12 small-12 cell story audio-block">
@@ -180,7 +180,7 @@ $topStoriesArray = array();
             </div>
           </div>
 
-            <?php } else if (get_row_layout() == 'sports-photos-gallery') { ?>
+            <?php } elseif (get_row_layout() == 'sports-photos-gallery') { ?>
 
           <!-- photo gallery -->
           <div class="grid-x grid-padding-x photo-gallery">
@@ -202,7 +202,7 @@ $topStoriesArray = array();
             </div>
           </div>
 
-            <?php } else if (get_row_layout() == 'sports-latest-stories') { ?>
+            <?php } elseif (get_row_layout() == 'sports-latest-stories') { ?>
 
           <!-- latest stories -->
           <div class="grid-x grid-padding-x latest-news">
@@ -247,7 +247,7 @@ $topStoriesArray = array();
                 ?>
           </div>
 
-            <?php } else if (get_row_layout() == 'sports-custom-section') { ?>
+            <?php } elseif (get_row_layout() == 'sports-custom-section') { ?>
 
           <!-- custom stories -->
           <div class="grid-x grid-padding-x custom-section">
@@ -286,17 +286,17 @@ $topStoriesArray = array();
             }
         }
     }
-    ?>
+?>
     </div>
 
     <div class="large-3 medium-12 small-12 cell">
       <?php
-        if (have_rows('sports_homepage') ) {
-            while ( have_rows('sports_homepage') ) {
-                the_row();
-                // top section
-                if (get_row_layout() == 'sports-report' ) {
-                    ?>
+    if (have_rows('sports_homepage')) {
+        while (have_rows('sports_homepage')) {
+            the_row();
+            // top section
+            if (get_row_layout() == 'sports-report') {
+                ?>
             <div class="grid-x grid-padding-x sports-report">
               <div class="large-12 medium-12 small-12 cell story">
                 <h4>Cronkite Sports Report</h4>
@@ -307,8 +307,8 @@ $topStoriesArray = array();
               </div>
             </div>
                     <?php
-                } else if (get_row_layout() == 'sports-twitter' ) {
-                    ?>
+            } elseif (get_row_layout() == 'sports-twitter') {
+                ?>
             <div class="grid-x grid-padding-x twitter-embed">
               <div class="large-12 medium-12 small-12 cell story">
                 <h4>Sports Twitter</h4>
@@ -318,10 +318,10 @@ $topStoriesArray = array();
               </div>
             </div>
                     <?php
-                }
             }
         }
-        ?>
+    }
+?>
     </div>
   </div>
 </div>

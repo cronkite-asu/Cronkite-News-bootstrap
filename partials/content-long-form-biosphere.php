@@ -1,5 +1,5 @@
 <?php
-  $settings = get_field('longform-settings');
+$settings = get_field('longform-settings');
 if ($settings['header'] == 'longform') {
     get_header('new-long-form');
 } else {
@@ -34,101 +34,103 @@ function generateByline($currPostID, $currIntro, $publishDate, $style)
                                    'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
                                    'special-to-cronkite-news' => ""
                                   );
-            $externalAuthorCount = 1;
-            $internalAuthorCount = 0;
-            $commaSeparator = ',';
-            $andSeparator = ' and ';
-            $cnStaffCount = 0;
-            $newCheck = 0;
+    $externalAuthorCount = 1;
+    $internalAuthorCount = 0;
+    $commaSeparator = ',';
+    $andSeparator = ' and ';
+    $cnStaffCount = 0;
+    $newCheck = 0;
 
-            // bypass group not showing repeater field issue
-            $groupFields = get_field('byline_info');
-            $externalAuthorRepeater = $groupFields['external_authors_repeater'];
+    // bypass group not showing repeater field issue
+    $groupFields = get_field('byline_info');
+    $externalAuthorRepeater = $groupFields['external_authors_repeater'];
 
-            $normalizeChars = array(
-               'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
-               'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
-               'Ï'=>'I', 'Ñ'=>'N', 'Ń'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
-               'Û'=>'U', 'Ü'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'Ss','à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a',
-               'å'=>'a', 'æ'=>'a', 'ç'=>'c', 'è'=>'e', 'é'=>'e', 'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i',
-               'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ń'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
-               'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f',
-               'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
-            );
+    $normalizeChars = array(
+       'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
+       'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
+       'Ï'=>'I', 'Ñ'=>'N', 'Ń'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
+       'Û'=>'U', 'Ü'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'Ss','à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a',
+       'å'=>'a', 'æ'=>'a', 'ç'=>'c', 'è'=>'e', 'é'=>'e', 'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i',
+       'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ń'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
+       'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f',
+       'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
+    );
 
-            if (have_rows('byline_info')) {
-                $sepCounter = 0;
-                //echo '<!--HERE BYLINE NEW-->';
-                echo '<span class="author_name">By ';
-                while (have_rows('byline_info')) {
-                    the_row();
-                    $staffID = get_sub_field('cn_staff');
-                    $cnStaffCount = count($staffID);
+    if (have_rows('byline_info')) {
+        $sepCounter = 0;
+        //echo '<!--HERE BYLINE NEW-->';
+        echo '<span class="author_name">By ';
+        while (have_rows('byline_info')) {
+            the_row();
+            $staffID = get_sub_field('cn_staff');
+            if (is_countable($staffID)) {
+                $cnStaffCount = count($staffID);
 
-                    foreach ($staffID as $key => $val) {
-                        $args = array(
-                                  'post_type'   => 'students',
-                                  'post_status' => 'publish',
-                                  'p' => $val
-                                );
+                foreach ($staffID as $key => $val) {
+                    $args = array(
+                    'post_type'   => 'students',
+                    'post_status' => 'publish',
+                    'p' => $val
+                    );
 
-                        $staffDetails = new WP_Query($args);
-                        if ($staffDetails->have_posts()) {
-                            while ($staffDetails->have_posts()) {
-                                $staffDetails->the_post();
-                                $sepCounter++;
+                    $staffDetails = new WP_Query($args);
+                    if ($staffDetails->have_posts()) {
+                        while ($staffDetails->have_posts()) {
+                            $staffDetails->the_post();
+                            $sepCounter++;
 
-                                $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))));
-                                $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
+                            $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))));
+                            $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
 
-                                echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank">'.get_the_title($val).'</a>';
-                                if ($sepCounter != $cnStaffCount) {
-                                    if ($sepCounter == ($cnStaffCount - 1)) {
-                                        echo $andSeparator.' ';
-                                    } else {
-                                        echo $commaSeparator.' ';
-                                    }
+                            echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank">'.get_the_title($val).'</a>';
+                            if ($sepCounter != $cnStaffCount) {
+                                if ($sepCounter == ($cnStaffCount - 1)) {
+                                    echo $andSeparator.' ';
+                                } else {
+                                    echo $commaSeparator.' ';
                                 }
                             }
                         }
-                        $newCheck++;
                     }
-                    if ($cnStaffCount > 0 && $staffID != '') {
-                        echo '/Cronkite News</span>';
-                    }
-                }
-                //wp_reset_query();
-
-                if (is_countable($externalAuthorRepeater) && count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
-                    $extStaffCount = count($externalAuthorRepeater);
-                    if ($groupFields['cn_staff'] != '') {
-                        echo ' and ';
-                    }
-                    $sepCounter = 0;
-                    foreach ($externalAuthorRepeater as $key => $val ) {
-                        $sepCounter++;
-                        echo $val['external_authors'];
-                        if ($val['author_title_site'] != '' || $val['author_title_site'] != 'other') {
-                            if (array_key_exists($val['author_title_site'], $externalSites) == true) {
-                                echo '/<a href="'.$externalSites[$val['author_title_site']].'" target="_blank">'.ucwords(str_replace('-', ' ', $val['author_title_site'])).'</a>';
-                            } else {
-                                echo '/'.str_replace('For', 'for', ucwords(str_replace('-', ' ', $val['author_title_site'])));
-                            }
-                        }
-                        if ($sepCounter != $extStaffCount) {
-                            if ($sepCounter == ($extStaffCount - 1)) {
-                                echo $andSeparator.' ';
-                            } else {
-                                echo $commaSeparator.' ';
-                            }
-                        }
-                    }
-                    echo '</span>';
                     $newCheck++;
                 }
-
+                if ($cnStaffCount > 0 && $staffID != '') {
+                    echo '/Cronkite News</span>';
+                }
             }
-            ?>
+        }
+        //wp_reset_query();
+
+        if (is_countable($externalAuthorRepeater) && count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
+            $extStaffCount = count($externalAuthorRepeater);
+            if ($groupFields['cn_staff'] != '') {
+                echo ' and ';
+            }
+            $sepCounter = 0;
+            foreach ($externalAuthorRepeater as $key => $val) {
+                $sepCounter++;
+                echo $val['external_authors'];
+                if ($val['author_title_site'] != '' || $val['author_title_site'] != 'other') {
+                    if (array_key_exists($val['author_title_site'], $externalSites) == true) {
+                        echo '/<a href="'.$externalSites[$val['author_title_site']].'" target="_blank">'.ucwords(str_replace('-', ' ', $val['author_title_site'])).'</a>';
+                    } else {
+                        echo '/'.str_replace('For', 'for', ucwords(str_replace('-', ' ', $val['author_title_site'])));
+                    }
+                }
+                if ($sepCounter != $extStaffCount) {
+                    if ($sepCounter == ($extStaffCount - 1)) {
+                        echo $andSeparator.' ';
+                    } else {
+                        echo $commaSeparator.' ';
+                    }
+                }
+            }
+            echo '</span>';
+            $newCheck++;
+        }
+
+    }
+    ?>
           </span>
           <?php wp_reset_postdata(); ?>
           <span class="pubdate">
@@ -151,10 +153,10 @@ function generateByline($currPostID, $currIntro, $publishDate, $style)
 }
 
 
-if (have_rows('blocks') ) {
-    while ( have_rows('blocks') ) {
+if (have_rows('blocks')) {
+    while (have_rows('blocks')) {
         the_row();
-        if (get_row_layout() == 'intro-split' ) {
+        if (get_row_layout() == 'intro-split') {
             $intro = get_sub_field('intro_summary');
             ?>
   <div id="intro" class="grid-container full">
@@ -167,15 +169,15 @@ if (have_rows('blocks') ) {
                 <?php echo get_sub_field('intro_summary'); ?>
             <?php } ?>
       </div>
-      <div class="large-6 medium-6 small-12 cell background-img" <?php echo 'style="background:url('.get_sub_field('photo').')"';?>>
+      <div class="large-6 medium-6 small-12 cell background-img" <?php echo 'style="background:url('.get_sub_field('photo').')"'; ?>>
         <span class="photo-credit"><?php echo get_sub_field('credits'); ?></span>
       </div>
     </div>
   </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
             <?php
-        } elseif (get_row_layout() == 'intro-split-code' ) {
+        } elseif (get_row_layout() == 'intro-split-code') {
             ?>
   <div id="intro" class="grid-container full">
     <div class="grid-x grid-padding-x">
@@ -357,7 +359,7 @@ if (have_rows('blocks') ) {
             <?php } ?>
 
       </div>
-      <div class="large-6 medium-12 small-12 cell background-img" <?php echo 'style="background:url('.get_sub_field('photo').')"';?>>
+      <div class="large-6 medium-12 small-12 cell background-img" <?php echo 'style="background:url('.get_sub_field('photo').')"'; ?>>
             <?php echo get_sub_field('code-block'); ?>
             <?php if (get_sub_field('credits') != '') { ?>
         <span class="photo-credit"><?php echo get_sub_field('credits'); ?></span>
@@ -365,10 +367,10 @@ if (have_rows('blocks') ) {
       </div>
     </div>
   </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
             <?php
-        } elseif (get_row_layout() == 'fullscreen-video' ) {
+        } elseif (get_row_layout() == 'fullscreen-video') {
             ?>
 <div id="fullscreen-video" class="grid-container full <?php echo get_sub_field('custom-class'); ?>">
   <div class="grid-x grid-padding-x">
@@ -395,7 +397,7 @@ if (have_rows('blocks') ) {
                 <?php } ?>
           </h1>
             <?php } ?>
-            <?php //echo get_sub_field('intro_summary'); ?>
+            <?php //echo get_sub_field('intro_summary');?>
       </div>
       <video autoplay muted playsinline crossorigin loop>
         <source src="<?php echo get_sub_field('video-url'); ?>" type="video/mp4" />
@@ -414,7 +416,7 @@ if (have_rows('blocks') ) {
                 <?php } ?>
           </h1>
             <?php } ?>
-            <?php //echo get_sub_field('intro_summary'); ?>
+            <?php //echo get_sub_field('intro_summary');?>
       </div>
       <video autoplay muted playsinline crossorigin loop>
         <source src="<?php echo get_sub_field('video-url'); ?>" type="video/mp4" />
@@ -426,11 +428,11 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
             <?php
-        } elseif (get_row_layout() == 'intro-scale' ) {
+        } elseif (get_row_layout() == 'intro-scale') {
             ?>
 <div id="intro-scale" class="grid-container full show-for-medium">
   <div class="grid-x grid-padding-x">
@@ -465,10 +467,10 @@ if (have_rows('blocks') ) {
             <?php } ?>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
             <?php
-        } elseif (get_row_layout() == 'intro-head-photo-overlay' ) {
+        } elseif (get_row_layout() == 'intro-head-photo-overlay') {
             $intro = get_sub_field('intro_summary');
             ?>
 <div id="intro-head-photo-overlay" class="grid-container full">
@@ -504,7 +506,7 @@ if (have_rows('blocks') ) {
             <?php } else { ?>
           <h1 class="absolute-text"><?php echo get_sub_field('headline'); ?></h1>
             <?php } ?>
-            <?php //echo get_sub_field('intro_summary'); ?>
+            <?php //echo get_sub_field('intro_summary');?>
       </div>
       <img src="<?php echo get_sub_field('photo'); ?>" alt="<?php echo strip_tags(get_sub_field('credits')); ?>" title="<?php echo strip_tags(get_sub_field('credits')); ?>" />
     </div>
@@ -513,12 +515,12 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
 
             <?php
-        } elseif (get_row_layout() == 'intro-photo-story-headline' ) {
+        } elseif (get_row_layout() == 'intro-photo-story-headline') {
             ?>
 <div id="intro-photo-gallery-overlay" class="grid-container full">
   <div class="large-12 medium-12 small-12 cell intro-text text-center show-for-small-only">
@@ -565,10 +567,10 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, 'author-open'); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, 'author-open'); ?>
 
             <?php
-        } elseif (get_row_layout() == 'intro-head-photo' ) {
+        } elseif (get_row_layout() == 'intro-head-photo') {
             $intro = get_sub_field('intro_summary');
             ?>
 <div id="intro-head-photo" class="grid-container full">
@@ -613,11 +615,11 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
             <?php
-        } elseif (get_row_layout() == 'intro-head-slider' ) {
+        } elseif (get_row_layout() == 'intro-head-slider') {
             $intro = get_sub_field('intro_summary');
             ?>
 <div id="intro-head-slider" class="grid-container">
@@ -671,11 +673,11 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
             <?php
-        } elseif (get_row_layout() == 'intro-code-only' ) {
+        } elseif (get_row_layout() == 'intro-code-only') {
             $intro = get_sub_field('intro_summary');
             $sectionClass = get_sub_field('class');
             ?>
@@ -694,11 +696,11 @@ if (have_rows('blocks') ) {
             ?>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
 
             <?php
-        } elseif (get_row_layout() == 'intro-head-video' ) {
+        } elseif (get_row_layout() == 'intro-head-video') {
             $intro = get_sub_field('intro_summary');
             ?>
 <div id="intro-head-photo" class="grid-container">
@@ -730,10 +732,10 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
             <?php
-        } elseif (get_row_layout() == 'intro-fadeout-protrait-images' ) {
+        } elseif (get_row_layout() == 'intro-fadeout-protrait-images') {
             $intro = get_sub_field('intro_summary');
             ?>
 
@@ -757,9 +759,9 @@ if (have_rows('blocks') ) {
             ?>
 
     <div class="large-12 medium-12 small-12 cell text-center <?php echo $photoStyle; ?>">
-            <?php if (have_rows('photos') ) { ?>
+            <?php if (have_rows('photos')) { ?>
                 <?php $counter = 0; ?>
-                <?php while ( have_rows('photos') ) {
+                <?php while (have_rows('photos')) {
                     the_row(); ?>
           <img src="<?php echo get_sub_field('photo'); ?>" class="img-<?php echo $counter++; ?>" alt="<?php echo strip_tags(get_sub_field('credits')); ?>" title="<?php echo strip_tags(get_sub_field('credits')); ?>" />
                 <?php } ?>
@@ -779,13 +781,13 @@ if (have_rows('blocks') ) {
     </div>
   </div>
 </div>
-            <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+            <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
 
             <?php
-        } elseif (get_row_layout() == 'text-block' ) {
+        } elseif (get_row_layout() == 'text-block') {
 
             $textBlockSettings = get_sub_field('settings');
-            if ($textBlockSettings['regular'] == 'size') {
+            if (isset($textBlockSettings['regular']) && $textBlockSettings['regular'] == 'size') {
                 $textWidth = '';
             } else {
                 $textWidth = 'full';
@@ -801,7 +803,7 @@ if (have_rows('blocks') ) {
   </div>
 
             <?php
-        } elseif (get_row_layout() == 'video-embed' ) {
+        } elseif (get_row_layout() == 'video-embed') {
 
             $settings = get_sub_field('video-content-settings');
             if ($settings['width'] == 'large-width') {
@@ -835,7 +837,7 @@ if (have_rows('blocks') ) {
             <?php
             if ($settings['video-player'] == 'regular-embed' || $settings['video-player'] == '') {
                 echo get_sub_field('embed');
-            } else if ($settings['video-player'] == 'plyr-embed' && get_sub_field('embed') == '') {
+            } elseif ($settings['video-player'] == 'plyr-embed' && get_sub_field('embed') == '') {
                 ?>
         <div class="movie-poster-overlay">
           <video autoplay muted playsinline crossorigin loop>
@@ -884,7 +886,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        } elseif (get_row_layout() == 'video-2up-content' ) {
+        } elseif (get_row_layout() == 'video-2up-content') {
 
             $settings = get_sub_field('settings');
             if ($settings['width'] == 'large-width') {
@@ -910,8 +912,8 @@ if (have_rows('blocks') ) {
 
             <?php
                 $captionCounter = 0;
-            if (have_rows('videos') ) {
-                while ( have_rows('videos') ) {
+            if (have_rows('videos')) {
+                while (have_rows('videos')) {
                     the_row();
                     ?>
             <div class="large-6 medium-6 small-6 cell">
@@ -947,7 +949,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        } elseif (get_row_layout() == 'single-photo-block' ) {
+        } elseif (get_row_layout() == 'single-photo-block') {
 
             $settings = get_sub_field('single-photo-settings');
             if ($settings['width'] == 'large-width') {
@@ -968,8 +970,8 @@ if (have_rows('blocks') ) {
 
             <?php
             $captionCounter = 0;
-            if (have_rows('photos') ) {
-                while ( have_rows('photos') ) {
+            if (have_rows('photos')) {
+                while (have_rows('photos')) {
                     the_row();
                     ?>
                           <div class="large-12 medium-12 small-12 cell text-center">
@@ -983,7 +985,7 @@ if (have_rows('blocks') ) {
                         } elseif ($captionCounter == 2 && get_sub_field('caption') != '') {
                             $combinedCaption .= ' <strong>Right:</strong> '. strip_tags(get_sub_field('caption'), '<a>');
                         }
-                                  $captionCounter++;
+                        $captionCounter++;
                     }
                     ?>
                           </div>
@@ -1003,7 +1005,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        } elseif (get_row_layout() == 'single-photo-block-full-width' ) {
+        } elseif (get_row_layout() == 'single-photo-block-full-width') {
 
             $settings = get_sub_field('single-photo-full-width-settings');
             if ($settings['width'] == 'large-width') {
@@ -1024,8 +1026,8 @@ if (have_rows('blocks') ) {
 
             <?php
             $captionCounter = 0;
-            if (have_rows('photos') ) {
-                while ( have_rows('photos') ) {
+            if (have_rows('photos')) {
+                while (have_rows('photos')) {
                     the_row();
                     ?>
                           <div class="large-12 medium-12 small-12 cell text-center">
@@ -1039,7 +1041,7 @@ if (have_rows('blocks') ) {
                         } elseif ($captionCounter == 2 && get_sub_field('caption') != '') {
                             $combinedCaption .= ' <strong>Right:</strong> '. strip_tags(get_sub_field('caption'), '<a>');
                         }
-                                  $captionCounter++;
+                        $captionCounter++;
                     }
                     ?>
                           </div>
@@ -1059,7 +1061,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        } elseif (get_row_layout() == 'photo-slideshow' ) {
+        } elseif (get_row_layout() == 'photo-slideshow') {
 
             $settings = get_sub_field('slideshow-settings');
             if ($settings['width'] == 'large-width') {
@@ -1074,11 +1076,11 @@ if (have_rows('blocks') ) {
         <div class="large-12 medium-12 small-12 cell">
             <?php
             $captionCounter = 0;
-            if (have_rows('photos') ) {
+            if (have_rows('photos')) {
                 ?>
           <div id="story-slideshow" class="story-slideshow">
                 <?php
-                while ( have_rows('photos') ) {
+                while (have_rows('photos')) {
                     the_row();
                     ?>
                 <div>
@@ -1094,7 +1096,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        } elseif (get_row_layout() == 'fullscreen-slideshow' ) {
+        } elseif (get_row_layout() == 'fullscreen-slideshow') {
             ?>
 
     <div class="grid-container fullscreen-photo-content show-for-medium">
@@ -1102,12 +1104,12 @@ if (have_rows('blocks') ) {
         <div class="large-12 medium-12 small-12 cell">
             <?php
               $captionCounter = 0;
-            if (have_rows('photos') ) {
+            if (have_rows('photos')) {
                 ?>
 
           <div class="process-wrap">
             <div class="process">
-                <?php while ( have_rows('photos') ) {
+                <?php while (have_rows('photos')) {
                     the_row(); ?>
               <div class="process__item">
                 <img src="<?php echo get_sub_field('photo'); ?>" />
@@ -1123,16 +1125,16 @@ if (have_rows('blocks') ) {
       </div>
     </div>
 
-    <div class="grid-container photo-content single <?php echo $photoWidth; ?> show-for-small-only">
+    <div class="grid-container photo-content single <?php echo $photoWidth ?? ''; ?> show-for-small-only">
       <div class="grid-x grid-padding-x">
         <div class="large-12 medium-12 small-12 cell">
             <?php
               $captionCounter = 0;
-            if (have_rows('photos') ) {
+            if (have_rows('photos')) {
                 ?>
           <div id="story-slideshow" class="story-slideshow">
                 <?php
-                while ( have_rows('photos') ) {
+                while (have_rows('photos')) {
                     the_row();
                     ?>
                 <div>
@@ -1148,7 +1150,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        } elseif (get_row_layout() == 'table-photo-content' ) {
+        } elseif (get_row_layout() == 'table-photo-content') {
 
             $settings = get_sub_field('photo-content-sxs-settings');
             if ($settings['order'] == 'photo-left') {
@@ -1180,7 +1182,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        } elseif (get_row_layout() == 'table-video-content' ) {
+        } elseif (get_row_layout() == 'table-video-content') {
 
             $settings = get_sub_field('photo-content-sxs-settings');
             if ($settings['order'] == 'photo-left') {
@@ -1213,7 +1215,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        } elseif (get_row_layout() == 'photo-text-sxs' ) {
+        } elseif (get_row_layout() == 'photo-text-sxs') {
 
             $settings = get_sub_field('photo-text-sxs-settings');
             if ($settings['photo-position'] == 'photo-left') {
@@ -1246,7 +1248,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        } elseif (get_row_layout() == 'data-viz-2up-content' ) {
+        } elseif (get_row_layout() == 'data-viz-2up-content') {
             ?>
 
     <div class="grid-container" style="padding:25px 0;">
@@ -1263,7 +1265,7 @@ if (have_rows('blocks') ) {
     </div>
 
             <?php
-        } elseif (get_row_layout() == 'pure-code-block' ) {
+        } elseif (get_row_layout() == 'pure-code-block') {
             ?>
 
     <div class="grid-container full show-for-medium">
@@ -1283,10 +1285,10 @@ if (have_rows('blocks') ) {
     </div>
 
             <?php if (is_single(166978)) { ?>
-                <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
+                <?php generateByline(get_the_ID(), isset($intro) ? $intro : "", $publishDate, ''); ?>
             <?php } ?>
             <?php
-        } elseif (get_row_layout() == 'charts-doc' ) {
+        } elseif (get_row_layout() == 'charts-doc') {
 
             if (get_sub_field('chart-width') == 'full-width') {
                 $fullWidth = 'full';
@@ -1334,7 +1336,7 @@ if (have_rows('blocks') ) {
             <?php } ?>
 
             <?php
-        } elseif (get_row_layout() == '2up-photos-block' ) {
+        } elseif (get_row_layout() == '2up-photos-block') {
             ?>
 
     <div class="grid-container photo-content">
@@ -1342,8 +1344,8 @@ if (have_rows('blocks') ) {
 
             <?php
             $captionCounter = 0;
-            if (have_rows('photos') ) {
-                while ( have_rows('photos') ) {
+            if (have_rows('photos')) {
+                while (have_rows('photos')) {
                     the_row();
                     ?>
                           <div class="large-6 medium-6 small-6 cell">
@@ -1355,7 +1357,7 @@ if (have_rows('blocks') ) {
                         } elseif ($captionCounter == 1 && get_sub_field('caption') != '') {
                             $combinedCaption .= ' <strong>Right:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
                         }
-                                  $captionCounter++;
+                        $captionCounter++;
                     }
                     ?>
                           </div>
@@ -1374,7 +1376,7 @@ if (have_rows('blocks') ) {
     </div>
 
             <?php
-        } elseif (get_row_layout() == '3up-photos-block' ) {
+        } elseif (get_row_layout() == '3up-photos-block') {
 
             $settings = get_sub_field('3up-settings');
             if ($settings['full-width-no-padding'] == 'yes') {
@@ -1395,16 +1397,16 @@ if (have_rows('blocks') ) {
 
             <?php
             $captionCounter = 0;
-              $photoCounter = 0;
-            if (have_rows('photos') ) {
-                while ( have_rows('photos') ) {
+            $photoCounter = 0;
+            if (have_rows('photos')) {
+                while (have_rows('photos')) {
                     the_row();
-                        $photoCounter++;
+                    $photoCounter++;
                 }
             }
 
-            if (have_rows('photos') ) {
-                while ( have_rows('photos') ) {
+            if (have_rows('photos')) {
+                while (have_rows('photos')) {
                     the_row();
                     if ($photoCounter >= 4) {
                         ?>
@@ -1429,14 +1431,14 @@ if (have_rows('blocks') ) {
                             } elseif ($captionCounter == 3 && get_sub_field('caption') != '') {
                                 $combinedCaption .= strip_tags(get_sub_field('caption'), '<a><span>');
                             }
-                                $captionCounter++;
+                            $captionCounter++;
                         }
                     } else {
                         if (get_sub_field('caption') != '') {
                             if ($captionCounter == 0 && get_sub_field('caption') != '') {
-                                 $combinedCaption = '<strong>Left:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
+                                $combinedCaption = '<strong>Left:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
                             } elseif ($captionCounter == 1 && get_sub_field('caption') != '') {
-                                 $combinedCaption .= ' <strong>Center:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
+                                $combinedCaption .= ' <strong>Center:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
                             } elseif ($captionCounter == 2 && get_sub_field('caption') != '') {
                                 $combinedCaption .= ' <strong>Right:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
                             } elseif ($captionCounter == 3 && get_sub_field('caption') != '') {
@@ -1463,7 +1465,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        } elseif (get_row_layout() == 'content-above-photo-audio' ) {
+        } elseif (get_row_layout() == 'content-above-photo-audio') {
             ?>
 
     <div id="profile-audio" class="grid-container">
@@ -1475,8 +1477,8 @@ if (have_rows('blocks') ) {
 
             <?php
             $audioCounter = 0;
-            if (have_rows('photo-group') ) {
-                while ( have_rows('photo-group') ) {
+            if (have_rows('photo-group')) {
+                while (have_rows('photo-group')) {
                     the_row();
                     ?>
                           <div class="large-4 medium-4 small-12 cell">
@@ -1501,7 +1503,7 @@ if (have_rows('blocks') ) {
 
 
             <?php
-        } elseif (get_row_layout() == 'large-photo-2-verticals' ) {
+        } elseif (get_row_layout() == 'large-photo-2-verticals') {
             ?>
 
     <div class="grid-container large-photo-verticals">
@@ -1514,8 +1516,8 @@ if (have_rows('blocks') ) {
         <div class="large-4 medium-4 small-12 cell">
             <?php
             $captionCounter = 0;
-            if (have_rows('vertical-photos') ) {
-                while ( have_rows('vertical-photos') ) {
+            if (have_rows('vertical-photos')) {
+                while (have_rows('vertical-photos')) {
                     the_row();
                     ?>
               <div class="grid-x grid-padding-x">
@@ -1530,7 +1532,7 @@ if (have_rows('blocks') ) {
                         } elseif ($captionCounter == 2 && get_sub_field('caption') != '') {
                             $combinedCaption .= ' <strong>Right:</strong> '. strip_tags(get_sub_field('caption'), '<a>');
                         }
-                                  $captionCounter++;
+                        $captionCounter++;
                     }
                     ?>
                           </div>
@@ -1551,7 +1553,7 @@ if (have_rows('blocks') ) {
     </div>
 
             <?php
-        } elseif (get_row_layout() == 'horizontal-photos-vertical' ) {
+        } elseif (get_row_layout() == 'horizontal-photos-vertical') {
             $verticalSettings = get_sub_field('vertical-photo');
             ?>
 
@@ -1560,11 +1562,11 @@ if (have_rows('blocks') ) {
 
             <?php
             $captionCounter = 0;
-            if (have_rows('horizontal-photos') ) {
+            if (have_rows('horizontal-photos')) {
                 ?>
           <div class="large-8 medium-8 small-12 cell">
             <div class="grid-x grid-margin-x">
-                <?php while ( have_rows('horizontal-photos') ) {
+                <?php while (have_rows('horizontal-photos')) {
                     the_row(); ?>
               <div class="large-12 medium-12 small-12 cell">
                           <img src="<?php echo get_sub_field('photo'); ?>"  />
@@ -1625,14 +1627,14 @@ if ($inthisseriesSettings['show'] == 'yes') {
         <div class="in-this-series">
           <?php
             $upcomingStoryList = $inthisseriesSettings['upcoming-stories'];
-            if ($upcomingStoryList != '') {
-                foreach ($upcomingStoryList as $upcomingStory) {
-                    if ($upcomingStory['story-posted'] == 'no') {
-                        ?>
+        if ($upcomingStoryList != '') {
+            foreach ($upcomingStoryList as $upcomingStory) {
+                if ($upcomingStory['story-posted'] == 'no') {
+                    ?>
               <div>
                         <?php
-                        if ($upcomingStory['photo'] == '') {
-                            ?>
+                    if ($upcomingStory['photo'] == '') {
+                        ?>
                    <div class="preview">Coming Soon</div>
                         <?php } else { ?>
                   <div class="img-preview">
@@ -1669,9 +1671,9 @@ if ($inthisseriesSettings['show'] == 'yes') {
               </div>
                         <?php
                     }
-                }
             }
-            ?>
+        }
+        ?>
         </div>
       </div>
     </div>
@@ -1735,321 +1737,314 @@ if ($inthisseriesSettings['show'] == 'yes') {
                 $photogID = get_sub_field('cn_photographers');
                 $broadcastID = get_sub_field('cn_broadcast_reporters');
                 $dataVisualizerID = get_sub_field('cn_data_visualizer');
+                if (is_countable($staffID)) {
+                    foreach ($staffID as $key => $val) {
+                        echo '<div class="author_bio">';
+                        $args = array(
+                        'post_type'   => 'students',
+                        'post_status' => 'publish',
+                        'p' => $val
+                        );
 
-                foreach ($staffID as $key => $val) {
-                    echo '<div class="author_bio">';
-                    $args = array(
-                              'post_type'   => 'students',
-                              'post_status' => 'publish',
-                              'p' => $val
-                             );
+                        $staffDetails = new WP_Query($args);
+                        if ($staffDetails->have_posts()) {
 
-                    $staffDetails = new WP_Query($args);
-                    if ($staffDetails->have_posts()) {
+                            while ($staffDetails->have_posts()) {
+                                $staffDetails->the_post();
 
-                        while ($staffDetails->have_posts()) {
-                            $staffDetails->the_post();
+                                $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))));
 
-                            $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))));
-
-                            if (get_field('student_photo') != '') {
-                                echo '<div class="author_photo post">';
-                                if ($staffNameURLSafe == 'staff') {
-                                    echo '<img src="'.get_field('student_photo').'" class="cn-staff-bio-circular staff" alt="'.get_the_title($staffID).'" />';
-                                } else {
-                                    echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank"><img src="'.get_field('student_photo').'" class="cn-staff-bio-circular" alt="'.get_the_title($staffID).'" /></a>';
+                                if (get_field('student_photo') != '') {
+                                    echo '<div class="author_photo post">';
+                                    if ($staffNameURLSafe == 'staff') {
+                                        echo '<img src="'.get_field('student_photo').'" class="cn-staff-bio-circular staff" alt="'.get_the_title($staffID).'" />';
+                                    } else {
+                                        echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank"><img src="'.get_field('student_photo').'" class="cn-staff-bio-circular" alt="'.get_the_title($staffID).'" /></a>';
+                                    }
+                                    echo '</div>';
                                 }
-                                echo '</div>';
-                            }
 
-                            echo '<div class="bio post">';
+                                echo '<div class="bio post">';
 
-                            if (get_the_title($val) != '') {
-                                if ($staffNameURLSafe == 'staff') {
-                                    echo '<p class="name">'.get_the_title($val).'</p>';
+                                if (get_the_title($val) != '') {
+                                    if ($staffNameURLSafe == 'staff') {
+                                        echo '<p class="name">'.get_the_title($val).'</p>';
+                                    } else {
+                                        echo '<p class="name"><a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank">'.get_the_title($val).'</a></p>';
+                                    }
                                 } else {
-                                    echo '<p class="name"><a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank">'.get_the_title($val).'</a></p>';
+                                    echo '<p class="name">'.'No author name found.'.'</p>';
                                 }
-                            } else {
-                                echo '<p class="name">'.'No author name found.'.'</p>';
-                            }
 
-                            if (get_field('student_title') != '') {
+                                if (get_field('student_title') != '') {
                                     echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('student_title'))).'</span>';
-                            } else if (get_field('team') != '' || get_field('role') != '' || get_field('bureau') != '') {
-                                   echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('team'))).' '.ucwords(str_replace('-', ' ', get_field('role'))).', '.str_replace('Washington Dc', 'Washington, D.C.', ucwords(str_replace('-', ' ', get_field('bureau')))).'</span>';
-                            }
+                                } elseif (get_field('team') != '' || get_field('role') != '' || get_field('bureau') != '') {
+                                    echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('team'))).' '.ucwords(str_replace('-', ' ', get_field('role'))).', '.str_replace('Washington Dc', 'Washington, D.C.', ucwords(str_replace('-', ' ', get_field('bureau')))).'</span>';
+                                }
 
-                            if (get_field('biography') != '') {
-                                  echo '<span class="member-bio post">'.get_field('biography').'</span>';
-                            } else {
+                                if (get_field('biography') != '') {
+                                    echo '<span class="member-bio post">'.get_field('biography').'</span>';
+                                } else {
 
-                            }
+                                }
 
-                            if (have_rows('social_media_outlets') ) {
-                                echo '<div class="author_social_links">';
-                                while ( have_rows('social_media_outlets') ) {
-                                      the_row();
-                                    if (get_sub_field('social_media_type') != '' && get_sub_field('social_media_handle') != '') {
-                                        if (get_sub_field('social_media_type') == 'twitter') {
-                                            ?>
+                                if (have_rows('social_media_outlets')) {
+                                    echo '<div class="author_social_links">';
+                                    while (have_rows('social_media_outlets')) {
+                                        the_row();
+                                        if (get_sub_field('social_media_type') != '' && get_sub_field('social_media_handle') != '') {
+                                            if (get_sub_field('social_media_type') == 'twitter') {
+                                                ?>
                              <a href="https://www.twitter.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-twitter"></i></a>
-                                        <?php } else if (get_sub_field('social_media_type') == 'email') { ?>
+                                            <?php } elseif (get_sub_field('social_media_type') == 'email') { ?>
                              <a href="mailto:<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fas fa-envelope"></i></a>
-                                        <?php } else if (get_sub_field('social_media_type') == 'instagram') { ?>
+                                            <?php } elseif (get_sub_field('social_media_type') == 'instagram') { ?>
                              <a href="https://www.instagram.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
-                                        <?php } else if (get_sub_field('social_media_type') == 'linkedin') { ?>
+                                            <?php } elseif (get_sub_field('social_media_type') == 'linkedin') { ?>
                              <a href="https://www.linkedin.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                            <?php
+                                                <?php
+                                            }
                                         }
                                     }
-                                }
-                                   echo '</div>';
-                            }
-                            echo '</div>';
-                        }
-                    }
-                    echo '</div>';
-                }
-
-                // show broadcast
-                foreach ($broadcastID as $key => $val) {
-                    echo '<div class="author_bio">';
-                    $args = array(
-                               'post_type'   => 'students',
-                               'post_status' => 'publish',
-                               'p' => $val
-                              );
-
-                    $staffDetails = new WP_Query($args);
-                    if ($staffDetails->have_posts()) {
-
-                        while ($staffDetails->have_posts()) {
-                            $staffDetails->the_post();
-
-                            $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))));
-
-                            if (get_field('student_photo') != '') {
-                                echo '<div class="author_photo post">';
-                                if ($staffNameURLSafe == 'staff') {
-                                    echo '<img src="'.get_field('student_photo').'" class="cn-staff-bio-circular staff" alt="'.get_the_title($staffID).'" />';
-                                } else {
-                                    echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank"><img src="'.get_field('student_photo').'" class="cn-staff-bio-circular" alt="'.get_the_title($staffID).'" /></a>';
+                                    echo '</div>';
                                 }
                                 echo '</div>';
                             }
+                        }
+                        echo '</div>';
+                    }
+                }
 
-                            echo '<div class="bio post">';
+                if (is_countable($broadcastID)) {
+                    // show broadcast
+                    foreach ($broadcastID as $key => $val) {
+                        echo '<div class="author_bio">';
+                        $args = array(
+                        'post_type'   => 'students',
+                        'post_status' => 'publish',
+                        'p' => $val
+                        );
 
-                            if (get_the_title($val) != '') {
-                                if ($staffNameURLSafe == 'staff') {
-                                    echo '<p class="name">'.get_the_title($val).'</p>';
+                        $staffDetails = new WP_Query($args);
+                        if ($staffDetails->have_posts()) {
+
+                            while ($staffDetails->have_posts()) {
+                                $staffDetails->the_post();
+
+                                $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))));
+
+                                if (get_field('student_photo') != '') {
+                                    echo '<div class="author_photo post">';
+                                    if ($staffNameURLSafe == 'staff') {
+                                        echo '<img src="'.get_field('student_photo').'" class="cn-staff-bio-circular staff" alt="'.get_the_title($staffID).'" />';
+                                    } else {
+                                        echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank"><img src="'.get_field('student_photo').'" class="cn-staff-bio-circular" alt="'.get_the_title($staffID).'" /></a>';
+                                    }
+                                    echo '</div>';
+                                }
+
+                                echo '<div class="bio post">';
+
+                                if (get_the_title($val) != '') {
+                                    if ($staffNameURLSafe == 'staff') {
+                                        echo '<p class="name">'.get_the_title($val).'</p>';
+                                    } else {
+                                        echo '<p class="name"><a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank">'.get_the_title($val).'</a></p>';
+                                    }
                                 } else {
+                                    echo '<p class="name">'.'No author name found.'.'</p>';
+                                }
+
+                                if (get_field('student_title') != '') {
+                                    echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('student_title'))).'</span>';
+                                } elseif (get_field('team') != '' || get_field('role') != '' || get_field('bureau') != '') {
+                                    echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('team'))).' '.ucwords(str_replace('-', ' ', get_field('role'))).', '.str_replace('Washington Dc', 'Washington, D.C.', ucwords(str_replace('-', ' ', get_field('bureau')))).'</span>';
+                                }
+
+                                if (get_field('biography') != '') {
+                                    echo '<span class="member-bio post">'.get_field('biography').'</span>';
+                                } else {
+
+                                }
+
+                                if (have_rows('social_media_outlets')) {
+                                    echo '<div class="author_social_links">';
+                                    while (have_rows('social_media_outlets')) {
+                                        the_row();
+                                        if (get_sub_field('social_media_type') != '' && get_sub_field('social_media_handle') != '') {
+                                            if (get_sub_field('social_media_type') == 'twitter') {
+                                                ?>
+                              <a href="https://www.twitter.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-twitter"></i></a>
+                                            <?php } elseif (get_sub_field('social_media_type') == 'email') { ?>
+                              <a href="mailto:<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fas fa-envelope"></i></a>
+                                            <?php } elseif (get_sub_field('social_media_type') == 'instagram') { ?>
+                              <a href="https://www.instagram.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
+                                            <?php } elseif (get_sub_field('social_media_type') == 'linkedin') { ?>
+                              <a href="https://www.linkedin.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                                 <?php
+                                            }
+                                        }
+                                    }
+                                    echo '</div>';
+                                }
+                                echo '</div>';
+                            }
+                        }
+                        echo '</div>';
+                    }
+                }
+
+                if (is_countable($photogID)) {
+                    // show photogs
+                    foreach ($photogID as $key => $val) {
+                        echo '<div class="author_bio">';
+                        $args = array(
+                        'post_type'   => 'students',
+                        'post_status' => 'publish',
+                        'p' => $val
+                        );
+
+                        $staffDetails = new WP_Query($args);
+                        if ($staffDetails->have_posts()) {
+
+                            while ($staffDetails->have_posts()) {
+                                $staffDetails->the_post();
+
+                                $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))));
+
+                                if (get_field('student_photo') != '') {
+                                    echo '<div class="author_photo post">';
+                                    if ($staffNameURLSafe == 'staff') {
+                                        echo '<img src="'.get_field('student_photo').'" class="cn-staff-bio-circular staff" alt="'.get_the_title($staffID).'" />';
+                                    } else {
+                                        echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank"><img src="'.get_field('student_photo').'" class="cn-staff-bio-circular" alt="'.get_the_title($staffID).'" /></a>';
+                                    }
+                                    echo '</div>';
+                                }
+
+                                echo '<div class="bio post">';
+
+                                if (get_the_title($val) != '') {
                                     echo '<p class="name"><a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank">'.get_the_title($val).'</a></p>';
+                                } else {
+                                    echo '<p class="name">'.'No author name found.'.'</p>';
                                 }
-                            } else {
-                                echo '<p class="name">'.'No author name found.'.'</p>';
-                            }
 
-                            if (get_field('student_title') != '') {
-                                  echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('student_title'))).'</span>';
-                            } else if (get_field('team') != '' || get_field('role') != '' || get_field('bureau') != '') {
-                                echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('team'))).' '.ucwords(str_replace('-', ' ', get_field('role'))).', '.str_replace('Washington Dc', 'Washington, D.C.', ucwords(str_replace('-', ' ', get_field('bureau')))).'</span>';
-                            }
+                                if (get_field('student_title') != '') {
+                                    echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('student_title'))).'</span>';
+                                } elseif (get_field('team') != '' || get_field('role') != '' || get_field('bureau') != '') {
+                                    echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('team'))).' '.ucwords(str_replace('-', ' ', get_field('role'))).', '.str_replace('Washington Dc', 'Washington, D.C.', ucwords(str_replace('-', ' ', get_field('bureau')))).'</span>';
+                                }
 
-                            if (get_field('biography') != '') {
-                                echo '<span class="member-bio post">'.get_field('biography').'</span>';
-                            } else {
+                                if (get_field('biography') != '') {
+                                    echo '<span class="member-bio post">'.get_field('biography').'</span>';
+                                } else {
 
-                            }
+                                }
 
-                            if (have_rows('social_media_outlets') ) {
-                                echo '<div class="author_social_links">';
-                                while ( have_rows('social_media_outlets') ) {
-                                    the_row();
-                                    if (get_sub_field('social_media_type') != '' && get_sub_field('social_media_handle') != '') {
-                                        if (get_sub_field('social_media_type') == 'twitter') {
-                                            ?>
+                                if (have_rows('social_media_outlets')) {
+                                    echo '<div class="author_social_links">';
+                                    while (have_rows('social_media_outlets')) {
+                                        the_row();
+                                        if (get_sub_field('social_media_type') != '' && get_sub_field('social_media_handle') != '') {
+                                            if (get_sub_field('social_media_type') == 'twitter') {
+                                                ?>
                               <a href="https://www.twitter.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-twitter"></i></a>
-                                        <?php } else if (get_sub_field('social_media_type') == 'email') { ?>
+                                            <?php } elseif (get_sub_field('social_media_type') == 'email') { ?>
                               <a href="mailto:<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fas fa-envelope"></i></a>
-                                        <?php } else if (get_sub_field('social_media_type') == 'instagram') { ?>
+                                            <?php } elseif (get_sub_field('social_media_type') == 'instagram') { ?>
                               <a href="https://www.instagram.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
-                                        <?php } else if (get_sub_field('social_media_type') == 'linkedin') { ?>
+                                            <?php } elseif (get_sub_field('social_media_type') == 'linkedin') { ?>
                               <a href="https://www.linkedin.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
                                                  <?php
+                                            }
                                         }
                                     }
+                                    echo '</div>';
                                 }
                                 echo '</div>';
                             }
-                            echo '</div>';
                         }
+                        echo '</div>';
                     }
-                    echo '</div>';
                 }
 
+                if (is_countable($dataVisualizerID)) {
+                    // show data viz
+                    foreach ($dataVisualizerID as $key => $val) {
+                        echo '<div class="author_bio">';
+                        $args = array(
+                        'post_type'   => 'students',
+                        'post_status' => 'publish',
+                        'p' => $val
+                        );
 
-                // show photogs
-                foreach ($photogID as $key => $val) {
-                    echo '<div class="author_bio">';
-                    $args = array(
-                               'post_type'   => 'students',
-                               'post_status' => 'publish',
-                               'p' => $val
-                              );
+                        $staffDetails = new WP_Query($args);
+                        if ($staffDetails->have_posts()) {
 
-                    $staffDetails = new WP_Query($args);
-                    if ($staffDetails->have_posts()) {
+                            while ($staffDetails->have_posts()) {
+                                $staffDetails->the_post();
 
-                        while ($staffDetails->have_posts()) {
-                            $staffDetails->the_post();
+                                $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))));
 
-                            $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))));
-
-                            if (get_field('student_photo') != '') {
-                                echo '<div class="author_photo post">';
-                                if ($staffNameURLSafe == 'staff') {
-                                    echo '<img src="'.get_field('student_photo').'" class="cn-staff-bio-circular staff" alt="'.get_the_title($staffID).'" />';
-                                } else {
-                                    echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank"><img src="'.get_field('student_photo').'" class="cn-staff-bio-circular" alt="'.get_the_title($staffID).'" /></a>';
-                                }
-                                echo '</div>';
-                            }
-
-                            echo '<div class="bio post">';
-
-                            if (get_the_title($val) != '') {
-                                echo '<p class="name"><a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank">'.get_the_title($val).'</a></p>';
-                            } else {
-                                echo '<p class="name">'.'No author name found.'.'</p>';
-                            }
-
-                            if (get_field('student_title') != '') {
-                                  echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('student_title'))).'</span>';
-                            } else if (get_field('team') != '' || get_field('role') != '' || get_field('bureau') != '') {
-                                echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('team'))).' '.ucwords(str_replace('-', ' ', get_field('role'))).', '.str_replace('Washington Dc', 'Washington, D.C.', ucwords(str_replace('-', ' ', get_field('bureau')))).'</span>';
-                            }
-
-                            if (get_field('biography') != '') {
-                                echo '<span class="member-bio post">'.get_field('biography').'</span>';
-                            } else {
-
-                            }
-
-                            if (have_rows('social_media_outlets') ) {
-                                echo '<div class="author_social_links">';
-                                while ( have_rows('social_media_outlets') ) {
-                                    the_row();
-                                    if (get_sub_field('social_media_type') != '' && get_sub_field('social_media_handle') != '') {
-                                        if (get_sub_field('social_media_type') == 'twitter') {
-                                            ?>
-                              <a href="https://www.twitter.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-twitter"></i></a>
-                                        <?php } else if (get_sub_field('social_media_type') == 'email') { ?>
-                              <a href="mailto:<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fas fa-envelope"></i></a>
-                                        <?php } else if (get_sub_field('social_media_type') == 'instagram') { ?>
-                              <a href="https://www.instagram.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
-                                        <?php } else if (get_sub_field('social_media_type') == 'linkedin') { ?>
-                              <a href="https://www.linkedin.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                                 <?php
-                                        }
+                                if (get_field('student_photo') != '') {
+                                    echo '<div class="author_photo post">';
+                                    if ($staffNameURLSafe == 'staff') {
+                                        echo '<img src="'.get_field('student_photo').'" class="cn-staff-bio-circular staff" alt="'.get_the_title($staffID).'" />';
+                                    } else {
+                                        echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank"><img src="'.get_field('student_photo').'" class="cn-staff-bio-circular" alt="'.get_the_title($staffID).'" /></a>';
                                     }
+                                    echo '</div>';
                                 }
-                                echo '</div>';
-                            }
-                            echo '</div>';
-                        }
-                    }
-                    echo '</div>';
-                }
 
-                // show data viz
-                foreach ($dataVisualizerID as $key => $val) {
-                    echo '<div class="author_bio">';
-                    $args = array(
-                                'post_type'   => 'students',
-                                'post_status' => 'publish',
-                                'p' => $val
-                               );
+                                echo '<div class="bio post">';
 
-                    $staffDetails = new WP_Query($args);
-                    if ($staffDetails->have_posts()) {
-
-                        while ($staffDetails->have_posts()) {
-                            $staffDetails->the_post();
-
-                            $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))));
-
-                            if (get_field('student_photo') != '') {
-                                echo '<div class="author_photo post">';
-                                if ($staffNameURLSafe == 'staff') {
-                                    echo '<img src="'.get_field('student_photo').'" class="cn-staff-bio-circular staff" alt="'.get_the_title($staffID).'" />';
+                                if (get_the_title($val) != '') {
+                                    echo '<p class="name"><a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank">'.get_the_title($val).'</a></p>';
                                 } else {
-                                    echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank"><img src="'.get_field('student_photo').'" class="cn-staff-bio-circular" alt="'.get_the_title($staffID).'" /></a>';
+                                    echo '<p class="name">'.'No author name found.'.'</p>';
                                 }
-                                echo '</div>';
-                            }
 
-                            echo '<div class="bio post">';
+                                if (get_field('student_title') != '') {
+                                    echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('student_title'))).'</span>';
+                                } elseif (get_field('team') != '' || get_field('role') != '' || get_field('bureau') != '') {
+                                    echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('team'))).' '.ucwords(str_replace('-', ' ', get_field('role'))).', '.str_replace('Washington Dc', 'Washington, D.C.', ucwords(str_replace('-', ' ', get_field('bureau')))).'</span>';
+                                }
 
-                            if (get_the_title($val) != '') {
-                                echo '<p class="name"><a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank">'.get_the_title($val).'</a></p>';
-                            } else {
-                                echo '<p class="name">'.'No author name found.'.'</p>';
-                            }
+                                if (get_field('biography') != '') {
+                                    echo '<span class="member-bio post">'.get_field('biography').'</span>';
+                                } else {
 
-                            if (get_field('student_title') != '') {
-                                echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('student_title'))).'</span>';
-                            } else if (get_field('team') != '' || get_field('role') != '' || get_field('bureau') != '') {
-                                echo '<span class="team-title post">'.ucwords(str_replace('-', ' ', get_field('team'))).' '.ucwords(str_replace('-', ' ', get_field('role'))).', '.str_replace('Washington Dc', 'Washington, D.C.', ucwords(str_replace('-', ' ', get_field('bureau')))).'</span>';
-                            }
+                                }
 
-                            if (get_field('biography') != '') {
-                                echo '<span class="member-bio post">'.get_field('biography').'</span>';
-                            } else {
-
-                            }
-
-                            if (have_rows('social_media_outlets') ) {
-                                echo '<div class="author_social_links">';
-                                while ( have_rows('social_media_outlets') ) {
-                                    the_row();
-                                    if (get_sub_field('social_media_type') != '' && get_sub_field('social_media_handle') != '') {
-                                        if (get_sub_field('social_media_type') == 'twitter') {
-                                            ?>
+                                if (have_rows('social_media_outlets')) {
+                                    echo '<div class="author_social_links">';
+                                    while (have_rows('social_media_outlets')) {
+                                        the_row();
+                                        if (get_sub_field('social_media_type') != '' && get_sub_field('social_media_handle') != '') {
+                                            if (get_sub_field('social_media_type') == 'twitter') {
+                                                ?>
                                <a href="https://www.twitter.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-twitter"></i></a>
-                                        <?php } else if (get_sub_field('social_media_type') == 'email') { ?>
+                                            <?php } elseif (get_sub_field('social_media_type') == 'email') { ?>
                                <a href="mailto:<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fas fa-envelope"></i></a>
-                                        <?php } else if (get_sub_field('social_media_type') == 'instagram') { ?>
+                                            <?php } elseif (get_sub_field('social_media_type') == 'instagram') { ?>
                                <a href="https://www.instagram.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
-                                              <?php
+                                                <?php
+                                            }
                                         }
                                     }
+                                    echo '</div>';
                                 }
                                 echo '</div>';
                             }
-                            echo '</div>';
                         }
+                        echo '</div>';
                     }
-                    echo '</div>';
                 }
             }
         }
           wp_reset_query();
-        ?>
-    </div>
-  </div>
-</div>
-
-<div class="grid-container text-content fb-comments">
-  <div class="grid-x grid-padding-x">
-    <div class="large-12 cell">
-      <!-- Comments section -->
-      <div class="comment-form-wrapper">
-        <h2>Leave a Comment</h2>
-        <?php echo do_shortcode('[fbcomments]'); ?>
-        <div id="response"></div>
-      </div>
+?>
     </div>
   </div>
 </div>

@@ -2,7 +2,7 @@
  Theme Name: bootstrap
  Author: Cronkite School ASU
  Author URI: http://cronkite.asu.edu/
- Version: 2.6
+ Version: 3.0
  GitHub Theme URI: https://github.com/cronkiteschool/Cronkite-News-bootstrap
  GitHub Branch: master
  License:      GNU General Public License v2 or later
@@ -67,7 +67,7 @@
 }
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width : 480px) {
+@media only screen and (max-width: 480px) {
 	.hero-caption {
 		/*height: 170px;*/
     height: auto;
@@ -76,14 +76,14 @@
 	}
 }
 
-@media only screen and (min-width : 480px) {
+@media only screen and (min-width: 480px) {
 	.hero-caption {
 		/*height: 90px;*/
 	}
 }
 
 /* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width: 768px) {
 	.hero-caption {
 		/*height: 110px;*/
     padding: 10px 30px;
@@ -92,7 +92,7 @@
 }
 
 /* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
+@media only screen and (min-width: 992px) {
 	.hero-caption {
 		/*height: 110px;*/
 	}
@@ -111,7 +111,7 @@
 }
 
 /* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
+@media only screen and (min-width: 1200px) {
 	.hero-caption {
 		/*height: 105px;*/
 	}
@@ -6144,50 +6144,9 @@ a.changecolor {
     cursor: pointer;
 }
 
-/*===================================================================================*/
-/*	SKROLLR ANIMATIONS
-/*===================================================================================*/
-
-.navbar .navbar-collapse {
-    -skrollr-animation-name: shrink-header;
-}
-
-.navbar .navbar-brand img {
-    -skrollr-animation-name: shrink-logo;
-}
-
-@-skrollr-keyframes shrink-header {
-40 {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    -webkit-box-shadow: 0 10px 10px rgba(0,0,0,0);
-    -moz-box-shadow: 0 10px 10px rgba(0,0,0,0.0);
-    box-shadow: 0 10px 10px rgba(0,0,0,0);
-}
-
-300 {
-    padding-top: 0;
-    padding-bottom: 0;
-    -webkit-box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-    -moz-box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-}
-}
-
-@-skrollr-keyframes shrink-logo {
-40 {
-    max-height: 91px;
-}
-
-300 {
-    max-height: 91px;
-}
-}
-
-
 @media only screen
-and (min-device-width : 375px)
-and (max-device-width : 667px) {
+and (min-width: 375px)
+and (max-width: 667px) {
 
 
     .navbar-brand {
@@ -6236,7 +6195,7 @@ header h1 {
     margin-bottom:10px;
 }
 
-@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+@media only screen and (min-width: 375px) and (max-width: 667px) {
 
 
     .search-parent {

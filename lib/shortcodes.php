@@ -3,14 +3,15 @@
 /* * *********************************************************
  * Row [row][/row]
  * ********************************************************* */
-function row( $params, $content=null )
+function row($params, $content=null)
 {
     extract(
         shortcode_atts(
             array(
             'class' => 'row'
-            ), $params 
-        ) 
+            ),
+            $params
+        )
     );
     $content = preg_replace('/<br class="nc".\/>/', '', $content);
     $result = '<div class="' . $class . '">';
@@ -24,14 +25,15 @@ add_shortcode('row', 'row');
 /* * *********************************************************
  * Columns [col class="col-xs-12 col-sm-8"]...[/col]
  * ********************************************************* */
-function span( $params, $content=null )
+function span($params, $content=null)
 {
     extract(
         shortcode_atts(
             array(
             'class' => 'col-xs-1'
-            ), $params 
-        ) 
+            ),
+            $params
+        )
     );
 
     $result = '<div class="' . $class . '">';
@@ -64,14 +66,15 @@ Collapse content goes here....
 -------------------------------------------- */
 
 
-function collapse( $params, $content=null )
+function collapse($params, $content=null)
 {
     extract(
         shortcode_atts(
             array(
             'id'=>''
-            ), $params 
-        ) 
+            ),
+            $params
+        )
     );
     $content = preg_replace('/<br class="nc".\/>/', '', $content);
     $result = '<div class="panel-group" id="' . $id . '">';
@@ -82,7 +85,7 @@ function collapse( $params, $content=null )
 add_shortcode('collapse', 'collapse');
 
 
-function citem( $params, $content=null )
+function citem($params, $content=null)
 {
     extract(
         shortcode_atts(
@@ -90,8 +93,9 @@ function citem( $params, $content=null )
             'id'=> '',
             'title'=> 'Collapse title',
             'parent' => ''
-            ), $params 
-        ) 
+            ),
+            $params
+        )
     );
     $content = preg_replace('/<br class="nc".\/>/', '', $content);
     $result =  '<div class="panel panel-default">';
@@ -150,7 +154,7 @@ add_shortcode('collapse_item', 'citem');
 
 ------------------------- */
 
-function tabs( $params, $content=null )
+function tabs($params, $content=null)
 {
     $content = preg_replace('/<br2 class="nc".\/>/', '', $content);
     $result = '<div class="tab_wrap">';
@@ -160,7 +164,7 @@ function tabs( $params, $content=null )
 }
 add_shortcode('tabs', 'tabs');
 
-function thead( $params, $content=null)
+function thead($params, $content=null)
 {
     $content = preg_replace('/<br2 class="nc".\/>/', '', $content);
     $result = '<ul class="nav nav-tabs">';
@@ -170,7 +174,7 @@ function thead( $params, $content=null)
 }
 add_shortcode('thead', 'thead');
 
-function tab( $params, $content=null )
+function tab($params, $content=null)
 {
     extract(
         shortcode_atts(
@@ -178,8 +182,9 @@ function tab( $params, $content=null )
             'href' => '#',
             'title' => '',
             'class' => ''
-            ), $params 
-        ) 
+            ),
+            $params
+        )
     );
     $content = preg_replace('/<br2 class="nc".\/>/', '', $content);
 
@@ -190,7 +195,7 @@ function tab( $params, $content=null )
 }
 add_shortcode('tab', 'tab');
 
-function dropdown( $params, $content=null )
+function dropdown($params, $content=null)
 {
     global $bs_timestamp;
     extract(
@@ -199,8 +204,9 @@ function dropdown( $params, $content=null )
             'title' => '',
             'id' => '',
             'class' => '',
-            ), $params 
-        ) 
+            ),
+            $params
+        )
     );
     $content = preg_replace('/<br2 class="nc".\/>/', '', $content);
     $result = '<li class="dropdown">';
@@ -212,7 +218,7 @@ function dropdown( $params, $content=null )
 }
 add_shortcode('dropdown', 'dropdown');
 
-function tcontents( $params, $content=null )
+function tcontents($params, $content=null)
 {
     $content = preg_replace('/<br2 class="nc".\/>/', '', $content);
     $result = '<div class="tab-content">';
@@ -222,15 +228,16 @@ function tcontents( $params, $content=null )
 }
 add_shortcode('tab_contents', 'tcontents');
 
-function tcontent( $params, $content=null )
+function tcontent($params, $content=null)
 {
     extract(
         shortcode_atts(
             array(
             'id' => '',
             'class'=>'',
-            ), $params 
-        ) 
+            ),
+            $params
+        )
     );
     $content = preg_replace('/<br2 class="nc".\/>/', '', $content);
     $class = ($class=='active')? 'active in': '';
@@ -241,7 +248,7 @@ function tcontent( $params, $content=null )
 }
 add_shortcode('tab_content', 'tcontent');
 
-function full_enter( $atts, $content = null )
+function full_enter($atts, $content = null)
 {
 
     $result = "</div>";
@@ -249,7 +256,7 @@ function full_enter( $atts, $content = null )
 }
 add_shortcode('fullscreenenter', 'full_enter');
 
-function full_exit( $atts, $content = null )
+function full_exit($atts, $content = null)
 {
 
     $result = '<div class="col-xs-12 col-md-offset-2 col-md-8">';
@@ -257,85 +264,85 @@ function full_exit( $atts, $content = null )
 }
 add_shortcode('fullscreenexit', 'full_exit');
 
-function fullsizeimage( $atts, $content = null )
+function fullsizeimage($atts, $content = null)
 {
 
     $result = "</div>";
-    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . $atts[ 'caption' ] . '</p> <div class="col-xs-12 col-md-offset-2 col-md-8">';
+    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption' ]) ? $atts[ 'caption' ] : "") . '</p> <div class="col-xs-12 col-md-offset-2 col-md-8">';
 
     return $result;
 }
 add_shortcode('fullimage', 'fullsizeimage');
 
-function fullsizeimage_slim( $atts, $content = null )
+function fullsizeimage_slim($atts, $content = null)
 {
 
-    if ($atts[ 'data-url' ]) {
+    if (isset($atts[ 'data-url' ]) && $atts[ 'data-url' ]) {
         $sc1 = '<span class="soundcite" data-url="'.$atts[ 'data-url' ].'" data-start="'.$atts[ 'data-start' ].'" data-end="'.$atts[ 'data-end' ].'" data-plays="'.$atts[ 'data-plays' ].'">Listen</span>';
     }
 
     $result = "</div>";
-    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . $atts[ 'caption' ] . ' '.$sc1.'</p> <div class="col-xs-12 col-md-offset-3 col-md-6">';
+    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption' ]) ? $atts[ 'caption' ] : "") . ' '. (isset($sc1) ? $sc1 : "") .'</p> <div class="col-xs-12 col-md-offset-3 col-md-6">';
 
     return $result;
 }
 add_shortcode('fullimage-slim', 'fullsizeimage_slim');
 
-function mediumsizeimage_slim( $atts, $content = null )
+function mediumsizeimage_slim($atts, $content = null)
 {
 
     $result = '</div><div class="col-xs-12 col-md-offset-2 col-md-8" style="padding-top:20px;">';
-    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . $atts[ 'caption' ] . '</p></div> <div class="col-xs-12 col-md-offset-3 col-md-6">';
+    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption' ]) ? $atts[ 'caption' ] : "") . '</p></div> <div class="col-xs-12 col-md-offset-3 col-md-6">';
 
     return $result;
 }
 add_shortcode('mediumimage-slim', 'mediumsizeimage_slim');
 
-function threeupcombo_slim( $atts, $content = null )
+function threeupcombo_slim($atts, $content = null)
 {
 
-    if ($atts[ 'data-url1' ]) {
+    if (isset($atts[ 'data-url1' ]) && $atts[ 'data-url1' ]) {
         $sc1 = '<span class="soundcite" data-url="'.$atts[ 'data-url1' ].'" data-start="'.$atts[ 'data-start1' ].'" data-end="'.$atts[ 'data-end1' ].'" data-plays="'.$atts[ 'data-plays1' ].'">Listen</span>';
     }
 
     $result = '</div><div class="col-xs-12 col-md-offset-1 col-md-10" style="padding-top:20px;">';
-    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . $atts[ 'caption' ] . ' '.$sc1.'</p></div> <div class="col-xs-12 col-md-offset-3 col-md-6">';
+    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption' ]) ? $atts[ 'caption' ] : "") . ' '. (isset($sc1) ? $sc1 : "") .'</p></div> <div class="col-xs-12 col-md-offset-3 col-md-6">';
 
     return $result;
 }
 add_shortcode('threeupcombobig-slim', 'threeupcombo_slim');
 
-function img2up( $atts, $content = null )
+function img2up($atts, $content = null)
 {
 
     $result = '</div><div class="col-sm-5 col-sm-offset-1 col-xs-12" style="padding-bottom: 20px;"><div class="two-up-overlay">';
-    $result .= '<img style="margin-bottom:5px; padding-top:20px;" src="' . $atts[ 'source1' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . $atts[ 'caption1' ] . '</p>  </div> </div> <div class="col-sm-5 col-xs-12"><div class="two-up-overlay">';
-    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . $atts[ 'source2' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . $atts[ 'caption2' ] . '</p> </div></div> <div class="col-xs-12 col-md-offset-2 col-md-8"> ';
+    $result .= '<img style="margin-bottom:5px; padding-top:20px;" src="' . $atts[ 'source1' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption1' ]) ? $atts[ 'caption1' ] : "") . '</p>  </div> </div> <div class="col-sm-5 col-xs-12"><div class="two-up-overlay">';
+    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . $atts[ 'source2' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption2' ]) ? $atts[ 'caption2' ] : "") . '</p> </div></div> <div class="col-xs-12 col-md-offset-2 col-md-8"> ';
 
     return $result;
 }
 add_shortcode('2up_image', 'img2up');
 
-function img2upslim( $atts, $content = null )
+function img2upslim($atts, $content = null)
 {
 
-    if ($atts[ 'data-url1' ]) {
+    if (isset($atts[ 'data-url1' ]) && $atts[ 'data-url1' ]) {
         $sc1 = '<span class="soundcite" data-url="'.$atts[ 'data-url1' ].'" data-start="'.$atts[ 'data-start1' ].'" data-end="'.$atts[ 'data-end1' ].'" data-plays="'.$atts[ 'data-plays1' ].'">Listen</span>';
     }
 
-    if ($atts[ 'data-url2' ]) {
+    if (isset($atts[ 'data-url2' ]) && $atts[ 'data-url2' ]) {
         $sc2 = '<span class="soundcite" data-url="'.$atts[ 'data-url2' ].'" data-start="'.$atts[ 'data-start2' ].'" data-end="'.$atts[ 'data-end2' ].'" data-plays="'.$atts[ 'data-plays2' ].'">Listen</span>';
     }
 
     $result = '</div><div class="col-sm-5 col-sm-offset-1 col-xs-12" style="padding-bottom: 20px;"><div class="two-up-overlay">';
-    $result .= '<img style="margin-bottom:5px; padding-top:20px;" src="' . $atts[ 'source1' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . $atts[ 'caption1' ] . ' '.$sc1.'</p>  </div> </div> <div class="col-sm-5 col-xs-12"><div class="two-up-overlay">';
-    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . $atts[ 'source2' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . $atts[ 'caption2' ] . ' '.$sc2.'</p> </div></div> <div class="col-xs-12 col-md-offset-3 col-md-6"> ';
+    $result .= '<img style="margin-bottom:5px; padding-top:20px;" src="' . $atts[ 'source1' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption1' ]) ? $atts[ 'caption1' ] : "") . ' '. (isset($sc1) ? $sc1 : "") .'</p>  </div> </div> <div class="col-sm-5 col-xs-12"><div class="two-up-overlay">';
+    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . $atts[ 'source2' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption2' ]) ? $atts[ 'caption2' ] : "") . ' '. (isset($sc2) ? $sc2 : "") .'</p> </div></div> <div class="col-xs-12 col-md-offset-3 col-md-6"> ';
 
     return $result;
 }
 add_shortcode('2up_image_slim', 'img2upslim');
 
-function img2upmedium( $atts, $content = null )
+function img2upmedium($atts, $content = null)
 {
 
     $result = '</div><div class="col-md-4 col-md-offset-2 col-xs-12" style="padding-bottom: 20px;"><div class="two-up-overlay">';
@@ -346,22 +353,22 @@ function img2upmedium( $atts, $content = null )
 }
 add_shortcode('2up_image_medium', 'img2upmedium');
 
-function img4up( $atts, $content = null )
+function img4up($atts, $content = null)
 {
 
 
     $result = '</div><div class="container" style="padding-top: 30px; padding-bottom: 20px;"><div class="row" style="overflow:visible; margin-top:20px;"><div class="col-xs-12 col-sm-5 col-sm-offset-1" style="padding-bottom: 20px;">';
-    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . $atts[ 'source1' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . $atts[ 'caption1' ] . '</p></div>  <div class="col-xs-12 col-sm-5">';
-    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . $atts[ 'source2' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . $atts[ 'caption2' ] . '</p> </div></div>';
+    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . (isset($atts[ 'source1' ]) ? $atts[ 'source1' ] : "") . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption1' ]) ? $atts[ 'caption1' ] : "") . '</p></div>  <div class="col-xs-12 col-sm-5">';
+    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . (isset($atts[ 'source2' ]) ? $atts[ 'source2' ] : "") . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption2' ]) ? $atts[ 'caption2' ] : "") . '</p> </div></div>';
     $result .= '<div class="row" style="padding-top:5px;"><div class="col-xs-12 col-sm-5 col-sm-offset-1" style="padding-bottom: 20px;">';
-    $result .= '<img style="margin-bottom:10px;" src="' . $atts[ 'source3' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . $atts[ 'caption3' ] . '</p> </div>  <div class="col-xs-12 col-sm-5">';
-    $result .= '<img style="margin-bottom:5px;" src="' . $atts[ 'source4' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . $atts[ 'caption4' ] . '</p> </div> </div> </div> <div class="col-xs-12 col-md-offset-2 col-md-8"> ';
+    $result .= '<img style="margin-bottom:10px;" src="' . (isset($atts[ 'source3' ]) ? $atts[ 'source3' ] : "") . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption3' ]) ? $atts[ 'caption3' ] : "") . '</p> </div>  <div class="col-xs-12 col-sm-5">';
+    $result .= '<img style="margin-bottom:5px;" src="' . (isset($atts[ 'source4' ]) ? $atts[ 'source4' ] : "") . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption4' ]) ? $atts[ 'caption4' ] : "") . '</p> </div> </div> </div> <div class="col-xs-12 col-md-offset-2 col-md-8"> ';
 
     return $result;
 }
 add_shortcode('4up_image', 'img4up');
 
-function img4upslim( $atts, $content = null )
+function img4upslim($atts, $content = null)
 {
 
 
@@ -377,7 +384,7 @@ function img4upslim( $atts, $content = null )
 add_shortcode('4up_image_slim', 'img4upslim');
 
 
-function parallaximg( $atts, $content = null )
+function parallaximg($atts, $content = null)
 {
 
     $result = '</div></div>';
@@ -388,12 +395,11 @@ function parallaximg( $atts, $content = null )
 }
 add_shortcode('parallax-image', 'parallaximg');
 
-function emptylines( $atts, $content = null )
+function emptylines($atts, $content = null)
 {
 
     $result = '';
-    for($i=0; $i< $atts[ 'number' ]; $i++)
-    {
+    for($i=0; $i< $atts[ 'number' ]; $i++) {
         $result .= "<br>";
     }
     return $result;
@@ -401,18 +407,18 @@ function emptylines( $atts, $content = null )
 }
 add_shortcode('blanklines', 'emptylines');
 
-function img2up_standard( $atts, $content = null )
+function img2up_standard($atts, $content = null)
 {
 
     $result = '<div class="row" style="margin-bottom:20px;"><div class="col-sm-6 col-xs-12" style="padding-bottom: 20px;"><div class="two-up-overlay">';
-    $result .= '<img style="margin-bottom:5px; padding-top:20px;" src="' . $atts[ 'source1' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . $atts[ 'caption1' ] . '</p>  </div> </div> <div class="col-sm-6 col-xs-12"><div class="two-up-overlay">';
-    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . $atts[ 'source2' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . $atts[ 'caption2' ] . '</p> </div></div> </div> ';
+    $result .= '<img style="margin-bottom:5px; padding-top:20px;" src="' . $atts[ 'source1' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption1' ]) ? $atts[ 'caption1' ] : "") . '</p>  </div> </div> <div class="col-sm-6 col-xs-12"><div class="two-up-overlay">';
+    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . $atts[ 'source2' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption' ]) ? $atts[ 'caption2' ] : "") . '</p> </div></div> </div> ';
 
     return $result;
 }
 add_shortcode('2up_image-standard', 'img2up_standard');
 
-function nextchapter( $atts, $content = null )
+function nextchapter($atts, $content = null)
 {
 
     $result = "</div><div class='next-chapter-container'><a href='" . $atts[ 'link' ] . "'><img src='" . $atts[ 'source' ] . "' class='img-responsive' style='display:block;cursor: pointer; width:100%;height:auto; padding-top:35px;'/>
@@ -424,13 +430,13 @@ function nextchapter( $atts, $content = null )
 }
 add_shortcode('next-chapter', 'nextchapter');
 
-function related_box_left( $atts, $content = null )
+function related_box_left($atts, $content = null)
 {
 
     $result = '<div class="related-story-box-left"><h4><strong>' . $atts[ 'box-title' ] . '</strong></h4>';
     $result .= '<div class="story">';
-    $result .= '<div class="img"><a href="'. $atts[ 'link' ] . '" '.$target.'><img src="'. $atts[ 'image' ] . '" style="width:100%;"/></a></div>';
-    $result .= '<div class="headline"><p><a href="'. $atts[ 'link' ] . '" '.$target.'>'. $atts[ 'headline' ] .' <i class="fas fa-angle-right"></i></a></p></div>';
+    $result .= '<div class="img"><a href="'. $atts[ 'link' ] . '" '. (isset($target) ? $target : "") .'><img src="'. $atts[ 'image' ] . '" style="width:100%;"/></a></div>';
+    $result .= '<div class="headline"><p><a href="'. $atts[ 'link' ] . '" '. (isset($target) ? $target : "") .'>'. $atts[ 'headline' ] .' <i class="fas fa-angle-right"></i></a></p></div>';
     $result .= '</div>';
     $result .= '</div>';
 
@@ -438,7 +444,7 @@ function related_box_left( $atts, $content = null )
 }
 add_shortcode('related-story-left', 'related_box_left');
 
-function related_box_right( $atts, $content = null )
+function related_box_right($atts, $content = null)
 {
     if (isset($atts[ 'target' ])) {
         $target = 'target="'.$atts[ 'target' ].'"';
@@ -452,13 +458,13 @@ function related_box_right( $atts, $content = null )
         $result .= '</div>';
         $result .= '</div>';
     } else {
-        $result = '<div class="related-story-box-right"><h4><strong>' . $atts[ 'box-title' ] . '</strong></h4>';
+        $result = '<div class="related-story-box-right"><h4><strong>' .  (isset($atts[ 'box-title' ]) ? $atts[ 'box-title' ] : "") . '</strong></h4>';
         $result .= '<div class="story">';
-        $result .= '<div class="img"><a href="'. $atts[ 'link' ] . '" target="_blank"><img src="'. $atts[ 'image' ] . '" style="width:100%;"/></a></div>';
-        if ($atts[ 'headline' ] != '') {
-            $result .= '<div class="headline"><p><a href="'. $atts[ 'link' ] . '" target="_blank">'. $atts[ 'headline' ] .' <i class="fas fa-angle-right"></i></a></p></div>';
+        $result .= '<div class="img"><a href="'. (isset($atts[ 'link' ]) ? $atts[ 'link' ] : "") . '" target="_blank"><img src="'. (isset($atts[ 'image' ]) ? $atts[ 'image' ] : "") . '" style="width:100%;"/></a></div>';
+        if (isset($atts[ 'headline' ]) && $atts[ 'headline' ] != '') {
+            $result .= '<div class="headline"><p><a href="'. (isset($atts[ 'link' ]) ? $atts[ 'link' ] : "") . '" target="_blank">'. $atts[ 'headline' ] .' <i class="fas fa-angle-right"></i></a></p></div>';
         } else {
-            $result .= '<div class="caption"><p>'.$atts[ 'caption' ].'</p></div>';
+            $result .= '<div class="caption"><p>' . (isset($atts[ 'caption' ]) ? $atts[ 'caption' ] : "") . '</p></div>';
         }
         $result .= '</div>';
         $result .= '</div>';
@@ -468,7 +474,7 @@ function related_box_right( $atts, $content = null )
 }
 add_shortcode('related-story-right', 'related_box_right');
 
-function side_box_right_pro( $atts, $content = null )
+function side_box_right_pro($atts, $content = null)
 {
 
     $result = '<div class="related-story-box-right">'. $atts[ 'html' ] .'</div>' ;
@@ -477,7 +483,7 @@ function side_box_right_pro( $atts, $content = null )
 }
 add_shortcode('side-box-right-pro', 'side_box_right_pro');
 
-function side_box_left_pro( $atts, $content = null )
+function side_box_left_pro($atts, $content = null)
 {
 
     $result = '<div class="related-story-box-left">'. $atts[ 'html' ] .'</div>' ;
@@ -487,7 +493,7 @@ function side_box_left_pro( $atts, $content = null )
 add_shortcode('side-box-left-pro', 'side_box_left_pro');
 
 
-function two_column( $atts, $content = null )
+function two_column($atts, $content = null)
 {
 
     $result = '<div class="row"><div class="col-xs-12 col-sm-6">' . $atts[ 'col1' ] . '</div><div class="col-xs-12 col-sm-6">' . $atts[ 'col2' ] . '</div></div>' ;
@@ -496,7 +502,7 @@ function two_column( $atts, $content = null )
 }
 add_shortcode('two-column-content', 'two_column');
 
-function sub_tag( $atts, $content = null )
+function sub_tag($atts, $content = null)
 {
 
     $result = '<div style="padding-bottom:40px;" class="no-amp">
@@ -507,25 +513,25 @@ function sub_tag( $atts, $content = null )
 }
 add_shortcode('sub-tag', 'sub_tag');
 
-function social_icons( $atts, $content = null )
+function social_icons($atts, $content = null)
 {
 
     $result = '<div class="row"><div class="col-xs-12"> <h3> Connect with us:</h3> <br>';
 
-    if ($atts[ 'facebook' ] == "yes" ) {
-         $result .='<a href="https://www.facebook.com/cronkitenewsazpbs/" target="_blank"> <span class="fa fa-facebook tag-social-icons" style="padding-left:20px;padding-right: 20px;"></span></a>';
+    if ($atts[ 'facebook' ] == "yes") {
+        $result .='<a href="https://www.facebook.com/cronkitenewsazpbs/" target="_blank"> <span class="fa fa-facebook tag-social-icons" style="padding-left:20px;padding-right: 20px;"></span></a>';
     }
-    if ($atts[ 'twitter' ] == "yes"  ) {
+    if ($atts[ 'twitter' ] == "yes") {
         $result .='<a href="https://twitter.com/cronkitenews" target="_blank"><span class="fa fa-twitter tag-social-icons"></span></a>';
 
     }
-    if ($atts[ 'instagram' ] == "yes"  ) {
+    if ($atts[ 'instagram' ] == "yes") {
         $result .= '<a href="https://www.instagram.com/cronkitenews/" target="_blank">  <span class="fa fa-instagram tag-social-icons"></span></a>' ;
     }
-    if ($atts[ 'youtube' ] == "yes"  ) {
+    if ($atts[ 'youtube' ] == "yes") {
         $result .= '<a href="https://www.youtube.com/user/CronkiteNewsWatch" target="_blank">  <span class="fa fa-youtube tag-social-icons"></span></a>' ;
     }
-    if ($atts[ 'snapchat' ] == "yes"  ) {
+    if (isset($atts[ 'snapchat' ]) && $atts[ 'snapchat' ] == "yes") {
         $result .= ' <a href="#" data-featherlight=\'<img src="https://cronkitenews.azpbs.org/wp-content/uploads/2018/01/IMG_C77BE6BD8B91-1.jpeg">\'> <span class="fa fa-snapchat-ghost tag-social-icons"></span></a>';
     }
     $result .= '</div></div>';
@@ -534,18 +540,18 @@ function social_icons( $atts, $content = null )
 }
 add_shortcode('social-icons', 'social_icons');
 
-function img3vertical( $atts, $content = null )
+function img3vertical($atts, $content = null)
 {
 
     $result = '</div><div class="row" style="overflow: visible;"><div class="col-xs-10 col-md-3 col-md-offset-1" style="padding-bottom: 10px;">';
     $result .= '<img src="' . $atts[ 'source1' ] . '" style=" margin-left:40px;"> </div> <div class="col-xs-10 col-md-3"><img src="' . $atts[ 'source2' ] . '" style=" margin-left:40px;"></div>';
-      $result .= '<div class="col-xs-10 col-md-3"><img src="' . $atts[ 'source3' ] . '" style=" margin-left:40px;"></div></div> <div class="row"><div class="col-xs-10 col-xs-offset-1 col-md-10 col-md-offset-1"><p class="wp-caption-text" style="margin-left:10px;font-style: italic; margin-left:40px;">' . $atts[ 'caption' ] . '</p> </div></div> <div class="col-xs-12 col-md-offset-3 col-md-6"> ';
+    $result .= '<div class="col-xs-10 col-md-3"><img src="' . $atts[ 'source3' ] . '" style=" margin-left:40px;"></div></div> <div class="row"><div class="col-xs-10 col-xs-offset-1 col-md-10 col-md-offset-1"><p class="wp-caption-text" style="margin-left:10px;font-style: italic; margin-left:40px;">' . (isset($atts[ 'caption' ]) ? $atts[ 'caption' ] : "") . '</p> </div></div> <div class="col-xs-12 col-md-offset-3 col-md-6"> ';
 
     return $result;
 }
 add_shortcode('3verticalrow', 'img3vertical');
 
-function promquote( $atts, $content = null )
+function promquote($atts, $content = null)
 {
 
     $result = '<div class"row"><div class="col-xs-12" style="padding:0; margin-bottom: 20px;">';
@@ -558,7 +564,7 @@ add_shortcode('pquote', 'promquote');
 
 
 // Blockquotes
-function blockquotes( $atts, $content = null )
+function blockquotes($atts, $content = null)
 {
     if ($atts['organization']) {
         $organization = $atts['organization'];
@@ -579,7 +585,7 @@ add_shortcode('blockquote_content', 'blockquotes');
 
 
 // Fact Box Right
-function fact_box_right( $atts, $content = null )
+function fact_box_right($atts, $content = null)
 {
     $result = '<div class="fact-box-right">';
     if ($atts['subhead'] != '') {
@@ -594,7 +600,7 @@ function fact_box_right( $atts, $content = null )
         $result .= '<p>'.$atts['content'].'</p>';
     }
 
-    if ($atts['attribution'] != '') {
+    if (isset($atts[ 'attribution' ]) && $atts['attribution'] != '') {
         $result .= '<p class="attribution">'.$atts['attribution'].'</p>';
     }
     $result .= '</div>';
@@ -604,7 +610,7 @@ function fact_box_right( $atts, $content = null )
 add_shortcode('fact-box-right', 'fact_box_right');
 
 // Fact Box Left
-function fact_box_left( $atts, $content = null )
+function fact_box_left($atts, $content = null)
 {
     $result = '<div class="fact-box-left">';
     if ($atts['subhead'] != '') {
@@ -625,7 +631,7 @@ function fact_box_left( $atts, $content = null )
 add_shortcode('fact-box-left', 'fact_box_left');
 
 // Video embed right
-function video_embed_right( $atts, $content = null )
+function video_embed_right($atts, $content = null)
 {
     $result = '<div class="video-embed-right">';
 

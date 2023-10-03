@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-var $window = $(window);
+var $window = jQuery(window);
 
 function checkWidthScrollTrigger() {
     var windowsize = $window.width();
@@ -33,6 +33,6 @@ function checkWidthScrollTrigger() {
 // Execute on load
 checkWidthScrollTrigger();
 // Bind event listener
-$(window).resize(checkWidthScrollTrigger);
+jQuery(window).resize(checkWidthScrollTrigger);
 
 });

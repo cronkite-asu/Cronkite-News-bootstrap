@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Template Name: Election Page
  */
 get_header('election'); ?>
@@ -33,42 +33,42 @@ function gridpost($item)
     //    echo "</div>";
     //}
 
-    if ($url_link ) : // post goes offsite (extremely rare)
+    if ($url_link) : // post goes offsite (extremely rare)
 
         echo '<a target="_blank" href="//';
         echo $url_link;
         echo '">';
         echo get_the_post_thumbnail($postid, 'full', array('class' => 'img-responsive'));
         echo '</a>';
-        else:
-            echo '<a href="';
-            echo $permalink;
-            echo '">';
-            echo get_the_post_thumbnail($postid, 'full', array('class' => 'img-responsive'));
-            echo '</a>';
-        endif;
+    else:
+        echo '<a href="';
+        echo $permalink;
+        echo '">';
+        echo get_the_post_thumbnail($postid, 'full', array('class' => 'img-responsive'));
+        echo '</a>';
+    endif;
 
-        echo '<figcaption>';
-        echo '<div class="info"><h4>';
+    echo '<figcaption>';
+    echo '<div class="info"><h4>';
 
-        if ($url_link ) : // post goes offsite (extremely rare)
-            echo '<a target="_blank" href="//';
-            echo $url_link;
-            echo '">';
-            echo get_the_title($postid);
-            echo '</a>';
-          else:
-              echo '<a href="';
-              echo $permalink;
-              echo '">';
-              echo get_the_title($postid);
-              echo '</a>';
-          endif;
-          echo '</h4></div><!-- /.info --></figcaption></figure></div><!-- /item -->';
+    if ($url_link) : // post goes offsite (extremely rare)
+        echo '<a target="_blank" href="//';
+        echo $url_link;
+        echo '">';
+        echo get_the_title($postid);
+        echo '</a>';
+    else:
+        echo '<a href="';
+        echo $permalink;
+        echo '">';
+        echo get_the_title($postid);
+        echo '</a>';
+    endif;
+    echo '</h4></div><!-- /.info --></figcaption></figure></div><!-- /item -->';
 }
 
 if (have_rows('latest_news_box')) : // check for repeater fields
-    while ( have_rows('latest_news_box')) : the_row(); // loop through the repeater fields
+    while (have_rows('latest_news_box')) : the_row(); // loop through the repeater fields
 
         $posts = get_sub_field('post_box'); // all the latest news is now loaded in $posts
 
@@ -91,7 +91,7 @@ endif;
                 <div class="col-xs-12 col-sm-6">
                   
                   <div class="img-responsive main_head_image">
-                  <?php the_field('special_area_image');?>
+                  <?php the_field('special_area_image'); ?>
                       <h2 style="color: black; padding-top: 0; padding-bottom: 10px; font-size: 26px; font-weight: 600; margin-top: 8px; font-family: 'Source Sans Pro', sans-serif;"><?php the_field('special_area_title'); ?></h2>
                 </div>
                 </div>
@@ -100,7 +100,7 @@ endif;
                 <div class="info">
                   <figcaption id="voter_desc">
                         <h3>LATEST ELECTION NEWS</h3>
-                    <b><?php the_field('special_area_description');?></b>
+                    <b><?php the_field('special_area_description'); ?></b>
 
                 </figcaption>
                 </div>
@@ -129,8 +129,8 @@ endif;
 <!--     -->
 
                     
-                <?php if (have_rows('horizon_box') ) : ?>
-                    <?php while ( have_rows('horizon_box') ): the_row();
+                <?php if (have_rows('horizon_box')) : ?>
+                    <?php while (have_rows('horizon_box')): the_row();
                         // Declare variables below
                         $icon = get_sub_field('horizon_box_image');
                         $title = get_sub_field('horizon_box_title');
@@ -138,7 +138,7 @@ endif;
                         $link = get_sub_field('horizon_box_link');
                         $customLinks = get_sub_field('h_custom_link');
 
-                        // Use variables below ?>
+                        // Use variables below?>
                     <div class="col-xs-12 col-sm-4 inner-top-sm ">
                       <div class="kicker-modern" id="horizon_box">
     
@@ -165,7 +165,8 @@ endif;
                     </div>
                     <!--end of .col-->
                     <?php endwhile; ?>
-                <?php endif; wp_reset_query(); ?>
+                <?php endif;
+wp_reset_query(); ?>
                     
                     
                     
@@ -195,8 +196,8 @@ endif;
     <div class="container inner">
       <div class="row">
 
-                <?php if (have_rows('area_works_box') ) : ?>
-                    <?php while ( have_rows('area_works_box') ): the_row();
+                <?php if (have_rows('area_works_box')) : ?>
+                    <?php while (have_rows('area_works_box')): the_row();
                         // Declare variables below
                         $icon = get_sub_field('area_works_image');
                         $title = get_sub_field('area_works_title');
@@ -204,7 +205,7 @@ endif;
                         $link = get_sub_field('area_works_link');
                         $customLinks = get_sub_field('custom_link');
 
-                        // Use variables below ?>
+                        // Use variables below?>
                     <div class="col-sm-4 inner-top-sm ">
                       <div class="kicker-modern">
     
@@ -227,7 +228,8 @@ endif;
                     </div>
                     <!--end of .col-->
                     <?php endwhile; ?>
-                <?php endif; wp_reset_query(); ?>
+                <?php endif;
+wp_reset_query(); ?>
 
       </div>
       <!-- /.row -->
@@ -263,7 +265,7 @@ endif;
               <div class="row">
                 <div class="col-xs-12 col-sm-6">
                   <div class="img-responsive main_head_image">
-                  <?php the_field('voter_area_image');?>
+                  <?php the_field('voter_area_image'); ?>
                 </div>
                 </div>
                 <div class="col-xs-12 col-sm-6">
@@ -271,7 +273,7 @@ endif;
                 <div class="info" style="padding-top: 20px;">
                   <figcaption id="voter_desc">
 <h2 style="color: black; padding-top: 0; margin-top:0; padding-bottom: 10px; font-size: 26px;"><?php the_field('voter_resources_title'); ?></h2>
-                    <?php the_field('voter_area_description');?>
+                    <?php the_field('voter_area_description'); ?>
 
                 </figcaption>
                 </div>
@@ -351,19 +353,19 @@ endif;
           <div class="row">
             <div class="col-sm-4 inner-top-sm">
               <div class="caption vertical-top text-center azpbs">
-                <h1 class="fadeInDown-1 light-color"><?php the_field('arizona_area_title');?></h1>
+                <h1 class="fadeInDown-1 light-color"><?php the_field('arizona_area_title'); ?></h1>
                 <h2 class="fadeInDown-2 dark-color"><?php the_field('arizona_area_sub_title'); ?></h2>
               </div>
             </div>
             <div class="col-sm-8 inner-top-sm">
               <div class="row thumbs gap-xs pbsthumbs">
 
-                <?php if (have_rows('images_box') ) : ?>
-                    <?php while ( have_rows('images_box') ): the_row();
-                                    // Declare variables below
-                                    $icon = get_sub_field('arizona_images');
-                                    $link = get_sub_field('arizona_links');
-                                    // Use variables below ?>
+                <?php if (have_rows('images_box')) : ?>
+                    <?php while (have_rows('images_box')): the_row();
+                        // Declare variables below
+                        $icon = get_sub_field('arizona_images');
+                        $link = get_sub_field('arizona_links');
+                        // Use variables below?>
                     <div class="col-xs-3 thumb">
                       <figure> <a href="<?php echo $link; ?>" target="_blank">
                                                 <img src="<?php  echo $icon; ?>" alt="">
@@ -371,7 +373,8 @@ endif;
                       </figure>
                     </div>
                     <?php endwhile; ?>
-                <?php endif; wp_reset_query(); ?>
+                <?php endif;
+wp_reset_query(); ?>
 
                         <!-- /.thumb -->
 
