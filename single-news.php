@@ -331,7 +331,7 @@
                     $host = parse_url($isvid, PHP_URL_HOST);
                     $isjpg = false;
 
-                    if ($host['host'] == 'www.youtube.com' || $host['host'] == 'youtu.be' || $host['host'] == 'www.youtu.be' || $host['host'] == 'youtube.com') {
+                    if ($host == 'www.youtube.com' || $host == 'youtu.be' || $host == 'www.youtu.be' || $host == 'youtube.com') {
                         $embedVideoURL = getYoutubeID($isvid);
                         echo '<div id="video-holder">';
                         echo '<div class="video-wrap">';
