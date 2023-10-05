@@ -73,7 +73,7 @@ if ($cnStaffTotalCounter > 0) {
         while (have_rows('byline_info', $home_main_storyID)) {
             the_row();
             $staffID = get_sub_field('cn_staff');
-            $cnStaffCount = count($staffID);
+            $cnStaffCount = count((array)$staffID);
             foreach ($staffID as $key => $val) {
                 $args = array(
                       'post_type'   => 'students',
@@ -255,7 +255,7 @@ if (have_rows('slider_aside_box', 24)) {
                     while (have_rows('byline_info', $thepostid)) {
                         the_row();
                         $staffID = get_sub_field('cn_staff');
-                        $cnStaffCount = count($staffID);
+                        $cnStaffCount = count((array)$staffID);
                         foreach ($staffID as $key => $val) {
                             $args = array(
                             'post_type'   => 'students',
@@ -456,7 +456,7 @@ if (have_rows('area_works_box', $frontpage_id)) :
                     while (have_rows('byline_info', $thepostid)) {
                         the_row();
                         $staffID = get_sub_field('cn_staff');
-                        $cnStaffCount = count($staffID);
+                        $cnStaffCount = count((array)$staffID);
                         foreach ($staffID as $key => $val) {
                             $args = array(
                               'post_type'   => 'students',

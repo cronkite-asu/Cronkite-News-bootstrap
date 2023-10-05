@@ -107,7 +107,7 @@ function getStoryAuthors($getPID)
             $staffID = get_sub_field('cn_staff');
 
             if (is_countable($staffID)) {
-                $cnStaffCount = count($staffID);
+                $cnStaffCount = count((array)$staffID);
 
                 foreach ($staffID as $key => $val) {
                     $args = array(

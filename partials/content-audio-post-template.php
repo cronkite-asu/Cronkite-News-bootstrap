@@ -157,7 +157,7 @@ if (have_rows('byline_info', $audio_id)) {
     while (have_rows('byline_info', $audio_id)) {
         the_row();
         $staffID = get_sub_field('cn_staff', $audio_id);
-        $cnStaffCount = count($staffID);
+        $cnStaffCount = count((array)$staffID);
 
         foreach ($staffID as $key => $val) {
             $args = array(

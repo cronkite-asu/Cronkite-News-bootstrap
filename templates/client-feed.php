@@ -98,7 +98,7 @@ while ($loop->have_posts()) : $loop->the_post();
             while (have_rows('byline_info', $post->ID)) {
                 the_row();
                 $staffID = get_sub_field('cn_staff');
-                $cnStaffCount = count($staffID);
+                $cnStaffCount = count((array)$staffID);
                 foreach ($staffID as $key => $val) {
                     $args = array(
                       'post_type'   => 'students',

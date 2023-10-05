@@ -174,7 +174,7 @@
      while (have_rows('byline_info')) {
          the_row();
          $staffID = get_sub_field('cn_staff');
-         $cnStaffCount = count($staffID);
+         $cnStaffCount = count((array)$staffID);
 
          foreach ($staffID as $key => $val) {
              $args = array(
