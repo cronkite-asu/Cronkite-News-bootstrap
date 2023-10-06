@@ -17,10 +17,11 @@ This is the current theme for Cronkite News at Arizona State University.
 
 You can use [pre-commit](https://pre-commit.com) to format code submitted to this repo.
 
-The pre-commit-config.yml file is configured to run hooks from:
+The `.pre-commit-config.yml` file is configured to run hooks from:
 
-* [github.com/pre-commit/pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooksd)
-* [github.com/digitalpulp/pre-commit-php](https://github.com/digitalpulp/pre-commit-php)
+- [github.com/pre-commit/pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooksd)
+- [github.com/digitalpulp/pre-commit-php](https://github.com/digitalpulp/pre-commit-php)
+- [github.com/pre-commit/mirrors-prettier](https://github.com/pre-commit/mirrors-prettier)
 
 ### Downloading the source code
 
@@ -50,6 +51,7 @@ pre-commit install
 ## Changelog
 
 ### 3.0
-* Update code to work with PHP 8.1.
-* Format to PHP coding standard [PSR-2](https://www.php-fig.org/psr/psr-2/).
-* Add README file.
+
+- Update code to work with PHP 8.1.
+- Format to PHP coding standard [PSR-2](https://www.php-fig.org/psr/psr-2/).
+- Add README file.
