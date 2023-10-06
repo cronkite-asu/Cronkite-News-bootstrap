@@ -52,6 +52,11 @@ pre-commit install
 
 ### 3.0
 
+- Add pre-commit configuration file.
+- Add contributing section to README file.
+
+### 3.0
+
 - Update code to work with PHP 8.1.
 - Format to PHP coding standard [PSR-2](https://www.php-fig.org/psr/psr-2/).
 - Add README file.
