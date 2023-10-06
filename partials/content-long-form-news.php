@@ -1523,7 +1523,7 @@ if (have_rows('blocks')) {
 
 <?php
         }
-}
+    }
 }
 ?>
 
@@ -2000,6 +2000,6 @@ if ($inthisseriesSettings['show'] == 'yes') {
        <?php
           }
           wp_reset_query();
-       ?>
+?>
 
 <?php get_footer('new2020-longform'); ?>
