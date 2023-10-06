@@ -15,7 +15,7 @@ var xml = request.responseXML;
 var contest = xml.getElementsByTagName("contest");
 //console.log(contest.length);
 for(var i = 0; i < contest.length; i++) {
-    
+
     var contest_name = new Array();
     var clname = "";
     clname = contest[i].getAttribute("contestLongName");
@@ -30,7 +30,7 @@ for(var i = 0; i < contest.length; i++) {
                   // console.log(prezcand[j].getAttribute("choiceName"));
                    pchoices.push(prezcand[j].getAttribute("choiceName"));
                    var votes = prezcand[j].getElementsByTagName("jurisdiction");
-                   //console.log(votes);     
+                   //console.log(votes);
                    pvotes.push(votes[0].getAttribute("votes"));
                }
         }
@@ -44,45 +44,45 @@ for(var i = 0; i < contest.length; i++) {
                   // console.log(prezcand[j].getAttribute("choiceName"));
                    schoices.push(prezcand[j].getAttribute("choiceName"));
                    var votes = prezcand[j].getElementsByTagName("jurisdiction");
-                   //console.log(votes);     
+                   //console.log(votes);
                    svotes.push(votes[0].getAttribute("votes"));
                }
-                   
+
         }
      if (ck == 667)
         {
-           
-           var p206pr = contest[i].getAttribute("precinctsReportingPercent");      
+
+           var p206pr = contest[i].getAttribute("precinctsReportingPercent");
            var prezcand = contest[i].getElementsByTagName("choice");
            for(var j=0; j<prezcand.length; j++)
                {
                   // console.log(prezcand[j].getAttribute("choiceName"));
                    prop206.push(prezcand[j].getAttribute("choiceName"));
                    var votes = prezcand[j].getElementsByTagName("jurisdiction");
-                   //console.log(votes);     
+                   //console.log(votes);
                    prop206v.push(votes[0].getAttribute("votes"));
                }
-                   
+
         }
       if (ck == 668)
         {
-           
-           var p205pr = contest[i].getAttribute("precinctsReportingPercent");      
+
+           var p205pr = contest[i].getAttribute("precinctsReportingPercent");
            var prezcand = contest[i].getElementsByTagName("choice");
            for(var j=0; j<prezcand.length; j++)
                {
                   // console.log(prezcand[j].getAttribute("choiceName"));
                    prop205.push(prezcand[j].getAttribute("choiceName"));
                    var votes = prezcand[j].getElementsByTagName("jurisdiction");
-                   //console.log(votes);     
+                   //console.log(votes);
                    prop205v.push(votes[0].getAttribute("votes"));
                }
-                   
+
         }
-  
-        
+
+
 }
-    
+
 //console.log(pchoices);
 //console.log(pvotes);
 //console.log(schoices);
@@ -92,7 +92,7 @@ for(var i = 0; i < contest.length; i++) {
 //console.log(p206pr);
 //console.log(p205pr, prop205, prop205v);
 
-//document.getElementById("fc").innerHTML += st;    
+//document.getElementById("fc").innerHTML += st;
 var totalpVotes = 0;
 var totalsVotes = 0;
 var total205Votes = 0;
@@ -101,54 +101,54 @@ var total206Votes = 0;
  //   var sc = 500;
 for(var i=0; i<pvotes.length; i++)
     {
-        
+
         totalpVotes += parseInt(pvotes[i]);
     }
 
-    
+
 for(var i=0; i<pvotes.length; i++)
     {
         pvotes[i] = pvotes[i]/totalpVotes;
         pvotes[i] = pvotes[i] * 100;
         pvotes[i] = Math.round(pvotes[i]*100)/100;
     }
-         
+
 
 for(var i=0; i<svotes.length; i++)
     {
-        
-        totalsVotes += parseInt(svotes[i]); 
-     
+
+        totalsVotes += parseInt(svotes[i]);
+
     }
 
-    
+
 for(var i=0; i<svotes.length; i++)
     {
         svotes[i] = svotes[i]/totalsVotes;
         svotes[i] = svotes[i] * 100;
         svotes[i] = Math.round(svotes[i]*100)/100;
-        
+
     }
 
 for(var i=0; i<prop205v.length; i++)
     {
-        
-        total205Votes += parseInt(prop205v[i]); 
-     
+
+        total205Votes += parseInt(prop205v[i]);
+
     }
 for(var i=0; i<prop205v.length; i++)
     {
         prop205v[i] = prop205v[i]/total205Votes;
         prop205v[i] = prop205v[i] * 100;
         prop205v[i] = Math.round(prop205v[i]*100)/100;
-        
+
     }
 
 for(var i=0; i<prop206v.length; i++)
     {
-        
-        total206Votes += parseInt(prop206v[i]); 
-     
+
+        total206Votes += parseInt(prop206v[i]);
+
     }
 
 for(var i=0; i<prop206v.length; i++)
@@ -156,14 +156,14 @@ for(var i=0; i<prop206v.length; i++)
         prop206v[i] = prop206v[i]/total206Votes;
         prop206v[i] = prop206v[i] * 100;
         prop206v[i] = Math.round(prop206v[i]*100)/100;
-        
+
     }
 
 console.log(schoices);
          console.log(svotes);
 //console.log(pvotes);
 var pr = '30%';
-    
+
 $(function () {
     $('#g1-container').highcharts({
         colors: ['#232066','#E91D0E','#FFCC00','rgb(0,169,92)'],
@@ -219,7 +219,7 @@ $(function () {
         }]
     });
 });
-        
+
 $(function () {
     $('#g2-container').highcharts({
         colors: ['#232066','#E91D0E'],
@@ -320,7 +320,7 @@ $(function () {
             data: [
                 ['YES:  ' + prop205v[1] + '%',  prop205v[1]],
                 ['NO:  ' + prop205v[0] + '%',  prop205v[0]],
-                
+
                 {
                     name: 'Proprietary or Undetectable',
                     y: 0.2,
@@ -388,5 +388,3 @@ $(function () {
         }]
     });
 });
-
-    

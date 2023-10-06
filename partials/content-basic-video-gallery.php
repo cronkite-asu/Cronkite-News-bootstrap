@@ -14,7 +14,7 @@
 
     <div class="grid-x grid-padding-x single-story-block">
       <div class="large-12 medium-12 small-12 cell">
-        <p><?php echo get_the_content(); ?></p>        
+        <p><?php echo get_the_content(); ?></p>
       </div>
     </div>
 

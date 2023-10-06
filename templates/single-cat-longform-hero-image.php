@@ -18,9 +18,9 @@ get_header('longformhero'); ?>
                                         <?php while (have_posts()) : the_post(); ?><!-- BEGIN of POST-->
                                             <article  id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="border:none;">
 
-             
 
-                                <div id="top-img-holder"> 
+
+                                <div id="top-img-holder">
                                             <?php if (have_rows('top_full_image')) : ?>
                                                 <?php while (have_rows('top_full_image')): the_row();
                                                     // Declare variables below
@@ -38,13 +38,13 @@ get_header('longformhero'); ?>
                                                 <?php endwhile; ?>
                                             <?php endif;
                                             wp_reset_query(); ?>
-                                                
-                                              
-                              
+
+
+
                                 <div class="col-xs-12 col-md-offset-2 col-md-8">
-                                    
-                                      <h1 id="main-headline"><?php the_title(); ?></h1> 
-                                    
+
+                                      <h1 id="main-headline"><?php the_title(); ?></h1>
+
                                 <h6 class="story-info"><?php if ($postAuthor = get_field('post_author')) { ?>
                                 <a href="<?php echo site_url(); ?>?s=<?php echo $postAuthor; ?>">
                                     <?php echo $postAuthor; ?> |

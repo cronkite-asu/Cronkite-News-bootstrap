@@ -23,7 +23,7 @@
                 <h4><?php the_field('area_3_title', 'options'); ?></h4>
                 <a href="/daily-newsletter-signup/">Sign up</a> for daily headlines
                 <br>
-<!-- 
+<!--
                 <br>
                 <ul class="social">
 

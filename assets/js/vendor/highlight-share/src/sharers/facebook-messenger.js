@@ -13,4 +13,3 @@ export class FacebookMessenger {
         return `http://www.facebook.com/dialog/send?app_id=${this.appId}&link=${refUrl}&redirect_uri=${refUrl}`;
     }
 }
-

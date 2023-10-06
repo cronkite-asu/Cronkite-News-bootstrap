@@ -109,11 +109,11 @@
 ## v1.1.4
 
 - Add handler option to give alternate binding method.
-  
+
 ## v1.1.3
 
 - Fix cases where waypoints are added post-load and should be triggered immediately.
-  
+
 ## v1.1.2
 
 - Fixed error thrown by waypoints with triggerOnce option that were triggered via resize refresh.

@@ -53,7 +53,7 @@
 			}
 		);
 	})();
-	
+
 	// Shim for customEvent
 	// see https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
 	(function () {
@@ -64,7 +64,7 @@
 			evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
 			return evt;
 		}
-		
+
 		CustomEvent.prototype = window.Event.prototype;
 		window.CustomEvent = CustomEvent;
 	})();

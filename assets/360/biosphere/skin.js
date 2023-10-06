@@ -87,9 +87,9 @@ function pano2vrSkin(player,base) {
 			}
 		}
 	}
-	
+
 	player.setMargins(0,0,0,0);
-	
+
 	this.updateSize=function(startElement) {
 		var stack=[];
 		stack.push(startElement);
@@ -105,7 +105,7 @@ function pano2vrSkin(player,base) {
 			}
 		}
 	}
-	
+
 	this.callNodeChange=function(startElement) {
 		var stack=[];
 		stack.push(startElement);
@@ -122,12 +122,12 @@ function pano2vrSkin(player,base) {
 		}
 	}
 	player.addListener('changenode', function() { me.ggUserdata=player.userdata; me.callNodeChange(me.divSkin); });
-	
+
 	var parameterToTransform=function(p) {
 		var hs='translate(' + p.rx + 'px,' + p.ry + 'px) rotate(' + p.a + 'deg) scale(' + p.sx + ',' + p.sy + ')';
 		return hs;
 	}
-	
+
 	this.findElements=function(id,regex) {
 		var r=[];
 		var stack=[];
@@ -148,7 +148,7 @@ function pano2vrSkin(player,base) {
 		}
 		return r;
 	}
-	
+
 	this.addSkin=function() {
 		var hs='';
 		this.ggCurrentTime=new Date().getTime();
@@ -205,13 +205,13 @@ function pano2vrSkin(player,base) {
 		me._show_controller_button.logicBlock_position = function() {
 			var newLogicStatePosition;
 			if (
-				((player.getVariableValue('vis_website') == true)) || 
-				((player.getVariableValue('vis_video_popup_youtube') == true)) || 
-				((player.getVariableValue('vis_video_popup_vimeo') == true)) || 
-				((player.getVariableValue('vis_video_popup_url') == true)) || 
-				((player.getVariableValue('vis_video_popup_file') == true)) || 
-				((player.getVariableValue('vis_info_popup') == true)) || 
-				((player.getVariableValue('vis_image_popup') == true)) || 
+				((player.getVariableValue('vis_website') == true)) ||
+				((player.getVariableValue('vis_video_popup_youtube') == true)) ||
+				((player.getVariableValue('vis_video_popup_vimeo') == true)) ||
+				((player.getVariableValue('vis_video_popup_url') == true)) ||
+				((player.getVariableValue('vis_video_popup_file') == true)) ||
+				((player.getVariableValue('vis_info_popup') == true)) ||
+				((player.getVariableValue('vis_image_popup') == true)) ||
 				((player.getVariableValue('vis_userdata') == true))
 			)
 			{
@@ -482,7 +482,7 @@ function pano2vrSkin(player,base) {
 		me._loading_multires.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getIsTileLoading() == true)) && 
+				((player.getIsTileLoading() == true)) &&
 				((player.getVariableValue('opt_loader_mulires') == true))
 			)
 			{
@@ -536,16 +536,16 @@ function pano2vrSkin(player,base) {
 		me._screentint.logicBlock_alpha = function() {
 			var newLogicStateAlpha;
 			if (
-				((player.getVariableValue('vis_image_popup') == true)) || 
-				((player.getVariableValue('vis_info_popup') == true)) || 
-				((player.getVariableValue('vis_video_popup_file') == true)) || 
-				((player.getVariableValue('vis_video_popup_url') == true)) || 
-				((player.getVariableValue('vis_video_popup_vimeo') == true)) || 
-				((player.getVariableValue('vis_video_popup_youtube') == true)) || 
-				((player.getVariableValue('vis_userdata') == true)) || 
-				((player.getVariableValue('vis_website') == true)) || 
-				((player.getVariableValue('vis_thumbnail_menu_mobile') == true)) && 
-				((player.getVariableValue('vis_thumbnail_menu_auto_hide') == true)) && 
+				((player.getVariableValue('vis_image_popup') == true)) ||
+				((player.getVariableValue('vis_info_popup') == true)) ||
+				((player.getVariableValue('vis_video_popup_file') == true)) ||
+				((player.getVariableValue('vis_video_popup_url') == true)) ||
+				((player.getVariableValue('vis_video_popup_vimeo') == true)) ||
+				((player.getVariableValue('vis_video_popup_youtube') == true)) ||
+				((player.getVariableValue('vis_userdata') == true)) ||
+				((player.getVariableValue('vis_website') == true)) ||
+				((player.getVariableValue('vis_thumbnail_menu_mobile') == true)) &&
+				((player.getVariableValue('vis_thumbnail_menu_auto_hide') == true)) &&
 				((player.getViewerSize().width <= 450))
 			)
 			{
@@ -607,13 +607,13 @@ function pano2vrSkin(player,base) {
 		me._controller.logicBlock_position = function() {
 			var newLogicStatePosition;
 			if (
-				((player.getVariableValue('vis_website') == true)) || 
-				((player.getVariableValue('vis_video_popup_youtube') == true)) || 
-				((player.getVariableValue('vis_video_popup_vimeo') == true)) || 
-				((player.getVariableValue('vis_video_popup_url') == true)) || 
-				((player.getVariableValue('vis_video_popup_file') == true)) || 
-				((player.getVariableValue('vis_info_popup') == true)) || 
-				((player.getVariableValue('vis_image_popup') == true)) || 
+				((player.getVariableValue('vis_website') == true)) ||
+				((player.getVariableValue('vis_video_popup_youtube') == true)) ||
+				((player.getVariableValue('vis_video_popup_vimeo') == true)) ||
+				((player.getVariableValue('vis_video_popup_url') == true)) ||
+				((player.getVariableValue('vis_video_popup_file') == true)) ||
+				((player.getVariableValue('vis_info_popup') == true)) ||
+				((player.getVariableValue('vis_image_popup') == true)) ||
 				((player.getVariableValue('vis_userdata') == true))
 			)
 			{
@@ -1322,7 +1322,7 @@ function pano2vrSkin(player,base) {
 		me._fullscreen_buttons.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getVariableValue('opt_fullscreen') == true)) && 
+				((player.getVariableValue('opt_fullscreen') == true)) &&
 				((player.getOS() != 4))
 			)
 			{
@@ -1898,7 +1898,7 @@ function pano2vrSkin(player,base) {
 		me._gyro.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getVariableValue('opt_gyro') == true)) && 
+				((player.getVariableValue('opt_gyro') == true)) &&
 				((player.getGyroAvailable() == true))
 			)
 			{
@@ -2935,7 +2935,7 @@ function pano2vrSkin(player,base) {
 		me._thumbnail.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getVariableValue('opt_thumbnail') == true)) && 
+				((player.getVariableValue('opt_thumbnail') == true)) &&
 				((player.getIsTour() == true))
 			)
 			{
@@ -3169,28 +3169,28 @@ function pano2vrSkin(player,base) {
 		me._tt_thumbnail_open.logicBlock_text = function() {
 			var newLogicStateText;
 			if (
-				((player.getVariableValue('vis_thumbnail_menu_show') == true)) && 
+				((player.getVariableValue('vis_thumbnail_menu_show') == true)) &&
 				((player.getViewerSize().width > 450))
 			)
 			{
 				newLogicStateText = 0;
 			}
 			else if (
-				((player.getVariableValue('vis_thumbnail_menu_mobile') == true)) && 
+				((player.getVariableValue('vis_thumbnail_menu_mobile') == true)) &&
 				((player.getViewerSize().width <= 450))
 			)
 			{
 				newLogicStateText = 1;
 			}
 			else if (
-				((player.getVariableValue('vis_thumbnail_menu_show') == false)) && 
+				((player.getVariableValue('vis_thumbnail_menu_show') == false)) &&
 				((player.getViewerSize().width > 450))
 			)
 			{
 				newLogicStateText = 2;
 			}
 			else if (
-				((player.getVariableValue('vis_thumbnail_menu_mobile') == false)) && 
+				((player.getVariableValue('vis_thumbnail_menu_mobile') == false)) &&
 				((player.getViewerSize().width <= 450))
 			)
 			{
@@ -5034,13 +5034,13 @@ function pano2vrSkin(player,base) {
 		me._thumbnail_menu.logicBlock_position = function() {
 			var newLogicStatePosition;
 			if (
-				((player.getVariableValue('vis_website') == true)) || 
-				((player.getVariableValue('vis_video_popup_youtube') == true)) || 
-				((player.getVariableValue('vis_video_popup_vimeo') == true)) || 
-				((player.getVariableValue('vis_video_popup_url') == true)) || 
-				((player.getVariableValue('vis_video_popup_file') == true)) || 
-				((player.getVariableValue('vis_info_popup') == true)) || 
-				((player.getVariableValue('vis_image_popup') == true)) || 
+				((player.getVariableValue('vis_website') == true)) ||
+				((player.getVariableValue('vis_video_popup_youtube') == true)) ||
+				((player.getVariableValue('vis_video_popup_vimeo') == true)) ||
+				((player.getVariableValue('vis_video_popup_url') == true)) ||
+				((player.getVariableValue('vis_video_popup_file') == true)) ||
+				((player.getVariableValue('vis_info_popup') == true)) ||
+				((player.getVariableValue('vis_image_popup') == true)) ||
 				((player.getVariableValue('vis_userdata') == true))
 			)
 			{
@@ -5078,8 +5078,8 @@ function pano2vrSkin(player,base) {
 		me._thumbnail_menu.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getVariableValue('opt_thumbnail') == true)) && 
-				((player.getIsTour() == true)) && 
+				((player.getVariableValue('opt_thumbnail') == true)) &&
+				((player.getIsTour() == true)) &&
 				((player.getViewerSize().width > 450))
 			)
 			{
@@ -5104,9 +5104,9 @@ function pano2vrSkin(player,base) {
 		me._thumbnail_menu.logicBlock_alpha = function() {
 			var newLogicStateAlpha;
 			if (
-				((player.getVariableValue('vis_thumbnail_menu_show') == true)) && 
-				((player.getVariableValue('vis_thumbnail_menu_auto_hide') == true)) && 
-				((player.getVariableValue('vis_timer') == true)) && 
+				((player.getVariableValue('vis_thumbnail_menu_show') == true)) &&
+				((player.getVariableValue('vis_thumbnail_menu_auto_hide') == true)) &&
+				((player.getVariableValue('vis_timer') == true)) &&
 				((player.getViewerSize().width > 450))
 			)
 			{
@@ -5783,8 +5783,8 @@ function pano2vrSkin(player,base) {
 		me._thumbnail_menu_mobile.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getVariableValue('opt_thumbnail') == true)) && 
-				((player.getIsTour() == true)) && 
+				((player.getVariableValue('opt_thumbnail') == true)) &&
+				((player.getIsTour() == true)) &&
 				((player.getViewerSize().width <= 450))
 			)
 			{
@@ -5809,9 +5809,9 @@ function pano2vrSkin(player,base) {
 		me._thumbnail_menu_mobile.logicBlock_alpha = function() {
 			var newLogicStateAlpha;
 			if (
-				((player.getVariableValue('vis_thumbnail_menu_mobile') == true)) && 
-				((player.getVariableValue('vis_thumbnail_menu_auto_hide') == true)) && 
-				((player.getVariableValue('vis_timer') == true)) && 
+				((player.getVariableValue('vis_thumbnail_menu_mobile') == true)) &&
+				((player.getVariableValue('vis_thumbnail_menu_auto_hide') == true)) &&
+				((player.getVariableValue('vis_timer') == true)) &&
 				((player.getViewerSize().width <= 450))
 			)
 			{
@@ -9449,8 +9449,8 @@ function pano2vrSkin(player,base) {
 		me.__360image_gyro.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getHasTouch() == true)) && 
-				((player.getVariableValue('opt_gyro') == true)) && 
+				((player.getHasTouch() == true)) &&
+				((player.getVariableValue('opt_gyro') == true)) &&
 				((player.getVariableValue('vis_360image_once') == true))
 			)
 			{
@@ -10109,11 +10109,11 @@ function pano2vrSkin(player,base) {
 		me._close.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getVariableValue('vis_image_popup') == true)) || 
-				((player.getVariableValue('vis_video_popup_file') == true)) || 
-				((player.getVariableValue('vis_video_popup_url') == true)) || 
-				((player.getVariableValue('vis_video_popup_vimeo') == true)) || 
-				((player.getVariableValue('vis_video_popup_youtube') == true)) || 
+				((player.getVariableValue('vis_image_popup') == true)) ||
+				((player.getVariableValue('vis_video_popup_file') == true)) ||
+				((player.getVariableValue('vis_video_popup_url') == true)) ||
+				((player.getVariableValue('vis_video_popup_vimeo') == true)) ||
+				((player.getVariableValue('vis_video_popup_youtube') == true)) ||
 				((player.getVariableValue('vis_website') == true))
 			)
 			{
@@ -10144,7 +10144,7 @@ function pano2vrSkin(player,base) {
 			player.setVariableValue('vis_video_popup_youtube', false);
 			if (
 				(
-					((player.getVariableValue('vis_website') == true)) && 
+					((player.getVariableValue('vis_website') == true)) &&
 					((player.getVariableValue('opt_url') == true))
 				)
 			) {
@@ -10438,7 +10438,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_thumbnail') == true)) && 
+					((player.getVariableValue('opt_thumbnail') == true)) &&
 					((player.getIsTour() == true))
 				)
 			) {
@@ -10453,7 +10453,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_gyro') == true)) && 
+					((player.getVariableValue('opt_gyro') == true)) &&
 					((player.getGyroAvailable() == true))
 				)
 			) {
@@ -10461,7 +10461,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_fullscreen') == true)) && 
+					((player.getVariableValue('opt_fullscreen') == true)) &&
 					((player.getOS() != 4))
 				)
 			) {
@@ -10477,7 +10477,7 @@ function pano2vrSkin(player,base) {
 			player.setVariableValue('pos_enter_vr', Number("0"));
 			if (
 				(
-					((player.getVariableValue('opt_zoom') == true)) && 
+					((player.getVariableValue('opt_zoom') == true)) &&
 					((player.hasVR() == true))
 				)
 			) {
@@ -10485,7 +10485,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_autorotate') == true)) && 
+					((player.getVariableValue('opt_autorotate') == true)) &&
 					((player.hasVR() == true))
 				)
 			) {
@@ -10493,7 +10493,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_info') == true)) && 
+					((player.getVariableValue('opt_info') == true)) &&
 					((player.hasVR() == true))
 				)
 			) {
@@ -10501,8 +10501,8 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_thumbnail') == true)) && 
-					((player.getIsTour() == true)) && 
+					((player.getVariableValue('opt_thumbnail') == true)) &&
+					((player.getIsTour() == true)) &&
 					((player.hasVR() == true))
 				)
 			) {
@@ -10510,7 +10510,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_projection') == true)) && 
+					((player.getVariableValue('opt_projection') == true)) &&
 					((player.hasVR() == true))
 				)
 			) {
@@ -10518,8 +10518,8 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_gyro') == true)) && 
-					((player.getGyroAvailable() == true)) && 
+					((player.getVariableValue('opt_gyro') == true)) &&
+					((player.getGyroAvailable() == true)) &&
 					((player.hasVR() == true))
 				)
 			) {
@@ -10527,8 +10527,8 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_fullscreen') == true)) && 
-					((player.hasVR() == true)) && 
+					((player.getVariableValue('opt_fullscreen') == true)) &&
+					((player.hasVR() == true)) &&
 					((player.getOS() != 4))
 				)
 			) {
@@ -10537,7 +10537,7 @@ function pano2vrSkin(player,base) {
 			player.setVariableValue('pos_fullscreen', Number("0"));
 			if (
 				(
-					((player.getVariableValue('opt_zoom') == true)) && 
+					((player.getVariableValue('opt_zoom') == true)) &&
 					((player.getOS() != 4))
 				)
 			) {
@@ -10545,7 +10545,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_autorotate') == true)) && 
+					((player.getVariableValue('opt_autorotate') == true)) &&
 					((player.getOS() != 4))
 				)
 			) {
@@ -10553,7 +10553,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_info') == true)) && 
+					((player.getVariableValue('opt_info') == true)) &&
 					((player.getOS() != 4))
 				)
 			) {
@@ -10561,8 +10561,8 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_thumbnail') == true)) && 
-					((player.getIsTour() == true)) && 
+					((player.getVariableValue('opt_thumbnail') == true)) &&
+					((player.getIsTour() == true)) &&
 					((player.getOS() != 4))
 				)
 			) {
@@ -10570,7 +10570,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_projection') == true)) && 
+					((player.getVariableValue('opt_projection') == true)) &&
 					((player.getOS() != 4))
 				)
 			) {
@@ -10578,8 +10578,8 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_gyro') == true)) && 
-					((player.getGyroAvailable() == true)) && 
+					((player.getVariableValue('opt_gyro') == true)) &&
+					((player.getGyroAvailable() == true)) &&
 					((player.getOS() != 4))
 				)
 			) {
@@ -10588,7 +10588,7 @@ function pano2vrSkin(player,base) {
 			player.setVariableValue('pos_gyro', Number("0"));
 			if (
 				(
-					((player.getVariableValue('opt_zoom') == true)) && 
+					((player.getVariableValue('opt_zoom') == true)) &&
 					((player.getGyroAvailable() == true))
 				)
 			) {
@@ -10596,7 +10596,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_autorotate') == true)) && 
+					((player.getVariableValue('opt_autorotate') == true)) &&
 					((player.getGyroAvailable() == true))
 				)
 			) {
@@ -10604,7 +10604,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_info') == true)) && 
+					((player.getVariableValue('opt_info') == true)) &&
 					((player.getGyroAvailable() == true))
 				)
 			) {
@@ -10612,8 +10612,8 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_thumbnail') == true)) && 
-					((player.getIsTour() == true)) && 
+					((player.getVariableValue('opt_thumbnail') == true)) &&
+					((player.getIsTour() == true)) &&
 					((player.getGyroAvailable() == true))
 				)
 			) {
@@ -10621,7 +10621,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_projection') == true)) && 
+					((player.getVariableValue('opt_projection') == true)) &&
 					((player.getGyroAvailable() == true))
 				)
 			) {
@@ -10651,7 +10651,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_thumbnail') == true)) && 
+					((player.getVariableValue('opt_thumbnail') == true)) &&
 					((player.getIsTour() == true))
 				)
 			) {
@@ -12211,13 +12211,13 @@ function pano2vrSkin(player,base) {
 		me._ht_video_youtube.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getVariableValue('vis_userdata') == true)) || 
-				((player.getVariableValue('vis_image_popup') == true)) || 
-				((player.getVariableValue('vis_info_popup') == true)) || 
-				((player.getVariableValue('vis_video_popup_file') == true)) || 
-				((player.getVariableValue('vis_video_popup_url') == true)) || 
-				((player.getVariableValue('vis_video_popup_vimeo') == true)) || 
-				((player.getVariableValue('vis_video_popup_youtube') == true)) || 
+				((player.getVariableValue('vis_userdata') == true)) ||
+				((player.getVariableValue('vis_image_popup') == true)) ||
+				((player.getVariableValue('vis_info_popup') == true)) ||
+				((player.getVariableValue('vis_video_popup_file') == true)) ||
+				((player.getVariableValue('vis_video_popup_url') == true)) ||
+				((player.getVariableValue('vis_video_popup_vimeo') == true)) ||
+				((player.getVariableValue('vis_video_popup_youtube') == true)) ||
 				((player.getVariableValue('vis_website') == true))
 			)
 			{
@@ -12486,7 +12486,7 @@ function pano2vrSkin(player,base) {
 		me._tt_ht_video_youtube.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((me.elementMouseOver['ht_video_youtube'] == true)) && 
+				((me.elementMouseOver['ht_video_youtube'] == true)) &&
 				((me.hotspot.title != ""))
 			)
 			{
@@ -12686,13 +12686,13 @@ function pano2vrSkin(player,base) {
 		me._ht_video_vimeo.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getVariableValue('vis_userdata') == true)) || 
-				((player.getVariableValue('vis_image_popup') == true)) || 
-				((player.getVariableValue('vis_info_popup') == true)) || 
-				((player.getVariableValue('vis_video_popup_file') == true)) || 
-				((player.getVariableValue('vis_video_popup_url') == true)) || 
-				((player.getVariableValue('vis_video_popup_vimeo') == true)) || 
-				((player.getVariableValue('vis_video_popup_youtube') == true)) || 
+				((player.getVariableValue('vis_userdata') == true)) ||
+				((player.getVariableValue('vis_image_popup') == true)) ||
+				((player.getVariableValue('vis_info_popup') == true)) ||
+				((player.getVariableValue('vis_video_popup_file') == true)) ||
+				((player.getVariableValue('vis_video_popup_url') == true)) ||
+				((player.getVariableValue('vis_video_popup_vimeo') == true)) ||
+				((player.getVariableValue('vis_video_popup_youtube') == true)) ||
 				((player.getVariableValue('vis_website') == true))
 			)
 			{
@@ -12961,7 +12961,7 @@ function pano2vrSkin(player,base) {
 		me._tt_ht_video_vimeo.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((me.elementMouseOver['ht_video_vimeo'] == true)) && 
+				((me.elementMouseOver['ht_video_vimeo'] == true)) &&
 				((me.hotspot.title != ""))
 			)
 			{
@@ -13161,13 +13161,13 @@ function pano2vrSkin(player,base) {
 		me._ht_video_url.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getVariableValue('vis_userdata') == true)) || 
-				((player.getVariableValue('vis_image_popup') == true)) || 
-				((player.getVariableValue('vis_info_popup') == true)) || 
-				((player.getVariableValue('vis_video_popup_file') == true)) || 
-				((player.getVariableValue('vis_video_popup_url') == true)) || 
-				((player.getVariableValue('vis_video_popup_vimeo') == true)) || 
-				((player.getVariableValue('vis_video_popup_youtube') == true)) || 
+				((player.getVariableValue('vis_userdata') == true)) ||
+				((player.getVariableValue('vis_image_popup') == true)) ||
+				((player.getVariableValue('vis_info_popup') == true)) ||
+				((player.getVariableValue('vis_video_popup_file') == true)) ||
+				((player.getVariableValue('vis_video_popup_url') == true)) ||
+				((player.getVariableValue('vis_video_popup_vimeo') == true)) ||
+				((player.getVariableValue('vis_video_popup_youtube') == true)) ||
 				((player.getVariableValue('vis_website') == true))
 			)
 			{
@@ -13457,7 +13457,7 @@ function pano2vrSkin(player,base) {
 		me._tt_ht_video_url.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((me.elementMouseOver['ht_video_url'] == true)) && 
+				((me.elementMouseOver['ht_video_url'] == true)) &&
 				((me.hotspot.title != ""))
 			)
 			{
@@ -13657,13 +13657,13 @@ function pano2vrSkin(player,base) {
 		me._ht_video_file.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getVariableValue('vis_userdata') == true)) || 
-				((player.getVariableValue('vis_image_popup') == true)) || 
-				((player.getVariableValue('vis_info_popup') == true)) || 
-				((player.getVariableValue('vis_video_popup_file') == true)) || 
-				((player.getVariableValue('vis_video_popup_url') == true)) || 
-				((player.getVariableValue('vis_video_popup_vimeo') == true)) || 
-				((player.getVariableValue('vis_video_popup_youtube') == true)) || 
+				((player.getVariableValue('vis_userdata') == true)) ||
+				((player.getVariableValue('vis_image_popup') == true)) ||
+				((player.getVariableValue('vis_info_popup') == true)) ||
+				((player.getVariableValue('vis_video_popup_file') == true)) ||
+				((player.getVariableValue('vis_video_popup_url') == true)) ||
+				((player.getVariableValue('vis_video_popup_vimeo') == true)) ||
+				((player.getVariableValue('vis_video_popup_youtube') == true)) ||
 				((player.getVariableValue('vis_website') == true))
 			)
 			{
@@ -13953,7 +13953,7 @@ function pano2vrSkin(player,base) {
 		me._tt_ht_video_file.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((me.elementMouseOver['ht_video_file'] == true)) && 
+				((me.elementMouseOver['ht_video_file'] == true)) &&
 				((me.hotspot.title != ""))
 			)
 			{
@@ -14153,13 +14153,13 @@ function pano2vrSkin(player,base) {
 		me._ht_image.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getVariableValue('vis_userdata') == true)) || 
-				((player.getVariableValue('vis_image_popup') == true)) || 
-				((player.getVariableValue('vis_info_popup') == true)) || 
-				((player.getVariableValue('vis_video_popup_file') == true)) || 
-				((player.getVariableValue('vis_video_popup_url') == true)) || 
-				((player.getVariableValue('vis_video_popup_vimeo') == true)) || 
-				((player.getVariableValue('vis_video_popup_youtube') == true)) || 
+				((player.getVariableValue('vis_userdata') == true)) ||
+				((player.getVariableValue('vis_image_popup') == true)) ||
+				((player.getVariableValue('vis_info_popup') == true)) ||
+				((player.getVariableValue('vis_video_popup_file') == true)) ||
+				((player.getVariableValue('vis_video_popup_url') == true)) ||
+				((player.getVariableValue('vis_video_popup_vimeo') == true)) ||
+				((player.getVariableValue('vis_video_popup_youtube') == true)) ||
 				((player.getVariableValue('vis_website') == true))
 			)
 			{
@@ -14428,7 +14428,7 @@ function pano2vrSkin(player,base) {
 		me._tt_ht_image.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((me.elementMouseOver['ht_image'] == true)) && 
+				((me.elementMouseOver['ht_image'] == true)) &&
 				((me.hotspot.title != ""))
 			)
 			{
@@ -14629,13 +14629,13 @@ function pano2vrSkin(player,base) {
 		me._ht_info.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getVariableValue('vis_userdata') == true)) || 
-				((player.getVariableValue('vis_image_popup') == true)) || 
-				((player.getVariableValue('vis_info_popup') == true)) || 
-				((player.getVariableValue('vis_video_popup_file') == true)) || 
-				((player.getVariableValue('vis_video_popup_url') == true)) || 
-				((player.getVariableValue('vis_video_popup_vimeo') == true)) || 
-				((player.getVariableValue('vis_video_popup_youtube') == true)) || 
+				((player.getVariableValue('vis_userdata') == true)) ||
+				((player.getVariableValue('vis_image_popup') == true)) ||
+				((player.getVariableValue('vis_info_popup') == true)) ||
+				((player.getVariableValue('vis_video_popup_file') == true)) ||
+				((player.getVariableValue('vis_video_popup_url') == true)) ||
+				((player.getVariableValue('vis_video_popup_vimeo') == true)) ||
+				((player.getVariableValue('vis_video_popup_youtube') == true)) ||
 				((player.getVariableValue('vis_website') == true))
 			)
 			{
@@ -14931,7 +14931,7 @@ function pano2vrSkin(player,base) {
 		me._tt_information.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((me.elementMouseOver['ht_info'] == true)) && 
+				((me.elementMouseOver['ht_info'] == true)) &&
 				((me.hotspot.title != ""))
 			)
 			{
@@ -15131,13 +15131,13 @@ function pano2vrSkin(player,base) {
 		me._ht_node.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getVariableValue('vis_userdata') == true)) || 
-				((player.getVariableValue('vis_image_popup') == true)) || 
-				((player.getVariableValue('vis_info_popup') == true)) || 
-				((player.getVariableValue('vis_video_popup_file') == true)) || 
-				((player.getVariableValue('vis_video_popup_url') == true)) || 
-				((player.getVariableValue('vis_video_popup_vimeo') == true)) || 
-				((player.getVariableValue('vis_video_popup_youtube') == true)) || 
+				((player.getVariableValue('vis_userdata') == true)) ||
+				((player.getVariableValue('vis_image_popup') == true)) ||
+				((player.getVariableValue('vis_info_popup') == true)) ||
+				((player.getVariableValue('vis_video_popup_file') == true)) ||
+				((player.getVariableValue('vis_video_popup_url') == true)) ||
+				((player.getVariableValue('vis_video_popup_vimeo') == true)) ||
+				((player.getVariableValue('vis_video_popup_youtube') == true)) ||
 				((player.getVariableValue('vis_website') == true))
 			)
 			{
@@ -15331,8 +15331,8 @@ function pano2vrSkin(player,base) {
 		me._hotspot_preview.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((me.elementMouseOver['ht_node'] == true)) && 
-				((player.getVariableValue('opt_hotspot_preview') == true)) && 
+				((me.elementMouseOver['ht_node'] == true)) &&
+				((player.getVariableValue('opt_hotspot_preview') == true)) &&
 				((player.getIsTour() == true))
 			)
 			{
@@ -15610,7 +15610,7 @@ function pano2vrSkin(player,base) {
 		me._ht_checkmark_tick.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.nodeVisited(me._ht_checkmark_tick.ggElementNodeId()) == true)) || 
+				((player.nodeVisited(me._ht_checkmark_tick.ggElementNodeId()) == true)) ||
 				((me._ht_checkmark_tick.ggIsActive() == true))
 			)
 			{
@@ -15716,27 +15716,27 @@ function pano2vrSkin(player,base) {
 		me._tt_ht_node.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((me.elementMouseOver['ht_node'] == true)) && 
-				((me.hotspot.title != "")) && 
-				((player.getIsTour() == false)) && 
+				((me.elementMouseOver['ht_node'] == true)) &&
+				((me.hotspot.title != "")) &&
+				((player.getIsTour() == false)) &&
 				((player.getVariableValue('opt_hotspot_preview') == false))
 			)
 			{
 				newLogicStateVisible = 0;
 			}
 			else if (
-				((me.elementMouseOver['ht_node'] == true)) && 
-				((me.hotspot.title != "")) && 
-				((player.getIsTour() == true)) && 
+				((me.elementMouseOver['ht_node'] == true)) &&
+				((me.hotspot.title != "")) &&
+				((player.getIsTour() == true)) &&
 				((player.getVariableValue('opt_hotspot_preview') == false))
 			)
 			{
 				newLogicStateVisible = 1;
 			}
 			else if (
-				((me.elementMouseOver['ht_node'] == true)) && 
-				((me.hotspot.title != "")) && 
-				((player.getIsTour() == false)) && 
+				((me.elementMouseOver['ht_node'] == true)) &&
+				((me.hotspot.title != "")) &&
+				((player.getIsTour() == false)) &&
 				((player.getVariableValue('opt_hotspot_preview') == true))
 			)
 			{
@@ -15944,13 +15944,13 @@ function pano2vrSkin(player,base) {
 		me._ht_url.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.getVariableValue('vis_userdata') == true)) || 
-				((player.getVariableValue('vis_image_popup') == true)) || 
-				((player.getVariableValue('vis_info_popup') == true)) || 
-				((player.getVariableValue('vis_video_popup_file') == true)) || 
-				((player.getVariableValue('vis_video_popup_url') == true)) || 
-				((player.getVariableValue('vis_video_popup_vimeo') == true)) || 
-				((player.getVariableValue('vis_video_popup_youtube') == true)) || 
+				((player.getVariableValue('vis_userdata') == true)) ||
+				((player.getVariableValue('vis_image_popup') == true)) ||
+				((player.getVariableValue('vis_info_popup') == true)) ||
+				((player.getVariableValue('vis_video_popup_file') == true)) ||
+				((player.getVariableValue('vis_video_popup_url') == true)) ||
+				((player.getVariableValue('vis_video_popup_vimeo') == true)) ||
+				((player.getVariableValue('vis_video_popup_youtube') == true)) ||
 				((player.getVariableValue('vis_website') == true))
 			)
 			{
@@ -15999,7 +15999,7 @@ function pano2vrSkin(player,base) {
 		me._ht_url.onclick=function (e) {
 			if (
 				(
-					((player.getVariableValue('opt_url') == true)) && 
+					((player.getVariableValue('opt_url') == true)) &&
 					((player.getHasTouch() == false))
 				)
 			) {
@@ -16022,7 +16022,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_url') == true)) && 
+					((player.getVariableValue('opt_url') == true)) &&
 					((player.getHasTouch() == false))
 				)
 			) {
@@ -16030,7 +16030,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (
 				(
-					((player.getVariableValue('opt_url') == false)) || 
+					((player.getVariableValue('opt_url') == false)) ||
 					((player.getHasTouch() == true))
 				)
 			) {
@@ -16286,7 +16286,7 @@ function pano2vrSkin(player,base) {
 		me._tt_ht_url.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((me.elementMouseOver['ht_url'] == true)) && 
+				((me.elementMouseOver['ht_url'] == true)) &&
 				((me.hotspot.title != ""))
 			)
 			{
@@ -16873,7 +16873,7 @@ function pano2vrSkin(player,base) {
 		me._checkmark_tick.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.nodeVisited(me._checkmark_tick.ggElementNodeId()) == true)) || 
+				((player.nodeVisited(me._checkmark_tick.ggElementNodeId()) == true)) ||
 				((me._checkmark_tick.ggIsActive() == true))
 			)
 			{
@@ -16898,7 +16898,7 @@ function pano2vrSkin(player,base) {
 		me._checkmark_tick.logicBlock_alpha = function() {
 			var newLogicStateAlpha;
 			if (
-				((me.elementMouseOver['thumbnail_active'] == true)) && 
+				((me.elementMouseOver['thumbnail_active'] == true)) &&
 				((me.ggUserdata.title != ""))
 			)
 			{
@@ -16977,8 +16977,8 @@ function pano2vrSkin(player,base) {
 		me._thumbnail_title.logicBlock_alpha = function() {
 			var newLogicStateAlpha;
 			if (
-				((me.elementMouseOver['thumbnail_active'] == true)) && 
-				((me.ggUserdata.title != "")) && 
+				((me.elementMouseOver['thumbnail_active'] == true)) &&
+				((me.ggUserdata.title != "")) &&
 				((player.getVariableValue('opt_thumbnail_tooltip') == true))
 			)
 			{
@@ -17239,7 +17239,7 @@ function pano2vrSkin(player,base) {
 		me._checkmark_tick_mobile.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
-				((player.nodeVisited(me._checkmark_tick_mobile.ggElementNodeId()) == true)) || 
+				((player.nodeVisited(me._checkmark_tick_mobile.ggElementNodeId()) == true)) ||
 				((me._checkmark_tick_mobile.ggIsActive() == true))
 			)
 			{
@@ -17264,7 +17264,7 @@ function pano2vrSkin(player,base) {
 		me._checkmark_tick_mobile.logicBlock_alpha = function() {
 			var newLogicStateAlpha;
 			if (
-				((me.elementMouseOver['thumbnail_active_mobile'] == true)) && 
+				((me.elementMouseOver['thumbnail_active_mobile'] == true)) &&
 				((me.ggUserdata.title != ""))
 			)
 			{
@@ -17345,8 +17345,8 @@ function pano2vrSkin(player,base) {
 		me._thumbnail_title_mobile.logicBlock_alpha = function() {
 			var newLogicStateAlpha;
 			if (
-				((me.elementMouseOver['thumbnail_active_mobile'] == true)) && 
-				((me.ggUserdata.title != "")) && 
+				((me.elementMouseOver['thumbnail_active_mobile'] == true)) &&
+				((me.ggUserdata.title != "")) &&
 				((player.getVariableValue('opt_thumbnail_tooltip') == true))
 			)
 			{

@@ -21,4 +21,3 @@
         <button type="submit"  class="btn btn-default btn-submit icon-right-open" id="searchsubmit"></button>
     </form>
 <?php endif; ?>
-

@@ -213,7 +213,7 @@ html.fp-enabled,
     height: auto !important;
 }
 
-/* Used with autoScrolling: false */ 
+/* Used with autoScrolling: false */
 .fp-scrollable.fp-responsive .fp-is-overflow.fp-section,
 .fp-scrollable .fp-section,
 .fp-scrollable .fp-slide{

@@ -115,7 +115,7 @@
     /*
     *  _applyDataApi will apply matchHeight to all elements with a data-match-height attribute
     */
-   
+
     $.fn.matchHeight._applyDataApi = function() {
         var groups = {};
 
@@ -136,10 +136,10 @@
         });
     };
 
-    /* 
+    /*
     *  _update function will re-apply matchHeight to all groups with the correct options
     */
-   
+
     $.fn.matchHeight._groups = [];
     $.fn.matchHeight._throttle = 80;
 
@@ -147,7 +147,7 @@
         updateTimeout = -1;
 
     $.fn.matchHeight._update = function(event) {
-        // prevent update if fired from a resize event 
+        // prevent update if fired from a resize event
         // where the viewport width hasn't actually changed
         // fixes an event looping bug in IE8
         if (event && event.type === 'resize') {
@@ -171,7 +171,7 @@
         }
     };
 
-    /* 
+    /*
     *  bind events
     */
 
@@ -183,7 +183,7 @@
 
     /*
     *  rows utility function
-    *  returns array of jQuery selections representing each row 
+    *  returns array of jQuery selections representing each row
     *  (as displayed after float wrapping applied by browser)
     */
 

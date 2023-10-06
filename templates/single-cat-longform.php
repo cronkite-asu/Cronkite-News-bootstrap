@@ -13,7 +13,7 @@ get_header(); ?>
 
                             <div class="post format-single clearfix">
 
-                                
+
                                 <div class="post-content post-content-single clearfix">
                                     <?php if (have_posts()) : ?>
                                         <?php while (have_posts()) : the_post(); ?><!-- BEGIN of POST-->
@@ -38,7 +38,7 @@ get_header(); ?>
 
               <h1><?php the_title(); ?></h1>
 
-                                            <div id="top-img-holder"> 
+                                            <div id="top-img-holder">
                                             <?php if (have_rows('top_full_image')) : ?>
                                                 <?php while (have_rows('top_full_image')): the_row();
                                                     // Declare variables below

@@ -659,7 +659,7 @@
  ?>
 
             <?php if (current_user_can('administrator')) { ?>
-             <div class="social_share last">               
+             <div class="social_share last">
                <div class="report-typo"><a class="hollow button" href="#">Report a Typo</a></div>
              </div>
             <?php } ?>

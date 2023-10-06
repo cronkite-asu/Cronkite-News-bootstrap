@@ -31,7 +31,7 @@ while ($loop->have_posts()) : $loop->the_post();
     echo get_field('story_tease');
     echo ']]>';
     ?>
-    </description>   
+    </description>
     <pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_post_time('Y-m-d H:i:s', true), false); ?></pubDate>
     <guid><?php echo get_permalink($post->ID); ?></guid>
   </item>

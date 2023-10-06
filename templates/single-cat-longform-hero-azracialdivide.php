@@ -21,42 +21,19 @@ get_header('azracialdivide'); ?>
                                         <?php while (have_posts()) : the_post(); ?><!-- BEGIN of POST-->
                                             <article  id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="border:none;background-color:#222;">
 
-                                
-                                                                 
-                                            <?php if (get_field('autoplay_bg_video')) { ?>          
-                                    <div class="desktop-only"> 
+
+
+                                            <?php if (get_field('autoplay_bg_video')) { ?>
+                                    <div class="desktop-only">
                             <video autoplay muted loop style="z-index:-1;width:2000px; overflow-x:hidden; height:auto;">
                                 <source src="<?php the_field('autoplay_bg_video'); ?>" type="video/mp4">
-    
-                                    </video>
-    
-                                   </div> 
-                                
-                            <div class="small-devices-only">                  
-                                <div id="top-img-holder"> 
-                                                <?php if (have_rows('top_full_image')) : ?>
-                                                    <?php while (have_rows('top_full_image')): the_row();
-                                                        // Declare variables below
-                                                        $icon = get_sub_field('fimage');
-                                                        $text = get_sub_field('fcaption');  // Use variables below?>
-                                                <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
-                                                        <?php if ($imgheadline = get_field('headline_over_image')) { ?>
-                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image'); ?>;font-size:<?php the_field('headline_over_image_font_size'); ?>;<?php the_field('additional_headline_over_image_styling'); ?>"> <?php the_field('headline_over_image'); ?> </h1>
-                                                        <?php } ?>
-                                        <div class="carousel-captions"> <!--         captions -->
-                                                        <?php echo $text; ?>
 
-                                                </div>
-                                                </div>
-                                                    <?php endwhile; ?>
-                                                <?php endif;
-                                                wp_reset_query(); ?>                
-                                                
-                                      </div>            
-                                            <?php } else { ?>
-                                                
-                                                
-                                <div id="top-img-holder"> 
+                                    </video>
+
+                                   </div>
+
+                            <div class="small-devices-only">
+                                <div id="top-img-holder">
                                                 <?php if (have_rows('top_full_image')) : ?>
                                                     <?php while (have_rows('top_full_image')): the_row();
                                                         // Declare variables below
@@ -74,14 +51,37 @@ get_header('azracialdivide'); ?>
                                                     <?php endwhile; ?>
                                                 <?php endif;
                                                 wp_reset_query(); ?>
-                                                
-                                            <?php } ?>            
-                              
+
+                                      </div>
+                                            <?php } else { ?>
+
+
+                                <div id="top-img-holder">
+                                                <?php if (have_rows('top_full_image')) : ?>
+                                                    <?php while (have_rows('top_full_image')): the_row();
+                                                        // Declare variables below
+                                                        $icon = get_sub_field('fimage');
+                                                        $text = get_sub_field('fcaption');  // Use variables below?>
+                                                <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
+                                                        <?php if ($imgheadline = get_field('headline_over_image')) { ?>
+                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image'); ?>;font-size:<?php the_field('headline_over_image_font_size'); ?>;<?php the_field('additional_headline_over_image_styling'); ?>"> <?php the_field('headline_over_image'); ?> </h1>
+                                                        <?php } ?>
+                                        <div class="carousel-captions"> <!--         captions -->
+                                                        <?php echo $text; ?>
+
+                                                </div>
+                                                </div>
+                                                    <?php endwhile; ?>
+                                                <?php endif;
+                                                wp_reset_query(); ?>
+
+                                            <?php } ?>
+
                                 <div class="col-xs-12 col-md-offset-2 col-md-8">
-                                    
+
                                         <h3 style="color:rgba(255,255,255,0.9);padding-top:10px;"> <?php the_field('text_before_headline'); ?>   </h3>
-                                      <h1 id="main-headline" style="color:rgba(255,255,255,0.9);"><?php the_title(); ?></h1> 
-                                    
+                                      <h1 id="main-headline" style="color:rgba(255,255,255,0.9);"><?php the_title(); ?></h1>
+
                                 <h6 class="story-info" style="color:rgba(255,255,255,0.9);"><?php if ($postAuthor = get_field('post_author')) { ?>
                                 <a href="<?php echo site_url(); ?>?s=<?php echo $postAuthor; ?>">
                                     <?php echo $postAuthor; ?> |
@@ -93,18 +93,18 @@ get_header('azracialdivide'); ?>
 
                                                 <?php the_content(); ?>
                                                 <?php the_field('second_text'); ?>
-                                            
+
                                         <?php endwhile; ?><!-- END of POST-->
                                     <?php endif; ?>
                                                 </div>
                                     </article>
                                 </div>
-                                
+
                             </div>
 
                          <!-- END of .row-->
                         </div>
-                    
+
                     </div>
 
                     <!-- END of .container-->

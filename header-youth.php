@@ -82,7 +82,7 @@ if (! empty($categories)) {
            a.appendChild(r);
        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
    </script>
-     
+
     <!-- FB instant articles -->
     <meta property="fb:pages" content="305166330794" />
 

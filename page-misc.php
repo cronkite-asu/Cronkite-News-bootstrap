@@ -12,7 +12,7 @@ get_header('new2019'); ?>
             the_post();
         }
     }
-    
+
     get_template_part('partials/content', 'misc');
 ?>
 

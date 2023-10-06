@@ -9,7 +9,7 @@ $(document).ready(function() {
 	var animationClass = 'fadeInUp';
 	var delayTime;
 	$(waypointClass).css({opacity: '0'});
-	
+
 	$(waypointClass).waypoint(function() {
 		delayTime += 100;
 		$(this).delay(delayTime).queue(function(next){

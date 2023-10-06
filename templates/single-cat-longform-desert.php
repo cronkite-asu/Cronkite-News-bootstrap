@@ -13,15 +13,15 @@ get_header('desert'); ?>
 
                             <div class="post format-single clearfix">
 
-                                
+
                                 <div class="post-content post-content-single clearfix">
                                     <?php if (have_posts()) : ?>
                                         <?php while (have_posts()) : the_post(); ?><!-- BEGIN of POST-->
                                             <article  id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                          
+
                                                 <h1><?php the_title(); ?></h1>
 
-                                            <div id="top-img-holder"> 
+                                            <div id="top-img-holder">
                                             <?php if (have_rows('top_full_image')) : ?>
                                                 <?php while (have_rows('top_full_image')): the_row();
                                                     // Declare variables below

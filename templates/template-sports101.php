@@ -29,7 +29,7 @@ get_header(); ?>
                                  <div class="format-news">
                                     <div class="content-blog">
                                         <?php global $post; ?>
-        
+
                                         <?php $arg = array(
                                             'post_type'        => 'post',
                                             'order'            => 'DESC',
@@ -39,23 +39,23 @@ get_header(); ?>
                                         );
 $the_query = new WP_Query($arg);
 if ($the_query->have_posts()) : ?>
-        
+
                                                 <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                                                            <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
                                                            <?php the_field('video_file'); ?>
-                                                     
-                                                            
+
+
                                                            </div>
-                                                           
+
                                                            <h3 style="padding-left: 10px;"><strong> <?php the_title(); ?></strong></h3>
                                                            <?php the_excerpt(); ?>
                                                 <?php endwhile; ?>
-        
+
 <?php endif;
 wp_reset_query(); ?>
                                     </div>
                                 </div>
-                                
+
                                 <div class="post-content post-content-news">
                                     <?php query_posts('post_type=post&category_name=cronkite-news-en-espanol&post_status=publish&posts_per_page=8&paged='. get_query_var('paged')); ?>
 

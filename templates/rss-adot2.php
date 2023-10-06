@@ -20,14 +20,14 @@ $loop = new WP_Query($args);
 while ($loop->have_posts()) : $loop->the_post();
     //Extract slider html and find the link
     $content = get_the_content();
-        
+
     //echo $content;
     $DOM = new DOMDocument;
     $DOM->loadHTML($content);
     $anchors = $DOM->getElementsByTagName('a');
     $postlink =  $anchors->item(0)->getAttribute('href');
     $host = parse_url($postlink, PHP_URL_HOST);
-    
+
     $newscastwithscheme = 'https://' . $NEWSCASTURL;
 
     if (($postlink != $newscastwithscheme) and ($host == $ACCEPTHOST)) {
@@ -67,7 +67,7 @@ if (have_rows('latest_news_box', 24)) : while (have_rows('latest_news_box', 24))
             $link = get_the_permalink();
         }
         $title = get_the_title();
-                
+
         echo '<item>';
         echo '<guid>' . $link . '</guid>';
         echo '<title>' . $title . '</title>';
@@ -75,13 +75,13 @@ if (have_rows('latest_news_box', 24)) : while (have_rows('latest_news_box', 24))
                 <pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></pubDate>
                     <?php
         echo '<description><![CDATA[';
-                
+
         echo '<h3><strong><a href="' . $link . '">' . $title . '</a></strong></h3>';
-                
+
         echo ']]></description>';
         echo '</item>
 				';
-            
+
     endforeach;
     endif;
 endwhile;

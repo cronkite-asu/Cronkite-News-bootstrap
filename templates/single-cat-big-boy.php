@@ -12,7 +12,7 @@ get_header(); ?>
         <section id="blog-post" class="light-bg">
             <div class="container inner-top-sm inner-bottom classic-blog">
                 <div class="row">
-                    <div class="col-md-12">        
+                    <div class="col-md-12">
                         <?php the_content(); ?>
                         <?php the_field('second_text'); ?>
                     </div>
@@ -29,5 +29,3 @@ get_header(); ?>
 <?php get_footer(); ?>
 
 </body>
-
-

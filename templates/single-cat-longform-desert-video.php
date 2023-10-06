@@ -23,11 +23,11 @@ get_header('desert'); ?>
 
                             vid.addEventListener('ended', function()
                                                  {
-                                // only functional if "loop" is removed 
+                                // only functional if "loop" is removed
                                 vid.pause();
                                 // to capture IE10
                                 vidFade();
-                            }); 
+                            });
  </script>
     <main>
         <section id="blog-post" class="light-bg" >
@@ -37,24 +37,24 @@ get_header('desert'); ?>
 
                             <div class="post format-single clearfix">
 
-                                
+
                                 <div class="post-content post-content-single clearfix">
                                     <?php if (have_posts()) : ?>
                                         <?php while (have_posts()) : the_post(); ?><!-- BEGIN of POST-->
                                             <article  id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                      
-                            <h1><?php the_title(); ?></h1>                  
-                       
+
+                            <h1><?php the_title(); ?></h1>
+
                             <video class="video-top-bg" style="max-width:1100px;" poster=" <?php the_field('lv_image'); ?>" playsinline autoplay muted loop>
                                 <source src="<?php the_field('lv_webm') ?>" type="video/webm">
                                 <source src="<?php the_field('lv_mp4') ?>" type="video/mp4">
                             </video>
-                                   
+
                                 <div class="wp-caption-text" style="float:left; font-style:italic;">
-                                            <?php the_field('lv_caption'); ?>    
+                                            <?php the_field('lv_caption'); ?>
                                 </div>
-                                                
-                                                
+
+
                                 <div class="col-xs-12 col-md-offset-2 col-md-8">
                                 <h6 class="story-info"><?php if ($postAuthor = get_field('post_author')) { ?>
                                 <a href="<?php echo site_url(); ?>?s=<?php echo $postAuthor; ?>">

@@ -23,7 +23,7 @@ echo '<rss version="2.0" xmlns:content="https://purl.org/rss/1.0/modules/content
 $loop = new WP_Query($args);
 while ($loop->have_posts()) : $loop->the_post();
     $content = wpautop(get_the_content());
-   
+
     ?>
   <item>
     <title><?php echo the_title(); ?></title>
@@ -63,7 +63,7 @@ while ($loop->have_posts()) : $loop->the_post();
               </header>
 
               <?php echo $content; ?>
-             
+
 
             <figure class="op-tracker">
     <iframe>

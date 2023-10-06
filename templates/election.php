@@ -82,14 +82,14 @@ endif;
 <section>
  <div class="container inner">
       <div class="row">
-          
+
            <div class="col-xs-12 col-sm-8">
 
             <div class="matchHeight item bordered no-top-border" style="margin-top: 10px;">
 
               <div class="row">
                 <div class="col-xs-12 col-sm-6">
-                  
+
                   <div class="img-responsive main_head_image">
                   <?php the_field('special_area_image'); ?>
                       <h2 style="color: black; padding-top: 0; padding-bottom: 10px; font-size: 26px; font-weight: 600; margin-top: 8px; font-family: 'Source Sans Pro', sans-serif;"><?php the_field('special_area_title'); ?></h2>
@@ -109,15 +109,15 @@ endif;
             </div>
 
           </div>
-    
-     
-     
+
+
+
 <!--    END HORIZON NEWSCAST-->
-     
+
 <!--     BEGIN NEW SPECIAL REPORTS SECTION -->
 
 <!--
-            <div class="col-xs-12 col-sm-4 inner-top-sm "> 
+            <div class="col-xs-12 col-sm-4 inner-top-sm ">
            <div class="kicker-modern" id="horizon-box">
 -->
            <!--     <div class="embed-responsive embed-responsive-16by9">
@@ -128,7 +128,7 @@ endif;
 <!--                  </div>-->
 <!--     -->
 
-                    
+
                 <?php if (have_rows('horizon_box')) : ?>
                     <?php while (have_rows('horizon_box')): the_row();
                         // Declare variables below
@@ -141,7 +141,7 @@ endif;
                         // Use variables below?>
                     <div class="col-xs-12 col-sm-4 inner-top-sm ">
                       <div class="kicker-modern" id="horizon_box">
-    
+
                         <?php if ($customLinks) { ?>
                           <a target="_blank" href='https://www.azpbs.org/arizonahorizon'>
                              <h3> ARIZONA HORIZON </h3></a>
@@ -167,13 +167,13 @@ endif;
                     <?php endwhile; ?>
                 <?php endif;
 wp_reset_query(); ?>
-                    
-                    
-                    
-      
+
+
+
+
 
 <!--                endif; ?>-->
-      
+
 
                   </div>
 
@@ -184,7 +184,7 @@ wp_reset_query(); ?>
 <!--
     </div>
     </div>
-           END of Post 
+           END of Post
 -->
 
 
@@ -208,7 +208,7 @@ wp_reset_query(); ?>
                         // Use variables below?>
                     <div class="col-sm-4 inner-top-sm ">
                       <div class="kicker-modern">
-    
+
                         <?php if ($customLinks) { ?>
                           <a target="_blank" href="//<?php echo $customLinks; ?>">
                                          <img class='awards_image' src="<?php echo $icon['sizes']['awards_logo']; ?>" />
@@ -243,7 +243,7 @@ wp_reset_query(); ?>
 
   <!-- start latest news grid -->
 
-  
+
 
     <div class="latest-grid">
       <div class="container inner-top">
@@ -327,7 +327,7 @@ wp_reset_query(); ?>
         </div>
         <!-- /row -->
 
-       
+
 
       </div>
       <!-- /container -->
@@ -338,10 +338,10 @@ wp_reset_query(); ?>
 
     <div class="container">
         <div class="col-xs-12">
-            
+
           <a href='https://cronkitenews.azpbs.org/category/election-2016/' style="color:white;padding:10px; line-height:3;margin-left:40%; background-color:#BF0A30; border-radius:15px;"> More Election News</a>
-        
-        
+
+
         </div>
 
 

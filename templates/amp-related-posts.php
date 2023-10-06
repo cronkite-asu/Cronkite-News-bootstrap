@@ -4,7 +4,7 @@
 if (! is_single()) {
     return;
 }
- 
+
 global $post;
 $taxs = get_object_taxonomies($post);
 if (! $taxs) {
@@ -21,7 +21,7 @@ if (($key = array_search('post_format', $taxs)) !== false) {
 }
 
 // try tags first
-  
+
 
 // if no tags, then by cat or custom tax
 
@@ -31,7 +31,7 @@ if (empty($tax_term_ids)) {
         unset($taxs[ $tag_key ]);
         $taxs = array_values($taxs);
     }
-  
+
     $tax = $taxs[0];
     $tax_term_ids = wp_get_object_terms($post->ID, $tax, array('fields' => 'ids'));
 
@@ -51,8 +51,8 @@ if ($tax_term_ids) {
         ),
         'post__not_in' => array($post->ID),
     );
-    
-    
+
+
     $related = get_posts($args);
     if ($related) {   ?>
         <div class="amp-wp-meta amp-wp-tax-tag">
@@ -70,14 +70,14 @@ if ($tax_term_ids) {
                         $attachment = get_post($thumb_id);
                         $alt = trim(strip_tags($attachment->post_title));
                     } ?>
- 
+
                     <amp-img class="related-img" src="<?php echo esc_url($img[0]); ?>" <?php
                     if ($img_srcset = wp_get_attachment_image_srcset($thumb_id, $size)) {
                         ?> srcset="<?php echo esc_attr($img_srcset); ?>" <?php
                     }
                     ?> alt="<?php echo esc_attr($alt); ?>" width="<?php echo $img[1]; ?>" height="<?php echo $img[2]; ?>">
                     </amp-img>
- 
+
                     <?php
                 }
                 ?>

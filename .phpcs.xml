@@ -28,7 +28,7 @@
     into your custom standard. Note that this does not work
     for config values that override command line arguments,
     such as show_warnings and report_format.
-    
+
     The following tag is equivalent to the command line argument:
     &#45;&#45;runtime-set zend_ca_path /path/to/ZendCodeAnalyzer
  -->
@@ -49,7 +49,7 @@
     You can hard-code ignore patterns directly into your
     custom standard so you don't have to specify the
     patterns on the command line.
-    
+
     The following two tags are equivalent to the command line argument:
     &#45;&#45;ignore=*/tests/*,*/data/*
  -->
@@ -60,7 +60,7 @@
     Patterns can be specified as relative if you would
     like the relative path of the file checked instead of the
     full path. This can sometimes help with portability.
-    
+
     The relative path is determined based on the paths you
     pass into PHP_CodeSniffer on the command line.
  -->
@@ -71,7 +71,7 @@
     You can hard-code command line values into your custom standard.
     Note that this does not work for the command line values:
     -v[v][v], -l, -d, &#45;&#45;sniffs and &#45;&#45;standard
-    
+
     The following tags are equivalent to the command line arguments:
     &#45;&#45;extensions=php,inc &#45;&#45;report=summary &#45;&#45;colors -sp
  -->
@@ -144,7 +144,7 @@
     path of the sniff class. You can display these codes using the
     -s command line argument when checking a file.
  -->
-<!-- 
+<!--
  <rule ref="Squiz">
   <exclude name="Squiz.PHP.CommentedOutCode"/>
  </rule>
@@ -153,7 +153,7 @@
  <!--
     You can also exclude a single sniff message.
  -->
-<!-- 
+<!--
  <rule ref="Squiz">
   <exclude name="Squiz.Strings.DoubleQuoteUsage.ContainsVar"/>
  </rule>
@@ -162,7 +162,7 @@
  <!--
     Or, you can exclude a whole category of sniffs.
  -->
-<!-- 
+<!--
  <rule ref="Squiz">
   <exclude name="Squiz.PHP"/>
  </rule>
@@ -173,7 +173,7 @@
     all sniffs from the Squiz standard, but excludes any that come
     from the Generic standard.
  -->
-<!-- 
+<!--
  <rule ref="Squiz">
   <exclude name="Generic"/>
  </rule>
@@ -214,7 +214,7 @@
     command line. This is great if you want to use some messages
     only in code reviews and not have them block code commits.
  -->
-<!-- 
+<!--
  <rule ref="Generic.Commenting.Todo.CommentFound">
   <message>Please review this TODO comment: %s</message>
   <severity>3</severity>
@@ -225,12 +225,12 @@
     You can also change the type of a message from error to
     warning and vice versa.
  -->
-<!-- 
+<!--
  <rule ref="Generic.Commenting.Todo.CommentFound">
   <type>error</type>
  </rule>
  -->
-<!-- 
+<!--
  <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar">
   <type>warning</type>
  </rule>
@@ -240,17 +240,17 @@
     Or change the type of all messages produced by
     a sniff, category, or standard.
  -->
-<!-- 
+<!--
  <rule ref="Generic.Formatting.MultipleStatementAlignment">
   <type>error</type>
  </rule>
  -->
-<!-- 
+<!--
  <rule ref="Squiz.Strings">
   <type>warning</type>
  </rule>
  -->
-<!-- 
+<!--
  <rule ref="PSR12">
   <type>warning</type>
  </rule>
@@ -263,12 +263,12 @@
     case of this sniff, one is used for warnings and one is used
     for errors.
  -->
-<!-- 
+<!--
  <rule ref="Generic.Files.LineLength.MaxExceeded">
   <message>Line contains %2$s chars, which is more than the limit of %1$s</message>
  </rule>
  -->
-<!-- 
+<!--
  <rule ref="Generic.Files.LineLength.TooLong">
   <message>Line longer than %s characters; contains %s characters</message>
  </rule>
@@ -285,7 +285,7 @@
     settings so the sniff will show warnings for any line longer
     than 90 chars and errors for any line longer than 100 chars.
  -->
-<!-- 
+<!--
  <rule ref="Generic.Files.LineLength">
   <properties>
    <property name="lineLimit" value="90"/>
@@ -299,7 +299,7 @@
     to specify the end of line character that your standard
     should check for.
  -->
-<!-- 
+<!--
  <rule ref="Generic.Files.LineEndings">
   <properties>
    <property name="eolChar" value="\r\n"/>
@@ -311,7 +311,7 @@
     Boolean values should be specified by using the strings
     "true" and "false" rather than the integers 0 and 1.
  -->
-<!-- 
+<!--
  <rule ref="Generic.Formatting.MultipleStatementAlignment">
   <properties>
    <property name="maxPadding" value="8"/>
@@ -319,7 +319,7 @@
   </properties>
  </rule>
  -->
- 
+
 <!--
     Array values are specified by using "element" tags
     with "key" and "value" attributes.
@@ -327,7 +327,7 @@
     NOTE: This syntax is is only supported in PHP_CodeSniffer
     versions 3.3.0 and greater.
  -->
-<!-- 
+<!--
  <rule ref="Generic.PHP.ForbiddenFunctions">
   <properties>
    <property name="forbiddenFunctions" type="array">
@@ -346,7 +346,7 @@
     NOTE: This syntax is deprecated and will be removed in
     PHP_CodeSniffer version 4.0
  -->
-<!-- 
+<!--
  <rule ref="Generic.PHP.ForbiddenFunctions">
   <properties>
    <property name="forbiddenFunctions" type="array" value="delete=>unset,print=>echo,create_function=>null" />
@@ -364,7 +364,7 @@
     NOTE: This syntax is is only supported in PHP_CodeSniffer
     versions 3.4.0 and greater.
  -->
-<!-- 
+<!--
  <rule ref="Generic.PHP.ForbiddenFunctions">
   <properties>
    <property name="forbiddenFunctions" type="array" extend="true">
@@ -382,7 +382,7 @@
     standard, but we don't want the ContainsVar error message to
     ever be displayed.
  -->
-<!-- 
+<!--
  <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar">
   <severity>0</severity>
  </rule>
@@ -397,7 +397,7 @@
     Again, the code here will be displayed in the PHP_CodeSniffer
     output when using the -s command line argument while checking a file.
  -->
-<!-- 
+<!--
  <rule ref="Internal.NoCodeFound">
   <severity>0</severity>
  </rule>
@@ -411,7 +411,7 @@
     The code here will hide all messages from the Squiz DoubleQuoteUsage
     sniff for files that match either of the two exclude patterns.
  -->
-<!-- 
+<!--
  <rule ref="Squiz.Strings.DoubleQuoteUsage">
     <exclude-pattern>*/tests/*</exclude-pattern>
     <exclude-pattern>*/data/*</exclude-pattern>
@@ -427,7 +427,7 @@
     Squiz DoubleQuoteUsage sniff for files that match either of the two
     exclude patterns.
  -->
-<!-- 
+<!--
  <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar">
     <exclude-pattern>*/tests/*</exclude-pattern>
     <exclude-pattern>*/data/*</exclude-pattern>
@@ -443,7 +443,7 @@
     The code here will only run the Squiz DoubleQuoteUsage sniff for
     files that match either of the two include patterns.
  -->
-<!-- 
+<!--
  <rule ref="Squiz.Strings.DoubleQuoteUsage">
     <include-pattern>*/templates/*</include-pattern>
     <include-pattern>*\.tpl$</include-pattern>
@@ -459,7 +459,7 @@
     Squiz DoubleQuoteUsage sniff for files that match either of the two
     include patterns.
  -->
-<!-- 
+<!--
  <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar">
     <include-pattern>*/templates/*</include-pattern>
     <include-pattern>*\.tpl$</include-pattern>

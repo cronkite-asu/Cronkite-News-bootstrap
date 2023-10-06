@@ -6967,11 +6967,11 @@ typeof navigator === "object" && (function () {
 	  /*
 	   json-stringify-safe
 	   Like JSON.stringify, but doesn't throw on circular references.
-	  
+
 	   Originally forked from https://github.com/isaacs/json-stringify-safe
 	   version 5.0.1 on 3/8/2017 and modified to handle Errors serialization
 	   and IE8 compatibility. Tests for this are in test/vendor.
-	  
+
 	   ISC license: https://github.com/isaacs/json-stringify-safe/blob/master/LICENSE
 	  */
 	  exports = module.exports = stringify;

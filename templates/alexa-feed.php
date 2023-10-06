@@ -15,7 +15,7 @@ echo '<?xml version="1.0"?><rss version="2.0">';
   <language>en-us</language>
   <pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></pubDate>
   <lastBuildDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></lastBuildDate>
-  <ttl>45</ttl> 
+  <ttl>45</ttl>
 <?php
     $args = array(
                 'post_type'         => 'post',
