@@ -114,18 +114,18 @@ if (! empty($categories)) {
         });
 });*/
      </script>
-     <link rel='stylesheet' id='normalize-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/css/core/normalize.css' type='text/css' media='all' />
-<link rel='stylesheet' id='bootstrap-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/css/plugins/bootstrap.css' type='text/css' media='all' />
-<link rel='stylesheet' id='slick-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/css/plugins/slick.css' type='text/css' media='all' />
-<link rel='stylesheet' id='bootstrap-customizer-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/css/core/customizer.css' type='text/css' media='all' />
-<link rel='stylesheet' id='font-awesome-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/css/plugins/font-awesome.css' type='text/css' media='all' />
-<link rel='stylesheet' id='animate-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/css/plugins/animate.css' type='text/css' media='all' />
-<link rel='stylesheet' id='hover-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/css/plugins/hover.css' type='text/css' media='all' />
-<link rel='stylesheet' id='owl-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/css/plugins/owl.carousel.css' type='text/css' media='all' />
-<link rel='stylesheet' id='owl-trans-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/css/plugins/owl.transitions.css' type='text/css' media='all' />
-<link rel='stylesheet' id='remodal-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/css/plugins/jquery.remodal.css' type='text/css' media='all' />
-<link rel='stylesheet' id='fontello-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/css/plugins/fontello.css' type='text/css' media='all' />
-<link rel='stylesheet' id='style-css'  href='https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/style.css' type='text/css' media='all' />
+     <link rel='stylesheet' id='normalize-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/css/core/normalize.css' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/css/plugins/bootstrap.css' type='text/css' media='all' />
+<link rel='stylesheet' id='slick-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/css/plugins/slick.css' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-customizer-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/css/core/customizer.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/css/plugins/font-awesome.css' type='text/css' media='all' />
+<link rel='stylesheet' id='animate-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/css/plugins/animate.css' type='text/css' media='all' />
+<link rel='stylesheet' id='hover-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/css/plugins/hover.css' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/css/plugins/owl.carousel.css' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-trans-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/css/plugins/owl.transitions.css' type='text/css' media='all' />
+<link rel='stylesheet' id='remodal-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/css/plugins/jquery.remodal.css' type='text/css' media='all' />
+<link rel='stylesheet' id='fontello-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/css/plugins/fontello.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='<?php echo get_stylesheet_directory_uri(); ?>/style.css' type='text/css' media='all' />
 
 
 </head>

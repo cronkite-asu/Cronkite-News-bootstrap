@@ -154,11 +154,11 @@ if (isset($settings['text-color']) && $settings['text-color'] != '') {
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/before-after/css/twentytwenty.css" />
 
     <?php if (is_page(205978)) { ?>
-      <link rel="stylesheet" href="https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/assets/css/long-form/story/borderlands/2022/tapachula.css">
+      <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/long-form/story/borderlands/2022/tapachula.css">
     <?php } ?>
 
     <?php if (is_page(206436)) { ?>
-      <link rel="stylesheet" href="https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/assets/css/superbowl2023.css">
+      <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/superbowl2023.css">
     <?php } ?>
 
     <style type='text/css'>
