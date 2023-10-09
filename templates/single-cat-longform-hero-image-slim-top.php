@@ -410,7 +410,7 @@ get_header('longformhero'); ?>
                                                 the_content();
                                                 ?>
                                 <script
-                                  src="https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/js/jquery-3.2.1.min.js"
+                                  src="https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/js/jquery-3.2.1.min.js"
                                   crossorigin="anonymous"></script>
                                                 <?php
 

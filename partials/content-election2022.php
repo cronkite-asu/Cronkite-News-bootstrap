@@ -241,10 +241,10 @@ if ($videosList) {
       <a href="https://www.azpbs.org/" target="_blank"><img src="https://azpbs.org/wp-content/themes/pbs/img/azpbs-logo-2020.png" /></a>
     </div>
     <div class="large-4 medium-4 small-12 cell partner-logos text-center">
-      <a href="https://cronkitenews.azpbs.org/" target="_blank"><img class="cn-logo" src="https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/img/CN-PBS-EPS.svg" /></a>
+      <a href="https://cronkitenews.azpbs.org/" target="_blank"><img class="cn-logo" src="https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/assets/img/CN-PBS-EPS.svg" /></a>
     </div>
     <div class="large-4 medium-4 small-12 cell partner-logos text-center">
-      <a href="https://indiancountrytoday.com/" target="_blank"><img src="https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/img/election2022/ict-logo.svg" /></a>
+      <a href="https://indiancountrytoday.com/" target="_blank"><img src="https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/assets/img/election2022/ict-logo.svg" /></a>
     </div>
   </div>
 </div>

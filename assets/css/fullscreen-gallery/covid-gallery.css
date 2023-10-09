@@ -184,7 +184,7 @@ section {
       width: 30px;
       height: 46px;
       left: 10px;
-      background: url("https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/img/prev-icon.png") no-repeat;
+      background: url("https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/assets/img/prev-icon.png") no-repeat;
       opacity: 0.7;
       -webkit-transition: opacity 0.25s;
       -moz-transition: opacity 0.25s;
@@ -199,7 +199,7 @@ section {
       width: 30px;
       height: 46px;
       right: 10px;
-      background: url("https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/img/next-icon.png") no-repeat;
+      background: url("https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/assets/img/next-icon.png") no-repeat;
       opacity: 0.7;
       -webkit-transition: opacity 0.25s;
       -moz-transition: opacity 0.25s;

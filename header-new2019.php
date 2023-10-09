@@ -131,19 +131,19 @@ if (isset($settings['text-color']) && $settings['text-color'] != '') {
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/before-after/css/twentytwenty.css" />
 
     <?php if (is_page(205978)) { ?>
-      <link rel="stylesheet" href="https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/css/long-form/story/borderlands/2022/tapachula.css">
+      <link rel="stylesheet" href="https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/assets/css/long-form/story/borderlands/2022/tapachula.css">
     <?php } ?>
 
     <?php if (is_page(206436)) { ?>
-      <link rel="stylesheet" href="https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/css/superbowl2023.css">
+      <link rel="stylesheet" href="https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/assets/css/superbowl2023.css">
     <?php } ?>
 
     <?php if (is_page(207425)) { ?>
-      <link rel="stylesheet" href="https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/css/weather.css">
+      <link rel="stylesheet" href="https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/assets/css/weather.css">
     <?php } ?>
 
     <?php if (is_page(209554)) { ?>
-      <link rel="stylesheet" href="https://cronkitenews.azpbs.org/wp-content/themes/bootstrap/assets/css/health.css">
+      <link rel="stylesheet" href="https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/assets/css/health.css">
     <?php } ?>
 
     <style type='text/css'>
