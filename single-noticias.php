@@ -50,7 +50,7 @@
            <div class="byline">
              <?php
      if (get_the_ID() == 165700) {
-         $externalSites = array('arizona-pbs' => "https://www.azpbs.org",
+         $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
                              'arizona-public-media' => "https://www.azpm.org/",
                              'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                              'colorado-public-radio' => "https://www.cpr.org/",
@@ -68,10 +68,10 @@
                              'LAIST' => "https://laist.com/",
                              'PBS-SoCal' => "https://www.pbssocal.org/",
                              'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                             'special-to-cronkite-news' => ""
-                            );
+                             'special-to-cronkite-news' => "",
+                            ];
      } elseif (get_the_ID() == 167042) {
-         $externalSites = array('arizona-pbs' => "https://www.azpbs.org",
+         $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
                              'arizona-public-media' => "https://www.azpm.org/",
                              'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                              'colorado-public-radio' => "https://www.cpr.org/",
@@ -90,10 +90,10 @@
                              'PBS-SoCal' => "https://www.pbssocal.org/",
                              'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
                              'special-to-cronkite-news' => "",
-                             'fronteras' => "https://fronterasdesk.org/content/1696137/hermosillo-pedestrians-face-many-dangers-work-address-them-underway"
-                            );
+                             'fronteras' => "https://fronterasdesk.org/content/1696137/hermosillo-pedestrians-face-many-dangers-work-address-them-underway",
+                            ];
      } elseif (get_the_ID() == 168187) {
-         $externalSites = array('arizona-pbs' => "https://www.azpbs.org",
+         $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
                              'arizona-public-media' => "https://www.azpm.org/",
                              'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                              'colorado-public-radio' => "https://www.cpr.org/",
@@ -112,10 +112,10 @@
                              'PBS-SoCal' => "https://www.pbssocal.org/",
                              'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
                              'special-to-cronkite-news' => "",
-                             'fronteras' => "https://fronterasdesk.org/content/1703038/women-and-conservation-sonoran-scientists-start-group-latin-american-women"
-                            );
+                             'fronteras' => "https://fronterasdesk.org/content/1703038/women-and-conservation-sonoran-scientists-start-group-latin-american-women",
+                            ];
      } else {
-         $externalSites = array('arizona-pbs' => "https://www.azpbs.org",
+         $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
                              'arizona-public-media' => "https://www.azpm.org/",
                              'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                              'colorado-public-radio' => "https://www.cpr.org/",
@@ -133,8 +133,8 @@
                              'LAIST' => "https://laist.com/",
                              'PBS-SoCal' => "https://www.pbssocal.org/",
                              'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                             'special-to-cronkite-news' => ""
-                            );
+                             'special-to-cronkite-news' => "",
+                            ];
      }
      $externalAuthorCount = 1;
  $internalAuthorCount = 0;
@@ -147,7 +147,7 @@
  $groupFields = get_field('byline_info');
  $externalAuthorRepeater = $groupFields['external_authors_repeater'];
 
- $normalizeChars = array(
+ $normalizeChars = [
    'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
    'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
    'Ï'=>'I', 'Ñ'=>'N', 'Ń'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
@@ -156,7 +156,7 @@
    'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ń'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
    'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f',
    'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
- );
+ ];
 
  if (have_rows('byline_info')) {
      $sepCounter = 0;
@@ -168,11 +168,11 @@
          $cnStaffCount = count((array)$staffID);
 
          foreach ($staffID as $key => $val) {
-             $args = array(
+             $args = [
                     'post_type'   => 'students',
                     'post_status' => 'publish',
-                    'p' => $val
-                  );
+                    'p' => $val,
+                  ];
 
              $staffDetails = new WP_Query($args);
              if ($staffDetails->have_posts()) {
@@ -470,7 +470,7 @@
                          </div>
                                 <?php } else { ?>
                          <div>
-                           <a href="<?php echo get_permalink($upcomingStory['posted-link']); ?>"><?php echo get_the_post_thumbnail($upcomingStory['posted-link'], 'full', array('class' => 'img-responsive')); ?></a>
+                           <a href="<?php echo get_permalink($upcomingStory['posted-link']); ?>"><?php echo get_the_post_thumbnail($upcomingStory['posted-link'], 'full', ['class' => 'img-responsive']); ?></a>
                                     <?php
                                     if (get_field('use_short_headline', $upcomingStory['posted-link']) == 'yes' && get_field('homepage_headline', $upcomingStory['posted-link']) != '') {
                                         ?>
@@ -508,7 +508,7 @@
              foreach ($pubbedStoryList as $pubbedStory) {
                  ?>
                          <div>
-                           <a href="<?php echo get_permalink($pubbedStory); ?>"><?php echo get_the_post_thumbnail($pubbedStory, 'full', array('class' => 'img-responsive')); ?></a>
+                           <a href="<?php echo get_permalink($pubbedStory); ?>"><?php echo get_the_post_thumbnail($pubbedStory, 'full', ['class' => 'img-responsive']); ?></a>
                                 <?php
                  if (get_field('use_short_headline', $pubbedStory) == 'yes' && get_field('homepage_headline', $pubbedStory) != '') {
                      ?>
@@ -534,12 +534,12 @@
              <!-- story tags -->
              <?php
  if (get_field('st_html')['tags'] != '' && get_field('st_html')['tags'] != 0) {
-     $args = array(
+     $args = [
                 'post_type'   => 'storytags',
                 'post_status' => 'publish',
                 'p' => get_field('st_html')['tags'],
-                'posts_per_page' => 1
-               );
+                'posts_per_page' => 1,
+               ];
 
      $storyTag = new WP_Query($args);
      if ($storyTag->have_posts()) {
@@ -592,11 +592,11 @@
 
                     foreach ($staffID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
-                        $args = array(
+                        $args = [
                                  'post_type'   => 'students',
                                  'post_status' => 'publish',
-                                 'p' => $val
-                                );
+                                 'p' => $val,
+                                ];
 
                         $staffDetails = new WP_Query($args);
                         if ($staffDetails->have_posts()) {
@@ -692,11 +692,11 @@
                     // show broadcast
                     foreach ($broadcastID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
-                        $args = array(
+                        $args = [
                                   'post_type'   => 'students',
                                   'post_status' => 'publish',
-                                  'p' => $val
-                                 );
+                                  'p' => $val,
+                                 ];
 
                         $staffDetails = new WP_Query($args);
                         if ($staffDetails->have_posts()) {
@@ -792,11 +792,11 @@
                     // show photogs
                     foreach ($photogID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
-                        $args = array(
+                        $args = [
                                   'post_type'   => 'students',
                                   'post_status' => 'publish',
-                                  'p' => $val
-                                 );
+                                  'p' => $val,
+                                 ];
 
                         $staffDetails = new WP_Query($args);
                         if ($staffDetails->have_posts()) {
@@ -891,11 +891,11 @@
                     // show data visualizers
                     foreach ($dataVisualizerID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
-                        $args = array(
+                        $args = [
                                    'post_type'   => 'students',
                                    'post_status' => 'publish',
-                                   'p' => $val
-                                  );
+                                   'p' => $val,
+                                  ];
 
                         $staffDetails = new WP_Query($args);
                         if ($staffDetails->have_posts()) {
@@ -1001,12 +1001,12 @@
          <div class="large-4 medium-12 small-12 cell sidebar">
                 <?php dynamic_sidebar('Sidebar New Story Template - 2020'); ?>
                 <?php
-      $args = array(
+      $args = [
       'post_type' => 'post',
       'post_status' => 'publish',
       'posts_per_page' => 8,
-      'category__in' => array( 22877 ),
-      );
+      'category__in' => [ 22877 ],
+      ];
      $query = new WP_Query($args);
      ?>
 

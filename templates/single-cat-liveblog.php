@@ -23,9 +23,9 @@ get_header('new2019'); ?>
         <div class="large-12 medium-12 small-12 cell story-content">
 
           <?php
-            $args = array(
-              'post_type' => 'post'
-            );
+            $args = [
+              'post_type' => 'post',
+            ];
 
 // Custom query.
 $query = new WP_Query($args);

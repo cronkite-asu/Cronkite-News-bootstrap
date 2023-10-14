@@ -53,15 +53,15 @@
       <!-- Cronkite News Faculty and Staff -->
       <h4>Newsroom Leaders</h4>
       <?php
-        $args = array(
+        $args = [
                     'post_type'   => 'cn_staff',
                     'post_status' => 'publish',
-                    'post__not_in' => array(122183),
+                    'post__not_in' => [122183],
                     'posts_per_page' => '-1',
                     'meta_key'    => 'lastname',
                       'orderby'            => 'lastname',
-                      'order'                => 'ASC'
-                   );
+                      'order'                => 'ASC',
+                   ];
 
         $cnstaff = new WP_Query($args);
         if ($cnstaff->have_posts()) {
@@ -75,9 +75,9 @@
                 <?php
                   $middlename = '';
                 if (str_word_count(get_the_title()) == 2) {
-                    list($firstname, $lastname) = explode(' ', get_the_title());
+                    [$firstname, $lastname] = explode(' ', get_the_title());
                 } elseif (str_word_count(get_the_title())  > 2) {
-                    list($firstname, $middlename, $lastname) = explode(' ', get_the_title());
+                    [$firstname, $middlename, $lastname] = explode(' ', get_the_title());
                 }
 
                 if (get_field('cn_staff_photo') != '') {
@@ -130,7 +130,7 @@
 
       <?php
         $currentSemester = get_field('current_semester', 'option');
-        $normalizeChars = array(
+        $normalizeChars = [
            'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
            'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
            'Ï'=>'I', 'Ñ'=>'N', 'Ń'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
@@ -139,16 +139,16 @@
            'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ń'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
            'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f',
            'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
-        );
+        ];
 
-        $args = array(
+        $args = [
                       'post_type'   => 'students',
                       'post_status' => 'publish',
                       'posts_per_page' => '-1',
                       'meta_key'    => 'lastname',
                         'orderby'            => 'lastname',
-                        'order'                => 'ASC'
-                     );
+                        'order'                => 'ASC',
+                     ];
 
         $students = new WP_Query($args);
         if ($students->have_posts()) {

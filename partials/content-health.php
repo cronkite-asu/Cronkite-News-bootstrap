@@ -12,7 +12,7 @@
 <div class="grid-container content">
 <?php
   // save main story ID
-  $repeatStoriesArray = array();
+  $repeatStoriesArray = [];
 
 // get health content
 if (have_rows('page_layout')) {
@@ -32,13 +32,13 @@ if (have_rows('page_layout')) {
           <div class="grid-x grid-padding-x section-break">
             <div class="large-5 medium-5 small-12 cell story-text">
               <?php
-                    $args = array(
+                    $args = [
                                 'post_type'   => 'post',
                                 'post_status' => 'publish',
                                 //'post__not_in' => $topStoriesArray,
                                 'posts_per_page' => 1,
-                                'cat' => 7022
-                               );
+                                'cat' => 7022,
+                               ];
 
             $latestNews = new WP_Query($args);
             if ($latestNews->have_posts()) {
@@ -68,13 +68,13 @@ if (have_rows('page_layout')) {
               <div class="grid-x grid-padding-x">
                 <?php
                 $counter = 0;
-            $args = array(
+            $args = [
                         'post_type'   => 'post',
                         'post_status' => 'publish',
                         //'post__not_in' => $topStoriesArray,
                         'posts_per_page' => 7,
-                        'cat' => 7022
-                       );
+                        'cat' => 7022,
+                       ];
 
             $latestNews = new WP_Query($args);
             if ($latestNews->have_posts()) {
@@ -269,7 +269,7 @@ if (have_rows('page_layout')) {
             </div>
             <?php
             $staffList = get_sub_field('students', 209553);
-            $normalizeChars = array(
+            $normalizeChars = [
                'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
                'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
                'Ï'=>'I', 'Ñ'=>'N', 'Ń'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
@@ -278,7 +278,7 @@ if (have_rows('page_layout')) {
                'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ń'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
                'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f',
                'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
-            );
+            ];
             if ($staffList) {
                 $staffCounter = 0;
                 foreach ($staffList as $staff) {

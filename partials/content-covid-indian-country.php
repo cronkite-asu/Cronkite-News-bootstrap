@@ -65,7 +65,7 @@ if (have_rows('layout')) {
       </div>
             <?php
               // check photo and select credit width
-              list($width, $height, $type, $attr) = getimagesize(get_sub_field('photo'));
+              [$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
             if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';
             } else {
@@ -106,7 +106,7 @@ if (have_rows('layout')) {
       </div>
             <?php
               // check photo and select credit width
-              list($width, $height, $type, $attr) = getimagesize(get_sub_field('photo'));
+              [$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
             if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';
             } else {

@@ -24,10 +24,10 @@ get_header('new2019'); ?>
         <div class="large-12 medium-12 small-12 cell story-content">
 
           <?php
-            $args = array(
+            $args = [
               'post_type' => 'post',
-              'category__not_in' => 11
-            );
+              'category__not_in' => 11,
+            ];
 
 // Custom query.
 $query = new WP_Query($args);

@@ -8,19 +8,19 @@ get_header('new2019'); ?>
 <h2>D.C.</h2>
 
 <?php
-  $args = array(
+  $args = [
     'author' => 29,
     'post_type' => 'post',
     'post_status' => 'publish',
     'posts_per_page' => -1,
-    'category__not_in' => array( 11 ),
-    'date_query' => array(
-                      array(
+    'category__not_in' => [ 11 ],
+    'date_query' => [
+                      [
                           'after'     => 'August 1, 2023',
                           'before'    => 'today',
-                          'inclusive' => true
-                    ))
-  );
+                          'inclusive' => true,
+                    ]],
+  ];
 $query = new WP_Query($args);
 echo '<p>Count: '.$count = $query->found_posts.'</p>';
 ?>
@@ -36,19 +36,19 @@ echo '<p>Count: '.$count = $query->found_posts.'</p>';
 
 <h2>PHOENIX</h2>
 <?php
-  $args = array(
+  $args = [
     'author' => -29,
     'post_type' => 'post',
     'post_status' => 'publish',
     'posts_per_page' => -1,
     /*'category__not_in' => array( 11 ),*/
-    'date_query' => array(
-                      array(
+    'date_query' => [
+                      [
                           'after'     => 'August 1, 2023',
                           'before'    => 'today',
-                          'inclusive' => true
-                    ))
-  );
+                          'inclusive' => true,
+                    ]],
+  ];
 $query = new WP_Query($args);
 echo '<p>Count: '.$count = $query->found_posts.'</p>';
 ?>

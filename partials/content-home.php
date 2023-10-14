@@ -207,7 +207,7 @@
                   <?php } else { ?>
                     <a href="<?php echo $permalink; ?>">
                   <?php } ?>
-                    <?php echo get_the_post_thumbnail($slideAside, 'full', array('class' => 'img-responsive')); ?>
+                    <?php echo get_the_post_thumbnail($slideAside, 'full', ['class' => 'img-responsive']); ?>
                   </a>
                     <?php
                 if (get_field('use_short_headline', $slideAside) == 'yes' && get_field('homepage_headline', $slideAside) != '') {
@@ -302,13 +302,13 @@
             $videoSetting = get_field('v_video_or_newscast', 24);
         if ($videoSetting == 'Newscast') {
 
-            $arg = array(
+            $arg = [
                 'post_type'        => 'post',
                 'order'            => 'DESC',
                 'orderby'        => 'date',
                 'posts_per_page'    => 1,
-                'category_name' =>  'newscast'
-            );
+                'category_name' =>  'newscast',
+            ];
 
             $the_query = new WP_Query($arg);
             if ($the_query->have_posts()) {

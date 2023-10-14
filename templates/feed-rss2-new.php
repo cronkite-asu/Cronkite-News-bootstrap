@@ -14,7 +14,7 @@ function generateByline($currPostID, $currIntro, $publishDate)
     ?>
 
             <?php
-              $externalSites = array('boise-state-public-radio' => "https://www.boisestatepublicradio.org",
+              $externalSites = ['boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                                      'colorado-public-radio' => "https://www.cpr.org/",
                                      'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
                                      'elemental-reports' => "https://www.elementalreports.com/",
@@ -27,8 +27,8 @@ function generateByline($currPostID, $currIntro, $publishDate)
                                      'LAIST' => "https://laist.com/",
                                      'PBS-SoCal' => "https://www.pbssocal.org/",
                                      'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                                     'special-to-cronkite-news' => ""
-                                    );
+                                     'special-to-cronkite-news' => "",
+                                    ];
     $externalAuthorCount = 1;
     $internalAuthorCount = 0;
     $commaSeparator = ',';
@@ -40,7 +40,7 @@ function generateByline($currPostID, $currIntro, $publishDate)
     $groupFields = get_field('byline_info');
     $externalAuthorRepeater = $groupFields['external_authors_repeater'];
 
-    $normalizeChars = array(
+    $normalizeChars = [
        'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
        'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
        'Ï'=>'I', 'Ñ'=>'N', 'Ń'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
@@ -49,7 +49,7 @@ function generateByline($currPostID, $currIntro, $publishDate)
        'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ń'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
        'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f',
        'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
-    );
+    ];
 
     if (have_rows('byline_info')) {
         $sepCounter = 0;
@@ -61,11 +61,11 @@ function generateByline($currPostID, $currIntro, $publishDate)
             $cnStaffCount = count((array)$staffID);
 
             foreach ($staffID as $key => $val) {
-                $args = array(
+                $args = [
                         'post_type'   => 'students',
                         'post_status' => 'publish',
-                        'p' => $val
-                      );
+                        'p' => $val,
+                      ];
 
                 $staffDetails = new WP_Query($args);
                 if ($staffDetails->have_posts()) {

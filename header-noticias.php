@@ -184,15 +184,15 @@ if (isset($settings['text-color']) && $settings['text-color'] != '') {
             <!-- top navigation -->
             <ul class="top_links">
                             <?php
-                            $args = array(
+                            $args = [
                                 'menu' => 'Noticias header nav',
                                 'container'     => false,
                                 'items_wrap'    => '%3$s',
                                 'depth'         => 1,
                                 'fallback_cb'   => false,
                                 'menu_id'             => '',
-                                'menu_class'        => ''
-                                );
+                                'menu_class'        => '',
+                                ];
 wp_nav_menu($args);
 ?>
             </ul>

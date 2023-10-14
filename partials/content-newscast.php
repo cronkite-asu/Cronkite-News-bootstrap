@@ -20,12 +20,12 @@
         <div id="latest-stories" class="large-8 medium-12 small-12 cell story-content">
           <?php
             $paged = get_query_var('paged');
-        $arg = array(
+        $arg = [
             'post_type'        => 'post',
             'order'            => 'DESC',
             'orderby'        => 'date',
-            'category_name' =>  'newscast'
-        );
+            'category_name' =>  'newscast',
+        ];
         $newscast = new WP_Query($arg);
 
         if ($newscast->have_posts()) {

@@ -63,7 +63,7 @@ $curYear = date('Y'); ?>
 
                                     </div>
 
-                                    <?php $args = array(
+                                    <?php $args = [
 'post_type'        => 'post',
 'order'            => 'ASC',
 'orderby'        => 'date',
@@ -71,7 +71,7 @@ $curYear = date('Y'); ?>
 'monthnum' => $month,
 'year' => $years,
 
-                                    );
+                                    ];
 $the_query = new WP_Query($args);
 if ($the_query->have_posts()) : ?>
 

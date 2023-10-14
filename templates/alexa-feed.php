@@ -17,11 +17,11 @@ echo '<?xml version="1.0"?><rss version="2.0">';
   <lastBuildDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></lastBuildDate>
   <ttl>45</ttl>
 <?php
-    $args = array(
+    $args = [
                 'post_type'         => 'post',
                 'posts_per_page' => 4,
-                'category__not_in' => array(11)
-            );
+                'category__not_in' => [11],
+            ];
 $loop = new WP_Query($args);
 while ($loop->have_posts()) : $loop->the_post();
 

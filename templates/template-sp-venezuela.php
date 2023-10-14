@@ -86,12 +86,12 @@ get_header('longformhero'); ?>
 
                 <?php if (get_the_ID() != 119536) { ?>
                     <?php
-                    $args = array(
+                    $args = [
                               'posts_per_page' => -1,
                               'cat' => 12896,
                               'orderby' => 'publish_date',
-                              'order' => 'ASC'
-                              );
+                              'order' => 'ASC',
+                              ];
                     $query = new WP_Query($args);
                     ?>
                     <?php

@@ -83,7 +83,7 @@ get_header('longformhero'); ?>
                                       <h1 id="main-headline"><?php the_title(); ?></h1>
 
                                             <?php
-                                            $externalSites = array('boise-state-public-radio' => "https://www.boisestatepublicradio.org",
+                                            $externalSites = ['boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                                                                'colorado-public-radio' => "https://www.cpr.org/",
                                                                'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
                                                                'elemental-reports' => "https://www.elementalreports.com/",
@@ -96,8 +96,8 @@ get_header('longformhero'); ?>
                                                                'News21' => "https://www.news21.com/",
                                                                'PBS-SoCal' => "https://www.pbssocal.org/",
                                                                'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                                                               'special-to-cronkite-news' => ""
-                                                              );
+                                                               'special-to-cronkite-news' => "",
+                                                              ];
                                             $externalAuthorCount = 1;
                                             $internalAuthorCount = 0;
                                             $commaSeparator = ',';
@@ -137,11 +137,11 @@ get_header('longformhero'); ?>
                                                         $staffID = get_sub_field('cn_staff');
                                                         $cnStaffCount = count((array)$staffID);
                                                         foreach ($staffID as $key => $val) {
-                                                            $args = array(
+                                                            $args = [
                                                               'post_type'   => 'students',
                                                               'post_status' => 'publish',
-                                                              'p' => $val
-                                                            );
+                                                              'p' => $val,
+                                                            ];
 
                                                             $staffDetails = new WP_Query($args);
                                                             if ($staffDetails->have_posts()) {

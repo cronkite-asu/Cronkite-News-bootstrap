@@ -167,15 +167,15 @@ if (! empty($categories)) {
             <!-- top navigation -->
             <ul class="top_links">
                             <?php
-                            $args = array(
+                            $args = [
                                 'menu' => 'Header Nav - 2019',
                                 'container'     => false,
                                 'items_wrap'    => '%3$s',
                                 'depth'         => 1,
                                 'fallback_cb'   => false,
                                 'menu_id'             => '',
-                                'menu_class'        => ''
-                                );
+                                'menu_class'        => '',
+                                ];
 wp_nav_menu($args);
 ?>
               <li><a href="https://cronkitenews.azpbs.org/election-2020"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2020/10/election2020-small-1-logo.png" alt="Election 2020" title="Election 2020" style="vertical-align:baseline;height:16px;" /></a></li>
@@ -201,15 +201,15 @@ wp_nav_menu($args);
             </form>
           </li>
           <?php
-            $args = array(
+            $args = [
             'menu' => 'Subnav - 2019',
             'container'     => false,
             'items_wrap'    => '%3$s',
             'depth'         => 1,
             'fallback_cb'   => false,
             'menu_id'             => '',
-            'menu_class'        => ''
-            );
+            'menu_class'        => '',
+            ];
 wp_nav_menu($args);
 ?>
           <li class="top_links_m first"><a href="https://cronkitenews.azpbs.org/election-2020"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2020/10/election2020-small-1-logo.png" alt="Election 2020" title="Election 2020" style="vertical-align:baseline;height:16px;" /></a></li>

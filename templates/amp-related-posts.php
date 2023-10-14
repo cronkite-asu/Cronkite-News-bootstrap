@@ -33,24 +33,24 @@ if (empty($tax_term_ids)) {
     }
 
     $tax = $taxs[0];
-    $tax_term_ids = wp_get_object_terms($post->ID, $tax, array('fields' => 'ids'));
+    $tax_term_ids = wp_get_object_terms($post->ID, $tax, ['fields' => 'ids']);
 
 }
 
 if ($tax_term_ids) {
-    $args = array(
+    $args = [
         'post_type' => $post->post_type,
         'posts_per_page' => $count,
         'orderby' => 'desc',
-        'tax_query' => array(
-            array(
+        'tax_query' => [
+            [
                 'taxonomy' => $tax,
                 'field' => 'id',
-                'terms' => $tax_term_ids
-            )
-        ),
-        'post__not_in' => array($post->ID),
-    );
+                'terms' => $tax_term_ids,
+            ],
+        ],
+        'post__not_in' => [$post->ID],
+    ];
 
 
     $related = get_posts($args);

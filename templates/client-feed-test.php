@@ -15,10 +15,10 @@ echo '<?xml version="1.0"?><rss version="2.0">';
   <lastBuildDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></lastBuildDate>
   <managingEditor>cronkitenews@asu.edu (Cronkite News)</managingEditor>
 <?php
-    $args = array(
+    $args = [
                 'post_type'        => 'post',
-                'posts_per_page'    => 10
-            );
+                'posts_per_page'    => 10,
+            ];
 $loop = new WP_Query($args);
 while ($loop->have_posts()) : $loop->the_post();
 
@@ -70,11 +70,11 @@ while ($loop->have_posts()) : $loop->the_post();
                 $staffID = get_sub_field('cn_staff');
                 $cnStaffCount = count((array)$staffID);
                 foreach ($staffID as $key => $val) {
-                    $args = array(
+                    $args = [
                       'post_type'   => 'students',
                       'post_status' => 'publish',
-                      'p' => $val
-                    );
+                      'p' => $val,
+                    ];
 
                     $staffDetails = new WP_Query($args);
                     if ($staffDetails->have_posts()) {

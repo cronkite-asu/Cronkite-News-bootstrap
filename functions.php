@@ -16,18 +16,18 @@ add_editor_style();
 add_theme_support('post-thumbnails');
 
 // Custom Background
-add_theme_support('custom-background', array('default-color' => 'fff'));
+add_theme_support('custom-background', ['default-color' => 'fff']);
 
 // Custom Header
 add_theme_support(
     'custom-header',
-    array(
+    [
     'default-image' => get_template_directory_uri() . '/images/custom-logo.png',
     'height'        => '200',
     'flex-height'    => true,
     'uploads'       => true,
-    'header-text'   => false
-    )
+    'header-text'   => false,
+    ]
 );
 
 // custom image sizes
@@ -40,10 +40,10 @@ add_image_size('single-post', 840, 560, true);
 
 // Register Navigation Menu
 register_nav_menus(
-    array(
+    [
     'header-menu' => 'Header Menu',
-    'footer-menu' => 'Footer Menu'
-    )
+    'footer-menu' => 'Footer Menu',
+    ]
 );
 
 /* Added: Sunday, Nov. 3rd, 2020 - Custom rss feed */
@@ -63,7 +63,7 @@ function newRSSFeedCallback()
 function getStoryAuthors($getPID)
 {
     $finalAuthors = '';
-    $externalSites = array('boise-state-public-radio' => "https://www.boisestatepublicradio.org",
+    $externalSites = ['boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                          'colorado-public-radio' => "https://www.cpr.org/",
                          'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
                          'elemental-reports' => "https://www.elementalreports.com/",
@@ -76,8 +76,8 @@ function getStoryAuthors($getPID)
                          'LAIST' => "https://laist.com/",
                          'PBS-SoCal' => "https://www.pbssocal.org/",
                          'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                         'special-to-cronkite-news' => ""
-                        );
+                         'special-to-cronkite-news' => "",
+                        ];
     $externalAuthorCount = 1;
     $internalAuthorCount = 0;
     $commaSeparator = ',';
@@ -89,7 +89,7 @@ function getStoryAuthors($getPID)
     $groupFields = get_field('byline_info', $getPID);
     $externalAuthorRepeater = $groupFields['external_authors_repeater'] ?? "";
 
-    $normalizeChars = array(
+    $normalizeChars = [
      'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
      'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
      'Ï'=>'I', 'Ñ'=>'N', 'Ń'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
@@ -98,7 +98,7 @@ function getStoryAuthors($getPID)
      'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ń'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
      'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f',
      'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
-    );
+    ];
 
     if (have_rows('byline_info', $getPID)) {
         $sepCounter = 0;
@@ -110,11 +110,11 @@ function getStoryAuthors($getPID)
                 $cnStaffCount = count((array)$staffID);
 
                 foreach ($staffID as $key => $val) {
-                    $args = array(
+                    $args = [
                     'post_type'   => 'students',
                     'post_status' => 'publish',
-                    'p' => $val
-                    );
+                    'p' => $val,
+                    ];
 
                     $staffDetails = new WP_Query($args);
                     if ($staffDetails->have_posts()) {
@@ -274,12 +274,12 @@ add_action('wp_footer', 'hook_parselyTrack');
 class bootstrap_navigation extends Walker_Nav_Menu
 {
 
-    public function start_lvl(&$output, $depth = 0, $args = array())
+    public function start_lvl(&$output, $depth = 0, $args = [])
     {
         $output .= "\n<ul class=\"dropdown-menu\">\n";
     }
 
-    public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+    public function start_el(&$output, $item, $depth = 0, $args = [], $id = 0)
     {
         $item_html = '';
         parent::start_el($item_html, $item, $depth, $args);
@@ -315,7 +315,7 @@ class bootstrap_navigation extends Walker_Nav_Menu
 if (!function_exists('bootstrap_menu')) {
     function bootstrap_menu()
     {
-        $pages_args = array(
+        $pages_args = [
         'sort_column' => 'menu_order, post_title',
         'menu_class'  => '',
         'include'     => '',
@@ -323,8 +323,8 @@ if (!function_exists('bootstrap_menu')) {
         'echo'        => true,
         'show_home'   => false,
         'link_before' => '',
-        'link_after'  => ''
-        );
+        'link_after'  => '',
+        ];
 
         wp_page_menu($pages_args);
     }
@@ -337,7 +337,7 @@ function bootstrap_pagination()
     $big = 999999999;
 
     $links = paginate_links(
-        array(
+        [
         'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
         'format' => '?paged=%#%',
         'prev_next' => true,
@@ -345,8 +345,8 @@ function bootstrap_pagination()
         'next_text' => '&raquo;',
         'current' => max(1, get_query_var('paged')),
         'total' => $wp_query->max_num_pages,
-        'type' => 'list'
-        )
+        'type' => 'list',
+        ]
     );
 
     $pagination = str_replace("<ul class='page-numbers'>", "<ul class='pagination text-center'>", $links);
@@ -356,7 +356,7 @@ function bootstrap_pagination()
 // Register Sidebars
 /* Sidebar Right */
 register_sidebar(
-    array(
+    [
     'id' => 'sidebar_right',
     'name' => __('Sidebar Right'),
     'description' => __('This sidebar is located on the right-hand side of each page.'),
@@ -364,12 +364,12 @@ register_sidebar(
     'after_widget' => '</aside>',
     'before_title' => '<h5>',
     'after_title' => '</h5>',
-    )
+    ]
 );
 
 /* Sidebar Archive */
 register_sidebar(
-    array(
+    [
     'id' => 'sidebar_archive',
     'name' => __('Sidebar Archive'),
     'description' => __('This sidebar is located on the right-hand side of each page.'),
@@ -377,12 +377,12 @@ register_sidebar(
     'after_widget' => '</aside>',
     'before_title' => '<h5>',
     'after_title' => '</h5>',
-    )
+    ]
 );
 
 /* Sidebar Category */
 register_sidebar(
-    array(
+    [
     'id' => 'sidebar_category',
     'name' => __('Sidebar Category'),
     'description' => __('This sidebar is located on the right-hand side of each page.'),
@@ -390,11 +390,11 @@ register_sidebar(
     'after_widget' => '</aside>',
     'before_title' => '<h5>',
     'after_title' => '</h5>',
-    )
+    ]
 );
 
 register_sidebar(
-    array(
+    [
     'id' => 'sidebar_newscast',
     'name' => __('Sidebar Archive Newscast'),
     'description' => __(''),
@@ -402,11 +402,11 @@ register_sidebar(
     'after_widget' => '</aside>',
     'before_title' => '<h5>',
     'after_title' => '</h5>',
-    )
+    ]
 );
 
 register_sidebar(
-    array(
+    [
     'id' => 'sidebar_new_story',
     'name' => __('Sidebar New Story Template - 2020'),
     'description' => __(''),
@@ -414,11 +414,11 @@ register_sidebar(
     'after_widget' => '</aside>',
     'before_title' => '<h5>',
     'after_title' => '</h5>',
-    )
+    ]
 );
 
 register_sidebar(
-    array(
+    [
     'id' => 'sidebar_author',
     'name' => __('Sidebar Author - 2020'),
     'description' => __(''),
@@ -426,11 +426,11 @@ register_sidebar(
     'after_widget' => '</aside>',
     'before_title' => '<h5>',
     'after_title' => '</h5>',
-    )
+    ]
 );
 
 register_sidebar(
-    array(
+    [
     'id' => 'sidebar_health_insider',
     'name' => __('Health Insider'),
     'description' => __(''),
@@ -438,11 +438,11 @@ register_sidebar(
     'after_widget' => '</aside>',
     'before_title' => '<h5>',
     'after_title' => '</h5>',
-    )
+    ]
 );
 
 register_sidebar(
-    array(
+    [
     'id' => 'sidebar_noticias',
     'name' => __('Sidebar Noticias'),
     'description' => __(''),
@@ -450,7 +450,7 @@ register_sidebar(
     'after_widget' => '</aside>',
     'before_title' => '<h5>',
     'after_title' => '</h5>',
-    )
+    ]
 );
 
 // Remove #more anchor from posts
@@ -514,7 +514,7 @@ if (!is_admin()) {
     {
         if (!is_page('youth-suicide') && !is_page('impeachment-sentiment') && !is_single() && !is_search() && !is_page('about-us')) {
             // Load JavaScripts
-            wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/plugins/bootstrap.js', array( 'jquery' ), '5.3.0-alpha1', true);
+            wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/plugins/bootstrap.js', [ 'jquery' ], '5.3.0-alpha1', true);
             if (!is_single(132417)) {
                 wp_enqueue_script('global', get_template_directory_uri() . '/js/global.js', null, null, true);
             }
@@ -522,10 +522,10 @@ if (!is_admin()) {
             wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/plugins/modernizr.js', null, '2.6.2', true);
             wp_enqueue_script('image-preloader', get_template_directory_uri() . '/js/plugins/image-preloader.js', null, null, true);
 
-            wp_enqueue_script('jquery-easing', get_template_directory_uri() . '/js/plugins/jquery.easing.1.3.js', array( 'jquery' ), '1.3', true);
-            wp_enqueue_script('jquery-isotope', get_template_directory_uri() . '/js/plugins/jquery.isotope.js', array( 'jquery' ), '1.5.25', true);
-            wp_enqueue_script('jquery-remodal', get_template_directory_uri() . '/js/plugins/jquery.remodal.js', array( 'jquery' ), null, true);
-            wp_enqueue_script('jquery-scrolldepth', get_template_directory_uri() . '/js/plugins/jquery.scrolldepth.js', array( 'jquery' ), '0.9.1', true);
+            wp_enqueue_script('jquery-easing', get_template_directory_uri() . '/js/plugins/jquery.easing.1.3.js', [ 'jquery' ], '1.3', true);
+            wp_enqueue_script('jquery-isotope', get_template_directory_uri() . '/js/plugins/jquery.isotope.js', [ 'jquery' ], '1.5.25', true);
+            wp_enqueue_script('jquery-remodal', get_template_directory_uri() . '/js/plugins/jquery.remodal.js', [ 'jquery' ], null, true);
+            wp_enqueue_script('jquery-scrolldepth', get_template_directory_uri() . '/js/plugins/jquery.scrolldepth.js', [ 'jquery' ], '0.9.1', true);
 
             wp_enqueue_script('wow', get_template_directory_uri() . '/js/plugins/wow.js', null, '0.1.6', true);
             wp_enqueue_script('slick', get_template_directory_uri() . '/js/plugins/slick.js', null, '1.4.1', true);
@@ -576,16 +576,16 @@ if (!is_admin()) {
     function bootstrap_scripts_and_styles_old()
     {
         // Load JavaScripts
-        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/plugins/bootstrap.js', array( 'jquery' ), '5.3.0', true);
+        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/plugins/bootstrap.js', [ 'jquery' ], '5.3.0', true);
         wp_enqueue_script('global', get_template_directory_uri() . '/js/global.js', null, null, true);
         wp_enqueue_script('respond', get_template_directory_uri() . '/js/plugins/respond.js', null, '1.4.0', true);
         wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/plugins/modernizr.js', null, '2.6.2', true);
         wp_enqueue_script('image-preloader', get_template_directory_uri() . '/js/plugins/image-preloader.js', null, null, true);
 
-        wp_enqueue_script('jquery-easing', get_template_directory_uri() . '/js/plugins/jquery.easing.1.3.js', array( 'jquery' ), '1.3', true);
-        wp_enqueue_script('jquery-isotope', get_template_directory_uri() . '/js/plugins/jquery.isotope.js', array( 'jquery' ), '1.5.25', true);
-        wp_enqueue_script('jquery-remodal', get_template_directory_uri() . '/js/plugins/jquery.remodal.js', array( 'jquery' ), null, true);
-        wp_enqueue_script('jquery-scrolldepth', get_template_directory_uri() . '/js/plugins/jquery.scrolldepth.js', array( 'jquery' ), '0.9.1', true);
+        wp_enqueue_script('jquery-easing', get_template_directory_uri() . '/js/plugins/jquery.easing.1.3.js', [ 'jquery' ], '1.3', true);
+        wp_enqueue_script('jquery-isotope', get_template_directory_uri() . '/js/plugins/jquery.isotope.js', [ 'jquery' ], '1.5.25', true);
+        wp_enqueue_script('jquery-remodal', get_template_directory_uri() . '/js/plugins/jquery.remodal.js', [ 'jquery' ], null, true);
+        wp_enqueue_script('jquery-scrolldepth', get_template_directory_uri() . '/js/plugins/jquery.scrolldepth.js', [ 'jquery' ], '0.9.1', true);
 
         wp_enqueue_script('wow', get_template_directory_uri() . '/js/plugins/wow.js', null, '0.1.6', true);
         wp_enqueue_script('slick', get_template_directory_uri() . '/js/plugins/slick.js', null, '1.4.1', true);
@@ -628,11 +628,11 @@ add_filter('acf/options_page/settings', 'my_options_page_settings');
 function my_options_page_settings($options)
 {
     $options['title'] = __('Theme Settings');
-    $options['pages'] = array(
+    $options['pages'] = [
         __('Header'),
         __('Footer'),
         //__('Home Slider')
-    );
+    ];
     return $options;
 }
 
@@ -826,7 +826,7 @@ add_filter('wpseo_metabox_prio', 'wpcover_move_yoast');
 // custom post type for students
 function students_CPT()
 {
-    $cpt_students_labels = array(
+    $cpt_students_labels = [
         'name'               => _x('Students', 'post type general name'),
         'singular_name'      => _x('Student', 'post type singular name'),
         'add_new'            => _x('Add New', 'Student'),
@@ -839,9 +839,9 @@ function students_CPT()
         'not_found'          => __('No student found'),
         'not_found_in_trash' => __('No student found in the Trash'),
         'parent_item_colon'  => '',
-        'menu_name'          => 'Students'
-    );
-    $cpt_students_args = array(
+        'menu_name'          => 'Students',
+    ];
+    $cpt_students_args = [
         'labels'        => $cpt_students_labels,
         'description'   => 'Display Student',
         'public'        => true,
@@ -849,26 +849,26 @@ function students_CPT()
         'menu_position' => 5,
         'has_archive'   => true,
         'hierarchical'  => true,
-        'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields')
-    );
+        'supports'      => [ 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields'],
+    ];
     register_post_type('students', $cpt_students_args);
 }
 add_action('init', 'students_CPT');
 
 if (function_exists('acf_add_options_sub_page')) {
     acf_add_options_sub_page(
-        array(
+        [
         'title'      => 'Student Settings',
         'parent'     => 'edit.php?post_type=students',
-        'capability' => 'manage_options'
-        )
+        'capability' => 'manage_options',
+        ]
     );
 }
 
 // custom post type for staff
 function staff_CPT()
 {
-    $cpt_staff_labels = array(
+    $cpt_staff_labels = [
         'name'               => _x('Staff', 'post type general name'),
         'singular_name'      => _x('Staff', 'post type singular name'),
         'add_new'            => _x('Add New', 'Staff'),
@@ -881,9 +881,9 @@ function staff_CPT()
         'not_found'          => __('No student found'),
         'not_found_in_trash' => __('No student found in the Trash'),
         'parent_item_colon'  => '',
-        'menu_name'          => 'Cronkite Staff'
-    );
-    $cpt_staff_args = array(
+        'menu_name'          => 'Cronkite Staff',
+    ];
+    $cpt_staff_args = [
         'labels'        => $cpt_staff_labels,
         'description'   => 'Display Staff',
         'public'        => true,
@@ -891,8 +891,8 @@ function staff_CPT()
         'menu_position' => 5,
         'has_archive'   => true,
         'hierarchical'  => true,
-        'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields')
-    );
+        'supports'      => [ 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields'],
+    ];
     register_post_type('cn_staff', $cpt_staff_args);
 }
 add_action('init', 'staff_CPT');
@@ -901,7 +901,7 @@ add_action('init', 'staff_CPT');
 // custom tags for stories
 function storytags_CPT()
 {
-    $storytags_labels = array(
+    $storytags_labels = [
         'name'               => _x('Story Tags', 'post type general name'),
         'singular_name'      => _x('Story Tag', 'post type singular name'),
         'add_new'            => _x('Add New', 'Story Tag'),
@@ -914,9 +914,9 @@ function storytags_CPT()
         'not_found'          => __('No story tag found'),
         'not_found_in_trash' => __('No story tag found in the Trash'),
         'parent_item_colon'  => '',
-        'menu_name'          => 'Story Tags'
-    );
-    $storytags_args = array(
+        'menu_name'          => 'Story Tags',
+    ];
+    $storytags_args = [
         'labels'        => $storytags_labels,
         'description'   => 'Display Story Tags',
         'public'        => true,
@@ -924,8 +924,8 @@ function storytags_CPT()
         'menu_position' => 5,
         'has_archive'   => true,
         'hierarchical'  => true,
-        'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields')
-    );
+        'supports'      => [ 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields'],
+    ];
     register_post_type('storytags', $storytags_args);
 }
 add_action('init', 'storytags_CPT');
@@ -934,7 +934,7 @@ add_action('init', 'storytags_CPT');
 // in this series
 function inThisSeries_CPT()
 {
-    $inThisSeries_labels = array(
+    $inThisSeries_labels = [
         'name'               => _x('In This Series', 'post type general name'),
         'singular_name'      => _x('In This Series', 'post type singular name'),
         'add_new'            => _x('Add New', 'Series'),
@@ -947,9 +947,9 @@ function inThisSeries_CPT()
         'not_found'          => __('No story tag found'),
         'not_found_in_trash' => __('No story tag found in the Trash'),
         'parent_item_colon'  => '',
-        'menu_name'          => 'In This Series'
-    );
-    $inThisSeries_args = array(
+        'menu_name'          => 'In This Series',
+    ];
+    $inThisSeries_args = [
         'labels'        => $inThisSeries_labels,
         'description'   => 'Display In This Series',
         'public'        => true,
@@ -957,8 +957,8 @@ function inThisSeries_CPT()
         'menu_position' => 5,
         'has_archive'   => true,
         'hierarchical'  => true,
-        'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields')
-    );
+        'supports'      => [ 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields'],
+    ];
     register_post_type('inthisseries', $inThisSeries_args);
 }
 add_action('init', 'inThisSeries_CPT');
@@ -967,7 +967,7 @@ add_action('init', 'inThisSeries_CPT');
 // custom post type for staff
 function explore_CPT()
 {
-    $cpt_explore_labels = array(
+    $cpt_explore_labels = [
         'name'               => _x('Explores', 'post type general name'),
         'singular_name'      => _x('Explore', 'post type singular name'),
         'add_new'            => _x('Add New', 'Story'),
@@ -980,9 +980,9 @@ function explore_CPT()
         'not_found'          => __('No student found'),
         'not_found_in_trash' => __('No student found in the Trash'),
         'parent_item_colon'  => '',
-        'menu_name'          => 'Explore Section'
-    );
-    $cpt_explore_args = array(
+        'menu_name'          => 'Explore Section',
+    ];
+    $cpt_explore_args = [
         'labels'        => $cpt_explore_labels,
         'description'   => 'Display Stories',
         'public'        => true,
@@ -990,8 +990,8 @@ function explore_CPT()
         'menu_position' => 5,
         'has_archive'   => true,
         'hierarchical'  => true,
-        'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields')
-    );
+        'supports'      => [ 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields'],
+    ];
     register_post_type('explore_stories', $cpt_explore_args);
 }
 add_action('init', 'explore_CPT');
@@ -1000,7 +1000,7 @@ add_action('init', 'explore_CPT');
 // custom post type for election2020
 function election2020_CPT()
 {
-    $cpt_election2020_labels = array(
+    $cpt_election2020_labels = [
         'name'               => _x('Election 2020', 'post type general name'),
         'singular_name'      => _x('Election 2020', 'post type singular name'),
         'add_new'            => _x('Add New', 'Election Post'),
@@ -1013,9 +1013,9 @@ function election2020_CPT()
         'not_found'          => __('No posts found'),
         'not_found_in_trash' => __('No posts found in the Trash'),
         'parent_item_colon'  => '',
-        'menu_name'          => 'Election 2020'
-    );
-    $cpt_election2020_args = array(
+        'menu_name'          => 'Election 2020',
+    ];
+    $cpt_election2020_args = [
         'labels'        => $cpt_election2020_labels,
         'description'   => 'All Posts',
         'public'        => true,
@@ -1023,26 +1023,26 @@ function election2020_CPT()
         'menu_position' => 5,
         'has_archive'   => true,
         'hierarchical'  => true,
-        'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields')
-    );
+        'supports'      => [ 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields'],
+    ];
     register_post_type('election2020', $cpt_election2020_args);
 }
 add_action('init', 'election2020_CPT');
 
 if (function_exists('acf_add_options_sub_page')) {
     acf_add_options_sub_page(
-        array(
+        [
         'title'      => 'Election Homepage',
         'parent'     => 'edit.php?post_type=election2020',
-        'capability' => 'manage_options'
-        )
+        'capability' => 'manage_options',
+        ]
     );
 }
 
 // custom post type for audio/video
 function audioVideo_CPT()
 {
-    $cpt_audiovideo_labels = array(
+    $cpt_audiovideo_labels = [
         'name'               => _x('Audio/Video', 'post type general name'),
         'singular_name'      => _x('Audio/Video', 'post type singular name'),
         'add_new'            => _x('Add New', 'Audio/Video'),
@@ -1055,9 +1055,9 @@ function audioVideo_CPT()
         'not_found'          => __('No student found'),
         'not_found_in_trash' => __('No student found in the Trash'),
         'parent_item_colon'  => '',
-        'menu_name'          => 'Audio/Video'
-    );
-    $cpt_audiovideo_args = array(
+        'menu_name'          => 'Audio/Video',
+    ];
+    $cpt_audiovideo_args = [
         'labels'        => $cpt_audiovideo_labels,
         'description'   => 'Display Audio/Video',
         'public'        => true,
@@ -1065,8 +1065,8 @@ function audioVideo_CPT()
         'menu_position' => 5,
         'has_archive'   => true,
         'hierarchical'  => true,
-        'supports'      => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields')
-    );
+        'supports'      => [ 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields'],
+    ];
     register_post_type('audioVideoCPT', $cpt_audiovideo_args);
 }
 add_action('init', 'audioVideo_CPT');
@@ -1084,7 +1084,7 @@ add_action('pre_get_posts', 'cn_search_query');
 
 function add_file_types_to_uploads($file_types)
 {
-    $new_filetypes = array();
+    $new_filetypes = [];
     $new_filetypes['svg'] = 'image/svg+xml';
     $file_types = array_merge($file_types, $new_filetypes);
     return $file_types;

@@ -196,7 +196,7 @@ if ($top_side_stories) {
 
             echo '<a href="' . $permalink  . ' ">' ;
             echo ' <div class="image-cont-1" style="position:relative; left:1px;">';
-            echo  get_the_post_thumbnail($postid, 'large', array('class' => 'img-responsive home-aside'));
+            echo  get_the_post_thumbnail($postid, 'large', ['class' => 'img-responsive home-aside']);
             if (get_field('use_short_headline', $postid) == 'yes' && get_field('homepage_headline', $postid) != '') {
                 echo '<h4>' . get_field('homepage_headline', $postid).'</h4>';
             } else {
@@ -279,13 +279,13 @@ if ($vvid == 'Newscast') { ?>
 
             <?php global $post; ?>
 
-            <?php $arg = array(
+            <?php $arg = [
         'post_type'        => 'post',
         'order'            => 'DESC',
         'orderby'        => 'date',
         'posts_per_page'    => 1,
-        'category_name' =>  'newscast'
-    );
+        'category_name' =>  'newscast',
+    ];
     $the_query = new WP_Query($arg);
     if ($the_query->have_posts()) : ?>
 
@@ -366,7 +366,7 @@ if ($vvid == 'Newscast') { ?>
                           <?php if ($icon != '') { ?>
                             <img class="awards_image" src="<?php echo $icon['sizes']['awards_logo']; ?>" />
                           <?php } else { ?>
-                              <?php echo preg_replace('/(height)=\"\d*\"\s/', "", get_the_post_thumbnail($postID, array( 486, 304), array( 'class' => 'awards_image' ))); ?>
+                              <?php echo preg_replace('/(height)=\"\d*\"\s/', "", get_the_post_thumbnail($postID, [ 486, 304], [ 'class' => 'awards_image' ])); ?>
                           <?php } ?>
                             </a>
 
@@ -424,13 +424,13 @@ wp_reset_query(); ?>
             echo '<a target="_blank" href="//';
             echo $url_link;
             echo '">';
-            echo get_the_post_thumbnail($postid, 'full', array('class' => 'img-responsive'));
+            echo get_the_post_thumbnail($postid, 'full', ['class' => 'img-responsive']);
             echo '</a>';
         else:
             echo '<a href="';
             echo $permalink;
             echo '">';
-            echo get_the_post_thumbnail($postid, 'full', array('class' => 'img-responsive'));
+            echo get_the_post_thumbnail($postid, 'full', ['class' => 'img-responsive']);
             echo '</a>';
         endif;
 

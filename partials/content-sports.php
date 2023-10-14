@@ -14,7 +14,7 @@ if (have_rows('sports_homepage')) {
 }
 
 // top stories array to avoid dups
-$topStoriesArray = array();
+$topStoriesArray = [];
 ?>
 
 <!-- header -->
@@ -211,13 +211,13 @@ if (have_rows('sports_homepage')) {
             </div>
 
                 <?php
-                $args = array(
+                $args = [
                             'post_type'   => 'post',
                             'post_status' => 'publish',
                             'post__not_in' => $topStoriesArray,
                             'posts_per_page' => 5,
-                            'cat' => 185
-                           );
+                            'cat' => 185,
+                           ];
 
                 $latestNews = new WP_Query($args);
                 if ($latestNews->have_posts()) {

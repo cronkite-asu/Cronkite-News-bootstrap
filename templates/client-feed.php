@@ -5,10 +5,10 @@
 header("Content-Type: application/rss+xml; charset=UTF-8");
 echo '<?xml version="1.0"?><rss version="2.0">';
 
-$args = array(
+$args = [
               'post_type'        => 'post',
-              'posts_per_page'    => 1
-          );
+              'posts_per_page'    => 1,
+          ];
 $loop = new WP_Query($args);
 while ($loop->have_posts()) {
     $loop->the_post();
@@ -25,10 +25,10 @@ while ($loop->have_posts()) {
   <lastBuildDate><?php echo $lastStoryPosted; ?></lastBuildDate>
   <managingEditor>cronkitenews@asu.edu (Cronkite News)</managingEditor>
 <?php
-    $args = array(
+    $args = [
                 'post_type'        => 'post',
-                'posts_per_page'    => 10
-            );
+                'posts_per_page'    => 10,
+            ];
 $loop = new WP_Query($args);
 while ($loop->have_posts()) : $loop->the_post();
 
@@ -100,11 +100,11 @@ while ($loop->have_posts()) : $loop->the_post();
                 $staffID = get_sub_field('cn_staff');
                 $cnStaffCount = count((array)$staffID);
                 foreach ($staffID as $key => $val) {
-                    $args = array(
+                    $args = [
                       'post_type'   => 'students',
                       'post_status' => 'publish',
-                      'p' => $val
-                    );
+                      'p' => $val,
+                    ];
 
                     $staffDetails = new WP_Query($args);
                     if ($staffDetails->have_posts()) {

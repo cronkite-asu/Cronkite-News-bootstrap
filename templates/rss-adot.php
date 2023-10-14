@@ -16,10 +16,10 @@ print '<?xml version="1.0"?><rss version="2.0">';
   <lastBuildDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></lastBuildDate>
   <managingEditor>cronkitenews@asu.edu</managingEditor>
 <?php
-    $args = array(
+    $args = [
                 'post_type'        => 'post',
-                'posts_per_page'    => 10
-            );
+                'posts_per_page'    => 10,
+            ];
 $loop = new WP_Query($args);
 while ($loop->have_posts()) : $loop->the_post();
     ?>

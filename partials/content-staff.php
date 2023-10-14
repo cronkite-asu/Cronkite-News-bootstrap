@@ -17,12 +17,12 @@
 
         echo '<div class="author_bio">';
 
-$args = array(
+$args = [
      'name'           => '"'.$search_staff_name.'"',
-     'post_type'      => array('students', 'cn_staff'),
+     'post_type'      => ['students', 'cn_staff'],
      'post_status'    => 'publish',
-     'posts_per_page' => 1
- );
+     'posts_per_page' => 1,
+ ];
 
 $staffProID = get_posts($args);
 $staffDetails = new WP_Query($args);
@@ -148,35 +148,35 @@ wp_reset_query();
         </div>
 
         <?php
-          $args = array(
-'post_type'      => array('post', 'audioVideoCPT'),
+          $args = [
+'post_type'      => ['post', 'audioVideoCPT'],
 'post_status'    => 'publish',
 'suppress_filters' => false,
 'posts_per_page' => -1,
-'meta_query'    => array(
+'meta_query'    => [
   'relation' => 'OR',
-      array(
+      [
           'key'        => 'byline_info_cn_staff',
           'compare'    => 'LIKE',
-          'value'        => '"'.$staffProID[0]->ID.'"'
-      ),
-  array(
+          'value'        => '"'.$staffProID[0]->ID.'"',
+      ],
+  [
     'key'        => 'byline_info_cn_photographers',
     'compare'    => 'LIKE',
-    'value'        => '"'.$staffProID[0]->ID.'"'
-  ),
-  array(
+    'value'        => '"'.$staffProID[0]->ID.'"',
+  ],
+  [
     'key'        => 'byline_info_cn_broadcast_reporters',
     'compare'    => 'LIKE',
-    'value'        => '"'.$staffProID[0]->ID.'"'
-  ),
-  array(
+    'value'        => '"'.$staffProID[0]->ID.'"',
+  ],
+  [
     'key'        => 'byline_info_cn_data_visualizer',
     'compare'    => 'LIKE',
-    'value'        => '"'.$staffProID[0]->ID.'"'
-  )
-  )
-           );
+    'value'        => '"'.$staffProID[0]->ID.'"',
+  ],
+  ],
+           ];
 
 $staffStories = new WP_Query($args);
 

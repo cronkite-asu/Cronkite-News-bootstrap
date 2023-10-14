@@ -38,13 +38,13 @@ function gridpost($item)
         echo '<a target="_blank" href="//';
         echo $url_link;
         echo '">';
-        echo get_the_post_thumbnail($postid, 'full', array('class' => 'img-responsive'));
+        echo get_the_post_thumbnail($postid, 'full', ['class' => 'img-responsive']);
         echo '</a>';
     else:
         echo '<a href="';
         echo $permalink;
         echo '">';
-        echo get_the_post_thumbnail($postid, 'full', array('class' => 'img-responsive'));
+        echo get_the_post_thumbnail($postid, 'full', ['class' => 'img-responsive']);
         echo '</a>';
     endif;
 

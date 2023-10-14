@@ -8,13 +8,13 @@ header("Content-Type: application/json; charset=UTF-8");
 ?>
 
 <?php
-    $json = array();
+    $json = [];
 
 if (have_rows('videos', 'option')) {
     while (have_rows('videos', 'option')) {
         the_row();
         $source = ucwords(str_replace('-', ' ', get_sub_field('source')));
-        $it = array(
+        $it = [
         'title' => get_sub_field('headline'),
         'description' => get_sub_field('summary'),
         'embed' => get_sub_field('video_url'),
@@ -22,8 +22,8 @@ if (have_rows('videos', 'option')) {
         'pubDate' => get_post_time('D, d M Y H:i:s O', true),
         'source' => $source,
         'house_ad_img' => get_sub_field('house_ad'),
-        'house_ad_link' => get_sub_field('house_ad_link')
-        );
+        'house_ad_link' => get_sub_field('house_ad_link'),
+        ];
         $json[] = $it;
     }
 }

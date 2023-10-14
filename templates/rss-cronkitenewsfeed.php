@@ -52,10 +52,10 @@ $xmlWriter->writeElement('sy:updatePeriod', apply_filters('rss_update_period', '
 $xmlWriter->writeElement('sy:updateFrequency', apply_filters('rss_update_frequency', '1'));
 
 // query
-$args = array(
+$args = [
               'post_type'        => 'post',
-              'posts_per_page'    => $postCount
-          );
+              'posts_per_page'    => $postCount,
+          ];
 $loop = new WP_Query($args);
 while ($loop->have_posts()) {
     $loop->the_post();
@@ -102,11 +102,11 @@ while ($loop->have_posts()) {
                 $staffID = get_sub_field('cn_staff');
                 $cnStaffCount = count((array)$staffID);
                 foreach ($staffID as $key => $val) {
-                    $args = array(
+                    $args = [
                         'post_type'   => 'students',
                         'post_status' => 'publish',
-                        'p' => $val
-                      );
+                        'p' => $val,
+                      ];
 
                     $staffDetails = new WP_Query($args);
                     if ($staffDetails->have_posts()) {

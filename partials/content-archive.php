@@ -43,7 +43,7 @@
               </select>
           </form>
           <?php
-          $args = array(
+          $args = [
             'post_type'        => 'post',
             'order'            => 'ASC',
             'orderby'        => 'date',
@@ -51,7 +51,7 @@
             'monthnum' => $month,
             'year' => $years,
 
-          );
+          ];
           $the_query = new WP_Query($args);
           if ($the_query->have_posts()) {
               while ($the_query->have_posts()) {

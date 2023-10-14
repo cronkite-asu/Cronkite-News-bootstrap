@@ -19,13 +19,13 @@ get_header('new2019'); ?>
         <?php
           //$paged = get_query_var('paged');
           global $post;
-$arg = array(
+$arg = [
     'post_type'        => 'post',
     'order'            => 'DESC',
     'orderby'        => 'date',
     'posts_per_page'    => 1,
-    'category_name' =>  'newscast'
-);
+    'category_name' =>  'newscast',
+];
 $newscast = new WP_Query($arg);
 if ($newscast->have_posts()) {
     while ($newscast->have_posts()) {

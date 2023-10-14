@@ -17,10 +17,10 @@ print '<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http
   <managingEditor>cronkitenews@asu.edu (Cronkite News)</managingEditor>
   <atom:link href="https://cronkitenews.azpbs.org/rss-feed/" rel="self" type="application/rss+xml" />
 <?php
-    $args = array(
+    $args = [
                 'post_type'        => 'post',
-                'posts_per_page'    => 10
-            );
+                'posts_per_page'    => 10,
+            ];
 $loop = new WP_Query($args);
 while ($loop->have_posts()) : $loop->the_post();
     ?>

@@ -13,7 +13,7 @@
 
 <?php
   // save main story ID
-  $repeatStoriesArray = array();
+  $repeatStoriesArray = [];
 
 // get super bowl content
 if (have_rows('weather_content')) {
