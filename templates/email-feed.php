@@ -29,7 +29,7 @@ if ($home_main_story) {
     foreach ($home_main_story as $main_story) {
         if ($counter < 1) {
             // retrieved author names
-            $externalSites = array('boise-state-public-radio' => "https://www.boisestatepublicradio.org",
+            $externalSites = ['boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                                  'colorado-public-radio' => "https://www.cpr.org/",
                                  'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
                                  'elemental-reports' => "https://www.elementalreports.com/",
@@ -42,8 +42,8 @@ if ($home_main_story) {
                                  'News21' => "https://www.news21.com/",
                                  'PBS-SoCal' => "https://www.pbssocal.org/",
                                  'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                                 'special-to-cronkite-news' => ""
-                                );
+                                 'special-to-cronkite-news' => "",
+                                ];
             $externalAuthorCount = 1;
             $internalAuthorCount = 0;
             $commaSeparator = ',';
@@ -79,11 +79,11 @@ if ($home_main_story) {
                         $staffID = get_sub_field('cn_staff');
                         $cnStaffCount = count((array)$staffID);
                         foreach ($staffID as $key => $val) {
-                            $args = array(
+                            $args = [
                                 'post_type'   => 'students',
                                 'post_status' => 'publish',
-                                'p' => $val
-                              );
+                                'p' => $val,
+                              ];
 
                             $staffDetails = new WP_Query($args);
                             if ($staffDetails->have_posts()) {
@@ -163,7 +163,7 @@ if ($slideAsideList) {
         $permalink = get_permalink($slideAside);
 
         // retrieved author names
-        $externalSites = array('boise-state-public-radio' => "https://www.boisestatepublicradio.org",
+        $externalSites = ['boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                                'colorado-public-radio' => "https://www.cpr.org/",
                                'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
                                'elemental-reports' => "https://www.elementalreports.com/",
@@ -176,8 +176,8 @@ if ($slideAsideList) {
                                'News21' => "https://www.news21.com/",
                                'PBS-SoCal' => "https://www.pbssocal.org/",
                                'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                               'special-to-cronkite-news' => ""
-                              );
+                               'special-to-cronkite-news' => "",
+                              ];
         $externalAuthorCount = 1;
         $internalAuthorCount = 0;
         $commaSeparator = ',';
@@ -213,11 +213,11 @@ if ($slideAsideList) {
                     $staffID = get_sub_field('cn_staff');
                     $cnStaffCount = count((array)$staffID);
                     foreach ($staffID as $key => $val) {
-                        $args = array(
+                        $args = [
                               'post_type'   => 'students',
                               'post_status' => 'publish',
-                              'p' => $val
-                            );
+                              'p' => $val,
+                            ];
 
                         $staffDetails = new WP_Query($args);
                         if ($staffDetails->have_posts()) {
@@ -309,10 +309,10 @@ if (have_rows('area_works_box', $frontpage_id)) {
             echo '<guid>' . $link . '</guid>';
             echo '<title>' . get_the_title($thepostid) . '</title>';
             //Extract feature image, author, blurb
-            $featureimage = get_the_post_thumbnail($thepostid, 'small', array('style' => 'width:40%; float:right;'));
+            $featureimage = get_the_post_thumbnail($thepostid, 'small', ['style' => 'width:40%; float:right;']);
 
             // retrieved author names
-            $externalSites = array('boise-state-public-radio' => "https://www.boisestatepublicradio.org",
+            $externalSites = ['boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                                  'colorado-public-radio' => "https://www.cpr.org/",
                                  'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
                                  'elemental-reports' => "https://www.elementalreports.com/",
@@ -325,8 +325,8 @@ if (have_rows('area_works_box', $frontpage_id)) {
                                  'News21' => "https://www.news21.com/",
                                  'PBS-SoCal' => "https://www.pbssocal.org/",
                                  'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                                 'special-to-cronkite-news' => ""
-                                );
+                                 'special-to-cronkite-news' => "",
+                                ];
             $externalAuthorCount = 1;
             $internalAuthorCount = 0;
             $commaSeparator = ',';
@@ -362,11 +362,11 @@ if (have_rows('area_works_box', $frontpage_id)) {
                         $staffID = get_sub_field('cn_staff');
                         $cnStaffCount = count((array)$staffID);
                         foreach ($staffID as $key => $val) {
-                            $args = array(
+                            $args = [
                                   'post_type'   => 'students',
                                   'post_status' => 'publish',
-                                  'p' => $val
-                                );
+                                  'p' => $val,
+                                ];
 
                             $staffDetails = new WP_Query($args);
                             if ($staffDetails->have_posts()) {

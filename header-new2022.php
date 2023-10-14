@@ -205,15 +205,15 @@ if ($settings['text-color'] != '') {
             <!-- top navigation -->
             <ul class="top_links">
                             <?php
-                            $args = array(
+                            $args = [
                                 'menu' => 'Header Nav - 2019',
                                 'container'     => false,
                                 'items_wrap'    => '%3$s',
                                 'depth'         => 1,
                                 'fallback_cb'   => false,
                                 'menu_id'             => '',
-                                'menu_class'        => ''
-                                );
+                                'menu_class'        => '',
+                                ];
 wp_nav_menu($args);
 ?>
             </ul>
@@ -238,15 +238,15 @@ wp_nav_menu($args);
             </form>
           </li>
           <?php
-            $args = array(
+            $args = [
             'menu' => 'Subnav - 2019',
             'container'     => false,
             'items_wrap'    => '%3$s',
             'depth'         => 1,
             'fallback_cb'   => false,
             'menu_id'             => '',
-            'menu_class'        => ''
-            );
+            'menu_class'        => '',
+            ];
 wp_nav_menu($args);
 ?>
                     <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sitenewscast/">Newscast</a></li>

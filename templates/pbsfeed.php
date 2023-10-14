@@ -19,12 +19,12 @@ echo '<?xml version="1.0"?><rss version="2.0">';
   <pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></pubDate>
   <lastBuildDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></lastBuildDate>
 <?php
-    $args = array(
+    $args = [
                 'post_type'      => 'post',
                 'posts_per_page' => 10,
                 'category_name'  => 'editors-picks',
-                'post_status'    => 'publish'
-            );
+                'post_status'    => 'publish',
+            ];
 $loop = new WP_Query($args);
 while ($loop->have_posts()) :
     $loop->the_post();

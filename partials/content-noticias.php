@@ -14,7 +14,7 @@ if (have_rows('noticias_homepage')) {
 }
 
 // top stories array to avoid dups
-$topStoriesArray = array();
+$topStoriesArray = [];
 ?>
 
 <!-- main body container -->
@@ -140,14 +140,14 @@ if (have_rows('noticias_homepage')) {
       <h4>Lo más destacado</h4>
 
       <?php
-$args = array(
+$args = [
               'post_type'   => 'post',
               'post_status' => 'publish',
               'post__not_in' => $topStoriesArray,
               'posts_per_page' => 7,
               'cat' => 22877,
               'order' => 'DESC',
-             );
+             ];
 
 $latestNews = new WP_Query($args);
 if ($latestNews->have_posts()) {

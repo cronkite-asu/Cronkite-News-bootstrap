@@ -30,13 +30,13 @@ get_header(); ?>
                                     <div class="content-blog">
                                         <?php global $post; ?>
 
-                                        <?php $arg = array(
+                                        <?php $arg = [
                                             'post_type'        => 'post',
                                             'order'            => 'DESC',
                                             'orderby'        => 'date',
                                             'posts_per_page'    => 1,
-                                            'category_name' =>  'cronkite-news-en-espanol'
-                                        );
+                                            'category_name' =>  'cronkite-news-en-espanol',
+                                        ];
 $the_query = new WP_Query($arg);
 if ($the_query->have_posts()) : ?>
 
@@ -67,7 +67,7 @@ wp_reset_query(); ?>
                                                 <div class="col-sm-3 inner-right-xs-archive text-left">
                                                     <figure>
                                                         <a href="#modal-members" class="watch" member-number="<?php echo $number; ?>" >
-                                                    <?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive')); ?>
+                                                    <?php the_post_thumbnail('thumbnail', ['class' => 'img-responsive']); ?>
                                                         </a>
                                                             </figure>
                                                 </div>

@@ -10,12 +10,12 @@ echo '<?xml version="1.0"?><rss version="2.0">';
 ?>
 
 <?php
-    $args = array(
+    $args = [
                 'post_type'        => 'slider',
                 'order'            => 'ASC',
                 'orderby'        => 'menu_order',
-                'posts_per_page'    => -1
-            );
+                'posts_per_page'    => -1,
+            ];
 $loop = new WP_Query($args);
 while ($loop->have_posts()) : $loop->the_post();
     //Extract slider html and find the link

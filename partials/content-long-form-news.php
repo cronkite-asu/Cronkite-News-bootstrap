@@ -18,7 +18,7 @@ function generateByline($currPostID, $currIntro, $publishDate, $style)
         <div class="large-8 medium-8 small-12 cell story-credits-date">
           <span class="byline">
             <?php
-                  $externalSites = array('abc15' => "https://www.abc15.com/",
+                  $externalSites = ['abc15' => "https://www.abc15.com/",
                                          'arizona-pbs' => "https://www.azpbs.org",
                                          'arizona-public-media' => "https://www.azpm.org/",
                                          'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
@@ -38,8 +38,8 @@ function generateByline($currPostID, $currIntro, $publishDate, $style)
                                          'PBS-SoCal' => "https://www.pbssocal.org/",
                                          'PolitiFact' => "https://www.politifact.com",
                                          'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                                         'special-to-cronkite-news' => ""
-                                        );
+                                         'special-to-cronkite-news' => "",
+                                        ];
     $externalAuthorCount = 1;
     $internalAuthorCount = 0;
     $commaSeparator = ',';
@@ -51,7 +51,7 @@ function generateByline($currPostID, $currIntro, $publishDate, $style)
     $groupFields = get_field('byline_info');
     $externalAuthorRepeater = $groupFields['external_authors_repeater'];
 
-    $normalizeChars = array(
+    $normalizeChars = [
        'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
        'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
        'Ï'=>'I', 'Ñ'=>'N', 'Ń'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
@@ -60,7 +60,7 @@ function generateByline($currPostID, $currIntro, $publishDate, $style)
        'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ń'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
        'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f',
        'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
-             );
+             ];
 
     if (have_rows('byline_info')) {
         $sepCounter = 0;
@@ -72,11 +72,11 @@ function generateByline($currPostID, $currIntro, $publishDate, $style)
             $cnStaffCount = count((array)$staffID);
 
             foreach ($staffID as $key => $val) {
-                $args = array(
+                $args = [
                               'post_type'   => 'students',
                               'post_status' => 'publish',
-                              'p' => $val
-                            );
+                              'p' => $val,
+                            ];
 
                 $staffDetails = new WP_Query($args);
                 if ($staffDetails->have_posts()) {
@@ -487,7 +487,7 @@ if (have_rows('blocks')) {
   <div class="grid-x grid-padding-x">
     <?php
                   // check photo and select credit width
-                  list($width, $height, $type, $attr) = getimagesize(get_sub_field('photo'));
+                  [$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
             if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';
             } else {
@@ -540,7 +540,7 @@ if (have_rows('blocks')) {
   <div class="grid-x grid-padding-x">
     <?php
                   // check photo and select credit width
-                  list($width, $height, $type, $attr) = getimagesize(get_sub_field('photo'));
+                  [$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
             if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';
             } else {
@@ -591,7 +591,7 @@ if (have_rows('blocks')) {
   <div class="grid-x grid-padding-x">
     <?php
                   // check photo and select credit width
-                  list($width, $height, $type, $attr) = getimagesize(get_sub_field('photo'));
+                  [$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
             if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';
             } else {
@@ -644,7 +644,7 @@ if (have_rows('blocks')) {
   <div class="grid-x grid-padding-x">
     <?php
                   // check photo and select credit width
-                  list($width, $height, $type, $attr) = getimagesize(get_sub_field('photo'));
+                  [$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
             if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';
             } else {
@@ -698,7 +698,7 @@ if (have_rows('blocks')) {
   <div class="grid-x grid-padding-x">
     <?php
                   // check photo and select credit width
-                  list($width, $height, $type, $attr) = getimagesize(get_sub_field('photo'));
+                  [$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
             if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';
             } else {
@@ -808,7 +808,7 @@ if (have_rows('blocks')) {
   <div class="grid-x grid-padding-x">
     <?php
                   // check photo and select credit width
-                  list($width, $height, $type, $attr) = getimagesize(get_sub_field('photo'));
+                  [$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
             if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';
             } else {
@@ -1613,7 +1613,7 @@ if ($inthisseriesSettings['show'] == 'yes') {
               </div>
           <?php } else { ?>
               <div>
-                <a href="<?php echo get_permalink($upcomingStory['posted-link']); ?>"><?php echo get_the_post_thumbnail($upcomingStory['posted-link'], 'full', array('class' => 'img-responsive')); ?></a>
+                <a href="<?php echo get_permalink($upcomingStory['posted-link']); ?>"><?php echo get_the_post_thumbnail($upcomingStory['posted-link'], 'full', ['class' => 'img-responsive']); ?></a>
                 <?php
                                             if (get_field('use_short_headline', $upcomingStory['posted-link']) == 'yes' && get_field('homepage_headline', $upcomingStory['posted-link']) != '') {
                                                 ?>
@@ -1648,7 +1648,7 @@ if ($inthisseriesSettings['show'] == 'yes') {
             foreach ($pubbedStoryList as $pubbedStory) {
                 ?>
             <div>
-              <a href="<?php echo get_permalink($upcomingStory['posted-link']); ?>"><?php echo get_the_post_thumbnail($pubbedStory, 'full', array('class' => 'img-responsive')); ?></a>
+              <a href="<?php echo get_permalink($upcomingStory['posted-link']); ?>"><?php echo get_the_post_thumbnail($pubbedStory, 'full', ['class' => 'img-responsive']); ?></a>
               <?php
                         if (get_field('use_short_headline', $upcomingStory['posted-link']) == 'yes' && get_field('homepage_headline', $upcomingStory['posted-link']) != '') {
                             ?>
@@ -1697,11 +1697,11 @@ if ($inthisseriesSettings['show'] == 'yes') {
 
                       foreach ($staffID as $key => $val) {
                           echo '<div class="author_bio">';
-                          $args = array(
+                          $args = [
                                         'post_type'   => 'students',
                                         'post_status' => 'publish',
-                                        'p' => $val
-                                       );
+                                        'p' => $val,
+                                       ];
 
                           $staffDetails = new WP_Query($args);
                           if ($staffDetails->have_posts()) {
@@ -1774,11 +1774,11 @@ if ($inthisseriesSettings['show'] == 'yes') {
                       // show broadcast
                       foreach ($broadcastID as $key => $val) {
                           echo '<div class="author_bio">';
-                          $args = array(
+                          $args = [
                                         'post_type'   => 'students',
                                         'post_status' => 'publish',
-                                        'p' => $val
-                                       );
+                                        'p' => $val,
+                                       ];
 
                           $staffDetails = new WP_Query($args);
                           if ($staffDetails->have_posts()) {
@@ -1852,11 +1852,11 @@ if ($inthisseriesSettings['show'] == 'yes') {
                       // show photogs
                       foreach ($photogID as $key => $val) {
                           echo '<div class="author_bio">';
-                          $args = array(
+                          $args = [
                                         'post_type'   => 'students',
                                         'post_status' => 'publish',
-                                        'p' => $val
-                                       );
+                                        'p' => $val,
+                                       ];
 
                           $staffDetails = new WP_Query($args);
                           if ($staffDetails->have_posts()) {
@@ -1925,11 +1925,11 @@ if ($inthisseriesSettings['show'] == 'yes') {
                       // show data viz
                       foreach ($dataVisualizerID as $key => $val) {
                           echo '<div class="author_bio">';
-                          $args = array(
+                          $args = [
                                         'post_type'   => 'students',
                                         'post_status' => 'publish',
-                                        'p' => $val
-                                       );
+                                        'p' => $val,
+                                       ];
 
                           $staffDetails = new WP_Query($args);
                           if ($staffDetails->have_posts()) {

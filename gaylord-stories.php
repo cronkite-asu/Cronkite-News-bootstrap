@@ -19,27 +19,27 @@ get_header('new2019'); ?>
                     ))
   );*/
 
-  $args = array(
+  $args = [
     'post_type'      => 'post',
     'post_status'    => 'publish',
     'suppress_filters' => false,
     /*'category__not_in' => array( 11 ),*/
-    'date_query' => array(
-                      array(
+    'date_query' => [
+                      [
                           'after'     => 'Janaury 1, 2021',
                           'before'    => 'today',
-                          'inclusive' => true
-                    )),
+                          'inclusive' => true,
+                    ]],
     'posts_per_page' => -1,
-    'meta_query'    => array(
+    'meta_query'    => [
       //'relation' => 'OR',
-      array(
+      [
         'key'        => 'author_title_site',
         'compare'    => 'LIKE',
-        'value'        => 'gaylord news'
-      )
-    )
-   );
+        'value'        => 'gaylord news',
+      ],
+    ],
+   ];
 
 $query = new WP_Query($args);
 echo '<p>Count: '.$count = $query->found_posts.'</p>';

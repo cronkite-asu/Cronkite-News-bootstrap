@@ -8,7 +8,7 @@
 
 <?php
   // save main story ID
-  $latestStoriesArray = array();
+  $latestStoriesArray = [];
 
       // get super bowl content
       if (have_rows('super_bowl_content')) {
@@ -119,13 +119,13 @@
     </div>
 
     <?php
-            $args = array(
+            $args = [
               'cat' => '29133',
               'post_type' => 'post',
               'post_status' => 'publish',
               'post__not_in' => $latestStoriesArray,
-              'posts_per_page' => -1
-            );
+              'posts_per_page' => -1,
+            ];
       $query = new WP_Query($args);
       ?>
 

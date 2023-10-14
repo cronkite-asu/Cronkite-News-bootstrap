@@ -25,7 +25,7 @@ echo '<?xml version="1.0"?><rss version="2.0">';
     // main story
     $home_main_storyID = get_field('home_main_story', 24);
 // retrieved author names
-$externalSites = array('boise-state-public-radio' => "https://www.boisestatepublicradio.org",
+$externalSites = ['boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                        'colorado-public-radio' => "https://www.cpr.org/",
                        'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
                        'elemental-reports' => "https://www.elementalreports.com/",
@@ -38,8 +38,8 @@ $externalSites = array('boise-state-public-radio' => "https://www.boisestatepubl
                        'News21' => "https://www.news21.com/",
                        'PBS-SoCal' => "https://www.pbssocal.org/",
                        'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                       'special-to-cronkite-news' => ""
-                      );
+                       'special-to-cronkite-news' => "",
+                      ];
 $externalAuthorCount = 1;
 $internalAuthorCount = 0;
 $commaSeparator = ',';
@@ -75,11 +75,11 @@ if ($cnStaffTotalCounter > 0) {
             $staffID = get_sub_field('cn_staff');
             $cnStaffCount = count((array)$staffID);
             foreach ($staffID as $key => $val) {
-                $args = array(
+                $args = [
                       'post_type'   => 'students',
                       'post_status' => 'publish',
-                      'p' => $val
-                    );
+                      'p' => $val,
+                    ];
 
                 $staffDetails = new WP_Query($args);
                 if ($staffDetails->have_posts()) {
@@ -151,7 +151,7 @@ if ($home_main_storyID && get_field('main_custom_title', 24) == '') {
         echo '<guid>' . get_permalink($home_main_storyID) . '</guid>';
         echo '<title>' . get_the_title($home_main_storyID) . '</title>';
         //Extract feature image, author, blurb
-        $featureimage = get_the_post_thumbnail($home_main_storyID, 'small', array('style' => 'width:100%;'));
+        $featureimage = get_the_post_thumbnail($home_main_storyID, 'small', ['style' => 'width:100%;']);
 
         $author = get_post_custom_values('post_author', $home_main_storyID);
         $blurb = get_post_field('story_tease', $home_main_storyID);
@@ -175,7 +175,7 @@ if ($home_main_storyID && get_field('main_custom_title', 24) == '') {
     echo '<guid>' . $customLink . '</guid>';
     echo '<title>' . $customTitle . '</title>';
     //Extract feature image, author, blurb
-    $featureimage = get_the_post_thumbnail($home_main_storyID, 'small', array('style' => 'width:100%;'));
+    $featureimage = get_the_post_thumbnail($home_main_storyID, 'small', ['style' => 'width:100%;']);
 
     echo '<description><![CDATA[';
     echo '<img width="800" height="500" src="'.$customPhoto.'" class="attachment-small size-small wp-post-image" alt="" style="width:100%;" srcset="'.$customPhoto.' 800w" sizes="(max-width: 800px) 100vw, 800px" />';
@@ -207,7 +207,7 @@ if (have_rows('slider_aside_box', 24)) {
             $thepostid = url_to_postid($link);
 
             // retrieved author names
-            $externalSites = array('boise-state-public-radio' => "https://www.boisestatepublicradio.org",
+            $externalSites = ['boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                        'colorado-public-radio' => "https://www.cpr.org/",
                        'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
                        'elemental-reports' => "https://www.elementalreports.com/",
@@ -220,8 +220,8 @@ if (have_rows('slider_aside_box', 24)) {
                        'News21' => "https://www.news21.com/",
                        'PBS-SoCal' => "https://www.pbssocal.org/",
                        'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                       'special-to-cronkite-news' => ""
-                      );
+                       'special-to-cronkite-news' => "",
+                      ];
             $externalAuthorCount = 1;
             $internalAuthorCount = 0;
             $commaSeparator = ',';
@@ -257,11 +257,11 @@ if (have_rows('slider_aside_box', 24)) {
                         $staffID = get_sub_field('cn_staff');
                         $cnStaffCount = count((array)$staffID);
                         foreach ($staffID as $key => $val) {
-                            $args = array(
+                            $args = [
                             'post_type'   => 'students',
                             'post_status' => 'publish',
-                            'p' => $val
-                            );
+                            'p' => $val,
+                            ];
 
                             $staffDetails = new WP_Query($args);
                             if ($staffDetails->have_posts()) {
@@ -313,7 +313,7 @@ if (have_rows('slider_aside_box', 24)) {
 
             $author = get_post_custom_values('post_author', $thepostid);
             $blurb = get_post_field('story_tease', $thepostid);
-            $featureimage = get_the_post_thumbnail($thepostid, 'small', array('style' => 'width:100%;'));
+            $featureimage = get_the_post_thumbnail($thepostid, 'small', ['style' => 'width:100%;']);
             echo '<item>';
             echo '<guid>' . $link . '</guid>';
             echo '<title>' . $title . '</title>';
@@ -405,10 +405,10 @@ if (have_rows('area_works_box', $frontpage_id)) :
             echo '<guid>' . $link . '</guid>';
             echo '<title>' . get_the_title($thepostid) . '</title>';
             //Extract feature image, author, blurb
-            $featureimage = get_the_post_thumbnail($thepostid, 'small', array('style' => 'width:40%; float:right;'));
+            $featureimage = get_the_post_thumbnail($thepostid, 'small', ['style' => 'width:40%; float:right;']);
 
             // retrieved author names
-            $externalSites = array('boise-state-public-radio' => "https://www.boisestatepublicradio.org",
+            $externalSites = ['boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                                'colorado-public-radio' => "https://www.cpr.org/",
                                'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
                                'elemental-reports' => "https://www.elementalreports.com/",
@@ -421,8 +421,8 @@ if (have_rows('area_works_box', $frontpage_id)) :
                                'News21' => "https://www.news21.com/",
                                'PBS-SoCal' => "https://www.pbssocal.org/",
                                'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                               'special-to-cronkite-news' => ""
-                              );
+                               'special-to-cronkite-news' => "",
+                              ];
             $externalAuthorCount = 1;
             $internalAuthorCount = 0;
             $commaSeparator = ',';
@@ -458,11 +458,11 @@ if (have_rows('area_works_box', $frontpage_id)) :
                         $staffID = get_sub_field('cn_staff');
                         $cnStaffCount = count((array)$staffID);
                         foreach ($staffID as $key => $val) {
-                            $args = array(
+                            $args = [
                               'post_type'   => 'students',
                               'post_status' => 'publish',
-                              'p' => $val
-                            );
+                              'p' => $val,
+                            ];
 
                             $staffDetails = new WP_Query($args);
                             if ($staffDetails->have_posts()) {

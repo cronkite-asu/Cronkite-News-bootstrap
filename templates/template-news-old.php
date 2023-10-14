@@ -30,13 +30,13 @@ get_header('new'); ?>
                                     <div class="content-blog">
                                         <?php global $post; ?>
 
-                                            <?php $arg = array(
+                                            <?php $arg = [
                                             'post_type'        => 'post',
                                             'order'            => 'DESC',
                                             'orderby'        => 'date',
                                             'posts_per_page'    => 1,
-                                            'category_name' =>  'newscast'
-                                        );
+                                            'category_name' =>  'newscast',
+                                        ];
 $the_query = new WP_Query($arg);
 if ($the_query->have_posts()) : ?>
 
@@ -89,7 +89,7 @@ wp_reset_query(); ?>
                                                         <div class="col-sm-3 inner-right-xs-archive text-left">
                                                             <figure>
                                                                 <a href="<?php the_permalink(); ?>">
-                                                                    <?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive')); ?>
+                                                                    <?php the_post_thumbnail('thumbnail', ['class' => 'img-responsive']); ?>
                                                                 </a>
                                                             </figure>
 

@@ -151,7 +151,7 @@ wp_reset_query(); ?>
 
                                 <!-- ============================================================= MAIN NAVIGATION ============================================================= -->
                         <div class="menuClass">
-                          <?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'fallback_cb' => 'bootstrap_menu', 'menu_class' => 'nav navbar-nav', 'walker' => new bootstrap_navigation() )); ?>
+                          <?php wp_nav_menu([ 'theme_location' => 'header-menu', 'fallback_cb' => 'bootstrap_menu', 'menu_class' => 'nav navbar-nav', 'walker' => new bootstrap_navigation() ]); ?>
                                  </div>
                                 <!-- ============================================================= MAIN NAVIGATION : END ============================================================= -->
                       <div class="search-parent" id="header-search-parent">
@@ -170,7 +170,7 @@ wp_reset_query(); ?>
                         <div class="sectionDropDown">
                             <button class="dbtn"><span class="glyphicon glyphicon-ok"></span> </button>
                             <div class="d-content">
-                          <?php wp_nav_menu(array( 'theme_location' => 'header-menu', 'fallback_cb' => 'bootstrap_menu', 'menu_class' => 'nav navbar-nav', 'walker' => new bootstrap_navigation() )); ?>
+                          <?php wp_nav_menu([ 'theme_location' => 'header-menu', 'fallback_cb' => 'bootstrap_menu', 'menu_class' => 'nav navbar-nav', 'walker' => new bootstrap_navigation() ]); ?>
                         </div></div>
 
                     </div>

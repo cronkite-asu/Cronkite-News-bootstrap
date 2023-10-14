@@ -2,8 +2,8 @@
 
 
 // top stories array to avoid dups
-$topStoriesArray = array();
-$candidateProfiles = array();
+$topStoriesArray = [];
+$candidateProfiles = [];
 
 $mainStoryList = get_field('candidate_profiles', 185958);
 $mainStoryCounter = 0;
@@ -92,14 +92,14 @@ foreach ($mainStoryList as $mainStory) {
         <div class="large-12 medium-12 small-12 cell">
           <ul class="story-list">
           <?php
-$args = array(
+$args = [
         'post_type' => 'post',
         'orderby' => 'post_date',
         'order' => 'DESC',
         'cat' =>  25073,
         'posts_per_page' => 19,
-        'post__not_in' => $candidateProfiles
-);
+        'post__not_in' => $candidateProfiles,
+];
 $the_query = new WP_Query($args);
 if ($the_query->have_posts()) {
     while ($the_query->have_posts()) {

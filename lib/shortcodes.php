@@ -7,9 +7,9 @@ function row($params, $content=null)
 {
     extract(
         shortcode_atts(
-            array(
-            'class' => 'row'
-            ),
+            [
+            'class' => 'row',
+            ],
             $params
         )
     );
@@ -29,9 +29,9 @@ function span($params, $content=null)
 {
     extract(
         shortcode_atts(
-            array(
-            'class' => 'col-xs-1'
-            ),
+            [
+            'class' => 'col-xs-1',
+            ],
             $params
         )
     );
@@ -70,9 +70,9 @@ function collapse($params, $content=null)
 {
     extract(
         shortcode_atts(
-            array(
-            'id'=>''
-            ),
+            [
+            'id'=>'',
+            ],
             $params
         )
     );
@@ -89,11 +89,11 @@ function citem($params, $content=null)
 {
     extract(
         shortcode_atts(
-            array(
+            [
             'id'=> '',
             'title'=> 'Collapse title',
-            'parent' => ''
-            ),
+            'parent' => '',
+            ],
             $params
         )
     );
@@ -178,11 +178,11 @@ function tab($params, $content=null)
 {
     extract(
         shortcode_atts(
-            array(
+            [
             'href' => '#',
             'title' => '',
-            'class' => ''
-            ),
+            'class' => '',
+            ],
             $params
         )
     );
@@ -200,11 +200,11 @@ function dropdown($params, $content=null)
     global $bs_timestamp;
     extract(
         shortcode_atts(
-            array(
+            [
             'title' => '',
             'id' => '',
             'class' => '',
-            ),
+            ],
             $params
         )
     );
@@ -232,10 +232,10 @@ function tcontent($params, $content=null)
 {
     extract(
         shortcode_atts(
-            array(
+            [
             'id' => '',
             'class'=>'',
-            ),
+            ],
             $params
         )
     );
@@ -268,7 +268,7 @@ function fullsizeimage($atts, $content = null)
 {
 
     $result = "</div>";
-    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption' ]) ? $atts[ 'caption' ] : "") . '</p> <div class="col-xs-12 col-md-offset-2 col-md-8">';
+    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . ($atts[ 'caption' ] ?? "") . '</p> <div class="col-xs-12 col-md-offset-2 col-md-8">';
 
     return $result;
 }
@@ -282,7 +282,7 @@ function fullsizeimage_slim($atts, $content = null)
     }
 
     $result = "</div>";
-    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption' ]) ? $atts[ 'caption' ] : "") . ' '. (isset($sc1) ? $sc1 : "") .'</p> <div class="col-xs-12 col-md-offset-3 col-md-6">';
+    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . ($atts[ 'caption' ] ?? "") . ' '. ($sc1 ?? "") .'</p> <div class="col-xs-12 col-md-offset-3 col-md-6">';
 
     return $result;
 }
@@ -292,7 +292,7 @@ function mediumsizeimage_slim($atts, $content = null)
 {
 
     $result = '</div><div class="col-xs-12 col-md-offset-2 col-md-8" style="padding-top:20px;">';
-    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption' ]) ? $atts[ 'caption' ] : "") . '</p></div> <div class="col-xs-12 col-md-offset-3 col-md-6">';
+    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . ($atts[ 'caption' ] ?? "") . '</p></div> <div class="col-xs-12 col-md-offset-3 col-md-6">';
 
     return $result;
 }
@@ -306,7 +306,7 @@ function threeupcombo_slim($atts, $content = null)
     }
 
     $result = '</div><div class="col-xs-12 col-md-offset-1 col-md-10" style="padding-top:20px;">';
-    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption' ]) ? $atts[ 'caption' ] : "") . ' '. (isset($sc1) ? $sc1 : "") .'</p></div> <div class="col-xs-12 col-md-offset-3 col-md-6">';
+    $result .= '<img style="width:100%;margin-bottom:15px; padding-top:20px;" src="' . $atts[ 'source' ] . '" class="img-responsive"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . ($atts[ 'caption' ] ?? "") . ' '. ($sc1 ?? "") .'</p></div> <div class="col-xs-12 col-md-offset-3 col-md-6">';
 
     return $result;
 }
@@ -316,8 +316,8 @@ function img2up($atts, $content = null)
 {
 
     $result = '</div><div class="col-sm-5 col-sm-offset-1 col-xs-12" style="padding-bottom: 20px;"><div class="two-up-overlay">';
-    $result .= '<img style="margin-bottom:5px; padding-top:20px;" src="' . $atts[ 'source1' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption1' ]) ? $atts[ 'caption1' ] : "") . '</p>  </div> </div> <div class="col-sm-5 col-xs-12"><div class="two-up-overlay">';
-    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . $atts[ 'source2' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption2' ]) ? $atts[ 'caption2' ] : "") . '</p> </div></div> <div class="col-xs-12 col-md-offset-2 col-md-8"> ';
+    $result .= '<img style="margin-bottom:5px; padding-top:20px;" src="' . $atts[ 'source1' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . ($atts[ 'caption1' ] ?? "") . '</p>  </div> </div> <div class="col-sm-5 col-xs-12"><div class="two-up-overlay">';
+    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . $atts[ 'source2' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . ($atts[ 'caption2' ] ?? "") . '</p> </div></div> <div class="col-xs-12 col-md-offset-2 col-md-8"> ';
 
     return $result;
 }
@@ -335,8 +335,8 @@ function img2upslim($atts, $content = null)
     }
 
     $result = '</div><div class="col-sm-5 col-sm-offset-1 col-xs-12" style="padding-bottom: 20px;"><div class="two-up-overlay">';
-    $result .= '<img style="margin-bottom:5px; padding-top:20px;" src="' . $atts[ 'source1' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption1' ]) ? $atts[ 'caption1' ] : "") . ' '. (isset($sc1) ? $sc1 : "") .'</p>  </div> </div> <div class="col-sm-5 col-xs-12"><div class="two-up-overlay">';
-    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . $atts[ 'source2' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption2' ]) ? $atts[ 'caption2' ] : "") . ' '. (isset($sc2) ? $sc2 : "") .'</p> </div></div> <div class="col-xs-12 col-md-offset-3 col-md-6"> ';
+    $result .= '<img style="margin-bottom:5px; padding-top:20px;" src="' . $atts[ 'source1' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . ($atts[ 'caption1' ] ?? "") . ' '. ($sc1 ?? "") .'</p>  </div> </div> <div class="col-sm-5 col-xs-12"><div class="two-up-overlay">';
+    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . $atts[ 'source2' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . ($atts[ 'caption2' ] ?? "") . ' '. ($sc2 ?? "") .'</p> </div></div> <div class="col-xs-12 col-md-offset-3 col-md-6"> ';
 
     return $result;
 }
@@ -358,11 +358,11 @@ function img4up($atts, $content = null)
 
 
     $result = '</div><div class="container" style="padding-top: 30px; padding-bottom: 20px;"><div class="row" style="overflow:visible; margin-top:20px;"><div class="col-xs-12 col-sm-5 col-sm-offset-1" style="padding-bottom: 20px;">';
-    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . (isset($atts[ 'source1' ]) ? $atts[ 'source1' ] : "") . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption1' ]) ? $atts[ 'caption1' ] : "") . '</p></div>  <div class="col-xs-12 col-sm-5">';
-    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . (isset($atts[ 'source2' ]) ? $atts[ 'source2' ] : "") . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption2' ]) ? $atts[ 'caption2' ] : "") . '</p> </div></div>';
+    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . ($atts[ 'source1' ] ?? "") . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . ($atts[ 'caption1' ] ?? "") . '</p></div>  <div class="col-xs-12 col-sm-5">';
+    $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . ($atts[ 'source2' ] ?? "") . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . ($atts[ 'caption2' ] ?? "") . '</p> </div></div>';
     $result .= '<div class="row" style="padding-top:5px;"><div class="col-xs-12 col-sm-5 col-sm-offset-1" style="padding-bottom: 20px;">';
-    $result .= '<img style="margin-bottom:10px;" src="' . (isset($atts[ 'source3' ]) ? $atts[ 'source3' ] : "") . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption3' ]) ? $atts[ 'caption3' ] : "") . '</p> </div>  <div class="col-xs-12 col-sm-5">';
-    $result .= '<img style="margin-bottom:5px;" src="' . (isset($atts[ 'source4' ]) ? $atts[ 'source4' ] : "") . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption4' ]) ? $atts[ 'caption4' ] : "") . '</p> </div> </div> </div> <div class="col-xs-12 col-md-offset-2 col-md-8"> ';
+    $result .= '<img style="margin-bottom:10px;" src="' . ($atts[ 'source3' ] ?? "") . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . ($atts[ 'caption3' ] ?? "") . '</p> </div>  <div class="col-xs-12 col-sm-5">';
+    $result .= '<img style="margin-bottom:5px;" src="' . ($atts[ 'source4' ] ?? "") . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . ($atts[ 'caption4' ] ?? "") . '</p> </div> </div> </div> <div class="col-xs-12 col-md-offset-2 col-md-8"> ';
 
     return $result;
 }
@@ -411,7 +411,7 @@ function img2up_standard($atts, $content = null)
 {
 
     $result = '<div class="row" style="margin-bottom:20px;"><div class="col-sm-6 col-xs-12" style="padding-bottom: 20px;"><div class="two-up-overlay">';
-    $result .= '<img style="margin-bottom:5px; padding-top:20px;" src="' . $atts[ 'source1' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption1' ]) ? $atts[ 'caption1' ] : "") . '</p>  </div> </div> <div class="col-sm-6 col-xs-12"><div class="two-up-overlay">';
+    $result .= '<img style="margin-bottom:5px; padding-top:20px;" src="' . $atts[ 'source1' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . ($atts[ 'caption1' ] ?? "") . '</p>  </div> </div> <div class="col-sm-6 col-xs-12"><div class="two-up-overlay">';
     $result .= '<img style="margin-bottom:5px;padding-top:20px;" src="' . $atts[ 'source2' ] . '"><p class="wp-caption-text" style="margin-left:10px;font-style: italic;">' . (isset($atts[ 'caption' ]) ? $atts[ 'caption2' ] : "") . '</p> </div></div> </div> ';
 
     return $result;
@@ -435,8 +435,8 @@ function related_box_left($atts, $content = null)
 
     $result = '<div class="related-story-box-left"><h4><strong>' . $atts[ 'box-title' ] . '</strong></h4>';
     $result .= '<div class="story">';
-    $result .= '<div class="img"><a href="'. $atts[ 'link' ] . '" '. (isset($target) ? $target : "") .'><img src="'. $atts[ 'image' ] . '" style="width:100%;"/></a></div>';
-    $result .= '<div class="headline"><p><a href="'. $atts[ 'link' ] . '" '. (isset($target) ? $target : "") .'>'. $atts[ 'headline' ] .' <i class="fas fa-angle-right"></i></a></p></div>';
+    $result .= '<div class="img"><a href="'. $atts[ 'link' ] . '" '. ($target ?? "") .'><img src="'. $atts[ 'image' ] . '" style="width:100%;"/></a></div>';
+    $result .= '<div class="headline"><p><a href="'. $atts[ 'link' ] . '" '. ($target ?? "") .'>'. $atts[ 'headline' ] .' <i class="fas fa-angle-right"></i></a></p></div>';
     $result .= '</div>';
     $result .= '</div>';
 
@@ -458,13 +458,13 @@ function related_box_right($atts, $content = null)
         $result .= '</div>';
         $result .= '</div>';
     } else {
-        $result = '<div class="related-story-box-right"><h4><strong>' .  (isset($atts[ 'box-title' ]) ? $atts[ 'box-title' ] : "") . '</strong></h4>';
+        $result = '<div class="related-story-box-right"><h4><strong>' .  ($atts[ 'box-title' ] ?? "") . '</strong></h4>';
         $result .= '<div class="story">';
-        $result .= '<div class="img"><a href="'. (isset($atts[ 'link' ]) ? $atts[ 'link' ] : "") . '" target="_blank"><img src="'. (isset($atts[ 'image' ]) ? $atts[ 'image' ] : "") . '" style="width:100%;"/></a></div>';
+        $result .= '<div class="img"><a href="'. ($atts[ 'link' ] ?? "") . '" target="_blank"><img src="'. ($atts[ 'image' ] ?? "") . '" style="width:100%;"/></a></div>';
         if (isset($atts[ 'headline' ]) && $atts[ 'headline' ] != '') {
-            $result .= '<div class="headline"><p><a href="'. (isset($atts[ 'link' ]) ? $atts[ 'link' ] : "") . '" target="_blank">'. $atts[ 'headline' ] .' <i class="fas fa-angle-right"></i></a></p></div>';
+            $result .= '<div class="headline"><p><a href="'. ($atts[ 'link' ] ?? "") . '" target="_blank">'. $atts[ 'headline' ] .' <i class="fas fa-angle-right"></i></a></p></div>';
         } else {
-            $result .= '<div class="caption"><p>' . (isset($atts[ 'caption' ]) ? $atts[ 'caption' ] : "") . '</p></div>';
+            $result .= '<div class="caption"><p>' . ($atts[ 'caption' ] ?? "") . '</p></div>';
         }
         $result .= '</div>';
         $result .= '</div>';
@@ -545,7 +545,7 @@ function img3vertical($atts, $content = null)
 
     $result = '</div><div class="row" style="overflow: visible;"><div class="col-xs-10 col-md-3 col-md-offset-1" style="padding-bottom: 10px;">';
     $result .= '<img src="' . $atts[ 'source1' ] . '" style=" margin-left:40px;"> </div> <div class="col-xs-10 col-md-3"><img src="' . $atts[ 'source2' ] . '" style=" margin-left:40px;"></div>';
-    $result .= '<div class="col-xs-10 col-md-3"><img src="' . $atts[ 'source3' ] . '" style=" margin-left:40px;"></div></div> <div class="row"><div class="col-xs-10 col-xs-offset-1 col-md-10 col-md-offset-1"><p class="wp-caption-text" style="margin-left:10px;font-style: italic; margin-left:40px;">' . (isset($atts[ 'caption' ]) ? $atts[ 'caption' ] : "") . '</p> </div></div> <div class="col-xs-12 col-md-offset-3 col-md-6"> ';
+    $result .= '<div class="col-xs-10 col-md-3"><img src="' . $atts[ 'source3' ] . '" style=" margin-left:40px;"></div></div> <div class="row"><div class="col-xs-10 col-xs-offset-1 col-md-10 col-md-offset-1"><p class="wp-caption-text" style="margin-left:10px;font-style: italic; margin-left:40px;">' . ($atts[ 'caption' ] ?? "") . '</p> </div></div> <div class="col-xs-12 col-md-offset-3 col-md-6"> ';
 
     return $result;
 }
