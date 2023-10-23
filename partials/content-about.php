@@ -163,8 +163,8 @@
                     <?php
                     $staffNameURLSafe = str_replace('’', '', str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val))))));
                     $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
-                    echo '<--'.$staffNameURLSafe.'-->';
-                    echo '<--'.get_the_title($val).'-->';
+                    echo '<!--'.$staffNameURLSafe.'-->';
+                    echo '<!--'.get_the_title($val).'-->';
                     if (get_field('student_photo') != '') {
                         echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/"><img src="'.get_field('student_photo').'" class="cn-staff-circular" /></a>';
                     } else {
