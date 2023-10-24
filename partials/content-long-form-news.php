@@ -697,7 +697,7 @@ if (have_rows('blocks')) {
   </div>
   <div class="grid-x grid-padding-x">
     <?php
-            if (get_sub_field('photo') != '') {
+            /*if (get_sub_field('photo') != '') {
               // check photo and select credit width
               $imageSize = getimagesize(get_sub_field('photo'));
               print_r($imageSize);
@@ -706,7 +706,7 @@ if (have_rows('blocks')) {
               } else {
                   $introPhotoWidth = 'photo-credit-width-1800';
               }
-            }
+            }*/
 
             // check photo style
             if (get_sub_field('photo_size') == 'photo-style-e2e') {
