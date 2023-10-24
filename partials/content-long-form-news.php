@@ -699,7 +699,8 @@ if (have_rows('blocks')) {
     <?php
             if (get_sub_field('photo') != '') {
               // check photo and select credit width
-              list($width, $height, $type, $attr) = getimagesize(get_sub_field('photo'));
+              $imageSize = getimagesize(get_sub_field('photo'));
+              print_r($imageSize);
               if ($width == 1200) {
                   $introPhotoWidth = 'photo-credit-width-1200';
               } else {
