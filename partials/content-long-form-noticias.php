@@ -443,13 +443,13 @@ if (have_rows('blocks')) {
   </div>
   <div class="grid-x grid-padding-x">
             <?php
-              // check photo and select credit width
-              [$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
+            // check photo and select credit width
+            /*[$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
             if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';
             } else {
                 $introPhotoWidth = 'photo-credit-width-1800';
-            }
+            }*/
 
             // check photo style
             if (get_sub_field('photo_size') == 'photo-style-e2e') {
@@ -492,13 +492,13 @@ if (have_rows('blocks')) {
   </div>
   <div class="grid-x grid-padding-x">
             <?php
-              // check photo and select credit width
-              [$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
+            // check photo and select credit width
+            /*[$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
             if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';
             } else {
                 $introPhotoWidth = 'photo-credit-width-1800';
-            }
+            }*/
 
             // check photo style
             if (get_sub_field('photo_size') == 'photo-style-e2e') {
@@ -541,13 +541,13 @@ if (have_rows('blocks')) {
   </div>
   <div class="grid-x grid-padding-x">
             <?php
-              // check photo and select credit width
-              [$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
+            // check photo and select credit width
+            /*[$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
             if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';
             } else {
                 $introPhotoWidth = 'photo-credit-width-1800';
-            }
+            }*/
 
             // check photo style
             if (get_sub_field('photo_size') == 'photo-style-e2e') {
@@ -592,13 +592,13 @@ if (have_rows('blocks')) {
   </div>
   <div class="grid-x grid-padding-x">
             <?php
-              // check photo and select credit width
-              [$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
+            // check photo and select credit width
+            /*[$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
             if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';
             } else {
                 $introPhotoWidth = 'photo-credit-width-1800';
-            }
+            }*/
 
             // check photo style
             if (get_sub_field('photo_size') == 'photo-style-e2e') {
@@ -742,12 +742,12 @@ if (have_rows('blocks')) {
   <div class="grid-x grid-padding-x">
             <?php
             // check photo and select credit width
-            [$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
+            /*[$width, $height, $type, $attr] = getimagesize(get_sub_field('photo'));
             if ($width == 1200) {
                 $introPhotoWidth = 'photo-credit-width-1200';
             } else {
                 $introPhotoWidth = 'photo-credit-width-1800';
-            }
+            }*/
 
             // check photo style
             if (get_sub_field('photo_size') == 'photo-style-e2e') {
