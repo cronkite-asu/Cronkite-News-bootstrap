@@ -22,8 +22,7 @@ while ($loop->have_posts()) {
   <description>This feed is for consumption by the client site.</description>
   <language>en-us</language>
   <pubDate><?php echo $lastStoryPosted; ?></pubDate>
-  <lastBuildDate><?php echo $lastStoryPosted; ?></lastBuildDate>
-  <managingEditor>cronkitenews@asu.edu (Cronkite News)</managingEditor>
+  <lastBuildDate><?php echo $lastStoryPosted; ?></lastBuildDate>  
 <?php
     $args = [
                 'post_type'        => 'post',
