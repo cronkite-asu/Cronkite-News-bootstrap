@@ -1,7 +1,7 @@
 <div class="grid-container intro">
   <div class="grid-x">
     <div class="large-12 medium-12 small-12 cell superbowl-header">
-      <img class="superbowl-logo" src="https://cronkitenews.azpbs.org/wp-content/uploads/2023/01/superbowl-logo-arizona.png"  alt="Super Bowl LVII" title="Super Bowl LVII" /><h1 class="text-center"><?php echo get_the_title(); ?></h1>
+      <h1 class="text-center"><?php echo get_the_title(); ?></h1>
     </div>
   </div>
 </div>
