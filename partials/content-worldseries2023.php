@@ -1,7 +1,7 @@
 <div class="grid-container intro">
   <div class="grid-x">
     <div class="large-12 medium-12 small-12 cell superbowl-header">
-      <h1 class="text-center"><?php echo get_the_title(); ?></h1>
+      <h1 class="text-center" style="margin-top:0px !important;"><?php echo get_the_title(); ?></h1>
     </div>
   </div>
 </div>
