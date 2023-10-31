@@ -20,6 +20,7 @@
           background-size: 78px 78px;
           background-repeat: no-repeat;
           background-position-y: 14px;
+          background-position-x: right;
         }
       </style>
     </div>
