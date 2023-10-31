@@ -6,14 +6,20 @@
         .superbowl-header h1::before {
           background-image: url('https://cronkitenews.azpbs.org/wp-content/uploads/2023/10/dbacks-logo.png');
           content: "";
-          display: inline-block;
-          width: 200px;
+          display: flex;
+          width: 100px;
+          background-size: 78px 78px;
+          background-repeat: no-repeat;
+          background-position-y: 14px;
         }
         .superbowl-header h1::after {
           background-image: url('https://cronkitenews.azpbs.org/wp-content/uploads/2023/10/rangers-logo.png');
           content: "";
-          display: inline-block;
-          width: 200px;          
+          display: flex;
+          width: 100px;
+          background-size: 78px 78px;
+          background-repeat: no-repeat;
+          background-position-y: 14px;
         }
       </style>
     </div>
