@@ -4,16 +4,16 @@
       <h1 class="text-center" style="margin-top:0px !important;"><?php echo get_the_title(); ?></h1>
       <style>
         .superbowl-header h1::before {
-          content: url('https://cronkitenews.azpbs.org/wp-content/uploads/2023/10/dbacks-logo.png');
+          background-image: url('https://cronkitenews.azpbs.org/wp-content/uploads/2023/10/dbacks-logo.png');
+          content: "";
           display: inline-block;
-          width: 12px;
-          height: 12px;
+          width: 200px;
         }
         .superbowl-header h1::after {
-          content: url('https://cronkitenews.azpbs.org/wp-content/uploads/2023/10/rangers-logo.png');
+          background-image: url('https://cronkitenews.azpbs.org/wp-content/uploads/2023/10/rangers-logo.png');
+          content: "";
           display: inline-block;
-          width: 12px;
-          height: 12px;
+          width: 200px;          
         }
       </style>
     </div>
