@@ -120,7 +120,7 @@
 
     <?php
             $args = [
-              'cat' => '29133',
+              'cat' => '32575',
               'post_type' => 'post',
               'post_status' => 'publish',
               'post__not_in' => $latestStoriesArray,
