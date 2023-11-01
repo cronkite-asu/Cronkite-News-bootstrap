@@ -2,27 +2,6 @@
   <div class="grid-x">
     <div class="large-12 medium-12 small-12 cell world-series">
       <h1 class="text-center" style="margin-top:0px !important;"><?php echo get_the_title(); ?></h1>
-      <style>
-        .superbowl-header h1::before {
-          background-image: url('https://cronkitenews.azpbs.org/wp-content/uploads/2023/10/dbacks-logo.png');
-          content: "";
-          display: flex;
-          width: 130px;
-          background-size: 78px 78px;
-          background-repeat: no-repeat;
-          background-position-y: 14px;
-        }
-        .superbowl-header h1::after {
-          background-image: url('https://cronkitenews.azpbs.org/wp-content/uploads/2023/10/rangers-logo.png');
-          content: "";
-          display: flex;
-          width: 130px;
-          background-size: 78px 78px;
-          background-repeat: no-repeat;
-          background-position-y: 14px;
-          background-position-x: right;
-        }
-      </style>
     </div>
   </div>
 </div>
