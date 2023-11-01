@@ -1,6 +1,6 @@
 <div class="grid-container intro">
   <div class="grid-x">
-    <div class="large-12 medium-12 small-12 cell superbowl-header">
+    <div class="large-12 medium-12 small-12 cell world-series">
       <h1 class="text-center" style="margin-top:0px !important;"><?php echo get_the_title(); ?></h1>
       <style>
         .superbowl-header h1::before {
