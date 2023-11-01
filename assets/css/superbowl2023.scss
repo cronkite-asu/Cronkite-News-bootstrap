@@ -121,7 +121,10 @@ $greenLight: rgba(0, 102, 51, 0.65);
       }
     }
     .world-series {
-      margin-bottom: 15px;
+      @media only screen
+        and (max-width: 800px) {
+          margin-bottom: 15px;
+      }
       h1 {
         display: flex;
         font-family: $alataFontFamily;
@@ -274,8 +277,8 @@ $greenLight: rgba(0, 102, 51, 0.65);
 .grid-container {
   &.video {
     max-width: 80rem;
-    margin-top:40px;
-    margin-bottom: 40px;
+    margin-top:10px;
+    margin-bottom: 10px;
     @media only screen
       and (max-width: 800px) {
         margin-top:20px;

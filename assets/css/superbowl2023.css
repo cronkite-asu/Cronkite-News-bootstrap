@@ -52,52 +52,53 @@
           line-height: 4rem;
           margin-left: 0px;
           margin-top: 20px; } }
-  .grid-container.intro .world-series {
-    margin-bottom: 15px; }
-    .grid-container.intro .world-series h1 {
+  @media only screen and (max-width: 800px) {
+    .grid-container.intro .world-series {
+      margin-bottom: 15px; } }
+  .grid-container.intro .world-series h1 {
+    display: flex;
+    font-family: "Alata", sans-serif;
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 6rem;
+    color: #006633;
+    margin-left: 40px;
+    margin-top: 40px; }
+    .grid-container.intro .world-series h1:before {
+      background-image: url("https://cronkitenews.azpbs.org/wp-content/uploads/2023/10/dbacks-logo.png");
+      content: "";
       display: flex;
-      font-family: "Alata", sans-serif;
-      font-size: 5rem;
-      font-weight: 600;
-      line-height: 6rem;
-      color: #006633;
-      margin-left: 40px;
-      margin-top: 40px; }
-      .grid-container.intro .world-series h1:before {
-        background-image: url("https://cronkitenews.azpbs.org/wp-content/uploads/2023/10/dbacks-logo.png");
-        content: "";
-        display: flex;
-        width: 130px;
-        background-size: 78px 78px;
-        background-repeat: no-repeat;
-        background-position-y: 14px; }
-        @media only screen and (max-width: 800px) {
-          .grid-container.intro .world-series h1:before {
-            background-position-y: 6px; } }
-      .grid-container.intro .world-series h1:after {
-        background-image: url("https://cronkitenews.azpbs.org/wp-content/uploads/2023/10/rangers-logo.png");
-        content: "";
-        display: flex;
-        width: 130px;
-        background-size: 78px 78px;
-        background-repeat: no-repeat;
-        background-position-x: right;
-        background-position-y: 14px; }
-        @media only screen and (max-width: 800px) {
-          .grid-container.intro .world-series h1:after {
-            background-position-y: 6px; } }
-      @media only screen and (max-width: 1200px) {
-        .grid-container.intro .world-series h1 {
-          font-size: 3.5rem;
-          line-height: 4.5rem;
-          margin-top: 10px;
-          margin-left: 0px; } }
+      width: 130px;
+      background-size: 78px 78px;
+      background-repeat: no-repeat;
+      background-position-y: 14px; }
       @media only screen and (max-width: 800px) {
-        .grid-container.intro .world-series h1 {
-          font-size: 2rem;
-          line-height: 2.75rem;
-          margin-left: 0px;
-          margin-top: 20px; } }
+        .grid-container.intro .world-series h1:before {
+          background-position-y: 6px; } }
+    .grid-container.intro .world-series h1:after {
+      background-image: url("https://cronkitenews.azpbs.org/wp-content/uploads/2023/10/rangers-logo.png");
+      content: "";
+      display: flex;
+      width: 130px;
+      background-size: 78px 78px;
+      background-repeat: no-repeat;
+      background-position-x: right;
+      background-position-y: 14px; }
+      @media only screen and (max-width: 800px) {
+        .grid-container.intro .world-series h1:after {
+          background-position-y: 6px; } }
+    @media only screen and (max-width: 1200px) {
+      .grid-container.intro .world-series h1 {
+        font-size: 3.5rem;
+        line-height: 4.5rem;
+        margin-top: 10px;
+        margin-left: 0px; } }
+    @media only screen and (max-width: 800px) {
+      .grid-container.intro .world-series h1 {
+        font-size: 2rem;
+        line-height: 2.75rem;
+        margin-left: 0px;
+        margin-top: 20px; } }
   .grid-container.intro p {
     font-family: "Alata", sans-serif;
     font-size: 1.15rem;
@@ -180,8 +181,8 @@
 
 .grid-container.video {
   max-width: 80rem;
-  margin-top: 40px;
-  margin-bottom: 40px; }
+  margin-top: 10px;
+  margin-bottom: 10px; }
   @media only screen and (max-width: 800px) {
     .grid-container.video {
       margin-top: 20px;
