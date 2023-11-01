@@ -81,7 +81,8 @@
         width: 130px;
         background-size: 78px 78px;
         background-repeat: no-repeat;
-        background-position-x: right; }
+        background-position-x: right;
+        background-position-y: 14px; }
         @media only screen and (max-width: 800px) {
           .grid-container.intro .world-series h1:after {
             background-position-y: 6px; } }
