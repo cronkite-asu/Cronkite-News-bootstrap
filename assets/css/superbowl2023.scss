@@ -69,7 +69,7 @@ $greenLight: rgba(0, 102, 51, 0.65);
       and (max-width: 800px) {
         margin-bottom: 10px;
     }
-    .superbowl-header {
+    .superbowl-header, .world-series {
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -83,7 +83,7 @@ $greenLight: rgba(0, 102, 51, 0.65);
         and (max-width: 800px) {
           flex-direction: column;
       }
-      .superbowl-logo, .world-series {
+      .superbowl-logo {
         display: flex;
         max-width: 12%;
         @media only screen
@@ -119,13 +119,30 @@ $greenLight: rgba(0, 102, 51, 0.65);
             margin-top:20px;
         }
       }
-      .world-series {
+    }
+    .world-series {
+      h1 {
+        display: flex;
+        font-family: $alataFontFamily;
+        font-size: 5rem;
+        font-weight: 600;
+        line-height: 6rem;
+        color: #006633;
+        margin-left: 40px;
+        margin-top: 40px;
+        @media only screen
+          and (max-width: 1200px) {
+            font-size: 3.5rem;
+            line-height: 4.5rem;
+            margin-top:10px;
+            margin-left: 0px;
+        }
         @media only screen
           and (max-width: 800px) {
             font-size: 2rem;
-            line-height: 2.6rem;
+            line-height: 2.75rem;
             margin-left: 0px;
-            margin-top:0px;
+            margin-top:20px;
         }
       }
     }
