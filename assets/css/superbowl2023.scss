@@ -83,7 +83,7 @@ $greenLight: rgba(0, 102, 51, 0.65);
         and (max-width: 800px) {
           flex-direction: column;
       }
-      .superbowl-logo {
+      .superbowl-logo, .world-series {
         display: flex;
         max-width: 12%;
         @media only screen
@@ -117,6 +117,15 @@ $greenLight: rgba(0, 102, 51, 0.65);
             line-height: 4rem;
             margin-left: 0px;
             margin-top:20px;
+        }
+      }
+      .world-series {
+        @media only screen
+          and (max-width: 800px) {
+            font-size: 2rem;
+            line-height: 2.6rem;
+            margin-left: 0px;
+            margin-top:0px;
         }
       }
     }
