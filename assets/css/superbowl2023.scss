@@ -138,6 +138,10 @@ $greenLight: rgba(0, 102, 51, 0.65);
           background-size: 78px 78px;
           background-repeat: no-repeat;
           background-position-y: 14px;
+          @media only screen
+            and (max-width: 800px) {
+              background-position-y: 6px;
+          }
         }
         &:after {
           background-image: url('https://cronkitenews.azpbs.org/wp-content/uploads/2023/10/rangers-logo.png');
@@ -146,8 +150,11 @@ $greenLight: rgba(0, 102, 51, 0.65);
           width: 130px;
           background-size: 78px 78px;
           background-repeat: no-repeat;
-          background-position-y: 14px;
           background-position-x: right;
+          @media only screen
+            and (max-width: 800px) {
+              background-position-y: 6px;
+          }
         }
         @media only screen
           and (max-width: 1200px) {

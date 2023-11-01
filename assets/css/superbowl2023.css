@@ -69,6 +69,9 @@
       background-size: 78px 78px;
       background-repeat: no-repeat;
       background-position-y: 14px; }
+      @media only screen and (max-width: 800px) {
+        .grid-container.intro .world-series h1:before {
+          background-position-y: 6px; } }
     .grid-container.intro .world-series h1:after {
       background-image: url("https://cronkitenews.azpbs.org/wp-content/uploads/2023/10/rangers-logo.png");
       content: "";
@@ -76,8 +79,10 @@
       width: 130px;
       background-size: 78px 78px;
       background-repeat: no-repeat;
-      background-position-y: 14px;
       background-position-x: right; }
+      @media only screen and (max-width: 800px) {
+        .grid-container.intro .world-series h1:after {
+          background-position-y: 6px; } }
     @media only screen and (max-width: 1200px) {
       .grid-container.intro .world-series h1 {
         font-size: 3.5rem;
