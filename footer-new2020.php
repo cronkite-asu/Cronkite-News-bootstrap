@@ -112,7 +112,7 @@
   <!-- End AlertMe website tag code -->
 
   <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/what-input.js"></script>
-  <script src="<?php bloginfo('template_directory');?>/assets/js/vendor/foundation.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js"></script>
   <script async src="https://static.addtoany.com/menu/page.js"></script>
   <script src="<?php bloginfo('template_directory');?>/assets/js/app.js"></script>
   <script type="text/javascript" src="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick.min.js"></script>
