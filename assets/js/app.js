@@ -1,4 +1,4 @@
-$(document).foundation();
+
 
 window.onscroll = function() {progressIndicator()};
 
