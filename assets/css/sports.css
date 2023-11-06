@@ -23,6 +23,8 @@
       font-family: "Montserrat", sans-serif;
       margin-left: 15px;
       margin-right: 15px; }
+      #ncaa-countdown .countdown div.description {
+        color: #fff; }
       #ncaa-countdown .countdown div span {
         display: flex;
         flex-direction: column;
