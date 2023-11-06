@@ -11,8 +11,8 @@ function progressIndicator() {
   }
 }
 
-// super bowl lvii countdown
-if($("#superbowl-countdown").length) {
+// ncaa countdown
+if($("#ncaa-countdown").length) {
   var deadline = new Date("feb 12, 2023 16:30:00").getTime();
   var x = setInterval(function() {
 
