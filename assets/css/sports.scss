@@ -38,16 +38,15 @@ $bgColor: #fafafa;
   box-shadow: 0px 5px 16px -5px rgba(0,0,0,0.3);
   -webkit-box-shadow: 0px 5px 16px -5px rgba(0,0,0,0.3);
   -moz-box-shadow: 0px 5px 16px -5px rgba(0,0,0,0.3);
-
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .countdown {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    .logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;      
-    }
     div {
       display: flex;
       flex-direction: column;
