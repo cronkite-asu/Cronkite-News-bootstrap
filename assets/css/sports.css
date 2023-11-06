@@ -10,7 +10,9 @@
   #ncaa-countdown .logo {
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    width: 120px;
+    margin-right: 25px; }
   #ncaa-countdown .countdown {
     display: flex;
     align-items: center;

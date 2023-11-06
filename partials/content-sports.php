@@ -154,35 +154,34 @@ if (have_rows('sports_homepage')) {
     </div>
   </div>
 
-  <?php if (current_user_can('administrator')) { ?>
   <div class="grid-x grid-padding-x">
-    <div id="ncaa-countdown" class="large-9 medium-12 small-12 cell">
-      <div class="logo">
-        <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2023/11/2024_MFF_Logo_Color-1.svg" alt="NCAA 2024 Men's Final Four in Phoenix" />
-      </div>
-      <div class="countdown">
-        <div>
-          <span id="day"></span>
-          <div>Day</div>
+    <?php if (current_user_can('administrator')) { ?>
+    <div class="grid-x grid-margin-x">
+      <div id="ncaa-countdown" class="large-9 medium-12 small-12 cell">
+        <div class="logo">
+          <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2023/11/2024_MFF_Logo_Color-1.svg" alt="NCAA 2024 Men's Final Four in Phoenix" />
         </div>
-        <div>
-          <span id="hour"></span>
-          <div>Hour</div>
-        </div>
-        <div>
-          <span id="minute"></span>
-          <div>Minute</div>
-        </div>
-        <div>
-          <span id="second"></span>
-          <div>Second</div>
+        <div class="countdown">
+          <div>
+            <span id="day"></span>
+            <div>Day</div>
+          </div>
+          <div>
+            <span id="hour"></span>
+            <div>Hour</div>
+          </div>
+          <div>
+            <span id="minute"></span>
+            <div>Minute</div>
+          </div>
+          <div>
+            <span id="second"></span>
+            <div>Second</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <?php } ?>
-
-  <div class="grid-x grid-padding-x">
+    <?php } ?>
     <div class="large-9 medium-12 small-12 cell">
 
     <?php
