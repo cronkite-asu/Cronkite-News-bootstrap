@@ -158,20 +158,20 @@ if (have_rows('sports_homepage')) {
   <div class="grid-x grid-padding-x">
     <div id="ncaa-countdown" class="large-9 medium-12 small-12 cell">
       <div class="countdown">
-        <div id="day">
-          <span></span>
+        <div>
+          <span id="day"></span>
           <div>Day</div>
         </div>
-        <div id="hour">
-          <span></span>
+        <div>
+          <span id="hour"></span>
           <div>Hour</div>
         </div>
-        <div id="minute">
-          <span></span>
+        <div>
+          <span id="minute"></span>
           <div>Minute</div>
         </div>
-        <div id="second">
-          <span></span>
+        <div>
+          <span id="second"></span>
           <div>Second</div>
         </div>
       </div>
