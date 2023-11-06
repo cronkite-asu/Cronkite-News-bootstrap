@@ -155,23 +155,25 @@ if (have_rows('sports_homepage')) {
   </div>
 
   <?php if (current_user_can('administrator')) { ?>
-  <div id="ncaa-countdown" class="grid-x grid-padding-x">
-    <div class="large-9 medium-12 small-12 cell countdown">
-      <div id="day">
-        <span></span>
-        <div>Day</div>
-      </div>
-      <div id="hour">
-        <span></span>
-        <div>Hour</div>
-      </div>
-      <div id="minute">
-        <span></span>
-        <div>Minute</div>
-      </div>
-      <div id="second">
-        <span></span>
-        <div>Second</div>
+  <div class="grid-x grid-padding-x">
+    <div id="ncaa-countdown" class="large-9 medium-12 small-12 cell">
+      <div class="countdown">
+        <div id="day">
+          <span></span>
+          <div>Day</div>
+        </div>
+        <div id="hour">
+          <span></span>
+          <div>Hour</div>
+        </div>
+        <div id="minute">
+          <span></span>
+          <div>Minute</div>
+        </div>
+        <div id="second">
+          <span></span>
+          <div>Second</div>
+        </div>
       </div>
     </div>
   </div>
