@@ -164,6 +164,9 @@ if (have_rows('sports_homepage')) {
             <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2023/11/2024_MFF_Logo_Color-1.svg" alt="NCAA 2024 Men's Final Four in Phoenix" />
           </div>
           <div class="countdown">
+            <div class="description">
+              <p>Final Four: Saturday, April 6 at State Farm Stadium in Glendale, Arizona.</p>
+            </div>
             <div>
               <span id="day"></span>
               <div>Day</div>
