@@ -36,10 +36,10 @@ if($("#ncaa-countdown").length) {
   }, 1000);
 }
 
-var e = $("#back-to-top"),
+/*var e = $("#back-to-top"),
 $(window).scroll(function () {
     $(window).scrollTop() > 400 ? e.addClass("show") : e.removeClass("show");
 }),
 e.on("click", function (o) {
   o.preventDefault(), $("html, body").animate({ scrollTop: 0 }, "300");
-});
+});*/
