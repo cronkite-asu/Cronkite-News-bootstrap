@@ -4,33 +4,6 @@
  */
 ?>
 
-  <?php if(current_user_can('administrator')) { ?>
-  <!-- back to top -->
-  <a id="back-to-top">
-    <i class="fa-solid fa-circle-chevron-up"></i>
-  </a>
-
-  <!-- social icons -->
-  <div id="social-icons-desktop" class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style show-for-medium" data-a2a-scroll-show="0,0" style="bottom:30px; left:30px;">
-      <a class="a2a_button_facebook"></a>
-      <a class="a2a_button_twitter"></a>
-      <a class="a2a_button_linkedin"></a>
-      <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-  </div>
-  <div id="social-icons-mobile" class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style show-for-small-only" data-a2a-scroll-show="100,100" style="bottom:0px; left:50%; transform:translateX(-50%);">
-      <a class="a2a_button_facebook"></a>
-      <a class="a2a_button_twitter"></a>
-      <a class="a2a_button_linkedin"></a>
-      <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-  </div>
-  <script>
-    var a2a_config = a2a_config || {};
-    a2a_config.track_links = 'ga';
-    a2a_config.icon_color = "#dadada,white";
-    a2a_config.color_link_text_hover = "646464";
-  </script>
-  <?php } ?>
-
   <!-- footer -->
   <div id="footer">
     <footer class="grid-container full-width">
