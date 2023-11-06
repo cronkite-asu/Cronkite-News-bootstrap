@@ -13,7 +13,7 @@ function progressIndicator() {
 
 // ncaa countdown
 if($("#ncaa-countdown").length) {
-  var deadline = new Date("feb 12, 2023 16:30:00").getTime();
+  var deadline = new Date("apr 6, 2024 16:30:00").getTime();
   var x = setInterval(function() {
 
   var now = new Date().getTime();
