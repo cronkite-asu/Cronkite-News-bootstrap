@@ -56,7 +56,11 @@ $bgColor: #fafafa;
       margin-left: 15px;
       margin-right: 15px;
       &.description {
+        align-items: center;
+        justify-content: center;
         color: #fff;
+        font-weight: 600;
+        font-size: 18px;
       }
       span {
         display: flex;
@@ -72,7 +76,7 @@ $bgColor: #fafafa;
         color: #fff;
         text-align: center;
         text-transform: uppercase;
-        font-size: 18px;
+        font-size: 14px;
       }
     }
   }
