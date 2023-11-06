@@ -157,7 +157,7 @@ if (have_rows('sports_homepage')) {
   <div class="grid-x grid-padding-x">
     <div class="large-9 medium-12 small-12 cell">
 
-      <?php if (current_user_can('administrator')) { ?>
+      <?php //if (current_user_can('administrator')) { ?>
       <div class="grid-x grid-margin-x">
         <div id="ncaa-countdown" class="large-12 medium-12 small-12 cell">
           <div class="logo">
@@ -186,7 +186,7 @@ if (have_rows('sports_homepage')) {
           </div>
         </div>
       </div>
-      <?php } ?>
+      <?php //} ?>
 
     <?php
     if (have_rows('sports_homepage')) {
