@@ -56,11 +56,15 @@ $bgColor: #fafafa;
       margin-left: 15px;
       margin-right: 15px;
       &.description {
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-weight: 600;
-        font-size: 18px;
+        p {
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          font-weight: 600;
+          font-size: 18px;
+          margin: 0;
+          padding: 0;
+        }
       }
       span {
         display: flex;
