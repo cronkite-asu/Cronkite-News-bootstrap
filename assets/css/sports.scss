@@ -55,10 +55,10 @@ $bgColor: #fafafa;
       font-family: $montserratFontFamily;
       margin-left: 15px;
       margin-right: 15px;
-      .description {
+      &.description {
+        align-items: center;
+        justify-content: center;
         p {
-          align-items: center;
-          justify-content: center;
           color: #fff;
           font-weight: 600;
           font-size: 18px;

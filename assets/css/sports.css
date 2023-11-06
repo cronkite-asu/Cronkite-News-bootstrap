@@ -23,14 +23,15 @@
       font-family: "Montserrat", sans-serif;
       margin-left: 15px;
       margin-right: 15px; }
-      #ncaa-countdown .countdown div .description p {
+      #ncaa-countdown .countdown div.description {
         align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-weight: 600;
-        font-size: 18px;
-        margin: 0;
-        padding: 0; }
+        justify-content: center; }
+        #ncaa-countdown .countdown div.description p {
+          color: #fff;
+          font-weight: 600;
+          font-size: 18px;
+          margin: 0;
+          padding: 0; }
       #ncaa-countdown .countdown div span {
         display: flex;
         flex-direction: column;
