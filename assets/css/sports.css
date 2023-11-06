@@ -1,4 +1,4 @@
-#superbowl-countdown {
+#ncaa-countdown {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -7,22 +7,22 @@
   box-shadow: 0px 5px 16px -5px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0px 5px 16px -5px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 5px 16px -5px rgba(0, 0, 0, 0.3); }
-  #superbowl-countdown .countdown {
+  #ncaa-countdown .countdown {
     display: flex;
     align-items: center;
     justify-content: space-evenly; }
-    #superbowl-countdown .countdown div {
+    #ncaa-countdown .countdown div {
       display: flex;
       flex-direction: column;
       font-family: "Montserrat", sans-serif; }
-      #superbowl-countdown .countdown div span {
+      #ncaa-countdown .countdown div span {
         display: flex;
         flex-direction: column;
         color: #fff;
         font-weight: 600;
         text-align: center;
         font-size: 60px; }
-      #superbowl-countdown .countdown div div {
+      #ncaa-countdown .countdown div div {
         display: flex;
         flex-direction: column;
         color: #fff;
