@@ -126,7 +126,7 @@
     </div>
 
     <div class="large-12 medium-12 small-12 cell faculty-staff">
-      <h4>Staff</h4>
+      <h4>Journalists</h4>
 
       <?php
         $currentSemester = get_field('current_semester', 'option');

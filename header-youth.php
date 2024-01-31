@@ -29,9 +29,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Add Favicon -->
-    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="icon">
-    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="shortcut icon">
-    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>"  rel="apple-touch-icon">
+    <link type="image/png" href="<?php echo get_field('favicon', 'options'); ?>" rel="icon">
+    <link type="image/png" href="<?php echo get_field('favicon', 'options'); ?>" rel="shortcut icon">
+    <link type="image/png" href="<?php echo get_field('favicon', 'options'); ?>"  rel="apple-touch-icon">
 
     <!-- Load Google Fonts -->
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>

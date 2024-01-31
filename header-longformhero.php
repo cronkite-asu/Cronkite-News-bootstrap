@@ -30,9 +30,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Add Favicon -->
-    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="icon">
-    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="shortcut icon">
-    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>"  rel="apple-touch-icon">
+    <link type="image/png" href="<?php echo get_field('favicon', 'options'); ?>" rel="icon">
+    <link type="image/png" href="<?php echo get_field('favicon', 'options'); ?>" rel="shortcut icon">
+    <link type="image/png" href="<?php echo get_field('favicon', 'options'); ?>"  rel="apple-touch-icon">
 
         <!-- font awesome -->
         <script src="https://kit.fontawesome.com/0f0514404d.js" crossorigin="anonymous"></script>

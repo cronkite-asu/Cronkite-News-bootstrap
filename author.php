@@ -37,12 +37,12 @@ get_header(); ?>
                                                 }
                                                 if ($siteTitle = get_field('site_title')) {
                                                     ?>
-                                                    <a href="<?php the_field('site_url'); ?>"><?php echo $siteTitle; ?> | </a>
+                                                    <a href="<?php echo get_field('site_url'); ?>"><?php echo $siteTitle; ?> | </a>
                                                     <?php
                                                 }
                                                 if ($twitterTitle = get_field('twitter_title')) {
                                                     ?>
-                                                    <a href="<?php the_field('twitter_url'); ?>" class="custom-line-links"> <i class="icon-twitter"></i> <?php echo $twitterTitle; ?> </a>
+                                                    <a href="<?php echo get_field('twitter_url'); ?>" class="custom-line-links"> <i class="icon-twitter"></i> <?php echo $twitterTitle; ?> </a>
                                                     <?php
                                                 }
                                         ?>
@@ -69,7 +69,7 @@ wp_reset_query();
                                                 <span> <?php echo ap_date(); ?></span>
                                             </h6>
                                             <?php the_content(); ?>
-                                            <?php the_field('second_text'); ?>
+                                            <?php echo get_field('second_text'); ?>
                                         </article>
                                     <?php endwhile; ?><!-- END of POST-->
                                 <?php endif; ?>

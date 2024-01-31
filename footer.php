@@ -10,17 +10,17 @@
     <div class="container inner">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 inner">
-                <h4><?php the_field('area_1_title', 'options'); ?></h4>
-                <?php the_field('area_1_description', 'options'); ?>
+                <h4><?php echo get_field('area_1_title', 'options'); ?></h4>
+                <?php echo get_field('area_1_description', 'options'); ?>
             </div><!-- END of .col -->
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 inner">
-                <h4><?php the_field('area_2_title', 'options'); ?></h4>
-                <?php the_field('area_2_descriptiption', 'options'); ?>
+                <h4><?php echo get_field('area_2_title', 'options'); ?></h4>
+                <?php echo get_field('area_2_descriptiption', 'options'); ?>
 
 
             </div><!-- END of .col -->
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 inner">
-                <h4><?php the_field('area_3_title', 'options'); ?></h4>
+                <h4><?php echo get_field('area_3_title', 'options'); ?></h4>
                 <a href="/daily-newsletter-signup/">Sign up</a> for daily headlines
                 <br>
 <!--
@@ -48,12 +48,12 @@ wp_reset_query();
                 </ul>
  -->
                 <br>
-                <?php the_field('area_3_description', 'options'); ?>
+                <?php echo get_field('area_3_description', 'options'); ?>
             </div><!-- END of .col -->
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 inner">
 
-               <h4><?php the_field('area_4_title', 'options'); ?></h4>
-                <?php the_field('area_4_description', 'options'); ?>
+               <h4><?php echo get_field('area_4_title', 'options'); ?></h4>
+                <?php echo get_field('area_4_description', 'options'); ?>
 
 <!--
                 <form method="get" class="navbar-form search" id="searchform" action="<?php echo esc_url(home_url('/')); ?>">

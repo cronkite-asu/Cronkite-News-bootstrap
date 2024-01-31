@@ -24,7 +24,7 @@ get_header('longformhero'); ?>
                                             <?php if (get_field('autoplay_bg_video')) { ?>
                                     <div class="desktop-only">
                             <video autoplay muted loop style="z-index:-1;width:2000px; overflow-x:hidden; height:auto;">
-                                <source src="<?php the_field('autoplay_bg_video'); ?>" type="video/mp4">
+                                <source src="<?php echo get_field('autoplay_bg_video'); ?>" type="video/mp4">
 
                                     </video>
 
@@ -39,7 +39,7 @@ get_header('longformhero'); ?>
                                                         $text = get_sub_field('fcaption');  // Use variables below?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
                                                         <?php if ($imgheadline = get_field('headline_over_image')) { ?>
-                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image'); ?>;font-size:<?php the_field('headline_over_image_font_size'); ?>;<?php the_field('additional_headline_over_image_styling'); ?>"> <?php the_field('headline_over_image'); ?> </h1>
+                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php echo get_field('color_of_headline_over_image'); ?>;font-size:<?php echo get_field('headline_over_image_font_size'); ?>;<?php echo get_field('additional_headline_over_image_styling'); ?>"> <?php echo get_field('headline_over_image'); ?> </h1>
                                                         <?php } ?>
                                         <div class="carousel-captions" style="padding-left:20px; padding-right:20px;"> <!--         captions -->
                                                         <?php echo $text; ?>
@@ -61,7 +61,7 @@ get_header('longformhero'); ?>
                                                         $text = get_sub_field('fcaption');  // Use variables below?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
                                                         <?php if ($imgheadline = get_field('headline_over_image')) { ?>
-                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image'); ?>;font-size:<?php the_field('headline_over_image_font_size'); ?>;<?php the_field('additional_headline_over_image_styling'); ?>"> <?php the_field('headline_over_image'); ?> </h1>
+                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php echo get_field('color_of_headline_over_image'); ?>;font-size:<?php echo get_field('headline_over_image_font_size'); ?>;<?php echo get_field('additional_headline_over_image_styling'); ?>"> <?php echo get_field('headline_over_image'); ?> </h1>
                                                         <?php } ?>
                                         <div class="carousel-captions"  style="padding: 0px 20px; padding-bottom:10px;"> <!--         captions -->
                                                         <?php echo $text; ?>

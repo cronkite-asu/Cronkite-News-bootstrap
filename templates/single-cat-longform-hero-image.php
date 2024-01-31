@@ -28,7 +28,7 @@ get_header('longformhero'); ?>
                                                     $text = get_sub_field('fcaption');  // Use variables below?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
                                                     <?php if ($imgheadline = get_field('headline_over_image')) { ?>
-                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image'); ?>;font-size:<?php the_field('headline_over_image_font_size'); ?>;<?php the_field('additional_headline_over_image_styling'); ?>"> <?php the_field('headline_over_image'); ?> </h1>
+                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php echo get_field('color_of_headline_over_image'); ?>;font-size:<?php echo get_field('headline_over_image_font_size'); ?>;<?php echo get_field('additional_headline_over_image_styling'); ?>"> <?php echo get_field('headline_over_image'); ?> </h1>
                                                     <?php } ?>
                                                 <div class="carousel-captions"> <!-- captions -->
                                                     <?php echo $text; ?>
@@ -50,12 +50,12 @@ get_header('longformhero'); ?>
                                     <?php echo $postAuthor; ?> |
                                <?php } ?>
                                             <?php if ($siteTitle = get_field('site_title')) { ?>
-                                    <a href="http://<?php the_field('site_url'); ?>"><?php echo $siteTitle; ?></a></h6>
+                                    <a href="http://<?php echo get_field('site_url'); ?>"><?php echo $siteTitle; ?></a></h6>
                                             <?php } ?>
                                 <h6 class="story-info-date"><?php echo ap_date(); ?></h6>
 
                                                 <?php the_content(); ?>
-                                                <?php the_field('second_text'); ?>
+                                                <?php echo get_field('second_text'); ?>
                                             </article>
                                         <?php endwhile; ?><!-- END of POST-->
                                     <?php endif; ?>

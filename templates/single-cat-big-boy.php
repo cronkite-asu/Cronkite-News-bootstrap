@@ -14,7 +14,7 @@ get_header(); ?>
                 <div class="row">
                     <div class="col-md-12">
                         <?php the_content(); ?>
-                        <?php the_field('second_text'); ?>
+                        <?php echo get_field('second_text'); ?>
                     </div>
                 </div>
                 <!-- /.row -->

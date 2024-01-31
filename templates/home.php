@@ -10,7 +10,7 @@ get_header('new'); ?>
       <?php if (get_field('breaking_headline')) : ?>
 
    <a href="https://cronkitenews.azpbs.org/2018/08/25/sen-john-mccain-dies-one-year-after-brain-cancer-diagnosis-leaves-political-leadership-legacy/"> <h1 class="breaking-headline" style=" text-align:center;background-color:#FFF;margin-bottom:0px; border:none;font-size: 72px;color: #333;
-    padding-bottom: 20px;"><?php the_field('breaking_headline'); ?></h1> </a>
+    padding-bottom: 20px;"><?php echo get_field('breaking_headline'); ?></h1> </a>
 
       <?php endif; ?>
   </section>
@@ -329,12 +329,12 @@ if ($vvid == 'Newscast') { ?>
             echo $vid . '" frameborder="0" allowfullscreen></iframe>';
             ?>
                                               </div>
-                       <!--<h3 class="art-h3" style="position: absolute;left: 0; top: 0px;color: white; padding: 5px;font-size: 14px; background-color:#5671c1 ;margin-bottom: 0;"> <?php the_field('v_video_label'); ?> </h3>-->
+                       <!--<h3 class="art-h3" style="position: absolute;left: 0; top: 0px;color: white; padding: 5px;font-size: 14px; background-color:#5671c1 ;margin-bottom: 0;"> <?php echo get_field('v_video_label'); ?> </h3>-->
 
-                        <a href="<?php the_field('v_video_link'); ?>" rel="noopener">
-<!--                            <h3 class="art-h2" style="font-size:18px;font-family: 'Source Sans Pro', sans-serif;"> <?php the_field('v_video_description'); ?> </h3>  -->
+                        <a href="<?php echo get_field('v_video_link'); ?>" rel="noopener">
+<!--                            <h3 class="art-h2" style="font-size:18px;font-family: 'Source Sans Pro', sans-serif;"> <?php echo get_field('v_video_description'); ?> </h3>  -->
 
-                        <h3 class="art-h2" style="padding-top: 30px;"> <p style="font-size:20px;"><?php the_field('v_video_description'); ?> </p></h3></a>
+                        <h3 class="art-h2" style="padding-top: 30px;"> <p style="font-size:20px;"><?php echo get_field('v_video_description'); ?> </p></h3></a>
 
                     </div>
                 </div>
@@ -607,8 +607,8 @@ wp_reset_query(); ?>
              <div class="long-term-feature">
                <div class="content">
                  <h3>FEATURED SERIES</h3>
-                 <h4><?php the_field('special_area_title'); ?></h4>
-                 <?php the_field('special_area_description'); ?>
+                 <h4><?php echo get_field('special_area_title'); ?></h4>
+                 <?php echo get_field('special_area_description'); ?>
                 </div>
              </div>
            </div>

@@ -42,7 +42,7 @@
         <h1 class="amp-wp-title"><?php echo wp_kses_data($this->get('post_title')); ?></h1>
         <div class="amp-wp-meta amp-wp-byline">
 
-            <?php the_field('post_author'); ?>
+            <?php echo get_field('post_author'); ?>
 
         </div>
         <div class="amp-wp-meta amp-wp-posted-on">

@@ -45,9 +45,9 @@ get_header(); ?>
 
 
 
-                            <video class="video-top-bg" style="max-width:1100px;" poster=" <?php the_field('lv_image'); ?>" playsinline autoplay muted loop>
-                                <source src="<?php the_field('lv_webm') ?>" type="video/webm">
-                                <source src="<?php the_field('lv_mp4') ?>" type="video/mp4">
+                            <video class="video-top-bg" style="max-width:1100px;" poster=" <?php echo get_field('lv_image'); ?>" playsinline autoplay muted loop>
+                                <source src="<?php echo get_field('lv_webm') ?>" type="video/webm">
+                                <source src="<?php echo get_field('lv_mp4') ?>" type="video/mp4">
                             </video>
 
 
@@ -64,12 +64,12 @@ get_header(); ?>
                                 By <?php echo $postAuthor; ?> |
                                <?php } ?>
                                             <?php if ($siteTitle = get_field('site_title')) { ?>
-                                    <a href="http://<?php the_field('site_url'); ?>"><?php echo $siteTitle; ?></a></h6>
+                                    <a href="http://<?php echo get_field('site_url'); ?>"><?php echo $siteTitle; ?></a></h6>
                                             <?php } ?>
                                 <h6 class="story-info-date"><?php echo ap_date(); ?></h6>
 
                                                 <?php the_content(); ?>
-                                                <?php the_field('second_text'); ?>
+                                                <?php echo get_field('second_text'); ?>
                                             </article>
                                         <?php endwhile; ?><!-- END of POST-->
                                     <?php endif; ?>

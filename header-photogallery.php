@@ -12,9 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Add Favicon -->
-    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="icon">
-    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>" rel="shortcut icon">
-    <link type="image/png" href="<?php the_field('favicon', 'options'); ?>"  rel="apple-touch-icon">
+    <link type="image/png" href="<?php echo get_field('favicon', 'options'); ?>" rel="icon">
+    <link type="image/png" href="<?php echo get_field('favicon', 'options'); ?>" rel="shortcut icon">
+    <link type="image/png" href="<?php echo get_field('favicon', 'options'); ?>"  rel="apple-touch-icon">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSKTFTYNJ0"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CSKTFTYNJ0'); </script>

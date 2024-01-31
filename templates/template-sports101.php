@@ -42,7 +42,7 @@ if ($the_query->have_posts()) : ?>
 
                                                 <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                                                            <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
-                                                           <?php the_field('video_file'); ?>
+                                                           <?php echo get_field('video_file'); ?>
 
 
                                                            </div>
@@ -152,7 +152,7 @@ wp_reset_query(); ?>
 
                     <?php while (have_posts()) : the_post(); ?>
                         <div class="popup-box" member-number="<?php echo $number; ?>">
-                            <?php the_field('video_file'); ?>
+                            <?php echo get_field('video_file'); ?>
                         </div>
                         <?php $number++; ?>
                     <?php endwhile; ?><!-- END of Post -->

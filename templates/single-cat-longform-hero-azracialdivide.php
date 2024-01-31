@@ -26,7 +26,7 @@ get_header('azracialdivide'); ?>
                                             <?php if (get_field('autoplay_bg_video')) { ?>
                                     <div class="desktop-only">
                             <video autoplay muted loop style="z-index:-1;width:2000px; overflow-x:hidden; height:auto;">
-                                <source src="<?php the_field('autoplay_bg_video'); ?>" type="video/mp4">
+                                <source src="<?php echo get_field('autoplay_bg_video'); ?>" type="video/mp4">
 
                                     </video>
 
@@ -41,7 +41,7 @@ get_header('azracialdivide'); ?>
                                                         $text = get_sub_field('fcaption');  // Use variables below?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
                                                         <?php if ($imgheadline = get_field('headline_over_image')) { ?>
-                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image'); ?>;font-size:<?php the_field('headline_over_image_font_size'); ?>;<?php the_field('additional_headline_over_image_styling'); ?>"> <?php the_field('headline_over_image'); ?> </h1>
+                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php echo get_field('color_of_headline_over_image'); ?>;font-size:<?php echo get_field('headline_over_image_font_size'); ?>;<?php echo get_field('additional_headline_over_image_styling'); ?>"> <?php echo get_field('headline_over_image'); ?> </h1>
                                                         <?php } ?>
                                         <div class="carousel-captions"> <!--         captions -->
                                                         <?php echo $text; ?>
@@ -64,7 +64,7 @@ get_header('azracialdivide'); ?>
                                                         $text = get_sub_field('fcaption');  // Use variables below?>
                                                 <img class="img-responsive" style="width:100%;height:100%;" src="<?php echo $icon; ?>" />
                                                         <?php if ($imgheadline = get_field('headline_over_image')) { ?>
-                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php the_field('color_of_headline_over_image'); ?>;font-size:<?php the_field('headline_over_image_font_size'); ?>;<?php the_field('additional_headline_over_image_styling'); ?>"> <?php the_field('headline_over_image'); ?> </h1>
+                                        <h1 class="animated fadeIn desktop-only" id="headline_over_image" style="color:<?php echo get_field('color_of_headline_over_image'); ?>;font-size:<?php echo get_field('headline_over_image_font_size'); ?>;<?php echo get_field('additional_headline_over_image_styling'); ?>"> <?php echo get_field('headline_over_image'); ?> </h1>
                                                         <?php } ?>
                                         <div class="carousel-captions"> <!--         captions -->
                                                         <?php echo $text; ?>
@@ -79,7 +79,7 @@ get_header('azracialdivide'); ?>
 
                                 <div class="col-xs-12 col-md-offset-2 col-md-8">
 
-                                        <h3 style="color:rgba(255,255,255,0.9);padding-top:10px;"> <?php the_field('text_before_headline'); ?>   </h3>
+                                        <h3 style="color:rgba(255,255,255,0.9);padding-top:10px;"> <?php echo get_field('text_before_headline'); ?>   </h3>
                                       <h1 id="main-headline" style="color:rgba(255,255,255,0.9);"><?php the_title(); ?></h1>
 
                                 <h6 class="story-info" style="color:rgba(255,255,255,0.9);"><?php if ($postAuthor = get_field('post_author')) { ?>
@@ -87,12 +87,12 @@ get_header('azracialdivide'); ?>
                                     <?php echo $postAuthor; ?> |
                                <?php } ?>
                                             <?php if ($siteTitle = get_field('site_title')) { ?>
-                                    <a href="http://<?php the_field('site_url'); ?>"><?php echo $siteTitle; ?></a></h6>
+                                    <a href="http://<?php echo get_field('site_url'); ?>"><?php echo $siteTitle; ?></a></h6>
                                             <?php } ?>
                                 <h6 class="story-info-date" style="color:rgba(255,255,255,0.9);"><?php echo ap_date(); ?></h6>
 
                                                 <?php the_content(); ?>
-                                                <?php the_field('second_text'); ?>
+                                                <?php echo get_field('second_text'); ?>
 
                                         <?php endwhile; ?><!-- END of POST-->
                                     <?php endif; ?>

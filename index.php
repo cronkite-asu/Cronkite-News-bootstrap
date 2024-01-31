@@ -51,10 +51,10 @@ get_header(); ?>
                                     <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo $postAuthor; ?> | </a>
                                 <?php } ?>
                                 <?php if ($siteTitle = get_field('site_title')) { ?>
-                                    <a href="<?php the_field('site_url'); ?>"><?php echo $siteTitle; ?> | </a>
+                                    <a href="<?php echo get_field('site_url'); ?>"><?php echo $siteTitle; ?> | </a>
                                 <?php } ?>
                                 <?php if ($twitterTitle = get_field('twitter_title')) { ?>
-                                    <a href="<?php the_field('twitter_url'); ?>" class="custom-line-links"> <i class="icon-twitter"></i> <?php echo $twitterTitle; ?> </a>
+                                    <a href="<?php echo get_field('twitter_url'); ?>" class="custom-line-links"> <i class="icon-twitter"></i> <?php echo $twitterTitle; ?> </a>
                                 <?php } ?>
 
                             </div>
@@ -77,7 +77,7 @@ get_header(); ?>
                                                 <span> <?php echo ap_date(); ?></span>
                                             </h6>
                                            <?php echo the_excerpt(); ?> <!-- 51 is number of symbol -->
-                                            <div><?php the_field('field_text'); ?></div>
+                                            <div><?php echo get_field('field_text'); ?></div>
                                     </article>
 
                                 <?php endwhile; ?><!-- END of POST-->

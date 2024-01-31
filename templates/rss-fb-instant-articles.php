@@ -28,7 +28,7 @@ while ($loop->have_posts()) : $loop->the_post();
   <item>
     <title><?php echo the_title(); ?></title>
     <link><?php echo the_permalink(); ?></link>
-    <description><?php the_field('story_tease'); ?></description>
+    <description><?php echo get_field('story_tease'); ?></description>
     <pubDate><?php
     echo date("c", strtotime(mysql2date('D, d M Y H:i:s +0000', get_post_time('Y-m-d H:i:s', true), false))); ?></pubDate>
     <guid><?php echo get_permalink($post->ID); ?></guid>
