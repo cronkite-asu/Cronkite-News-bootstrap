@@ -1,11 +1,9 @@
 <?php
 /**
- * Template Name: Email  Feed
- * Updated: Mar 16, 2017 to support new home page
+ * Template Name: Email Feed
+ * Updated: Feb. 7, 2024 to support new home page
  */
-// $ACCEPTHOST = 'cn2.niclindh.com';
 $ACCEPTHOST = 'cronkitenews.azpbs.org';
-//$ACCEPTHOST = 'cn.countzero.xyz';
 $NEWSCASTURL = '//' . $ACCEPTHOST . '/sitenewscast';
 
 header("Content-Type: application/rss+xml; charset=UTF-8");
@@ -19,7 +17,6 @@ echo '<?xml version="1.0"?><rss version="2.0">';
   <language>en-us</language>
   <pubDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></pubDate>
   <lastBuildDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></lastBuildDate>
-  <managingEditor>cronkitenews@asu.edu</managingEditor>
 
 <?php
     // main story
