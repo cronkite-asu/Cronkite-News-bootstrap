@@ -919,8 +919,8 @@ add_filter( 'wpseo_meta_author', 'update_wpseo_meta_author_filter', 10, 2 );
 
 add_filter( 'wpseo_enhanced_slack_data', function($data) {
     wp_reset_query();
-    //$author_name = get_story_byline();
-    $array = ["By" => get_the_ID()];
+    $author_name = get_story_byline();
+    $array = ["By" => $author_name];
     return $array;
 });
 
