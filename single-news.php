@@ -23,39 +23,39 @@
          <div class="large-12 medium-12 small-12 cell">
            <!-- breadcrumbs -->
            <?php
-          $categories = get_the_category();
- if (! empty($categories)) {
-     ?>
+              $categories = get_the_category();
+              if (! empty($categories)) {
+           ?>
              <nav aria-label="Cronkite News: Breadcrumbs" role="navigation">
                <ul class="breadcrumbs">
                  <li>
                   <?php
-         $catCount = count($categories);
-     foreach ($categories as $key => $val) {
-         if ($categories[$key]->name != 'New 2020') {
-             if (strtolower($categories[$key]->name) == 'health') {
-                 $healthStory = true;
-             }
-             echo '<a href="' . esc_url(get_category_link($categories[$key]->term_id)) . '">' . esc_html($categories[$key]->name) . '</a>';
-             if ($catCount > 1) {
-                 echo '  ';
-             }
-         }
-     }
-     ?>
+                     $catCount = count($categories);
+                     foreach ($categories as $key => $val) {
+                         if ($categories[$key]->name != 'New 2020') {
+                             if (strtolower($categories[$key]->name) == 'health') {
+                                 $healthStory = true;
+                             }
+                             echo '<a href="' . esc_url(get_category_link($categories[$key]->term_id)) . '">' . esc_html($categories[$key]->name) . '</a>';
+                             if ($catCount > 1) {
+                                 echo '  ';
+                             }
+                         }
+                     }
+                   ?>
                  </li>
                </ul>
              </nav>
-                <?php
- }
- ?>
+              <?php
+               }
+              ?>
 
            <h1 class="single-story-hdr"><?php the_title(); ?></h1>
            <!-- byline and date -->
            <div class="byline">
              <?php
-     if (get_the_ID() == 165700) {
-         $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
+               if (get_the_ID() == 165700) {
+                   $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
                              'arizona-public-media' => "https://www.azpm.org/",
                              'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                              'colorado-public-radio' => "https://www.cpr.org/",
@@ -75,8 +75,8 @@
                              'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
                              'special-to-cronkite-news' => "",
                             ];
-     } elseif (get_the_ID() == 167042) {
-         $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
+               } elseif (get_the_ID() == 167042) {
+                   $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
                              'arizona-public-media' => "https://www.azpm.org/",
                              'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                              'colorado-public-radio' => "https://www.cpr.org/",
@@ -97,8 +97,8 @@
                              'special-to-cronkite-news' => "",
                              'fronteras' => "https://fronterasdesk.org/content/1696137/hermosillo-pedestrians-face-many-dangers-work-address-them-underway",
                             ];
-     } elseif (get_the_ID() == 168187) {
-         $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
+               } elseif (get_the_ID() == 168187) {
+                   $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
                              'arizona-public-media' => "https://www.azpm.org/",
                              'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
                              'colorado-public-radio' => "https://www.cpr.org/",
@@ -119,8 +119,8 @@
                              'special-to-cronkite-news' => "",
                              'fronteras' => "https://fronterasdesk.org/content/1703038/women-and-conservation-sonoran-scientists-start-group-latin-american-women",
                             ];
-     } else {
-         $externalSites = ['abc15' => "https://www.abc15.com/",
+                 } else {
+                     $externalSites = ['abc15' => "https://www.abc15.com/",
                              'arizona-pbs' => "https://www.azpbs.org",
                              'arizona-public-media' => "https://www.azpm.org/",
                              'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
@@ -145,7 +145,7 @@
                              'stateline' => "https://stateline.org/",
                             ];
      }
-     $externalAuthorCount = 1;
+ $externalAuthorCount = 1;
  $internalAuthorCount = 0;
  $commaSeparator = ',';
  $andSeparator = ' and ';
@@ -474,24 +474,7 @@
 
          $storyContent = str_replace('<p><style>.embed-container', '<style>.embed-container', $storyContent);
          $storyContent = str_replace('</iframe></div></p>', '</iframe></div>', $storyContent);
-
          return $storyContent;
-
-         /*$patternID = '#(?<=v=|v\/|vi=|vi\/|youtu.be\/)[a-zA-Z0-9_-]{11}#';
-         $patternURL = '~(?:https?://)?(?:www.)?(?:youtube.com|youtu.be)/(?:watch\?v=)?([^\s]+)~';
-         // find all youtube links
-         preg_match_all($patternURL, $storyContent, $ytLinks);
-
-         for ($i = 0; $i < count($ytLinks[0]); $i++) {
-           $responseYTembeds = "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/".strip_tags($ytLinks[1][$i])."' frameborder='0' allowfullscreen></iframe></div>";
-           $storyContent = str_replace(strip_tags($ytLinks[0][$i]), $responseYTembeds, $storyContent);
-         }
-
-         $storyContent = str_replace('<p><style>.embed-container', '<style>.embed-container', $storyContent);
-         $storyContent = str_replace('</iframe></div></p>', '</iframe></div>', $storyContent);
-
-         return $storyContent;*/
-
      }
      $finalStoryContent = getVideoUrlsFromString($storyContent);
      echo $finalStoryContent = apply_filters('the_content', $finalStoryContent);
@@ -500,9 +483,9 @@
  }
  ?>
 
-             <?php
-    // in this series settings
-    $inthisseriesSettings = get_field('in-this-series-stories');
+<?php
+// in this series settings
+$inthisseriesSettings = get_field('in-this-series-stories');
  if ($inthisseriesSettings['show'] == 'yes') {
      if ($inthisseriesSettings['story-status'] == 'coming-soon') {
          if ($inthisseriesSettings['title'] != '') {
