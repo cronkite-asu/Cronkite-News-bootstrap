@@ -825,7 +825,7 @@ add_filter('wpseo_metabox_prio', 'wpcover_move_yoast');
 
 // Update author to reflect byline
 function update_wpseo_meta_author_filter( $author_name, $presentation ){
-  /*$externalAuthorCount = 1;
+  $externalAuthorCount = 1;
   $internalAuthorCount = 0;
   $commaSeparator = ',';
   $andSeparator = ' and ';
@@ -833,8 +833,8 @@ function update_wpseo_meta_author_filter( $author_name, $presentation ){
   $externalStaffTotalCounter = 0;
   $authorName = '';
 
-  if (have_rows('byline_info', $main_story[0])) {
-      while (have_rows('byline_info', $main_story[0])) {
+  if (have_rows('byline_info', get_the_ID())) {
+      while (have_rows('byline_info', get_the_ID())) {
           the_row();
           $staffID = get_sub_field('cn_staff');
           if ($staffID == '') {
@@ -853,9 +853,9 @@ function update_wpseo_meta_author_filter( $author_name, $presentation ){
   }
 
   if ($cnStaffTotalCounter > 0) {
-      if (have_rows('byline_info', $main_story[0])) {
+      if (have_rows('byline_info', get_the_ID())) {
           $sepCounter = 0;
-          while (have_rows('byline_info', $main_story[0])) {
+          while (have_rows('byline_info', get_the_ID())) {
               the_row();
               $staffID = get_sub_field('cn_staff');
               $cnStaffCount = count((array)$staffID);
@@ -886,9 +886,9 @@ function update_wpseo_meta_author_filter( $author_name, $presentation ){
       }
   } elseif ($externalStaffTotalCounter > 0) {
 
-      if (have_rows('byline_info', $main_story[0])) {
+      if (have_rows('byline_info', get_the_ID())) {
           $sepCounter = 0;
-          while (have_rows('byline_info', $main_story[0])) {
+          while (have_rows('byline_info', get_the_ID())) {
               the_row();
               if (have_rows('external_authors_repeater')) {
                   if ($cnStaffTotalCounter > 0) {
@@ -916,9 +916,8 @@ function update_wpseo_meta_author_filter( $author_name, $presentation ){
 
 
   $data['author'] = get_the_id();
-  return $data;*/
+  return $data;
 
-  $author_name = get_the_ID();
   //$author_name = "Cronkite News";
 	return $author_name;
 }
