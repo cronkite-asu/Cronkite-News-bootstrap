@@ -48,14 +48,12 @@ register_nav_menus(
 
 /* Added: Sunday, Nov. 3rd, 2020 - Custom rss feed */
 add_action('init', 'newRSSFeed');
-function newRSSFeed()
-{
+function newRSSFeed() {
     add_feed('cronkitenewsfeed', 'newRSSFeedCallback');
 }
 
 /* This code seeks the template for your RSS feed */
-function newRSSFeedCallback()
-{
+function newRSSFeedCallback() {
     get_template_part('rss', 'cronkitenewsfeed'); // need to be in small case.
 }
 
@@ -852,7 +850,7 @@ function update_wpseo_meta_author_filter( $author_name, $presentation ){
       }
   }
 
-  if ($cnStaffTotalCounter > 0) {
+  /*if ($cnStaffTotalCounter > 0) {
       if (have_rows('byline_info', get_the_ID())) {
           $sepCounter = 0;
           while (have_rows('byline_info', get_the_ID())) {
@@ -911,10 +909,10 @@ function update_wpseo_meta_author_filter( $author_name, $presentation ){
               }
           }
       }
-  }
+  }*/
 
 
-  $data['author'] = $authorName;
+  $data['author'] = $cnStaffTotalCounter;
   return $data;
 
   //$author_name = "Cronkite News";
