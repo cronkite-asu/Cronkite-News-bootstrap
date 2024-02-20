@@ -850,7 +850,7 @@ function update_wpseo_meta_author_filter( $author_name, $presentation ){
       }
   }
 
-  /*if ($cnStaffTotalCounter > 0) {
+  if ($cnStaffTotalCounter > 0) {
       if (have_rows('byline_info', get_the_ID())) {
           $sepCounter = 0;
           while (have_rows('byline_info', get_the_ID())) {
@@ -909,9 +909,9 @@ function update_wpseo_meta_author_filter( $author_name, $presentation ){
               }
           }
       }
-  }*/
+  }
 
-  $author_name = $cnStaffTotalCounter;
+  $author_name = $authorName;
   //$author_name = "Cronkite News";
 	return $author_name;
 }
