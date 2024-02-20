@@ -914,7 +914,7 @@ function get_story_byline() {
 function update_wpseo_meta_author_filter( $author_name, $presentation ){
   $author_name = get_story_byline();
 
-  add_filter( 'wpseo_enhanced_slack_data', function($data, $author_name) {
+  add_filter( 'wpseo_enhanced_slack_data', function($data) {
       $array = ["By" => $author_name];
       return $array;
   });
