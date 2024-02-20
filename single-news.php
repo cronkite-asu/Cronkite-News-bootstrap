@@ -54,6 +54,13 @@
            <!-- byline and date -->
            <div class="byline">
              <?php
+
+             if (have_rows('byline_info')) {
+                 while (have_rows('byline_info')) {
+                     the_row();
+                 }
+             }
+             
      if (get_the_ID() == 165700) {
          $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
                              'arizona-public-media' => "https://www.azpm.org/",
