@@ -911,10 +911,7 @@ function update_wpseo_meta_author_filter( $author_name, $presentation ){
       }
   }*/
 
-
-  $data['author'] = $cnStaffTotalCounter;
-  return $data;
-
+  $author_name = $cnStaffTotalCounter;
   //$author_name = "Cronkite News";
 	return $author_name;
 }
