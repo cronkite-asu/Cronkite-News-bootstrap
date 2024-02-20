@@ -823,14 +823,14 @@ function wpcover_move_yoast()
 }
 add_filter('wpseo_metabox_prio', 'wpcover_move_yoast');
 
-add_filter( 'yoast_seo_development_mode', '__return_true' );
+/*add_filter( 'yoast_seo_development_mode', '__return_true' );
 //disable Yoast SEO @Person schema on posts
 add_filter( 'wpseo_schema_needs_author', '__return_false' );
 //change Yoast SEO article schema author to the organization
 add_filter( 'wpseo_schema_article', 'change_article_author' );
 
 function change_article_author( $data ) {
-  /*$externalAuthorCount = 1;
+  $externalAuthorCount = 1;
   $internalAuthorCount = 0;
   $commaSeparator = ',';
   $andSeparator = ' and ';
@@ -917,12 +917,12 @@ function change_article_author( $data ) {
           }
       }
   }
-  wp_reset_query();*/
+  wp_reset_query();
 
 
   $data['author'] = get_the_id();
   return $data;
-}
+}*/
 
 // custom post type for students
 function students_CPT()
