@@ -784,7 +784,6 @@ function ap_noticias_date()
     else:
         $apmonth = (get_the_time('F'));
     endif;
-    //$thedate = get_the_time('l') . ', ' . $apmonth . ' ' . get_the_time('j') . ', ' . get_the_time('Y');
     $thedate = $apmonth . ' ' . get_the_time('j') . ', ' . get_the_time('Y');
     return $thedate;
 }
@@ -794,8 +793,7 @@ function ap_noticias_date()
 // From http://justintadlock.com/archives/2008/12/06/creating-single-post-templates-in-wordpress
 define('SINGLE_PATH', TEMPLATEPATH . '/templates');
 add_filter('single_template', 'my_single_template');
-function my_single_template($single)
-{
+function my_single_template($single) {
     global $wp_query, $post;
     foreach ((array)get_the_category() as $cat) :
         if (file_exists(SINGLE_PATH . '/single-cat-' . $cat->slug . '.php')) {
@@ -805,8 +803,7 @@ function my_single_template($single)
     return $single;
 }
 // Remove auto generated feed links
-function my_remove_feeds()
-{
+function my_remove_feeds() {
     remove_action('wp_head', 'feed_links_extra', 3);
     remove_action('wp_head', 'feed_links', 2);
 }
@@ -815,14 +812,13 @@ add_action('after_setup_theme', 'my_remove_feeds');
 /*******************************************************************************/
 
 // Move Yoast to bottom
-function wpcover_move_yoast()
-{
+function wpcover_move_yoast() {
     return 'high';
 }
 add_filter('wpseo_metabox_prio', 'wpcover_move_yoast');
 
-// Update author to reflect byline
-function update_wpseo_meta_author_filter( $author_name, $presentation ){
+// get byline
+function get_story_byline() {
   $externalAuthorCount = 1;
   $internalAuthorCount = 0;
   $commaSeparator = ',';
@@ -911,10 +907,15 @@ function update_wpseo_meta_author_filter( $author_name, $presentation ){
       }
   }
 
-  $author_name = $authorName;
+  return $authorName;
+}
+
+// Update author to reflect byline
+function update_wpseo_meta_author_filter( $author_name, $presentation ){
+  $author_name = get_story_byline();
 
   add_filter( 'wpseo_enhanced_slack_data', function($data) {
-      $array = ["By" => get_the_ID()];
+      $array = ["By" => $author_name];
       return $array;
   });
 
@@ -965,8 +966,7 @@ if (function_exists('acf_add_options_sub_page')) {
 }
 
 // custom post type for staff
-function staff_CPT()
-{
+function staff_CPT(){
     $cpt_staff_labels = [
         'name'               => _x('Staff', 'post type general name'),
         'singular_name'      => _x('Staff', 'post type singular name'),
@@ -998,8 +998,7 @@ add_action('init', 'staff_CPT');
 
 
 // custom tags for stories
-function storytags_CPT()
-{
+function storytags_CPT(){
     $storytags_labels = [
         'name'               => _x('Story Tags', 'post type general name'),
         'singular_name'      => _x('Story Tag', 'post type singular name'),
@@ -1031,8 +1030,7 @@ add_action('init', 'storytags_CPT');
 
 
 // in this series
-function inThisSeries_CPT()
-{
+function inThisSeries_CPT(){
     $inThisSeries_labels = [
         'name'               => _x('In This Series', 'post type general name'),
         'singular_name'      => _x('In This Series', 'post type singular name'),
@@ -1064,8 +1062,7 @@ add_action('init', 'inThisSeries_CPT');
 
 
 // custom post type for staff
-function explore_CPT()
-{
+function explore_CPT(){
     $cpt_explore_labels = [
         'name'               => _x('Explores', 'post type general name'),
         'singular_name'      => _x('Explore', 'post type singular name'),
@@ -1097,8 +1094,7 @@ add_action('init', 'explore_CPT');
 
 
 // custom post type for election2020
-function election2020_CPT()
-{
+function election2020_CPT(){
     $cpt_election2020_labels = [
         'name'               => _x('Election 2020', 'post type general name'),
         'singular_name'      => _x('Election 2020', 'post type singular name'),
@@ -1139,8 +1135,7 @@ if (function_exists('acf_add_options_sub_page')) {
 }
 
 // custom post type for audio/video
-function audioVideo_CPT()
-{
+function audioVideo_CPT(){
     $cpt_audiovideo_labels = [
         'name'               => _x('Audio/Video', 'post type general name'),
         'singular_name'      => _x('Audio/Video', 'post type singular name'),
@@ -1171,8 +1166,7 @@ function audioVideo_CPT()
 add_action('init', 'audioVideo_CPT');
 
 
-function cn_search_query($query)
-{
+function cn_search_query($query){
     if (!is_admin() && $query->is_main_query()) {
         if (is_search()) {
             $query->set('orderby', 'date');
@@ -1181,8 +1175,7 @@ function cn_search_query($query)
 }
 add_action('pre_get_posts', 'cn_search_query');
 
-function add_file_types_to_uploads($file_types)
-{
+function add_file_types_to_uploads($file_types){
     $new_filetypes = [];
     $new_filetypes['svg'] = 'image/svg+xml';
     $file_types = array_merge($file_types, $new_filetypes);
@@ -1191,21 +1184,18 @@ function add_file_types_to_uploads($file_types)
 add_action('upload_mimes', 'add_file_types_to_uploads');
 
 add_action('init', 'custom_init_storytags');
-function custom_init_storytags()
-{
+function custom_init_storytags(){
     remove_post_type_support('storytags', 'comments');
 }
 
-function audiovideoCPT_remove_wp_seo_meta_box()
-{
+function audiovideoCPT_remove_wp_seo_meta_box(){
     remove_meta_box('wpseo_meta', 'audioVideoCPT', 'normal');
 }
 add_action('add_meta_boxes', 'audiovideoCPT_remove_wp_seo_meta_box', 100);
 
 /* URL rewrite rule for CN staff people page */
 add_filter('query_vars', 'add_staff_name_var', 0, 1);
-function add_staff_name_var($vars)
-{
+function add_staff_name_var($vars){
     $vars[] = 'staffname';
     return $vars;
 }
@@ -1213,8 +1203,7 @@ add_rewrite_rule('^people/([^/]+)/?$', 'index.php?pagename=people&staffname=$mat
 
 /* URL rewrite rule for Audio story page */
 add_filter('query_vars', 'add_audio_story_var', 0, 1);
-function add_audio_story_var($vars)
-{
+function add_audio_story_var($vars){
     $vars[] = 'audio_id';
     $vars[] = 'audio_title';
     return $vars;
