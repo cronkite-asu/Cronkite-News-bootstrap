@@ -912,11 +912,103 @@ function update_wpseo_meta_author_filter( $author_name, $presentation ){
   }
 
   $author_name = $authorName;
-  //$author_name = "Cronkite News";
 	return $author_name;
 }
 add_filter( 'wpseo_meta_author', 'update_wpseo_meta_author_filter', 10, 2 );
-add_filter( 'wpseo_meta_twitter_data1', 'update_wpseo_meta_author_filter', 10, 2 );
+
+add_filter( 'wpseo_enhanced_slack_data', function($data) {
+    $externalAuthorCount = 1;
+    $internalAuthorCount = 0;
+    $commaSeparator = ',';
+    $andSeparator = ' and ';
+    $cnStaffTotalCounter = 0;
+    $externalStaffTotalCounter = 0;
+    $authorName = '';
+
+    if (have_rows('byline_info', get_the_ID())) {
+        while (have_rows('byline_info', get_the_ID())) {
+            the_row();
+            $staffID = get_sub_field('cn_staff');
+            if ($staffID == '') {
+                $cnStaffTotalCounter = 0;
+            } else {
+                $cnStaffTotalCounter = count($staffID);
+            }
+
+            if (have_rows('external_authors_repeater')) {
+                while (have_rows('external_authors_repeater')) {
+                    the_row();
+                    $externalStaffTotalCounter++;
+                }
+            }
+        }
+    }
+
+    if ($cnStaffTotalCounter > 0) {
+        if (have_rows('byline_info', get_the_ID())) {
+            $sepCounter = 0;
+            while (have_rows('byline_info', get_the_ID())) {
+                the_row();
+                $staffID = get_sub_field('cn_staff');
+                $cnStaffCount = count((array)$staffID);
+                foreach ($staffID as $key => $val) {
+                    $args = [
+                        'post_type'   => 'students',
+                        'post_status' => 'publish',
+                        'p' => $val,
+                      ];
+
+                    $staffDetails = new WP_Query($args);
+                    if ($staffDetails->have_posts()) {
+                        while ($staffDetails->have_posts()) {
+                            $staffDetails->the_post();
+                            $sepCounter++;
+                            $authorName .= get_the_title($val);
+                            if ($sepCounter != $cnStaffCount) {
+                                if ($sepCounter == ($cnStaffCount - 1)) {
+                                    $authorName .= $andSeparator.' ';
+                                } else {
+                                    $authorName .= $commaSeparator.' ';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } elseif ($externalStaffTotalCounter > 0) {
+
+        if (have_rows('byline_info', get_the_ID())) {
+            $sepCounter = 0;
+            while (have_rows('byline_info', get_the_ID())) {
+                the_row();
+                if (have_rows('external_authors_repeater')) {
+                    if ($cnStaffTotalCounter > 0) {
+                        $authorName .= ' and ';
+                    }
+                    $sepCounter = 0;
+                    while (have_rows('external_authors_repeater')) {
+                        the_row();
+                        $sepCounter++;
+                        $authorName .= get_sub_field('external_authors');
+
+                        if ($sepCounter != $externalStaffTotalCounter) {
+                            if ($sepCounter == ($externalStaffTotalCounter - 1)) {
+                                $authorName .= $andSeparator.' ';
+                            } else {
+                                $authorName .= $commaSeparator.' ';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    $array = ["By" => $authorName];
+    return $array;
+});
+
 
 // custom post type for students
 function students_CPT()
