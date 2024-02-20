@@ -818,7 +818,7 @@ function wpcover_move_yoast() {
 add_filter('wpseo_metabox_prio', 'wpcover_move_yoast');
 
 // get byline
-function get_story_byline() {
+function get_story_byline($get_post_ID) {
   $externalAuthorCount = 1;
   $internalAuthorCount = 0;
   $commaSeparator = ',';
@@ -827,84 +827,86 @@ function get_story_byline() {
   $externalStaffTotalCounter = 0;
   $authorName = '';
 
-  if (have_rows('byline_info', get_the_ID())) {
-      while (have_rows('byline_info', get_the_ID())) {
-          the_row();
-          $staffID = get_sub_field('cn_staff');
-          if ($staffID == '') {
-              $cnStaffTotalCounter = 0;
-          } else {
-              $cnStaffTotalCounter = count($staffID);
-          }
+  if ($get_post_ID != '') {
+    if (have_rows('byline_info', $get_post_ID)) {
+        while (have_rows('byline_info', $get_post_ID)) {
+            the_row();
+            $staffID = get_sub_field('cn_staff');
+            if ($staffID == '') {
+                $cnStaffTotalCounter = 0;
+            } else {
+                $cnStaffTotalCounter = count($staffID);
+            }
 
-          if (have_rows('external_authors_repeater')) {
-              while (have_rows('external_authors_repeater')) {
-                  the_row();
-                  $externalStaffTotalCounter++;
-              }
-          }
-      }
-  }
+            if (have_rows('external_authors_repeater')) {
+                while (have_rows('external_authors_repeater')) {
+                    the_row();
+                    $externalStaffTotalCounter++;
+                }
+            }
+        }
+    }
 
-  if ($cnStaffTotalCounter > 0) {
-      if (have_rows('byline_info', get_the_ID())) {
-          $sepCounter = 0;
-          while (have_rows('byline_info', get_the_ID())) {
-              the_row();
-              $staffID = get_sub_field('cn_staff');
-              $cnStaffCount = count((array)$staffID);
-              foreach ($staffID as $key => $val) {
-                  $args = [
-                      'post_type'   => 'students',
-                      'post_status' => 'publish',
-                      'p' => $val,
-                    ];
+    if ($cnStaffTotalCounter > 0) {
+        if (have_rows('byline_info', $get_post_ID)) {
+            $sepCounter = 0;
+            while (have_rows('byline_info', $get_post_ID)) {
+                the_row();
+                $staffID = get_sub_field('cn_staff');
+                $cnStaffCount = count((array)$staffID);
+                foreach ($staffID as $key => $val) {
+                    $args = [
+                        'post_type'   => 'students',
+                        'post_status' => 'publish',
+                        'p' => $val,
+                      ];
 
-                  $staffDetails = new WP_Query($args);
-                  if ($staffDetails->have_posts()) {
-                      while ($staffDetails->have_posts()) {
-                          $staffDetails->the_post();
-                          $sepCounter++;
-                          $authorName .= get_the_title($val);
-                          if ($sepCounter != $cnStaffCount) {
-                              if ($sepCounter == ($cnStaffCount - 1)) {
-                                  $authorName .= $andSeparator.' ';
-                              } else {
-                                  $authorName .= $commaSeparator.' ';
-                              }
-                          }
-                      }
-                  }
-              }
-          }
-      }
-  } elseif ($externalStaffTotalCounter > 0) {
+                    $staffDetails = new WP_Query($args);
+                    if ($staffDetails->have_posts()) {
+                        while ($staffDetails->have_posts()) {
+                            $staffDetails->the_post();
+                            $sepCounter++;
+                            $authorName .= get_the_title($val);
+                            if ($sepCounter != $cnStaffCount) {
+                                if ($sepCounter == ($cnStaffCount - 1)) {
+                                    $authorName .= $andSeparator.' ';
+                                } else {
+                                    $authorName .= $commaSeparator.' ';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } elseif ($externalStaffTotalCounter > 0) {
 
-      if (have_rows('byline_info', get_the_ID())) {
-          $sepCounter = 0;
-          while (have_rows('byline_info', get_the_ID())) {
-              the_row();
-              if (have_rows('external_authors_repeater')) {
-                  if ($cnStaffTotalCounter > 0) {
-                      $authorName .= ' and ';
-                  }
-                  $sepCounter = 0;
-                  while (have_rows('external_authors_repeater')) {
-                      the_row();
-                      $sepCounter++;
-                      $authorName .= get_sub_field('external_authors');
+        if (have_rows('byline_info', $get_post_ID)) {
+            $sepCounter = 0;
+            while (have_rows('byline_info', $get_post_ID)) {
+                the_row();
+                if (have_rows('external_authors_repeater')) {
+                    if ($cnStaffTotalCounter > 0) {
+                        $authorName .= ' and ';
+                    }
+                    $sepCounter = 0;
+                    while (have_rows('external_authors_repeater')) {
+                        the_row();
+                        $sepCounter++;
+                        $authorName .= get_sub_field('external_authors');
 
-                      if ($sepCounter != $externalStaffTotalCounter) {
-                          if ($sepCounter == ($externalStaffTotalCounter - 1)) {
-                              $authorName .= $andSeparator.' ';
-                          } else {
-                              $authorName .= $commaSeparator.' ';
-                          }
-                      }
-                  }
-              }
-          }
-      }
+                        if ($sepCounter != $externalStaffTotalCounter) {
+                            if ($sepCounter == ($externalStaffTotalCounter - 1)) {
+                                $authorName .= $andSeparator.' ';
+                            } else {
+                                $authorName .= $commaSeparator.' ';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
   }
 
   return $authorName;
@@ -912,14 +914,14 @@ function get_story_byline() {
 
 // Update author to reflect byline
 function update_wpseo_meta_author_filter( $author_name, $presentation ){
-  $author_name = get_story_byline();
+  $author_name = get_story_byline(get_the_ID());
 	return $author_name;
 }
 add_filter( 'wpseo_meta_author', 'update_wpseo_meta_author_filter', 10, 2 );
 
 add_filter( 'wpseo_enhanced_slack_data', function($data) {
     wp_reset_query();
-    $author_name = get_story_byline();
+    $author_name = get_story_byline(get_the_ID());
     $array = ["By" => $author_name];
     return $array;
 });
