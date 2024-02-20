@@ -823,21 +823,9 @@ function wpcover_move_yoast()
 }
 add_filter('wpseo_metabox_prio', 'wpcover_move_yoast');
 
-add_filter( 'wpseo_meta_author', 'update_wpseo_meta_author_filter', 10, 2 );
-
+// Update author to reflect byline
 function update_wpseo_meta_author_filter( $author_name, $presentation ){
-  $author_name = "Cronkite News";
-	return $author_name;
-}
-
-/*add_filter( 'yoast_seo_development_mode', '__return_true' );
-//disable Yoast SEO @Person schema on posts
-add_filter( 'wpseo_schema_needs_author', '__return_false' );
-//change Yoast SEO article schema author to the organization
-add_filter( 'wpseo_schema_article', 'change_article_author' );
-
-function change_article_author( $data ) {
-  $externalAuthorCount = 1;
+  /*$externalAuthorCount = 1;
   $internalAuthorCount = 0;
   $commaSeparator = ',';
   $andSeparator = ' and ';
@@ -928,8 +916,13 @@ function change_article_author( $data ) {
 
 
   $data['author'] = get_the_id();
-  return $data;
-}*/
+  return $data;*/
+
+  $author_name = get_the_ID();
+  //$author_name = "Cronkite News";
+	return $author_name;
+}
+add_filter( 'wpseo_meta_author', 'update_wpseo_meta_author_filter', 10, 2 );
 
 // custom post type for students
 function students_CPT()
