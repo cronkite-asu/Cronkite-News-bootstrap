@@ -913,7 +913,7 @@ function update_wpseo_meta_author_filter( $author_name, $presentation ){
 
   $author_name = $authorName;
 
-  add_filter( 'wpseo_enhanced_slack_data', function($data) {
+  add_filter( 'wpseo_enhanced_slack_data', function($data, $author_name) {
       $array = ["By" => $author_name];
       return $array;
   });
