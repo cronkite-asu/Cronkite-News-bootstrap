@@ -912,10 +912,9 @@ function update_wpseo_meta_author_filter( $author_name, $presentation ){
           }
       }
   }
-  wp_reset_query();
 
 
-  $data['author'] = get_the_id();
+  $data['author'] = $authorName;
   return $data;
 
   //$author_name = "Cronkite News";
