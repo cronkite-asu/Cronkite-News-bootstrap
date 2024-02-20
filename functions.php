@@ -823,6 +823,13 @@ function wpcover_move_yoast()
 }
 add_filter('wpseo_metabox_prio', 'wpcover_move_yoast');
 
+add_filter( 'wpseo_meta_author', 'update_wpseo_meta_author_filter', 10, 2 );
+
+function update_wpseo_meta_author_filter( $author_name, $presentation ){
+  $author_name = "Cronkite News";
+	return $author_name;
+}
+
 /*add_filter( 'yoast_seo_development_mode', '__return_true' );
 //disable Yoast SEO @Person schema on posts
 add_filter( 'wpseo_schema_needs_author', '__return_false' );
