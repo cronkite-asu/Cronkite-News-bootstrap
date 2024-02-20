@@ -916,6 +916,7 @@ function update_wpseo_meta_author_filter( $author_name, $presentation ){
 	return $author_name;
 }
 add_filter( 'wpseo_meta_author', 'update_wpseo_meta_author_filter', 10, 2 );
+add_filter( 'wpseo_meta_twitter_data1', 'update_wpseo_meta_author_filter', 10, 2 );
 
 // custom post type for students
 function students_CPT()
