@@ -1005,7 +1005,7 @@ add_filter( 'wpseo_enhanced_slack_data', function($data) {
         }
     }
 
-    $array = ["By" => $authorName];
+    $array = ["By" => get_the_ID()];
     return $array;
 });
 
