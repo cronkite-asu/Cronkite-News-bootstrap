@@ -172,20 +172,19 @@ function getStoryAuthors($getPID)
     return $finalAuthors;
 }
 
-function hook_parselyJSON()
-{
-    if (is_page()) {
+function hook_parselyJSON() {
+    if (is_page() && !is_singular(array('students'))) {
         $pageType = 'WebPage';
         $headline = get_the_title(get_the_ID());
         $storyURL = addcslashes(get_the_permalink(get_the_ID()), '/');
         $imgURL = '';
         ?>
 
-    <!-- BEGIN Parsely JSON-LD -->
-    <meta name="wp-parsely_version" id="wp-parsely_version" content="2.2"/>
-    <script type="application/ld+json">
-      {"@context":"http:\/\/schema.org","@type":"<?php echo $pageType; ?>","headline":"<?php echo $headline; ?>","url":"<?php echo $storyURL; ?>"}
-    </script>
+      <!-- BEGIN Parsely JSON-LD -->
+      <meta name="wp-parsely_version" id="wp-parsely_version" content="2.2"/>
+      <script type="application/ld+json">
+        {"@context":"http:\/\/schema.org","@type":"<?php echo $pageType; ?>","headline":"<?php echo $headline; ?>","url":"<?php echo $storyURL; ?>"}
+      </script>
 
         <?php
     } elseif (is_single()) {
@@ -256,8 +255,7 @@ function hook_parselyJSON()
 }
 add_action('wp_head', 'hook_parselyJSON');
 
-function hook_parselyTrack()
-{
+function hook_parselyTrack() {
     ?>
   <!-- START Parse.ly Include: Standard -->
   <script data-cfasync="false" id="parsely-cfg" data-parsely-site="cronkitenews.azpbs.org" src="//cdn.parsely.com/keys/cronkitenews.azpbs.org/p.js"></script>
