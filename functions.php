@@ -173,7 +173,7 @@ function getStoryAuthors($getPID)
 }
 
 function hook_parselyJSON() {
-    if (is_page() || !is_singular(array('students'))) {
+    if (is_page()) {
         $pageType = 'WebPage';
         $headline = get_the_title(get_the_ID());
         $storyURL = addcslashes(get_the_permalink(get_the_ID()), '/');
@@ -913,6 +913,7 @@ function get_story_byline($get_post_ID) {
 // Update author to reflect byline
 function update_wpseo_meta_author_filter( $author_name, $presentation ){
   $author_name = get_story_byline(get_the_ID());
+  wp_reset_query();
 	return $author_name;
 }
 add_filter( 'wpseo_meta_author', 'update_wpseo_meta_author_filter', 10, 2 );
