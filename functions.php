@@ -173,7 +173,7 @@ function getStoryAuthors($getPID)
 }
 
 function hook_parselyJSON() {
-    if (is_page() && !is_singular(array('students'))) {
+    if (is_page() || !is_singular(array('students'))) {
         $pageType = 'WebPage';
         $headline = get_the_title(get_the_ID());
         $storyURL = addcslashes(get_the_permalink(get_the_ID()), '/');
