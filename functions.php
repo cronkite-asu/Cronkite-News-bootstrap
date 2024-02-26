@@ -173,6 +173,7 @@ function getStoryAuthors($getPID)
 }
 
 function hook_parselyJSON() {
+    wp_reset_query();
     if (is_page()) {
         $pageType = 'WebPage';
         $headline = get_the_title(get_the_ID());
