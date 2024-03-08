@@ -60,7 +60,7 @@
                      the_row();
                  }
              }
-             
+
      if (get_the_ID() == 165700) {
          $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
                              'arizona-public-media' => "https://www.azpm.org/",
@@ -150,6 +150,7 @@
                              'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
                              'special-to-cronkite-news' => "",
                              'stateline' => "https://stateline.org/",
+                             'The74' => "https://the74million.org/"
                             ];
      }
      $externalAuthorCount = 1;
