@@ -150,7 +150,7 @@
                              'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
                              'special-to-cronkite-news' => "",
                              'stateline' => "https://stateline.org/",
-                             'The74' => "https://the74million.org/"
+                             'The74' => "https://www.the74million.org/"
                             ];
      }
      $externalAuthorCount = 1;
