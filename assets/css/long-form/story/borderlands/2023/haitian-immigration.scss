@@ -78,7 +78,7 @@ body {
 
 .dominican-republic-story {
   h3 {
-    font-family: $athelasFontFamily;
-    color: $drColor;
+    font-family: $athelasFontFamily !important;
+    color: $drColor !important;
   }
 }
