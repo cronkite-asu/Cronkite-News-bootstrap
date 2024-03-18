@@ -88,5 +88,8 @@ body {
         color: $drColor !important;
       }
     }
+    p {
+      font-family: $dinFontFamily;
+    }
   }
 }
