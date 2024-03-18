@@ -8,6 +8,7 @@
             // get stories
             $storyList = get_sub_field('stories');
             if ($storyList) {
+              print_r($storyList);
                 foreach ($storyList as $story) {
                     $permalink = get_permalink($story->ID);
                     $title = get_the_title($story->ID);
