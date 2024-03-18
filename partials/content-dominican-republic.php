@@ -6,7 +6,7 @@
         the_row();
         if (get_row_layout() == 'stories') {
             // get stories
-            $storyList = get_sub_field('stories');
+            $storyList = get_sub_field('story');
             if ($storyList) {
               print_r($storyList);
                 foreach ($storyList as $story) {
