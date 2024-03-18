@@ -13,10 +13,10 @@
 body {
   background: #f8e9d6 !important; }
 
-.dominican-republic-story h3 {
+.dominican-republic-story .story-text h3 {
   font-family: athelas, serif !important;
   color: #8c1f0b !important; }
-  .dominican-republic-story h3 a {
+  .dominican-republic-story .story-text h3 a {
     color: #8c1f0b !important; }
 
 /*# sourceMappingURL=haitian-immigration.css.map */
