@@ -1,14 +1,8 @@
-.merriweather {
-  font-family: "Merriweather", serif; }
+.din {
+  font-family: din-condensed, sans-serif; }
 
-.montserrat {
-  font-family: "Montserrat", sans-serif; }
-
-.roboto {
-  font-family: "Roboto", sans-serif; }
-
-.taviraj {
-  font-family: "Taviraj", serif; }
+.athelas {
+  font-family: athelas, serif; }
 
 @keyframes fade-in-up {
   0% {
@@ -16,6 +10,9 @@
   100% {
     transform: translateY(0);
     opacity: 1; } }
+body {
+  background: #f8e9d6 !important; }
+
 #intro-head-photo-overlay .grid-padding-x > .cell.photo-style-e2e {
   position: relative; }
 
