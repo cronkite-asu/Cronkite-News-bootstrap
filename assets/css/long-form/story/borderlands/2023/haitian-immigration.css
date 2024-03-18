@@ -16,7 +16,9 @@ body {
 .dominican-republic-story .story-text h3 {
   font-family: athelas, serif !important;
   color: #8c1f0b !important;
-  font-weight: 700 !important; }
+  font-weight: 700 !important;
+  font-size: 2.25rem;
+  letter-spacing: -0.5px; }
   .dominican-republic-story .story-text h3 a {
     color: #8c1f0b !important; }
 
