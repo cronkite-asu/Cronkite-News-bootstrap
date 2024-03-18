@@ -6,6 +6,7 @@
         the_row();
         if (get_row_layout() == 'stories') {
           $columns = get_sub_field('columns');
+          $sectionPhoto = get_sub_field('section-photo');
           // get stories
           $storyList = get_sub_field('story');
 
@@ -32,6 +33,7 @@
                 $photoSmall = get_the_post_thumbnail($story->ID);
               ?>
                 <div class="<?php echo $columnType; ?> small-12 cell story-text">
+                  <img src="<?php echo $sectionPhoto; ?>" alt="" title="" />
                   <h3><a href="<?php echo get_permalink($story->ID); ?>"><?php echo get_the_title($story->ID); ?></a></h3>
                   <p><?php echo get_field('story_tease', $story->ID); ?></p>
                   <a href="<?php echo get_permalink($story->ID); ?>" class="button">Read More <i class="fa-regular fa-angle-right"></i></a>
