@@ -146,6 +146,11 @@
       <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/health.css">
     <?php } ?>
 
+    <?php if (is_page(226870)) { ?>
+      <link rel="stylesheet" href="https://use.typekit.net/eog2dgw.css">
+      <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/dominican-republic.css">
+    <?php } ?>
+
     <style type='text/css'>
           body.admin-bar {margin-top:32px !important}
           @media screen and (max-width: 782px) {

@@ -1,14 +1,7 @@
-$tavirajFontFamily: 'Taviraj', serif;
-$merriweatherFontFamily: 'Merriweather', serif;
-$montserratFontFamily: 'Montserrat', sans-serif;
-$merriweatherSanFontFamily: 'Merriweather Sans', sans-serif;
-$robotoFontFamily: 'Roboto', sans-serif;
-$vollkornFontFamily: 'Vollkorn', serif;
-$ebGaramondFontFamily: 'EB Garamond', serif;
-$baskervilleFontFamily: 'Libre Baskerville', serif;
-$secularOneFontFamily: 'Secular One', sans-serif;
-$newsCycleFontFamily: 'News Cycle', sans-serif;
-$oswaldFontFamily: 'Oswald', sans-serif;
+$dinFontFamily: 'Montserrat', sans-serif;
+$athelasFontFamily: athelas, serif;
+$dinFontFamily: din-condensed, sans-serif;
+
 
 $color: rgba(0,0,0,.08);
 $color2: rgba(0,0,0,.02);
@@ -25,20 +18,12 @@ $timing:.3s;
 $redAlert: #F31431;
 $caption: #6e6e6e;
 
-.merriweather {
-  font-family: $merriweatherFontFamily;
+.din {
+  font-family: $dinFontFamily;
 }
 
-.montserrat {
-  font-family: $montserratFontFamily;
-}
-
-.roboto {
-  font-family: $robotoFontFamily;
-}
-
-.taviraj {
-  font-family: $tavirajFontFamily;
+.athelas {
+  font-family: $athelasFontFamily;
 }
 
 @mixin single-story-category-hdr {
@@ -66,7 +51,7 @@ $caption: #6e6e6e;
 
 @mixin caption-text() {
   max-width: 800px;
-  font-family: $montserratFontFamily;
+  font-family: $dinFontFamily;
   font-size: 0.85rem;
   font-weight: 400;
   color: $caption;
@@ -76,7 +61,7 @@ $caption: #6e6e6e;
 }
 
 @mixin sidebar-header() {
-  font-family: $montserratFontFamily;
+  font-family: $dinFontFamily;
   font-size: calc(12.4px + 0.3vw);
   font-weight: 600;
   color: $black;
@@ -85,6 +70,11 @@ $caption: #6e6e6e;
   margin-bottom: 15px;
   text-transform: uppercase;
 }
+
+body {
+  background-color: #f8e9d6;
+}
+
 #intro-head-photo-overlay .grid-padding-x > .cell.photo-style-e2e {
   position: relative;
 }
