@@ -148,7 +148,7 @@
 
     <?php if (is_page(226870)) { ?>
       <link rel="stylesheet" href="https://use.typekit.net/eog2dgw.css">
-      <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/dominican-republic.css">
+      <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/long-form/story/borderlands/2023/haitian-immigration.css">
     <?php } ?>
 
     <style type='text/css'>
