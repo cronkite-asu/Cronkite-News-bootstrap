@@ -80,5 +80,8 @@ body {
   h3 {
     font-family: $athelasFontFamily !important;
     color: $drColor !important;
+    a {
+      color: $drColor !important;
+    }
   }
 }
