@@ -18,10 +18,13 @@ body {
   color: #8c1f0b !important;
   font-weight: 700 !important;
   font-size: 2.25rem;
-  letter-spacing: -0.5px; }
+  letter-spacing: -0.5px;
+  line-height: 2.5rem; }
   .dominican-republic-story .story-text h3 a {
     color: #8c1f0b !important; }
 .dominican-republic-story .story-text p {
-  font-family: din-condensed, sans-serif; }
+  font-family: din-condensed, sans-serif;
+  font-weight: 300;
+  font-size: 1.75rem; }
 
 /*# sourceMappingURL=haitian-immigration.css.map */
