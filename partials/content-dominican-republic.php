@@ -53,9 +53,34 @@
 ?>
           <div class="grid-container dominican-republic-story">
             <div class="grid-x">
+              <?php
+              if ($storyList) {
+                foreach ($storyList as $story) {
+                    $permalink = get_permalink($story->ID);
+                    $title = get_the_title($story->ID);
+                    $storyTease = get_field('story_tease', $story->ID);
+                    $photo = get_the_post_thumbnail_url($story->ID);
+                    $photoSmall = get_the_post_thumbnail($story->ID);
+              ?>
+                <div class="<?php echo $columnType; ?> small-12 cell story-text">
+                  <?php if ($sectionPhoto != '') { ?>
+                    <img src="<?php echo $sectionPhoto; ?>" alt="" title="" />
+                  <?php } else { ?>
+                    <img src="<?php echo $photo; ?>" alt="" title="" />
+                  <?php } ?>
+                </div>
+              <?php
+                }
+              }
+              ?>
+              </div>
+            </div>
 <?php
           }
-
+?>
+          <div class="grid-container dominican-republic-story">
+            <div class="grid-x">
+<?php
           if ($storyList) {
             foreach ($storyList as $story) {
                 $permalink = get_permalink($story->ID);
