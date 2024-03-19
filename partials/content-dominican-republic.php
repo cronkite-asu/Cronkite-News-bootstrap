@@ -124,19 +124,19 @@
 
 <script>
   // Haiti & Dominican Republic
-  TweenMax.set(".haiti-dr .scene2", {autoAlpha:0});
-  TweenMax.set(".haiti-dr .scene3 .crawl", {autoAlpha:0});
+  //TweenMax.set(".haiti-dr .scene2", {autoAlpha:0});
+  //TweenMax.set(".haiti-dr .scene3 .crawl", {autoAlpha:0});
 
   ScrollTrigger.create({
-    trigger: ".haiti-dr",
+    trigger: ".intro",
     start: "top top",
     end: "+=400px",
     pin: true
   });
 
-  gsap.to(".haiti-dr .map", {
+  gsap.to(".intro .haiti-dr .map", {
     scrollTrigger: {
-      trigger: ".haiti-dr",
+      trigger: ".intro",
       start: "top top",
       end: "+=400",
       scrub: true
