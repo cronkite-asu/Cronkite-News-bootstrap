@@ -22,11 +22,11 @@ body {
   background-size: cover; }
   .intro .haiti-dr .map, .intro .haiti-dr .intro-text {
     display: flex; }
-    .intro .haiti-dr .map .cell, .intro .haiti-dr .intro-text .cell {
+    .intro .haiti-dr .map.cell, .intro .haiti-dr .intro-text.cell {
       display: flex;
       align-items: center;
       justify-content: center; }
-      .intro .haiti-dr .map .cell img, .intro .haiti-dr .intro-text .cell img {
+      .intro .haiti-dr .map.cell img, .intro .haiti-dr .intro-text.cell img {
         width: 60%; }
 
 .dominican-republic-story.full {

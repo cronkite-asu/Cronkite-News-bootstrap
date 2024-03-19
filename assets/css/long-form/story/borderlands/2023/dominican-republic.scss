@@ -83,7 +83,7 @@ body {
     background-size: cover;
     .map, .intro-text {
       display: flex;
-      .cell {
+      &.cell {
         display: flex;
         align-items: center;
         justify-content: center;
