@@ -1,7 +1,7 @@
 <div class="grid-container full intro">
   <div class="grid-x map">
     <div class="large-12 small-12 cell animate__animated animate__fadeInUp">
-      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/03/map-w-capitals.png" />
+      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/03/Haiti-DR-w-capitals.png" />
     </div>
   </div>
 </div>
