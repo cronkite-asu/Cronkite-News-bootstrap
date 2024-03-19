@@ -77,11 +77,11 @@ body {
   border: 1px solid #ff0000;
   width: 100vw;
   height: 100vh;
+  background-image: url("https://cronkitenews.azpbs.org/wp-content/uploads/2024/03/haiti-dr-bg-intro.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   .haiti-dr {
     display: flex;
-    background-image: url("https://cronkitenews.azpbs.org/wp-content/uploads/2024/03/haiti-dr-bg-intro.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
     .map, .intro-text {
       display: flex;
       &.cell {
