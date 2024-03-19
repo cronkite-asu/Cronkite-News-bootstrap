@@ -1,0 +1,34 @@
+.gibsonFontFamily {
+  font-family: canada-type-gibson, sans-serif; }
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+body {
+  background: #f8e9d6 !important; }
+
+.dominican-republic-story.full {
+  margin: 15px 0px; }
+.dominican-republic-story .story-text h3 {
+  font-family: canada-type-gibson, sans-serif !important;
+  color: #8c1f0b !important;
+  font-weight: 600 !important;
+  font-style: normal;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  padding: 25px 15px 0px 15px; }
+  .dominican-republic-story .story-text h3 a {
+    color: #8c1f0b !important; }
+    .dominican-republic-story .story-text h3 a:hover {
+      color: #000 !important; }
+.dominican-republic-story .story-text p {
+  font-family: neuzeit-grotesk, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.125rem;
+  padding: 10px 15px 0px 15px; }
+
+/*# sourceMappingURL=dominican-republic.css.map */
