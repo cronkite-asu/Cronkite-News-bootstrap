@@ -1,7 +1,5 @@
-$dinFontFamily: 'Montserrat', sans-serif;
-$athelasFontFamily: athelas, serif;
-$dinFontFamily: din-condensed, sans-serif;
-
+$gibsonFontFamily: canada-type-gibson, sans-serif;
+$neuzeitFontFamily: neuzeit-grotesk, sans-serif;
 
 $color: rgba(0,0,0,.08);
 $color2: rgba(0,0,0,.02);
@@ -19,12 +17,8 @@ $redAlert: #F31431;
 $caption: #6e6e6e;
 $drColor: #8c1f0b;
 
-.din {
-  font-family: $dinFontFamily;
-}
-
-.athelas {
-  font-family: $athelasFontFamily;
+.gibsonFontFamily {
+  font-family: $gibsonFontFamily;
 }
 
 @mixin single-story-category-hdr {
@@ -52,7 +46,7 @@ $drColor: #8c1f0b;
 
 @mixin caption-text() {
   max-width: 800px;
-  font-family: $dinFontFamily;
+  font-family: $gibsonFontFamily;
   font-size: 0.85rem;
   font-weight: 400;
   color: $caption;
@@ -62,7 +56,7 @@ $drColor: #8c1f0b;
 }
 
 @mixin sidebar-header() {
-  font-family: $dinFontFamily;
+  font-family: $gibsonFontFamily;
   font-size: calc(12.4px + 0.3vw);
   font-weight: 600;
   color: $black;
@@ -79,9 +73,10 @@ body {
 .dominican-republic-story {
   .story-text {
     h3 {
-      font-family: $athelasFontFamily !important;
+      font-family: $gibsonFontFamily !important;
       color: $drColor !important;
       font-weight: 700 !important;
+      font-style: normal;
       font-size: 2.25rem;
       letter-spacing: -0.5px;
       line-height: 2.5rem;
@@ -91,8 +86,9 @@ body {
       }
     }
     p {
-      font-family: $dinFontFamily;
+      font-family: $neuzeitFontFamily;
       font-weight: 300;
+      font-style: normal;
       font-size: 1.25rem;
       padding: 10px 15px 0px 15px;
     }

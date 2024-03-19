@@ -1,8 +1,5 @@
-.din {
-  font-family: din-condensed, sans-serif; }
-
-.athelas {
-  font-family: athelas, serif; }
+.gibsonFontFamily {
+  font-family: canada-type-gibson, sans-serif; }
 
 @keyframes fade-in-up {
   0% {
@@ -14,9 +11,10 @@ body {
   background: #f8e9d6 !important; }
 
 .dominican-republic-story .story-text h3 {
-  font-family: athelas, serif !important;
+  font-family: canada-type-gibson, sans-serif !important;
   color: #8c1f0b !important;
   font-weight: 700 !important;
+  font-style: normal;
   font-size: 2.25rem;
   letter-spacing: -0.5px;
   line-height: 2.5rem;
@@ -24,8 +22,9 @@ body {
   .dominican-republic-story .story-text h3 a {
     color: #8c1f0b !important; }
 .dominican-republic-story .story-text p {
-  font-family: din-condensed, sans-serif;
+  font-family: neuzeit-grotesk, sans-serif;
   font-weight: 300;
+  font-style: normal;
   font-size: 1.25rem;
   padding: 10px 15px 0px 15px; }
 
