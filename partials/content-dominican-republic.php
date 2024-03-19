@@ -136,7 +136,7 @@
     pin: true
   });
 
-  gsap.to(".intro .haiti-dr .map", {
+  gsap.to(".intro .map", {
     scrollTrigger: {
       trigger: ".intro",
       start: "top top",
@@ -145,7 +145,7 @@
     },
     opacity: 0,
     onComplete: function() {
-        TweenMax.set(".haiti-dr .scene2", {autoAlpha:1});
+        TweenMax.set(".haiti-dr .intro-text", {autoAlpha:1});
         /*TweenMax.set(".haiti-dr .scroll-down", {autoAlpha:0});
 
         gsap.to(".haiti-dr .scene2 .haiti-dr-headline", {
