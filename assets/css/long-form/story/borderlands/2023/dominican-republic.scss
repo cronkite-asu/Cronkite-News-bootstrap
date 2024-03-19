@@ -74,6 +74,9 @@ body {
   &.full {
     margin:15px 0px;
   }
+  &.first {
+    margin: 0px;
+  }
   .story-text {
     h3 {
       font-family: $gibsonFontFamily !important;

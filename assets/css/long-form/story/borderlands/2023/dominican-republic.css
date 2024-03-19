@@ -12,6 +12,8 @@ body {
 
 .dominican-republic-story.full {
   margin: 15px 0px; }
+.dominican-republic-story.first {
+  margin: 0px; }
 .dominican-republic-story .story-text h3 {
   font-family: canada-type-gibson, sans-serif !important;
   color: #8c1f0b !important;

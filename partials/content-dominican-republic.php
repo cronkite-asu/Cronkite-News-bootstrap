@@ -2,6 +2,7 @@
 
   // get dominican republic content
   if (have_rows('content')) {
+    $counter = 0;
     while (have_rows('content')) {
         the_row();
         if (get_row_layout() == 'stories') {
@@ -22,8 +23,13 @@
           }
 
           if ($columns == 'one-col') {
+            if ($counter == 0) {
+              $class = '.first';
+            } else {
+              $class = '';
+            }
 ?>
-          <div class="grid-container full dominican-republic-story">
+          <div class="grid-container full dominican-republic-story <?php echo $class; ?>">
             <div class="grid-x">
             <?php
             if ($storyList) {
@@ -102,5 +108,6 @@
 <?php
         }
       }
+      $counter++;
     }
 ?>
