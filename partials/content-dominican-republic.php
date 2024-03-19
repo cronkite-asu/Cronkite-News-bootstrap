@@ -1,5 +1,12 @@
-<?php
+<div class="grid-container full intro">
+  <div class="grid-x">
+    <div class="large-12 small-12 cell animate__animated animate__fadeInUp">
+      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/03/map-w-capitals.png" />
+    </div>
+  </div>
+</div>
 
+<?php
   // get dominican republic content
   if (have_rows('content')) {
     $counter = 0;

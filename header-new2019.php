@@ -148,6 +148,8 @@
 
     <?php if (is_page(226870)) { ?>
       <link rel="stylesheet" href="https://use.typekit.net/eog2dgw.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css">
       <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/long-form/story/borderlands/2023/dominican-republic.css">
     <?php } ?>
 

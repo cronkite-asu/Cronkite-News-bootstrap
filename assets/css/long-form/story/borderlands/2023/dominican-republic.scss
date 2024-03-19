@@ -70,6 +70,15 @@ body {
   background: #f8e9d6 !important;
 }
 
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ff0000;
+  width: 100vw;
+  height: 50vh;
+}
+
 .dominican-republic-story {
   &.full {
     margin:15px 0px;
