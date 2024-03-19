@@ -5,6 +5,7 @@
         <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/03/Haiti-DR-w-capitals.png" />
       </div>
       <div class="large-12 small-12 cell animate__animated animate__fadeInUp intro-text">
+        <h1>An Island Divided: Haiti & The Dominican Republic</h1>
         <p>For decades, residents of Haiti have sought work, peace, and stability in neighboring Dominican Republic.  This trend has increased as Haiti faces unprecedented political, economic, and environmental challenges. In response, the Dominican government is building a new border wall, cracking down on immigration, revoking the rights of some citizens, and deporting record numbers of people.  The government says it needs to control its borders and look after its own people, many of whom live in poverty. Meanwhile people of Haitian descent living in the Dominican Republic feel targeted, afraid, and exploited.  Our project covers the stories, hopes and dreams of the people who share an island home, but are divided by physical and philosophical borders.</p>
       </div>
     </section>
