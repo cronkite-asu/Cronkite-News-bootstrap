@@ -20,10 +20,19 @@
           } else if ($columns == 'four-col') {
             $columnType = '';
           }
+
+          if ($columns == 'one-col') {
+?>
+          <div class="grid-container full dominican-republic-story">
+            <div class="grid-x">
+<?php
+          } else {
 ?>
           <div class="grid-container dominican-republic-story">
             <div class="grid-x">
 <?php
+          }
+          
           if ($storyList) {
             foreach ($storyList as $story) {
                 $permalink = get_permalink($story->ID);
@@ -39,7 +48,7 @@
                     <img src="<?php echo $photo; ?>" alt="" title="" />
                   <?php } ?>
                   <h3><a href="<?php echo get_permalink($story->ID); ?>"><?php echo get_the_title($story->ID); ?></a></h3>
-                  <p><?php echo get_field('story_tease', $story->ID); ?></p>                  
+                  <p><?php echo get_field('story_tease', $story->ID); ?></p>
                 </div>
               <?php
             }
