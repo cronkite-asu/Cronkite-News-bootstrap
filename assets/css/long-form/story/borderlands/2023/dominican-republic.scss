@@ -80,7 +80,7 @@ body {
   background-image: url("https://cronkitenews.azpbs.org/wp-content/uploads/2024/03/haiti-dr-bg-intro.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  .map {
+  .map, .intro-text {
     display: flex;
     .cell {
       display: flex;

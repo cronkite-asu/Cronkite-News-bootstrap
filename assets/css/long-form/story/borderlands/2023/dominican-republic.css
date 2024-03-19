@@ -20,13 +20,13 @@ body {
   background-image: url("https://cronkitenews.azpbs.org/wp-content/uploads/2024/03/haiti-dr-bg-intro.jpg");
   background-repeat: no-repeat;
   background-size: cover; }
-  .intro .map {
+  .intro .map, .intro .intro-text {
     display: flex; }
-    .intro .map .cell {
+    .intro .map .cell, .intro .intro-text .cell {
       display: flex;
       align-items: center;
       justify-content: center; }
-      .intro .map .cell img {
+      .intro .map .cell img, .intro .intro-text .cell img {
         width: 60%; }
 
 .dominican-republic-story.full {
