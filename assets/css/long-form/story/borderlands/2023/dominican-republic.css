@@ -17,6 +17,8 @@ body {
   border: 1px solid #ff0000;
   width: 100vw;
   height: 50vh; }
+  .intro .map img {
+    width: 60%; }
 
 .dominican-republic-story.full {
   margin: 15px 0px; }
