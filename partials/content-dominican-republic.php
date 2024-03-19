@@ -52,7 +52,7 @@
           } else {
 ?>
           <div class="grid-container dominican-republic-story">
-            <div class="grid-x">
+            <div class="grid-x grid-margin-x">
               <?php
               if ($storyList) {
                 foreach ($storyList as $story) {
