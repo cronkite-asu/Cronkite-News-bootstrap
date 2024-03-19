@@ -10,7 +10,7 @@
 body {
   background: #f8e9d6 !important; }
 
-.intro {
+.intro .haiti-dr {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,13 +20,13 @@ body {
   background-image: url("https://cronkitenews.azpbs.org/wp-content/uploads/2024/03/haiti-dr-bg-intro.jpg");
   background-repeat: no-repeat;
   background-size: cover; }
-  .intro .map, .intro .intro-text {
+  .intro .haiti-dr .map, .intro .haiti-dr .intro-text {
     display: flex; }
-    .intro .map .cell, .intro .intro-text .cell {
+    .intro .haiti-dr .map .cell, .intro .haiti-dr .intro-text .cell {
       display: flex;
       align-items: center;
       justify-content: center; }
-      .intro .map .cell img, .intro .intro-text .cell img {
+      .intro .haiti-dr .map .cell img, .intro .haiti-dr .intro-text .cell img {
         width: 60%; }
 
 .dominican-republic-story.full {
