@@ -77,9 +77,11 @@
             </div>
 <?php
           }
+
+          if ($columns == 'two-col' || $columns == 'three-col' || $columns == 'four-col') {
 ?>
           <div class="grid-container dominican-republic-story">
-            <div class="grid-x">
+            <div class="grid-x grid-margin-x">
 <?php
           if ($storyList) {
             foreach ($storyList as $story) {
@@ -93,13 +95,14 @@
                   <h3><a href="<?php echo get_permalink($story->ID); ?>"><?php echo get_the_title($story->ID); ?></a></h3>
                   <p><?php echo get_field('story_tease', $story->ID); ?></p>
                 </div>
-              <?php
+          <?php
+              }
             }
-          }
-?>
+          ?>
           </div>
         </div>
 <?php
+          }
         }
       }
     }
