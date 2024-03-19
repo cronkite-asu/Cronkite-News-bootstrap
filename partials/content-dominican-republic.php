@@ -24,7 +24,7 @@
 
           if ($columns == 'one-col') {
             if ($counter == 0) {
-              $class = '.first';
+              $class = 'first';
             } else {
               $class = '';
             }
