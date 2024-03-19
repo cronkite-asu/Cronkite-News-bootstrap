@@ -127,7 +127,7 @@
 
 <script>
   // Haiti & Dominican Republic
-  TweenMax.set(".haiti-dr .intro-text", {autoAlpha:0});
+  TweenMax.set(".haiti-dr .intro-text", {autoAlpha:1});
   //TweenMax.set(".haiti-dr .scene3 .crawl", {autoAlpha:0});
 
   ScrollTrigger.create({
