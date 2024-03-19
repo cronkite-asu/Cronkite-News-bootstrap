@@ -1,5 +1,14 @@
-$gibsonFontFamily: canada-type-gibson, sans-serif;
-$neuzeitFontFamily: neuzeit-grotesk, sans-serif;
+$tavirajFontFamily: 'Taviraj', serif;
+$merriweatherFontFamily: 'Merriweather', serif;
+$montserratFontFamily: 'Montserrat', sans-serif;
+$merriweatherSanFontFamily: 'Merriweather Sans', sans-serif;
+$robotoFontFamily: 'Roboto', sans-serif;
+$vollkornFontFamily: 'Vollkorn', serif;
+$ebGaramondFontFamily: 'EB Garamond', serif;
+$baskervilleFontFamily: 'Libre Baskerville', serif;
+$secularOneFontFamily: 'Secular One', sans-serif;
+$newsCycleFontFamily: 'News Cycle', sans-serif;
+$oswaldFontFamily: 'Oswald', sans-serif;
 
 $color: rgba(0,0,0,.08);
 $color2: rgba(0,0,0,.02);
@@ -15,10 +24,21 @@ $colorSelect:#3694d7;
 $timing:.3s;
 $redAlert: #F31431;
 $caption: #6e6e6e;
-$drColor: #8c1f0b;
 
-.gibsonFontFamily {
-  font-family: $gibsonFontFamily;
+.merriweather {
+  font-family: $merriweatherFontFamily;
+}
+
+.montserrat {
+  font-family: $montserratFontFamily;
+}
+
+.roboto {
+  font-family: $robotoFontFamily;
+}
+
+.taviraj {
+  font-family: $tavirajFontFamily;
 }
 
 @mixin single-story-category-hdr {
@@ -46,7 +66,7 @@ $drColor: #8c1f0b;
 
 @mixin caption-text() {
   max-width: 800px;
-  font-family: $gibsonFontFamily;
+  font-family: $montserratFontFamily;
   font-size: 0.85rem;
   font-weight: 400;
   color: $caption;
@@ -56,7 +76,7 @@ $drColor: #8c1f0b;
 }
 
 @mixin sidebar-header() {
-  font-family: $gibsonFontFamily;
+  font-family: $montserratFontFamily;
   font-size: calc(12.4px + 0.3vw);
   font-weight: 600;
   color: $black;
@@ -65,37 +85,140 @@ $drColor: #8c1f0b;
   margin-bottom: 15px;
   text-transform: uppercase;
 }
-
-body {
-  background: #f8e9d6 !important;
+#intro-head-photo-overlay .grid-padding-x > .cell.photo-style-e2e {
+  position: relative;
 }
 
-.dominican-republic-story {
-  &.full {
-    margin:15px 0px;
-  }
-  .story-text {
-    h3 {
-      font-family: $gibsonFontFamily !important;
-      color: $drColor !important;
-      font-weight: 600 !important;
-      font-style: normal;
-      font-size: 2.25rem;
-      line-height: 2.5rem;
-      padding: 25px 15px 0px 15px;
-      a {
-        color: $drColor !important;
-        &:hover {
-          color: $black !important;
+#intro-head-photo-overlay .intro-text {
+  background-image: linear-gradient(to bottom, transparent, #000);
+  @media only screen
+    and (max-width: 660px) {
+      background-image: none;
+    }
+}
+
+#intro-head-photo-overlay .intro-text.absolute {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+#intro-head-photo-overlay .intro-text p {
+  /*position: absolute;
+  bottom: 0;
+  left: 0;*/
+  max-width: 660px;
+  width: 100%;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+#intro-head-photo-overlay .intro-text h1 {
+  /*position: absolute;
+  bottom: 0;
+  left: 0;*/
+  max-width: 800px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 2.25rem !important;
+  line-height: 3.25rem;
+  margin-top: 16px;
+  margin-bottom: 0px;
+  padding: 4rem 0 1rem 0;
+  color: #ffffff;
+  @media only screen
+    and (max-width: 660px) {
+      color: $black;
+      font-size: 1.9rem !important;
+      line-height: 2.75rem;
+      padding: 0rem;
+      margin:0;
+    }
+}
+
+#intro-head-photo-overlay .photo-credit {
+  text-align: center;
+  @media only screen
+    and (max-width: 660px) {
+      text-align: left;
+    }
+}
+
+.text-content {
+  @media only screen
+    and (max-width: 660px) {
+      .wp-caption {
+        &.alignright {
+          max-width: 100% !important;
+          img {
+            max-width: 100% !important;
+          }
         }
       }
+  }
+}
+
+.alignright {
+  float: right;
+  max-width:600px !important;
+  margin-top:10px;
+  margin-right: -200px;
+  padding-left: 25px;
+  padding-bottom:15px;
+  @media only screen
+    and (max-width: 660px) {
+      max-width: 100%;
+      margin-top:0;
+  }
+  img {
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    max-width: 600px !important;
+    @media only screen
+      and (max-width: 660px) {
+        float:none;
+        max-width: 100%;
     }
-    p {
-      font-family: $neuzeitFontFamily;
-      font-weight: 300;
-      font-style: normal;
-      font-size: 1.125rem;
-      padding: 10px 15px 0px 15px;
+  }
+  a {
+    color: #757575;
+    border-bottom: 1px solid #757575;
+    @include attr-transition1(border);
+    &:hover {
+      border:none;
     }
+  }
+  &.rect {
+    iframe {
+      width:400px;
+      height: 225px;
+      box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    }
+  }
+  &.square {
+    iframe {
+      width:400px;
+      height: 400px;
+      box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    }
+  }
+  .wp-caption-text {
+    max-width: 100%;
+  }
+  @media only screen
+    and (max-width: 1080px) {
+      margin-right: -10%;
+  }
+  @media only screen
+    and (max-width: 900px) {
+      margin-right: -8%;
+  }
+  @media only screen
+    and (max-width: 860px) {
+      float:none;
+      margin-right:0;
+      margin:40px auto;
+      padding: 0;
   }
 }

@@ -1,0 +1,101 @@
+$gibsonFontFamily: canada-type-gibson, sans-serif;
+$neuzeitFontFamily: neuzeit-grotesk, sans-serif;
+
+$color: rgba(0,0,0,.08);
+$color2: rgba(0,0,0,.02);
+$cnBlue: #003594;
+$white: #ffffff;
+$black: #000;
+$grey: #D8D8D8;
+$footerHdr: #878792;
+$borderGrey: #F2F2F2;
+$transparency100: rgba(0, 53, 148, 1);
+$transparency75: rgba(0, 53, 148, 0.75);
+$colorSelect:#3694d7;
+$timing:.3s;
+$redAlert: #F31431;
+$caption: #6e6e6e;
+$drColor: #8c1f0b;
+
+.gibsonFontFamily {
+  font-family: $gibsonFontFamily;
+}
+
+@mixin single-story-category-hdr {
+  max-width: 1160px;
+  font-weight: 600;
+  font-size: calc(16.4px + 1.55vw);
+  margin-top:18px;
+  @media only screen
+    and (max-width: 660px) {
+      font-size: calc(16.4px + 2.5vw);
+  }
+}
+
+@mixin attr-transition1 ($attr) {
+  -webkit-transition: $attr 0.25s;
+  -moz-transition: $attr 0.25s;
+  -o-transition: $attr 0.25s;
+  transition: $attr 0.25s;
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@mixin caption-text() {
+  max-width: 800px;
+  font-family: $gibsonFontFamily;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: $caption;
+  padding-top: 10px;
+  letter-spacing: 0;
+  line-height: 1.2rem;
+}
+
+@mixin sidebar-header() {
+  font-family: $gibsonFontFamily;
+  font-size: calc(12.4px + 0.3vw);
+  font-weight: 600;
+  color: $black;
+  border-left: 4px solid $cnBlue;
+  padding-left:15px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+body {
+  background: #f8e9d6 !important;
+}
+
+.dominican-republic-story {
+  &.full {
+    margin:15px 0px;
+  }
+  .story-text {
+    h3 {
+      font-family: $gibsonFontFamily !important;
+      color: $drColor !important;
+      font-weight: 600 !important;
+      font-style: normal;
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+      padding: 25px 15px 0px 15px;
+      a {
+        color: $drColor !important;
+        &:hover {
+          color: $black !important;
+        }
+      }
+    }
+    p {
+      font-family: $neuzeitFontFamily;
+      font-weight: 300;
+      font-style: normal;
+      font-size: 1.125rem;
+      padding: 10px 15px 0px 15px;
+    }
+  }
+}
