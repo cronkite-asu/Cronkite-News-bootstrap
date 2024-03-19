@@ -18,11 +18,13 @@ body {
   width: 100vw;
   height: 100vh; }
   .intro .map {
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    .intro .map img {
-      width: 60%; }
+    display: flex; }
+    .intro .map .cell {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .intro .map .cell img {
+        width: 60%; }
 
 .dominican-republic-story.full {
   margin: 15px 0px; }
