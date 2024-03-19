@@ -77,8 +77,6 @@
             </div>
 <?php
           }
-
-          if ($columns == 'two-col' || $columns == 'three-col' || $columns == 'four-col') {
 ?>
           <div class="grid-container dominican-republic-story">
             <div class="grid-x grid-margin-x">
@@ -102,7 +100,6 @@
           </div>
         </div>
 <?php
-          }
         }
       }
     }
