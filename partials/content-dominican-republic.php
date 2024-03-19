@@ -130,7 +130,7 @@
   ScrollTrigger.create({
     trigger: ".intro",
     start: "top top",
-    end: "+=400px",
+    end: "+=2200px",
     pin: true
   });
 
