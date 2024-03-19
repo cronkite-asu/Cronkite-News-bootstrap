@@ -40,7 +40,7 @@
                   $photo = get_the_post_thumbnail_url($story->ID);
                   $photoSmall = get_the_post_thumbnail($story->ID);
             ?>
-              <div class="<?php echo $columnType; ?> small-12 cell story-text">
+              <div class="<?php echo $columnType; ?> small-12 cell">
                 <?php if ($sectionPhoto != '') { ?>
                   <img src="<?php echo $sectionPhoto; ?>" alt="" title="" />
                 <?php } else { ?>
