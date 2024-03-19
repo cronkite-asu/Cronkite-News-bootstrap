@@ -82,6 +82,9 @@ body {
       padding: 25px 15px 0px 15px;
       a {
         color: $drColor !important;
+        &:hover {
+          color: $black !important;
+        }
       }
     }
     p {

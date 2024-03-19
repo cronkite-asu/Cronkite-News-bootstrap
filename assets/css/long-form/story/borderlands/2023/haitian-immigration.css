@@ -20,6 +20,8 @@ body {
   padding: 25px 15px 0px 15px; }
   .dominican-republic-story .story-text h3 a {
     color: #8c1f0b !important; }
+    .dominican-republic-story .story-text h3 a:hover {
+      color: #000 !important; }
 .dominican-republic-story .story-text p {
   font-family: neuzeit-grotesk, sans-serif;
   font-weight: 300;
