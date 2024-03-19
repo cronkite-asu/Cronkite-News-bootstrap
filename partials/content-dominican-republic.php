@@ -25,6 +25,29 @@
 ?>
           <div class="grid-container full dominican-republic-story">
             <div class="grid-x">
+            <?php
+            if ($storyList) {
+              foreach ($storyList as $story) {
+                  $permalink = get_permalink($story->ID);
+                  $title = get_the_title($story->ID);
+                  $storyTease = get_field('story_tease', $story->ID);
+                  $photo = get_the_post_thumbnail_url($story->ID);
+                  $photoSmall = get_the_post_thumbnail($story->ID);
+            ?>
+              <div class="<?php echo $columnType; ?> small-12 cell story-text">
+                <?php if ($sectionPhoto != '') { ?>
+                  <img src="<?php echo $sectionPhoto; ?>" alt="" title="" />
+                <?php } else { ?>
+                  <img src="<?php echo $photo; ?>" alt="" title="" />
+                <?php } ?>
+              </div>
+            <?php
+              }
+            }
+            ?>
+            </div>
+          </div>
+
 <?php
           } else {
 ?>
@@ -32,7 +55,7 @@
             <div class="grid-x">
 <?php
           }
-          
+
           if ($storyList) {
             foreach ($storyList as $story) {
                 $permalink = get_permalink($story->ID);
@@ -42,11 +65,6 @@
                 $photoSmall = get_the_post_thumbnail($story->ID);
               ?>
                 <div class="<?php echo $columnType; ?> small-12 cell story-text">
-                  <?php if ($sectionPhoto != '') { ?>
-                    <img src="<?php echo $sectionPhoto; ?>" alt="" title="" />
-                  <?php } else { ?>
-                    <img src="<?php echo $photo; ?>" alt="" title="" />
-                  <?php } ?>
                   <h3><a href="<?php echo get_permalink($story->ID); ?>"><?php echo get_the_title($story->ID); ?></a></h3>
                   <p><?php echo get_field('story_tease', $story->ID); ?></p>
                 </div>
