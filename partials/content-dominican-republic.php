@@ -144,7 +144,7 @@
       pin: true
     });
 
-    gsap.to(".haiti-dr .scene1 .map", {
+    gsap.to(".haiti-dr .scene1", {
       scrollTrigger: {
         trigger: ".haiti-dr",
         start: "top top",
