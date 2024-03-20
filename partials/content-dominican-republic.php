@@ -3,7 +3,9 @@
     <div class="large-12 cell">
       <section class="haiti-dr">
         <div class="scene1 animate__animated animate__fadeInUp">
-          <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/03/Haiti-DR-w-capitals.png" />
+          <div class="map">
+            <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/03/Haiti-DR-w-capitals.png" />
+          </div>
         </div>
         <div class="scene2">
           <div class="intro-text">
@@ -152,7 +154,7 @@
       opacity: 0,
       onComplete: function() {
           TweenMax.set(".haiti-dr .scene2", {autoAlpha:1});
-          TweenMax.set(".star-wars .scroll-down", {autoAlpha:0});
+          TweenMax.set(".haiti-dr .scroll-down", {autoAlpha:0});
 
           gsap.to(".haiti-dr .scene2 .intro-text", {
             scrollTrigger: {
@@ -163,8 +165,7 @@
               onLeaveBack: () => {
                 TweenMax.set(".haiti-dr .scene2", {autoAlpha:0});
               }
-            },
-            scale: 0
+            }
           });
         }
       });
