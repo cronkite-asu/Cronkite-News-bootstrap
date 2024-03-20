@@ -137,7 +137,7 @@
     pin: true
   });
 
-  gsap.to(".intro .map img", {
+  gsap.to(".intro .map", {
     scrollTrigger: {
       trigger: ".intro",
       start: "top top",
