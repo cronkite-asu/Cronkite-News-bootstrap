@@ -153,18 +153,16 @@
       },
       opacity: 0,
       onComplete: function() {
-          //TweenMax.set(".haiti-dr .scene2", {autoAlpha:1});
-          TweenMax.set(".haiti-dr .scroll-down", {autoAlpha:0});
-
-          gsap.to(".haiti-dr .scene2", {
+          //TweenMax.set(".haiti-dr .scene2", {autoAlpha:1});    
+          gsap.to(".haiti-dr .scene2 .intro-text", {
             scrollTrigger: {
               trigger: ".haiti-dr .scene2",
               start: "20% top",
               end: "+=700",
-              scrub: true,
-              onLeaveBack: () => {
+              scrub: true
+              /*onLeaveBack: () => {
                 TweenMax.set(".haiti-dr .scene2", {autoAlpha:0});
-              }
+              }*/
             },
             top: -2600,
             opacity: 1
