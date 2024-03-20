@@ -153,8 +153,7 @@
       },
       opacity: 0,
       onComplete: function() {
-          TweenMax.set(".haiti-dr .scene1", {autoAlpha:0});
-          TweenMax.set(".haiti-dr .scene2", {autoAlpha:1});
+          //TweenMax.set(".haiti-dr .scene2", {autoAlpha:1});
           TweenMax.set(".haiti-dr .scroll-down", {autoAlpha:0});
 
           gsap.to(".haiti-dr .scene2", {
@@ -166,7 +165,8 @@
               onLeaveBack: () => {
                 TweenMax.set(".haiti-dr .scene2", {autoAlpha:0});
               }
-            }
+            },
+            opacity: 1
           });
         }
       });
