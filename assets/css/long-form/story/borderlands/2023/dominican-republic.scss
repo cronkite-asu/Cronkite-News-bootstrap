@@ -92,7 +92,18 @@ body {
         width: 60%;
       }
       h1 {
-        border: 1px solid #ff0000;
+        font-family: $gibsonFontFamily !important;
+        color: $drColor !important;
+        font-weight: 600 !important;
+        font-style: normal;
+        font-size: 2rem;
+        line-height: 2.25rem;
+      }
+      p {
+        font-family: $neuzeitFontFamily;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.25rem;
       }
     }
   }

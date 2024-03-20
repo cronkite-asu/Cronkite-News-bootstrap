@@ -31,7 +31,17 @@ body {
       .intro .haiti-dr .map img, .intro .haiti-dr .intro-text img {
         width: 60%; }
       .intro .haiti-dr .map h1, .intro .haiti-dr .intro-text h1 {
-        border: 1px solid #ff0000; }
+        font-family: canada-type-gibson, sans-serif !important;
+        color: #8c1f0b !important;
+        font-weight: 600 !important;
+        font-style: normal;
+        font-size: 2rem;
+        line-height: 2.25rem; }
+      .intro .haiti-dr .map p, .intro .haiti-dr .intro-text p {
+        font-family: neuzeit-grotesk, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.25rem; }
 
 .dominican-republic-story.full {
   margin: 15px 0px; }
