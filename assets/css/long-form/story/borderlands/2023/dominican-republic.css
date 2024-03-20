@@ -21,14 +21,16 @@ body {
   background-repeat: no-repeat;
   background-size: cover; }
   .intro .haiti-dr {
-    display: flex; }
+    display: flex;
+    flex-direction: column; }
     .intro .haiti-dr .map, .intro .haiti-dr .intro-text {
       position: absolute;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      border: 1px solid #ff0000; }
+      border: 1px solid #ff0000;
+      width: 100vw; }
       .intro .haiti-dr .map img, .intro .haiti-dr .intro-text img {
         width: 60%; }
       .intro .haiti-dr .map h1, .intro .haiti-dr .intro-text h1 {

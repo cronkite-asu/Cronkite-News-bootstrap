@@ -82,6 +82,7 @@ body {
   background-size: cover;
   .haiti-dr {
     display: flex;
+    flex-direction: column;
     .map, .intro-text {
       position: absolute;
       display: flex;
@@ -89,6 +90,7 @@ body {
       justify-content: center;
       flex-direction: column;
       border: 1px solid #ff0000;
+      width: 100vw;
       img {
         width: 60%;
       }
