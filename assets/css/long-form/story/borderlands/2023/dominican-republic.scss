@@ -84,21 +84,16 @@ body {
     display: flex;
     .map, .intro-text {
       display: flex;
-      &.cell {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        img {
-          width: 60%;
-        }
-        h1 {
-          border: 1px solid #ff0000;
-        }
-      }
-    }
-    .intro-text {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       border: 1px solid #ff0000;
+      img {
+        width: 60%;
+      }
+      h1 {
+        border: 1px solid #ff0000;
+      }
     }
   }
 }
