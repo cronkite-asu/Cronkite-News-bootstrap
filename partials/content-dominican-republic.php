@@ -146,7 +146,7 @@
     },
     opacity: 0,
     onComplete: function() {
-        TweenMax.set(".haiti-dr .intro-text", {autoAlpha:1});
+        TweenMax.set(".intro .intro-text", {autoAlpha:1});
         /*TweenMax.set(".haiti-dr .scroll-down", {autoAlpha:0});
 
         gsap.to(".haiti-dr .scene2 .haiti-dr-headline", {
@@ -163,19 +163,6 @@
           onComplete: function () {
             TweenMax.set(".haiti-dr .scene3 .crawl", {autoAlpha:1});
 
-            gsap.to(".haiti-dr .scene3 .crawl", {
-              scrollTrigger: {
-                trigger: ".haiti-dr .scene3",
-                start: "20% top",
-                end: "+=500",
-                scrub: true,
-                onLeaveBack: () => {
-                  TweenMax.set(".haiti-dr .scene3 .crawl", {autoAlpha:0});
-                }
-              },
-              top: -2600,
-              opacity: 1
-            });
           }
         });*/
       }
