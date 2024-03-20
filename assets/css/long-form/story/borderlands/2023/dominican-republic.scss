@@ -102,6 +102,20 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    h1 {
+      font-family: $gibsonFontFamily !important;
+      color: $drColor !important;
+      font-weight: 600 !important;
+      font-style: normal;
+      font-size: 2.5rem;
+      line-height: 2.25rem;
+    }
+    p {
+      font-family: $neuzeitFontFamily;
+      font-weight: 300;
+      font-style: normal;
+      font-size: 1.25rem;
+    }
   }
   /*.haiti-dr {
     display: flex;
