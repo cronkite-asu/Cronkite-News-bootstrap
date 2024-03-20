@@ -5,9 +5,11 @@
         <div class="scene1 animate__animated animate__fadeInUp">
           <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/03/Haiti-DR-w-capitals.png" />
         </div>
-        <div class="scene2" style="border: 1px solid #ff0000;">
-          <h1>An Island Divided: Haiti & The Dominican Republic</h1>
-          <p>For decades, residents of Haiti have sought work, peace, and stability in neighboring Dominican Republic.  This trend has increased as Haiti faces unprecedented political, economic, and environmental challenges. In response, the Dominican government is building a new border wall, cracking down on immigration, revoking the rights of some citizens, and deporting record numbers of people.  The government says it needs to control its borders and look after its own people, many of whom live in poverty. Meanwhile people of Haitian descent living in the Dominican Republic feel targeted, afraid, and exploited.  Our project covers the stories, hopes and dreams of the people who share an island home, but are divided by physical and philosophical borders.</p>
+        <div class="scene2">
+          <div class="intro-text">
+            <h1>An Island Divided: Haiti & The Dominican Republic</h1>
+            <p>For decades, residents of Haiti have sought work, peace, and stability in neighboring Dominican Republic.  This trend has increased as Haiti faces unprecedented political, economic, and environmental challenges. In response, the Dominican government is building a new border wall, cracking down on immigration, revoking the rights of some citizens, and deporting record numbers of people.  The government says it needs to control its borders and look after its own people, many of whom live in poverty. Meanwhile people of Haitian descent living in the Dominican Republic feel targeted, afraid, and exploited.  Our project covers the stories, hopes and dreams of the people who share an island home, but are divided by physical and philosophical borders.</p>
+          </div>
         </div>
         <div class="scroll-down" style="text-align:center;font-size:1rem;">SCROLL DOWN</div>
       </section>
@@ -129,28 +131,41 @@
 ?>
 
 <script>
-  // Haiti & Dominican Republic
-  TweenMax.set(".intro .intro-text", {autoAlpha:0});
-  //TweenMax.set(".haiti-dr .scene3 .crawl", {autoAlpha:0});
+    // star wars
+    TweenMax.set(".star-wars .scene2", {autoAlpha:0});
+    //TweenMax.set(".star-wars .scene3 .crawl", {autoAlpha:0});
 
-  ScrollTrigger.create({
-    trigger: ".intro",
-    start: "top top",
-    end: "+=2200px",
-    pin: true
-  });
-
-  gsap.to(".intro .map", {
-    scrollTrigger: {
-      trigger: ".intro",
+    ScrollTrigger.create({
+      trigger: ".haiti-dr",
       start: "top top",
-      end: "+=1000",
-      scrub: true
-    },
-    opacity: 0,
-    onComplete: function() {
-        TweenMax.set(".intro .intro-text", {autoAlpha:1});
+      end: "+=2200px",
+      pin: true
+    });
 
-      }
-   });
+    gsap.to(".haiti-dr .scene1", {
+      scrollTrigger: {
+        trigger: ".haiti-dr",
+        start: "top top",
+        end: "+=1000",
+        scrub: true
+      },
+      opacity: 0,
+      onComplete: function() {
+          TweenMax.set(".haiti-dr .scene2", {autoAlpha:1});
+          TweenMax.set(".star-wars .scroll-down", {autoAlpha:0});
+
+          gsap.to(".haiti-dr .scene2 .star-wars-headline", {
+            scrollTrigger: {
+              trigger: ".star-wars .scene2",
+              start: "20% top",
+              end: "+=700",
+              scrub: true,
+              onLeaveBack: () => {
+                TweenMax.set(".star-wars .scene2", {autoAlpha:0});
+              }
+            },
+            scale: 0
+          });
+        }
+      });
 </script>
