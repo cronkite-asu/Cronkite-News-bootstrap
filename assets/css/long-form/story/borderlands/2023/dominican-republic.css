@@ -24,7 +24,6 @@ body {
     display: flex;
     flex-direction: column; }
     .intro .haiti-dr .map, .intro .haiti-dr .intro-text {
-      position: absolute;
       display: flex;
       align-items: center;
       justify-content: center;
