@@ -23,6 +23,7 @@ body {
   .intro .haiti-dr {
     display: flex; }
     .intro .haiti-dr .map, .intro .haiti-dr .intro-text {
+      position: absolute;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -42,6 +43,8 @@ body {
         font-weight: 300;
         font-style: normal;
         font-size: 1.25rem; }
+    .intro .haiti-dr .intro-text {
+      opacity: 0 !important; }
 
 .dominican-republic-story.full {
   margin: 15px 0px; }
