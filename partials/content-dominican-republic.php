@@ -144,7 +144,7 @@
       pin: true
     });
 
-    gsap.to(".haiti-dr .scene1", {
+    gsap.to(".haiti-dr .scene1 .map", {
       scrollTrigger: {
         trigger: ".haiti-dr",
         start: "top top",
@@ -164,7 +164,7 @@
               end: "+=700",
               scrub: true,
               onLeaveBack: () => {
-                TweenMax.set(".haiti-dr .scene2 .intro-text", {autoAlpha:0});
+                TweenMax.set(".haiti-dr .scene2", {autoAlpha:0});
               }
             }
           });
