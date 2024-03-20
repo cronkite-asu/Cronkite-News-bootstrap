@@ -154,14 +154,14 @@
           TweenMax.set(".haiti-dr .scene2", {autoAlpha:1});
           TweenMax.set(".star-wars .scroll-down", {autoAlpha:0});
 
-          gsap.to(".haiti-dr .scene2 .star-wars-headline", {
+          gsap.to(".haiti-dr .scene2 .intro-text", {
             scrollTrigger: {
-              trigger: ".star-wars .scene2",
+              trigger: ".haiti-dr .scene2",
               start: "20% top",
               end: "+=700",
               scrub: true,
               onLeaveBack: () => {
-                TweenMax.set(".star-wars .scene2", {autoAlpha:0});
+                TweenMax.set(".haiti-dr .scene2", {autoAlpha:0});
               }
             },
             scale: 0
