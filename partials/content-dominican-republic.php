@@ -166,6 +166,7 @@
                 TweenMax.set(".haiti-dr .scene2", {autoAlpha:0});
               }
             },
+            top: -2600,
             opacity: 1
           });
         }

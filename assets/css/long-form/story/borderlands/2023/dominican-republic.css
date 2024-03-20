@@ -61,8 +61,12 @@ body {
     position: absolute;
     align-items: center;
     justify-content: center; }
-    .haiti-dr .scene1 img {
-      width: 60%; }
+    .haiti-dr .scene1 .map {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .haiti-dr .scene1 .map img {
+        width: 60%; }
   .haiti-dr .scene2 {
     display: flex;
     min-height: 100%;
@@ -72,6 +76,10 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column; }
+    .haiti-dr .scene2 .intro-text {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
     .haiti-dr .scene2 h1 {
       font-family: canada-type-gibson, sans-serif !important;
       color: #8c1f0b !important;
