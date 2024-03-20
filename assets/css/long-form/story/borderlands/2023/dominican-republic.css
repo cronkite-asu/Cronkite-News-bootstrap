@@ -10,7 +10,7 @@
 body {
   background: #f8e9d6 !important; }
 
-.intro {
+.haiti-dr {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -54,14 +54,16 @@ body {
       opacity: 0 !important;
     }
   }*/ }
-  .intro .scene1 {
+  .haiti-dr .scene1 {
     display: flex;
     min-height: 100%;
     width: 100%;
     position: absolute;
     align-items: center;
     justify-content: center; }
-  .intro .scene2 {
+    .haiti-dr .scene1 img {
+      width: 60%; }
+  .haiti-dr .scene2 {
     display: flex;
     min-height: 100%;
     width: 100%;

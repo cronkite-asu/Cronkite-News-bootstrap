@@ -70,7 +70,7 @@ body {
   background: #f8e9d6 !important;
 }
 
-.intro {
+.haiti-dr {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -89,6 +89,9 @@ body {
     position: absolute;
     align-items: center;
     justify-content: center;
+    img {
+      width: 60%;
+    }
   }
   .scene2 {
     display: flex;
