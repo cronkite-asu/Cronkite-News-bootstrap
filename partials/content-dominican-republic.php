@@ -127,17 +127,17 @@
 
 <script>
   // Haiti & Dominican Republic
-  //TweenMax.set(".intro .intro-text", {autoAlpha:0});
+  TweenMax.set(".intro .intro-text", {autoAlpha:0});
   //TweenMax.set(".haiti-dr .scene3 .crawl", {autoAlpha:0});
 
-  /*ScrollTrigger.create({
+  ScrollTrigger.create({
     trigger: ".intro",
     start: "top top",
     end: "+=2200px",
     pin: true
-  });*/
+  });
 
-  /*gsap.to(".intro .map img", {
+  gsap.to(".intro .map img", {
     scrollTrigger: {
       trigger: ".intro",
       start: "top top",
@@ -149,5 +149,5 @@
         TweenMax.set(".intro .intro-text", {autoAlpha:1});
 
       }
-    });*/
+   });
 </script>
