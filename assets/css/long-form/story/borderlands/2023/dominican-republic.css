@@ -32,6 +32,8 @@ body {
           width: 60%; }
         .intro .haiti-dr .map.cell h1, .intro .haiti-dr .intro-text.cell h1 {
           border: 1px solid #ff0000; }
+    .intro .haiti-dr .intro-text {
+      border: 1px solid #ff0000; }
 
 .dominican-republic-story.full {
   margin: 15px 0px; }
