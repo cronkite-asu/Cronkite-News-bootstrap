@@ -27,7 +27,8 @@ body {
       .intro .haiti-dr .map.cell, .intro .haiti-dr .intro-text.cell {
         display: flex;
         align-items: center;
-        justify-content: center; }
+        justify-content: center;
+        flex-direction: column; }
         .intro .haiti-dr .map.cell img, .intro .haiti-dr .intro-text.cell img {
           width: 60%; }
         .intro .haiti-dr .map.cell h1, .intro .haiti-dr .intro-text.cell h1 {
