@@ -134,8 +134,8 @@
 
 <script>
     // star wars
-    TweenMax.set(".haiti-dr .scene2 .intro-text", {autoAlpha:0});
-    //TweenMax.set(".star-wars .scene3 .crawl", {autoAlpha:0});
+    TweenMax.set(".haiti-dr .scene2", {autoAlpha:0});
+    TweenMax.set(".haiti-dr .scroll-down", {autoAlpha:0});
 
     ScrollTrigger.create({
       trigger: ".haiti-dr",
@@ -153,6 +153,7 @@
       },
       opacity: 0,
       onComplete: function() {
+          TweenMax.set(".haiti-dr .scene1", {autoAlpha:0});
           TweenMax.set(".haiti-dr .scene2", {autoAlpha:1});
           TweenMax.set(".haiti-dr .scroll-down", {autoAlpha:0});
 
