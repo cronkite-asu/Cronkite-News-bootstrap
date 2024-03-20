@@ -13,39 +13,63 @@ body {
 .intro {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
+  position: relative;
   border: 1px solid #ff0000;
   width: 100vw;
   height: 100vh;
   background-image: url("https://cronkitenews.azpbs.org/wp-content/uploads/2024/03/haiti-dr-bg-intro.jpg");
   background-repeat: no-repeat;
-  background-size: cover; }
-  .intro .haiti-dr {
+  background-size: cover;
+  /*.haiti-dr {
     display: flex;
-    flex-direction: column; }
-    .intro .haiti-dr .map, .intro .haiti-dr .intro-text {
+    flex-direction: column;
+    .map, .intro-text {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       border: 1px solid #ff0000;
-      width: 100vw; }
-      .intro .haiti-dr .map img, .intro .haiti-dr .intro-text img {
-        width: 60%; }
-      .intro .haiti-dr .map h1, .intro .haiti-dr .intro-text h1 {
-        font-family: canada-type-gibson, sans-serif !important;
-        color: #8c1f0b !important;
+      width: 100vw;
+      img {
+        width: 60%;
+      }
+      h1 {
+        font-family: $gibsonFontFamily !important;
+        color: $drColor !important;
         font-weight: 600 !important;
         font-style: normal;
         font-size: 2.5rem;
-        line-height: 2.25rem; }
-      .intro .haiti-dr .map p, .intro .haiti-dr .intro-text p {
-        font-family: neuzeit-grotesk, sans-serif;
+        line-height: 2.25rem;
+      }
+      p {
+        font-family: $neuzeitFontFamily;
         font-weight: 300;
         font-style: normal;
-        font-size: 1.25rem; }
-    .intro .haiti-dr .intro-text {
-      opacity: 0 !important; }
+        font-size: 1.25rem;
+      }
+    }
+    .intro-text {
+      opacity: 0 !important;
+    }
+  }*/ }
+  .intro .scene1 {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center; }
+  .intro .scene2 {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
 
 .dominican-republic-story.full {
   margin: 15px 0px; }
