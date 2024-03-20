@@ -153,10 +153,10 @@
       },
       opacity: 0,
       onComplete: function() {
-          //TweenMax.set(".haiti-dr .scene2", {autoAlpha:1});    
+          //TweenMax.set(".haiti-dr .scene2", {autoAlpha:1});
           gsap.to(".haiti-dr .scene2 .intro-text", {
             scrollTrigger: {
-              trigger: ".haiti-dr .scene2",
+              trigger: ".haiti-dr",
               start: "20% top",
               end: "+=700",
               scrub: true
