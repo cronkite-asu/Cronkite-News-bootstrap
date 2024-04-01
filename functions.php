@@ -1214,8 +1214,7 @@ function add_audio_story_var($vars){
 add_rewrite_rule('^audio/story/([^/]+)/([^/]+)/?$', 'index.php?page_id=175279&audio_id=$matches[1]&audio_title=$matches[2]', 'top');
 
 // change tags label to keywords
-function change_tax_object_label()
-{
+function change_tax_object_label() {
     global $wp_taxonomies;
     $labels = &$wp_taxonomies['post_tag']->labels;
     $labels->name = __('Keywords', 'framework');
@@ -1232,5 +1231,23 @@ function change_tax_object_label()
     $labels->new_item_name = __('Your New Keywords Name', 'framework');
 }
 add_action('init', 'change_tax_object_label');
+
+function change_user_publish_capabilities() {
+  $author = get_role( 'editor' );
+  /*'edit_posts',
+  'edit_published_posts',
+  'publish_posts',
+  'delete_posts',
+  'delete_published_posts',*/
+  $caps = array (
+      'publish_posts'
+  );
+
+  foreach ( $caps as $cap ) {
+    $author->remove_cap( $cap );
+  }
+}
+
+add_action('admin_init', 'change_user_publish_capabilities');
 
 ?>
