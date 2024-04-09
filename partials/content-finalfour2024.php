@@ -1,7 +1,7 @@
 <div class="grid-container intro">
   <div class="grid-x">
     <div class="large-12 medium-12 small-12 cell superbowl-header">
-      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2023/11/2024_MFF_Logo_Color-1.svg" alt="Final Four 2024" title="Final Four 2024" /><h1 class="text-center"><?php echo get_the_title(); ?></h1>
+      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2023/11/2024_MFF_Logo_Color-1.svg" class="final-four-logo" alt="Final Four 2024" title="Final Four 2024" /><h1 class="text-center"><?php echo get_the_title(); ?></h1>
     </div>
   </div>
 </div>
