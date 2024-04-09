@@ -10,28 +10,28 @@
   @media only screen and (max-width: 800px) {
     .grid-container.intro {
       margin-bottom: 10px; } }
-  .grid-container.intro .superbowl-header, .grid-container.intro .world-series {
+  .grid-container.intro .superbowl-header, .grid-container.intro .world-series, .grid-container.intro .final-four-2024 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 25px 0 0 0; }
     @media only screen and (max-width: 1200px) {
-      .grid-container.intro .superbowl-header, .grid-container.intro .world-series {
+      .grid-container.intro .superbowl-header, .grid-container.intro .world-series, .grid-container.intro .final-four-2024 {
         flex-direction: column; } }
     @media only screen and (max-width: 800px) {
-      .grid-container.intro .superbowl-header, .grid-container.intro .world-series {
+      .grid-container.intro .superbowl-header, .grid-container.intro .world-series, .grid-container.intro .final-four-2024 {
         flex-direction: column; } }
-    .grid-container.intro .superbowl-header .superbowl-logo, .grid-container.intro .world-series .superbowl-logo {
+    .grid-container.intro .superbowl-header .superbowl-logo, .grid-container.intro .world-series .superbowl-logo, .grid-container.intro .final-four-2024 .superbowl-logo {
       display: flex;
       max-width: 12%; }
       @media only screen and (max-width: 1200px) {
-        .grid-container.intro .superbowl-header .superbowl-logo, .grid-container.intro .world-series .superbowl-logo {
+        .grid-container.intro .superbowl-header .superbowl-logo, .grid-container.intro .world-series .superbowl-logo, .grid-container.intro .final-four-2024 .superbowl-logo {
           max-width: 15%; } }
       @media only screen and (max-width: 800px) {
-        .grid-container.intro .superbowl-header .superbowl-logo, .grid-container.intro .world-series .superbowl-logo {
+        .grid-container.intro .superbowl-header .superbowl-logo, .grid-container.intro .world-series .superbowl-logo, .grid-container.intro .final-four-2024 .superbowl-logo {
           max-width: 50%; } }
-    .grid-container.intro .superbowl-header h1, .grid-container.intro .world-series h1 {
+    .grid-container.intro .superbowl-header h1, .grid-container.intro .world-series h1, .grid-container.intro .final-four-2024 h1 {
       display: flex;
       font-family: "Alata", sans-serif;
       font-size: 5rem;
@@ -41,17 +41,26 @@
       margin-left: 40px;
       margin-top: 40px; }
       @media only screen and (max-width: 1200px) {
-        .grid-container.intro .superbowl-header h1, .grid-container.intro .world-series h1 {
+        .grid-container.intro .superbowl-header h1, .grid-container.intro .world-series h1, .grid-container.intro .final-four-2024 h1 {
           font-size: 3.5rem;
           line-height: 4.5rem;
           margin-top: 10px;
           margin-left: 0px; } }
       @media only screen and (max-width: 800px) {
-        .grid-container.intro .superbowl-header h1, .grid-container.intro .world-series h1 {
+        .grid-container.intro .superbowl-header h1, .grid-container.intro .world-series h1, .grid-container.intro .final-four-2024 h1 {
           font-size: 3rem;
           line-height: 4rem;
           margin-left: 0px;
           margin-top: 20px; } }
+  .grid-container.intro .final-four-logo {
+    display: flex;
+    max-width: 12%; }
+    @media only screen and (max-width: 1200px) {
+      .grid-container.intro .final-four-logo {
+        max-width: 15%; } }
+    @media only screen and (max-width: 800px) {
+      .grid-container.intro .final-four-logo {
+        max-width: 50%; } }
   @media only screen and (max-width: 800px) {
     .grid-container.intro .world-series {
       margin-bottom: 15px; } }
