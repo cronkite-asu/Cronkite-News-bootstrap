@@ -1,7 +1,7 @@
 <div class="grid-container intro">
   <div class="grid-x">
     <div class="large-12 medium-12 small-12 cell superbowl-header">
-      <h1 class="text-center"><?php echo get_the_title(); ?></h1>
+      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2023/11/2024_MFF_Logo_Color-1.svg" alt="Final Four 2024" title="Final Four 2024" /><h1 class="text-center"><?php echo get_the_title(); ?></h1>
     </div>
   </div>
 </div>
@@ -10,16 +10,16 @@
   // save main story ID
   $latestStoriesArray = [];
 
-  // get super bowl content
-  if (have_rows('super_bowl_content')) {
-      while (have_rows('super_bowl_content')) {
+  // get final four content
+  if (have_rows('final-four-content')) {
+      while (have_rows('final-four-content')) {
           the_row();
           if (get_row_layout() == 'stories-list') {
               // get stories
               $mainStoryCounter = 1;
               $counter = 0;
               $storyList = get_sub_field('stories');
-              ?>
+?>
       <div class="grid-container content">
         <div class="grid-x">
           <div class="large-5 medium-5 small-12 cell story-text">
@@ -111,7 +111,7 @@
   }
 ?>
 
-<!-- all super bowl stories -->
+<!-- all final four stories -->
 <div class="grid-container stories">
   <div class="grid-x">
     <div class="large-12 medium-12 small-12 cell">

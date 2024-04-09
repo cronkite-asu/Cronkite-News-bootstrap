@@ -134,7 +134,7 @@
       <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/long-form/story/borderlands/2022/tapachula.css">
     <?php } ?>
 
-    <?php if (is_page(206436)) { ?>
+    <?php if (is_page(206436) || is_page(229799)) { ?>
       <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/superbowl2023.css">
     <?php } ?>
 
