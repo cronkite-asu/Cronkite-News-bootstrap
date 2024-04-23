@@ -54,10 +54,10 @@
           margin-top: 20px; } }
   .grid-container.intro .final-four-logo {
     display: flex;
-    max-width: 10%; }
+    max-width: 8%; }
     @media only screen and (max-width: 1200px) {
       .grid-container.intro .final-four-logo {
-        max-width: 15%; } }
+        max-width: 12%; } }
     @media only screen and (max-width: 800px) {
       .grid-container.intro .final-four-logo {
         max-width: 50%; } }

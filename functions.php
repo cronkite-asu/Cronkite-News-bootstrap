@@ -1232,22 +1232,4 @@ function change_tax_object_label() {
 }
 add_action('init', 'change_tax_object_label');
 
-function change_user_publish_capabilities() {
-  $author = get_role( 'editor' );
-  /*'edit_posts',
-  'edit_published_posts',
-  'publish_posts',
-  'delete_posts',
-  'delete_published_posts',*/
-  $caps = array (
-      'publish_posts'
-  );
-
-  foreach ( $caps as $cap ) {
-    $author->remove_cap( $cap );
-  }
-}
-
-add_action('admin_init', 'change_user_publish_capabilities');
-
 ?>
