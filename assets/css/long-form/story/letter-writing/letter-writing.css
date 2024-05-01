@@ -31,13 +31,19 @@
     @media only screen and (max-width: 660px) {
       #fullscreen-video .intro-text h1 {
         font-size: 2rem;
-        line-height: 2.5rem; } }
+        line-height: 2.5rem;
+        color: #000; } }
 
 #fullscreen-video .intro-text p {
   font-size: 1rem !important;
   font-weight: 400 !important;
   line-height: 1.75rem;
   letter-spacing: 0.025rem; }
+  @media only screen and (max-width: 660px) {
+    #fullscreen-video .intro-text p {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      color: #000; } }
 
 .fact-box-right {
   float: right;

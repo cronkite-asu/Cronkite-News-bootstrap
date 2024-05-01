@@ -103,6 +103,7 @@ $caption: #6e6e6e;
         and (max-width: 660px) {
           font-size: 2rem;
           line-height: 2.5rem;
+          color:$black;
       }
     }
   }
@@ -113,6 +114,12 @@ $caption: #6e6e6e;
   font-weight: 400 !important;
   line-height: 1.75rem;
   letter-spacing: 0.025rem;
+  @media only screen
+    and (max-width: 660px) {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      color:$black;
+  }
 }
 
 .fact-box-right {
