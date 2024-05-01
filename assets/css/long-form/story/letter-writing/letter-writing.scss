@@ -104,6 +104,7 @@ $caption: #6e6e6e;
           font-size: 2rem;
           line-height: 2.5rem;
           color:$black !important;
+          text-shadow: none;
       }
     }
   }
@@ -117,8 +118,9 @@ $caption: #6e6e6e;
   @media only screen
     and (max-width: 660px) {
       font-size: 2rem;
-      line-height: 2.5rem;
+      line-height: 2rem;
       color:$black !important;
+      text-shadow: none;
   }
 }
 
