@@ -32,7 +32,7 @@
       #fullscreen-video .intro-text h1 {
         font-size: 2rem;
         line-height: 2.5rem;
-        color: #000; } }
+        color: #000 !important; } }
 
 #fullscreen-video .intro-text p {
   font-size: 1rem !important;
@@ -43,7 +43,7 @@
     #fullscreen-video .intro-text p {
       font-size: 2rem;
       line-height: 2.5rem;
-      color: #000; } }
+      color: #000 !important; } }
 
 .fact-box-right {
   float: right;
