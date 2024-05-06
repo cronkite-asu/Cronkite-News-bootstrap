@@ -85,6 +85,17 @@ $caption: #6e6e6e;
   margin-bottom: 15px;
   text-transform: uppercase;
 }
+#intro-head-photo-overlay .grid-padding-x > .cell.photo-style-e2e {
+  position: relative;
+}
+
+#intro-head-photo-overlay .intro-text {
+  background-image: linear-gradient(to bottom, transparent, #000);
+  @media only screen
+    and (max-width: 660px) {
+      background-image: none;
+    }
+}
 
 #intro-head-photo-overlay .intro-text.absolute {
     position: absolute;
