@@ -119,17 +119,19 @@
       margin: 40px auto;
       padding: 0; } }
 
-.pinned-overlay-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 500px;
-  z-index: 10000;
-  border: 1px solid #ff0000; }
+.first-scroll-section .text-center {
+  position: relative; }
+  .first-scroll-section .text-center .pinned-overlay-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    z-index: 10000;
+    border: 1px solid #ff0000; }
 
 .text-content h2 {
   font-family: neuzeit-grotesk, sans-serif;
