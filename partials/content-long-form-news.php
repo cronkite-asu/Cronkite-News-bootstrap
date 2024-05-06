@@ -1087,7 +1087,7 @@ if (have_rows('blocks')) {
           $blockID = '';
       }
 ?>
-        <div class="grid-container photo-content full single <?php echo $photoWidth; ?> <?php echo $blockID; ?>">
+        <div class="grid-container photo-content show-for-medium full single <?php echo $photoWidth; ?> <?php echo $blockID; ?>">
           <div class="grid-x grid-padding-x">
             <?php
                 $captionCounter = 0;
@@ -1105,6 +1105,40 @@ if (have_rows('blocks')) {
       						</div>
       			<?php } ?>
             <?php } ?>
+          </div>
+        </div>
+
+        <div class="grid-container photo-content show-for-small-only full single <?php echo $photoWidth; ?>">
+          <div class="grid-x grid-padding-x">
+            <?php
+                $captionCounter = 0;
+                if (have_rows('photos')) {
+                    while (have_rows('photos')) {
+                        the_row();
+            ?>
+      						<div class="large-12 medium-12 small-12 cell text-center">
+      						    <img src="<?php echo get_sub_field('photo'); ?>" <?php echo $removeShadow; ?>  />
+      						</div>
+      			<?php } ?>
+            <?php } ?>
+          </div>
+        </div>
+
+        <div class="grid-container text-content <?php echo $textWidth; ?>">
+          <div class="grid-x grid-padding-x">
+            <div class="large-12 cell">
+              <?php
+                  $captionCounter = 0;
+                  if (have_rows('photos')) {
+                    while (have_rows('photos')) {
+                        the_row();
+                        if (get_sub_field('caption') != '') {
+                          echo '<p>'.get_sub_field('caption').'</p>';
+                        }
+                    }
+                  }
+              ?>
+            </div>
           </div>
         </div>
 
