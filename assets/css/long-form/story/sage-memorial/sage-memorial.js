@@ -5,7 +5,7 @@ $(document).foundation(),$(document).ready(function(){
   ScrollTrigger.create({
     trigger: ".first-scroll-section",
     start: "top top",
-    end: "+=1200px",
+    end: "+=1600px",
     pin: true
   });
 
