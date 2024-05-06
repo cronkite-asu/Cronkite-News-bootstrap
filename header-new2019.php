@@ -91,8 +91,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.typekit.net/eog2dgw.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
     <link href="<?php bloginfo('template_directory');?>/assets/css/hamburgers.css" rel="stylesheet">
