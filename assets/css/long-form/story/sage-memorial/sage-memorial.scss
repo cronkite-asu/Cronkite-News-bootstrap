@@ -105,9 +105,6 @@ $caption: #6e6e6e;
 }
 
 #intro-head-photo-overlay .intro-text p {
-  /*position: absolute;
-  bottom: 0;
-  left: 0;*/
   max-width: 660px;
   width: 100%;
   color: #ffffff;
@@ -116,9 +113,7 @@ $caption: #6e6e6e;
 }
 
 #intro-head-photo-overlay .intro-text h1 {
-  /*position: absolute;
-  bottom: 0;
-  left: 0;*/
+  font-family: neuzeit-grotesk, sans-serif;
   max-width: 800px;
   width: 100%;
   font-weight: 600;
@@ -224,8 +219,9 @@ $caption: #6e6e6e;
 }
 
 .text-content h2 {
-  font-family:neuzeit-grotesk, sans-serif;  
+  font-family:neuzeit-grotesk, sans-serif;
+  font-size: 2rem;
   font-weight: 900;
-  line-height: 3.5rem;
+  line-height: 3rem;
   color: $black;
 }

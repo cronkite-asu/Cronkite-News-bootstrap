@@ -32,9 +32,6 @@
   left: 0; }
 
 #intro-head-photo-overlay .intro-text p {
-  /*position: absolute;
-  bottom: 0;
-  left: 0;*/
   max-width: 660px;
   width: 100%;
   color: #ffffff;
@@ -42,9 +39,7 @@
   line-height: 2rem; }
 
 #intro-head-photo-overlay .intro-text h1 {
-  /*position: absolute;
-  bottom: 0;
-  left: 0;*/
+  font-family: neuzeit-grotesk, sans-serif;
   max-width: 800px;
   width: 100%;
   font-weight: 600;
@@ -126,8 +121,9 @@
 
 .text-content h2 {
   font-family: neuzeit-grotesk, sans-serif;
+  font-size: 2rem;
   font-weight: 900;
-  line-height: 3.5rem;
+  line-height: 3rem;
   color: #000; }
 
 /*# sourceMappingURL=sage-memorial.css.map */
