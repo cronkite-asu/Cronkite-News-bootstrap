@@ -1094,32 +1094,16 @@ if (have_rows('blocks')) {
                 if (have_rows('photos')) {
                     while (have_rows('photos')) {
                         the_row();
-                        ?>
+            ?>
       						<div class="large-12 medium-12 small-12 cell text-center">
       						    <img src="<?php echo get_sub_field('photo'); ?>" <?php echo $removeShadow; ?>  />
-      			<?php
-                                        if (get_sub_field('caption') != '') {
-                                            if ($captionCounter == 0 && get_sub_field('caption') != '') {
-                                                $combinedCaption = '<strong>Left:</strong> '. strip_tags(get_sub_field('caption'), '<a>');
-                                            } elseif ($captionCounter == 1 && get_sub_field('caption') != '') {
-                                                $combinedCaption .= ' <strong>Center:</strong> '. strip_tags(get_sub_field('caption'), '<a>');
-                                            } elseif ($captionCounter == 2 && get_sub_field('caption') != '') {
-                                                $combinedCaption .= ' <strong>Right:</strong> '. strip_tags(get_sub_field('caption'), '<a>');
-                                            }
-                                            $captionCounter++;
-                                        }
-                        ?>
       						</div>
-      			<?php
-                    }
-
-                    if ($captionCounter == 1) {
-                        $combinedCaption = str_replace('<strong>Left:</strong>', '', $combinedCaption);
-                    }
-                    ?>
-            <div class="large-12 cell">
-              <?php echo '<div class="wp-caption-text"><p>'.$combinedCaption.'</p></div>'; ?>
-            </div>
+      			<?php } ?>
+            <?php if (get_sub_field('caption') != '') { ?>
+              <div class="pinned-overlay-text">
+                <?php echo '<p>'.$combinedCaption.'</p>'; ?>
+              </div>
+            <?php } ?>
             <?php } ?>
           </div>
         </div>
