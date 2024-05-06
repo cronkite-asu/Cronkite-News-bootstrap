@@ -134,6 +134,8 @@
     background: rgba(0, 0, 0, 0.8);
     color: #ffffff;
     padding: 25px; }
+    .first-scroll-section .text-center .pinned-overlay-text p {
+      font-size: 1.75rem; }
 
 .text-content h2 {
   font-family: neuzeit-grotesk, sans-serif;
