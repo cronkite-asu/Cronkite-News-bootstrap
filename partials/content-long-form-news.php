@@ -1099,7 +1099,7 @@ if (have_rows('blocks')) {
       						    <img src="<?php echo get_sub_field('photo'); ?>" <?php echo $removeShadow; ?>  />
                       <?php if (get_sub_field('caption') != '') { ?>
                         <div class="pinned-overlay-text">
-                          <?php echo '<p>'.$combinedCaption.'</p>'; ?>
+                          <?php echo '<p>'.get_sub_field('caption').'</p>'; ?>
                         </div>
                       <?php } ?>
       						</div>
