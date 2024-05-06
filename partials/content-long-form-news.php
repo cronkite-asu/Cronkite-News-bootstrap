@@ -1066,6 +1066,66 @@ if (have_rows('blocks')) {
 
 
 <?php
+  } elseif (get_row_layout() == 'single-photo-block-pinned-full-width') {
+
+      $settings = get_sub_field('single-photo-full-width-settings');
+      if ($settings['width'] == 'large-width') {
+          $photoWidth = 'large-photo';
+      } else {
+          $photoWidth = '';
+      }
+
+      if ($settings['no_shadow'] == 'yes') {
+          $removeShadow = 'class="no-shadow"';
+      } else {
+          $removeShadow = '';
+      }
+
+      if ($settings['block_id'] != '') {
+          $blockID = $settings['block_id'];
+      } else {
+          $blockID = '';
+      }
+?>
+        <div class="grid-container photo-content full single <?php echo $photoWidth; ?> <?php echo $blockID; ?>">
+          <div class="grid-x grid-padding-x">
+            <?php
+                $captionCounter = 0;
+                if (have_rows('photos')) {
+                    while (have_rows('photos')) {
+                        the_row();
+                        ?>
+      						<div class="large-12 medium-12 small-12 cell text-center">
+      						    <img src="<?php echo get_sub_field('photo'); ?>" <?php echo $removeShadow; ?>  />
+      			<?php
+                                        if (get_sub_field('caption') != '') {
+                                            if ($captionCounter == 0 && get_sub_field('caption') != '') {
+                                                $combinedCaption = '<strong>Left:</strong> '. strip_tags(get_sub_field('caption'), '<a>');
+                                            } elseif ($captionCounter == 1 && get_sub_field('caption') != '') {
+                                                $combinedCaption .= ' <strong>Center:</strong> '. strip_tags(get_sub_field('caption'), '<a>');
+                                            } elseif ($captionCounter == 2 && get_sub_field('caption') != '') {
+                                                $combinedCaption .= ' <strong>Right:</strong> '. strip_tags(get_sub_field('caption'), '<a>');
+                                            }
+                                            $captionCounter++;
+                                        }
+                        ?>
+      						</div>
+      			<?php
+                    }
+
+                    if ($captionCounter == 1) {
+                        $combinedCaption = str_replace('<strong>Left:</strong>', '', $combinedCaption);
+                    }
+                    ?>
+            <div class="large-12 cell">
+              <?php echo '<div class="wp-caption-text"><p>'.$combinedCaption.'</p></div>'; ?>
+            </div>
+            <?php } ?>
+          </div>
+        </div>
+
+
+<?php
         } elseif (get_row_layout() == 'photo-slideshow') {
 
             $settings = get_sub_field('slideshow-settings');
