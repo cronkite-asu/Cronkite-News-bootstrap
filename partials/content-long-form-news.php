@@ -1097,13 +1097,13 @@ if (have_rows('blocks')) {
             ?>
       						<div class="large-12 medium-12 small-12 cell text-center">
       						    <img src="<?php echo get_sub_field('photo'); ?>" <?php echo $removeShadow; ?>  />
+                      <?php if (get_sub_field('caption') != '') { ?>
+                        <div class="pinned-overlay-text">
+                          <?php echo '<p>'.$combinedCaption.'</p>'; ?>
+                        </div>
+                      <?php } ?>
       						</div>
       			<?php } ?>
-            <?php if (get_sub_field('caption') != '') { ?>
-              <div class="pinned-overlay-text">
-                <?php echo '<p>'.$combinedCaption.'</p>'; ?>
-              </div>
-            <?php } ?>
             <?php } ?>
           </div>
         </div>
