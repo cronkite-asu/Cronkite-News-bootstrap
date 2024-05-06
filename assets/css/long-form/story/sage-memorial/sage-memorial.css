@@ -119,11 +119,11 @@
       margin: 40px auto;
       padding: 0; } }
 
-.first-scroll-section {
+.first-scroll-section, .second-scroll-section {
   margin-bottom: 40px; }
-  .first-scroll-section .text-center {
+  .first-scroll-section .text-center, .second-scroll-section .text-center {
     position: relative; }
-    .first-scroll-section .text-center .pinned-overlay-text {
+    .first-scroll-section .text-center .pinned-overlay-text, .second-scroll-section .text-center .pinned-overlay-text {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -136,7 +136,7 @@
       background: rgba(0, 0, 0, 0.8);
       color: #ffffff;
       padding: 25px; }
-      .first-scroll-section .text-center .pinned-overlay-text p {
+      .first-scroll-section .text-center .pinned-overlay-text p, .second-scroll-section .text-center .pinned-overlay-text p {
         font-size: 1.75rem; }
 
 .text-content h2 {
