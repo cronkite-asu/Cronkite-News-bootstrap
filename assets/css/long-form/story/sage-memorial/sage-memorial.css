@@ -1,0 +1,22 @@
+.merriweather {
+  font-family: "Merriweather", serif; }
+
+.montserrat {
+  font-family: "Montserrat", sans-serif; }
+
+.roboto {
+  font-family: "Roboto", sans-serif; }
+
+.taviraj {
+  font-family: "Taviraj", serif; }
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+.text-content h2 {
+  font-family: "Oswald", sans-serif; }
+
+/*# sourceMappingURL=sage-memorial.css.map */
