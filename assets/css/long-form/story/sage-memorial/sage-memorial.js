@@ -9,6 +9,16 @@ $(document).foundation(),$(document).ready(function(){
     pin: true
   });
 
+  gsap.to(".first-scroll-section .pinned-overlay-text", {
+    scrollTrigger: {
+      trigger: ".first-scroll-section",
+      start: "top top",
+      end: "+=800",
+      scrub: true
+    },
+    opacity: 0
+  });
+
   /*gsap.to(".haiti-dr .scene1 .map", {
     scrollTrigger: {
       trigger: ".haiti-dr",
