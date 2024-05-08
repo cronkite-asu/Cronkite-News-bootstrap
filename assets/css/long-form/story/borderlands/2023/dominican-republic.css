@@ -71,7 +71,8 @@ body {
   height: 100vh;
   background-image: url("https://cronkitenews.azpbs.org/wp-content/uploads/2024/03/haiti-dr-bg-intro.jpg");
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  margin-bottom: 50px; }
   .haiti-dr .scene2 {
     display: flex;
     min-height: 100%;
@@ -122,8 +123,6 @@ body {
   margin: 15px 0px; }
 .dominican-republic-story.first {
   margin: 30px auto 20px auto; }
-  .dominican-republic-story.first:first-child {
-    margin: 60px auto 20px auto; }
 .dominican-republic-story .story-text {
   margin-bottom: 40px; }
   .dominican-republic-story .story-text h3 {

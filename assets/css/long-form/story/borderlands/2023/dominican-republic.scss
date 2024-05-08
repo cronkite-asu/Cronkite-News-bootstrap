@@ -123,6 +123,7 @@ body {
   background-image: url("https://cronkitenews.azpbs.org/wp-content/uploads/2024/03/haiti-dr-bg-intro.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 50px;
   .scene2 {
     display: flex;
     min-height: 100%;
@@ -183,9 +184,6 @@ body {
   }
   &.first {
     margin: 30px auto 20px auto;
-    &:first-child {
-      margin: 60px auto 20px auto;
-    }
   }
   .story-text {
     margin-bottom: 40px;
