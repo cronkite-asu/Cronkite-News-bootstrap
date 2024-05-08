@@ -63,9 +63,9 @@
             ?>
               <div class="<?php echo $columnType; ?> small-12 cell">
                 <?php if ($sectionPhoto != '') { ?>
-                  <img src="<?php echo $sectionPhoto; ?>" alt="" title="" />
+                  <a href="<?php echo get_permalink($story->ID); ?>"><img src="<?php echo $sectionPhoto; ?>" alt="" title="" /></a>
                 <?php } else { ?>
-                  <img src="<?php echo $photo; ?>" alt="" title="" />
+                  <a href="<?php echo get_permalink($story->ID); ?>"><img src="<?php echo $photo; ?>" alt="" title="" /></a>
                 <?php } ?>
               </div>
             <?php
@@ -91,9 +91,9 @@
               ?>
                 <div class="<?php echo $columnType; ?> small-12 cell">
                   <?php if ($sectionPhoto != '') { ?>
-                    <img src="<?php echo $sectionPhoto; ?>" alt="" title="" />
+                    <a href="<?php echo get_permalink($story->ID); ?>"><img src="<?php echo $sectionPhoto; ?>" alt="" title="" /></a>
                   <?php } else { ?>
-                    <img src="<?php echo $photo; ?>" alt="" title="" />
+                    <a href="<?php echo get_permalink($story->ID); ?>"><img src="<?php echo $photo; ?>" alt="" title="" /></a>
                   <?php } ?>
                 </div>
               <?php
