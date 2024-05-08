@@ -182,7 +182,10 @@ body {
     margin:15px 0px;
   }
   &.first {
-    margin: 60px auto 20px auto;
+    margin: 30px auto 20px auto;
+    &:first-child {
+      margin: 60px auto 20px auto;
+    }
   }
   .story-text {
     margin-bottom: 40px;
