@@ -141,7 +141,7 @@
     ScrollTrigger.create({
       trigger: ".haiti-dr",
       start: "top top",
-      end: "+=1400px",
+      end: "+=1500px",
       pin: true
     });
 
