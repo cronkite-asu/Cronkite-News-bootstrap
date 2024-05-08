@@ -14,7 +14,7 @@
           </div>
         </div>
 
-        <div class="scroll-down" style="text-align:center;font-size:1rem;">SCROLL DOWN</div>
+        <div class="scroll-down"></div>
       </section>
     </div>
   </div>
