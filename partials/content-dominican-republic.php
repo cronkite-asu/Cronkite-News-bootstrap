@@ -49,7 +49,7 @@
               $class = '';
             }
 ?>
-          <div class="grid-container full dominican-republic-story <?php echo $class; ?>">
+          <div class="grid-container dominican-republic-story <?php echo $class; ?>">
             <div class="grid-x">
             <?php
             if ($storyList) {
@@ -115,7 +115,7 @@
                 $photo = get_the_post_thumbnail_url($story->ID);
                 $photoSmall = get_the_post_thumbnail($story->ID);
               ?>
-                <div class="<?php echo $columnType; ?> small-12 cell story-text">
+                <div class="<?php echo $columnType; ?> small-12 cell story-text split">
                   <h3><a href="<?php echo get_permalink($story->ID); ?>"><?php echo get_the_title($story->ID); ?></a></h3>
                   <p><?php echo get_field('story_tease', $story->ID); ?></p>
                 </div>
@@ -133,40 +133,25 @@
 ?>
 
 <script>
-    // star wars
-    TweenMax.set(".haiti-dr .scene2", {autoAlpha:0});
-    TweenMax.set(".haiti-dr .scroll-down", {autoAlpha:0});
+  if ($('.haiti-dr').length) {
+    TweenMax.set(".haiti-dr .scene1", {autoAlpha:1});
+    TweenMax.set(".haiti-dr .scroll-down", {autoAlpha:1});
 
     ScrollTrigger.create({
       trigger: ".haiti-dr",
       start: "top top",
-      end: "+=2200px",
+      end: "+=1400px",
       pin: true
     });
 
-    gsap.to(".haiti-dr .scene1 .map", {
+    gsap.to(".haiti-dr .scene1", {
       scrollTrigger: {
         trigger: ".haiti-dr",
         start: "top top",
-        end: "+=1000",
+        end: "+=800",
         scrub: true
       },
-      opacity: 0,
-      onComplete: function() {
-          //TweenMax.set(".haiti-dr .scene2", {autoAlpha:1});
-          gsap.to(".haiti-dr .scene2 .intro-text", {
-            scrollTrigger: {
-              trigger: ".haiti-dr",
-              start: "20% top",
-              end: "+=700",
-              scrub: true
-              /*onLeaveBack: () => {
-                TweenMax.set(".haiti-dr .scene2", {autoAlpha:0});
-              }*/
-            },
-            top: -2600,
-            opacity: 1
-          });
-        }
-      });
+      opacity: 0
+    });
+  }
 </script>
