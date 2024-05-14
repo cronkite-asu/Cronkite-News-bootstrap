@@ -150,6 +150,7 @@
                              'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
                              'special-to-cronkite-news' => "",
                              'stateline' => "https://stateline.org/",
+                             'Source New Mexico' => "https://sourcenm.com/",
                              'The74' => "https://www.the74million.org/"
                             ];
      }
