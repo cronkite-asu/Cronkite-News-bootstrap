@@ -8,10 +8,10 @@ $(document).foundation(),$(document).ready(function(){
   		//document.getElementById('info-box').setAttribute('data-scroll-direction', 'UP');
       console.log('UP');
       //document.getElementsByTagName("body")[0].style.cursor = "url('https://cronkitenews.azpbs.org/wp-content/uploads/2024/05/bee-up-cursor-icon.png'), auto";
-      $("html, body").css("cursor: url('https://cronkitenews.azpbs.org/wp-content/uploads/2024/05/bee-up-cursor-icon.png'), auto");
+      $("html, body").css("cursor: url('https://cronkitenews.azpbs.org/wp-content/uploads/2024/05/bee-up-cursor-icon.png'), auto !important");
   	} else {
       console.log('DOWN');
-      $("html, body").css("cursor: url('https://cronkitenews.azpbs.org/wp-content/uploads/2024/05/bee-down-cursor-icon.png'), auto");
+      $("html, body").css("cursor: url('https://cronkitenews.azpbs.org/wp-content/uploads/2024/05/bee-down-cursor-icon.png'), auto !important");
   		//document.getElementById('info-box').setAttribute('data-scroll-direction', 'DOWN');
       //document.getElementsByTagName("body")[0].style.cursor = "url('https://cronkitenews.azpbs.org/wp-content/uploads/2024/05/bee-down-cursor-icon.png'), auto";
     }
