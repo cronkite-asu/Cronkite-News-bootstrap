@@ -38,6 +38,7 @@
         text-shadow: none; } }
 
 #fullscreen-video .intro-text p {
+  font-family: "Merriweather Sans", sans-serif;
   font-size: 1rem !important;
   font-weight: 400 !important;
   line-height: 1.75rem;
