@@ -24,11 +24,12 @@
     bottom: 0; }
   #fullscreen-video .intro-text h1 {
     font-family: neuzeit-grotesk, sans-serif;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 900;
-    line-height: 3rem;
+    line-height: 4rem;
     color: #000;
-    padding-top: 5%; }
+    padding-top: 5%;
+    width: 800px !important; }
     @media only screen and (max-width: 660px) {
       #fullscreen-video .intro-text h1 {
         font-size: 2rem;

@@ -95,11 +95,12 @@ $caption: #6e6e6e;
     }
     h1 {
       font-family:neuzeit-grotesk, sans-serif;
-      font-size: 2rem;
+      font-size: 3rem;
       font-weight: 900;
-      line-height: 3rem;
+      line-height: 4rem;
       color: $black;
       padding-top: 5%;
+      width: 800px !important;
       @media only screen
         and (max-width: 660px) {
           font-size: 2rem;
