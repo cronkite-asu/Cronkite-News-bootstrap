@@ -149,4 +149,8 @@ blockquote h4 {
   padding-top: 20px;
   z-index: 1; }
 
+@media only screen and (max-width: 660px) {
+  #fullscreen-video .photo-credit {
+    text-align: left; } }
+
 /*# sourceMappingURL=honey-bees.css.map */
