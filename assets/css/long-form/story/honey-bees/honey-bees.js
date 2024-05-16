@@ -7,11 +7,11 @@ $(document).foundation(),$(document).ready(function(){
     if ((document.body.getBoundingClientRect()).top > scrollPos) {
   		//document.getElementById('info-box').setAttribute('data-scroll-direction', 'UP');
       console.log('UP');
-      $("html").css("cursor: url('https://cronkitenews.azpbs.org/wp-content/uploads/2024/05/bee-up-cursor.png'), auto;");
+      document.getElementsByTagName("body")[0].style.cursor = "cursor: url('https://cronkitenews.azpbs.org/wp-content/uploads/2024/05/bee-up-cursor.png'), auto;";
   	} else {
       console.log('DOWN');
   		//document.getElementById('info-box').setAttribute('data-scroll-direction', 'DOWN');
-      $("html").css("cursor: url('https://cronkitenews.azpbs.org/wp-content/uploads/2024/05/bee-down-cursor.png'), auto;");
+      document.getElementsByTagName("body")[0].style.cursor = "cursor: url('https://cronkitenews.azpbs.org/wp-content/uploads/2024/05/bee-down-cursor.png'), auto;";
     }
   	// saves the new position for iteration.
   	scrollPos = (document.body.getBoundingClientRect()).top;
