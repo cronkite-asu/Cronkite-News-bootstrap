@@ -88,6 +88,9 @@ $caption: #6e6e6e;
 
 body, html {
   cursor: url('https://cronkitenews.azpbs.org/wp-content/uploads/2024/05/bee-down-cursor-icon.png'), auto !important;
+  a {
+    cursor: pointer !important;
+  }
 }
 
 #fullscreen-video {

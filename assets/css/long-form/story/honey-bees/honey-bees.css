@@ -19,6 +19,8 @@
     opacity: 1; } }
 body, html {
   cursor: url("https://cronkitenews.azpbs.org/wp-content/uploads/2024/05/bee-down-cursor-icon.png"), auto !important; }
+  body a, html a {
+    cursor: pointer !important; }
 
 #fullscreen-video .intro-text {
   height: initial;
