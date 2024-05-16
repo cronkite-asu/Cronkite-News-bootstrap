@@ -110,6 +110,7 @@ body, html {
       width: 800px !important;
       @media only screen
         and (max-width: 660px) {
+          width: 600px !important;
           font-size: 2rem;
           line-height: 2.5rem;
           color:$black !important;
