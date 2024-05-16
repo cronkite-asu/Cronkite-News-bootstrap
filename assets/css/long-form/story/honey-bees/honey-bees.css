@@ -151,6 +151,7 @@ blockquote h4 {
 
 @media only screen and (max-width: 660px) {
   #fullscreen-video .photo-credit {
-    text-align: left; } }
+    text-align: left;
+    padding-left: 1.45rem; } }
 
 /*# sourceMappingURL=honey-bees.css.map */
