@@ -1240,7 +1240,9 @@ function change_user_publish_capabilities() {
   'delete_posts',
   'delete_published_posts',*/
   $caps = array (
-      'publish_posts'
+      'publish_posts',
+      'delete_posts',
+      'delete_published_posts'
   );
 
   foreach ( $caps as $cap ) {
@@ -1249,5 +1251,14 @@ function change_user_publish_capabilities() {
 }
 
 add_action('admin_init', 'change_user_publish_capabilities');
+
+add_role('students', 'Student', array(
+'read' => true,
+'create_posts' => true,
+'edit_posts' => true,
+'edit_others_posts' => true,
+'publish_posts' => false,
+'manage_categories' => false,
+));
 
 ?>
