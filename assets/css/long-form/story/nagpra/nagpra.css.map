@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,WAAY;EACV,SAAS,EAAE,gBAAgB",
+"mappings": "AAAA,kCAAmC;EACjC,SAAS,EAAE,gBAAgB",
 "sources": ["nagpra.scss"],
 "names": [],
 "file": "nagpra.css"
