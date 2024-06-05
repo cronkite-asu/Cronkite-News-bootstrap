@@ -101,7 +101,8 @@ function generateByline($currPostID, $currIntro, $publishDate, $style)
             }
             if ($cnStaffCount > 0 && $staffID != '') {
                 if (get_sub_field('cn_project') != '') {
-                    echo '/'.str_replace('At', 'at', str_replace('Asu', 'ASU', str_replace('The', 'the', str_replace('And', 'and', str_replace('Pbs', 'PBS', str_replace(' For ', ' for ', ucwords(str_replace('-', ' ', get_sub_field('cn_project'))))))))).'</span>';
+                  $finalOutlet = str_replace('At', 'at', str_replace('Asu', 'ASU', str_replace('The', 'the', str_replace('And', 'and', str_replace('Pbs', 'PBS', str_replace(' For ', ' for ', ucwords(str_replace('-', ' ', get_sub_field('cn_project')))))))));
+                  echo '/'.$finalOutlet.'</span>';
                 } else {
                     echo '/Cronkite News</span>';
                 }
@@ -121,7 +122,7 @@ function generateByline($currPostID, $currIntro, $publishDate, $style)
                     if (array_key_exists($val['author_title_site'], $externalSites) == true) {
                         echo '/<a href="'.$externalSites[$val['author_title_site']].'" target="_blank">'.ucwords(str_replace('-', ' ', $val['author_title_site'])).'</a>';
                     } else {
-                        echo '/'.str_replace('For', 'for', ucwords(str_replace('-', ' ', $val['author_title_site'])));
+                        echo '/'.str_replace('At', 'at', str_replace('Asu', 'ASU', str_replace('The', 'the', str_replace('And', 'and', str_replace('Pbs', 'PBS', str_replace(' For ', ' for ', ucwords(str_replace('-', ' ', $val['author_title_site']))))))));                        
                     }
                 }
                 if ($sepCounter != $extStaffCount) {
