@@ -19,7 +19,7 @@
         ?>
         <div id="latest-stories" class="large-12 medium-12 small-12 cell story-content">
 
-          <iframe width="100%" height="560" src="https://www.youtube.com/embed/videoseries?si=cwpUkoFJB01a3Bys&amp;list=PLQ10JyjBe_u5ltL9YqidL1JttoQrbORBg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="100%" height="600" src="https://www.youtube.com/embed/videoseries?si=cwpUkoFJB01a3Bys&amp;list=PLQ10JyjBe_u5ltL9YqidL1JttoQrbORBg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           <?php wp_reset_query(); ?>
 
         </div>
