@@ -48,12 +48,14 @@ register_nav_menus(
 
 /* Added: Sunday, Nov. 3rd, 2020 - Custom rss feed */
 add_action('init', 'newRSSFeed');
-function newRSSFeed() {
+function newRSSFeed()
+{
     add_feed('cronkitenewsfeed', 'newRSSFeedCallback');
 }
 
 /* This code seeks the template for your RSS feed */
-function newRSSFeedCallback() {
+function newRSSFeedCallback()
+{
     get_template_part('rss', 'cronkitenewsfeed'); // need to be in small case.
 }
 
@@ -172,7 +174,8 @@ function getStoryAuthors($getPID)
     return $finalAuthors;
 }
 
-function hook_parselyJSON() {
+function hook_parselyJSON()
+{
     wp_reset_query();
     if (is_page()) {
         $pageType = 'WebPage';
@@ -256,7 +259,8 @@ function hook_parselyJSON() {
 }
 add_action('wp_head', 'hook_parselyJSON');
 
-function hook_parselyTrack() {
+function hook_parselyTrack()
+{
     ?>
   <!-- START Parse.ly Include: Standard -->
   <script data-cfasync="false" id="parsely-cfg" data-parsely-site="cronkitenews.azpbs.org" src="//cdn.parsely.com/keys/cronkitenews.azpbs.org/p.js"></script>
@@ -792,7 +796,8 @@ function ap_noticias_date()
 // From http://justintadlock.com/archives/2008/12/06/creating-single-post-templates-in-wordpress
 define('SINGLE_PATH', TEMPLATEPATH . '/templates');
 add_filter('single_template', 'my_single_template');
-function my_single_template($single) {
+function my_single_template($single)
+{
     global $wp_query, $post;
     foreach ((array)get_the_category() as $cat) :
         if (file_exists(SINGLE_PATH . '/single-cat-' . $cat->slug . '.php')) {
@@ -802,7 +807,8 @@ function my_single_template($single) {
     return $single;
 }
 // Remove auto generated feed links
-function my_remove_feeds() {
+function my_remove_feeds()
+{
     remove_action('wp_head', 'feed_links_extra', 3);
     remove_action('wp_head', 'feed_links', 2);
 }
@@ -811,63 +817,93 @@ add_action('after_setup_theme', 'my_remove_feeds');
 /*******************************************************************************/
 
 // Move Yoast to bottom
-function wpcover_move_yoast() {
+function wpcover_move_yoast()
+{
     return 'high';
 }
 add_filter('wpseo_metabox_prio', 'wpcover_move_yoast');
 
 // get byline
-function get_story_byline($get_post_ID) {
-  $externalAuthorCount = 1;
-  $internalAuthorCount = 0;
-  $commaSeparator = ',';
-  $andSeparator = ' and ';
-  $cnStaffTotalCounter = 0;
-  $externalStaffTotalCounter = 0;
-  $authorName = '';
+function get_story_byline($get_post_ID)
+{
+    $externalAuthorCount = 1;
+    $internalAuthorCount = 0;
+    $commaSeparator = ',';
+    $andSeparator = ' and ';
+    $cnStaffTotalCounter = 0;
+    $externalStaffTotalCounter = 0;
+    $authorName = '';
 
-  if ($get_post_ID != '') {
-    if (have_rows('byline_info', $get_post_ID)) {
-        while (have_rows('byline_info', $get_post_ID)) {
-            the_row();
-            $staffID = get_sub_field('cn_staff');
-            if ($staffID == '') {
-                $cnStaffTotalCounter = 0;
-            } else {
-                $cnStaffTotalCounter = count($staffID);
-            }
-
-            if (have_rows('external_authors_repeater')) {
-                while (have_rows('external_authors_repeater')) {
-                    the_row();
-                    $externalStaffTotalCounter++;
-                }
-            }
-        }
-    }
-
-    if ($cnStaffTotalCounter > 0) {
+    if ($get_post_ID != '') {
         if (have_rows('byline_info', $get_post_ID)) {
-            $sepCounter = 0;
             while (have_rows('byline_info', $get_post_ID)) {
                 the_row();
                 $staffID = get_sub_field('cn_staff');
-                $cnStaffCount = count((array)$staffID);
-                foreach ($staffID as $key => $val) {
-                    $args = [
-                        'post_type'   => 'students',
-                        'post_status' => 'publish',
-                        'p' => $val,
-                      ];
+                if ($staffID == '') {
+                    $cnStaffTotalCounter = 0;
+                } else {
+                    $cnStaffTotalCounter = count($staffID);
+                }
 
-                    $staffDetails = new WP_Query($args);
-                    if ($staffDetails->have_posts()) {
-                        while ($staffDetails->have_posts()) {
-                            $staffDetails->the_post();
+                if (have_rows('external_authors_repeater')) {
+                    while (have_rows('external_authors_repeater')) {
+                        the_row();
+                        $externalStaffTotalCounter++;
+                    }
+                }
+            }
+        }
+
+        if ($cnStaffTotalCounter > 0) {
+            if (have_rows('byline_info', $get_post_ID)) {
+                $sepCounter = 0;
+                while (have_rows('byline_info', $get_post_ID)) {
+                    the_row();
+                    $staffID = get_sub_field('cn_staff');
+                    $cnStaffCount = count((array)$staffID);
+                    foreach ($staffID as $key => $val) {
+                        $args = [
+                            'post_type'   => 'students',
+                            'post_status' => 'publish',
+                            'p' => $val,
+                          ];
+
+                        $staffDetails = new WP_Query($args);
+                        if ($staffDetails->have_posts()) {
+                            while ($staffDetails->have_posts()) {
+                                $staffDetails->the_post();
+                                $sepCounter++;
+                                $authorName .= get_the_title($val);
+                                if ($sepCounter != $cnStaffCount) {
+                                    if ($sepCounter == ($cnStaffCount - 1)) {
+                                        $authorName .= $andSeparator.' ';
+                                    } else {
+                                        $authorName .= $commaSeparator.' ';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } elseif ($externalStaffTotalCounter > 0) {
+
+            if (have_rows('byline_info', $get_post_ID)) {
+                $sepCounter = 0;
+                while (have_rows('byline_info', $get_post_ID)) {
+                    the_row();
+                    if (have_rows('external_authors_repeater')) {
+                        if ($cnStaffTotalCounter > 0) {
+                            $authorName .= ' and ';
+                        }
+                        $sepCounter = 0;
+                        while (have_rows('external_authors_repeater')) {
+                            the_row();
                             $sepCounter++;
-                            $authorName .= get_the_title($val);
-                            if ($sepCounter != $cnStaffCount) {
-                                if ($sepCounter == ($cnStaffCount - 1)) {
+                            $authorName .= get_sub_field('external_authors');
+
+                            if ($sepCounter != $externalStaffTotalCounter) {
+                                if ($sepCounter == ($externalStaffTotalCounter - 1)) {
                                     $authorName .= $andSeparator.' ';
                                 } else {
                                     $authorName .= $commaSeparator.' ';
@@ -878,48 +914,21 @@ function get_story_byline($get_post_ID) {
                 }
             }
         }
-    } elseif ($externalStaffTotalCounter > 0) {
-
-        if (have_rows('byline_info', $get_post_ID)) {
-            $sepCounter = 0;
-            while (have_rows('byline_info', $get_post_ID)) {
-                the_row();
-                if (have_rows('external_authors_repeater')) {
-                    if ($cnStaffTotalCounter > 0) {
-                        $authorName .= ' and ';
-                    }
-                    $sepCounter = 0;
-                    while (have_rows('external_authors_repeater')) {
-                        the_row();
-                        $sepCounter++;
-                        $authorName .= get_sub_field('external_authors');
-
-                        if ($sepCounter != $externalStaffTotalCounter) {
-                            if ($sepCounter == ($externalStaffTotalCounter - 1)) {
-                                $authorName .= $andSeparator.' ';
-                            } else {
-                                $authorName .= $commaSeparator.' ';
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
-  }
 
-  return $authorName;
+    return $authorName;
 }
 
 // Update author to reflect byline
-function update_wpseo_meta_author_filter( $author_name, $presentation ){
-  $author_name = get_story_byline(get_the_ID());
-  wp_reset_query();
-	return $author_name;
+function update_wpseo_meta_author_filter($author_name, $presentation)
+{
+    $author_name = get_story_byline(get_the_ID());
+    wp_reset_query();
+    return $author_name;
 }
-add_filter( 'wpseo_meta_author', 'update_wpseo_meta_author_filter', 10, 2 );
+add_filter('wpseo_meta_author', 'update_wpseo_meta_author_filter', 10, 2);
 
-add_filter( 'wpseo_enhanced_slack_data', function($data) {
+add_filter('wpseo_enhanced_slack_data', function ($data) {
     wp_reset_query();
     $author_name = get_story_byline(get_the_ID());
     $array = ["By" => $author_name];
@@ -969,7 +978,8 @@ if (function_exists('acf_add_options_sub_page')) {
 }
 
 // custom post type for staff
-function staff_CPT(){
+function staff_CPT()
+{
     $cpt_staff_labels = [
         'name'               => _x('Staff', 'post type general name'),
         'singular_name'      => _x('Staff', 'post type singular name'),
@@ -1001,7 +1011,8 @@ add_action('init', 'staff_CPT');
 
 
 // custom tags for stories
-function storytags_CPT(){
+function storytags_CPT()
+{
     $storytags_labels = [
         'name'               => _x('Story Tags', 'post type general name'),
         'singular_name'      => _x('Story Tag', 'post type singular name'),
@@ -1033,7 +1044,8 @@ add_action('init', 'storytags_CPT');
 
 
 // in this series
-function inThisSeries_CPT(){
+function inThisSeries_CPT()
+{
     $inThisSeries_labels = [
         'name'               => _x('In This Series', 'post type general name'),
         'singular_name'      => _x('In This Series', 'post type singular name'),
@@ -1065,7 +1077,8 @@ add_action('init', 'inThisSeries_CPT');
 
 
 // custom post type for staff
-function explore_CPT(){
+function explore_CPT()
+{
     $cpt_explore_labels = [
         'name'               => _x('Explores', 'post type general name'),
         'singular_name'      => _x('Explore', 'post type singular name'),
@@ -1097,7 +1110,8 @@ add_action('init', 'explore_CPT');
 
 
 // custom post type for election2020
-function election2020_CPT(){
+function election2020_CPT()
+{
     $cpt_election2020_labels = [
         'name'               => _x('Election 2020', 'post type general name'),
         'singular_name'      => _x('Election 2020', 'post type singular name'),
@@ -1138,7 +1152,8 @@ if (function_exists('acf_add_options_sub_page')) {
 }
 
 // custom post type for audio/video
-function audioVideo_CPT(){
+function audioVideo_CPT()
+{
     $cpt_audiovideo_labels = [
         'name'               => _x('Audio/Video', 'post type general name'),
         'singular_name'      => _x('Audio/Video', 'post type singular name'),
@@ -1169,7 +1184,8 @@ function audioVideo_CPT(){
 add_action('init', 'audioVideo_CPT');
 
 
-function cn_search_query($query){
+function cn_search_query($query)
+{
     if (!is_admin() && $query->is_main_query()) {
         if (is_search()) {
             $query->set('orderby', 'date');
@@ -1178,7 +1194,8 @@ function cn_search_query($query){
 }
 add_action('pre_get_posts', 'cn_search_query');
 
-function add_file_types_to_uploads($file_types){
+function add_file_types_to_uploads($file_types)
+{
     $new_filetypes = [];
     $new_filetypes['svg'] = 'image/svg+xml';
     $file_types = array_merge($file_types, $new_filetypes);
@@ -1187,18 +1204,21 @@ function add_file_types_to_uploads($file_types){
 add_action('upload_mimes', 'add_file_types_to_uploads');
 
 add_action('init', 'custom_init_storytags');
-function custom_init_storytags(){
+function custom_init_storytags()
+{
     remove_post_type_support('storytags', 'comments');
 }
 
-function audiovideoCPT_remove_wp_seo_meta_box(){
+function audiovideoCPT_remove_wp_seo_meta_box()
+{
     remove_meta_box('wpseo_meta', 'audioVideoCPT', 'normal');
 }
 add_action('add_meta_boxes', 'audiovideoCPT_remove_wp_seo_meta_box', 100);
 
 /* URL rewrite rule for CN staff people page */
 add_filter('query_vars', 'add_staff_name_var', 0, 1);
-function add_staff_name_var($vars){
+function add_staff_name_var($vars)
+{
     $vars[] = 'staffname';
     return $vars;
 }
@@ -1206,7 +1226,8 @@ add_rewrite_rule('^people/([^/]+)/?$', 'index.php?pagename=people&staffname=$mat
 
 /* URL rewrite rule for Audio story page */
 add_filter('query_vars', 'add_audio_story_var', 0, 1);
-function add_audio_story_var($vars){
+function add_audio_story_var($vars)
+{
     $vars[] = 'audio_id';
     $vars[] = 'audio_title';
     return $vars;
@@ -1214,7 +1235,8 @@ function add_audio_story_var($vars){
 add_rewrite_rule('^audio/story/([^/]+)/([^/]+)/?$', 'index.php?page_id=175279&audio_id=$matches[1]&audio_title=$matches[2]', 'top');
 
 // change tags label to keywords
-function change_tax_object_label() {
+function change_tax_object_label()
+{
     global $wp_taxonomies;
     $labels = &$wp_taxonomies['post_tag']->labels;
     $labels->name = __('Keywords', 'framework');
@@ -1232,33 +1254,34 @@ function change_tax_object_label() {
 }
 add_action('init', 'change_tax_object_label');
 
-function change_user_publish_capabilities() {
-  $author = get_role( 'editor' );
-  /*'edit_posts',
-  'edit_published_posts',
-  'publish_posts',
-  'delete_posts',
-  'delete_published_posts',*/
-  $caps = array (
-      'publish_posts',
-      'delete_posts',
-      'delete_published_posts'
-  );
+function change_user_publish_capabilities()
+{
+    $author = get_role('editor');
+    /*'edit_posts',
+    'edit_published_posts',
+    'publish_posts',
+    'delete_posts',
+    'delete_published_posts',*/
+    $caps = array(
+        'publish_posts',
+        'delete_posts',
+        'delete_published_posts'
+    );
 
-  foreach ( $caps as $cap ) {
-    $author->remove_cap( $cap );
-  }
+    foreach ($caps as $cap) {
+        $author->remove_cap($cap);
+    }
 }
 
 add_action('admin_init', 'change_user_publish_capabilities');
 
-add_role('students', 'Student', array(
-'read' => true,
-'create_posts' => true,
-'edit_posts' => true,
-'edit_others_posts' => true,
-'publish_posts' => false,
-'manage_categories' => false,
-));
+#add_role('students', 'Student', array(
+#'read' => true,
+#'create_posts' => true,
+#'edit_posts' => true,
+#'edit_others_posts' => true,
+#'publish_posts' => false,
+#'manage_categories' => false,
+#));
 
 ?>
