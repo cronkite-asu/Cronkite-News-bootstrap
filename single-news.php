@@ -558,7 +558,7 @@
                             <h5><?php echo $upcomingStory['headline']; ?></h5>
                                     <?php } ?>
                          </div>
-                       <?php } else { echo '<!-- IN THIS SERIES: '.$upcomingStory['posted-link'].'-->' ?>
+                       <?php } else { echo '<!-- IN THIS SERIES: '.$upcomingStory['posted-link'].'-->'; ?>
                          <div>
                            <a href="<?php echo get_permalink($upcomingStory['posted-link']); ?>"><?php echo get_the_post_thumbnail($upcomingStory['posted-link'], 'full', ['class' => 'img-responsive']); ?></a>
                                     <?php
