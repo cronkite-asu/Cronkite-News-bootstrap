@@ -1723,15 +1723,15 @@ if ($inthisseriesSettings['show'] == 'yes') {
             foreach ($pubbedStoryList as $pubbedStory) {
                 ?>
             <div>
-              <a href="<?php echo get_permalink($upcomingStory['posted-link']); ?>"><?php echo get_the_post_thumbnail($pubbedStory, 'full', ['class' => 'img-responsive']); ?></a>
+              <a href="<?php echo get_permalink($pubbedStory); ?>"><?php echo get_the_post_thumbnail($pubbedStory, 'full', ['class' => 'img-responsive']); ?></a>
               <?php
-                        if (get_field('use_short_headline', $upcomingStory['posted-link']) == 'yes' && get_field('homepage_headline', $upcomingStory['posted-link']) != '') {
+                        if (get_field('use_short_headline', $pubbedStory) == 'yes' && get_field('homepage_headline', $pubbedStory) != '') {
                             ?>
-                  <h5><?php echo get_field('homepage_headline', $upcomingStory['posted-link']); ?></h5>
+                  <h5><?php echo get_field('homepage_headline', $pubbedStory); ?></h5>
               <?php
                         } else {
                             ?>
-              <h5><a href="<?php echo get_permalink($upcomingStory['posted-link']); ?>"><?php echo get_the_title($upcomingStory['posted-link']); ?></a></h5>
+              <h5><a href="<?php echo get_permalink($pubbedStory); ?>"><?php echo get_the_title($pubbedStory); ?></a></h5>
               <?php } ?>
             </div>
         <?php
