@@ -122,7 +122,7 @@ function generateByline($currPostID, $currIntro, $publishDate, $style)
                     if (array_key_exists($val['author_title_site'], $externalSites) == true) {
                         echo '/<a href="'.$externalSites[$val['author_title_site']].'" target="_blank">'.ucwords(str_replace('-', ' ', $val['author_title_site'])).'</a>';
                     } else {
-                        echo '/'.str_replace('At', 'at', str_replace('Asu', 'ASU', str_replace('The', 'the', str_replace('And', 'and', str_replace('Pbs', 'PBS', str_replace(' For ', ' for ', ucwords(str_replace('-', ' ', $val['author_title_site']))))))));                        
+                        echo '/'.str_replace('At', 'at', str_replace('Asu', 'ASU', str_replace('The', 'the', str_replace('And', 'and', str_replace('Pbs', 'PBS', str_replace(' For ', ' for ', ucwords(str_replace('-', ' ', $val['author_title_site']))))))));
                     }
                 }
                 if ($sepCounter != $extStaffCount) {
@@ -1708,10 +1708,17 @@ if ($inthisseriesSettings['show'] == 'yes') {
   <div class="grid-container text-content">
   <div class="grid-x grid-padding-x series-block">
     <div class="large-12 medium-12 small-12 cell">
+      <?php
+      if ($inthisseriesSettings['title'] != '') {
+          $seriesTitle = ': '.$inthisseriesSettings['title'];
+      } else {
+          $seriesTitle;
+      }
+      ?>
       <h4>In this series<?php echo $seriesTitle; ?></h4>
       <div class="in-this-series">
         <?php
-                  $pubbedStoryList = $inthisseriesSettings['stories'];
+        $pubbedStoryList = $inthisseriesSettings['stories'];
         if ($pubbedStoryList != '') {
             foreach ($pubbedStoryList as $pubbedStory) {
                 ?>
