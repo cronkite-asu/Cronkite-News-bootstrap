@@ -558,7 +558,7 @@
                             <h5><?php echo $upcomingStory['headline']; ?></h5>
                                     <?php } ?>
                          </div>
-                       <?php } else { echo '<!-- IN THIS SERIES: '.$upcomingStory['posted-link'].'-->'; ?>
+                       <?php } else { ?>
                          <div>
                            <a href="<?php echo get_permalink($upcomingStory['posted-link']); ?>"><?php echo get_the_post_thumbnail($upcomingStory['posted-link'], 'full', ['class' => 'img-responsive']); ?></a>
                                     <?php
@@ -579,9 +579,7 @@
                    </div>
                  </div>
                </div>
-                        <?php
-     } else {
-         ?>
+         <?php } else { ?>
                <!-- in this series -->
                <div class="grid-x grid-padding-x series-block">
                  <div class="large-12 medium-12 small-12 cell">
@@ -599,15 +597,15 @@
                  ?>
                          <div>
                            <a href="<?php echo get_permalink($pubbedStory); ?>"><?php echo get_the_post_thumbnail($pubbedStory, 'full', ['class' => 'img-responsive']); ?></a>
-                                <?php
-                 if (get_field('use_short_headline', $pubbedStory) == 'yes' && get_field('homepage_headline', $pubbedStory) != '') {
-                     ?>
-                               <h5><a href="<?php echo get_permalink($pubbedStory); ?>"><?php echo get_the_title($pubbedStory); ?></a></h5>
-                                    <?php
-                 } else {
-                     ?>
-                           <h5><a href="<?php echo get_permalink($pubbedStory); ?>"><?php echo get_the_title($pubbedStory); ?></a></h5>
-                                <?php } ?>
+                           <?php
+                           if (get_field('use_short_headline', $pubbedStory) == 'yes' && get_field('homepage_headline', $pubbedStory) != '') {
+                               ?>
+                      <h5><a href="<?php echo get_permalink($pubbedStory); ?>"><?php echo get_field('homepage_headline', $pubbedStory); ?></a></h5>
+                               <?php
+                           } else {
+                               ?>
+                  <h5><a href="<?php echo get_permalink($pubbedStory); ?>"><?php echo get_the_title($pubbedStory); ?></a></h5>
+                           <?php } ?>
                          </div>
                                 <?php
              }
