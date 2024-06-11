@@ -1723,7 +1723,7 @@ if ($inthisseriesSettings['show'] == 'yes') {
             foreach ($pubbedStoryList as $pubbedStory) {
                 ?>
             <div>
-              <?php print_r($pubbedStory); ?>
+              <?php print_r('HERE:'.$pubbedStory); ?>            
               <a href="<?php echo get_permalink($pubbedStory); ?>"><?php echo get_the_post_thumbnail($pubbedStory, 'full', ['class' => 'img-responsive']); ?></a>
               <?php
                         if (get_field('use_short_headline', $pubbedStory) == 'yes' && get_field('homepage_headline', $pubbedStory) != '') {
