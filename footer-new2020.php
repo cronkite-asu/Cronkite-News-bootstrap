@@ -49,7 +49,7 @@
         </div>
         <div class="large-4 medium-4 small-12 cell text-right">
           <ul class="social-links no-bullet">
-            <li><a href="https://twitter.com/cronkitenews" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://twitter.com/cronkitenews" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
             <li><a href="https://www.instagram.com/cronkitenews/" target="_blank"><i class="fab fa-instagram"></i></a></li>
             <li><a href="https://www.facebook.com/cronkitenewsazpbs" target="_blank"><i class="fab fa-facebook"></i></a></li>
             <li><a href="https://www.youtube.com/user/cronkitenewswatch" target="_blank"><i class="fab fa-youtube"></i></a></li>
