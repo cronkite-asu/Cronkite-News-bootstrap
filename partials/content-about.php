@@ -102,7 +102,7 @@
                             if (get_sub_field('contact_outlet') != '' && get_sub_field('social_media_handle') != '') {
                                 if (get_sub_field('contact_outlet') == 'twitter') {
                                     ?>
-                            <a href="https://www.twitter.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.twitter.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                                 <?php } elseif (get_sub_field('contact_outlet') == 'email') { ?>
                             <a href="mailto:<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fas fa-envelope"></i></a>
                                     <?php
@@ -190,7 +190,7 @@
                             if (get_sub_field('social_media_type') != '' && get_sub_field('social_media_handle') != '') {
                                 if (get_sub_field('social_media_type') == 'twitter') {
                                     ?>
-                            <a href="https://www.twitter.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.twitter.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                                 <?php } elseif (get_sub_field('social_media_type') == 'email') { ?>
                             <a href="mailto:<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fas fa-envelope"></i></a>
                                 <?php } elseif (get_sub_field('social_media_type') == 'instagram') { ?>
