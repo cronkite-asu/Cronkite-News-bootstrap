@@ -777,6 +777,8 @@
                                 <a href="https://www.instagram.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
                                             <?php } elseif (get_sub_field('social_media_type') == 'linkedin') { ?>
                                 <a href="https://www.linkedin.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                            <?php } elseif (get_sub_field('social_media_type') == 'portfolio') { ?>
+                                <a href="<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fa-solid fa-globe"></i></a>
                                             <?php } elseif (get_sub_field('social_media_type') == 'tiktok') { ?>
                                 <a href="https://www.tiktok.com/@<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
 
@@ -878,6 +880,8 @@
                                  <a href="https://www.instagram.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
                                             <?php } elseif (get_sub_field('social_media_type') == 'linkedin') { ?>
                                  <a href="https://www.linkedin.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                             <?php } elseif (get_sub_field('social_media_type') == 'portfolio') { ?>
+                                    <a href="<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fa-solid fa-globe"></i></a>
                                             <?php } elseif (get_sub_field('social_media_type') == 'tiktok') { ?>
                                  <a href="https://www.tiktok.com/@<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
                                                        <?php
@@ -978,6 +982,8 @@
                                  <a href="https://www.instagram.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
                                             <?php } elseif (get_sub_field('social_media_type') == 'linkedin') { ?>
                                  <a href="https://www.linkedin.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                             <?php } elseif (get_sub_field('social_media_type') == 'portfolio') { ?>
+                                    <a href="<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fa-solid fa-globe"></i></a>
                                             <?php } elseif (get_sub_field('social_media_type') == 'tiktok') { ?>
                                  <a href="https://www.tiktok.com/@<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
                                                       <?php
@@ -1079,6 +1085,8 @@
                                   <a href="https://www.instagram.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
                                             <?php } elseif (get_sub_field('social_media_type') == 'linkedin') { ?>
                                   <a href="https://www.linkedin.com/<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                            <?php } elseif (get_sub_field('social_media_type') == 'portfolio') { ?>
+                                   <a href="<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fa-solid fa-globe"></i></a>
                                             <?php } elseif (get_sub_field('social_media_type') == 'tiktok') { ?>
                                   <a href="https://www.tiktok.com/@<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
                                                      <?php
