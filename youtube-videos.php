@@ -59,6 +59,8 @@ function getAllVideos($apiKey, $channelId) {
 // Fetch all videos
 $videos = getAllVideos($apiKey, $channelId);
 
+print_r($videos);
+
 // Output the video titles and IDs
 foreach ($videos as $video) {
     $videoId = $video['id']['videoId'];
