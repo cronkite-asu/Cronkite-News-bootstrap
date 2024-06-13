@@ -15,7 +15,7 @@ get_header('new2019'); ?>
     'post_type' => 'post',
     'post_status' => 'publish',
     'posts_per_page' => -1,
-    'category__not_in' => [ 11 ],
+    'category__not_in' => [ 11, 22877 ],
     'date_query' => [
                       [
                           'after'     => 'January 1, 2023',
@@ -53,4 +53,4 @@ echo '<p>Count: '.$count = $query->found_posts.'</p>';
 <?php endif; ?>
 
 
-<?php get_footer(); ?>
+<?php get_footer('new2020'); ?>
