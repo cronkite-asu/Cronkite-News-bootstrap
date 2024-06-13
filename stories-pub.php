@@ -43,8 +43,8 @@ echo '<p>Count: '.$count = $query->found_posts.'</p>';
       <tr>
         <td><?php echo get_the_title(); ?></td>
         <td></td>
-        <td><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_permalink(); ?></a></td>
         <td><strong>by</strong> <?php echo $author = get_the_author(); ?></td>
+        <td><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_permalink(); ?></a></td>
         <td><?php get_the_date('F M Y'); ?>  </td>
       </tr>
     <?php endwhile; ?>
