@@ -12,30 +12,41 @@ $API_Key    = 'AIzaSyD18QZUABnzCt1YPyxgVZbgVZpjQ1PKRGI';
 $Channel_ID = 'UCO8tHWm0LQy3QWFcnZeV4CQ';
 $Max_Results = 5000;
 
-echo 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$Channel_ID.'&maxResults='.$Max_Results.'&key='.$API_Key;
+$baseUrl = 'https://www.googleapis.com/youtube/v3/';
+   // https://developers.google.com/youtube/v3/getting-started
+   $apiKey = 'AIzaSyD18QZUABnzCt1YPyxgVZbgVZpjQ1PKRGI';
+   // If you don't know the channel ID see below
+   $channelId = 'UCO8tHWm0LQy3QWFcnZeV4CQ';
 
-// Get videos from channel by YouTube Data API
- $apiData = @file_get_contents('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$Channel_ID.'&maxResults='.$Max_Results.'&key='.$API_Key.'');
-if($apiData){
-    echo 'HERE';
-    $videoList = json_decode($apiData);
-}else{
-    echo 'Invalid API key or channel ID.';
-}
-if(!empty($videoList->items)){
-    echo 'HERE 2';
-    foreach($videoList->items as $item){
-        // Embed video
-        if(isset($item->id->videoId)){
-            echo '
-            <div class="yvideo-box">
-                <iframe width="280" height="150" src="https://www.youtube.com/embed/'.$item->id->videoId.'" frameborder="0" allowfullscreen></iframe>
-                <h4>'. $item->snippet->title .'</h4>
-            </div>';
-        }
-    }
-}else{
-    echo '<p class="error">'.$apiError.'</p>';
-}
+   $params = [
+       'id'=> $channelId,
+       'part'=> 'contentDetails',
+       'key'=> $apiKey
+   ];
+   $url = $baseUrl . 'channels?' . http_build_query($params);
+   $json = json_decode(file_get_contents($url), true);
+
+   $playlist = $json['items'][0]['contentDetails']['relatedPlaylists']['uploads'];
+
+   $params = [
+       'part'=> 'snippet',
+       'playlistId' => $playlist,
+       'maxResults'=> '5000',
+       'key'=> $apiKey
+   ];
+   $url = $baseUrl . 'playlistItems?' . http_build_query($params);
+   $json = json_decode(file_get_contents($url), true);
+
+   $videos = [];
+   foreach($json['items'] as $video)
+       $videos[] = $video['snippet']['resourceId']['videoId'];
+
+   while(isset($json['nextPageToken'])){
+       $nextUrl = $url . '&pageToken=' . $json['nextPageToken'];
+       $json = json_decode(file_get_contents($nextUrl), true);
+       foreach($json['items'] as $video)
+           $videos[] = $video['snippet']['resourceId']['videoId'];
+   }
+   print_r($videos);
 
 ?>
