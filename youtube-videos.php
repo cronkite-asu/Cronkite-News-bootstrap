@@ -6,9 +6,6 @@ get_header('new2019');
 
 echo 'HERE!';
 
-$apiKey = 'AIzaSyD18QZUABnzCt1YPyxgVZbgVZpjQ1PKRGI';
-$channelId = 'UCO8tHWm0LQy3QWFcnZeV4CQ';
-$resultsNumber = '50000';
 
 // API config
 $API_Key    = 'AIzaSyD18QZUABnzCt1YPyxgVZbgVZpjQ1PKRGI';
