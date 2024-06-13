@@ -4,67 +4,46 @@
  */
 get_header('new2019');
 
-// Your API key
-$apiKey = 'AIzaSyD18QZUABnzCt1YPyxgVZbgVZpjQ1PKRGI';
-
-// Channel ID (replace with the ID of the channel you want to get videos from)
-$channelId = 'UCO8tHWm0LQy3QWFcnZeV4CQ';
-
-// Define the base URL for the YouTube API
-$apiUrl = 'https://www.googleapis.com/youtube/v3/search';
-
 echo 'HERE!';
 
-// Function to fetch data from the YouTube API
-function fetchData($url) {
+$API_key    = 'AIzaSyD18QZUABnzCt1YPyxgVZbgVZpjQ1PKRGI';
+$channelID  = 'UCO8tHWm0LQy3QWFcnZeV4CQ';
+$max_results = 50000;
+$table = array();
+$file_name = 'all-videos.json';
+
+function youtube_search($API_key, $channelID, $max_results, $next_page_token,$videos,$file){
+
+    $dataquery = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=".$channelID."&maxResults=".$max_results."&order=date&pageToken=".$next_page_token."&key=".$API_key;
+
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
+
+    curl_setopt($ch, CURLOPT_HEADER, 0);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    $data = curl_exec($ch);
+    curl_setopt($ch, CURLOPT_URL, $dataquery);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_VERBOSE, 0);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    $response = curl_exec($ch);
+
     curl_close($ch);
-    return json_decode($data, true);
+
+    $data = json_decode($response);
+
+
+    foreach ($data->items as $item){
+        array_push($videos,$item);
+    }
+
+    $content = json_encode($videos);
+    print_r($content);
+    file_put_contents($file, $content);
+
+    if(!empty($data->nextPageToken)){
+
+        youtube_search($API_key, $channelID, $max_results, $data->nextPageToken, $videos, $file);
+    }
 }
 
-// Function to get all videos from a channel
-function getAllVideos($apiKey, $channelId) {
-    $videos = [];
-    $pageToken = '';
-
-    do {
-        // Prepare the API URL with parameters
-        $url = sprintf(
-            '%s?part=snippet&channelId=%s&maxResults=50&order=date&type=video&key=%s&pageToken=%s',
-            $apiUrl,
-            $channelId,
-            $apiKey,
-            $pageToken
-        );
-
-        // Fetch data from the API
-        $data = fetchData($url);
-
-        // Check if we got a valid response
-        if (isset($data['items'])) {
-            // Add videos to the list
-            $videos = array_merge($videos, $data['items']);
-        }
-
-        // Get the next page token
-        $pageToken = isset($data['nextPageToken']) ? $data['nextPageToken'] : '';
-    } while (!empty($pageToken));
-
-    return $videos;
-}
-
-// Fetch all videos
-$videos = getAllVideos($apiKey, $channelId);
-
-print_r($videos);
-
-// Output the video titles and IDs
-foreach ($videos as $video) {
-    $videoId = $video['id']['videoId'];
-    $title = $video['snippet']['title'];
-    echo "Title: $title, Video ID: $videoId\n";
-}
+youtube_search($API_key, $channelID, $max_results, $next_page_token='', $table, $file_name);
 ?>
