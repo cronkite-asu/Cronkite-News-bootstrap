@@ -13,6 +13,8 @@ $channelId = 'UCO8tHWm0LQy3QWFcnZeV4CQ';
 // Define the base URL for the YouTube API
 $apiUrl = 'https://www.googleapis.com/youtube/v3/search';
 
+echo 'HERE!';
+
 // Function to fetch data from the YouTube API
 function fetchData($url) {
     $ch = curl_init();
