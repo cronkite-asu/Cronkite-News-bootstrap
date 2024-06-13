@@ -45,7 +45,7 @@ echo '<p>Count: '.$count = $query->found_posts.'</p>';
         <td></td>
         <td><strong>by</strong> <?php echo $author = get_the_author(); ?></td>
         <td><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_permalink(); ?></a></td>
-        <td><?php echo get_the_date('F M Y'); ?>  </td>
+        <td><?php echo get_the_date('F j, Y'); ?>  </td>
       </tr>
     <?php endwhile; ?>
   </tbody>
