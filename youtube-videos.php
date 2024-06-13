@@ -6,44 +6,52 @@ get_header('new2019');
 
 echo 'HERE!';
 
-$API_key    = 'AIzaSyD18QZUABnzCt1YPyxgVZbgVZpjQ1PKRGI';
-$channelID  = 'UCO8tHWm0LQy3QWFcnZeV4CQ';
-$max_results = 50000;
-$table = array();
-$file_name = 'all-videos.json';
+$apiKey = 'AIzaSyD18QZUABnzCt1YPyxgVZbgVZpjQ1PKRGI';
+$channelId = 'UCO8tHWm0LQy3QWFcnZeV4CQ';
+$resultsNumber = '50000';
 
-function youtube_search($API_key, $channelID, $max_results, $next_page_token,$videos,$file){
+$requestUrl = 'https://www.googleapis.com/youtube/v3/search?key=' . $apiKey . '&channelId=' . $channelId . '&part=snippet,id&maxResults=' . $resultsNumber .'&order=date';
+// Try file_get_contents first
+if( function_exists( file_get_contents ) ) {
+    $response = file_get_contents( $requestUrl );
+    $json_response = json_decode( $response, TRUE );
 
-    $dataquery = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=".$channelID."&maxResults=".$max_results."&order=date&pageToken=".$next_page_token."&key=".$API_key;
+} else {
+    // No file_get_contents? Use cURL then...
+    if( function_exists( 'curl_version' ) ) {
+        $curl = curl_init();
+        curl_setopt( $curl, CURLOPT_URL, $requestUrl );
+        curl_setopt( $curl, CURLOPT_RETURNTRANSFER, 1 );
+        curl_setopt( $curl, CURLOPT_SSL_VERIFYPEER, TRUE );
+        $response = curl_exec( $curl );
+        curl_close( $curl );
+        $json_response = json_decode( $response, TRUE );
 
-    $ch = curl_init();
-
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_URL, $dataquery);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-    curl_setopt($ch, CURLOPT_VERBOSE, 0);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    $response = curl_exec($ch);
-
-    curl_close($ch);
-
-    $data = json_decode($response);
-
-
-    foreach ($data->items as $item){
-        array_push($videos,$item);
-    }
-
-    $content = json_encode($videos);
-    print_r($content);
-    file_put_contents($file, $content);
-
-    if(!empty($data->nextPageToken)){
-
-        youtube_search($API_key, $channelID, $max_results, $data->nextPageToken, $videos, $file);
+    } else {
+        // Unable to get response if both file_get_contents and cURL fail
+        $json_response = NULL;
     }
 }
 
-youtube_search($API_key, $channelID, $max_results, $next_page_token='', $table, $file_name);
+// If there's a JSON response
+if( $json_response ) {
+    $i = 1;
+    echo '<div class="youtube-channel-videos">';
+    foreach( $json_response['items'] as $item ) {
+        $videoTitle = $item['snippet']['title'];
+        $videoID = $item['id']['videoId'];
+        //$videoThumbnail = $item['snippet']['thumbnails']['high']['url'];
+
+        if( $videoTitle && $videoID ) {
+            echo '<div class="youtube-channel-video-embed vid-' . $videoID . ' video-' . $i++ . '"><iframe width="500" height="300" src="https://www.youtube.com/embed/' . $videoID . '" frameborder="0" allowfullscreen>' . $videoTitle . '</iframe></div>';
+        }
+    }
+    echo '</div><!-- .youtube-channel-videos -->';
+
+// If there's no response
+} else {
+    // Display error message
+    echo '<div class="youtube-channel-videos error"><p>No videos are available at this time from the channel specified!</p></div>';
+    }
+}
 ?>
