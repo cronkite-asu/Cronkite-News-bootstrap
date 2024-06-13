@@ -53,5 +53,5 @@ if( $json_response ) {
     // Display error message
     echo '<div class="youtube-channel-videos error"><p>No videos are available at this time from the channel specified!</p></div>';
     }
-}
+
 ?>
