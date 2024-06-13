@@ -126,6 +126,7 @@ p {
 }
 
 .page-header {
+  border: 1px solid #ff0000;
    h1 {
      @media only screen
        and (max-width: 800px) {

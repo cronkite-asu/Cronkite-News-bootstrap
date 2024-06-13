@@ -57,9 +57,11 @@ p {
     p a:hover {
       text-decoration: none; }
 
-@media only screen and (max-width: 800px) {
-  .page-header h1 {
-    font-size: 1.75rem !important; } }
+.page-header {
+  border: 1px solid #ff0000; }
+  @media only screen and (max-width: 800px) {
+    .page-header h1 {
+      font-size: 1.75rem !important; } }
 
 .sub-head h3, .sub-head h4 {
   margin-bottom: 15px; }
