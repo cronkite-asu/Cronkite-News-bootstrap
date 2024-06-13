@@ -3,7 +3,7 @@
   <div class="grid-container main-stories">
     <div class="grid-x grid-padding-x single-story-block">
       <div class="large-12 medium-12 small-12 cell">
-        <h1>2024 Paris Olympics <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/06/Paris2024_OlyEmbleme_RVB_Poly_2021.png.png" height="60" alt="2024 Paris Olympics" title="2024 Paris Olympics" /></h1>
+        <h1><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/06/Paris2024_OlyEmbleme_RVB_Poly_2021.png.png" height="60" alt="2024 Paris Olympics" title="2024 Paris Olympics" style="margin-right:40px;" /> 2024 Paris Olympics</h1>
       </div>
     </div>
   </div>
