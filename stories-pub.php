@@ -31,19 +31,22 @@ echo '<p>Count: '.$count = $query->found_posts.'</p>';
   <table>
   <thead>
     <tr>
-      <th width="40%">Title</th>
+      <th width="30%">Title</th>
       <th width="20%">Verticals</th>
       <th width="20%">Author</th>
       <th width="20%">URL</th>
+      <th width="10%">Pub Date</th>
     </tr>
   </thead>
   <tbody>
     <?php while ($query->have_posts()) : $query->the_post(); ?>
       <tr>
         <td><?php echo get_the_title(); ?></td>
+        <td></td>
         <td><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_permalink(); ?></a></td>
         <td><strong>by</strong> <?php echo $author = get_the_author(); ?></td>
-      </tr>      
+        <td><?php get_the_date('F M Y'); ?>  </td>
+      </tr>
     <?php endwhile; ?>
   </tbody>
 </table>
