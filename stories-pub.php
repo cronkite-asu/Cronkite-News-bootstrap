@@ -5,19 +5,21 @@
 get_header('new2019'); ?>
 
 
-<h2>D.C.</h2>
+<h2>Published stories</h2>
 
 <?php
+//22877 - noticias
+//11 - newscast
+
   $args = [
-    'author' => 29,
     'post_type' => 'post',
     'post_status' => 'publish',
     'posts_per_page' => -1,
     'category__not_in' => [ 11 ],
     'date_query' => [
                       [
-                          'after'     => 'August 1, 2023',
-                          'before'    => 'today',
+                          'after'     => 'January 1, 2023',
+                          'before'    => 'December 31, 2023',
                           'inclusive' => true,
                     ]],
   ];
@@ -26,38 +28,26 @@ echo '<p>Count: '.$count = $query->found_posts.'</p>';
 ?>
 
 <?php if ($query->have_posts()) : ?>
+  <table>
+  <thead>
+    <tr>
+      <th width="40%">Title</th>
+      <th width="20%">Verticals</th>
+      <th width="20%">Author</th>
+      <th width="20%">URL</th>
+    </tr>
+  </thead>
+  <tbody>
     <?php while ($query->have_posts()) : $query->the_post(); ?>
-    <p><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_the_title(); ?></a> <strong>by</strong> <?php echo $author = get_the_author(); ?></p>
-
+      <tr>
+        <td><?php echo get_the_title(); ?></td>
+        <td><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_permalink(); ?></a></td>
+        <td><strong>by</strong> <?php echo $author = get_the_author(); ?></td>
+      </tr>      
     <?php endwhile; ?>
+  </tbody>
+</table>
 <?php endif; ?>
 
-<hr />
-
-<h2>PHOENIX</h2>
-<?php
-  $args = [
-    'author' => -29,
-    'post_type' => 'post',
-    'post_status' => 'publish',
-    'posts_per_page' => -1,
-    /*'category__not_in' => array( 11 ),*/
-    'date_query' => [
-                      [
-                          'after'     => 'August 1, 2023',
-                          'before'    => 'today',
-                          'inclusive' => true,
-                    ]],
-  ];
-$query = new WP_Query($args);
-echo '<p>Count: '.$count = $query->found_posts.'</p>';
-?>
-
-<?php if ($query->have_posts()) : ?>
-    <?php while ($query->have_posts()) : $query->the_post(); ?>
-    <p><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_the_title(); ?></a> <strong>by</strong> <?php echo $author = get_the_author(); ?></p>
-
-    <?php endwhile; ?>
-<?php endif; ?>
 
 <?php get_footer(); ?>
