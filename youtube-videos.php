@@ -12,8 +12,10 @@ $API_Key    = 'AIzaSyD18QZUABnzCt1YPyxgVZbgVZpjQ1PKRGI';
 $Channel_ID = 'UCO8tHWm0LQy3QWFcnZeV4CQ';
 $Max_Results = 5000;
 
+echo 'https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$Channel_ID.'&maxResults='.$Max_Results.'&key='.$API_Key;
+
 // Get videos from channel by YouTube Data API
-echo $apiData = @file_get_contents('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$Channel_ID.'&maxResults='.$Max_Results.'&key='.$API_Key.'');
+ $apiData = @file_get_contents('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$Channel_ID.'&maxResults='.$Max_Results.'&key='.$API_Key.'');
 if($apiData){
     echo 'HERE';
     $videoList = json_decode($apiData);
