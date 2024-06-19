@@ -983,17 +983,17 @@ if (have_rows('blocks')) {
   						<div class="large-12 medium-12 small-12 cell text-center">
   						    <img src="<?php echo get_sub_field('photo'); ?>" <?php echo $removeShadow; ?>  />
   			<?php
-                                    if (get_sub_field('caption') != '') {
-                                        if ($captionCounter == 0 && get_sub_field('caption') != '') {
-                                            $combinedCaption = '<strong>Left:</strong> '. strip_tags(get_sub_field('caption'), '<a>');
-                                        } elseif ($captionCounter == 1 && get_sub_field('caption') != '') {
-                                            $combinedCaption .= ' <strong>Center:</strong> '. strip_tags(get_sub_field('caption'), '<a>');
-                                        } elseif ($captionCounter == 2 && get_sub_field('caption') != '') {
-                                            $combinedCaption .= ' <strong>Right:</strong> '. strip_tags(get_sub_field('caption'), '<a>');
-                                        }
-                                        $captionCounter++;
-                                    }
-                    ?>
+              if (get_sub_field('caption') != '') {
+                  if ($captionCounter == 0 && get_sub_field('caption') != '') {
+                      $combinedCaption = '<strong>Left:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
+                  } elseif ($captionCounter == 1 && get_sub_field('caption') != '') {
+                      $combinedCaption .= ' <strong>Center:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
+                  } elseif ($captionCounter == 2 && get_sub_field('caption') != '') {
+                      $combinedCaption .= ' <strong>Right:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
+                  }
+                  $captionCounter++;
+              }
+        ?>
   						</div>
   			<?php
                 }
@@ -1722,7 +1722,7 @@ if ($inthisseriesSettings['show'] == 'yes') {
         if ($pubbedStoryList != '') {
             foreach ($pubbedStoryList as $pubbedStory) {
                 ?>
-            <div>         
+            <div>
               <a href="<?php echo get_permalink($pubbedStory); ?>"><?php echo get_the_post_thumbnail($pubbedStory, 'full', ['class' => 'img-responsive']); ?></a>
               <?php
                         if (get_field('use_short_headline', $pubbedStory) == 'yes' && get_field('homepage_headline', $pubbedStory) != '') {
