@@ -161,7 +161,7 @@
                     ?>
                 <li>
                     <?php
-                    $staffNameURLSafe = str_replace('’', '', str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val))))));
+                    $staffNameURLSafe = str_replace('-j-', '-', str_replace('’', '', str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))))));
                     $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
                     echo '<!--'.$staffNameURLSafe.'-->';
                     echo '<!--'.get_the_title($val).'-->';
