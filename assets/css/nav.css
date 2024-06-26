@@ -183,7 +183,7 @@ a {
 }
 .cn_navigation .main_nav .nav_links ul.top_links li a:hover {
   color: #003594;
-  background-color: none;
+  background-color: transparent;
   border: 2px solid #003594;
 }
 .cn_navigation .main_nav .nav_links ul.top_links .search-box {

@@ -167,7 +167,7 @@ a {
             }
           }
         }
-        &.top_links {          
+        &.top_links {
           font-size: 1.25rem;
           font-weight: 400;
           text-transform: uppercase;
@@ -192,7 +192,7 @@ a {
               padding:4px 10px;
               &:hover {
                 color: $cnBlue;
-                background-color: none;
+                background-color: transparent;
                 border: 2px solid $cnBlue;
               }
             }
