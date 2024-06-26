@@ -144,8 +144,8 @@ if (! empty($categories)) {
           </div>
           <!-- main navigation -->
           <div class="nav_links">
-            <!-- language and search -->
-            <ul class="lang_search">
+            <!-- top navigation -->
+            <ul class="top_links">
               <li>
                 <div class="search-box">
                   <form method="get" class="navbar-form search" id="searchform" action="https://cronkitenews.azpbs.org/">
@@ -154,21 +154,18 @@ if (! empty($categories)) {
                   </form>
                 </div>
               </li>
-            </ul>
-            <!-- top navigation -->
-            <ul class="top_links">
-                            <?php
-                            $args = [
-                                'menu' => 'Header Nav - 2019',
-                                'container'     => false,
-                                'items_wrap'    => '%3$s',
-                                'depth'         => 1,
-                                'fallback_cb'   => false,
-                                'menu_id'             => '',
-                                'menu_class'        => '',
-                                ];
-wp_nav_menu($args);
-?>
+              <?php
+              $args = [
+                  'menu' => 'Header Nav - 2019',
+                  'container'     => false,
+                  'items_wrap'    => '%3$s',
+                  'depth'         => 1,
+                  'fallback_cb'   => false,
+                  'menu_id'             => '',
+                  'menu_class'        => '',
+                  ];
+              wp_nav_menu($args);
+              ?>
             </ul>
           </div>
           <!-- hamburger icon -->
