@@ -107,11 +107,11 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick-theme.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/impeachment.css">
     <link href="<?php bloginfo('template_directory');?>/assets/css/nav.css" rel="stylesheet">
-    <?php if (is_page(18) || is_single() || is_category() || is_tag() || is_page('people') || is_search() || is_page(158103) || is_page(122187) || is_page(83139) || is_page(83161) || is_page(1131) || is_page(175279) || is_page(233325)) {?>
+    <?php if (is_page(18) || is_single() || is_category() || is_tag() || is_page('people') || is_search() || is_page(158103) || is_page(122187) || is_page(83139) || is_page(83161) || is_page(1131) || is_page(175279) || is_page(233325) || is_page(83161)) {?>
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/single-story-post.css">
     <?php } ?>
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/about-us.css">
-    <?php if (is_page(18) || is_page(159870) || is_page(122187) || is_page(166546) || is_page(126223) || is_page(1131) || is_page(83139) || is_page(174126) || is_page(233325)) { ?>
+    <?php if (is_page(18) || is_page(159870) || is_page(122187) || is_page(166546) || is_page(126223) || is_page(1131) || is_page(83139) || is_page(174126) || is_page(233325) || is_page(83161)) { ?>
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/audio-podcast.css">
     <?php } ?>
     <?php if (is_page(170606)) { ?>
