@@ -185,9 +185,13 @@ a {
             a {
               font-family: $roboto-font-stack;
               letter-spacing: 0.6px;
-              color: $black;
+              color: #fff;
+              background-color: $cnBlue;
+              border: 2px solid $cnBlue;
               &:hover {
                 color: $cnBlue;
+                background-color: none;
+                border: 2px solid $cnBlue;
               }
             }
           }
