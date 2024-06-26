@@ -196,7 +196,7 @@ a {
   cursor: pointer;
 }
 .cn_navigation .main_nav .nav_links ul.top_links .search-box form {
-  padding: 0 6px;
+  padding: 4px 6px;
   margin: 0;
 }
 .cn_navigation .main_nav .nav_links ul.top_links .search-box input[type=text] {
