@@ -155,9 +155,7 @@ a {
   padding-right: 0;
 }
 .cn_navigation .main_nav .nav_links ul.top_links {
-  /*font-size:1.375rem;*/
-  font-size: calc(16.4px + 0.3vw);
-  /*line-height: calc(1.5em + 0.3333vw);*/
+  font-size: 1.25rem;
   font-weight: 400;
   text-transform: uppercase;
   color: #111111;
@@ -173,11 +171,15 @@ a {
   padding-right: 0;
 }
 .cn_navigation .main_nav .nav_links ul.top_links li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.6px;
   color: #fff;
   background-color: #003594;
   border: 2px solid #003594;
+  padding: 4px 10px;
 }
 .cn_navigation .main_nav .nav_links ul.top_links li a:hover {
   color: #003594;
