@@ -184,6 +184,7 @@ a {
               display: flex;
               justify-content: center;
               align-items: center;
+              font-size: 18px;
               font-family: $roboto-font-stack;
               letter-spacing: 0.6px;
               color: #fff;
@@ -215,7 +216,7 @@ a {
             input[type="text"] {
               display: none;
               width: 0px;
-              height: 25px;
+              height: 10px;
               margin:0;
               border: none;
               box-sizing: border-box;
