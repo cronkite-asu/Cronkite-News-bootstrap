@@ -175,10 +175,14 @@ a {
 .cn_navigation .main_nav .nav_links ul.top_links li a {
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.6px;
-  color: #111111;
+  color: #fff;
+  background-color: #003594;
+  border: 2px solid #003594;
 }
 .cn_navigation .main_nav .nav_links ul.top_links li a:hover {
   color: #003594;
+  background-color: none;
+  border: 2px solid #003594;
 }
 .cn_navigation .main_nav .nav_links ul.top_links .search-box {
   border: solid 1px #ececec;
