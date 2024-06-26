@@ -111,7 +111,7 @@
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/single-story-post.css">
     <?php } ?>
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/about-us.css">
-    <?php if (is_page(18) || is_page(159870) || is_page(122187) || is_page(166546) || is_page(126223) || is_page(1131) || is_page(83139) || is_page(174126)) { ?>
+    <?php if (is_page(18) || is_page(159870) || is_page(122187) || is_page(166546) || is_page(126223) || is_page(1131) || is_page(83139) || is_page(174126) || is_page(233325)) { ?>
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/audio-podcast.css">
     <?php } ?>
     <?php if (is_page(170606)) { ?>
