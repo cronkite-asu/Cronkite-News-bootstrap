@@ -194,9 +194,8 @@
           </div>
           <!-- main navigation -->
           <div class="nav_links">
-
-            <!-- top navigation -->
-            <ul class="top_links">
+            <!-- language and search -->
+            <ul class="lang_search">
               <li>
                 <div class="search-box">
                   <form method="get" class="navbar-form search" id="searchform" action="https://cronkitenews.azpbs.org/">
@@ -205,6 +204,9 @@
                   </form>
                 </div>
               </li>
+            </ul>
+            <!-- top navigation -->
+            <ul class="top_links">
               <?php
               $args = [
                   'menu' => 'Header Nav - 2019',
