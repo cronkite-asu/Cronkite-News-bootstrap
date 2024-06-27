@@ -180,7 +180,8 @@ a {
   color: #fff;
   background-color: #003594;
   border: 2px solid #003594;
-  padding: 4px 12px;
+  padding: 10px 12px;
+  height: 22px;
 }
 .cn_navigation .main_nav .nav_links ul.top_links li a:hover {
   color: #003594;
