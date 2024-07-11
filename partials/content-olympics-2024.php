@@ -52,8 +52,8 @@
                           $photoImg = get_the_post_thumbnail($latestNews->ID);
                           ?>
                             <a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a>
-                            <?php if (isset($story) && get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
-                              <h3 class="main"><a href="<?php echo $permalink; ?>"><?php echo get_field('homepage_headline', $story->ID); ?></a></h3>
+                            <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('use_short_headline', $story->ID) != '') { ?>
+                              <h3 class="main"><a href="<?php echo $permalink; ?>"><?php echo get_field('use_short_headline', $story->ID); ?></a></h3>
                             <?php } else {?>
                               <h3 class="main"><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                             <?php } ?>
@@ -91,8 +91,8 @@
                             ?>
                           <div class="large-4 medium-4 small-6 cell story-text">
                             <a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a>
-                            <?php if (isset($story) && get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
-                              <h3><a href="<?php echo $permalink; ?>"><?php echo get_field('homepage_headline', $story->ID); ?></a></h3>
+                            <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('use_short_headline', $story->ID) != '') { ?>
+                              <h3><a href="<?php echo $permalink; ?>"><?php echo get_field('use_short_headline', $story->ID); ?></a></h3>
                             <?php } else {?>
                               <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                             <?php } ?>
