@@ -239,7 +239,7 @@
               if ($latestNews->have_posts()) {
                   while ($latestNews->have_posts()) {
               ?>
-                <div class="large-6 medium-6 small-12 cell">
+                <div class="large-6 medium-6 small-12 cell featured-block">
                   <div class="grid-x grid-padding-x">
                     <?php
                         $latestNews->the_post();
@@ -250,7 +250,7 @@
                         $photoImg = get_the_post_thumbnail($latestNews->ID);
                     ?>
                     <div class="large-4 medium-4 small-4 cell"><a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a></div>
-                    <div class="large-8 medium-8 small-8 cell featured-block">
+                    <div class="large-8 medium-8 small-8 cell">
                     <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
                       <h3><a href="<?php echo $permalink; ?>"><?php echo get_field('homepage_headline', $story->ID); ?></a></h3>
                     <?php } else {?>

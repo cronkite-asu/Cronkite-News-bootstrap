@@ -62,6 +62,9 @@
   font-size: 14px;
 }
 
+.featured-block {
+  margin-top: 10px;
+}
 .featured-block h3 {
   margin: 0;
   padding: 0;
