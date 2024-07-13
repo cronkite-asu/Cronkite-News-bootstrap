@@ -186,26 +186,24 @@
 
         <?php } elseif (get_row_layout() == 'videos_block') { ?>
 
-          <div class="video">
-            <div class="grid-x grid-padding-x sub-head">
-              <div class="large-12 medium-12 small-12 cell">
-                <h4><?php echo get_sub_field('section_title'); ?></h4>
-              </div>
+          <div class="grid-x grid-padding-x sub-head">
+            <div class="large-12 medium-12 small-12 cell">
+              <h4><?php echo get_sub_field('section_title'); ?></h4>
             </div>
-            <div class="grid-x grid-padding-x">
-              <?php
-                  if (have_rows('video')) {
-                      while (have_rows('video')) {
-                          the_row();
-                          ?>
-                    <div class="large-3 medium-3 small-12 cell">
-                      <?php echo '<a href="'.get_sub_field('link').'" target="_blank"><img src="'.get_sub_field('preview_image').'"></a>'; ?>
-                    </div>
-              <?php
-                      }
-                  }
-              ?>
-            </div>
+          </div>
+          <div class="grid-x grid-padding-x">
+            <?php
+                if (have_rows('video')) {
+                    while (have_rows('video')) {
+                        the_row();
+                        ?>
+                  <div class="large-3 medium-3 small-12 cell">
+                    <?php echo '<a href="'.get_sub_field('link').'" target="_blank"><img src="'.get_sub_field('preview_image').'"></a>'; ?>
+                  </div>
+            <?php
+                    }
+                }
+            ?>
           </div>
 
         <?php } elseif (get_row_layout() == 'embed_block') { ?>
