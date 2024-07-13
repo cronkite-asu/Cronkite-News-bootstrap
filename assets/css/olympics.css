@@ -70,8 +70,8 @@
 .featured-block:last-child {
   border-bottom: none;
 }
-.featured-block.cell {
-  background-color: rgb(194, 194, 194);
+.featured-block.cell:hover {
+  background-color: rgb(228, 228, 228);
 }
 .featured-block h3 {
   font-family: "Roboto", sans-serif;
