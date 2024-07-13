@@ -241,26 +241,20 @@
               ?>
                 <div class="large-6 medium-6 small-12 cell">
               <?php
-                      $latestNews->the_post();
+                  $latestNews->the_post();
 
-                      $permalink = get_permalink($latestNews->ID);
-                      $title = get_the_title($latestNews->ID);
-                      $storyTease = get_field('story_tease', $latestNews->ID);
-                      $photoURL = get_the_post_thumbnail_url($latestNews->ID);
-                      $photoImg = get_the_post_thumbnail($latestNews->ID);
-
-                      if ($counter >= 1) {
+                  $permalink = get_permalink($latestNews->ID);
+                  $title = get_the_title($latestNews->ID);
+                  $storyTease = get_field('story_tease', $latestNews->ID);
+                  $photoURL = get_the_post_thumbnail_url($latestNews->ID);
+                  $photoImg = get_the_post_thumbnail($latestNews->ID);
               ?>
-                        <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
-                          <h3><a href="<?php echo $permalink; ?>"><?php echo get_field('homepage_headline', $story->ID); ?></a></h3>
-                        <?php } else {?>
-                          <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
-                        <?php } ?>
-                        <p><?php echo $storyTease = get_field('story_tease', $latestNews->ID); ?></p>
-              <?php
-                      }
-                      $counter++;
-              ?>
+                  <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
+                    <h3><a href="<?php echo $permalink; ?>"><?php echo get_field('homepage_headline', $story->ID); ?></a></h3>
+                  <?php } else {?>
+                    <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+                  <?php } ?>
+                  <p><?php echo $storyTease = get_field('story_tease', $latestNews->ID); ?></p>
                 </div>
               <?php
                 }
