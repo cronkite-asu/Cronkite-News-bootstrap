@@ -226,13 +226,12 @@
           </div>
           <div class="grid-x grid-padding-x sub-head">
               <?php
-              print_r($repeatStoriesArray);
               $counter = 0;
               $args = [
                           'post_type'   => 'post',
                           'post_status' => 'publish',
-                          'post__not_in' => $repeatStoriesArray,
-                          'posts_per_page' => 10,
+                          //'post__not_in' => $repeatStoriesArray,
+                          'posts_per_page' => 8,
                           'cat' => 35197,
                          ];
 
@@ -257,6 +256,7 @@
                         <?php } else {?>
                           <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                         <?php } ?>
+                        <p><? echo $storyTease = get_field('story_tease', $latestNews->ID); ?></p>
               <?php
                       }
                       $counter++;
