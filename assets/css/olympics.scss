@@ -49,6 +49,8 @@ $bgColor: #fafafa;
     div {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
       font-family: $montserratFontFamily;
       margin-left: 15px;
       margin-right: 15px;
