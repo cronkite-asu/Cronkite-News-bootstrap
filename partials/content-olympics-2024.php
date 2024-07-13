@@ -240,7 +240,7 @@
                   while ($latestNews->have_posts()) {
               ?>
                 <div class="large-6 medium-6 small-12 cell featured-block">
-                  <div class="grid-x grid-padding-x">
+                  <div class="grid-x grid-margin-x">
                     <?php
                         $latestNews->the_post();
                         $permalink = get_permalink($latestNews->ID);
