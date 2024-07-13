@@ -83,7 +83,7 @@
                 if ($latestNews->have_posts()) {
                     while ($latestNews->have_posts()) {
                         $latestNews->the_post();
-
+                        print_r($latestNews);
                         $permalink = get_permalink($latestNews->ID);
                         $title = get_the_title($latestNews->ID);
                         $storyTease = get_field('story_tease', $latestNews->ID);
