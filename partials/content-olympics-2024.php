@@ -113,18 +113,19 @@
           <?php if (get_sub_field('show_countdown') == 'yes') { ?>
             <div class="large-12 medium-12 small-12 cell cta noticias-preview">
               <div class="grid-x align-stretch">
-                <div class="large-4 medium-4 small-12 cell">
-
+                <div class="large-3 medium-3 small-12 cell">
+                  <div class="logo">
+                    <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/06/Paris2024_OlyEmbleme_RVB_Poly_2021.png.png" alt="2024 Paris Olympics" />
+                  </div>
                 </div>
-                <div class="large-8 medium-8 small-12 cell border-left">
+                <div class="large-3 medium-3 small-12 cell">
+                  <div class="description">
+                    <p>Final Four: Saturday, April 6 at State Farm Stadium in Glendale, Arizona.</p>
+                  </div>
+                </div>
+                <div class="large-6 medium-6 small-12 cell border-left">
                   <div id="olympics-countdown" class="large-12 medium-12 small-12 cell">
-                    <div class="logo">
-                      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/06/Paris2024_OlyEmbleme_RVB_Poly_2021.png.png" alt="2024 Paris Olympics" />
-                    </div>
                     <div class="countdown">
-                      <div class="description">
-                        <p>Final Four: Saturday, April 6 at State Farm Stadium in Glendale, Arizona.</p>
-                      </div>
                       <div>
                         <span id="day"></span>
                         <div>Day</div>
