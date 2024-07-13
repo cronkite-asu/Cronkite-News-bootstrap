@@ -118,12 +118,12 @@
                     <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/06/Paris2024_OlyEmbleme_RVB_Poly_2021.png.png" alt="2024 Paris Olympics" />
                   </div>
                 </div>
-                <div class="large-4 medium-4 small-12 cell">
+                <div class="large-5 medium-5 small-12 cell">
                   <div class="description">
                     <p>Final Four: Saturday, April 6 at State Farm Stadium in Glendale, Arizona.</p>
                   </div>
                 </div>
-                <div class="large-6 medium-6 small-12 cell border-left">
+                <div class="large-5 medium-5 small-12 cell border-left">
                   <div id="olympics-countdown" class="large-12 medium-12 small-12 cell">
                     <div class="countdown">
                       <div>
