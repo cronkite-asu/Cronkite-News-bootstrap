@@ -149,6 +149,10 @@
       <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/health.css">
     <?php } ?>
 
+    <?php if (is_page(232869)) { ?>
+      <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/olympics.css">
+    <?php } ?>
+
     <?php if (is_page(226870)) { ?>
       <link rel="stylesheet" href="https://use.typekit.net/eog2dgw.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
