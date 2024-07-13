@@ -109,15 +109,15 @@ if (have_rows('page_layout')) {
             </div>
           </div>
 
-        <?php } elseif (get_row_layout() == 'cta_block') { ?>
+        <?php } elseif (get_row_layout() == 'countdown') { ?>
 
-          <?php if (get_sub_field('show_newsletter') == 'yes') { ?>
+          <?php if (get_sub_field('show_countdown') == 'yes') { ?>
             <!-- newsletter subscription -->
             <div class="large-12 medium-12 small-12 cell cta subscribe">
               <div class="grid-x align-stretch">
 
                 <div class="large-4 medium-4 small-12 cell">
-                  <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2023/04/pathways-logo.png" alt="Pathways" title="Pathways" />
+                  
                 </div>
                 <div class="large-4 medium-4 small-12 cell newsletter-signup">
                   <p>Pathways to Equity is a monthly newsletter about health disparities across the Southwest – and about those on the ground trying to turn things around.</p>

@@ -11,9 +11,9 @@ function progressIndicator() {
   }
 }
 
-// ncaa countdown
-if($("#ncaa-countdown").length) {
-  var deadline = new Date("apr 6, 2024 16:30:00").getTime();
+// olympics countdown
+if($("#olympics-countdown").length) {
+  var deadline = new Date("july 26, 2024 10:30:00").getTime();
   var x = setInterval(function() {
 
   var now = new Date().getTime();
