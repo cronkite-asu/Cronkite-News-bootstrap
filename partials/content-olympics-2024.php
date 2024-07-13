@@ -256,7 +256,7 @@
                         <?php } else {?>
                           <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                         <?php } ?>
-                        <p><? echo $storyTease = get_field('story_tease', $latestNews->ID); ?></p>
+                        <p><?php echo $storyTease = get_field('story_tease', $latestNews->ID); ?></p>
               <?php
                       }
                       $counter++;
