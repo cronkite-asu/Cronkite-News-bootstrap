@@ -83,16 +83,15 @@
                 if ($latestNews->have_posts()) {
                     while ($latestNews->have_posts()) {
                         $latestNews->the_post();
-                        print_r(get_the_ID());
+
                         $permalink = get_permalink($latestNews->ID);
                         $title = get_the_title($latestNews->ID);
                         $storyTease = get_field('story_tease', $latestNews->ID);
                         $photoURL = get_the_post_thumbnail_url($latestNews->ID);
                         $photoImg = get_the_post_thumbnail($latestNews->ID);
 
-                        echo 'HERE: '. $latestNews->ID;
                         // save main story ID
-                        $repeatStoriesArray[] = $latestNews->ID;
+                        $repeatStoriesArray[] = get_the_ID();
 
                         if ($counter >= 1) {
                             ?>
