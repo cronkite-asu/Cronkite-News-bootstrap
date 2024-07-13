@@ -272,7 +272,6 @@
               wp_reset_query();
               ?>
             </div>
-          </div>
         <?php } elseif (get_row_layout() == 'embed_block') { ?>
 
         <?php } elseif (get_row_layout() == 'text_block') { ?>
