@@ -62,4 +62,9 @@
   font-size: 14px;
 }
 
+.featured-block h3 {
+  margin: 0;
+  padding: 0;
+}
+
 /*# sourceMappingURL=olympics.css.map */

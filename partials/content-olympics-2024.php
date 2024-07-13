@@ -250,7 +250,7 @@
                         $photoImg = get_the_post_thumbnail($latestNews->ID);
                     ?>
                     <div class="large-4 medium-4 small-4 cell"><a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a></div>
-                    <div class="large-8 medium-8 small-8 cell">
+                    <div class="large-8 medium-8 small-8 cell featured-block">
                     <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
                       <h3><a href="<?php echo $permalink; ?>"><?php echo get_field('homepage_headline', $story->ID); ?></a></h3>
                     <?php } else {?>
