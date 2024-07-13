@@ -119,7 +119,7 @@
                 <div class="large-8 medium-8 small-12 cell border-left">
                   <div id="olympics-countdown" class="large-12 medium-12 small-12 cell">
                     <div class="logo">
-                      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2023/11/2024_MFF_Logo_Color-1.svg" alt="NCAA 2024 Men's Final Four in Phoenix" />
+                      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/06/Paris2024_OlyEmbleme_RVB_Poly_2021.png.png" alt="2024 Paris Olympics" />
                     </div>
                     <div class="countdown">
                       <div class="description">
