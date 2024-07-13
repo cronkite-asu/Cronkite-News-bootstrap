@@ -90,7 +90,7 @@
                         $photoURL = get_the_post_thumbnail_url($latestNews->ID);
                         $photoImg = get_the_post_thumbnail($latestNews->ID);
 
-                        echo $latestNews->ID;
+                        echo 'HERE: '. $latestNews->ID;
                         // save main story ID
                         $repeatStoriesArray[] = $latestNews->ID;
 
