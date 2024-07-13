@@ -109,15 +109,15 @@ if (have_rows('page_layout')) {
             </div>
           </div>
 
-        <?php } elseif (get_row_layout() == 'countdown') { ?>
+        <?php } elseif (get_row_layout() == 'cta_block') { ?>
 
-          <?php if (get_sub_field('show_countdown') == 'yes') { ?>
+          <?php if (get_sub_field('show_newsletter') == 'yes') { ?>
             <!-- newsletter subscription -->
             <div class="large-12 medium-12 small-12 cell cta subscribe">
               <div class="grid-x align-stretch">
 
                 <div class="large-4 medium-4 small-12 cell">
-                  
+
                 </div>
                 <div class="large-4 medium-4 small-12 cell newsletter-signup">
                   <p>Pathways to Equity is a monthly newsletter about health disparities across the Southwest – and about those on the ground trying to turn things around.</p>
@@ -172,14 +172,14 @@ if (have_rows('page_layout')) {
               <div class="featured-health-stories">
               <?php
               $counter = 0;
-            $storyList = get_sub_field('story_list');
+              $storyList = get_sub_field('story_list');
 
-            foreach ($storyList as $story) {
-                $permalink = get_permalink($story->ID);
-                $title = get_the_title($story->ID);
-                $storyTease = get_field('story_tease', $story->ID);
-                $photoURL = get_the_post_thumbnail_url($story->ID);
-                $photoImg = get_the_post_thumbnail($story->ID);
+              foreach ($storyList as $story) {
+                  $permalink = get_permalink($story->ID);
+                  $title = get_the_title($story->ID);
+                  $storyTease = get_field('story_tease', $story->ID);
+                  $photoURL = get_the_post_thumbnail_url($story->ID);
+                  $photoImg = get_the_post_thumbnail($story->ID);
                 ?>
                     <div class="large-3 medium-3 small-12 cell">
                       <a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a>

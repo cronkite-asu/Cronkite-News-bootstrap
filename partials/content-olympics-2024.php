@@ -50,6 +50,9 @@
                           $storyTease = get_field('story_tease', $latestNews->ID);
                           $photoURL = get_the_post_thumbnail_url($latestNews->ID);
                           $photoImg = get_the_post_thumbnail($latestNews->ID);
+
+                          // save main story ID
+                          $repeatStoriesArray[] = get_the_ID();
                           ?>
                             <a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a>
                             <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
@@ -87,6 +90,9 @@
                         $photoURL = get_the_post_thumbnail_url($latestNews->ID);
                         $photoImg = get_the_post_thumbnail($latestNews->ID);
 
+                        // save main story ID
+                        $repeatStoriesArray[] = $latestNews->ID;
+
                         if ($counter >= 1) {
                             ?>
                           <div class="large-4 medium-4 small-6 cell story-text">
@@ -104,7 +110,7 @@
                 }
 
                 wp_reset_query();
-            ?>
+                ?>
               </div>
             </div>
           </div>
@@ -212,6 +218,61 @@
               }
           ?>
 
+        <?php } elseif (get_row_layout() == 'featured_block') { ?>
+          <div class="grid-x grid-padding-x sub-head">
+            <div class="large-12 medium-12 small-12 cell">
+              <h4><?php echo get_sub_field('section_title'); ?></h4>
+            </div>
+          </div>
+          <div class="grid-x grid-padding-x sub-head">
+              <?php
+              $counter = 0;
+              $args = [
+                          'post_type'   => 'post',
+                          'post_status' => 'publish',
+                          'post__not_in' => $repeatStoriesArray,
+                          'posts_per_page' => 10,
+                          'cat' => 35197,
+                         ];
+
+              $latestNews = new WP_Query($args);
+              if ($latestNews->have_posts()) {
+                  while ($latestNews->have_posts()) {
+              ?>
+                <div class="large-6 medium-6 small-12 cell">
+              <?php
+                      $latestNews->the_post();
+
+                      $permalink = get_permalink($latestNews->ID);
+                      $title = get_the_title($latestNews->ID);
+                      $storyTease = get_field('story_tease', $latestNews->ID);
+                      $photoURL = get_the_post_thumbnail_url($latestNews->ID);
+                      $photoImg = get_the_post_thumbnail($latestNews->ID);
+
+                      // save main story ID
+                      $repeatStoriesArray[] = $latestNews->ID;
+
+                      if ($counter >= 1) {
+              ?>
+                        <a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a>
+                        <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
+                          <h3><a href="<?php echo $permalink; ?>"><?php echo get_field('homepage_headline', $story->ID); ?></a></h3>
+                        <?php } else {?>
+                          <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+                        <?php } ?>
+              <?php
+                      }
+                      $counter++;
+              ?>
+                </div>
+              <?php
+                }
+              }
+
+              wp_reset_query();
+              ?>
+            </div>
+          </div>
         <?php } elseif (get_row_layout() == 'embed_block') { ?>
 
         <?php } elseif (get_row_layout() == 'text_block') { ?>
