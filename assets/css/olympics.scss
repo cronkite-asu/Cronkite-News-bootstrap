@@ -29,6 +29,12 @@ $bgColor: #fafafa;
   line-height: 1.55;
 }
 
+.cta {
+  img {
+    width: 80px;
+  }
+}
+
 #olympics-countdown {
   display: flex;
   flex-direction: row;
