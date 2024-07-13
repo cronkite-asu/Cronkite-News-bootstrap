@@ -1,3 +1,7 @@
+.cta .logo img {
+  width: 80px;
+}
+
 #olympics-countdown {
   display: flex;
   flex-direction: row;
