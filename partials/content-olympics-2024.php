@@ -208,13 +208,26 @@
                 }
             ?>
           </div>
-          <?php              
+          <?php
               }
           ?>
 
         <?php } elseif (get_row_layout() == 'embed_block') { ?>
 
         <?php } elseif (get_row_layout() == 'text_block') { ?>
+
+          <div class="grid-x grid-padding-x sub-head">
+            <div class="large-12 medium-12 small-12 cell">
+              <h4><?php echo get_sub_field('section_title'); ?></h4>
+            </div>
+          </div>
+          <div class="grid-x grid-padding-x section-break">
+            <?php if (get_sub_field('content')) { ?>
+              <div class="large-12 medium-12 small-12 cell">
+                <?php echo get_sub_field('content'); ?>
+              </div>
+            <?php } ?>
+          </div>
 
         <?php }
     }
