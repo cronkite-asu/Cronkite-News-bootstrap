@@ -226,6 +226,7 @@
           </div>
           <div class="grid-x grid-padding-x sub-head">
               <?php
+              print_r($repeatStoriesArray);
               $counter = 0;
               $args = [
                           'post_type'   => 'post',
