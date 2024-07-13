@@ -1,6 +1,9 @@
 .cta .logo img {
   width: 140px;
 }
+.cta .noticias-preview p {
+  padding-left: 0px !important;
+}
 
 #olympics-countdown {
   display: flex;
