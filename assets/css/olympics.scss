@@ -101,6 +101,9 @@ $bgColor: #fafafa;
   margin-top:10px;
   margin-bottom: 25px;
   border-bottom: 1px solid $cnBlue;
+  &:last-child {
+    border-bottom: none;
+  }
   h3 {
     font-family: $robotoFontFamily;
     font-size: 1.25rem;

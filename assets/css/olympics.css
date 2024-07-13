@@ -67,6 +67,9 @@
   margin-bottom: 25px;
   border-bottom: 1px solid #003594;
 }
+.featured-block:last-child {
+  border-bottom: none;
+}
 .featured-block h3 {
   font-family: "Roboto", sans-serif;
   font-size: 1.25rem;
