@@ -110,7 +110,7 @@
           </div>
 
         <?php } elseif (get_row_layout() == 'countdown') { ?>
-          <?php if (get_sub_field('show_newsletter') == 'yes') { ?>
+          <?php if (get_sub_field('show_countdown') == 'yes') { ?>
             <div class="large-12 medium-12 small-12 cell cta noticias-preview">
               <div class="grid-x align-stretch">
                 <div class="large-4 medium-4 small-12 cell">
@@ -185,7 +185,7 @@
 
         <?php } elseif (get_row_layout() == 'videos_block') { ?>
 
-          <div class="large-12 medium-12 small-12 cell video">
+          <div class="video">
             <div class="grid-x grid-padding-x sub-head">
               <div class="large-12 medium-12 small-12 cell">
                 <h4><?php echo get_sub_field('section_title'); ?></h4>
