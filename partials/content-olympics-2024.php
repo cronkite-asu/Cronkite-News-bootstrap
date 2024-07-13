@@ -250,12 +250,8 @@
                       $photoURL = get_the_post_thumbnail_url($latestNews->ID);
                       $photoImg = get_the_post_thumbnail($latestNews->ID);
 
-                      // save main story ID
-                      $repeatStoriesArray[] = $latestNews->ID;
-
                       if ($counter >= 1) {
               ?>
-                        <a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a>
                         <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
                           <h3><a href="<?php echo $permalink; ?>"><?php echo get_field('homepage_headline', $story->ID); ?></a></h3>
                         <?php } else {?>
