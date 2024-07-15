@@ -286,24 +286,24 @@
                'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
             ];
             if ($staffList) {
-                $staffCounter = 0;
-                foreach ($staffList as $staff) {
-                    $permalink = get_permalink($staff);
+              $staffCounter = 0;
+              foreach ($staffList as $staff) {
+                  $permalink = get_permalink($staff);
 
-                    $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($staff)))));
-                    $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
-                    ?>
-                  <div class="large-2 medium-2 small-6 cell text-center">
-                    <div class="author_bio post-holder">
-                      <div class="author_photo post">
-                        <a href="https://cronkitenews.azpbs.org/people/<?php echo $staffNameURLSafe; ?>" target="_blank"><img src="<?php echo get_field('student_photo', $staff); ?>" class="cn-staff-bio-circular-large staff" alt="<?php echo get_the_title($staff); ?>" /></a>
-                        <h3><a href="https://cronkitenews.azpbs.org/people/<?php echo $staffNameURLSafe; ?>" target="_blank"><?php echo get_the_title($staff); ?></a></h3>
-                      </div>
+                  $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($staff)))));
+                  $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
+                  ?>
+                <div class="large-2 medium-2 small-6 cell text-center">
+                  <div class="author_bio post-holder">
+                    <div class="author_photo post">
+                      <img src="<?php echo get_field('student_photo', $staff); ?>" class="cn-staff-bio-circular-large staff" alt="<?php echo get_the_title($staff); ?>" />
+                      <h3><?php echo get_the_title($staff); ?></h3>
                     </div>
                   </div>
-              <?php
-                          $staffCounter++;
-                }
+                </div>
+            <?php
+                $staffCounter++;
+              }
             }
             ?>
             </div>
