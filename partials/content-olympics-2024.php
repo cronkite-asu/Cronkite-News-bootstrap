@@ -134,19 +134,19 @@
                     <div class="countdown">
                       <div>
                         <span id="day"></span>
-                        <div>Day</div>
+                        <div>Days</div>
                       </div>
                       <div>
                         <span id="hour"></span>
-                        <div>Hour</div>
+                        <div>Hours</div>
                       </div>
                       <div>
                         <span id="minute"></span>
-                        <div>Minute</div>
+                        <div>Minutes</div>
                       </div>
                       <div>
                         <span id="second"></span>
-                        <div>Second</div>
+                        <div>Seconds</div>
                       </div>
                     </div>
                   </div>
