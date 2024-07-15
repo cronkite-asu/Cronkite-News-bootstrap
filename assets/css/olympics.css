@@ -2,6 +2,8 @@
   width: 140px;
 }
 .cta.noticias-preview p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
   font-style: normal;
   padding-left: 0px !important;
 }

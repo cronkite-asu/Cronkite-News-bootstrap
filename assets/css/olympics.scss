@@ -37,6 +37,8 @@ $bgColor: #fafafa;
   }
   &.noticias-preview {
     p {
+      font-family: $montserratFontFamily;
+      font-weight: 500;
       font-style: normal;
       padding-left: 0px !important;
     }
