@@ -92,5 +92,8 @@
 .featured-block h3 a {
   color: #003594;
 }
+.featured-block p {
+  font-size: 0.9rem !important;
+}
 
 /*# sourceMappingURL=olympics.css.map */
