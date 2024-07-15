@@ -126,7 +126,7 @@
                 </div>
                 <div class="large-5 medium-5 small-12 cell">
                   <div class="description">
-                    <p>2024 Paris Olympics July 26 - August 11, 2024</p>
+                    <p>2024 Paris Olympics<br />July 26 - August 11, 2024</p>
                   </div>
                 </div>
                 <div class="large-5 medium-5 small-12 cell border-left">
