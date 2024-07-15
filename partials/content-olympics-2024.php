@@ -267,7 +267,46 @@
               wp_reset_query();
               ?>
             </div>
-        <?php } elseif (get_row_layout() == 'embed_block') { ?>
+        <?php } elseif (get_row_layout() == 'students_block') { ?>
+
+          <div class="grid-x grid-padding-x students">
+            <div class="large-12 medium-12 small-12 cell">
+              <h4><?php echo get_sub_field('section_title'); ?></h4>
+            </div>
+            <?php
+            $staffList = get_sub_field('students', 232869);
+            $normalizeChars = [
+               'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
+               'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
+               'Ï'=>'I', 'Ñ'=>'N', 'Ń'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
+               'Û'=>'U', 'Ü'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'Ss','à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a',
+               'å'=>'a', 'æ'=>'a', 'ç'=>'c', 'è'=>'e', 'é'=>'e', 'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i',
+               'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ń'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
+               'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f',
+               'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
+            ];
+            if ($staffList) {
+                $staffCounter = 0;
+                foreach ($staffList as $staff) {
+                    $permalink = get_permalink($staff);
+
+                    $staffNameURLSafe = str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($staff)))));
+                    $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
+                    ?>
+                  <div class="large-2 medium-2 small-6 cell text-center">
+                    <div class="author_bio post-holder">
+                      <div class="author_photo post">
+                        <a href="https://cronkitenews.azpbs.org/people/<?php echo $staffNameURLSafe; ?>" target="_blank"><img src="<?php echo get_field('student_photo', $staff); ?>" class="cn-staff-bio-circular-large staff" alt="<?php echo get_the_title($staff); ?>" /></a>
+                        <h3><a href="https://cronkitenews.azpbs.org/people/<?php echo $staffNameURLSafe; ?>" target="_blank"><?php echo get_the_title($staff); ?></a></h3>
+                      </div>
+                    </div>
+                  </div>
+              <?php
+                          $staffCounter++;
+                }
+            }
+            ?>
+            </div>
 
         <?php } elseif (get_row_layout() == 'text_block') { ?>
 
