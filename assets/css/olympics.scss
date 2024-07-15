@@ -35,8 +35,10 @@ $bgColor: #fafafa;
       width: 140px;
     }
   }
-  .noticias-preview p {
-    padding-left: 0px !important;
+  .noticias-preview {
+    p {
+      padding-left: 0px !important;
+    }
   }
 }
 
@@ -128,6 +130,6 @@ $bgColor: #fafafa;
     }
   }
   p {
-    font-size: 0.9rem !important; 
+    font-size: 0.9rem !important;
   }
 }
