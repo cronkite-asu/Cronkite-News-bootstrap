@@ -119,7 +119,7 @@
           <?php if (get_sub_field('show_countdown') == 'yes') { ?>
             <div class="large-12 medium-12 small-12 cell cta noticias-preview">
               <div class="grid-x align-stretch">
-                <div class="large-2 medium-2 small-12 cell">
+                <div class="large-2 medium-2 small-12 cell text-center">
                   <div class="logo">
                     <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/06/Paris2024_OlyEmbleme_RVB_Poly_2021.png.png" alt="2024 Paris Olympics" />
                   </div>
