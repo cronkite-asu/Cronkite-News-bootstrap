@@ -324,24 +324,26 @@
                 <?php echo get_sub_field('content'); ?>
               </div>
             <?php } ?>
-            <div class="large-6 medium-6 small-12 cell students">
-              <div class="large-4 medium-4 small-4 cell text-center">
-                <div class="author_bio post-holder">
-                  <div class="author_photo post">
-                    <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2019/09/Brett-Kurland-400x400-1.jpg" />
-                    <h3>Brett Kurland</h3>
+            <div class="large-6 medium-6 small-12 cell">
+              <div class="grid-x grid-padding-x students">
+                <div class="large-4 medium-4 small-4 cell text-center">
+                  <div class="author_bio post-holder">
+                    <div class="author_photo post">
+                      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2019/09/Brett-Kurland-400x400-1.jpg" />
+                      <h3>Brett Kurland</h3>
+                    </div>
                   </div>
-                </div>
-                <div class="author_bio post-holder">
-                  <div class="author_photo post">
-                    <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2019/09/paolaboivin.jpg" />
-                    <h3>Paola Boivin</h3>
+                  <div class="author_bio post-holder">
+                    <div class="author_photo post">
+                      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2019/09/paolaboivin.jpg" />
+                      <h3>Paola Boivin</h3>
+                    </div>
                   </div>
-                </div>
-                <div class="author_bio post-holder">
-                  <div class="author_photo post">
-                    <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2019/09/Brett-Kurland-400x400-1.jpg" />
-                    <h3>Rian Bosse</h3>
+                  <div class="author_bio post-holder">
+                    <div class="author_photo post">
+                      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2019/09/Brett-Kurland-400x400-1.jpg" />
+                      <h3>Rian Bosse</h3>
+                    </div>
                   </div>
                 </div>
               </div>
