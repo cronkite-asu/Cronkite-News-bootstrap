@@ -204,18 +204,20 @@ $topStoriesArray = [];
 
       <?php } elseif (get_row_layout() == 'sports-latest-stories') { ?>
 
-          <div class="grid-x grid-padding-x olympics">
+          <div class="grid-x grid-padding-x">
             <div class="large-12 medium-12 small-12 cell story">
               <h4>2024 Paris Olympics</h4>
             </div>
-            <div class="large-4 medium-4 small-4 cell">
-              <div class="logo">
-                <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/06/Paris2024_OlyEmbleme_RVB_Poly_2021.png.png" alt="2024 Paris Olympics" />
+            <div class="olympics">
+              <div class="large-4 medium-4 small-4 cell">
+                <div class="logo">
+                  <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/06/Paris2024_OlyEmbleme_RVB_Poly_2021.png.png" alt="2024 Paris Olympics" />
+                </div>
               </div>
-            </div>
-            <div class="large-8 medium-8 small-8 cell">
-              <p>A team of Cronkite journalists and content creators are in Paris as the world comes together for the 2024 Summer Olympics.</p>
-              <p><a href="https://cronkitenews.azpbs.org/2024-paris-olympics/" class="more-coverage">More Coverage &rarr;</a></p>
+              <div class="large-8 medium-8 small-8 cell">
+                <p>A team of Cronkite journalists and content creators are in Paris as the world comes together for the 2024 Summer Olympics.</p>
+                <p><a href="https://cronkitenews.azpbs.org/2024-paris-olympics/" class="more-coverage">More Coverage &rarr;</a></p>
+              </div>
             </div>
           </div>
 
