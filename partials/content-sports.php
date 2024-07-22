@@ -209,7 +209,7 @@ $topStoriesArray = [];
               <h4>2024 Paris Olympics</h4>
             </div>
           </div>
-          <div class="grid-x grid-padding-x olympics">
+          <div class="grid-x grid-margin olympics">
             <div class="large-4 medium-4 small-4 cell">
               <div class="logo">
                 <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/06/Paris2024_OlyEmbleme_RVB_Poly_2021.png.png" alt="2024 Paris Olympics" />
