@@ -401,10 +401,11 @@
   padding: 15px 25px;
 }
 .olympics p {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   color: #ffffff;
 }
 .olympics p a {
+  color: #ffffff;
   font-weight: bold;
 }
 
