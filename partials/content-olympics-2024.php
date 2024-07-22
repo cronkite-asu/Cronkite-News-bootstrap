@@ -345,7 +345,7 @@
                 <div class="large-4 medium-4 small-4 cell text-center">
                   <div class="author_bio post-holder">
                     <div class="author_photo post">
-                      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2019/09/Brett-Kurland-400x400-1.jpg" class="cn-staff-bio-circular-large staff"  />
+                      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/07/Rian-Bosse.jpg" class="cn-staff-bio-circular-large staff"  />
                       <h3>Rian Bosse</h3>
                     </div>
                   </div>
