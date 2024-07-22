@@ -461,7 +461,11 @@ $bgColor: #fafafa;
   p {
     font-size: 1.35rem;
     margin: 0;
+    padding-right: 15px;
     color: $white;
+    &.first {
+      padding-top:15px;
+    }
     a {
       color: $white;
       font-weight: bold;

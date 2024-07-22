@@ -403,7 +403,11 @@
 .olympics p {
   font-size: 1.35rem;
   margin: 0;
+  padding-right: 15px;
   color: #ffffff;
+}
+.olympics p.first {
+  padding-top: 15px;
 }
 .olympics p a {
   color: #ffffff;
