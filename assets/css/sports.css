@@ -408,6 +408,7 @@
 }
 .olympics p.first {
   padding-top: 12px;
+  padding-bottom: 12px;
 }
 .olympics p a {
   color: #ffffff;
