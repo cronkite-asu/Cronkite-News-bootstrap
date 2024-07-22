@@ -401,7 +401,11 @@
   padding: 15px 25px;
 }
 .olympics p {
+  font-size: 1.5rem;
   color: #ffffff;
+}
+.olympics p a {
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=sports.css.map */
