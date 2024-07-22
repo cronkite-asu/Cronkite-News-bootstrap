@@ -206,7 +206,7 @@ $topStoriesArray = [];
 
           <div class="grid-x grid-padding-x olympics">
             <div class="large-12 medium-12 small-12 cell story">
-              <h4>Latest Stories</h4>
+              <h4>2024 Paris Olympics</h4>
             </div>
             <div class="large-4 medium-4 small-4 cell">
               <div class="logo">
