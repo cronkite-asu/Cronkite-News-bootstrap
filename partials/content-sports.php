@@ -209,17 +209,19 @@ $topStoriesArray = [];
               <h4>2024 Paris Olympics</h4>
             </div>
           </div>
-          <div class="grid-x grid-margin olympics">
-            <div class="large-3 medium-3 small-3 cell">
-              <div class="logo">
-                <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/06/Paris2024_OlyEmbleme_RVB_Poly_2021.png.png" alt="2024 Paris Olympics" />
+          <a href="https://cronkitenews.azpbs.org/2024-paris-olympics/" class="more-coverage">
+            <div class="grid-x grid-margin olympics">
+              <div class="large-3 medium-3 small-3 cell">
+                <div class="logo">
+                  <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/06/Paris2024_OlyEmbleme_RVB_Poly_2021.png.png" alt="2024 Paris Olympics" />
+                </div>
+              </div>
+              <div class="large-9 medium-9 small-9 cell">
+                <p class="first">A team of Cronkite journalists and content creators are in Paris as the world comes together for the 2024 Summer Olympics.</p>
+                <p>More Coverage &rarr;</p>
               </div>
             </div>
-            <div class="large-9 medium-9 small-9 cell">
-              <p class="first">A team of Cronkite journalists and content creators are in Paris as the world comes together for the 2024 Summer Olympics.</p>
-              <p><a href="https://cronkitenews.azpbs.org/2024-paris-olympics/" class="more-coverage">More Coverage &rarr;</a></p>
-            </div>
-          </div>
+          </a>
 
 
           <!-- latest stories -->
