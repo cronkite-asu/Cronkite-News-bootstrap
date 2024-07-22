@@ -402,6 +402,7 @@
 }
 .olympics p {
   font-size: 1.35rem;
+  margin: 0;
   color: #ffffff;
 }
 .olympics p a {
