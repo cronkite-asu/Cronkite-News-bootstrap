@@ -215,7 +215,7 @@ $topStoriesArray = [];
             </div>
             <div class="large-8 medium-8 small-8 cell">
               <p>A team of Cronkite journalists and content creators are in Paris as the world comes together for the 2024 Summer Olympics.</p>
-              <p><a href="https://cronkitenews.azpbs.org/2024-paris-olympics/" class="more-coverage">More Coverage &rarr;</a>/p>
+              <p><a href="https://cronkitenews.azpbs.org/2024-paris-olympics/" class="more-coverage">More Coverage &rarr;</a></p>
             </div>
           </div>
 

@@ -449,4 +449,13 @@ $bgColor: #fafafa;
   -moz-border-radius: 8px;
   border-radius: 8px;
   margin-bottom: 2.5rem;
+  background: rgb(0,53,148);
+  background: linear-gradient(90deg, rgba(0,53,148,1) 0%, rgba(33,83,172,1) 100%, rgba(0,53,148,1) 100%);
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    padding: 15px 25px;
+  }
 }

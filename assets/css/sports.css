@@ -390,6 +390,15 @@
   -moz-border-radius: 8px;
   border-radius: 8px;
   margin-bottom: 2.5rem;
+  background: rgb(0, 53, 148);
+  background: linear-gradient(90deg, rgb(0, 53, 148) 0%, rgb(33, 83, 172) 100%, rgb(0, 53, 148) 100%);
+}
+.olympics .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  padding: 15px 25px;
 }
 
 /*# sourceMappingURL=sports.css.map */
