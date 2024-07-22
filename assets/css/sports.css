@@ -411,7 +411,9 @@
 }
 .olympics p a {
   color: #ffffff;
+  font-size: 1rem;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=sports.css.map */
