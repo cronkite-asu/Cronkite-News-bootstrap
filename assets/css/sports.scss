@@ -373,6 +373,12 @@ $bgColor: #fafafa;
   .latest-news {
     margin-top: 20px;
     margin-bottom: 50px;
+    .align-top {
+      @media only screen
+        and (max-width: 660px) {
+          order: 1;
+      }
+    }
     h4 {
       display: flex;
       width: 100%;

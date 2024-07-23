@@ -316,6 +316,11 @@
   margin-top: 20px;
   margin-bottom: 50px;
 }
+@media only screen and (max-width: 660px) {
+  #sports-container .latest-news .align-top {
+    order: 1;
+  }
+}
 #sports-container .latest-news h4 {
   display: flex;
   width: 100%;
