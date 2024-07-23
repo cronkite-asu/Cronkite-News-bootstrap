@@ -292,7 +292,7 @@ $topStoriesArray = [];
                             $title = get_the_title($mainStory);
                         }
                         ?>
-                  <div class="large-4 medium-4 small-7 cell align-top">
+                  <div class="large-4 medium-4 small-12 cell align-top">
                     <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($mainStory); ?></a>
                     <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
                   </div>
