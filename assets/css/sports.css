@@ -140,7 +140,7 @@
 #sports-container .story h2 {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
-  font-size: 1.65rem;
+  font-size: 1.15rem;
   padding-top: 15px;
 }
 #sports-container .story h2 a {
@@ -410,7 +410,7 @@
   padding-top: 12px;
   padding-bottom: 12px;
 }
-.olympics p a {
+.olympics a {
   color: #ffffff;
   font-size: 1rem;
   font-weight: bold;
