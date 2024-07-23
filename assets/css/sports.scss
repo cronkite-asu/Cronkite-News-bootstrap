@@ -374,7 +374,7 @@ $bgColor: #fafafa;
     margin-top: 20px;
     margin-bottom: 50px;
     .align-top {
-      
+
     }
     h4 {
       display: flex;
@@ -469,6 +469,10 @@ $bgColor: #fafafa;
     &.first {
       padding-top:12px;
       padding-bottom: 12px;
+    }
+    @media only screen
+      and (max-width: 660px) {
+        font-size: 1rem;
     }
   }
   a {

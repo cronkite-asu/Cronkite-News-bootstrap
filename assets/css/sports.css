@@ -410,6 +410,11 @@
   padding-top: 12px;
   padding-bottom: 12px;
 }
+@media only screen and (max-width: 660px) {
+  .olympics p {
+    font-size: 1rem;
+  }
+}
 .olympics a {
   color: #ffffff;
   font-size: 1rem;
