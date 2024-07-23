@@ -288,7 +288,7 @@
 }
 @media only screen and (max-width: 660px) {
   #sports-container .custom-section h3, #sports-container .sports-report h3 {
-    font-size: 1.35rem;
+    font-size: 1rem;
     margin-bottom: 25px;
   }
 }
