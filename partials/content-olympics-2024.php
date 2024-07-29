@@ -157,38 +157,35 @@
 
         <?php } elseif (get_row_layout() == 'stories_block') { ?>
 
-            <div class="grid-x grid-padding-x sub-head">
-              <div class="large-12 medium-12 small-12 cell">
-                <h4><?php echo get_sub_field('section_title'); ?></h4>
-              </div>
-              <div class="large-12 medium-12 small-12 cell">
-                <?php echo get_sub_field('description'); ?>
-              </div>
+          <div class="grid-x grid-padding-x sub-head">
+            <div class="large-12 medium-12 small-12 cell">
+              <h4><?php echo get_sub_field('section_title'); ?></h4>
             </div>
-            <div class="grid-x grid-padding-x">
-              <div class="featured-health-stories">
-              <?php
-                $counter = 0;
-                $storyList = get_sub_field('story_list');
+          </div>
+          <div class="grid-x grid-padding-x">
+            <div class="featured-health-stories">
+            <?php
+            $counter = 0;
+            $storyList = get_sub_field('story_list');
 
-                foreach ($storyList as $story) {
-                    $permalink = get_permalink($story->ID);
-                    $title = get_the_title($story->ID);
-                    $storyTease = get_field('story_tease', $story->ID);
-                    $photoURL = get_the_post_thumbnail_url($story->ID);
-                    $photoImg = get_the_post_thumbnail($story->ID);
-               ?>
-                      <div class="large-3 medium-3 small-12 cell">
-                        <a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a>
-                        <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
-                          <h3><a href="<?php echo $permalink; ?>"><?php echo get_field('homepage_headline', $story->ID); ?></a></h3>
-                        <?php } else {?>
-                          <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
-                        <?php } ?>
-                      </div>
-                <?php } ?>
-              </div>
+            foreach ($storyList as $story) {
+                $permalink = get_permalink($story->ID);
+                $title = get_the_title($story->ID);
+                $storyTease = get_field('story_tease', $story->ID);
+                $photoURL = get_the_post_thumbnail_url($story->ID);
+                $photoImg = get_the_post_thumbnail($story->ID);
+              ?>
+                  <div class="large-3 medium-3 small-12 cell">
+                    <a href="<?php echo $permalink; ?>"><?php echo $photoImg; ?></a>
+                    <?php if (get_field('use_short_headline', $story->ID) == 'yes' && get_field('homepage_headline', $story->ID) != '') { ?>
+                      <h3><a href="<?php echo $permalink; ?>"><?php echo get_field('homepage_headline', $story->ID); ?></a></h3>
+                    <?php } else {?>
+                      <h3><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></h3>
+                    <?php } ?>
+                  </div>
+            <?php } ?>
             </div>
+          </div>
 
         <?php } elseif (get_row_layout() == 'videos_block') { ?>
 

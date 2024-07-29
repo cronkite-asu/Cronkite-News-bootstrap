@@ -82,54 +82,54 @@ $topStoriesArray = [];
 
         <div class="large-4 medium-12 small-12 cell story slide-aside">
           <div class="grid-x grid-padding-x">
-      <?php
-if (have_rows('noticias_homepage')) {
-    while (have_rows('noticias_homepage')) {
-        the_row();
-        // top section
-        if (get_row_layout() == 'noticias-main-stories') {
-            $mainStoryList = get_sub_field('noticias_slide_aside', 181966);
-            if ($mainStoryList) {
-                $mainStoryCounter = 0;
-                foreach ($mainStoryList as $mainStory) {
-                    $permalink = get_permalink($mainStory);
-                    $summary = get_field('story_tease', $mainStory);
-                    if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
-                        $title = get_field('homepage_headline', $mainStory);
-                    } else {
-                        $title = get_the_title($mainStory);
-                    }
+        <?php
+          if (have_rows('noticias_homepage')) {
+              while (have_rows('noticias_homepage')) {
+                  the_row();
+                  // top section
+                  if (get_row_layout() == 'noticias-main-stories') {
+                      $mainStoryList = get_sub_field('noticias_slide_aside', 181966);
+                      if ($mainStoryList) {
+                          $mainStoryCounter = 0;
+                          foreach ($mainStoryList as $mainStory) {
+                              $permalink = get_permalink($mainStory);
+                              $summary = get_field('story_tease', $mainStory);
+                              if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
+                                  $title = get_field('homepage_headline', $mainStory);
+                              } else {
+                                  $title = get_the_title($mainStory);
+                              }
 
-                    // save top and bottom slide aside ID
-                    $topStoriesArray[] = $mainStory;
+                              // save top and bottom slide aside ID
+                              $topStoriesArray[] = $mainStory;
 
-                    // build clean URL
-                    $storyCleanURL = str_replace("&#8217;", "", str_replace('’', '', str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($mainStory))))));
-                    if (get_field('video_location', $mainStory) != '') {
-                        $assetLocation = get_field('video_location', $mainStory);
-                        $target = 'target="_blank"';
-                    } elseif (get_field('audio_video_file', $mainStory) != '') {
-                        $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".$mainStory."/".$storyCleanURL;
-                        $target = "";
-                    } elseif (get_field('external_link', $mainStory) != '') {
-                        $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".$mainStory."/".$storyCleanURL;
-                        $target = 'target="_blank"';
-                    } else {
-                        $assetLocation = get_the_permalink($mainStory);
-                        $target = "";
-                    }
-                    ?>
-                  <div class="large-12 medium-6 small-12 cell story">
-                    <a href="<?php echo $assetLocation; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?></a>
-                    <h3><a href="<?php echo $assetLocation; ?>" target="_blank"><?php echo $title; ?></a></h3>
-                  </div>
-                            <?php
-                }
-            }
-        }
-    }
-}
-?>
+                              // build clean URL
+                              $storyCleanURL = str_replace("&#8217;", "", str_replace('’', '', str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($mainStory))))));
+                              if (get_field('video_location', $mainStory) != '') {
+                                  $assetLocation = get_field('video_location', $mainStory);
+                                  $target = 'target="_blank"';
+                              } elseif (get_field('audio_video_file', $mainStory) != '') {
+                                  $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".$mainStory."/".$storyCleanURL;
+                                  $target = "";
+                              } elseif (get_field('external_link', $mainStory) != '') {
+                                  $assetLocation = "https://cronkitenews.azpbs.org/audio/story/".$mainStory."/".$storyCleanURL;
+                                  $target = 'target="_blank"';
+                              } else {
+                                  $assetLocation = get_the_permalink($mainStory);
+                                  $target = "";
+                              }
+                              ?>
+                            <div class="large-12 medium-6 small-12 cell story">
+                              <a href="<?php echo $assetLocation; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?></a>
+                              <h3><a href="<?php echo $assetLocation; ?>" target="_blank"><?php echo $title; ?></a></h3>
+                            </div>
+                                      <?php
+                          }
+                      }
+                  }
+              }
+          }
+          ?>
           </div>
         </div>
       </div>
