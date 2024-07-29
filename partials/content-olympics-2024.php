@@ -199,7 +199,7 @@
             <?php
             $counter = 0;
             $videoList = get_sub_field('video_list');
-            print_r($video_list);
+            print_r($videoList);
             foreach ($videoList as $video) {
                 $videoThumb = get_field('thumbnail', $video->ID);
                 $videoURL = get_field('video_url', $video->ID);
