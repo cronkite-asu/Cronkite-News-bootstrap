@@ -199,9 +199,9 @@
             <?php
             $counter = 0;
             $videoList = get_sub_field('video_list');
-            print_r($videoList);
+
             foreach ($videoList as $video) {
-                $videoThumb = get_field('thumbnail', $video->ID);
+                echo 'HERE:'.$videoThumb = get_field('thumbnail', $video->ID);
                 $videoURL = get_field('video_url', $video->ID);
                 $videoTitle = get_field('title', $video->ID);
               ?>
