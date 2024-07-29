@@ -25,8 +25,11 @@
           $counter = 0;
         ?>
           <div class="grid-x grid-padding-x sub-head">
-            <div class="large-12 medium-12 small-12 cell">
+            <div class="large-8 medium-8 small-12 cell">
               <h4><?php echo get_sub_field('section_title'); ?></h4>
+            </div>
+            <div class="large-4 medium-4 small-12 cell">
+              <p><a href="https://cronkitenews.azpbs.org/category/2024-paris-olympics/">More Coverage &rarr;</a></p>
             </div>
           </div>
           <div class="grid-x grid-padding-x section-break">
