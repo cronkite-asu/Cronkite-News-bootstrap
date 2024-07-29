@@ -139,11 +139,13 @@ $bgColor: #fafafa;
 
 p {
   &.more-coverage-link {
-    color: $cnBlue;
-    font-weight: bold;
-    text-transform: uppercase;
-    &:hover {
+    a {
       color: $cnBlue;
+      font-weight: bold;
+      text-transform: uppercase;
+      &:hover {
+        color: $cnBlue;
+      }
     }
   }
 }

@@ -99,12 +99,12 @@
   font-size: 0.9rem !important;
 }
 
-p.more-coverage-link {
+p.more-coverage-link a {
   color: #003594;
   font-weight: bold;
   text-transform: uppercase;
 }
-p.more-coverage-link:hover {
+p.more-coverage-link a:hover {
   color: #003594;
 }
 
