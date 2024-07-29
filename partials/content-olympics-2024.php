@@ -201,13 +201,12 @@
             $videoList = get_sub_field('video_list');
 
             foreach ($videoList as $video) {
-                print_r($video['thumbnail']['url']);
-                echo 'HERE:'.$videoThumb = get_field('thumbnail', $video->ID);
-                $videoURL = get_field('video_url', $video->ID);
-                $videoTitle = get_field('title', $video->ID);
+                $videoThumb = $video['thumbnail']['url'];
+                $videoURL = $video['thumbnail']['video_url'];
+                $videoTitle = $video['thumbnail']['title'];
               ?>
                 <div class="large-3 medium-3 small-12 cell">
-                  <a href="<?php echo $videoURL; ?>"><?php echo $videoThumb; ?></a>
+                  <a href="<?php echo $videoURL; ?>"><img src="<?php echo $videoThumb; ?>" /></a>
                   <h3><a href="<?php echo $videoURL; ?>"><?php echo $videoTitle; ?></a></h3>
                 </div>
           <?php } ?>
