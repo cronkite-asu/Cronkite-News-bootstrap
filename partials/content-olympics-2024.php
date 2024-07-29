@@ -202,8 +202,8 @@
 
             foreach ($videoList as $video) {
                 $videoThumb = $video['thumbnail']['url'];
-                $videoURL = $video['thumbnail']['video_url'];
-                $videoTitle = $video['thumbnail']['title'];
+                $videoURL = $video['video_url'];
+                $videoTitle = $video['title'];
               ?>
                 <div class="large-3 medium-3 small-12 cell">
                   <a href="<?php echo $videoURL; ?>"><img src="<?php echo $videoThumb; ?>" /></a>
