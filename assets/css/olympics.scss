@@ -137,10 +137,12 @@ $bgColor: #fafafa;
   }
 }
 
-.more-coverage-link {
-  color: $cnBlue;
-  font-weight: bold;
-  &:hover {
+p {
+  &.more-coverage-link {
     color: $cnBlue;
+    font-weight: bold;
+    &:hover {
+      color: $cnBlue;
+    }
   }
 }
