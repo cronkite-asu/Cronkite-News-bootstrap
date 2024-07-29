@@ -189,31 +189,29 @@
 
         <?php } elseif (get_row_layout() == 'videos_block') { ?>
 
-          <?php
-              if (have_rows('video')) {
-          ?>
           <div class="grid-x grid-padding-x sub-head">
             <div class="large-12 medium-12 small-12 cell">
               <h4><?php echo get_sub_field('section_title'); ?></h4>
             </div>
           </div>
           <div class="grid-x grid-padding-x">
+            <div class="featured-health-stories">
             <?php
-                if (have_rows('video')) {
-                    while (have_rows('video')) {
-                        the_row();
-            ?>
-                  <div class="large-3 medium-3 small-12 cell">
-                    <?php echo '<a href="'.get_sub_field('link').'" target="_blank"><img src="'.get_sub_field('preview_image').'"></a>'; ?>
-                  </div>
-            <?php
-                    }
-                }
-            ?>
+            $counter = 0;
+            $videoList = get_sub_field('video_list');
+
+            foreach ($videoList as $video) {
+                $videoThumb = get_field('thumbnail', $video->ID);
+                $videoURL = get_field('video_url', $video->ID);
+                $videoTitle = get_field('title', $video->ID);
+              ?>
+                <div class="large-3 medium-3 small-12 cell">
+                  <a href="<?php echo $videoURL; ?>"><?php echo $videoThumb; ?></a>
+                  <h3><a href="<?php echo $videoURL; ?>"><?php echo $videoTitle; ?></a></h3>
+                </div>
+          <?php } ?>
           </div>
-          <?php
-              }
-          ?>
+        </div>
 
         <?php } elseif (get_row_layout() == 'featured_block') { ?>
           <div class="grid-x grid-padding-x sub-head">
