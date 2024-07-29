@@ -102,6 +102,7 @@
 p.more-coverage-link {
   color: #003594;
   font-weight: bold;
+  text-transform: uppercase;
 }
 p.more-coverage-link:hover {
   color: #003594;
