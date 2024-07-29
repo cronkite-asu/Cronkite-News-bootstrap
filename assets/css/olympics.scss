@@ -136,3 +136,11 @@ $bgColor: #fafafa;
     font-size: 0.9rem !important;
   }
 }
+
+.more-coverage-link {
+  color: $cnBlue;
+  font-weight: bold;
+  &:hover {
+    color: $cnBlue;
+  }
+}

@@ -28,8 +28,8 @@
             <div class="large-10 medium-10 small-12 cell">
               <h4><?php echo get_sub_field('section_title'); ?></h4>
             </div>
-            <div class="large-2 medium-2 small-12 cell">
-              <p><a href="https://cronkitenews.azpbs.org/category/2024-paris-olympics/">More Coverage &rarr;</a></p>
+            <div class="large-2 medium-2 small-12 cell text-center">
+              <p class="more-coverage-link"><a href="https://cronkitenews.azpbs.org/category/2024-paris-olympics/">More Coverage &rarr;</a></p>
             </div>
           </div>
           <div class="grid-x grid-padding-x section-break">
