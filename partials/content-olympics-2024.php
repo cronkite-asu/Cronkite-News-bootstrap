@@ -201,7 +201,7 @@
             $videoList = get_sub_field('video_list');
 
             foreach ($videoList as $video) {
-                print_r($video);
+                print_r($video->[url]);
                 echo 'HERE:'.$videoThumb = get_field('thumbnail', $video->ID);
                 $videoURL = get_field('video_url', $video->ID);
                 $videoTitle = get_field('title', $video->ID);
