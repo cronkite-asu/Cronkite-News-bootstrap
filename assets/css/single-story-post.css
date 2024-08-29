@@ -980,11 +980,13 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-right: 6px;
+  margin-right: 5px;
 }
 #main_container .single-story-block .social_share ul.share-buttons li, #top-ten .single-story-block .social_share ul.share-buttons li {
   display: inline;
   font-size: 20px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 #main_container .single-story-block .social_share ul.share-buttons .sr-only, #top-ten .single-story-block .social_share ul.share-buttons .sr-only {
   position: absolute;
