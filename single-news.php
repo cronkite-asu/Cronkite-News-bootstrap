@@ -671,6 +671,15 @@
              <div class="social_share last">
                <div class="report-typo"><a class="hollow button" href="#">Report a Typo</a></div>
              </div>
+
+             <div class="a2a_kit a2a_default_style">               
+               <a class="a2a_button_facebook"><i class="fa-brands fa-x-twitter"></i></a>
+               <a class="a2a_button_linkedin_share"><i class="fa-brands fa-linkedin"></i></a>
+               <a class="a2a_button_facebook"><i class="fa-brands fa-square-facebook"></i></a>
+               <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+            </div>
+
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
             <?php } ?>
 
            </article>
