@@ -24,31 +24,29 @@
            <!-- breadcrumbs -->
            <?php
           $categories = get_the_category();
- if (! empty($categories)) {
-     ?>
+           if (! empty($categories)) {
+          ?>
              <nav aria-label="Cronkite News: Breadcrumbs" role="navigation">
                <ul class="breadcrumbs">
                  <li>
                   <?php
-         $catCount = count($categories);
-     foreach ($categories as $key => $val) {
-         if ($categories[$key]->name != 'New 2020') {
-             if (strtolower($categories[$key]->name) == 'health') {
-                 $healthStory = true;
-             }
-             echo '<a href="' . esc_url(get_category_link($categories[$key]->term_id)) . '">' . esc_html($categories[$key]->name) . '</a>';
-             if ($catCount > 1) {
-                 echo '  ';
-             }
-         }
-     }
-     ?>
+                     $catCount = count($categories);
+                     foreach ($categories as $key => $val) {
+                         if ($categories[$key]->name != 'New 2020') {
+                             if (strtolower($categories[$key]->name) == 'health') {
+                                 $healthStory = true;
+                             }
+                             echo '<a href="' . esc_url(get_category_link($categories[$key]->term_id)) . '">' . esc_html($categories[$key]->name) . '</a>';
+                             if ($catCount > 1) {
+                                 echo '  ';
+                             }
+                         }
+                     }
+                 ?>
                  </li>
                </ul>
              </nav>
-                <?php
- }
- ?>
+                <?php } ?>
 
            <h1 class="single-story-hdr"><?php the_title(); ?></h1>
            <!-- byline and date -->
@@ -61,232 +59,230 @@
                  }
              }
 
-     if (get_the_ID() == 165700) {
-         $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
-                             'arizona-public-media' => "https://www.azpm.org/",
-                             'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
-                             'colorado-public-radio' => "https://www.cpr.org/",
-                             'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
-                             'elemental-reports' => "https://www.elementalreports.com/",
-                             'globalsport-matters' => "https://www.globalsportmatters.com/",
-                             'gaylord-news' => "https://gaylordnews.net/",
-                             'inside-climate-news' => "https://insideclimatenews.org/",
-                             'howard-center-for-investigative-journalism' => "https://cronkite.asu.edu/real-world-experiences/howard-center-for-investigative-journalism",
-                             'KSJD' => "https://www.ksjd.org/",
-                             'KJZZ' => "https://kjzz.org/content/1689925/boots-ground-how-phoenix-plans-help-small-businesses",
-                             'KPCC' => "https://www.scpr.org/",
-                             'KUNC' => "https://www.kunc.org/",
-                             'KUER' => "https://www.kuer.org/",
-                             'LAIST' => "https://laist.com/",
-                             'PBS-SoCal' => "https://www.pbssocal.org/",
-                             'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                             'special-to-cronkite-news' => "",
-                            ];
-     } elseif (get_the_ID() == 167042) {
-         $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
-                             'arizona-public-media' => "https://www.azpm.org/",
-                             'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
-                             'colorado-public-radio' => "https://www.cpr.org/",
-                             'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
-                             'elemental-reports' => "https://www.elementalreports.com/",
-                             'globalsport-matters' => "https://www.globalsportmatters.com/",
-                             'gaylord-news' => "https://gaylordnews.net/",
-                             'inside-climate-news' => "https://insideclimatenews.org/",
-                             'howard-center-for-investigative-journalism' => "https://cronkite.asu.edu/real-world-experiences/howard-center-for-investigative-journalism",
-                             'KSJD' => "https://www.ksjd.org/",
-                             'KJZZ' => "https://kjzz.org/content/1689925/boots-ground-how-phoenix-plans-help-small-businesses",
-                             'KPCC' => "https://www.scpr.org/",
-                             'KUNC' => "https://www.kunc.org/",
-                             'KUER' => "https://www.kuer.org/",
-                             'LAIST' => "https://laist.com/",
-                             'PBS-SoCal' => "https://www.pbssocal.org/",
-                             'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                             'special-to-cronkite-news' => "",
-                             'fronteras' => "https://fronterasdesk.org/content/1696137/hermosillo-pedestrians-face-many-dangers-work-address-them-underway",
-                            ];
-     } elseif (get_the_ID() == 168187) {
-         $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
-                             'arizona-public-media' => "https://www.azpm.org/",
-                             'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
-                             'colorado-public-radio' => "https://www.cpr.org/",
-                             'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
-                             'elemental-reports' => "https://www.elementalreports.com/",
-                             'globalsport-matters' => "https://www.globalsportmatters.com/",
-                             'gaylord-news' => "https://gaylordnews.net/",
-                             'inside-climate-news' => "https://insideclimatenews.org/",
-                             'howard-center-for-investigative-journalism' => "https://cronkite.asu.edu/real-world-experiences/howard-center-for-investigative-journalism",
-                             'KSJD' => "https://www.ksjd.org/",
-                             'KJZZ' => "https://kjzz.org/content/1689925/boots-ground-how-phoenix-plans-help-small-businesses",
-                             'KPCC' => "https://www.scpr.org/",
-                             'KUNC' => "https://www.kunc.org/",
-                             'KUER' => "https://www.kuer.org/",
-                             'LAIST' => "https://laist.com/",
-                             'PBS-SoCal' => "https://www.pbssocal.org/",
-                             'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                             'special-to-cronkite-news' => "",
-                             'fronteras' => "https://fronterasdesk.org/content/1703038/women-and-conservation-sonoran-scientists-start-group-latin-american-women",
-                            ];
-     } else {
-         $externalSites = ['abc15' => "https://www.abc15.com/",
-                             'arizona-pbs' => "https://www.azpbs.org",
-                             'arizona-public-media' => "https://www.azpm.org/",
-                             'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
-                             'colorado-public-radio' => "https://www.cpr.org/",
-                             'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
-                             'elemental-reports' => "https://www.elementalreports.com/",
-                             'globalsport-matters' => "https://www.globalsportmatters.com/",
-                             'gaylord-news' => "https://gaylordnews.net/",
-                             'inside-climate-news' => "https://insideclimatenews.org/",
-                             'howard-center-for-investigative-journalism' => "https://cronkite.asu.edu/real-world-experiences/howard-center-for-investigative-journalism",
-                             'KSJD' => "https://www.ksjd.org/",
-                             'KJZZ' => "https://www.kjzz.org",
-                             'KPCC' => "https://www.scpr.org/",
-                             'KUNC' => "https://www.kunc.org/",
-                             'KUER' => "https://www.kuer.org/",
-                             'LAIST' => "https://laist.com/",
-                             'News21' => "https://news21.com/",
-                             'PBS-SoCal' => "https://www.pbssocal.org/",
-                             'PolitiFact' => "https://www.politifact.com",
-                             'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
-                             'special-to-cronkite-news' => "",
-                             'stateline' => "https://stateline.org/",
-                             'source-new-mexico' => "https://sourcenm.com/",
-                             'The74' => "https://www.the74million.org/"
-                            ];
-     }
-     $externalAuthorCount = 1;
- $internalAuthorCount = 0;
- $commaSeparator = ',';
- $andSeparator = ' and ';
- $cnStaffCount = 0;
- $newCheck = 0;
-
- // bypass group not showing repeater field issue
- $groupFields = get_field('byline_info');
- $externalAuthorRepeater = $groupFields['external_authors_repeater'];
-
- $normalizeChars = [
-   'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
-   'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
-   'Ï'=>'I', 'Ñ'=>'N', 'Ń'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
-   'Û'=>'U', 'Ü'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'Ss','à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a',
-   'å'=>'a', 'æ'=>'a', 'ç'=>'c', 'è'=>'e', 'é'=>'e', 'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i',
-   'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ń'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
-   'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f',
-   'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
- ];
-
- if (have_rows('byline_info')) {
-     $sepCounter = 0;
-
-     echo '<span class="author_name">';
-     while (have_rows('byline_info')) {
-         the_row();
-         $staffID = get_sub_field('cn_staff');
-         $cnStaffCount = count((array)$staffID);
-
-         foreach ($staffID as $key => $val) {
-             $args = [
-                    'post_type'   => 'students',
-                    'post_status' => 'publish',
-                    'p' => $val,
-                  ];
-
-             $staffDetails = new WP_Query($args);
-             if ($staffDetails->have_posts()) {
-                 while ($staffDetails->have_posts()) {
-                     $staffDetails->the_post();
-                     $sepCounter++;
-
-                     $staffNameURLSafe = str_replace("’", "", str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val))))));
-                     $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
-
-                     if (get_field('student_photo') != '') {
-                         echo '<div class="author_photo post">';
-                         if ($staffNameURLSafe == 'staff') {
-                             echo '<img src="'.get_field('student_photo').'" class="cn-staff-bio-circular-sm staff" alt="'.get_the_title($staffID).'" />';
-                         } else {
-                             echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank"><img src="'.get_field('student_photo').'" class="cn-staff-bio-circular-sm" alt="'.get_the_title($staffID).'" /></a>';
-                         }
-                         echo '</div>';
-                     }
-
-                     echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank">'.get_the_title($val).'</a>';
-                     if ($sepCounter != $cnStaffCount) {
-                         if ($sepCounter == ($cnStaffCount - 1)) {
-                             echo $andSeparator.' ';
-                         } else {
-                             echo $commaSeparator.' ';
-                         }
-                     }
-                 }
-             }
-             $newCheck++;
-         }
-         if ($cnStaffCount > 0 && $staffID != '') {
-             if (get_sub_field('cn_project') != '') {
-                 $finalOutlet = str_replace('At', 'at', str_replace('Asu', 'ASU', str_replace('The', 'the', str_replace('And', 'and', str_replace('Pbs', 'PBS', str_replace(' For ', ' for ', ucwords(str_replace('-', ' ', get_sub_field('cn_project')))))))));
-                 echo '/'.$finalOutlet.'</span>';
+             if (get_the_ID() == 165700) {
+                 $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
+                                     'arizona-public-media' => "https://www.azpm.org/",
+                                     'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
+                                     'colorado-public-radio' => "https://www.cpr.org/",
+                                     'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
+                                     'elemental-reports' => "https://www.elementalreports.com/",
+                                     'globalsport-matters' => "https://www.globalsportmatters.com/",
+                                     'gaylord-news' => "https://gaylordnews.net/",
+                                     'inside-climate-news' => "https://insideclimatenews.org/",
+                                     'howard-center-for-investigative-journalism' => "https://cronkite.asu.edu/real-world-experiences/howard-center-for-investigative-journalism",
+                                     'KSJD' => "https://www.ksjd.org/",
+                                     'KJZZ' => "https://kjzz.org/content/1689925/boots-ground-how-phoenix-plans-help-small-businesses",
+                                     'KPCC' => "https://www.scpr.org/",
+                                     'KUNC' => "https://www.kunc.org/",
+                                     'KUER' => "https://www.kuer.org/",
+                                     'LAIST' => "https://laist.com/",
+                                     'PBS-SoCal' => "https://www.pbssocal.org/",
+                                     'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
+                                     'special-to-cronkite-news' => "",
+                                    ];
+             } elseif (get_the_ID() == 167042) {
+                 $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
+                                     'arizona-public-media' => "https://www.azpm.org/",
+                                     'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
+                                     'colorado-public-radio' => "https://www.cpr.org/",
+                                     'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
+                                     'elemental-reports' => "https://www.elementalreports.com/",
+                                     'globalsport-matters' => "https://www.globalsportmatters.com/",
+                                     'gaylord-news' => "https://gaylordnews.net/",
+                                     'inside-climate-news' => "https://insideclimatenews.org/",
+                                     'howard-center-for-investigative-journalism' => "https://cronkite.asu.edu/real-world-experiences/howard-center-for-investigative-journalism",
+                                     'KSJD' => "https://www.ksjd.org/",
+                                     'KJZZ' => "https://kjzz.org/content/1689925/boots-ground-how-phoenix-plans-help-small-businesses",
+                                     'KPCC' => "https://www.scpr.org/",
+                                     'KUNC' => "https://www.kunc.org/",
+                                     'KUER' => "https://www.kuer.org/",
+                                     'LAIST' => "https://laist.com/",
+                                     'PBS-SoCal' => "https://www.pbssocal.org/",
+                                     'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
+                                     'special-to-cronkite-news' => "",
+                                     'fronteras' => "https://fronterasdesk.org/content/1696137/hermosillo-pedestrians-face-many-dangers-work-address-them-underway",
+                                    ];
+             } elseif (get_the_ID() == 168187) {
+                 $externalSites = ['arizona-pbs' => "https://www.azpbs.org",
+                                     'arizona-public-media' => "https://www.azpm.org/",
+                                     'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
+                                     'colorado-public-radio' => "https://www.cpr.org/",
+                                     'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
+                                     'elemental-reports' => "https://www.elementalreports.com/",
+                                     'globalsport-matters' => "https://www.globalsportmatters.com/",
+                                     'gaylord-news' => "https://gaylordnews.net/",
+                                     'inside-climate-news' => "https://insideclimatenews.org/",
+                                     'howard-center-for-investigative-journalism' => "https://cronkite.asu.edu/real-world-experiences/howard-center-for-investigative-journalism",
+                                     'KSJD' => "https://www.ksjd.org/",
+                                     'KJZZ' => "https://kjzz.org/content/1689925/boots-ground-how-phoenix-plans-help-small-businesses",
+                                     'KPCC' => "https://www.scpr.org/",
+                                     'KUNC' => "https://www.kunc.org/",
+                                     'KUER' => "https://www.kuer.org/",
+                                     'LAIST' => "https://laist.com/",
+                                     'PBS-SoCal' => "https://www.pbssocal.org/",
+                                     'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
+                                     'special-to-cronkite-news' => "",
+                                     'fronteras' => "https://fronterasdesk.org/content/1703038/women-and-conservation-sonoran-scientists-start-group-latin-american-women",
+                                    ];
              } else {
-                 echo '/Cronkite News</span>';
+                 $externalSites = ['abc15' => "https://www.abc15.com/",
+                                     'arizona-pbs' => "https://www.azpbs.org",
+                                     'arizona-public-media' => "https://www.azpm.org/",
+                                     'boise-state-public-radio' => "https://www.boisestatepublicradio.org",
+                                     'colorado-public-radio' => "https://www.cpr.org/",
+                                     'cronkite-borderlands-project' => "https://cronkitenews.azpbs.org/category/borderlands/",
+                                     'elemental-reports' => "https://www.elementalreports.com/",
+                                     'globalsport-matters' => "https://www.globalsportmatters.com/",
+                                     'gaylord-news' => "https://gaylordnews.net/",
+                                     'inside-climate-news' => "https://insideclimatenews.org/",
+                                     'howard-center-for-investigative-journalism' => "https://cronkite.asu.edu/real-world-experiences/howard-center-for-investigative-journalism",
+                                     'KSJD' => "https://www.ksjd.org/",
+                                     'KJZZ' => "https://www.kjzz.org",
+                                     'KPCC' => "https://www.scpr.org/",
+                                     'KUNC' => "https://www.kunc.org/",
+                                     'KUER' => "https://www.kuer.org/",
+                                     'LAIST' => "https://laist.com/",
+                                     'News21' => "https://news21.com/",
+                                     'PBS-SoCal' => "https://www.pbssocal.org/",
+                                     'PolitiFact' => "https://www.politifact.com",
+                                     'Rocky-Mountain-PBS' => "http://www.rmpbs.org/home/",
+                                     'special-to-cronkite-news' => "",
+                                     'stateline' => "https://stateline.org/",
+                                     'source-new-mexico' => "https://sourcenm.com/",
+                                     'The74' => "https://www.the74million.org/"
+                                    ];
              }
-         }
-     }
+             $externalAuthorCount = 1;
+             $internalAuthorCount = 0;
+             $commaSeparator = ',';
+             $andSeparator = ' and ';
+             $cnStaffCount = 0;
+             $newCheck = 0;
 
-     if (is_countable($externalAuthorRepeater) && count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
-         $extStaffCount = count($externalAuthorRepeater);
-         if ($groupFields['cn_staff'] != '') {
-             echo ' and ';
-         }
-         $sepCounter = 0;
-         foreach ($externalAuthorRepeater as $key => $val) {
-             $sepCounter++;
-             echo $val['external_authors'];
-             if ($val['author_title_site'] != '' || $val['author_title_site'] != 'other') {
-                 if (array_key_exists($val['author_title_site'], $externalSites) == true) {
-                     if ($val['author_title_site'] == 'abc15') {
-                         echo '/<a href="'.$externalSites[$val['author_title_site']].'" target="_blank">'.strtoupper(ucwords(str_replace('-', ' ', $val['author_title_site']))).'</a>';
-                     } else {
-                         echo '/<a href="'.$externalSites[$val['author_title_site']].'" target="_blank">'.ucwords(str_replace('-', ' ', $val['author_title_site'])).'</a>';
+             // bypass group not showing repeater field issue
+             $groupFields = get_field('byline_info');
+             $externalAuthorRepeater = $groupFields['external_authors_repeater'];
+
+             $normalizeChars = [
+               'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
+               'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E', 'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I',
+               'Ï'=>'I', 'Ñ'=>'N', 'Ń'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U', 'Ú'=>'U',
+               'Û'=>'U', 'Ü'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'Ss','à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a',
+               'å'=>'a', 'æ'=>'a', 'ç'=>'c', 'è'=>'e', 'é'=>'e', 'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i',
+               'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ń'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o', 'ö'=>'o', 'ø'=>'o', 'ù'=>'u',
+               'ú'=>'u', 'û'=>'u', 'ü'=>'u', 'ý'=>'y', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y', 'ƒ'=>'f',
+               'ă'=>'a', 'î'=>'i', 'â'=>'a', 'ș'=>'s', 'ț'=>'t', 'Ă'=>'A', 'Î'=>'I', 'Â'=>'A', 'Ș'=>'S', 'Ț'=>'T',
+             ];
+
+             if (have_rows('byline_info')) {
+                 $sepCounter = 0;
+
+                 echo '<span class="author_name">';
+                 while (have_rows('byline_info')) {
+                     the_row();
+                     $staffID = get_sub_field('cn_staff');
+                     $cnStaffCount = count((array)$staffID);
+
+                     foreach ($staffID as $key => $val) {
+                         $args = [
+                                'post_type'   => 'students',
+                                'post_status' => 'publish',
+                                'p' => $val,
+                              ];
+
+                         $staffDetails = new WP_Query($args);
+                         if ($staffDetails->have_posts()) {
+                             while ($staffDetails->have_posts()) {
+                                 $staffDetails->the_post();
+                                 $sepCounter++;
+
+                                 $staffNameURLSafe = str_replace("’", "", str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val))))));
+                                 $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
+
+                                 if (get_field('student_photo') != '') {
+                                     echo '<div class="author_photo post">';
+                                     if ($staffNameURLSafe == 'staff') {
+                                         echo '<img src="'.get_field('student_photo').'" class="cn-staff-bio-circular-sm staff" alt="'.get_the_title($staffID).'" />';
+                                     } else {
+                                         echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank"><img src="'.get_field('student_photo').'" class="cn-staff-bio-circular-sm" alt="'.get_the_title($staffID).'" /></a>';
+                                     }
+                                     echo '</div>';
+                                 }
+
+                                 echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/" target="_blank">'.get_the_title($val).'</a>';
+                                 if ($sepCounter != $cnStaffCount) {
+                                     if ($sepCounter == ($cnStaffCount - 1)) {
+                                         echo $andSeparator.' ';
+                                     } else {
+                                         echo $commaSeparator.' ';
+                                     }
+                                 }
+                             }
+                         }
+                         $newCheck++;
                      }
-                 } else {
-                     //echo '/'.str_replace('Pbs', 'PBS', str_replace('For', 'for', ucwords(str_replace('-', ' ', $val['author_title_site']))));
-                     echo '/'.str_replace('At', 'at', str_replace('Asu', 'ASU', str_replace('The', 'the', str_replace('And', 'and', str_replace('Pbs', 'PBS', str_replace(' For ', ' for ', ucwords(str_replace('-', ' ', $val['author_title_site']))))))));
+                     if ($cnStaffCount > 0 && $staffID != '') {
+                         if (get_sub_field('cn_project') != '') {
+                             $finalOutlet = str_replace('At', 'at', str_replace('Asu', 'ASU', str_replace('The', 'the', str_replace('And', 'and', str_replace('Pbs', 'PBS', str_replace(' For ', ' for ', ucwords(str_replace('-', ' ', get_sub_field('cn_project')))))))));
+                             echo '/'.$finalOutlet.'</span>';
+                         } else {
+                             echo '/Cronkite News</span>';
+                         }
+                     }
+                 }
+
+                 if (is_countable($externalAuthorRepeater) && count($externalAuthorRepeater) > 0 && $externalAuthorRepeater != '') {
+                     $extStaffCount = count($externalAuthorRepeater);
+                     if ($groupFields['cn_staff'] != '') {
+                         echo ' and ';
+                     }
+                     $sepCounter = 0;
+                     foreach ($externalAuthorRepeater as $key => $val) {
+                         $sepCounter++;
+                         echo $val['external_authors'];
+                         if ($val['author_title_site'] != '' || $val['author_title_site'] != 'other') {
+                             if (array_key_exists($val['author_title_site'], $externalSites) == true) {
+                                 if ($val['author_title_site'] == 'abc15') {
+                                     echo '/<a href="'.$externalSites[$val['author_title_site']].'" target="_blank">'.strtoupper(ucwords(str_replace('-', ' ', $val['author_title_site']))).'</a>';
+                                 } else {
+                                     echo '/<a href="'.$externalSites[$val['author_title_site']].'" target="_blank">'.ucwords(str_replace('-', ' ', $val['author_title_site'])).'</a>';
+                                 }
+                             } else {
+                                 //echo '/'.str_replace('Pbs', 'PBS', str_replace('For', 'for', ucwords(str_replace('-', ' ', $val['author_title_site']))));
+                                 echo '/'.str_replace('At', 'at', str_replace('Asu', 'ASU', str_replace('The', 'the', str_replace('And', 'and', str_replace('Pbs', 'PBS', str_replace(' For ', ' for ', ucwords(str_replace('-', ' ', $val['author_title_site']))))))));
+                             }
+                         }
+                         if ($sepCounter != $extStaffCount) {
+                             if ($sepCounter == ($extStaffCount - 1)) {
+                                 echo $andSeparator.' ';
+                             } else {
+                                 echo $commaSeparator.' ';
+                             }
+                         }
+                     }
+                     echo '</span>';
+                     $newCheck++;
                  }
              }
-             if ($sepCounter != $extStaffCount) {
-                 if ($sepCounter == ($extStaffCount - 1)) {
-                     echo $andSeparator.' ';
-                 } else {
-                     echo $commaSeparator.' ';
-                 }
+
+             if ($newCheck == 0 && get_field('post_author') != '') {
+                 if ($postAuthor = get_field('post_author')) {
+             ?>
+               <a href="<?php echo site_url(); ?>?s=<?php echo $postAuthor; ?>">
+                      <?php echo $postAuthor; ?></a>/
+                  <?php } ?>
+                  <?php
+                  if ($siteTitle = get_field('site_title')) {
+                      $url = get_field('site_url');
+                      $url = esc_url($url);
+                      ?><a href="<?php echo $url; ?>"><?php echo $siteTitle; ?></a>
+                      <?php
+                  }
+                  echo '</span>';
              }
-         }
-         echo '</span>';
-         $newCheck++;
-     }
-
- }
-
- if ($newCheck == 0 && get_field('post_author') != '') {
-     if ($postAuthor = get_field('post_author')) {
-         ?>
-                 <a href="<?php echo site_url(); ?>?s=<?php echo $postAuthor; ?>">
-                        <?php echo $postAuthor; ?></a>/
-                    <?php } ?>
-                    <?php
-                    if ($siteTitle = get_field('site_title')) {
-                        $url = get_field('site_url');
-                        $url = esc_url($url);
-                        ?><a href="<?php echo $url; ?>"><?php echo $siteTitle; ?></a>
-                        <?php
-                    }
-                    echo '</span>';
- }
- wp_reset_query();
- ?>
+             wp_reset_query();
+             ?>
            </div>
-
 
            <?php if (get_field('hide_right_sidebar') == 'yes') {
                $hideSidebarClass = "photo-essay";
@@ -303,16 +299,12 @@
              </div>
 
              <div class="social_share">
-               <?php if (current_user_can('administrator')) { ?>
-                  <div class="a2a_kit a2a_default_style">
-                    <a class="a2a_button_facebook"><i class="fa-brands fa-square-facebook"></i></a>
-                    <a class="a2a_button_linkedin"><i class="fa-brands fa-linkedin"></i></a>
-                    <a class="a2a_button_twitter"><i class="fa-brands fa-x-twitter"></i></a>             
-                    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-                 </div>
-
-               <script async src="https://static.addtoany.com/menu/page.js"></script>
-               <?php } ?>
+              <div class="a2a_kit a2a_default_style">
+                <a class="a2a_button_facebook"><i class="fa-brands fa-square-facebook"></i></a>
+                <a class="a2a_button_linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                <a class="a2a_button_twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+              </div>               
              </div>
            </div>
          </div>
@@ -613,55 +605,56 @@
  ?>
 
              <?php
-  // show fact box
-  if (get_field('fact-box') == 'yes' && get_field('fact-box-code') != '') {
-      echo get_field('fact-box-code');
-  }
- ?>
+                // show fact box
+                if (get_field('fact-box') == 'yes' && get_field('fact-box-code') != '') {
+                    echo get_field('fact-box-code');
+                }
+               ?>
 
              <!-- story tags -->
              <?php
-    if (get_field('st_html')['tags'] != '' && get_field('st_html')['tags'] != 0) {
-        $args = [
-                   'post_type'   => 'storytags',
-                   'post_status' => 'publish',
-                   'p' => get_field('st_html')['tags'],
-                   'posts_per_page' => 1,
-                  ];
+                if (get_field('st_html')['tags'] != '' && get_field('st_html')['tags'] != 0) {
+                    $args = [
+                               'post_type'   => 'storytags',
+                               'post_status' => 'publish',
+                               'p' => get_field('st_html')['tags'],
+                               'posts_per_page' => 1,
+                              ];
 
-        $storyTag = new WP_Query($args);
-        if ($storyTag->have_posts()) {
-            echo '<div class="story_tag">';
-            while ($storyTag->have_posts()) {
-                $storyTag->the_post();
-                if (get_field('story_html_tag') != '') {
-                    if ($healthStory == true) {
-                        echo '<!--HERE HEALTH-->';
-                        echo '<div class="health-newsletter">'.strip_tags(get_field('story_html_tag', 170703), '<em><img><a><i><div><br>').'</div>';
-                    } else {
-                        echo '<!--ID'.get_the_ID().'-->';
-                        if (get_the_ID() == 147157) {
-                            echo '<div class="election-2020-story-tag">'.strip_tags(get_field('story_html_tag'), '<em><img><a><i>').'</div>';
-                        } elseif (get_the_ID() == 147157) {
-                            echo '<div class="audio-cn2go">'.strip_tags(get_field('story_html_tag'), '<em><img><a><i>').'</div>';
-                        } elseif (get_the_ID() == 170703) {
-                            echo '<div class="health-newsletter">'.strip_tags(get_field('story_html_tag'), '<em><img><a><i><div><br>').'</div>';
-                        } elseif (get_the_ID() == 198806) {
-                            echo '<div class="election-2022">'.get_field('story_html_tag').'</div>';
-                        } else {
-                            echo '<div class="regular">'.strip_tags(get_field('story_html_tag'), '<em><img><a><i>').'</div>';
+                    $storyTag = new WP_Query($args);
+                    if ($storyTag->have_posts()) {
+                        echo '<div class="story_tag">';
+                        while ($storyTag->have_posts()) {
+                            $storyTag->the_post();
+                            if (get_field('story_html_tag') != '') {
+                                if ($healthStory == true) {
+                                    echo '<!--HERE HEALTH-->';
+                                    echo '<div class="health-newsletter">'.strip_tags(get_field('story_html_tag', 170703), '<em><img><a><i><div><br>').'</div>';
+                                } else {
+                                    echo '<!--ID'.get_the_ID().'-->';
+                                    if (get_the_ID() == 147157) {
+                                        echo '<div class="election-2020-story-tag">'.strip_tags(get_field('story_html_tag'), '<em><img><a><i>').'</div>';
+                                    } elseif (get_the_ID() == 147157) {
+                                        echo '<div class="audio-cn2go">'.strip_tags(get_field('story_html_tag'), '<em><img><a><i>').'</div>';
+                                    } elseif (get_the_ID() == 170703) {
+                                        echo '<div class="health-newsletter">'.strip_tags(get_field('story_html_tag'), '<em><img><a><i><div><br>').'</div>';
+                                    } elseif (get_the_ID() == 198806) {
+                                        echo '<div class="election-2022">'.get_field('story_html_tag').'</div>';
+                                    } else {
+                                        echo '<div class="regular">'.strip_tags(get_field('story_html_tag'), '<em><img><a><i>').'</div>';
+                                    }
+                                }
+                            }
                         }
+                        echo '</div>';
                     }
                 }
-            }
-            echo '</div>';
-        }
-    }
-    wp_reset_query();
- ?>
+                wp_reset_query();
+             ?>
 
            </article>
-
+           <?php if (current_user_can('administrator')) { ?>
+           <?php } ?>
            <!-- author biography -->
            <?php
 
