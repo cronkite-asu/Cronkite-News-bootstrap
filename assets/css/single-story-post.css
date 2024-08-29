@@ -979,6 +979,7 @@ body {
 #main_container .single-story-block .social_share ul.share-buttons, #top-ten .single-story-block .social_share ul.share-buttons {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 #main_container .single-story-block .social_share ul.share-buttons li, #top-ten .single-story-block .social_share ul.share-buttons li {
   display: inline;
