@@ -300,8 +300,7 @@
 
              <div class="social_share">
               <div class="a2a_kit a2a_default_style">
-                <a class="a2a_button_facebook"><i class="fa-brands fa-square-facebook"></i></a>
-                <a class="a2a_button_linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                <a class="a2a_button_facebook"><i class="fa-brands fa-square-facebook"></i></a>                
                 <a class="a2a_button_reddit"><i class="fa-brands fa-square-reddit"></i></a>
                 <a class="a2a_button_twitter"><i class="fa-brands fa-x-twitter"></i></a>
                 <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
