@@ -1003,6 +1003,17 @@ body {
           }
         }
       }
+      .a2a_kit {
+        font-size:24px;
+        .a2a_svg {
+          width: 24px;
+          line-height: 24px;
+          height: 24px;
+          background-size: 24px;
+          background-color: rgb(0,53,148);
+        }
+      }
+
       .addthis_inline_share_toolbox {
         display: flex;
       }
