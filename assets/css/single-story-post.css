@@ -1017,6 +1017,7 @@ body {
 }
 #main_container .single-story-block .date-social .social_share, #top-ten .single-story-block .date-social .social_share {
   margin-top: 0px !important;
+  margin-right: 6px;
 }
 #main_container .single-story-block .date-social .social_share .at-share-btn-elements .at-icon-wrapper svg, #top-ten .single-story-block .date-social .social_share .at-share-btn-elements .at-icon-wrapper svg {
   width: 20px !important;
