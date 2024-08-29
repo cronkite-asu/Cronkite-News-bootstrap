@@ -672,7 +672,7 @@
                <div class="report-typo"><a class="hollow button" href="#">Report a Typo</a></div>
              </div>
 
-             <div class="a2a_kit a2a_default_style">
+             <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
                <a class="a2a_button_facebook"><i class="fa-brands fa-x-twitter"></i></a>
                <a class="a2a_button_linkedin"><i class="fa-brands fa-linkedin"></i></a>
                <a class="a2a_button_facebook"><i class="fa-brands fa-square-facebook"></i></a>
