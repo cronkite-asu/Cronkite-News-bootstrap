@@ -298,13 +298,14 @@
                <?php } ?>
              </div>
 
-             <div class="social_share">
-              <div class="a2a_kit a2a_default_style">
-                <a class="a2a_button_facebook"><i class="fa-brands fa-square-facebook"></i></a>                
-                <a class="a2a_button_reddit"><i class="fa-brands fa-square-reddit"></i></a>
-                <a class="a2a_button_twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-              </div>
+             <div class="social_share">              
+              <ul class="share-buttons">
+                <li><a href="https://www.facebook.com/sharer/sharer.php?u=&quote=" target="_blank" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><i class="fa-brands fa-square-facebook" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span></a></li>
+                <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source=" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span class="sr-only">Share on LinkedIn</span></a></li>
+                <li><a href="http://www.reddit.com/submit?url=&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><i class="fa-brands fa-square-reddit" aria-hidden="true"></i><span class="sr-only">Submit to Reddit</span></a></li>
+                <li><a href="https://twitter.com/intent/tweet?source=&text=:%20" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent(document.URL)); return false;"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span class="sr-only">Tweet</span></a></li>
+                <li><a href="mailto:?subject=&body=:%20" target="_blank" title="Send email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i><span class="sr-only">Send email</span></a></li>
+              </ul>
              </div>
            </div>
          </div>

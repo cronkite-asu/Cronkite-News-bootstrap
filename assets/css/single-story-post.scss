@@ -1003,18 +1003,24 @@ body {
           }
         }
       }
-      .a2a_kit {
-        font-size:24px;
-        a {
-          padding-right: 4px;
-        }
-        .a2a_svg {
-          width: 23px !important;
-          line-height: 23px !important;
-          height: 23px !important;
-          background-size: 23px !important;
-          background-color: rgb(0,53,148) !important;
-        }
+      ul.share-buttons{
+        list-style: none;
+        padding: 0;
+      }
+
+      ul.share-buttons li{
+        display: inline;
+      }
+
+      ul.share-buttons .sr-only{
+        position: absolute;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 0;
+        border: 0;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
       }
 
       .addthis_inline_share_toolbox {

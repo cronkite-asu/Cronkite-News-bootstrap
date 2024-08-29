@@ -976,18 +976,22 @@ body {
 #main_container .single-story-block .social_share.last .report-typo .button:hover, #top-ten .single-story-block .social_share.last .report-typo .button:hover {
   color: #003594;
 }
-#main_container .single-story-block .social_share .a2a_kit, #top-ten .single-story-block .social_share .a2a_kit {
-  font-size: 24px;
+#main_container .single-story-block .social_share ul.share-buttons, #top-ten .single-story-block .social_share ul.share-buttons {
+  list-style: none;
+  padding: 0;
 }
-#main_container .single-story-block .social_share .a2a_kit a, #top-ten .single-story-block .social_share .a2a_kit a {
-  padding-right: 4px;
+#main_container .single-story-block .social_share ul.share-buttons li, #top-ten .single-story-block .social_share ul.share-buttons li {
+  display: inline;
 }
-#main_container .single-story-block .social_share .a2a_kit .a2a_svg, #top-ten .single-story-block .social_share .a2a_kit .a2a_svg {
-  width: 23px !important;
-  line-height: 23px !important;
-  height: 23px !important;
-  background-size: 23px !important;
-  background-color: rgb(0, 53, 148) !important;
+#main_container .single-story-block .social_share ul.share-buttons .sr-only, #top-ten .single-story-block .social_share ul.share-buttons .sr-only {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }
 #main_container .single-story-block .social_share .addthis_inline_share_toolbox, #top-ten .single-story-block .social_share .addthis_inline_share_toolbox {
   display: flex;
