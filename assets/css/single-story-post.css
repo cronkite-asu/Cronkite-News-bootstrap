@@ -980,6 +980,7 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-right: 6px;
 }
 #main_container .single-story-block .social_share ul.share-buttons li, #top-ten .single-story-block .social_share ul.share-buttons li {
   display: inline;
