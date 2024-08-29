@@ -982,6 +982,7 @@ body {
 }
 #main_container .single-story-block .social_share ul.share-buttons li, #top-ten .single-story-block .social_share ul.share-buttons li {
   display: inline;
+  font-size: 20px;
 }
 #main_container .single-story-block .social_share ul.share-buttons .sr-only, #top-ten .single-story-block .social_share ul.share-buttons .sr-only {
   position: absolute;
