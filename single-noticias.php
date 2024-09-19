@@ -546,7 +546,7 @@
          echo '<div class="story_tag">';
          while ($storyTag->have_posts()) {
              $storyTag->the_post();
-             if (get_field('story_html_tag') != '') {
+             if (get_field('story_html_tag') != '' || get_field('story_tag_img') != '') {
                  if (get_the_ID() == 147157) {
                      echo '<div class="election-2020-story-tag">'.strip_tags(get_field('story_html_tag'), '<em><img><a><i>').'</div>';
                  } elseif (get_the_ID() == 147157) {
