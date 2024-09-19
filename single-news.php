@@ -642,7 +642,7 @@
                                     } elseif (get_the_ID() == 198806) {
                                         echo '<div class="election-2022">'.get_field('story_html_tag').'</div>';
                                     } elseif (get_the_ID() == 236841) {
-                                        echo '<div class="election-2024"><a href="'.get_field('story_tag_link').'">'.get_field('story_tag_img').'</a></div>';
+                                        echo '<div class="election-2024"><a href="'.get_field('story_tag_link').'"><img src="'.get_field('story_tag_img').'" alt="Election 2024" /></a></div>';
                                     } else {
                                         echo '<div class="regular">'.strip_tags(get_field('story_html_tag'), '<em><img><a><i>').'</div>';
                                     }
