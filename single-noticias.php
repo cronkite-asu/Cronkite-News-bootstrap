@@ -553,6 +553,8 @@
                      echo '<div class="audio-cn2go">'.strip_tags(get_field('story_html_tag'), '<em><img><a><i>').'</div>';
                  } elseif (get_the_ID() == 170703) {
                      echo '<div class="health-newsletter">'.strip_tags(get_field('story_html_tag'), '<em><img><a><i><div><br>').'</div>';
+                 } elseif (get_the_ID() == 236841) {
+                       echo '<div class="election-2024"><a href="'.get_field('story_tag_link').'">'.get_field('story_tag_img').'</a></div>';
                  } else {
                      echo '<div class="regular">'.strip_tags(get_field('story_html_tag'), '<em><img><a><i>').'</div>';
                  }
