@@ -178,10 +178,8 @@ $topStoriesArray = [];
   <div class="grid-x grid-padding-x">
 
     <div class="large-9 medium-12 small-12 cell">
-      <a href="https://cronkitenews.azpbs.org/election2024"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/09/election2024-noticias.jpg" alt="elección de 2024" title="elección de 2024" /></a>
-    </div>
 
-    <div class="large-9 medium-12 small-12 cell">
+      <a href="https://cronkitenews.azpbs.org/election2024"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/09/election2024-noticias.jpg" alt="elección de 2024" title="elección de 2024" /></a>
 
     <?php
     if (have_rows('noticias_homepage')) {
