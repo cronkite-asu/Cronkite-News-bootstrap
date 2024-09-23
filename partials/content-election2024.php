@@ -237,10 +237,13 @@ if ($videosList) {
     <div class="large-12 medium-12 small-12 cell partners">
       <h4>Contributors</h4>
     </div>
-    <div class="large-6 medium-6 small-12 cell partner-logos text-center">
+    <div class="large-4 medium-4 small-12 cell partner-logos text-center">
+      <a href="https://www.azpbs.org/" target="_blank"><img src="https://azpbs.org/wp-content/themes/pbs/img/azpbs-logo-2020.png" /></a>
+    </div>
+    <div class="large-4 medium-4 small-12 cell partner-logos text-center">
       <a href="https://cronkitenews.azpbs.org/" target="_blank"><img class="cn-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/CN-PBS-EPS.svg" /></a>
     </div>
-    <div class="large-6 medium-6 small-12 cell partner-logos text-center">
+    <div class="large-4 medium-4 small-12 cell partner-logos text-center">
       <a href="https://indiancountrytoday.com/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/election2022/ict-logo.svg" /></a>
     </div>
   </div>

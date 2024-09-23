@@ -105,18 +105,18 @@ if (isset($settings['text-color']) && $settings['text-color'] != '') {
 }
 ?>
 
-        <!-- NEW NAV - 12/12/19 -->
-        <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/foundation.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <!-- NEW NAV - 12/12/19 -->
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/foundation.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-        <link href="<?php bloginfo('template_directory'); ?>/assets/css/hamburgers.css" rel="stylesheet">
-        <link href="<?php bloginfo('template_directory'); ?>/assets/css/all.min.css" rel="stylesheet"> <!--load all styles -->
-        <link href="<?php bloginfo('template_directory'); ?>/assets/css/print.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/css/tooltipster.bundle.min.css" />
+    <link href="<?php bloginfo('template_directory'); ?>/assets/css/hamburgers.css" rel="stylesheet">
+    <link href="<?php bloginfo('template_directory'); ?>/assets/css/all.min.css" rel="stylesheet"> <!--load all styles -->
+    <link href="<?php bloginfo('template_directory'); ?>/assets/css/print.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/assets/css/tooltipster.bundle.min.css" />
 
     <?php if (get_the_ID() == 143506 || get_the_ID() == 127403 || get_the_ID() == 152159 || get_the_ID() == 143528 || get_the_ID() == 156485) { ?>
         <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/youth-suicide/youth-suicide.css">
@@ -135,15 +135,15 @@ if (isset($settings['text-color']) && $settings['text-color'] != '') {
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/js/vendor/before-after/css/twentytwenty.css" />
 
     <style type='text/css'>
-          body.admin-bar {margin-top:32px !important}
-          @media screen and (max-width: 782px) {
-              body.admin-bar { margin-top:0px !important }
-          }
-          @media screen and (max-width: 600px) {
-              body.admin-bar { margin-top:0px !important }
-              html #wpadminbar{ margin-top: -46px; }
-          }
-      </style>
+        body.admin-bar {margin-top:32px !important}
+        @media screen and (max-width: 782px) {
+            body.admin-bar { margin-top:0px !important }
+        }
+        @media screen and (max-width: 600px) {
+            body.admin-bar { margin-top:0px !important }
+            html #wpadminbar{ margin-top: -46px; }
+        }
+    </style>
 </head>
 
 <body <?php body_class(); ?>>
@@ -154,7 +154,7 @@ if (isset($settings['text-color']) && $settings['text-color'] != '') {
     </div>
 
     <!-- start header -->
-        <nav class="cn_navigation" role="navigation" aria-label="Cronkite News - Navigation">
+    <nav class="cn_navigation" role="navigation" aria-label="Cronkite News - Navigation">
 
       <!-- navigation container -->
       <div class="main_nav_container">
@@ -163,7 +163,6 @@ if (isset($settings['text-color']) && $settings['text-color'] != '') {
           <!-- logo -->
           <div class="logo">
             <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/assets/img/cronkite-news.svg" alt="Cronkite News" title="Cronkite News" /></a>
-            <a class="election-2022-logo" href="https://www.azpbs.org/" target="_blank"><img src="https://azpbs.org/wp-content/themes/pbs/img/azpbs-logo-2020.png" /></a>
             <a class="election-2022-logo" href="https://cronkitenews.azpbs.org/election-2022"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2022/04/election-2022-logo-sm.png" alt="Election 2022" title="Election 2022" /></a>
           </div>
           <!-- main navigation -->
@@ -181,18 +180,18 @@ if (isset($settings['text-color']) && $settings['text-color'] != '') {
             </ul>
             <!-- top navigation -->
             <ul class="top_links">
-                            <?php
-                            $args = [
-                                'menu' => 'Header Nav - 2019',
-                                'container'     => false,
-                                'items_wrap'    => '%3$s',
-                                'depth'         => 1,
-                                'fallback_cb'   => false,
-                                'menu_id'             => '',
-                                'menu_class'        => '',
-                                ];
-wp_nav_menu($args);
-?>
+              <?php
+              $args = [
+                  'menu' => 'Header Nav - 2019',
+                  'container'     => false,
+                  'items_wrap'    => '%3$s',
+                  'depth'         => 1,
+                  'fallback_cb'   => false,
+                  'menu_id'             => '',
+                  'menu_class'        => '',
+                  ];
+              wp_nav_menu($args);
+              ?>
             </ul>
           </div>
           <!-- hamburger icon -->
@@ -224,8 +223,8 @@ wp_nav_menu($args);
             'menu_id'             => '',
             'menu_class'        => '',
             ];
-wp_nav_menu($args);
-?>
+          wp_nav_menu($args);
+          ?>
           <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sports/">Sports</a></li>
                     <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sitenewscast/">Newscast</a></li>
           <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/audio/">Audio</a></li>
