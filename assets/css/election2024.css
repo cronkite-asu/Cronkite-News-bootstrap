@@ -1,0 +1,641 @@
+.election-2024-logo {
+  margin-left: 25px;
+  padding-left: 25px;
+  border-left: 1px solid #f2f2f2;
+}
+
+hr {
+  margin: 1rem auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.cta a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 10px 0;
+  color: #0a0a0a;
+}
+.cta a:hover {
+  color: #003594;
+}
+
+.external-site-links h4 {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.external-site-links .external-sites {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 15px 14px 0 14px;
+  width: 100%;
+  background-color: #f4f4f4;
+}
+.external-site-links .external-sites a {
+  font-size: 1rem;
+  padding: 0 25px;
+  cursor: pointer;
+}
+.external-site-links .external-sites a i {
+  display: none;
+  padding-left: 10px;
+}
+.external-site-links .external-sites a.first {
+  padding: 18px 25px 0 25px;
+}
+.external-site-links .external-sites a.last {
+  padding: 0 25px 18px 25px;
+}
+.external-site-links .external-sites a:hover {
+  text-decoration: none;
+}
+.external-site-links .external-sites a:hover i {
+  display: inline-block;
+}
+.external-site-links .external-sites hr {
+  border-bottom: 1px solid #d5d5d5;
+}
+
+#election-container {
+  max-width: 80rem;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+#election-container h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #003594;
+}
+@media only screen and (max-width: 660px) {
+  #election-container h3 {
+    font-weight: 400 !important;
+    font-size: 1.15rem !important;
+  }
+}
+#election-container h3 a {
+  color: #003594 !important;
+}
+#election-container h3 a:hover {
+  color: #0a0a0a !important;
+}
+#election-container h4 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #003594;
+  text-transform: uppercase;
+}
+#election-container h4 a {
+  color: #003594 !important;
+}
+#election-container h4 a:hover {
+  color: #003594 !important;
+}
+#election-container h4:after {
+  content: "";
+  border-image-slice: 1;
+  border-top: 1px solid;
+  border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
+  margin: 0 0 0 20px;
+  flex: 1 0 20px;
+  width: 100%;
+}
+#election-container .slide-aside h5 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #003594;
+}
+@media only screen and (max-width: 660px) {
+  #election-container .slide-aside h5 {
+    font-weight: 400 !important;
+    font-size: 1.15rem !important;
+  }
+}
+#election-container .slide-aside h5 a {
+  color: #003594 !important;
+}
+#election-container .slide-aside h5 a:hover {
+  color: #0a0a0a !important;
+}
+#election-container .top-stories li {
+  font-size: 0.95rem;
+  line-height: 1.35rem;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 1px solid #D8D8D8;
+}
+#election-container .top-stories li:last-child {
+  border-bottom: none;
+}
+#election-container .top-stories li a {
+  color: #0a0a0a;
+}
+#election-container .top-stories li a:hover {
+  color: rgb(0, 102, 51);
+}
+
+.election-schedule {
+  max-width: 80rem;
+}
+.election-schedule h4 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #003594;
+  padding-top: 15px;
+  text-transform: uppercase;
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+.election-schedule h4 a {
+  color: #003594 !important;
+}
+.election-schedule h4 a:hover {
+  color: #003594 !important;
+}
+.election-schedule h4:after {
+  content: "";
+  border-image-slice: 1;
+  border-top: 1px solid;
+  border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
+  margin: 0 0 0 20px;
+  flex: 1 0 20px;
+  width: 100%;
+}
+.election-schedule h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  text-transform: none;
+}
+.election-schedule h3 a {
+  color: #0a0a0a;
+}
+.election-schedule h3 a:hover {
+  color: #003594;
+}
+.election-schedule span {
+  font-weight: bold;
+}
+.election-schedule ul li {
+  font-size: 1.05rem;
+}
+
+.debate-schedule {
+  max-width: 80rem;
+}
+.debate-schedule h4 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #003594;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+.debate-schedule h4 a {
+  color: #003594 !important;
+}
+.debate-schedule h4 a:hover {
+  color: #003594 !important;
+}
+.debate-schedule h4:after {
+  content: "";
+  border-image-slice: 1;
+  border-top: 1px solid;
+  border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
+  margin: 0 0 0 20px;
+  flex: 1 0 20px;
+  width: 100%;
+}
+.debate-schedule .debate-carousel {
+  width: 75rem;
+  display: flex;
+  flex-direction: row;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  margin: 0 auto;
+  /* the slides */
+}
+.debate-schedule .debate-carousel .slick-prev {
+  left: -25px !important;
+  z-index: 1000;
+}
+@media only screen and (max-width: 900px) {
+  .debate-schedule .debate-carousel .slick-prev {
+    left: 10px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .debate-schedule .debate-carousel .slick-next {
+    right: 10px;
+  }
+}
+.debate-schedule .debate-carousel .slick-slide {
+  margin: 0 12px;
+}
+@media only screen and (max-width: 900px) {
+  .debate-schedule .debate-carousel .slick-slide {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.debate-schedule .debate-carousel .slick-prev:before, .debate-schedule .debate-carousel .slick-next:before {
+  color: #003594;
+}
+.debate-schedule .schedule-tab {
+  margin-right: 15px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+.debate-schedule .schedule-tab:first-child {
+  margin-right: 15px;
+  margin-left: 0px;
+}
+.debate-schedule .schedule-tab .rounded {
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -khtml-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 8px 6px -6px #b8b8b8;
+  -moz-box-shadow: 0 8px 6px -6px #b8b8b8;
+  box-shadow: 0 8px 6px -6px #b8b8b8;
+}
+.debate-schedule .schedule-tab .rounded:hover {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: #003594;
+}
+.debate-schedule .schedule-tab .secondary {
+  background-color: #f2f2f2;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  line-height: 22px;
+  /*max-width: 100%;
+  width: 100%;*/
+  height: 80px;
+  color: #0a0a0a;
+}
+
+.election-details {
+  max-width: 80rem;
+  margin-top: 25px;
+}
+.election-details h4 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #003594;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.election-details h4 a {
+  color: #003594 !important;
+}
+.election-details h4 a:hover {
+  color: #003594 !important;
+}
+.election-details h4:after {
+  content: "";
+  border-image-slice: 1;
+  border-top: 1px solid;
+  border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
+  margin: 0 0 0 20px;
+  flex: 1 0 20px;
+  width: 100%;
+}
+.election-details .election-key {
+  display: flex;
+  flex-direction: row;
+  background-color: #f4f4f4;
+  padding: 6px 0;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+.election-details .election-key .red-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-left: 15px;
+}
+.election-details .election-key .red-circle:before {
+  width: 15px;
+  height: 15px;
+  display: block;
+  content: " ";
+  background-color: #c31212;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  margin-right: 15px;
+}
+.election-details .election-key .blue-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.election-details .election-key .blue-circle:before {
+  width: 15px;
+  height: 15px;
+  display: block;
+  content: " ";
+  background-color: #003594;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  margin-right: 15px;
+}
+.election-details .election-key-dates {
+  display: flex;
+  flex-direction: row;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+.election-details .election-key-dates.last-child {
+  border-bottom: none;
+}
+.election-details .election-key-dates:hover {
+  background-color: #f2f2f2;
+}
+.election-details .election-key-dates .event-date {
+  text-align: center;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  width: 60px;
+  line-height: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  -webkit-box-shadow: 0 8px 6px -6px #b8b8b8;
+  -moz-box-shadow: 0 8px 6px -6px #b8b8b8;
+  box-shadow: 0 8px 6px -6px #b8b8b8;
+}
+.election-details .election-key-dates .event-date.red {
+  background-color: #c31212;
+}
+.election-details .election-key-dates .event-date.blue {
+  background-color: #003594;
+}
+.election-details .election-key-dates .event-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+  margin-left: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-left: 15px;
+}
+.election-details .partners {
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+.election-details .partner-logos img, .election-details .partner-logos svg {
+  width: 80%;
+  margin-bottom: 30px;
+}
+.election-details .partner-logos img.cn-logo, .election-details .partner-logos svg.cn-logo {
+  width: 60%;
+}
+.election-details .faq-section {
+  margin-top: 15px;
+}
+.election-details .candidate-profiles h4 {
+  margin-bottom: 15px;
+}
+.election-details .candidate-profiles a {
+  color: #003594;
+}
+.election-details .candidate-profiles a h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 40px;
+}
+.election-details .candidate-profiles .prop-zone h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+.election-details #standing-placements {
+  padding-bottom: 20px;
+}
+.election-details #standing-placements div img {
+  width: 100px;
+}
+.election-details #standing-placements div.special-ad img {
+  width: 100% !important;
+}
+.election-details #standing-placements div.icons-standing {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+}
+.election-details #standing-placements div h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.15rem;
+  margin-top: 16px;
+  padding: 0 0 0 25px;
+}
+@media only screen and (max-width: 660px) {
+  .election-details #standing-placements div h3 {
+    font-weight: 400 !important;
+    font-size: 1.15rem !important;
+  }
+}
+.election-details #standing-placements div h3 a {
+  color: #0a0a0a !important;
+}
+.election-details #standing-placements div h3 a:hover {
+  color: #003594 !important;
+}
+
+.latest-news {
+  max-width: 80rem;
+  margin-bottom: 50px;
+}
+.latest-news h4 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #003594;
+  padding-top: 15px;
+  text-transform: uppercase;
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+.latest-news h4 a {
+  color: #003594 !important;
+}
+.latest-news h4 a:hover {
+  color: #003594 !important;
+}
+.latest-news h4:after {
+  content: "";
+  /*border-top: 1px solid $cnBlue;*/
+  border-image-slice: 1;
+  border-top: 1px solid;
+  border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
+  margin: 0 0 0 20px;
+  flex: 1 0 20px;
+  width: 100%;
+}
+.latest-news h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  text-transform: none;
+}
+.latest-news h3 a {
+  color: #0a0a0a;
+}
+.latest-news h3 a:hover {
+  color: #003594;
+}
+.latest-news span {
+  background: #003594;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: #ffffff;
+  padding: 2px 10px;
+}
+
+/* latest stories */
+.latest-stories {
+  max-width: 80rem;
+  border-top: none !important;
+  margin-top: 40px;
+}
+.latest-stories h4 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #003594;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.latest-stories h4 a {
+  color: #003594 !important;
+}
+.latest-stories h4 a:hover {
+  color: #003594 !important;
+}
+.latest-stories h4:after {
+  content: "";
+  border-image-slice: 1;
+  border-top: 1px solid;
+  border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
+  margin: 0 0 0 20px;
+  flex: 1 0 20px;
+  width: 100%;
+}
+.latest-stories h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin-top: 16px;
+}
+@media only screen and (max-width: 660px) {
+  .latest-stories h3 {
+    font-weight: 400 !important;
+    font-size: 1.15rem !important;
+  }
+}
+.latest-stories h3 a {
+  color: #003594 !important;
+}
+.latest-stories h3 a:hover {
+  color: #0a0a0a !important;
+}
+.latest-stories .grid-padding-x > .cell {
+  margin-bottom: 0px;
+}
+.latest-stories .grid-padding-x > .cell:first-child {
+  margin-bottom: 20px;
+}
+.latest-stories .small-stories h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.story-list {
+  margin-left: 0px;
+  margin-top: 10px;
+}
+.story-list li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  list-style-position: none;
+  border-bottom: 1px solid #ececec;
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.story-list li a {
+  display: block;
+  width: 250px;
+  padding: 0px;
+}
+.story-list li h2 {
+  line-height: 1.5rem;
+  padding: 5px 10px;
+}
+.story-list li h2 a {
+  font-weight: normal;
+  font-size: 1rem;
+  color: #003594;
+  cursor: pointer;
+}
+.story-list li:hover {
+  background-color: #ececec;
+}
+
+/*# sourceMappingURL=election2024.css.map */
