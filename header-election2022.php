@@ -167,8 +167,8 @@ if (isset($settings['text-color']) && $settings['text-color'] != '') {
           </div>
           <!-- main navigation -->
           <div class="nav_links">
-            <!-- language and search -->
-            <ul class="lang_search">
+            <!-- top navigation -->
+            <ul class="top_links">
               <li>
                 <div class="search-box">
                   <form method="get" class="navbar-form search" id="searchform" action="https://cronkitenews.azpbs.org/">
@@ -177,9 +177,6 @@ if (isset($settings['text-color']) && $settings['text-color'] != '') {
                   </form>
                 </div>
               </li>
-            </ul>
-            <!-- top navigation -->
-            <ul class="top_links">
               <?php
               $args = [
                   'menu' => 'Header Nav - 2019',
@@ -225,9 +222,8 @@ if (isset($settings['text-color']) && $settings['text-color'] != '') {
             ];
           wp_nav_menu($args);
           ?>
-          <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sports/">Sports</a></li>
-                    <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sitenewscast/">Newscast</a></li>
-          <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/audio/">Audio</a></li>
+          <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sitenewscast/">Newscast</a></li>
+          <li class="top_links_m"><a href="https://www.asufoundation.org/colleges-and-programs/cronkite-news-CA126207.html" target="_blank">GIVE</a></li>
           <li class="top_links_m last"><a href="https://cronkitenews.azpbs.org/daily-newsletter-signup/">Subscribe</a></li>
           <li class="misc_links_m first"><a href="https://cronkitenews.azpbs.org/about-us/">About</a></li>
           <li class="misc_links_m"><a href="https://cronkitenews.azpbs.org/what-we-do/" target="_blank">What we do</a></li>
