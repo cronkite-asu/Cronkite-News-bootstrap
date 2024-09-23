@@ -140,38 +140,44 @@ $topStoriesArray = [];
       <h4>Lo más destacado</h4>
 
       <?php
-$args = [
-              'post_type'   => 'post',
-              'post_status' => 'publish',
-              'post__not_in' => $topStoriesArray,
-              'posts_per_page' => 7,
-              'cat' => 22877,
-              'order' => 'DESC',
-             ];
+        $args = [
+                'post_type'   => 'post',
+                'post_status' => 'publish',
+                'post__not_in' => $topStoriesArray,
+                'posts_per_page' => 7,
+                'cat' => 22877,
+                'order' => 'DESC',
+               ];
 
-$latestNews = new WP_Query($args);
-if ($latestNews->have_posts()) {
-    ?>
-          <ul class="no-bullet top-stories">
-            <?php
-    while ($latestNews->have_posts()) {
-        $latestNews->the_post();
-        $curID = get_the_ID();
-        $permalink = get_permalink($curID);
-        $summary = get_field('story_tease', $curID);
-        if (get_field('use_short_headline', $curID) == 'yes' && get_field('homepage_headline', $curID) != '') {
-            $title = get_field('homepage_headline', $curID);
-        } else {
-            $title = get_the_title($curID);
-        }
-        ?>
+        $latestNews = new WP_Query($args);
+        if ($latestNews->have_posts()) {
+      ?>
+        <ul class="no-bullet top-stories">
+          <?php
+            while ($latestNews->have_posts()) {
+                $latestNews->the_post();
+                $curID = get_the_ID();
+                $permalink = get_permalink($curID);
+                $summary = get_field('story_tease', $curID);
+                if (get_field('use_short_headline', $curID) == 'yes' && get_field('homepage_headline', $curID) != '') {
+                    $title = get_field('homepage_headline', $curID);
+                } else {
+                    $title = get_the_title($curID);
+                }
+                ?>
             <li><a href="<?php echo $permalink; ?>" target="_blank"><?php echo $title; ?></a></li>
             <?php } ?>
           </ul>
-            <?php
-}
-wp_reset_query();
-?>
+        <?php
+        }
+        wp_reset_query();
+      ?>
+    </div>
+  </div>
+
+  <div class="grid-x grid-padding-x">
+    <div class="large-9 medium-12 small-12 cell">
+      <a href="https://cronkitenews.azpbs.org/election2024"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/09/election2024-noticias.jpg" alt="elección de 2024" title="elección de 2024" /></a>
     </div>
   </div>
 
@@ -233,7 +239,7 @@ wp_reset_query();
                     <a href="<?php echo $assetLocation; ?>" <?php echo $target; ?>><?php echo get_the_post_thumbnail($mainStory); ?></a>
                     <h3><a href="<?php echo $assetLocation; ?>" <?php echo $target; ?>><?php echo $title; ?></a></h3>
                   </div>
-                        <?php
+                <?php
                     }
                 }
                 ?>
