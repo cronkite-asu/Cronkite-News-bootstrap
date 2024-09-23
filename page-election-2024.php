@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Template Name: Election 2022 pages
+ * Template Name: Election 2024 pages
  */
 
-get_header('election2022'); ?>
+get_header('election2024'); ?>
 
   <?php get_template_part('partials/content', 'election2024'); ?>
 
