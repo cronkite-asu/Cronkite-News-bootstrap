@@ -106,12 +106,6 @@
   </script>
   <!-- End Twitter universal website tag code -->
 
-  <!-- AlertMe website tag code -->
-  <script>
-  //(function (d) { var src = 'https://app.alertme.news/build/'; var publisher = '100'; var head = d.getElementsByTagName('head')[0]; var script = d.createElement('script'); script.type = 'text/javascript'; script.src = src + 'button.js'; head.appendChild(script); script.onload = function () { AlertMeGlobalVariableNamespace.run(src, publisher); } })(document);
-  </script>
-  <!-- End AlertMe website tag code -->
-
   <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/what-input.js"></script>
   <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/foundation.js"></script>
   <script src="<?php bloginfo('template_directory'); ?>/assets/js/app.js"></script>
@@ -120,19 +114,6 @@
   <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/plyr-master/dist/plyr.js"></script>
   <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/before-after/js/jquery.event.move.js"></script>
   <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/before-after/js/jquery.twentytwenty.js"></script>
-
-  <?php if (current_user_can('administrator')) { ?>
-  <script src="https://webreader.naturalreaders.com/nr-webreader.js" defer></script>
-  <script>
-      window.addEventListener("DOMContentLoaded", function() {
-          if (typeof NRWebReader != 'undefined') {
-              window['NRWebReader'] = new NRWebReader({
-              widget_id: "3m7ptr3zhp"  // DO NOT REMOVE. This is your widget ID for your WebReader
-              });
-          }
-      });
-  </script>
-  <?php } ?>
 
   <script>
   /**
