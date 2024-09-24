@@ -647,3 +647,20 @@ function video_embed_right($atts, $content = null)
     return $result;
 }
 add_shortcode('video-embed-right', 'video_embed_right');
+
+function related_box_grid_list($atts, $content = null) {
+    if (current_user_can('administrator')) {
+      if (isset($atts['block-name'])) {
+        $result = '<div class="related-story-block">';
+        $result .= '<ul>';
+        $result .= '<li><a href="" target="_blank"><div class="img">IMG</div><h4>HEADLINE</h4></a></li>';
+        $result .= '<li><a href="" target="_blank"><div class="img">IMG</div><h4>HEADLINE</h4></a></li>';
+        $result .= '<li><a href="" target="_blank"><div class="img">IMG</div><h4>HEADLINE</h4></a></li>';
+        $result .= '</ul>';
+        $result .= '</div>';
+
+        return $result;
+      }
+    }
+}
+add_shortcode('related-story-block', 'related_box_grid_list');

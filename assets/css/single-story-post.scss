@@ -374,6 +374,15 @@ body {
         margin: 0.5em 1em 0.5em 0;
       }
 
+      .related-story-block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        vertical-align: middle;
+        flex-flow: column;
+        order:2;
+      }
+
       .video-wrap {
         text-align: left;
       }
