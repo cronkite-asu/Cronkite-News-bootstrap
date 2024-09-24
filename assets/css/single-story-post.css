@@ -347,6 +347,15 @@ body {
   float: left;
   margin: 0.5em 1em 0.5em 0;
 }
+#main_container .single-story-block article .related-story-block, #top-ten .single-story-block article .related-story-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  vertical-align: middle;
+  flex-flow: column;
+  order: 2;
+  border: 1px solid #ff0000;
+}
 #main_container .single-story-block article .video-wrap, #top-ten .single-story-block article .video-wrap {
   text-align: left;
 }
