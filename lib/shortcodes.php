@@ -657,7 +657,7 @@ function related_box_grid_list($atts, $content = null) {
         foreach( $categories as $category ) {
             $catArr[] = $category->term_id;
         }
-        $catArr = array_values($array);
+        $catArr = array_values($catArr);
         var_dump($catArr);
 
         $result = '<div class="related-story-block">';
