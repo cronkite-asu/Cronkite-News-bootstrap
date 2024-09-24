@@ -652,6 +652,12 @@ function related_box_grid_list($atts, $content = null) {
     if (current_user_can('administrator')) {
       if (isset($atts['block-name'])) {
         $result = '<div class="related-story-block">';
+        /*if (237109 || 236532) {
+          $result .= '<div class="banner">Related story</div>';
+        } else {
+          $result .= '<h4><strong>'. ($atts[ 'box-title' ] ?? "") .'</strong></h4>';
+        }*/
+        $result .= 'ID: '.get_the_ID();
         $result .= '<ul>';
         $result .= '<li><a href="" target="_blank"><div class="img">IMG</div><h4>HEADLINE</h4></a></li>';
         $result .= '<li><a href="" target="_blank"><div class="img">IMG</div><h4>HEADLINE</h4></a></li>';
