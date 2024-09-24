@@ -655,7 +655,8 @@ function related_box_grid_list($atts, $content = null) {
         $categories = get_the_category(get_the_ID());
         $catArr = array();
         foreach( $categories as $category ) {
-            $catArr[] = $category->term_id;
+            $termID = $category->term_id;
+            $catArr[] = $termID;
         }
         var_dump($catArr[0]);
 
