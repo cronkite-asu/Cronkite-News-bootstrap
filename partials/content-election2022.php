@@ -238,7 +238,7 @@ if ($videosList) {
       <h4>Contributors</h4>
     </div>
     <div class="large-6 medium-6 small-12 cell partner-logos text-center">
-      <a href="https://cronkitenews.azpbs.org/" target="_blank"><img class="cn-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/CN-PBS-EPS.svg" /></a>
+      <a href="https://cronkitenews.azpbs.org/" target="_blank"><img class="cn-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/cronkite-news.svg" /></a>
     </div>
     <div class="large-6 medium-6 small-12 cell partner-logos text-center">
       <a href="https://indiancountrytoday.com/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/election2022/ict-logo.svg" /></a>
