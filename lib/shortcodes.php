@@ -652,16 +652,8 @@ function related_box_grid_list($atts, $content = null) {
     if (current_user_can('administrator')) {
       if (isset($atts['block-name'])) {
 
-        $categories = get_the_category(get_the_ID());
-        $catArr = array();
-        foreach( $categories as $category ) {
-            $termID = $category->term_id;
-            $catArr[] = $termID;
-        }
-        var_dump($catArr[0]);
-
         $result = '<div class="related-story-block">';
-        if ($postID == 237109 || $postID == 236532) {
+        if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
           $result .= '<div class="banner">Related story</div>';
         } else {
           $result .= '<h4>Related story</h4>';
