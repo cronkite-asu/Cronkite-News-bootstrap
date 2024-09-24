@@ -651,10 +651,10 @@ add_shortcode('video-embed-right', 'video_embed_right');
 function related_box_grid_list($atts, $content = null) {
     if (current_user_can('administrator')) {
       if (isset($atts['block-name'])) {
+        
+        $categories = get_the_category(get_the_ID());
 
-        $post_categories = wp_get_post_categories( get_the_ID() );
-        $cats = array();
-        print_r($post_categories);
+        var_dump($categories);
         $result = '<div class="related-story-block">';
         if ($postID == 237109 || $postID == 236532) {
           $result .= '<div class="banner">Related story</div>';
