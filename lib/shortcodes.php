@@ -653,12 +653,12 @@ function related_box_grid_list($atts, $content = null) {
       if (isset($atts['block-name'])) {
 
         $categories = get_the_category(get_the_ID());
-        $catArr = array();
+        /*$catArr = array();
         foreach( $categories as $category ) {
             $catArr[] = $category->term_id;
         }
         $catArr = array_values($catArr);
-        var_dump($catArr);
+        var_dump($catArr);*/
 
         $result = '<div class="related-story-block">';
         if ($postID == 237109 || $postID == 236532) {
