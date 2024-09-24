@@ -651,8 +651,9 @@ add_shortcode('video-embed-right', 'video_embed_right');
 function related_box_grid_list($atts, $content = null) {
     if (current_user_can('administrator')) {
       if (isset($atts['block-name'])) {
+        $postID = get_the_ID();
         $result = '<div class="related-story-block">';
-        if (get_the_ID() == 237109 || get_the_ID() == 236532) {
+        if ($postID == 237109 || $postID == 236532) {
           $result .= '<div class="banner">Related story</div>';
         } else {
           $result .= '<h4><strong>Related story</strong></h4>';
