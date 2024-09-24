@@ -654,13 +654,13 @@ function related_box_grid_list($atts, $content = null) {
 
         $post_categories = wp_get_post_categories( get_the_ID() );
         $cats = array();
-        print_r($cats);
+        print_r($post_categories);
         $result = '<div class="related-story-block">';
         if ($postID == 237109 || $postID == 236532) {
           $result .= '<div class="banner">Related story</div>';
         } else {
           $result .= '<h4>Related story</h4>';
-        }        
+        }
         $result .= '<ul>';
         $result .= '<li><a href="" target="_blank"><div class="img">IMG</div><h4>HEADLINE</h4></a></li>';
         $result .= '<li><a href="" target="_blank"><div class="img">IMG</div><h4>HEADLINE</h4></a></li>';
