@@ -415,7 +415,7 @@ body {
           list-style-position: inherit;
           text-indent:0px;
           margin-left: 0px;
-          margin-bottom: 15px;
+          margin-bottom: 10px;
           margin-top: 15px;
           @media only screen
             and (max-width: 600px) {
@@ -438,7 +438,7 @@ body {
               display: block;
               @media only screen
                 and (max-width: 600px) {
-                  display: list-item;
+                  display: block;
               }
             }
             @media only screen
