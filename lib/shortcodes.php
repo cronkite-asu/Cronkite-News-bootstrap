@@ -675,7 +675,7 @@ function related_box_grid_list($atts, $content = null) {
         if ($rsBlocks->have_posts()) {
           while ($rsBlocks->have_posts()) {
               $rsBlocks->the_post();
-              echo 'HERE!';
+              echo 'ID: '. $rsBlocks->ID;
           }
         }
 
@@ -692,6 +692,7 @@ function related_box_grid_list($atts, $content = null) {
         $result .= '<li><a href="" target="_blank"><div class="img">IMG</div><h4>HEADLINE</h4></a></li>';
         $result .= '</ul>';
         $result .= '</div>';
+        wp_reset_query();
 
         return $result;
       }
