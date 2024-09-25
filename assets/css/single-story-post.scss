@@ -402,6 +402,10 @@ body {
           display: flex;
           flex-direction: row;
           list-style: none;
+          list-style-position: inherit;
+          text-indent:0px;
+          margin-left: 0px;
+          margin-bottom: 0px;
           li {
             display: none;
             &:nth-child(-n+3){
@@ -411,10 +415,7 @@ body {
               font-family: $robotoFontFamily;
               font-size: 1rem;
               text-transform: none;
-              list-style-position: inherit;
-              text-indent:0px;
-              margin-left: 0px;
-              margin-bottom: 0px;
+
 
               &::after {
                 border-top: none;
