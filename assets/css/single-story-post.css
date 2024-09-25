@@ -412,7 +412,7 @@ body {
   }
 }
 #main_container .single-story-block article .related-story-block ul li:nth-child(-n+3), #top-ten .single-story-block article .related-story-block ul li:nth-child(-n+3) {
-  display: list-item;
+  display: block;
 }
 @media only screen and (max-width: 600px) {
   #main_container .single-story-block article .related-story-block ul li:nth-child(-n+3), #top-ten .single-story-block article .related-story-block ul li:nth-child(-n+3) {
@@ -421,7 +421,7 @@ body {
 }
 @media only screen and (max-width: 600px) {
   #main_container .single-story-block article .related-story-block ul li, #top-ten .single-story-block article .related-story-block ul li {
-    display: list-item;
+    display: block;
   }
 }
 @media only screen and (max-width: 600px) {

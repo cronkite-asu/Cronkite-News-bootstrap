@@ -435,7 +435,7 @@ body {
               }
             }
             &:nth-child(-n+3){
-              display: list-item;
+              display: block;
               @media only screen
                 and (max-width: 600px) {
                   display: list-item;
@@ -443,7 +443,7 @@ body {
             }
             @media only screen
               and (max-width: 600px) {
-                display: list-item;
+                display: block;
             }
             .img {
               @media only screen
