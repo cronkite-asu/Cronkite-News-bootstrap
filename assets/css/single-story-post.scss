@@ -411,6 +411,12 @@ body {
               font-family: $robotoFontFamily;
               font-size: 1rem;
               text-transform: none;
+              &::after {
+                border-top: none;
+                margin: 0px;
+                flex: none;
+                width: 100%;
+              }
             }
           }
         }

@@ -388,6 +388,12 @@ body {
   font-size: 1rem;
   text-transform: none;
 }
+#main_container .single-story-block article .related-story-block ul li h4::after, #top-ten .single-story-block article .related-story-block ul li h4::after {
+  border-top: none;
+  margin: 0px;
+  flex: none;
+  width: 100%;
+}
 #main_container .single-story-block article .video-wrap, #top-ten .single-story-block article .video-wrap {
   text-align: left;
 }
