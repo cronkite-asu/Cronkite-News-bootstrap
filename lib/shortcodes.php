@@ -689,7 +689,7 @@ function related_box_grid_list($atts, $content = null) {
           }
           $result .= '</ul>';
           if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
-            $result .= '<div class="footer-banner">Related story</div>';
+            $result .= '<div class="footer-banner"></div>';
           }
           $result .= '</div>';
         }
