@@ -1072,7 +1072,7 @@
                                    <a href="<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fa-solid fa-globe"></i></a>
                                             <?php } elseif (get_sub_field('social_media_type') == 'tiktok') { ?>
                                   <a href="https://www.tiktok.com/@<?php echo get_sub_field('social_media_handle'); ?>" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                                                     <?php
+                                  <?php
                                             }
                                         }
                                     }
@@ -1087,28 +1087,26 @@
                 }
             }
              wp_reset_query();
- ?>
+          ?>
+        </div>
 
-         </div>
-
-         <?php
- // hide sidebar
- if (get_field('hide_right_sidebar') != 'yes') {
-     ?>
+        <?php
+         // hide sidebar
+         if (get_field('hide_right_sidebar') != 'yes') {
+        ?>
          <!-- right sidebar -->
          <div class="large-4 medium-12 small-12 cell sidebar">
-                <?php dynamic_sidebar('Sidebar New Story Template - 2020'); ?>
-                <?php
-      $args = [
-      'post_type' => 'post',
-      'post_status' => 'publish',
-      'posts_per_page' => 8,
-      'category__not_in' => [ 22877 ],
-      ];
-     $query = new WP_Query($args);
-     ?>
-
-                <?php if ($query->have_posts()) : ?>
+            <?php dynamic_sidebar('Sidebar New Story Template - 2020'); ?>
+            <?php
+              $args = [
+              'post_type' => 'post',
+              'post_status' => 'publish',
+              'posts_per_page' => 8,
+              'category__not_in' => [ 22877 ],
+              ];
+             $query = new WP_Query($args);
+             if ($query->have_posts()) :
+            ?>
                <aside id="latest-news-sidebar">
                  <h5>Latest News</h5>
                  <ul class="aside-latest-news">
@@ -1122,11 +1120,9 @@
                    </li>
                     <?php endwhile; ?>
                </aside>
-                <?php endif; ?>
+              <?php endif; ?>
          </div>
-                <?php
- }
- ?>
+         <?php } ?>
        </div>
      </div>
 

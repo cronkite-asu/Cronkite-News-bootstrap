@@ -651,6 +651,32 @@ add_shortcode('video-embed-right', 'video_embed_right');
 function related_box_grid_list($atts, $content = null) {
     if (current_user_can('administrator')) {
       if (isset($atts['block-name'])) {
+        /*$mainStoryList = get_field('related-stories-list', 237021);
+        $mainStoryCounter = 0;
+        foreach ($mainStoryList as $mainStory) {
+          if ($mainStoryCounter != 0) {
+            $permalink = get_permalink($mainStory);
+            $summary = get_field('story_tease', $mainStory);
+            if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
+                $title = get_field('homepage_headline', $mainStory);
+            } else {
+                $title = get_the_title($mainStory);
+            }
+          }
+        }*/
+
+        $args = [
+                  'post_type'   => 'related-story',
+                  'post_status' => 'publish',
+                  'p' => str_replace('-', ' ', $atts['block-name'])
+                 ];
+
+        $rsBlocks = new WP_Query($args);
+        if ($rsBlocks->have_posts()) {
+            while ($rsBlocks->have_posts()) {
+              echo 'BLOCK ID:'.get_the_ID();
+            }
+        }
 
         $result = '<div class="related-story-block">';
         if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
@@ -659,7 +685,7 @@ function related_box_grid_list($atts, $content = null) {
           $result .= '<h4>Related story</h4>';
         }
         $result .= '<ul>';
-        $result .= '<li><a href="" target="_blank"><div class="img">IMG</div><h4>HEADLINE</h4></a></li>';
+        //$result .= '<li><a href="'.$permalink.'" target="_blank"><div class="img">'.get_the_post_thumbnail($mainStory).'</div><h4>'.$title.'</h4></a></li>';
         $result .= '<li><a href="" target="_blank"><div class="img">IMG</div><h4>HEADLINE</h4></a></li>';
         $result .= '<li><a href="" target="_blank"><div class="img">IMG</div><h4>HEADLINE</h4></a></li>';
         $result .= '</ul>';
