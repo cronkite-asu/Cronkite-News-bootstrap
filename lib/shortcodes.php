@@ -673,12 +673,7 @@ function related_box_grid_list($atts, $content = null) {
 
         $rsBlocks = new WP_Query($args);
         //print_r($rsBlocks);
-        if ($rsBlocks->have_posts()) {
-            while ($rsBlocks->have_posts()) {
-              //print_r($rsBlocks);
-              echo "HELLO!";
-            }
-        }
+        
 
         $result = '<div class="related-story-block">';
         if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
