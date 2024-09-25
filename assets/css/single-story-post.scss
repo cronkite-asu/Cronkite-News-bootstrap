@@ -418,6 +418,10 @@ body {
           margin-bottom: 0px;
           li {
             display: none;
+            &:nth-child(odd) {
+              margin-left: 15px;
+              margin-right: 15px;
+            }
             &:nth-child(-n+3){
               display: list-item;
             }

@@ -393,6 +393,10 @@ body {
 #main_container .single-story-block article .related-story-block ul li, #top-ten .single-story-block article .related-story-block ul li {
   display: none;
 }
+#main_container .single-story-block article .related-story-block ul li:nth-child(odd), #top-ten .single-story-block article .related-story-block ul li:nth-child(odd) {
+  margin-left: 15px;
+  margin-right: 15px;
+}
 #main_container .single-story-block article .related-story-block ul li:nth-child(-n+3), #top-ten .single-story-block article .related-story-block ul li:nth-child(-n+3) {
   display: list-item;
 }
