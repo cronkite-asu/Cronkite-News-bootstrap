@@ -665,14 +665,14 @@ function related_box_grid_list($atts, $content = null) {
           }
         }*/
 
-        /*$args = [
+        $args = [
                   'post_type'   => 'related-story',
                   'post_status' => 'publish',
                   'p' => str_replace('-', ' ', $atts['block-name'])
                  ];
 
         $rsBlocks = new WP_Query($args);
-        if ($rsBlocks->have_posts()) {
+        /*if ($rsBlocks->have_posts()) {
             while ($rsBlocks->have_posts()) {
               echo 'BLOCK ID:'.get_the_ID();
             }
