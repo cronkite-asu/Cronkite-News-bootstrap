@@ -430,6 +430,7 @@ body {
               margin-right: 15px;
               @media only screen
                 and (max-width: 600px) {
+                  display: list-item;
                   margin-left: 0px;
                   margin-right: 0px;
               }
@@ -438,12 +439,12 @@ body {
               display: block;
               @media only screen
                 and (max-width: 600px) {
-                  display: block;
+                  display: list-item;
               }
             }
             @media only screen
               and (max-width: 600px) {
-                display: block;
+                display: list-item;
             }
             .img {
               @media only screen
