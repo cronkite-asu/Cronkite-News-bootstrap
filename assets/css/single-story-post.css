@@ -393,6 +393,7 @@ body {
 }
 @media only screen and (max-width: 600px) {
   #main_container .single-story-block article .related-story-block ul, #top-ten .single-story-block article .related-story-block ul {
+    display: block;
     flex-direction: column;
     list-style: disc;
     list-style-position: inside;
