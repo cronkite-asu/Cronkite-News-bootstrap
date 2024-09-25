@@ -411,6 +411,11 @@ body {
               font-family: $robotoFontFamily;
               font-size: 1rem;
               text-transform: none;
+              list-style-position: inherit;
+              text-indent:0px;
+              margin-left: 0px;
+              margin-bottom: 0px;
+
               &::after {
                 border-top: none;
                 margin: 0px;

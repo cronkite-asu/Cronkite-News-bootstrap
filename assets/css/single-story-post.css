@@ -387,6 +387,10 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   text-transform: none;
+  list-style-position: inherit;
+  text-indent: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
 }
 #main_container .single-story-block article .related-story-block ul li h4::after, #top-ten .single-story-block article .related-story-block ul li h4::after {
   border-top: none;
