@@ -374,7 +374,19 @@ body {
 }
 #main_container .single-story-block article .related-story-block ul, #top-ten .single-story-block article .related-story-block ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  list-style: none;
+}
+#main_container .single-story-block article .related-story-block ul li, #top-ten .single-story-block article .related-story-block ul li {
+  display: none;
+}
+#main_container .single-story-block article .related-story-block ul li:nth-child(-n+3), #top-ten .single-story-block article .related-story-block ul li:nth-child(-n+3) {
+  display: list-item;
+}
+#main_container .single-story-block article .related-story-block ul li h4, #top-ten .single-story-block article .related-story-block ul li h4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  text-transform: none;
 }
 #main_container .single-story-block article .video-wrap, #top-ten .single-story-block article .video-wrap {
   text-align: left;

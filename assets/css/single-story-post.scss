@@ -400,7 +400,19 @@ body {
         }
         ul {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
+          list-style: none;
+          li {
+            display: none;
+            &:nth-child(-n+3){
+              display: list-item;
+            }
+            h4 {
+              font-family: $robotoFontFamily;
+              font-size: 1rem;
+              text-transform: none;
+            }
+          }
         }
       }
 
