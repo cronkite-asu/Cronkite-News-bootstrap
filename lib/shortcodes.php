@@ -662,9 +662,9 @@ function related_box_grid_list($atts, $content = null) {
         if ($rsBlocks->have_posts()) {
           $result = '<div class="related-story-block">';
           if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
-            $result .= '<div class="banner">Related story</div>';
+            $result .= '<div class="banner">Related stories</div>';
           } else {
-            $result .= '<h4>Related story</h4>';
+            $result .= '<h4>Related stories</h4>';
           }
           $result .= '<ul>';
 
