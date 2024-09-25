@@ -412,10 +412,10 @@ body {
               display: list-item;
             }
             h4 {
+              display: inherit;
               font-family: $robotoFontFamily;
               font-size: 1rem;
               text-transform: none;
-
 
               &::after {
                 border-top: none;

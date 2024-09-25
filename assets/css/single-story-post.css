@@ -388,6 +388,7 @@ body {
   display: list-item;
 }
 #main_container .single-story-block article .related-story-block ul li h4, #top-ten .single-story-block article .related-story-block ul li h4 {
+  display: inherit;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   text-transform: none;
