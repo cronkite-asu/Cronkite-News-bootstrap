@@ -415,12 +415,13 @@ body {
           list-style-position: inherit;
           text-indent:0px;
           margin-left: 0px;
-          margin-bottom: 0px;
+          margin-bottom: 15px;
           margin-top: 15px;
           @media only screen
             and (max-width: 600px) {
               flex-direction: column;
               list-style: disc;
+              list-style-position: inside;
           }
           li {
             display: none;

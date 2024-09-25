@@ -388,13 +388,14 @@ body {
   list-style-position: inherit;
   text-indent: 0px;
   margin-left: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 15px;
   margin-top: 15px;
 }
 @media only screen and (max-width: 600px) {
   #main_container .single-story-block article .related-story-block ul, #top-ten .single-story-block article .related-story-block ul {
     flex-direction: column;
     list-style: disc;
+    list-style-position: inside;
   }
 }
 #main_container .single-story-block article .related-story-block ul li, #top-ten .single-story-block article .related-story-block ul li {
