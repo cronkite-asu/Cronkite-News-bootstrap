@@ -654,7 +654,8 @@ function related_box_grid_list($atts, $content = null) {
         $args = [
                   'post_type'   => 'related-story',
                   'post_status' => 'publish',
-                  'p' => ucwords(str_replace('-', ' ', $atts['block-name']))
+                  'p' => ucwords(str_replace('-', ' ', $atts['block-name'])),
+                  'orderBy' => 'rand'
                  ];
 
         $rsBlocks = new WP_Query($args);

@@ -417,6 +417,10 @@ body {
           margin-left: 0px;
           margin-bottom: 0px;
           margin-top: 15px;
+          @media only screen
+            and (max-width: 600px) {
+              flex-direction: column;
+          }
           li {
             display: none;
             &:nth-child(2) {
@@ -425,6 +429,12 @@ body {
             }
             &:nth-child(-n+3){
               display: list-item;
+            }
+            .img {
+              @media only screen
+                and (max-width: 600px) {
+                  display: none;
+              }
             }
             h4 {
               display: block;
