@@ -665,7 +665,7 @@ function related_box_grid_list($atts, $content = null) {
           }
         }*/
 
-        $args = [
+        /*$args = [
                   'post_type'   => 'related-story',
                   'post_status' => 'publish',
                   'p' => str_replace('-', ' ', $atts['block-name'])
@@ -676,7 +676,7 @@ function related_box_grid_list($atts, $content = null) {
             while ($rsBlocks->have_posts()) {
               echo 'BLOCK ID:'.get_the_ID();
             }
-        }
+        }*/
 
         $result = '<div class="related-story-block">';
         if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
