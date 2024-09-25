@@ -670,8 +670,6 @@ function related_box_grid_list($atts, $content = null) {
 
           while ($rsBlocks->have_posts()) {
             $rsBlocks->the_post();
-            echo get_the_ID();
-
 
             $storiesList = get_field('related-stories-list', get_the_ID());
             $storiesListCounter = 0;
