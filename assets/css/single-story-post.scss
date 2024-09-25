@@ -420,15 +420,29 @@ body {
           @media only screen
             and (max-width: 600px) {
               flex-direction: column;
+              list-style: disc;
           }
           li {
             display: none;
             &:nth-child(2) {
               margin-left: 15px;
               margin-right: 15px;
+              @media only screen
+                and (max-width: 600px) {
+                  margin-left: 0px;
+                  margin-right: 0px;
+              }
             }
             &:nth-child(-n+3){
               display: list-item;
+              @media only screen
+                and (max-width: 600px) {
+                  display: list-item;
+              }
+            }
+            @media only screen
+              and (max-width: 600px) {
+                display: list-item;
             }
             .img {
               @media only screen
