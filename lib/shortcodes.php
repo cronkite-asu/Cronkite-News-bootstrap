@@ -676,7 +676,7 @@ function related_box_grid_list($atts, $content = null) {
         if ($rsBlocks->have_posts()) {
           while ($rsBlocks->have_posts()) {
               $rsBlocks->the_post();
-              echo 'ID: '. $rsBlocks['ID'];
+              echo get_the_ID();
           }
         }
 
