@@ -672,7 +672,9 @@ function related_box_grid_list($atts, $content = null) {
                  ];
 
         $rsBlocks = new WP_Query($args);
+        $rsBlocks = $rsBlocks->posts;
         foreach ($rsBlocks as $post) {
+            print
             // Access properties of the WP_Post object
             echo 'Post ID: ' . $post->ID . '<br>';
             echo 'Post Title: ' . $post->post_title . '<br>';
