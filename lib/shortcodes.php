@@ -672,6 +672,7 @@ function related_box_grid_list($atts, $content = null) {
                  ];
 
         $rsBlocks = new WP_Query($args);
+        print_r($rsBlocks->posts);
         if ($rsBlocks->have_posts()) {
           while ($rsBlocks->have_posts()) {
               $rsBlocks->the_post();
