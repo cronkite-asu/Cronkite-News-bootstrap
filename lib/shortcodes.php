@@ -672,18 +672,7 @@ function related_box_grid_list($atts, $content = null) {
                  ];
 
         $rsBlocks = new WP_Query($args);
-        $rsBlocks = $rsBlocks->posts;
-        foreach ($rsBlocks as $post) {
-            print
-            // Access properties of the WP_Post object
-            echo 'Post ID: ' . $post->ID . '<br>';
-            echo 'Post Title: ' . $post->post_title . '<br>';
-            echo 'Post Author: ' . $post->post_author . '<br>';
-            echo 'Post Date: ' . $post->post_date . '<br>';
-            echo 'Post Status: ' . $post->post_status . '<br>';
-            echo 'Post URL: ' . $post->guid . '<br>';
-            echo '<hr>'; // Divider between posts
-        }
+        
 
 
         $result = '<div class="related-story-block">';
