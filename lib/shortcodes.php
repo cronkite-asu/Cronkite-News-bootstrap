@@ -674,9 +674,9 @@ function related_box_grid_list($atts, $content = null) {
         $rsBlocks = new WP_Query($args);
         print_r($rsBlocks);
         if ($rsBlocks->have_posts()) {
-            /*while ($rsBlocks->have_posts()) {
+            while ($rsBlocks->have_posts()) {
               echo 'BLOCK ID:'.get_the_ID();
-            }*/
+            }
         }
 
         $result = '<div class="related-story-block">';
