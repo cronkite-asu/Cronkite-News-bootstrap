@@ -394,9 +394,13 @@ body {
           font-weight: 600;
           font-size: 1rem;
           text-transform: uppercase;
-          padding: 10px 25px;
+          padding: 10px 20px;
           color: #fff;
           border: 1px solid #ff0000;
+        }
+        ul {
+          display: flex;
+          flex-direction: column;
         }
       }
 

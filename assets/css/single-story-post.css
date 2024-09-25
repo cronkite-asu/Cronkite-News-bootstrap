@@ -368,9 +368,13 @@ body {
   font-weight: 600;
   font-size: 1rem;
   text-transform: uppercase;
-  padding: 10px 25px;
+  padding: 10px 20px;
   color: #fff;
   border: 1px solid #ff0000;
+}
+#main_container .single-story-block article .related-story-block ul, #top-ten .single-story-block article .related-story-block ul {
+  display: flex;
+  flex-direction: column;
 }
 #main_container .single-story-block article .video-wrap, #top-ten .single-story-block article .video-wrap {
   text-align: left;
