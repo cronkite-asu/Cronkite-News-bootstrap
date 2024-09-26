@@ -660,7 +660,6 @@ function related_box_grid_list($atts, $content = null) {
                   'p' => ucwords(str_replace('-', ' ', $atts['block-name'])),*/
                  ];
 
-
         $rsBlocks = new WP_Query($args);
         if ($rsBlocks->have_posts()) {
           $result = '<div class="related-story-block">';
@@ -675,9 +674,6 @@ function related_box_grid_list($atts, $content = null) {
             $rsBlocks->the_post();
 
             $storiesList = get_field('related-stories-list', get_the_ID());
-            print_r($storiesList);
-            $rand_keys = array_rand($storiesList, count($storiesList));
-            print_r($rand_keys);
             $storiesListCounter = 0;
             foreach ($storiesList as $story) {
               if ($storiesListCounter < 1) {
