@@ -652,7 +652,7 @@ function related_box_grid_list($atts, $content = null) {
     if (current_user_can('administrator')) {
       if (isset($atts['block-name'])) {
         $args = [
-                  'name'           => '"'.ucwords(str_replace('-', ' ', $atts['block-name'])).'"',
+                  'name'           => '"'.$atts['block-name'].'"',
                   'post_type'   => 'related-story',
                   'post_status'    => 'publish',
                   /*'posts_per_page' => 1,
