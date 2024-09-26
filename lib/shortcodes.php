@@ -658,12 +658,10 @@ function related_box_grid_list($atts, $content = null) {
                   /*'posts_per_page' => 1,
                   'post_status' => 'publish',
                   'p' => ucwords(str_replace('-', ' ', $atts['block-name'])),*/
-                  'orderBy' => 'rand'
                  ];
 
 
         $rsBlocks = new WP_Query($args);
-        print_r($rsBlocks);
         if ($rsBlocks->have_posts()) {
           $result = '<div class="related-story-block">';
           if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
@@ -677,7 +675,7 @@ function related_box_grid_list($atts, $content = null) {
             $rsBlocks->the_post();
 
             $storiesList = get_field('related-stories-list', get_the_ID());
-            //shuffle($storiesList);
+            print_r($storiesList);
             $storiesListCounter = 0;
             foreach ($storiesList as $story) {
               if ($storiesListCounter < 1) {
