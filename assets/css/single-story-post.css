@@ -373,12 +373,13 @@ body {
 }
 #main_container .single-story-block article .related-story-block .rs-cta, #top-ten .single-story-block article .related-story-block .rs-cta {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   vertical-align: middle;
+  width: 100%;
 }
 #main_container .single-story-block article .related-story-block .rs-cta p, #top-ten .single-story-block article .related-story-block .rs-cta p {
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1rem;
   color: #003594;
 }
