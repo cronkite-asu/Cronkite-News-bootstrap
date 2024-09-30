@@ -663,19 +663,20 @@ function related_box_grid_list($atts, $content = null) {
         $rsBlocks = new WP_Query($args);
         if ($rsBlocks->have_posts()) {
           $result = '<div class="related-story-block">';
-          if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
-            $result .= '<div class="banner">'.get_field('block-title').'</div>';
-          } else {
-            if (get_field('block-title') != '') {
-              $result .= '<h4>'.get_field('block-title').'</h4>';
-            } else {
-              $result .= '<h4>Related Stories</h4>';
-            }
-          }
-          $result .= '<ul>';
 
           while ($rsBlocks->have_posts()) {
             $rsBlocks->the_post();
+
+            if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
+              $result .= '<div class="banner">'.get_field('block-title').'</div>';
+            } else {
+              if (get_field('block-title') != '') {
+                $result .= '<h4>'.get_field('block-title').'</h4>';
+              } else {
+                $result .= '<h4>Related Stories</h4>';
+              }
+            }
+            $result .= '<ul>';
 
             $storiesList = get_field('related-stories-list', get_the_ID());
             $storiesListCounter = 0;
@@ -691,11 +692,10 @@ function related_box_grid_list($atts, $content = null) {
                 $result .= '<li><a href="'.$permalink.'" target="_blank"><div class="img">'.get_the_post_thumbnail($story).'</div><h4>'.$title.'</h4></a></li>';
               }
             }
+            $result .= '</ul>';
+            // cta
+            $result .= '<div class="rs-cta"><p><a href="'.get_field('related-story-cta-link').'">'.get_field('related-story-cta').'</a></p></div>';
           }
-          $result .= '</ul>';
-
-          // cta
-          $result .= '<div class="rs-cta"><p><a href="'.get_field('related-story-cta-link').'">'.get_field('related-story-cta').'</a></p></div>';
 
           if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
             $result .= '<div class="footer-banner"></div>';
