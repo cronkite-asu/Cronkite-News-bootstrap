@@ -371,6 +371,22 @@ body {
   padding: 10px 20px;
   color: #fff;
 }
+#main_container .single-story-block article .related-story-block .rs-cta, #top-ten .single-story-block article .related-story-block .rs-cta {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #003594;
+}
+#main_container .single-story-block article .related-story-block .rs-cta a, #top-ten .single-story-block article .related-story-block .rs-cta a {
+  cursor: pointer;
+  text-decoration: underline;
+}
+#main_container .single-story-block article .related-story-block .rs-cta a:hover, #top-ten .single-story-block article .related-story-block .rs-cta a:hover {
+  text-decoration: none;
+}
 #main_container .single-story-block article .related-story-block .footer-banner, #top-ten .single-story-block article .related-story-block .footer-banner {
   display: flex;
   align-items: center;

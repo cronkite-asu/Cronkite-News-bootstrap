@@ -398,6 +398,22 @@ body {
           padding: 10px 20px;
           color: #fff;
         }
+        .rs-cta {
+          display: flex;
+          align-items: center;
+          vertical-align: middle;
+          font-family: $robotoFontFamily;
+          font-weight: 400;
+          font-size: 1rem;
+          color: $cnBlue;
+          a {
+            cursor: pointer;
+            text-decoration: underline;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
         .footer-banner {
           display: flex;
           align-items: center;

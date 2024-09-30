@@ -664,9 +664,13 @@ function related_box_grid_list($atts, $content = null) {
         if ($rsBlocks->have_posts()) {
           $result = '<div class="related-story-block">';
           if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
-            $result .= '<div class="banner">Related stories</div>';
+            $result .= '<div class="banner">'.get_field('block-title').'</div>';
           } else {
-            $result .= '<h4>Related stories</h4>';
+            if (get_field('block-title') != '') {
+              $result .= '<h4>'.get_field('block-title').'</h4>';
+            } else {
+              $result .= '<h4>Related Stories</h4>';
+            }
           }
           $result .= '<ul>';
 
@@ -689,6 +693,10 @@ function related_box_grid_list($atts, $content = null) {
             }
           }
           $result .= '</ul>';
+
+          // cta
+          $result .= '<div class="rs-cta"><p><a href="'.get_field('related-story-cta-link').'">'.get_field('related-story-cta').'</a></p></div>';
+
           if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
             $result .= '<div class="footer-banner"></div>';
           }
