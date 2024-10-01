@@ -1169,7 +1169,7 @@ function related_stories_CPT() {
     $cpt_related_stories_labels = [
         'name'               => _x('Related Stories', 'post type general name'),
         'singular_name'      => _x('Related Story', 'post type singular name'),
-        'add_new'            => _x('Add New', 'Related Story'),
+        'add_new'            => _x('Add New', 'Related Stories'),
         'add_new_item'       => __('Add New'),
         'edit_item'          => __('Edit'),
         'new_item'           => __('New '),
@@ -1192,7 +1192,7 @@ function related_stories_CPT() {
         'hierarchical'  => true,
         'supports'      => [ 'title', 'editor', 'custom-fields'],
     ];
-    register_post_type('related_stories', $cpt_related_stories_args);
+    register_post_type('rs_list', $cpt_related_stories_args);
 }
 add_action('init', 'related_stories_CPT');
 
@@ -1200,7 +1200,7 @@ if (function_exists('acf_add_options_sub_page')) {
     acf_add_options_sub_page(
         [
         'title'      => 'Related Stories Settings',
-        'parent'     => 'edit.php?post_type=related_stories',
+        'parent'     => 'edit.php?post_type=rs_list',
         'capability' => 'manage_options',
         ]
     );
