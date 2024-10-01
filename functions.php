@@ -1192,7 +1192,7 @@ function related_stories_CPT() {
         'hierarchical'  => true,
         'supports'      => [ 'title', 'editor', 'custom-fields'],
     ];
-    register_post_type('related_stories', $cpt_students_args);
+    register_post_type('related_stories', $cpt_related_stories_args);
 }
 add_action('init', 'related_stories_CPT');
 
