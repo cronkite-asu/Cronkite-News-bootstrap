@@ -1165,7 +1165,7 @@ function audioVideo_CPT() {
 add_action('init', 'audioVideo_CPT');
 
 // custom post type for related stories
-function related_stories_CPT() {
+/*function related_stories_CPT() {
     $cpt_related_stories_labels = [
         'name'               => _x('Related Stories', 'post type general name'),
         'singular_name'      => _x('Related Stories', 'post type singular name'),
@@ -1204,7 +1204,7 @@ if (function_exists('acf_add_options_sub_page')) {
         'capability' => 'manage_options',
         ]
     );
-}
+}*/
 
 function cn_search_query($query) {
     if (!is_admin() && $query->is_main_query()) {
