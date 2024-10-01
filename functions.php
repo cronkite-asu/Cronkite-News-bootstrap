@@ -1164,47 +1164,7 @@ function audioVideo_CPT() {
 }
 add_action('init', 'audioVideo_CPT');
 
-// custom post type for related stories
-function related_stories_CPT() {
-    $cpt_related_stories_labels = [
-        'name'               => _x('Related Stories', 'post type general name'),
-        'singular_name'      => _x('Related Story', 'post type singular name'),
-        'add_new'            => _x('Add New', 'Related Stories'),
-        'add_new_item'       => __('Add New'),
-        'edit_item'          => __('Edit'),
-        'new_item'           => __('New '),
-        'all_items'          => __('All'),
-        'view_item'          => __('View'),
-        'search_items'       => __('Search for a related stories'),
-        'not_found'          => __('No student found'),
-        'not_found_in_trash' => __('No student found in the Trash'),
-        'parent_item_colon'  => '',
-        'menu_name'          => 'Related Stories',
-    ];
-    $cpt_related_stories_args = [
-        'labels'        => $cpt_related_stories_labels,
-        'description'   => 'Display Related Stories',
-        'public'        => true,
-        'exclude_from_search' => true,
-        'menu_icon'    => false,
-        'menu_position' => 5,
-        'has_archive'   => true,
-        'hierarchical'  => true,
-        'supports'      => [ 'title', 'editor', 'custom-fields'],
-    ];
-    register_post_type('rs_list', $cpt_related_stories_args);
-}
-add_action('init', 'related_stories_CPT');
 
-if (function_exists('acf_add_options_sub_page')) {
-    acf_add_options_sub_page(
-        [
-        'title'      => 'Related Stories Settings',
-        'parent'     => 'edit.php?post_type=rs_list',
-        'capability' => 'manage_options',
-        ]
-    );
-}
 
 function cn_search_query($query) {
     if (!is_admin() && $query->is_main_query()) {
