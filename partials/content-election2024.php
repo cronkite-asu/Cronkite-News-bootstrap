@@ -23,7 +23,7 @@ foreach ($mainStoryList as $mainStory) {
             $mainStoryList = get_field('stories', 237021);
             $mainStoryCounter = 0;
             foreach ($mainStoryList as $mainStory) {
-              if ($mainStoryCounter > 1 && $mainStoryCounter < 3) {
+              if ($mainStoryCounter > 0 && $mainStoryCounter < 3) {
                   $permalink = get_permalink($mainStory);
                   $summary = get_field('story_tease', $mainStory);
                   if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
