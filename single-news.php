@@ -883,9 +883,9 @@
                       }
                     }
 
-                    print_r($photogID);
                     // show photogs
-                    foreach ($photogID as $key => $val) {
+                    if (isset($photogID)) {
+                      foreach ($photogID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
                         $args = [
                                   'post_type'   => 'students',
@@ -983,11 +983,12 @@
                             }
                         }
                         echo '</div>';
+                      }
                     }
 
-                    print_r($dataVisualizerID);
                     // show data visualizers
-                    foreach ($dataVisualizerID as $key => $val) {
+                    if (isset($dataVisualizerID)) {
+                      foreach ($dataVisualizerID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
                         $args = [
                                    'post_type'   => 'students',
@@ -1086,6 +1087,7 @@
                             }
                         }
                         echo '</div>';
+                      }
                     }
                 }
             }
