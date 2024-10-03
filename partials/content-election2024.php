@@ -129,7 +129,7 @@ foreach ($mainStoryList as $mainStory) {
                     'order' => 'DESC',
                     'cat' =>  32929,
                     'posts_per_page' => 19,
-                    'post__not_in' => 22877,
+                    
                     /*'post__not_in' => $candidateProfiles,*/
             ];
             $the_query = new WP_Query($args);
