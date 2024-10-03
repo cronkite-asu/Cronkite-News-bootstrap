@@ -117,6 +117,38 @@ foreach ($mainStoryList as $mainStory) {
     <div class="large-12 medium-12 small-12 cell key-dates">
       <div class="grid-x grid-padding-x">
         <div class="large-12 medium-12 small-12 cell">
+          <h4>Spanish</h4>
+        </div>
+      </div>
+      <div class="grid-x grid-margin-x">
+          <?php
+            $args = [
+                    'post_type' => 'post',
+                    'orderby' => 'post_date',
+                    'order' => 'DESC',
+                    'cat' =>  22877,
+                    'posts_per_page' => 4,
+                    /*'post__not_in' => $candidateProfiles,*/
+            ];
+            $the_query = new WP_Query($args);
+            if ($the_query->have_posts()) {
+                while ($the_query->have_posts()) {
+                    $the_query->the_post();
+                    echo '<div class="large-4 medium-4 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'<h2>'.get_the_title(get_the_ID()).'</h2></a></div>';
+                }
+            }
+          ?>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="grid-container election-details">
+  <div class="grid-x grid-padding-x">
+    <div class="large-12 medium-12 small-12 cell key-dates">
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 medium-12 small-12 cell">
           <h4>Latest News</h4>
         </div>
       </div>
