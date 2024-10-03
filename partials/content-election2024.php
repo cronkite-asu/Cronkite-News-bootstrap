@@ -17,7 +17,7 @@ foreach ($mainStoryList as $mainStory) {
     <div class="large-12 medium-12 small-12 cell">
 
       <div class="grid-x grid-padding-x">
-        <div class="large-3 medium-12 small-12 cell story slide-aside">
+        <div class="large-4 medium-12 small-12 cell story slide-aside">
           <div class="grid-x grid-padding-x">
             <?php
             $mainStoryList = get_field('stories', 237021);
@@ -35,7 +35,7 @@ foreach ($mainStoryList as $mainStory) {
                   // save main story ID
                   $topStoriesArray[] = $mainStory;
             ?>
-                <div class="large-4 medium-4 small-12 cell story">
+                <div class="large-12 medium-12 small-12 cell story">
                   <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?><h5 style="margin-top:15px;"><?php echo $title; ?></h5></a>
                 </div>
             <?php
@@ -63,8 +63,12 @@ foreach ($mainStoryList as $mainStory) {
                 $topStoriesArray[] = $mainStory;
         ?>
                 <div class="large-6 medium-12 small-12 cell story">
-                  <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?></a>
-                  <a href="<?php echo $permalink; ?>" target="_blank"><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
+                  <div class="grid-x grid-padding-x">
+                    <div class="large-12 medium-12 small-12 cell story">
+                      <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?></a>
+                      <a href="<?php echo $permalink; ?>" target="_blank"><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
+                    </div>
+                  </div>
                 </div>
         <?php
               }
@@ -72,35 +76,6 @@ foreach ($mainStoryList as $mainStory) {
             }
         ?>
 
-        <div class="large-3 medium-12 small-12 cell story slide-aside">
-          <div class="grid-x grid-padding-x">
-            <?php
-            $mainStoryList = get_field('stories', 237021);
-            $mainStoryCounter = 0;
-            foreach ($mainStoryList as $mainStory) {
-              if ($mainStoryCounter != 0) {
-                  $permalink = get_permalink($mainStory);
-                  $summary = get_field('story_tease', $mainStory);
-                  if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
-                      $title = get_field('homepage_headline', $mainStory);
-                  } else {
-                      $title = get_the_title($mainStory);
-                  }
-
-                  // save main story ID
-                  $topStoriesArray[] = $mainStory;
-            ?>
-                <div class="large-6 medium-6 small-6 cell story">
-                  <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?></a>
-                  <a href="<?php echo $permalink; ?>" target="_blank"><h5 style="margin-top:15px;"><?php echo $title; ?></h5></a>
-                </div>
-            <?php
-              }
-              $mainStoryCounter++;
-            }
-            ?>
-          </div>
-        </div>
 
       </div>
     </div>
@@ -109,7 +84,7 @@ foreach ($mainStoryList as $mainStory) {
 
 <div class="grid-container election-details">
   <div class="grid-x grid-padding-x">
-    <div class="large-4 medium-4 small-12 cell key-dates">
+    <div class="large-12 medium-12 small-12 cell key-dates">
       <div class="grid-x grid-padding-x">
         <div class="large-12 medium-12 small-12 cell">
           <h4>Latest News</h4>
