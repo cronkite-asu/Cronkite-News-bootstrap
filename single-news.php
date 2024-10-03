@@ -676,8 +676,8 @@
                     $broadcastID = get_sub_field('cn_broadcast_reporters');
                     $dataVisualizerID = get_sub_field('cn_data_visualizer');
 
-                    print_r($staffID);
-                    foreach ($staffID as $key => $val) {
+                    if (count($staffID)) {
+                      foreach ($staffID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
                         $args = [
                                  'post_type'   => 'students',
@@ -777,6 +777,7 @@
                             }
                         }
                         echo '</div>';
+                      }
                     }
 
                     print_r($broadcastID);
