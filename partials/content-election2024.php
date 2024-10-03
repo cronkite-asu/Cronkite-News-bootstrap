@@ -122,7 +122,6 @@ foreach ($mainStoryList as $mainStory) {
       </div>
       <div class="grid-x grid-margin-x">
         <div class="large-12 medium-12 small-12 cell">
-          <ul class="story-list">
           <?php
             $args = [
                     'post_type' => 'post',
@@ -130,17 +129,17 @@ foreach ($mainStoryList as $mainStory) {
                     'order' => 'DESC',
                     'cat' =>  32929,
                     'posts_per_page' => 19,
+                    'post__not_in' => 22877,
                     /*'post__not_in' => $candidateProfiles,*/
             ];
             $the_query = new WP_Query($args);
             if ($the_query->have_posts()) {
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
-                    echo '<a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'<h2>'.get_the_title(get_the_ID()).'</h2></a>';
+                    echo '<a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'</a><h2>'.get_the_title(get_the_ID()).'</a></h2>';
                 }
             }
           ?>
-          </ul>
         </div>
       </div>
     </div>
