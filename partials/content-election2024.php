@@ -81,7 +81,7 @@ foreach ($mainStoryList as $mainStory) {
             foreach ($mainStoryList as $mainStory) {
               if ($mainStoryCounter > 2) {
         ?>
-              <div class="large-6 medium-6 small-12 cell story">
+              <div class="large-3 medium-3 small-12 cell story">
                 <div class="grid-x grid-padding-x">
                   <div class="large-12 medium-12 small-12 cell story">
                     <ul>
