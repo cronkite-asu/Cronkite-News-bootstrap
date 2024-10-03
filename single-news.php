@@ -31,6 +31,7 @@
                  <li>
                   <?php
                      $catCount = count($categories);
+                     $healthStory = false;
                      foreach ($categories as $key => $val) {
                          if ($categories[$key]->name != 'New 2020') {
                              if (strtolower($categories[$key]->name) == 'health') {
