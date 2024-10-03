@@ -676,8 +676,8 @@
                     $broadcastID = get_sub_field('cn_broadcast_reporters');
                     $dataVisualizerID = get_sub_field('cn_data_visualizer');
 
-                    if (count($staffID) > 0) {
-                      foreach ($staffID as $key => $val) {
+                    print_r($staffID);
+                    foreach ($staffID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
                         $args = [
                                  'post_type'   => 'students',
@@ -777,12 +777,11 @@
                             }
                         }
                         echo '</div>';
-                      }
                     }
 
+                    print_r($broadcastID);
                     // show broadcast
-                    if (count($broadcastID) > 0) {
-                      foreach ($broadcastID as $key => $val) {
+                    foreach ($broadcastID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
                         $args = [
                                   'post_type'   => 'students',
@@ -881,12 +880,11 @@
                             }
                         }
                         echo '</div>';
-                      }
                     }
 
+                    print_r($photogID);
                     // show photogs
-                    if (count($photogID) > 0) {
-                      foreach ($photogID as $key => $val) {
+                    foreach ($photogID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
                         $args = [
                                   'post_type'   => 'students',
@@ -984,12 +982,11 @@
                             }
                         }
                         echo '</div>';
-                      }
                     }
 
+                    print_r($dataVisualizerID);
                     // show data visualizers
-                    if (count($dataVisualizerID) > 0) {
-                      foreach ($dataVisualizerID as $key => $val) {
+                    foreach ($dataVisualizerID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
                         $args = [
                                    'post_type'   => 'students',
@@ -1088,7 +1085,6 @@
                             }
                         }
                         echo '</div>';
-                      }
                     }
                 }
             }
