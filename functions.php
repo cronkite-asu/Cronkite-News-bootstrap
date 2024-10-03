@@ -1183,8 +1183,7 @@ function related_stories_CPT() {
     ];
     $cpt_related_stories_args = [
         'labels'        => $cpt_related_stories_labels,
-        'description'   => 'Display Related Stories',
-        'exclude_from_search' => true,
+        'description'   => 'Display Related Stories',        
         'public'        => true,
         'menu_icon'    => false,
         'menu_position' => 5,
