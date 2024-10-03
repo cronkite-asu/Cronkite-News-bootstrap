@@ -120,7 +120,6 @@ foreach ($mainStoryList as $mainStory) {
           <h4>Latest News</h4>
         </div>
       </div>
-      <div class="grid-x grid-margin-x">
           <?php
             $args = [
                     'post_type' => 'post',
@@ -135,12 +134,13 @@ foreach ($mainStoryList as $mainStory) {
             if ($the_query->have_posts()) {
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
+                    echo '<div class="grid-x grid-margin-x">';
                     echo '<div class="large-4 medium-4 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'</a></div>';
                     echo '<div class="large-8 medium-8 small-12 cell"><a href="'.$permalink.'"><h2>'.get_the_title(get_the_ID()).'</a></h2>';
+                    echo '</div>';
                 }
             }
-          ?>
-        </div>
+          ?>        
       </div>
     </div>
 
