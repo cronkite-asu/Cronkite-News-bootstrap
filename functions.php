@@ -1165,7 +1165,7 @@ function audioVideo_CPT() {
 add_action('init', 'audioVideo_CPT');
 
 // custom post type for related stories
-function related_stories_CPT() {
+/*function related_stories_CPT() {
     $cpt_related_stories_labels = [
         'name'               => _x('Related Stories', 'post type general name'),
         'singular_name'      => _x('Related Stories', 'post type singular name'),
@@ -1183,7 +1183,7 @@ function related_stories_CPT() {
     ];
     $cpt_related_stories_args = [
         'labels'        => $cpt_related_stories_labels,
-        'description'   => 'Display Related Stories',        
+        'description'   => 'Display Related Stories',
         'public'        => true,
         'menu_icon'    => false,
         'menu_position' => 5,
@@ -1193,7 +1193,7 @@ function related_stories_CPT() {
     ];
     register_post_type('rs_list', $cpt_related_stories_args);
 }
-add_action('init', 'related_stories_CPT');
+add_action('init', 'related_stories_CPT');*/
 
 
 function cn_search_query($query) {
