@@ -780,8 +780,7 @@
                     }
 
 
-                    // show broadcast
-                    if (count($broadcastID)) {
+                    // show broadcast                    
                     foreach ($broadcastID as $key => $val) {
                         echo '<div class="author_bio post-holder">';
                         $args = [
@@ -881,7 +880,6 @@
                             }
                         }
                         echo '</div>';
-                      }
                     }
 
                     print_r($photogID);
