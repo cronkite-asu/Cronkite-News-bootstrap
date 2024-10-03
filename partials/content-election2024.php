@@ -136,7 +136,7 @@ foreach ($mainStoryList as $mainStory) {
             if ($the_query->have_posts()) {
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
-                    echo '<li><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'</a><h2><a href="'.get_permalink(get_the_ID()).'">'.get_the_title(get_the_ID()).'</a></h2></li>';
+                    echo '<a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'<h2>'.get_the_title(get_the_ID()).'</h2></a>';
                 }
             }
           ?>
