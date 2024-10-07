@@ -14,7 +14,6 @@
  $currentPID = get_the_ID();
  ?>
 
-
      <!-- main body container -->
      <div id="main_container" class="grid-container single-story-post">
 
