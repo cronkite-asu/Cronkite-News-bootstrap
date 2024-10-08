@@ -298,10 +298,11 @@ body {
         }
       }
       .candidate-profiles {
-        border: 1px solid #ff0000;
-        font-size:1rem;
+        font-size:0.95rem;
         ul {
           margin-bottom: 0px;
+          padding-left: 14px;
+          padding-right: 14px;
           li {
             margin-bottom:0px;
           }
