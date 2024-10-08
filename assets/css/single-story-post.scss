@@ -314,6 +314,9 @@ body {
             font-size:0.95rem;
           }
         }
+        .divider {
+          border: 1px solid $grey;
+        }
       }
       .related-story-box-right, .related-story-box-left {
         float: right;

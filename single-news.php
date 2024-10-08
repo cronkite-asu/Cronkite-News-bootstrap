@@ -467,7 +467,7 @@
             ?>
                     <div class="candidate-profiles callout secondary" style="margin-bottom:50px;max-width:800px;border:none;box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);">
                     <div class="grid-x align-middle">
-                      <div class="cell small-3"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/09/cn-election-2024.svg" /></div>
+                      <div class="cell small-3 divider"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/09/cn-election-2024.svg" /></div>
                       <div class="cell small-9">
                         <ul>
                          <li><strong>Candidate name:</strong> <?php echo get_sub_field('candidate-name'); ?></li>
