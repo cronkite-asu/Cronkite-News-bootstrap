@@ -465,7 +465,7 @@
                     while( have_rows('candidate-details') ) {
                       the_row();
             ?>
-                    <div class="candidate-profiles callout secondary" style="margin-bottom:50px;max-width:800px;border:none;box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);">
+                    <div class="candidate-profiles callout secondary">
                     <div class="grid-x align-middle">
                       <div class="cell small-3"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/09/cn-election-2024.svg" /></div>
                       <div class="cell small-9 divider">
