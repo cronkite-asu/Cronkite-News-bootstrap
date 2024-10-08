@@ -467,8 +467,8 @@
             ?>
                     <div class="candidate-profiles callout secondary">
                     <div class="grid-x align-middle">
-                      <div class="cell small-3"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/09/cn-election-2024.svg" /></div>
-                      <div class="cell small-9 divider">
+                      <div class="cell small-4"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/09/cn-election-2024.svg" /></div>
+                      <div class="cell small-8 divider">
                         <ul>
                          <li><strong>Candidate name:</strong> <?php echo get_sub_field('candidate-name'); ?></li>
                          <li><strong>Political affiliation:</strong> <?php echo get_sub_field('political-affiliation'); ?></li>
