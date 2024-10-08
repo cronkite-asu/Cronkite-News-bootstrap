@@ -260,7 +260,10 @@ body {
   border: 1px solid #ff0000;
   font-size: 1rem;
 }
-#main_container .single-story-block article .candidate-profiles li, #top-ten .single-story-block article .candidate-profiles li {
+#main_container .single-story-block article .candidate-profiles ul, #top-ten .single-story-block article .candidate-profiles ul {
+  margin-bottom: 0px;
+}
+#main_container .single-story-block article .candidate-profiles ul li, #top-ten .single-story-block article .candidate-profiles ul li {
   margin-bottom: 0px;
 }
 #main_container .single-story-block article .related-story-box-right, #main_container .single-story-block article .related-story-box-left, #top-ten .single-story-block article .related-story-box-right, #top-ten .single-story-block article .related-story-box-left {

@@ -469,7 +469,7 @@
                     <div class="grid-x align-middle">
                       <div class="cell small-4"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/09/cn-election-2024.svg" /></div>
                       <div class="cell small-8">
-                        <ul style="font-size:">
+                        <ul>
                          <li><strong>Candidate name:</strong> <?php echo get_sub_field('candidate-name'); ?></li>
                          <li><strong>Political affiliation:</strong> <?php echo get_sub_field('political-affiliation'); ?></li>
                          <li><strong>Position sought:</strong> <?php echo get_sub_field('position-sought'); ?></li>

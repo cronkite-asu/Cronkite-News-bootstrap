@@ -300,8 +300,11 @@ body {
       .candidate-profiles {
         border: 1px solid #ff0000;
         font-size:1rem;
-        li {
-          margin-bottom:0px;
+        ul {
+          margin-bottom: 0px;
+          li {
+            margin-bottom:0px;
+          }
         }
       }
       .related-story-box-right, .related-story-box-left {
