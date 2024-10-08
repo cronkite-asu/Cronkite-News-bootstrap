@@ -446,17 +446,41 @@
              <?php
                 // check if story is a translation by ChatGPT
                 if (get_field('original-content') == 'no' && get_field('chatgpt_translation') == 'yes') {
-                    ?>
-                              <div class="callout secondary roboto" style="margin-bottom:50px;max-width:800px;border:none;box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);">
-                                <div class="grid-x align-middle">
-                                  <div class="cell small-12">
-                                    <p><strong>EDITOR'S NOTE:</strong> This story was translated from English to Spanish using <a href="https://chat.openai.com/" rel="noopener" target="_blank">ChatGPT</a>. A Cronkite News editor reviewed the translation. Find the original story <a href="<?php echo get_field('original_story_link'); ?>" rel="noopener" target="_blank">here</a>. See any errors? Please let us know. Contact <a href="mailto:julio.cisneros@asu.edu" rel="noopener" target="_blank">julio.cisneros@asu.edu</a>.</p>
-                                    <hr />
-                                    <p><strong>NOTA DEL EDITOR:</strong> Este reportaje fue traducido del inglés al español usando <a href="https://chat.openai.com/" rel="noopener" target="_blank">ChatGPT</a>. Un editor de Cronkite News revisó la traducción. Encuentra el reportaje original <a href="<?php echo get_field('original_story_link'); ?>" rel="noopener" target="_blank">aquí</a>. ¿Ves algún error? Por favor, déjanoslo saber. Contacta a <a href="mailto:julio.cisneros@asu.edu" rel="noopener" target="_blank">julio.cisneros@asu.edu</a>.</p>
-                                  </div>
-                                </div>
-                              </div>
-                          <?php
+             ?>
+                <div class="callout secondary roboto" style="margin-bottom:50px;max-width:800px;border:none;box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);">
+                  <div class="grid-x align-middle">
+                    <div class="cell small-12">
+                      <p><strong>EDITOR'S NOTE:</strong> This story was translated from English to Spanish using <a href="https://chat.openai.com/" rel="noopener" target="_blank">ChatGPT</a>. A Cronkite News editor reviewed the translation. Find the original story <a href="<?php echo get_field('original_story_link'); ?>" rel="noopener" target="_blank">here</a>. See any errors? Please let us know. Contact <a href="mailto:julio.cisneros@asu.edu" rel="noopener" target="_blank">julio.cisneros@asu.edu</a>.</p>
+                      <hr />
+                      <p><strong>NOTA DEL EDITOR:</strong> Este reportaje fue traducido del inglés al español usando <a href="https://chat.openai.com/" rel="noopener" target="_blank">ChatGPT</a>. Un editor de Cronkite News revisó la traducción. Encuentra el reportaje original <a href="<?php echo get_field('original_story_link'); ?>" rel="noopener" target="_blank">aquí</a>. ¿Ves algún error? Por favor, déjanoslo saber. Contacta a <a href="mailto:julio.cisneros@asu.edu" rel="noopener" target="_blank">julio.cisneros@asu.edu</a>.</p>
+                    </div>
+                  </div>
+                </div>
+            <?php
+                }
+
+                // candidate Profiles
+                if (get_field('candidate-profiles') == 'yes') {
+                  if( have_rows('candidate-details') ) {
+                    while( have_rows('candidate-details') ) {
+                      the_row();
+            ?>
+                    <div class="callout secondary" style="margin-bottom:50px;max-width:800px;border:none;box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);">
+                    <div class="grid-x align-middle">
+                      <div class="cell small-5"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/09/cn-election-2024.svg" /></div>
+                      <div class="cell small-7">
+                         <strong>Candidate name:</strong> <?php echo get_sub_field('candidate-name'); ?>
+                         <strong>Political affiliation:</strong> <?php echo get_sub_field('political-affiliation'); ?>
+                         <strong>Position sought:</strong> <?php echo get_sub_field('position-sought'); ?>
+                         <strong>Age:</strong> <?php echo get_sub_field('candidate-age'); ?>
+                         <strong>Career:</strong> <?php echo get_sub_field('career'); ?>
+                         <strong>Website:</strong> <a href="<?php echo get_sub_field('candidate-website'); ?>" target="_blank" rel="noopener"><?php echo get_sub_field('candidate-website'); ?></a>
+                      </div>
+                    </div>
+                    </div>
+              <?php
+                    }
+                  }
                 }
 
                $compareDate = strtotime('Mar 21, 2023');
@@ -495,12 +519,10 @@
                } else {
                    the_content();
                }
- ?>
 
-<?php
     // in this series settings
     $inthisseriesSettings = get_field('in-this-series-stories');
- if ($inthisseriesSettings['show'] == 'yes') {
+    if ($inthisseriesSettings['show'] == 'yes') {
      if ($inthisseriesSettings['story-status'] == 'coming-soon') {
          if ($inthisseriesSettings['title'] != '') {
              $seriesTitle = ': '.$inthisseriesSettings['title'];
@@ -513,11 +535,11 @@
                  <div class="large-12 medium-12 small-12 cell">
                    <h4>In this series<span><?php echo $seriesTitle; ?><span></h4>
                    <div class="in-this-series">
-                        <?php
+                      <?php
                      $upcomingStoryList = $inthisseriesSettings['upcoming-stories'];
-         if ($upcomingStoryList != '') {
-             foreach ($upcomingStoryList as $upcomingStory) {
-                 if ($upcomingStory['story-posted'] == 'no') {
+                     if ($upcomingStoryList != '') {
+                         foreach ($upcomingStoryList as $upcomingStory) {
+                             if ($upcomingStory['story-posted'] == 'no') {
                      ?>
                          <div>
                                     <?php
@@ -557,8 +579,8 @@
                            <h5><a href="<?php echo get_permalink($upcomingStory['posted-link']); ?>"><?php echo get_the_title($upcomingStory['posted-link']); ?></a></h5>
                                     <?php } ?>
                          </div>
-                                    <?php
-                                }
+        <?php
+                }
              }
          }
          ?>
@@ -569,18 +591,18 @@
                <!-- in this series -->
                <div class="grid-x grid-padding-x series-block">
                  <div class="large-12 medium-12 small-12 cell">
-                        <?php
-         if ($inthisseriesSettings['title'] != '') {
-             $seriesTitle = $inthisseriesSettings['title'];
-         }
-         ?>
+                      <?php
+                       if ($inthisseriesSettings['title'] != '') {
+                           $seriesTitle = $inthisseriesSettings['title'];
+                       }
+                      ?>
                    <h4><?php echo $seriesTitle; ?></h4>
                    <div class="in-this-series">
-                        <?php
-         $pubbedStoryList = $inthisseriesSettings['stories'];
-         if ($pubbedStoryList != '') {
-             foreach ($pubbedStoryList as $pubbedStory) {
-                 ?>
+                    <?php
+                     $pubbedStoryList = $inthisseriesSettings['stories'];
+                     if ($pubbedStoryList != '') {
+                         foreach ($pubbedStoryList as $pubbedStory) {
+                    ?>
                          <div>
                            <a href="<?php echo get_permalink($pubbedStory); ?>"><?php echo get_the_post_thumbnail($pubbedStory, 'full', ['class' => 'img-responsive']); ?></a>
                            <?php
@@ -593,17 +615,17 @@
                   <h5><a href="<?php echo get_permalink($pubbedStory); ?>"><?php echo get_the_title($pubbedStory); ?></a></h5>
                            <?php } ?>
                          </div>
-                                <?php
-             }
-         }
-         ?>
+                    <?php
+                       }
+                   }
+                   ?>
                    </div>
                  </div>
                </div>
-                        <?php
-     }
- }
- ?>
+                <?php
+                     }
+                 }
+                 ?>
 
              <?php
                 // show fact box
