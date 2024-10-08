@@ -274,7 +274,7 @@ body {
   font-size: 0.95rem;
 }
 #main_container .single-story-block article .candidate-profiles .divider, #top-ten .single-story-block article .candidate-profiles .divider {
-  border: 1px solid #D8D8D8;
+  border-left: 1px solid #D8D8D8;
 }
 #main_container .single-story-block article .related-story-box-right, #main_container .single-story-block article .related-story-box-left, #top-ten .single-story-block article .related-story-box-right, #top-ten .single-story-block article .related-story-box-left {
   float: right;
