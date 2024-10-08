@@ -469,12 +469,14 @@
                     <div class="grid-x align-middle">
                       <div class="cell small-5"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/09/cn-election-2024.svg" /></div>
                       <div class="cell small-7">
-                         <strong>Candidate name:</strong> <?php echo get_sub_field('candidate-name'); ?>
-                         <strong>Political affiliation:</strong> <?php echo get_sub_field('political-affiliation'); ?>
-                         <strong>Position sought:</strong> <?php echo get_sub_field('position-sought'); ?>
-                         <strong>Age:</strong> <?php echo get_sub_field('candidate-age'); ?>
-                         <strong>Career:</strong> <?php echo get_sub_field('career'); ?>
-                         <strong>Website:</strong> <a href="<?php echo get_sub_field('candidate-website'); ?>" target="_blank" rel="noopener"><?php echo get_sub_field('candidate-website'); ?></a>
+                        <ul>
+                         <li><strong>Candidate name:</strong> <?php echo get_sub_field('candidate-name'); ?></li>
+                         <li><strong>Political affiliation:</strong> <?php echo get_sub_field('political-affiliation'); ?></li>
+                         <li><strong>Position sought:</strong> <?php echo get_sub_field('position-sought'); ?></li>
+                         <li><strong>Age:</strong> <?php echo get_sub_field('candidate-age'); ?></li>
+                         <li><strong>Career:</strong> <?php echo get_sub_field('career'); ?></li>
+                         <li><strong>Website:</strong> <a href="<?php echo get_sub_field('candidate-website'); ?>" target="_blank" rel="noopener"><?php echo get_sub_field('candidate-website'); ?></a></li>
+                        </ul>
                       </div>
                     </div>
                     </div>
