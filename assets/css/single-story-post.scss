@@ -296,6 +296,12 @@ body {
         li {
           margin-bottom: 8px;
         }
+        &.candidate-profiles {
+          font-size:1rem;
+          li {
+            margin-bottom:0px;
+          }
+        }
       }
       .related-story-box-right, .related-story-box-left {
         float: right;
