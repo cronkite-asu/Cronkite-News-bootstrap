@@ -256,8 +256,13 @@ body {
 #main_container .single-story-block article ul li, #main_container .single-story-block article ol li, #top-ten .single-story-block article ul li, #top-ten .single-story-block article ol li {
   margin-bottom: 8px;
 }
-#main_container .single-story-block article .candidate-profiles, #top-ten .single-story-block article .candidate-profiles {
-  font-size: 0.95rem;
+#main_container .single-story-block article .candidate-profiles img, #top-ten .single-story-block article .candidate-profiles img {
+  width: 250px;
+}
+@media only screen and (max-width: 660px) {
+  #main_container .single-story-block article .candidate-profiles img, #top-ten .single-story-block article .candidate-profiles img {
+    width: 125px;
+  }
 }
 #main_container .single-story-block article .candidate-profiles ul, #top-ten .single-story-block article .candidate-profiles ul {
   margin-bottom: 0px;
@@ -266,6 +271,7 @@ body {
 }
 #main_container .single-story-block article .candidate-profiles ul li, #top-ten .single-story-block article .candidate-profiles ul li {
   margin-bottom: 0px;
+  font-size: 0.95rem;
 }
 #main_container .single-story-block article .related-story-box-right, #main_container .single-story-block article .related-story-box-left, #top-ten .single-story-block article .related-story-box-right, #top-ten .single-story-block article .related-story-box-left {
   float: right;

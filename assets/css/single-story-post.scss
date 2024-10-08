@@ -298,13 +298,20 @@ body {
         }
       }
       .candidate-profiles {
-        font-size:0.95rem;
+        img {
+          width:250px;
+          @media only screen
+            and (max-width: 660px) {
+              width:125px;
+          }
+        }
         ul {
           margin-bottom: 0px;
           padding-left: 14px;
           padding-right: 14px;
           li {
             margin-bottom:0px;
+            font-size:0.95rem;
           }
         }
       }
