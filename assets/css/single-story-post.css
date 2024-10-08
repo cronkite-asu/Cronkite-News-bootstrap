@@ -256,10 +256,11 @@ body {
 #main_container .single-story-block article ul li, #main_container .single-story-block article ol li, #top-ten .single-story-block article ul li, #top-ten .single-story-block article ol li {
   margin-bottom: 8px;
 }
-#main_container .single-story-block article ul.candidate-profiles, #main_container .single-story-block article ol.candidate-profiles, #top-ten .single-story-block article ul.candidate-profiles, #top-ten .single-story-block article ol.candidate-profiles {
+#main_container .single-story-block article ul.candidate-profiles, #top-ten .single-story-block article ul.candidate-profiles {
+  border: 1px solid #ff0000;
   font-size: 1rem;
 }
-#main_container .single-story-block article ul.candidate-profiles li, #main_container .single-story-block article ol.candidate-profiles li, #top-ten .single-story-block article ul.candidate-profiles li, #top-ten .single-story-block article ol.candidate-profiles li {
+#main_container .single-story-block article ul.candidate-profiles li, #top-ten .single-story-block article ul.candidate-profiles li {
   margin-bottom: 0px;
 }
 #main_container .single-story-block article .related-story-box-right, #main_container .single-story-block article .related-story-box-left, #top-ten .single-story-block article .related-story-box-right, #top-ten .single-story-block article .related-story-box-left {

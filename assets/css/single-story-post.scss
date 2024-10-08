@@ -296,13 +296,17 @@ body {
         li {
           margin-bottom: 8px;
         }
+      }
+      ul {
         &.candidate-profiles {
+          border: 1px solid #ff0000;
           font-size:1rem;
           li {
             margin-bottom:0px;
           }
         }
       }
+
       .related-story-box-right, .related-story-box-left {
         float: right;
         display: inline-flex;
