@@ -264,18 +264,18 @@ body {
 }
 #main_container .single-story-block article .candidate-profiles img, #top-ten .single-story-block article .candidate-profiles img {
   width: 250px;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 @media only screen and (max-width: 660px) {
   #main_container .single-story-block article .candidate-profiles img, #top-ten .single-story-block article .candidate-profiles img {
     width: 125px;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 #main_container .single-story-block article .candidate-profiles ul, #top-ten .single-story-block article .candidate-profiles ul {
   margin-bottom: 0px;
-  padding-left: 14px;
-  padding-right: 14px;
 }
 #main_container .single-story-block article .candidate-profiles ul li, #top-ten .single-story-block article .candidate-profiles ul li {
   margin-bottom: 0px;
