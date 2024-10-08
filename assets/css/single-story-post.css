@@ -276,6 +276,7 @@ body {
 }
 #main_container .single-story-block article .candidate-profiles ul, #top-ten .single-story-block article .candidate-profiles ul {
   margin-bottom: 0px;
+  list-style: none;
 }
 #main_container .single-story-block article .candidate-profiles ul li, #top-ten .single-story-block article .candidate-profiles ul li {
   margin-bottom: 0px;
