@@ -470,11 +470,21 @@
                       <div class="cell small-8 divider">
                         <ul>
                          <li><strong>Candidate name:</strong> <?php echo get_sub_field('candidate-name'); ?></li>
+                         <?php if (get_sub_field('political-affiliation') != '') { ?>
                          <li><strong>Political affiliation:</strong> <?php echo get_sub_field('political-affiliation'); ?></li>
+                         <?php } ?>
+                         <?php if (get_sub_field('position-sought') != '') { ?>
                          <li><strong>Position sought:</strong> <?php echo get_sub_field('position-sought'); ?></li>
+                         <?php } ?>
+                         <?php if (get_sub_field('candidate-age') != '') { ?>
                          <li><strong>Age:</strong> <?php echo get_sub_field('candidate-age'); ?></li>
+                         <?php } ?>
+                         <?php if (get_sub_field('career') != '') { ?>
                          <li><strong>Career:</strong> <?php echo get_sub_field('career'); ?></li>
+                         <?php } ?>
+                         <?php if (get_sub_field('candidate-website') != '') { ?>
                          <li><strong>Website:</strong> <a href="<?php echo get_sub_field('candidate-website'); ?>" target="_blank" rel="noopener"><?php echo get_sub_field('candidate-website'); ?></a></li>
+                         <?php } ?>
                         </ul>
                       </div>
                       <div class="cell small-4"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/09/cn-election-2024.svg" /></div>
