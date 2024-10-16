@@ -1189,7 +1189,7 @@ function related_stories_CPT() {
         'menu_position' => 5,
         'has_archive'   => true,
         'hierarchical'  => true,
-        'supports'      => [ 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields'],
+        'supports'      => [ 'title', 'editor', 'revisions', 'custom-fields'],
     ];
     register_post_type('rs_list', $cpt_related_stories_args);
 }
