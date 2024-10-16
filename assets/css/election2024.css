@@ -109,22 +109,22 @@ hr {
   flex: 1 0 20px;
   width: 100%;
 }
-#election-container .slide-aside h5 {
+#election-container .slide-aside h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 1.1rem;
   color: #003594;
 }
 @media only screen and (max-width: 660px) {
-  #election-container .slide-aside h5 {
+  #election-container .slide-aside h3 {
     font-weight: 400 !important;
     font-size: 1.15rem !important;
   }
 }
-#election-container .slide-aside h5 a {
+#election-container .slide-aside h3 a {
   color: #003594 !important;
 }
-#election-container .slide-aside h5 a:hover {
+#election-container .slide-aside h3 a:hover {
   color: #0a0a0a !important;
 }
 #election-container .top-stories li {
@@ -370,7 +370,7 @@ hr {
 .latest-news h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: #003594;
 }
 @media only screen and (max-width: 660px) {

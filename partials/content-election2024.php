@@ -36,7 +36,7 @@ foreach ($mainStoryList as $mainStory) {
                   $topStoriesArray[] = $mainStory;
             ?>
                 <div class="large-12 medium-12 small-12 cell story">
-                  <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?><h5 style="margin-top:15px;"><?php echo $title; ?></h5></a>
+                  <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
                 </div>
             <?php
               }
@@ -197,8 +197,7 @@ foreach ($mainStoryList as $mainStory) {
             if ($the_query->have_posts()) {
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
-                    echo '<div class="large-4 medium-4 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'</a></div>';
-                    echo '<div class="large-8 medium-8 small-12 cell"><a href="'.$permalink.'"><h3>'.get_the_title(get_the_ID()).'</a></h3></div>';
+                    echo '<div class="large-4 medium-4 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'</a><a href="'.$permalink.'"><h3>'.get_the_title(get_the_ID()).'</a></h3></div>';
                 }
             }
           ?>
