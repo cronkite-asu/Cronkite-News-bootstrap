@@ -79,7 +79,7 @@ foreach ($mainStoryList as $mainStory) {
             $mainStoryList = get_field('stories', 237021);
             $mainStoryCounter = 0;
         ?>
-              <div class="large-3 medium-3 small-12 cell story">
+              <div class="large-3 medium-3 small-12 cell top-stories">
                 <div class="grid-x grid-padding-x">
                   <div class="large-12 medium-12 small-12 cell story">
                     <ul>
@@ -112,7 +112,7 @@ foreach ($mainStoryList as $mainStory) {
   </div>
 </div>
 
-<div class="grid-container election-details">
+<div class="grid-container videos">
   <div class="grid-x grid-padding-x">
     <div class="large-12 medium-12 small-12 cell key-dates">
       <div class="grid-x grid-padding-x">
@@ -143,7 +143,7 @@ foreach ($mainStoryList as $mainStory) {
   </div>
 </div>
 
-<div class="grid-container election-details">
+<div class="grid-container spanish">
   <div class="grid-x grid-padding-x">
     <div class="large-12 medium-12 small-12 cell key-dates">
       <div class="grid-x grid-padding-x">
@@ -174,7 +174,7 @@ foreach ($mainStoryList as $mainStory) {
   </div>
 </div>
 
-<div class="grid-container election-details">
+<div class="grid-container latest-news">
   <div class="grid-x grid-padding-x">
     <div class="large-12 medium-12 small-12 cell">
       <div class="grid-x grid-padding-x">
@@ -198,7 +198,7 @@ foreach ($mainStoryList as $mainStory) {
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
                     echo '<div class="large-4 medium-4 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'</a></div>';
-                    echo '<div class="large-8 medium-8 small-12 cell"><a href="'.$permalink.'"><h2>'.get_the_title(get_the_ID()).'</a></h2></div>';
+                    echo '<div class="large-8 medium-8 small-12 cell"><a href="'.$permalink.'"><h3>'.get_the_title(get_the_ID()).'</a></h3></div>';
                 }
             }
           ?>
