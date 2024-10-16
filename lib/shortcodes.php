@@ -682,16 +682,16 @@ function related_box_grid_list($atts, $content = null) {
             $storiesList = array_rand($storiesList, 3);
             print_r($storiesList);
             $storiesListCounter = 0;
-            foreach ($storiesList as $story) {
+            for ($i = 0; $i < count($storiesList); $i++) {
               if ($storiesListCounter < 1) {
-                $permalink = get_permalink($story);
-                $summary = get_field('story_tease', $story);
-                if (get_field('use_short_headline', $story) == 'yes' && get_field('homepage_headline', $story) != '') {
-                    $title = get_field('homepage_headline', $story);
+                $permalink = get_permalink($storiesList[$i]);
+                $summary = get_field('story_tease', $storiesList[$i]);
+                if (get_field('use_short_headline', $storiesList[$i]) == 'yes' && get_field('homepage_headline', $storiesList[$i]) != '') {
+                    $title = get_field('homepage_headline', $storiesList[$i]);
                 } else {
-                    $title = get_the_title($story);
+                    $title = get_the_title($storiesList[$i]);
                 }
-                $result .= '<li><a href="'.$permalink.'" target="_blank"><div class="img">'.get_the_post_thumbnail($story).'</div><h4>'.$title.'</h4></a></li>';
+                $result .= '<li><a href="'.$permalink.'" target="_blank"><div class="img">'.get_the_post_thumbnail($storiesList[$i]).'</div><h4>'.$title.'</h4></a></li>';
               }
             }
             $result .= '</ul>';
