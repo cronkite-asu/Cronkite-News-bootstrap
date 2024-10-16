@@ -698,7 +698,9 @@ function related_box_grid_list($atts, $content = null) {
             }
             $result .= '</ul>';
             // cta
-            $result .= '<div class="rs-cta"><p><a href="'.get_field('related-story-cta-link').'">'.get_field('related-story-cta').' <i class="fa-solid fa-angles-right"></i></a></p></div>';
+            if (get_field('related-story-cta-link') != '') {
+              $result .= '<div class="rs-cta"><p><a href="'.get_field('related-story-cta-link').'">'.get_field('related-story-cta').' <i class="fa-solid fa-angles-right"></i></a></p></div>';
+            }
           }
 
           if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
