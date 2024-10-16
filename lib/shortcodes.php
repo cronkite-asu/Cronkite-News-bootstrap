@@ -653,7 +653,7 @@ function related_box_grid_list($atts, $content = null) {
       if (isset($atts['block-name'])) {
         $args = [
                   'name'           => '"'.$atts['block-name'].'"',
-                  'post_type'   => 'related-story',
+                  'post_type'   => 'rs_list',
                   'post_status'    => 'publish',
                   /*'posts_per_page' => 1,
                   'post_status' => 'publish',
