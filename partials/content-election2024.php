@@ -197,11 +197,7 @@ foreach ($mainStoryList as $mainStory) {
             if ($the_query->have_posts()) {
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
-                    if (get_field('use_short_headline', get_the_ID()) == 'yes' && get_field('homepage_headline', get_the_ID()) != '') {
-                        $title = get_field('homepage_headline', get_the_ID());
-                    } else {
-                        $title = get_the_title(get_the_ID());
-                    }
+                    
                     echo '<div class="large-3 medium-3 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'</a><a href="'.$permalink.'"><h3>'.$title.'</a></h3></div>';
                 }
             }
