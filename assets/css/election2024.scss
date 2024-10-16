@@ -170,137 +170,15 @@ hr {
       padding-bottom:10px;
       padding-top:10px;
       border-bottom: 1px solid $grey;
-      color: $cnBlue;
       &:last-child {
         border-bottom: none;
       }
       a {
-        color: $black;
-        &:hover {
-          color: $green;
-        }
-      }
-    }
-  }
-}
-
-.election-schedule {
-  max-width: 80rem;
-  h4 {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    font-family: $montserratFontFamily;
-    font-weight: 700;
-    font-size: 1.15rem;
-    color: $cnBlue;
-    padding-top:15px;
-    text-transform: uppercase;
-    margin-top: 0px;
-    margin-bottom: 25px;
-    a {
-      color:$cnBlue !important;
-      &:hover {
-        color:$cnBlue !important;
-      }
-    }
-  }
-  h4:after {
-      content: '';
-      border-image-slice: 1;
-      border-top: 1px solid;
-      border-image-source: linear-gradient(to right, $cnRed 50%, $cnBlue 50%);
-      margin: 0 0 0 20px;
-      flex: 1 0 20px;
-      width: 100%;
-  }
-
-  h3 {
-    font-family: $robotoFontFamily;
-    font-weight: 400;
-    font-size: 1.1rem;
-    padding-top:15px;
-    padding-bottom: 25px;
-    text-transform: none;
-    a {
-      color: $black;
-      &:hover {
         color: $cnBlue;
-      }
-    }
-  }
-  span {
-    font-weight: bold;
-  }
-  ul {
-    li {
-      font-size: 1.05rem;
-    }
-  }
-}
-
-.debate-schedule {
-  max-width: 80rem;
-  h4 {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    font-family: $montserratFontFamily;
-    font-weight: 700;
-    font-size: 1.15rem;
-    color: $cnBlue;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-    a {
-      color:$cnBlue !important;
-      &:hover {
-        color:$cnBlue !important;
-      }
-    }
-  }
-  h4:after {
-      content: '';
-      border-image-slice: 1;
-      border-top: 1px solid;
-      border-image-source: linear-gradient(to right, $cnRed 50%, $cnBlue 50%);
-      margin: 0 0 0 20px;
-      flex: 1 0 20px;
-      width: 100%;
-  }
-  .debate-carousel {
-    width: 75rem;
-    display: flex;
-    flex-direction: row;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
-    margin: 0 auto;
-    .slick-prev {
-      left:-25px !important;
-      z-index: 1000;
-      @media only screen
-        and (max-width: 900px) {
-          left:10px;
-      }
-    }
-    .slick-next {
-      @media only screen
-        and (max-width: 900px) {
-          right:10px;
-      }
-    }
-    /* the slides */
-    .slick-slide {
-        margin: 0 12px;
-        @media only screen
-          and (max-width: 900px) {
-            padding-left: 20px;
-            padding-right: 20px;
+        &:hover {
+          color: $black;
         }
-    }
-    .slick-prev:before, .slick-next:before {
-      color: $cnBlue;
+      }
     }
   }
 }
@@ -541,18 +419,20 @@ hr {
       flex: 1 0 20px;
       width: 100%;
   }
-
   h3 {
-    font-family: $robotoFontFamily;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 1.1rem;
-    padding-top:15px;
-    padding-bottom: 25px;
-    text-transform: none;
+    color: $cnBlue;
+    @media only screen
+      and (max-width: 660px) {
+        font-weight: 400 !important;
+        font-size: 1.15rem !important;
+    }
     a {
-      color: $black;
+      color: $cnBlue !important;
       &:hover {
-        color: $cnBlue;
+        color: $black !important;
       }
     }
   }
