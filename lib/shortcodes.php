@@ -679,6 +679,7 @@ function related_box_grid_list($atts, $content = null) {
             $result .= '<ul>';
 
             $storiesList = get_field('related-stories-list', get_the_ID());
+            $storiesList = array_rand($storiesList, 3);
             print_r($storiesList);
             $storiesListCounter = 0;
             foreach ($storiesList as $story) {
