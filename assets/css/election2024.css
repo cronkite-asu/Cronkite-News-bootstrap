@@ -334,6 +334,60 @@ hr {
   color: #003594 !important;
 }
 
+.videos, .spanish {
+  max-width: 80rem;
+  margin-bottom: 50px;
+}
+.videos h4, .spanish h4 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #003594;
+  padding-top: 15px;
+  text-transform: uppercase;
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+.videos h4 a, .spanish h4 a {
+  color: #003594 !important;
+}
+.videos h4 a:hover, .spanish h4 a:hover {
+  color: #003594 !important;
+}
+.videos h4:after, .spanish h4:after {
+  content: "";
+  /*border-top: 1px solid $cnBlue;*/
+  border-image-slice: 1;
+  border-top: 1px solid;
+  border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
+  margin: 0 0 0 20px;
+  flex: 1 0 20px;
+  width: 100%;
+}
+.videos h3, .spanish h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #003594;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media only screen and (max-width: 660px) {
+  .videos h3, .spanish h3 {
+    font-weight: 400 !important;
+    font-size: 1.15rem !important;
+  }
+}
+.videos h3 a, .spanish h3 a {
+  color: #003594 !important;
+}
+.videos h3 a:hover, .spanish h3 a:hover {
+  color: #0a0a0a !important;
+}
+
 .latest-news {
   max-width: 80rem;
   margin-bottom: 50px;
@@ -373,6 +427,7 @@ hr {
   font-size: 1.25rem;
   color: #003594;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 @media only screen and (max-width: 660px) {
   .latest-news h3 {

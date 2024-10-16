@@ -387,6 +387,59 @@ hr {
   }
 }
 
+.videos, .spanish {
+  max-width: 80rem;
+  margin-bottom: 50px;
+  h4 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: $montserratFontFamily;
+    font-weight: 700;
+    color: $cnBlue;
+    padding-top:15px;
+    text-transform: uppercase;
+    margin-top: 0px;
+    margin-bottom: 25px;
+    a {
+      color:$cnBlue !important;
+      &:hover {
+        color:$cnBlue !important;
+      }
+    }
+  }
+  h4:after {
+      content: '';
+      /*border-top: 1px solid $cnBlue;*/
+      border-image-slice: 1;
+      border-top: 1px solid;
+      border-image-source: linear-gradient(to right, $cnRed 50%, $cnBlue 50%);
+      margin: 0 0 0 20px;
+      flex: 1 0 20px;
+      width: 100%;
+  }
+  h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: $cnBlue;
+    margin-top:15px;
+    margin-bottom:15px;
+    @media only screen
+      and (max-width: 660px) {
+        font-weight: 400 !important;
+        font-size: 1.15rem !important;
+    }
+    a {
+      color: $cnBlue !important;
+      &:hover {
+        color: $black !important;
+      }
+    }
+  }
+}
+
 .latest-news {
   max-width: 80rem;
   margin-bottom: 50px;
@@ -425,6 +478,7 @@ hr {
     font-size: 1.25rem;
     color: $cnBlue;
     margin-top:15px;
+    margin-bottom:15px;
     @media only screen
       and (max-width: 660px) {
         font-weight: 400 !important;
