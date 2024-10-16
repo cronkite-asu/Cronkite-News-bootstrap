@@ -138,162 +138,9 @@ hr {
   border-bottom: none;
 }
 #election-container .top-stories li a {
-  color: #0a0a0a;
+  color: #003594;
 }
 #election-container .top-stories li a:hover {
-  color: rgb(0, 102, 51);
-}
-
-.election-schedule {
-  max-width: 80rem;
-}
-.election-schedule h4 {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: #003594;
-  padding-top: 15px;
-  text-transform: uppercase;
-  margin-top: 0px;
-  margin-bottom: 25px;
-}
-.election-schedule h4 a {
-  color: #003594 !important;
-}
-.election-schedule h4 a:hover {
-  color: #003594 !important;
-}
-.election-schedule h4:after {
-  content: "";
-  border-image-slice: 1;
-  border-top: 1px solid;
-  border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
-  margin: 0 0 0 20px;
-  flex: 1 0 20px;
-  width: 100%;
-}
-.election-schedule h3 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 1.1rem;
-  padding-top: 15px;
-  padding-bottom: 25px;
-  text-transform: none;
-}
-.election-schedule h3 a {
-  color: #0a0a0a;
-}
-.election-schedule h3 a:hover {
-  color: #003594;
-}
-.election-schedule span {
-  font-weight: bold;
-}
-.election-schedule ul li {
-  font-size: 1.05rem;
-}
-
-.debate-schedule {
-  max-width: 80rem;
-}
-.debate-schedule h4 {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: #003594;
-  text-transform: uppercase;
-  margin-bottom: 25px;
-}
-.debate-schedule h4 a {
-  color: #003594 !important;
-}
-.debate-schedule h4 a:hover {
-  color: #003594 !important;
-}
-.debate-schedule h4:after {
-  content: "";
-  border-image-slice: 1;
-  border-top: 1px solid;
-  border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
-  margin: 0 0 0 20px;
-  flex: 1 0 20px;
-  width: 100%;
-}
-.debate-schedule .debate-carousel {
-  width: 75rem;
-  display: flex;
-  flex-direction: row;
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
-  margin: 0 auto;
-  /* the slides */
-}
-.debate-schedule .debate-carousel .slick-prev {
-  left: -25px !important;
-  z-index: 1000;
-}
-@media only screen and (max-width: 900px) {
-  .debate-schedule .debate-carousel .slick-prev {
-    left: 10px;
-  }
-}
-@media only screen and (max-width: 900px) {
-  .debate-schedule .debate-carousel .slick-next {
-    right: 10px;
-  }
-}
-.debate-schedule .debate-carousel .slick-slide {
-  margin: 0 12px;
-}
-@media only screen and (max-width: 900px) {
-  .debate-schedule .debate-carousel .slick-slide {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-.debate-schedule .debate-carousel .slick-prev:before, .debate-schedule .debate-carousel .slick-next:before {
-  color: #003594;
-}
-.debate-schedule .schedule-tab {
-  margin-right: 15px;
-  margin-left: 15px;
-  cursor: pointer;
-}
-.debate-schedule .schedule-tab:first-child {
-  margin-right: 15px;
-  margin-left: 0px;
-}
-.debate-schedule .schedule-tab .rounded {
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -khtml-border-radius: 15px;
-  border-radius: 15px;
-  -webkit-box-shadow: 0 8px 6px -6px #b8b8b8;
-  -moz-box-shadow: 0 8px 6px -6px #b8b8b8;
-  box-shadow: 0 8px 6px -6px #b8b8b8;
-}
-.debate-schedule .schedule-tab .rounded:hover {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  color: #003594;
-}
-.debate-schedule .schedule-tab .secondary {
-  background-color: #f2f2f2;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  line-height: 22px;
-  /*max-width: 100%;
-  width: 100%;*/
-  height: 80px;
   color: #0a0a0a;
 }
 
@@ -301,7 +148,7 @@ hr {
   max-width: 80rem;
   margin-top: 25px;
 }
-.election-details h2, .election-details h4 {
+.election-details h4 {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -313,13 +160,13 @@ hr {
   text-transform: uppercase;
   margin-bottom: 0;
 }
-.election-details h2 a, .election-details h4 a {
+.election-details h4 a {
   color: #003594 !important;
 }
-.election-details h2 a:hover, .election-details h4 a:hover {
+.election-details h4 a:hover {
   color: #003594 !important;
 }
-.election-details h2:after, .election-details h4:after {
+.election-details h4:after {
   content: "";
   border-image-slice: 1;
   border-top: 1px solid;
@@ -524,15 +371,19 @@ hr {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 1.1rem;
-  padding-top: 15px;
-  padding-bottom: 25px;
-  text-transform: none;
+  color: #003594;
+}
+@media only screen and (max-width: 660px) {
+  .latest-news h3 {
+    font-weight: 400 !important;
+    font-size: 1.15rem !important;
+  }
 }
 .latest-news h3 a {
-  color: #0a0a0a;
+  color: #003594 !important;
 }
 .latest-news h3 a:hover {
-  color: #003594;
+  color: #0a0a0a !important;
 }
 .latest-news span {
   background: #003594;
