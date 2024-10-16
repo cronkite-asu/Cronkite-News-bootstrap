@@ -1289,12 +1289,12 @@ add_action('admin_init', 'change_user_publish_capabilities');
 #));
 
 // Function to randomize ACF relationship field for related stories
-function my_acf_load_value3( $value, $post_id, $field ) {
+function my_acf_load_value3 ( $value, $post_id, $field ) {
 	shuffle($value);
 	return $value;
 }
 
 // Randomize ACF Clients' relationships for related stories
-add_filter('acf/load_value/name=rs_list', 'my_acf_load_value3', 10, 3);
+add_filter('acf/load_value/name=related-stories-list', 'my_acf_load_value3', 10, 3);
 
 ?>
