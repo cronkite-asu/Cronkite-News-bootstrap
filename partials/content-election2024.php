@@ -176,9 +176,9 @@ foreach ($mainStoryList as $mainStory) {
 
 <div class="grid-container election-details">
   <div class="grid-x grid-padding-x">
-    <div class="large-12 medium-12 small-12 cell key-dates">
+    <div class="large-12 medium-12 small-12 cell">
       <div class="grid-x grid-padding-x">
-        <div class="large-6 medium-12 small-12 cell">
+        <div class="large-12 medium-12 small-12 cell">
           <h4>Latest News</h4>
         </div>
       </div>
@@ -189,8 +189,8 @@ foreach ($mainStoryList as $mainStory) {
                     'orderby' => 'post_date',
                     'order' => 'DESC',
                     'cat' =>  32929,
-                    'posts_per_page' => 19,
                     'category__not_in' => array(22877),
+                    'post__not_in' => $topStoriesArray,
                     /*'post__not_in' => $candidateProfiles,*/
             ];
             $the_query = new WP_Query($args);
