@@ -475,14 +475,14 @@ hr {
   h3 {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: $cnBlue;
     margin-top:15px;
     margin-bottom:15px;
     @media only screen
       and (max-width: 660px) {
         font-weight: 400 !important;
-        font-size: 1rem !important;
+        font-size: 1.15rem !important;
     }
     a {
       color: $cnBlue !important;
