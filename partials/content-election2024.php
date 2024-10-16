@@ -134,7 +134,7 @@ foreach ($mainStoryList as $mainStory) {
             if ($the_query->have_posts()) {
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
-                    echo '<div class="large-3 medium-3 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'<h2>'.get_the_title(get_the_ID()).'</h2></a></div>';
+                    echo '<div class="large-3 medium-3 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'<h3>'.get_the_title(get_the_ID()).'</h3></a></div>';
                 }
             }
           ?>
@@ -165,7 +165,7 @@ foreach ($mainStoryList as $mainStory) {
             if ($the_query->have_posts()) {
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
-                    echo '<div class="large-3 medium-3 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'<h2>'.get_the_title(get_the_ID()).'</h2></a></div>';
+                    echo '<div class="large-3 medium-3 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'<h3>'.get_the_title(get_the_ID()).'</h3></a></div>';
                 }
             }
           ?>
