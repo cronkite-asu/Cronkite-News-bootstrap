@@ -1165,7 +1165,7 @@ function audioVideo_CPT() {
 add_action('init', 'audioVideo_CPT');
 
 // custom post type for related stories
-/*function related_stories_CPT() {
+function related_stories_CPT() {
     $cpt_related_stories_labels = [
         'name'               => _x('Related Stories', 'post type general name'),
         'singular_name'      => _x('Related Stories', 'post type singular name'),
@@ -1193,7 +1193,7 @@ add_action('init', 'audioVideo_CPT');
     ];
     register_post_type('rs_list', $cpt_related_stories_args);
 }
-add_action('init', 'related_stories_CPT');*/
+add_action('init', 'related_stories_CPT');
 
 
 function cn_search_query($query) {
@@ -1289,12 +1289,12 @@ add_action('admin_init', 'change_user_publish_capabilities');
 #));
 
 // Function to randomize ACF relationship field for related stories
-/*function my_acf_load_value3( $value, $post_id, $field ) {
+function my_acf_load_value3( $value, $post_id, $field ) {
 	shuffle($value);
 	return $value;
-}*/
+}
 
 // Randomize ACF Clients' relationships for related stories
-//add_filter('acf/load_value/name=related-stories-list', 'my_acf_load_value3', 10, 3);
+add_filter('acf/load_value/name=rs_list', 'my_acf_load_value3', 10, 3);
 
 ?>
