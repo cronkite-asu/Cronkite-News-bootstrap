@@ -341,7 +341,7 @@ hr {
 .election-details {
   max-width: 80rem;
   margin-top:25px;
-  h4 {
+  h2, h4  {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -359,7 +359,7 @@ hr {
       }
     }
   }
-  h4:after {
+  h2:after, h4:after {
       content: '';
       border-image-slice: 1;
       border-top: 1px solid;

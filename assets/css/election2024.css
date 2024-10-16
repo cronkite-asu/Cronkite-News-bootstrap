@@ -83,7 +83,7 @@ hr {
 #election-container h3 a:hover {
   color: #0a0a0a !important;
 }
-#election-container h4 {
+#election-container h4, #election-container h5 {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -94,10 +94,10 @@ hr {
   color: #003594;
   text-transform: uppercase;
 }
-#election-container h4 a {
+#election-container h4 a, #election-container h5 a {
   color: #003594 !important;
 }
-#election-container h4 a:hover {
+#election-container h4 a:hover, #election-container h5 a:hover {
   color: #003594 !important;
 }
 #election-container h4:after {
@@ -301,7 +301,7 @@ hr {
   max-width: 80rem;
   margin-top: 25px;
 }
-.election-details h4 {
+.election-details h2, .election-details h4 {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -313,13 +313,13 @@ hr {
   text-transform: uppercase;
   margin-bottom: 0;
 }
-.election-details h4 a {
+.election-details h2 a, .election-details h4 a {
   color: #003594 !important;
 }
-.election-details h4 a:hover {
+.election-details h2 a:hover, .election-details h4 a:hover {
   color: #003594 !important;
 }
-.election-details h4:after {
+.election-details h2:after, .election-details h4:after {
   content: "";
   border-image-slice: 1;
   border-top: 1px solid;
