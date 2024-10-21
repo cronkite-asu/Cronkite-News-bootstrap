@@ -141,10 +141,13 @@ foreach ($mainStoryList as $mainStory) {
           ];
           $the_query = new WP_Query($args);
           if ($the_query->have_posts()) {
-              while ($the_query->have_posts()) {
-                  $the_query->the_post();
-                  echo '<div class="large-3 medium-3 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'<h3>'.get_the_title(get_the_ID()).'</h3></a></div>';
-              }
+            while ($the_query->have_posts()) {
+              $the_query->the_post();
+
+              // save main story ID
+              $topStoriesArray[] = get_the_ID();
+              echo '<div class="large-3 medium-3 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'<h3>'.get_the_title(get_the_ID()).'</h3></a></div>';
+            }
           }
         ?>
       </div>
@@ -174,6 +177,8 @@ foreach ($mainStoryList as $mainStory) {
             if ($the_query->have_posts()) {
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
+                    // save main story ID
+                    $topStoriesArray[] = get_the_ID();
                     echo '<div class="large-3 medium-3 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'<h3>'.get_the_title(get_the_ID()).'</h3></a></div>';
                 }
             }
@@ -210,6 +215,8 @@ foreach ($mainStoryList as $mainStory) {
                     } else {
                         $title = get_the_title(get_the_ID());
                     }
+                    // save main story ID
+                    $topStoriesArray[] = get_the_ID();
                     echo '<div class="large-3 medium-3 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'<h3>'.$title.'</h3></a></div>';
                 }
             }
@@ -254,6 +261,5 @@ foreach ($mainStoryList as $mainStory) {
           ?>
       </div>
     </div>
-
   </div>
 </div>
