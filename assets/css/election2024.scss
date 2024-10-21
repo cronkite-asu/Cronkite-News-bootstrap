@@ -389,7 +389,7 @@ hr {
   }
 }
 
-.videos, .spanish, .candidate-profiles {
+.videos, .spanish, .candidate-profiles, .key-dates {
   max-width: 80rem;
   margin-bottom: 50px;
   h4 {
@@ -440,6 +440,10 @@ hr {
       }
     }
   }
+}
+
+.key-dates {
+  margin-bottom: 25px;
 }
 
 .latest-news {

@@ -113,7 +113,7 @@ foreach ($mainStoryList as $mainStory) {
   </div>
 </div>
 
-<div class="grid-container videos">
+<div class="grid-container key-dates">
   <div class="grid-x grid-padding-x">
     <div class="large-12 medium-12 small-12 cell">
       <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/10/Election-Dates-Long-Long-V2.jpg" />
@@ -166,8 +166,8 @@ foreach ($mainStoryList as $mainStory) {
                     'post_type' => 'post',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
-                    'cat' =>  22877,
-                    'posts_per_page' => 4,
+                    'cat' =>  32929,
+                    'posts_per_page' => 14,
                     'post__not_in' => $topStoriesArray
             ];
             $the_query = new WP_Query($args);
