@@ -133,6 +133,7 @@ hr {
   padding-bottom: 10px;
   padding-top: 10px;
   border-bottom: 1px solid #D8D8D8;
+  list-style: none;
 }
 #election-container .top-stories li:last-child {
   border-bottom: none;
