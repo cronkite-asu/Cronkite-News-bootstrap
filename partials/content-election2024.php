@@ -196,6 +196,7 @@ foreach ($mainStoryList as $mainStory) {
                     'cat' =>  32929,
                     'category__not_in' => array(22877),
                     'post__not_in' => $topStoriesArray,
+                    'posts_per_page' => -1
                     /*'post__not_in' => $candidateProfiles,*/
             ];
             $the_query = new WP_Query($args);
