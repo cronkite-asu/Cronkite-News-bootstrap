@@ -336,11 +336,11 @@ hr {
   color: #003594 !important;
 }
 
-.videos, .spanish, .candidate-profiles {
+.videos, .spanish, .candidate-profiles, .key-dates {
   max-width: 80rem;
   margin-bottom: 50px;
 }
-.videos h4, .spanish h4, .candidate-profiles h4 {
+.videos h4, .spanish h4, .candidate-profiles h4, .key-dates h4 {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -353,13 +353,13 @@ hr {
   margin-top: 0px;
   margin-bottom: 25px;
 }
-.videos h4 a, .spanish h4 a, .candidate-profiles h4 a {
+.videos h4 a, .spanish h4 a, .candidate-profiles h4 a, .key-dates h4 a {
   color: #003594 !important;
 }
-.videos h4 a:hover, .spanish h4 a:hover, .candidate-profiles h4 a:hover {
+.videos h4 a:hover, .spanish h4 a:hover, .candidate-profiles h4 a:hover, .key-dates h4 a:hover {
   color: #003594 !important;
 }
-.videos h4:after, .spanish h4:after, .candidate-profiles h4:after {
+.videos h4:after, .spanish h4:after, .candidate-profiles h4:after, .key-dates h4:after {
   content: "";
   /*border-top: 1px solid $cnBlue;*/
   border-image-slice: 1;
@@ -369,7 +369,7 @@ hr {
   flex: 1 0 20px;
   width: 100%;
 }
-.videos h3, .spanish h3, .candidate-profiles h3 {
+.videos h3, .spanish h3, .candidate-profiles h3, .key-dates h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 1.1rem;
@@ -378,16 +378,20 @@ hr {
   margin-bottom: 15px;
 }
 @media only screen and (max-width: 660px) {
-  .videos h3, .spanish h3, .candidate-profiles h3 {
+  .videos h3, .spanish h3, .candidate-profiles h3, .key-dates h3 {
     font-weight: 400 !important;
     font-size: 1.15rem !important;
   }
 }
-.videos h3 a, .spanish h3 a, .candidate-profiles h3 a {
+.videos h3 a, .spanish h3 a, .candidate-profiles h3 a, .key-dates h3 a {
   color: #003594 !important;
 }
-.videos h3 a:hover, .spanish h3 a:hover, .candidate-profiles h3 a:hover {
+.videos h3 a:hover, .spanish h3 a:hover, .candidate-profiles h3 a:hover, .key-dates h3 a:hover {
   color: #0a0a0a !important;
+}
+
+.key-dates {
+  margin-bottom: 25px;
 }
 
 .latest-news {
