@@ -682,7 +682,7 @@ function related_box_grid_list($atts, $content = null) {
             $randKeys = array_rand($storiesList, 6);
             $storiesListCounter = 0;
             for ($i = 0; $i < count($storiesList); $i++) {
-              if ($storiesListCounter < 1) {
+              if ($storiesListCounter < 6) {
                 $permalink = get_permalink($storiesList[$randKeys[$i]]);
                 $summary = get_field('story_tease', $storiesList[$randKeys[$i]]);
                 if (get_field('use_short_headline', $storiesList[$randKeys[$i]]) == 'yes' && get_field('homepage_headline', $storiesList[$randKeys[$i]]) != '') {
@@ -692,6 +692,7 @@ function related_box_grid_list($atts, $content = null) {
                 }
                 $result .= '<li><a href="'.$permalink.'" target="_blank"><div class="img">'.get_the_post_thumbnail($storiesList[$randKeys[$i]]).'</div><h4>'.$title.'</h4></a></li>';
               }
+              $storiesListCounter++;
             }
             $result .= '</ul>';
             // cta
