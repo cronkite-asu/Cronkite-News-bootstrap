@@ -679,10 +679,10 @@ function related_box_grid_list($atts, $content = null) {
             $result .= '<ul>';
 
             $storiesList = get_field('related-stories-list', get_the_ID());
-            $randKeys = array_rand($storiesList, 3);
+            $randKeys = array_rand($storiesList, 6);
             $storiesListCounter = 0;
             for ($i = 0; $i < count($storiesList); $i++) {
-              if ($storiesListCounter < 1) {                
+              if ($storiesListCounter < 1) {
                 $permalink = get_permalink($storiesList[$randKeys[$i]]);
                 $summary = get_field('story_tease', $storiesList[$randKeys[$i]]);
                 if (get_field('use_short_headline', $storiesList[$randKeys[$i]]) == 'yes' && get_field('homepage_headline', $storiesList[$randKeys[$i]]) != '') {
