@@ -427,7 +427,7 @@ hr {
   font-size: 1.1rem;
   color: #003594;
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 @media only screen and (max-width: 660px) {
   .latest-news h3 {
