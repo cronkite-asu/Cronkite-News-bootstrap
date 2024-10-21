@@ -116,7 +116,7 @@ foreach ($mainStoryList as $mainStory) {
 <div class="grid-container videos">
   <div class="grid-x grid-padding-x">
     <div class="large-12 medium-12 small-12 cell">
-      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/10/Election-Dates-Long-Long.jpg" />
+      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/10/Election-Dates-Long-Long-V2.jpg" />
     </div>
   </div>
 </div>
