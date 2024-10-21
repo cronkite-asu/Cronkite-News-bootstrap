@@ -195,6 +195,7 @@
           <!-- logo -->
           <div class="logo">
             <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/assets/img/cronkite-news.svg" alt="Cronkite News" title="Cronkite News" /></a>
+            <a class="election-2024-logo" href="https://cronkitenews.azpbs.org/election2024"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/09/cn-election-2024.svg" alt="Election 2024" title="Election 2024" /></a>
           </div>
           <!-- main navigation -->
           <div class="nav_links">

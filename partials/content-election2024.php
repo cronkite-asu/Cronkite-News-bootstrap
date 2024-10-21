@@ -157,7 +157,7 @@ foreach ($mainStoryList as $mainStory) {
                     'post_type' => 'post',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
-                    'cat' =>  22877,
+                    'cat' =>  '22877,32929',
                     'posts_per_page' => 4,
                     /*'post__not_in' => $candidateProfiles,*/
             ];
