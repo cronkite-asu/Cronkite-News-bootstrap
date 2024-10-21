@@ -55,11 +55,11 @@ foreach ($mainStoryList as $mainStory) {
               if ($mainStoryCounter < 1) {
                 $permalink = get_permalink($mainStory);
                 $summary = get_field('story_tease', $mainStory);
-                if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
+                /*if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
                     $title = get_field('homepage_headline', $mainStory);
-                } else {
+                } else {*/
                     $title = get_the_title($mainStory);
-                }
+                //}
 
                 // save main story ID
                 $topStoriesArray[] = $mainStory;
