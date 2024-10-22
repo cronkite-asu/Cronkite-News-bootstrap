@@ -242,7 +242,7 @@ hr {
 @media only screen and (max-width: 660px) {
   .videos h3, .spanish h3, .candidate-profiles h3, .key-dates h3 {
     font-weight: 400 !important;
-    font-size: 1.15rem !important;
+    font-size: 0.95rem !important;
   }
 }
 .videos h3 a, .spanish h3 a, .candidate-profiles h3 a, .key-dates h3 a {

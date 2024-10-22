@@ -246,7 +246,7 @@ foreach ($mainStoryList as $mainStory) {
             // save main story ID
             $topStoriesArray[] = $profile;
         ?>
-            <div class="large-6 medium-6 small-12 cell story">
+            <div class="large-6 medium-6 small-6 cell story">
               <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($profile); ?><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
             </div>
         <?php } ?>
@@ -277,7 +277,7 @@ foreach ($mainStoryList as $mainStory) {
             // save main story ID
             $topStoriesArray[] = $profile;
         ?>
-            <div class="large-6 medium-6 small-12 cell story">
+            <div class="large-6 medium-6 small-6 cell story">
               <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($profile); ?><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
             </div>
         <?php } ?>
@@ -307,7 +307,7 @@ foreach ($mainStoryList as $mainStory) {
             // save main story ID
             $topStoriesArray[] = $profile;
         ?>
-            <div class="large-6 medium-6 small-12 cell story">
+            <div class="large-6 medium-6 small-6 cell story">
               <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($profile); ?><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
             </div>
         <?php } ?>
