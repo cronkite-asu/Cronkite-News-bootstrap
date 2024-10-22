@@ -30,6 +30,7 @@ foreach ($mainStoryList as $mainStory) {
                   if ($mainStoryCounter == 0) {
                     $firstChild = 'spacer';
                   }
+
                   if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
                       $title = get_field('homepage_headline', $mainStory);
                   } else {
