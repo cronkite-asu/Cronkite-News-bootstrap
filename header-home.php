@@ -141,6 +141,7 @@ if (! empty($categories)) {
           <!-- logo -->
           <div class="logo">
             <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/assets/img/cronkite-news.svg" alt="Cronkite News" title="Cronkite News" /></a>
+            <a class="election-2024-logo" href="https://cronkitenews.azpbs.org/election-2024"><img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/09/cn-election-2024.svg" alt="Election 2024" title="Election 2024" /></a>
           </div>
           <!-- main navigation -->
           <div class="nav_links">
@@ -201,7 +202,7 @@ if (! empty($categories)) {
           wp_nav_menu($args);
           ?>
           <li class="top_links_m"><a href="https://cronkitenews.azpbs.org/sitenewscast/">Newscast</a></li>
-          <li class="top_links_m"><a href="https://www.asufoundation.org/colleges-and-programs/cronkite-news-CA126207.html" target="_blank">GIVE</a></li>          
+          <li class="top_links_m"><a href="https://www.asufoundation.org/colleges-and-programs/cronkite-news-CA126207.html" target="_blank">GIVE</a></li>
           <li class="top_links_m last"><a href="https://cronkitenews.azpbs.org/daily-newsletter-signup/">Subscribe</a></li>
           <li class="misc_links_m first"><a href="https://cronkitenews.azpbs.org/about-us/">About</a></li>
           <li class="misc_links_m"><a href="https://cronkitenews.azpbs.org/what-we-do/" target="_blank">What we do</a></li>
