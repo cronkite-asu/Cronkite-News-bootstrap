@@ -203,9 +203,6 @@ hr {
   border-image-slice: 1;
   border-right: 1px solid;
   border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
-  margin: 0 0 0 20px;
-  flex: 1 0 20px;
-  width: 100%;
 }
 .videos .candidate-position p, .spanish .candidate-position p, .candidate-profiles .candidate-position p, .key-dates .candidate-position p {
   font-family: "Roboto", sans-serif;

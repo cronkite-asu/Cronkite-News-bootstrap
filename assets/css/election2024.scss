@@ -240,10 +240,7 @@ hr {
   .candidate-divider {
     border-image-slice: 1;
     border-right: 1px solid;
-    border-image-source: linear-gradient(to right, $cnRed 50%, $cnBlue 50%);
-    margin: 0 0 0 20px;
-    flex: 1 0 20px;
-    width: 100%;
+    border-image-source: linear-gradient(to right, $cnRed 50%, $cnBlue 50%);    
   }
   .candidate-position {
     p {
@@ -254,7 +251,7 @@ hr {
       margin-bottom: 40px;
     }
   }
-  
+
 }
 
 .key-dates {
