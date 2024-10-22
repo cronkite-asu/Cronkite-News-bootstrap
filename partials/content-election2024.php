@@ -139,23 +139,19 @@ foreach ($mainStoryList as $mainStory) {
       <div class="grid-x grid-margin-x">
         <div class="carousel-stories">
         <?php
-          $args = [
-                  'post_type' => 'post',
-                  'orderby' => 'post_date',
-                  'order' => 'DESC',
-                  'cat' =>  22877,
-                  'posts_per_page' => 4,
-                  /*'post__not_in' => $candidateProfiles,*/
-          ];
-          $the_query = new WP_Query($args);
-          if ($the_query->have_posts()) {
-            while ($the_query->have_posts()) {
-              $the_query->the_post();
-
-              // save main story ID
-              $topStoriesArray[] = get_the_ID();
-              echo '<div class="large-3 medium-3 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'<h3>'.get_the_title(get_the_ID()).'</h3></a></div>';
+        $videoList = get_field('videos-list', 237021);
+        $videoCounter = 0;
+        foreach ($videoList as $video) {
+            $permalink = get_permalink($video);
+            $summary = get_field('story_tease', $video);
+            if (get_field('use_short_headline', $video) == 'yes' && get_field('homepage_headline', $video) != '') {
+                $title = get_field('homepage_headline', $video);
+            } else {
+                $title = get_the_title($video);
             }
+        ?>
+              <div class="large-3 medium-3 small-12 cell"><a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail(get_the_ID()); ?><h3><?php echo get_the_title(get_the_ID()) ?></h3></a></div>
+        <?php
           }
         ?>
         </div>
