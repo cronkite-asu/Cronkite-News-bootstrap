@@ -230,7 +230,7 @@
         }
       });
 
-      jQuery('.debate-carousel').slick({
+      jQuery('.debate-carousel, .carousel-stories').slick({
         infinite: true,
         dots: false,
         centerMode: false,
