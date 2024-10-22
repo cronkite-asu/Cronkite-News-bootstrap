@@ -139,11 +139,11 @@ foreach ($mainStoryList as $mainStory) {
       <div class="grid-x grid-margin-x">
         <div class="carousel-stories">
         <?php
-        $videoList = get_field('videos-list', 237021);
+        $videoList = get_field('videos', 237021);
         $videoCounter = 0;
         foreach ($videoList as $video) {
               $title = get_sub_field('title');
-              $permalink = get_sub_field('link');
+              $permalink = get_sub_field('yt_link');
               $screenshot = get_sub_field('screenshot');
         ?>
               <div class="large-3 medium-3 small-12 cell"><a href="<?php echo $permalink; ?>"><img src="<?php echo $screenshot; ?>" /><h3><?php echo $title; ?></h3></a></div>
