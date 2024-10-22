@@ -165,7 +165,7 @@ foreach ($mainStoryList as $mainStory) {
       </div>
       <div class="grid-x grid-padding-x">
         <!-- mayor -->
-        <div class="large-6 medium-6 small-12 cell candidate-divider bottom-divider">
+        <div class="large-6 medium-6 small-12 cell candidate-divider">
           <div class="grid-x grid-padding-x">
             <div class="large-12 medium-12 small-12 cell candidate-position">
               <p>Mayor</p>
@@ -191,11 +191,12 @@ foreach ($mainStoryList as $mainStory) {
         <?php } ?>
         <?php $candidateCounter++; ?>
         <?php } ?>
+            </hr>
           </div>
         </div>
 
         <!-- sheriff -->
-        <div class="large-6 medium-6 small-12 cell bottom-divider">
+        <div class="large-6 medium-6 small-12 cell">
           <div class="grid-x grid-padding-x">
             <div class="large-12 medium-12 small-12 cell candidate-position">
               <p>Sheriff</p>
@@ -221,11 +222,12 @@ foreach ($mainStoryList as $mainStory) {
         <?php } ?>
         <?php $candidateCounter++; ?>
         <?php } ?>
+            </hr>
           </div>
         </div>
 
         <!-- district 1 -->
-        <div class="large-6 medium-6 small-12 cell candidate-divider bottom-divider">
+        <div class="large-6 medium-6 small-12 cell candidate-divider">
           <div class="grid-x grid-padding-x">
             <div class="large-12 medium-12 small-12 cell candidate-position">
               <p>District 1</p>
@@ -252,11 +254,12 @@ foreach ($mainStoryList as $mainStory) {
         <?php } ?>
         <?php $candidateCounter++; ?>
         <?php } ?>
+            </hr>
           </div>
         </div>
 
         <!-- district 3 -->
-        <div class="large-6 medium-6 small-12 cell bottom-divider">
+        <div class="large-6 medium-6 small-12 cell">
           <div class="grid-x grid-padding-x">
             <div class="large-12 medium-12 small-12 cell candidate-position">
               <p>District 3</p>
@@ -282,11 +285,12 @@ foreach ($mainStoryList as $mainStory) {
         <?php } ?>
         <?php $candidateCounter++; ?>
         <?php } ?>
+            </hr>
           </div>
         </div>
 
         <!-- district 5 -->
-        <div class="large-6 medium-6 small-12 cell candidate-divider bottom-divider">
+        <div class="large-6 medium-6 small-12 cell candidate-divider">
           <div class="grid-x grid-padding-x">
             <div class="large-12 medium-12 small-12 cell candidate-position">
               <p>District 5</p>
@@ -311,12 +315,12 @@ foreach ($mainStoryList as $mainStory) {
             </div>
         <?php } ?>
         <?php $candidateCounter++; ?>
-        <?php } ?>
+        <?php } ?>            
           </div>
         </div>
 
         <!-- district 7 -->
-        <div class="large-6 medium-6 small-12 cell bottom-divider">
+        <div class="large-6 medium-6 small-12 cell">
           <div class="grid-x grid-padding-x">
             <div class="large-12 medium-12 small-12 cell candidate-position">
               <p>District 7</p>
