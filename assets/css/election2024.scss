@@ -420,7 +420,11 @@ hr {
   .latest-news-story {
     @media only screen
       and (max-width: 660px) {
-        border:1px solid #ff0000;
+        display: flex;
+        flex-direction: row;
+        div {
+          border:1px solid #ff0000;
+        }
     }
   }
 }
