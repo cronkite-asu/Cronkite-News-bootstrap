@@ -173,13 +173,13 @@ foreach ($mainStoryList as $mainStory) {
         <?php
             if ($candidateCounter < 2) {
         ?>
-            <div class="large-6 medium-6 small-12 cell candidate-position">
+            <div class="large-12 medium-12 small-12 cell candidate-position">
               <p>Mayor</p>
             </div>
         <?php
             } else if ($candidateCounter > 2 && $candidateCounter < 4) {
         ?>
-            <div class="large-6 medium-6 small-12 cell candidate-position">
+            <div class="large-12 medium-12 small-12 cell candidate-position">
               <p>Sheriff</p>
             </div>
         <?php
