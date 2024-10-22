@@ -111,9 +111,13 @@ hr {
 }
 #election-container .slide-aside h3 {
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.1rem;
+  line-height: 1.2;
   color: #003594;
+}
+#election-container .slide-aside h3:first-child {
+  margin-bottom: 15px;
 }
 @media only screen and (max-width: 660px) {
   #election-container .slide-aside h3 {
