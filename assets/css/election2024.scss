@@ -422,6 +422,7 @@ hr {
       and (max-width: 660px) {
         display: flex;
         flex-direction: row;
+        padding-bottom: 10px;
         margin-bottom: 10px;
         border-bottom: 1px solid $grey;
         a {
@@ -434,6 +435,7 @@ hr {
           width: 70%;
         }
         h3 {
+          padding-left: 10px;          
           margin:0px;
         }
     }
