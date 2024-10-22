@@ -199,7 +199,7 @@ hr {
 .videos h3 a:hover, .spanish h3 a:hover, .candidate-profiles h3 a:hover, .key-dates h3 a:hover {
   color: #0a0a0a !important;
 }
-.videos .candidate-profiles .candidate-divider, .spanish .candidate-profiles .candidate-divider, .candidate-profiles .candidate-profiles .candidate-divider, .key-dates .candidate-profiles .candidate-divider {
+.videos .candidate-divider, .spanish .candidate-divider, .candidate-profiles .candidate-divider, .key-dates .candidate-divider {
   border-image-slice: 1;
   border-right: 1px solid;
   border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
@@ -207,7 +207,7 @@ hr {
   flex: 1 0 20px;
   width: 100%;
 }
-.videos .candidate-profiles .candidate-position p, .spanish .candidate-profiles .candidate-position p, .candidate-profiles .candidate-profiles .candidate-position p, .key-dates .candidate-profiles .candidate-position p {
+.videos .candidate-position p, .spanish .candidate-position p, .candidate-profiles .candidate-position p, .key-dates .candidate-position p {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-weight: 600;
