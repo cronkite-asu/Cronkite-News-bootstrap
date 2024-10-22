@@ -378,9 +378,20 @@ foreach ($mainStoryList as $mainStory) {
                     'post_type' => 'post',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
-                    'category__and' =>  '22877,32929',
                     'posts_per_page' => 10,
-                    /*'post__not_in' => $candidateProfiles,*/
+                    'tax_query'         =>  array(
+                        'relation'      =>  'AND',
+                        array(
+                            'taxonomy' => 'category',
+                            'field'    => 'slug',
+                            'terms'    => 'noticias',
+                        ),
+                        array(
+                            'taxonomy' => 'category',
+                            'field'    => 'slug',
+                            'terms'    => 'election-2024',
+                        )
+                    )
             ];
             $the_query = new WP_Query($args);
             if ($the_query->have_posts()) {
