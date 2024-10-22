@@ -189,8 +189,8 @@ foreach ($mainStoryList as $mainStory) {
             <div class="large-6 medium-6 small-12 cell story">
               <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($profile); ?><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
             </div>
-        <?php $candidateCounter++; ?>
         <?php } ?>
+        <?php $candidateCounter++; ?>
         <?php } ?>
           </div>
         </div>
@@ -220,8 +220,8 @@ foreach ($mainStoryList as $mainStory) {
             <div class="large-6 medium-6 small-12 cell story">
               <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($profile); ?><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
             </div>
-        <?php $candidateCounter++; ?>
         <?php } ?>
+        <?php $candidateCounter++; ?>
         <?php } ?>
           </div>
         </div>
