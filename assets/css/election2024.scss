@@ -146,11 +146,11 @@ hr {
   .slide-aside {
     h3 {
       font-family: $robotoFontFamily;
-      font-weight: 500;
-      font-size: 1.1rem;      
+      font-weight: 400;
+      font-size: 1.1rem;
       line-height: 1.25rem;
       color: $cnBlue;
-      margin-top:6px;
+      margin-top:15px;
       @media only screen
         and (max-width: 660px) {
           font-weight: 400 !important;
