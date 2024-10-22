@@ -144,6 +144,10 @@ hr {
       width: 100%;
   }
   .slide-aside {
+    @media only screen
+      and (max-width: 660px) {
+        order: 2;
+    }
     h3 {
       font-family: $robotoFontFamily;
       font-weight: 400;
@@ -165,6 +169,12 @@ hr {
     }
     .spacer {
       margin-bottom: 10px;
+    }
+  }
+  .main-story {
+    @media only screen
+      and (max-width: 660px) {
+        order: 1;
     }
   }
   .top-stories {

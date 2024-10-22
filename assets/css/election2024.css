@@ -109,6 +109,11 @@ hr {
   flex: 1 0 20px;
   width: 100%;
 }
+@media only screen and (max-width: 660px) {
+  #election-container .slide-aside {
+    order: 2;
+  }
+}
 #election-container .slide-aside h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -131,6 +136,11 @@ hr {
 }
 #election-container .slide-aside .spacer {
   margin-bottom: 10px;
+}
+@media only screen and (max-width: 660px) {
+  #election-container .main-story {
+    order: 1;
+  }
 }
 #election-container .top-stories h4 {
   display: flex;
