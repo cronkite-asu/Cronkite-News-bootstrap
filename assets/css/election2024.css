@@ -202,6 +202,9 @@ hr {
 .videos .candidate-divider, .spanish .candidate-divider, .candidate-profiles .candidate-divider, .key-dates .candidate-divider {
   border-right: 1px solid #D8D8D8;
 }
+.videos .bottom-divider, .spanish .bottom-divider, .candidate-profiles .bottom-divider, .key-dates .bottom-divider {
+  border-bottom: 1px solid #D8D8D8;
+}
 .videos .candidate-position p, .spanish .candidate-position p, .candidate-profiles .candidate-position p, .key-dates .candidate-position p {
   font-family: "Roboto", sans-serif;
   font-weight: bold;

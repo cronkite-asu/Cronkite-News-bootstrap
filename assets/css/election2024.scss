@@ -240,13 +240,16 @@ hr {
   .candidate-divider {
     border-right: 1px solid $grey;
   }
+  .bottom-divider {
+    border-bottom: 1px solid $grey;
+  }
   .candidate-position {
     p {
       font-family: $robotoFontFamily;
       font-weight: bold;
       font-weight: 600;
       font-size: 0.95rem;
-      text-transform: uppercase;           
+      text-transform: uppercase;
     }
   }
 
