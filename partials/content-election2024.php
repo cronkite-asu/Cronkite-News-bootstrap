@@ -168,20 +168,19 @@ foreach ($mainStoryList as $mainStory) {
         $candidateProfilesList = get_field('candidate_profiles', 237021);
         $candidateCounter = 0;
         foreach ($candidateProfilesList as $profile) {
-        ?>
-          <div class="grid-x grid-padding-x">
-        <?php
             if ($candidateCounter < 2) {
         ?>
-            <div class="large-12 medium-12 small-12 cell candidate-position">
-              <p>Mayor</p>
-            </div>
+            <div class="grid-x grid-padding-x">
+              <div class="large-12 medium-12 small-12 cell candidate-position">
+                <p>Mayor</p>
+              </div>
         <?php
             } else if ($candidateCounter > 2 && $candidateCounter < 4) {
         ?>
-            <div class="large-12 medium-12 small-12 cell candidate-position">
-              <p>Sheriff</p>
-            </div>
+            <div class="grid-x grid-padding-x">
+              <div class="large-12 medium-12 small-12 cell candidate-position">
+                <p>Sheriff</p>
+              </div>
         <?php
             }
 
@@ -198,9 +197,20 @@ foreach ($mainStoryList as $mainStory) {
             <div class="large-6 medium-6 small-12 cell story">
               <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($profile); ?><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
             </div>
-        <?php $candidateCounter++; ?>
+        <?php
+          if ($candidateCounter < 2) {
+        ?>
+          </div>
+        <?php
+            } else if ($candidateCounter > 2 && $candidateCounter < 4) {
+        ?>
           </div>
         <?php } ?>
+        <?php
+
+            $candidateCounter++;
+          }
+        ?>
 
     </div>
   </div>
