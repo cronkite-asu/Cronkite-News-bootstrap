@@ -137,6 +137,7 @@ foreach ($mainStoryList as $mainStory) {
         </div>
       </div>
       <div class="grid-x grid-margin-x">
+        <div class="carousel-stories">
         <?php
           $args = [
                   'post_type' => 'post',
@@ -157,6 +158,7 @@ foreach ($mainStoryList as $mainStory) {
             }
           }
         ?>
+        </div>
       </div>
     </div>
   </div>

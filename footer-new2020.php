@@ -476,7 +476,7 @@
         ]
       });
 
-      $('.featured-health-stories').slick({
+      $('.featured-health-stories, .carousel-stories').slick({
         infinite: true,
         dots: false,
         centerMode: false,

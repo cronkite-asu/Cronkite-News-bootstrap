@@ -248,6 +248,44 @@ hr {
   font-size: 0.95rem;
   text-transform: uppercase;
 }
+.videos .carousel-stories, .spanish .carousel-stories, .candidate-profiles .carousel-stories, .key-dates .carousel-stories {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  /* the slides */
+  /* the parent */
+}
+.videos .carousel-stories .slick-prev, .spanish .carousel-stories .slick-prev, .candidate-profiles .carousel-stories .slick-prev, .key-dates .carousel-stories .slick-prev {
+  left: -25px;
+  z-index: 1000;
+}
+@media only screen and (max-width: 900px) {
+  .videos .carousel-stories .slick-prev, .spanish .carousel-stories .slick-prev, .candidate-profiles .carousel-stories .slick-prev, .key-dates .carousel-stories .slick-prev {
+    left: 10px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .videos .carousel-stories .slick-next, .spanish .carousel-stories .slick-next, .candidate-profiles .carousel-stories .slick-next, .key-dates .carousel-stories .slick-next {
+    right: 10px;
+  }
+}
+.videos .carousel-stories .slick-slide, .spanish .carousel-stories .slick-slide, .candidate-profiles .carousel-stories .slick-slide, .key-dates .carousel-stories .slick-slide {
+  margin: 0 12px;
+}
+@media only screen and (max-width: 900px) {
+  .videos .carousel-stories .slick-slide, .spanish .carousel-stories .slick-slide, .candidate-profiles .carousel-stories .slick-slide, .key-dates .carousel-stories .slick-slide {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.videos .carousel-stories .slick-list, .spanish .carousel-stories .slick-list, .candidate-profiles .carousel-stories .slick-list, .key-dates .carousel-stories .slick-list {
+  margin: 0 -12px;
+}
+.videos .carousel-stories .slick-prev:before, .videos .carousel-stories .slick-next:before, .spanish .carousel-stories .slick-prev:before, .spanish .carousel-stories .slick-next:before, .candidate-profiles .carousel-stories .slick-prev:before, .candidate-profiles .carousel-stories .slick-next:before, .key-dates .carousel-stories .slick-prev:before, .key-dates .carousel-stories .slick-next:before {
+  color: #003594;
+}
 
 .candidate-profiles hr {
   display: block;
