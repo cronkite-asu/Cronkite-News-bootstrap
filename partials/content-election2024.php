@@ -163,27 +163,45 @@ foreach ($mainStoryList as $mainStory) {
           <h4>Candidate Profiles</h4>
         </div>
       </div>
-      <div class="grid-x grid-margin-x">
-          <?php
-            $args = [
-                    'post_type' => 'post',
-                    'orderby' => 'post_date',
-                    'order' => 'DESC',
-                    'cat' =>  32929,
-                    'posts_per_page' => 14,
-                    'post__not_in' => $topStoriesArray
-            ];
-            $the_query = new WP_Query($args);
-            if ($the_query->have_posts()) {
-                while ($the_query->have_posts()) {
-                    $the_query->the_post();
-                    // save main story ID
-                    $topStoriesArray[] = get_the_ID();
-                    echo '<div class="large-3 medium-3 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'<h3>'.get_the_title(get_the_ID()).'</h3></a></div>';
-                }
+        <?php
+        // left side stories
+        $candidateProfilesList = get_field('candidate_profiles', 237021);
+        $candidateCounter = 0;
+        foreach ($candidateProfilesList as $profile) {
+        ?>
+          <div class="grid-x grid-padding-x">
+        <?php
+            if ($candidateCounter < 2) {
+        ?>
+            <div class="large-6 medium-6 small-12 cell candidate-position">
+              <p>Mayor</p>
+            </div>
+        <?php
+            } else if ($candidateCounter > 2 && $candidateCounter < 4) {
+        ?>
+            <div class="large-6 medium-6 small-12 cell candidate-position">
+              <p>Sheriff</p>
+            </div>
+        <?php
             }
-          ?>
-      </div>
+
+            $permalink = get_permalink($profile);
+            $summary = get_field('story_tease', $profile);
+            if (get_field('use_short_headline', $profile) == 'yes' && get_field('homepage_headline', $profile) != '') {
+                $title = get_field('homepage_headline', $profile);
+            } else {
+                $title = get_the_title($profile);
+            }
+            // save main story ID
+            $topStoriesArray[] = $profile;
+        ?>
+            <div class="large-6 medium-6 small-12 cell story">
+              <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($profile); ?><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
+            </div>
+        <?php $candidateCounter++; ?>
+          </div>
+        <?php } ?>
+
     </div>
   </div>
 </div>
