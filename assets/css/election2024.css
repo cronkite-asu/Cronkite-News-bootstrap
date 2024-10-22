@@ -148,7 +148,7 @@ hr {
 
 .videos, .spanish, .candidate-profiles, .key-dates {
   max-width: 80rem;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .videos h4, .spanish h4, .candidate-profiles h4, .key-dates h4 {
   display: flex;
