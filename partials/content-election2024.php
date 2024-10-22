@@ -386,6 +386,7 @@ foreach ($mainStoryList as $mainStory) {
             if ($the_query->have_posts()) {
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
+                    $permalink = get_permalink(get_the_ID());
                     if (get_field('use_short_headline', get_the_ID()) == 'yes' && get_field('homepage_headline', get_the_ID()) != '') {
                         $title = get_field('homepage_headline', get_the_ID());
                     } else {
@@ -412,7 +413,7 @@ foreach ($mainStoryList as $mainStory) {
         </div>
       </div>
       <div class="grid-x grid-margin-x">
-          <?php            
+          <?php
             $args = [
                     'post_type' => 'post',
                     'orderby' => 'post_date',
