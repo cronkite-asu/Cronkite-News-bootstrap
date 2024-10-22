@@ -166,17 +166,15 @@ foreach ($mainStoryList as $mainStory) {
       <div class="grid-x grid-padding-x">
         <div class="large-6 medium-6 small-12 cell">
           <div class="grid-x grid-padding-x">
+            <div class="large-12 medium-12 small-12 cell candidate-position">
+              <p>Mayor</p>
+            </div>
         <?php
         // left side stories
         $candidateProfilesList = get_field('candidate_profiles', 237021);
         $candidateCounter = 0;
         foreach ($candidateProfilesList as $profile) {
             if ($candidateCounter < 2) {
-        ?>
-            <div class="large-12 medium-12 small-12 cell candidate-position">
-              <p>Mayor</p>
-            </div>
-        <?php
             $permalink = get_permalink($profile);
             $summary = get_field('story_tease', $profile);
             if (get_field('use_short_headline', $profile) == 'yes' && get_field('homepage_headline', $profile) != '') {
