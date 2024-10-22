@@ -435,7 +435,7 @@ foreach ($mainStoryList as $mainStory) {
                     } else {
                         $title = get_the_title(get_the_ID());
                     }
-                    echo '<div class="large-3 medium-3 small-12 cell"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'</a><a href="'.$permalink.'"><h3>'.$title.'</a></h3></div>';
+                    echo '<div class="large-3 medium-3 small-12 cell latest-news-story"><a href="'.$permalink.'">'.get_the_post_thumbnail(get_the_ID()).'<h3>'.$title.'</h3></a></div>';                                        
                 }
             }
           ?>
