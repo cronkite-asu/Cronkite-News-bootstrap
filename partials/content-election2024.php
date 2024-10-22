@@ -163,6 +163,9 @@ foreach ($mainStoryList as $mainStory) {
           <h4>Candidate Profiles</h4>
         </div>
       </div>
+      <div class="grid-x grid-padding-x">
+        <div class="large-6 medium-6 small-12 cell">
+          <div class="grid-x grid-padding-x">
         <?php
         // left side stories
         $candidateProfilesList = get_field('candidate_profiles', 237021);
@@ -170,20 +173,10 @@ foreach ($mainStoryList as $mainStory) {
         foreach ($candidateProfilesList as $profile) {
             if ($candidateCounter < 2) {
         ?>
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 medium-12 small-12 cell candidate-position">
-                <p>Mayor</p>
-              </div>
+            <div class="large-12 medium-12 small-12 cell candidate-position">
+              <p>Mayor</p>
+            </div>
         <?php
-            } else if ($candidateCounter > 2 && $candidateCounter < 4) {
-        ?>
-            <div class="grid-x grid-padding-x">
-              <div class="large-12 medium-12 small-12 cell candidate-position">
-                <p>Sheriff</p>
-              </div>
-        <?php
-            }
-
             $permalink = get_permalink($profile);
             $summary = get_field('story_tease', $profile);
             if (get_field('use_short_headline', $profile) == 'yes' && get_field('homepage_headline', $profile) != '') {
@@ -197,21 +190,12 @@ foreach ($mainStoryList as $mainStory) {
             <div class="large-6 medium-6 small-12 cell story">
               <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($profile); ?><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
             </div>
-        <?php
-          if ($candidateCounter < 2) {
-        ?>
-          </div>
-        <?php
-            } else if ($candidateCounter > 2 && $candidateCounter < 4) {
-        ?>
-          </div>
+        <?php $candidateCounter++; ?>
         <?php } ?>
-        <?php
-
-            $candidateCounter++;
-          }
-        ?>
-
+        <?php } ?>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
