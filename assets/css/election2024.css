@@ -207,7 +207,7 @@ hr {
   font-weight: bold;
   font-weight: 600;
   font-size: 0.95rem;
-  margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
 .key-dates {
