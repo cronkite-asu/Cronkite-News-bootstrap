@@ -115,9 +115,7 @@ hr {
   font-size: 1.1rem;
   line-height: 1.2;
   color: #003594;
-}
-#election-container .slide-aside h3:first-child {
-  margin-bottom: 15px;
+  margin-top: 6px;
 }
 @media only screen and (max-width: 660px) {
   #election-container .slide-aside h3 {
@@ -130,6 +128,9 @@ hr {
 }
 #election-container .slide-aside h3 a:hover {
   color: #0a0a0a !important;
+}
+#election-container .slide-aside .spacer {
+  margin-bottom: 10px;
 }
 #election-container .top-stories h4 {
   display: flex;

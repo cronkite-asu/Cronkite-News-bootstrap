@@ -27,6 +27,9 @@ foreach ($mainStoryList as $mainStory) {
               if ($mainStoryCounter > 0 && $mainStoryCounter < 3) {
                   $permalink = get_permalink($mainStory);
                   $summary = get_field('story_tease', $mainStory);
+                  if ($mainStoryCounter == 0) {
+                    $firstChild = 'spacer';
+                  }
                   if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
                       $title = get_field('homepage_headline', $mainStory);
                   } else {
@@ -36,8 +39,8 @@ foreach ($mainStoryList as $mainStory) {
                   // save main story ID
                   $topStoriesArray[] = $mainStory;
             ?>
-                <div class="large-12 medium-12 small-12 cell story">
-                  <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
+                <div class="large-12 medium-12 small-12 cell <?php echo $firstChild; ?>">
+                  <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?><h3><?php echo $title; ?></h3></a>
                 </div>
             <?php
               }

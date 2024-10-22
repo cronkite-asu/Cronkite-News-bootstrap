@@ -151,9 +151,7 @@ hr {
       font-size: 1.1rem;
       line-height: 1.2;
       color: $cnBlue;
-      &:first-child {
-        margin-bottom: 15px;
-      }
+      margin-top:6px;
       @media only screen
         and (max-width: 660px) {
           font-weight: 400 !important;
@@ -165,6 +163,9 @@ hr {
           color: $black !important;
         }
       }
+    }
+    .spacer {
+      margin-bottom: 10px;
     }
   }
   .top-stories {
