@@ -191,7 +191,7 @@ foreach ($mainStoryList as $mainStory) {
         <?php } ?>
         <?php $candidateCounter++; ?>
         <?php } ?>
-            </hr>
+            <hr>
           </div>
         </div>
 
@@ -222,7 +222,7 @@ foreach ($mainStoryList as $mainStory) {
         <?php } ?>
         <?php $candidateCounter++; ?>
         <?php } ?>
-            </hr>
+            <hr>
           </div>
         </div>
 
@@ -254,7 +254,7 @@ foreach ($mainStoryList as $mainStory) {
         <?php } ?>
         <?php $candidateCounter++; ?>
         <?php } ?>
-            </hr>
+            <hr>
           </div>
         </div>
 
@@ -285,7 +285,7 @@ foreach ($mainStoryList as $mainStory) {
         <?php } ?>
         <?php $candidateCounter++; ?>
         <?php } ?>
-            </hr>
+            <hr>
           </div>
         </div>
 
@@ -315,7 +315,7 @@ foreach ($mainStoryList as $mainStory) {
             </div>
         <?php } ?>
         <?php $candidateCounter++; ?>
-        <?php } ?>            
+        <?php } ?>
           </div>
         </div>
 
