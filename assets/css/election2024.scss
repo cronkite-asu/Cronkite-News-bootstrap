@@ -336,11 +336,13 @@ hr {
       width: 100%;
     }
     .candidate-position {
-      font-family: $robotoFontFamily;
-      font-weight: bold;
-      font-weight: 600;
-      font-size: 0.95rem;
-      margin-bottom: 40px;
+      p {
+        font-family: $robotoFontFamily;
+        font-weight: bold;
+        font-weight: 600;
+        font-size: 0.95rem;
+        margin-bottom: 40px;
+      }
     }
     h4 {
       margin-bottom: 15px;

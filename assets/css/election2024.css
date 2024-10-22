@@ -290,7 +290,7 @@ hr {
   flex: 1 0 20px;
   width: 100%;
 }
-.election-details .candidate-profiles .candidate-position {
+.election-details .candidate-profiles .candidate-position p {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-weight: 600;
