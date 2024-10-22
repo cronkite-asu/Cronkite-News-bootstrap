@@ -411,7 +411,7 @@ foreach ($mainStoryList as $mainStory) {
     <div class="large-12 medium-12 small-12 cell">
       <div class="grid-x grid-padding-x">
         <div class="large-12 medium-12 small-12 cell">
-          <h4>Latest News</h4>
+          <h4>More Coverage</h4>
         </div>
       </div>
       <div class="grid-x grid-margin-x">
