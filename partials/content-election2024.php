@@ -372,13 +372,14 @@ foreach ($mainStoryList as $mainStory) {
         </div>
       </div>
       <div class="grid-x grid-margin-x">
+        <div class="carousel-stories">
           <?php
             $args = [
                     'post_type' => 'post',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
                     'category__and' =>  '22877,32929',
-                    'posts_per_page' => 4,
+                    'posts_per_page' => 10,
                     /*'post__not_in' => $candidateProfiles,*/
             ];
             $the_query = new WP_Query($args);
@@ -396,6 +397,7 @@ foreach ($mainStoryList as $mainStory) {
                 }
             }
           ?>
+        </div>
       </div>
     </div>
   </div>
