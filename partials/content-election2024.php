@@ -165,7 +165,7 @@ foreach ($mainStoryList as $mainStory) {
       </div>
       <div class="grid-x grid-padding-x">
         <!-- mayor -->
-        <div class="large-6 medium-6 small-12 cell">
+        <div class="large-6 medium-6 small-12 cell candidate-divider">
           <div class="grid-x grid-padding-x">
             <div class="large-12 medium-12 small-12 cell candidate-position">
               <p>Mayor</p>
@@ -207,6 +207,68 @@ foreach ($mainStoryList as $mainStory) {
         $candidateCounter = 0;
         foreach ($candidateProfilesList as $profile) {
             if ($candidateCounter > 2 && $candidateCounter < 5) {
+            $permalink = get_permalink($profile);
+            $summary = get_field('story_tease', $profile);
+            if (get_field('use_short_headline', $profile) == 'yes' && get_field('homepage_headline', $profile) != '') {
+                $title = get_field('homepage_headline', $profile);
+            } else {
+                $title = get_the_title($profile);
+            }
+            // save main story ID
+            $topStoriesArray[] = $profile;
+        ?>
+            <div class="large-6 medium-6 small-12 cell story">
+              <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($profile); ?><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
+            </div>
+        <?php } ?>
+        <?php $candidateCounter++; ?>
+        <?php } ?>
+          </div>
+        </div>
+
+        <!-- district 1 -->
+        <div class="large-6 medium-6 small-12 cell candidate-divider">
+          <div class="grid-x grid-padding-x">
+            <div class="large-12 medium-12 small-12 cell candidate-position">
+              <p>District 1</p>
+            </div>
+        <?php
+        // left side stories
+        $candidateProfilesList = get_field('candidate_profiles', 237021);
+        $candidateCounter = 0;
+        foreach ($candidateProfilesList as $profile) {
+            if ($candidateCounter > 5 && $candidateCounter < 7) {
+            $permalink = get_permalink($profile);
+            $summary = get_field('story_tease', $profile);
+            if (get_field('use_short_headline', $profile) == 'yes' && get_field('homepage_headline', $profile) != '') {
+                $title = get_field('homepage_headline', $profile);
+            } else {
+                $title = get_the_title($profile);
+            }
+            // save main story ID
+            $topStoriesArray[] = $profile;
+        ?>
+            <div class="large-6 medium-6 small-12 cell story">
+              <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($profile); ?><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
+            </div>
+        <?php } ?>
+        <?php $candidateCounter++; ?>
+        <?php } ?>
+          </div>
+        </div>
+
+        <!-- district 3 -->
+        <div class="large-6 medium-6 small-12 cell candidate-divider">
+          <div class="grid-x grid-padding-x">
+            <div class="large-12 medium-12 small-12 cell candidate-position">
+              <p>District 3</p>
+            </div>
+        <?php
+        // left side stories
+        $candidateProfilesList = get_field('candidate_profiles', 237021);
+        $candidateCounter = 0;
+        foreach ($candidateProfilesList as $profile) {
+            if ($candidateCounter > 7 && $candidateCounter < 12) {
             $permalink = get_permalink($profile);
             $summary = get_field('story_tease', $profile);
             if (get_field('use_short_headline', $profile) == 'yes' && get_field('homepage_headline', $profile) != '') {
