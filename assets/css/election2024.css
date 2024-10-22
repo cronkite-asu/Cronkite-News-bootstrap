@@ -146,211 +146,6 @@ hr {
   color: #0a0a0a;
 }
 
-.election-details {
-  max-width: 80rem;
-  margin-top: 25px;
-}
-.election-details h4 {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: #003594;
-  text-transform: uppercase;
-  margin-bottom: 0;
-}
-.election-details h4 a {
-  color: #003594 !important;
-}
-.election-details h4 a:hover {
-  color: #003594 !important;
-}
-.election-details h4:after {
-  content: "";
-  border-image-slice: 1;
-  border-top: 1px solid;
-  border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
-  margin: 0 0 0 20px;
-  flex: 1 0 20px;
-  width: 100%;
-}
-.election-details .election-key {
-  display: flex;
-  flex-direction: row;
-  background-color: #f4f4f4;
-  padding: 6px 0;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  justify-content: center;
-}
-.election-details .election-key .red-circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-left: 15px;
-}
-.election-details .election-key .red-circle:before {
-  width: 15px;
-  height: 15px;
-  display: block;
-  content: " ";
-  background-color: #c31212;
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
-  margin-right: 15px;
-}
-.election-details .election-key .blue-circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-.election-details .election-key .blue-circle:before {
-  width: 15px;
-  height: 15px;
-  display: block;
-  content: " ";
-  background-color: #003594;
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
-  border-radius: 15px;
-  margin-right: 15px;
-}
-.election-details .election-key-dates {
-  display: flex;
-  flex-direction: row;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #ddd;
-}
-.election-details .election-key-dates.last-child {
-  border-bottom: none;
-}
-.election-details .election-key-dates:hover {
-  background-color: #f2f2f2;
-}
-.election-details .election-key-dates .event-date {
-  text-align: center;
-  color: #ffffff;
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  width: 60px;
-  line-height: 20px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  -webkit-box-shadow: 0 8px 6px -6px #b8b8b8;
-  -moz-box-shadow: 0 8px 6px -6px #b8b8b8;
-  box-shadow: 0 8px 6px -6px #b8b8b8;
-}
-.election-details .election-key-dates .event-date.red {
-  background-color: #c31212;
-}
-.election-details .election-key-dates .event-date.blue {
-  background-color: #003594;
-}
-.election-details .election-key-dates .event-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 80%;
-  margin-left: 15px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
-  padding-left: 15px;
-}
-.election-details .partners {
-  margin-top: 40px;
-  margin-bottom: 25px;
-}
-.election-details .partner-logos img, .election-details .partner-logos svg {
-  width: 80%;
-  margin-bottom: 30px;
-}
-.election-details .partner-logos img.cn-logo, .election-details .partner-logos svg.cn-logo {
-  width: 60%;
-}
-.election-details .faq-section {
-  margin-top: 15px;
-}
-.election-details .candidate-profiles .candidate-divider {
-  border-image-slice: 1;
-  border-right: 1px solid;
-  border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
-  margin: 0 0 0 20px;
-  flex: 1 0 20px;
-  width: 100%;
-}
-.election-details .candidate-profiles .candidate-position p {
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 40px;
-}
-.election-details .candidate-profiles h4 {
-  margin-bottom: 15px;
-}
-.election-details .candidate-profiles a {
-  color: #003594;
-}
-.election-details .candidate-profiles a h3 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 0.95rem;
-  margin-bottom: 40px;
-}
-.election-details .candidate-profiles .prop-zone h3 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 1rem;
-  margin-bottom: 5px;
-}
-.election-details #standing-placements {
-  padding-bottom: 20px;
-}
-.election-details #standing-placements div img {
-  width: 100px;
-}
-.election-details #standing-placements div.special-ad img {
-  width: 100% !important;
-}
-.election-details #standing-placements div.icons-standing {
-  display: flex;
-  flex-flow: row;
-  align-items: center;
-  justify-content: center;
-  margin-top: 25px;
-}
-.election-details #standing-placements div h3 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 1.15rem;
-  margin-top: 16px;
-  padding: 0 0 0 25px;
-}
-@media only screen and (max-width: 660px) {
-  .election-details #standing-placements div h3 {
-    font-weight: 400 !important;
-    font-size: 1.15rem !important;
-  }
-}
-.election-details #standing-placements div h3 a {
-  color: #0a0a0a !important;
-}
-.election-details #standing-placements div h3 a:hover {
-  color: #003594 !important;
-}
-
 .videos, .spanish, .candidate-profiles, .key-dates {
   max-width: 80rem;
   margin-bottom: 50px;
@@ -403,6 +198,21 @@ hr {
 }
 .videos h3 a:hover, .spanish h3 a:hover, .candidate-profiles h3 a:hover, .key-dates h3 a:hover {
   color: #0a0a0a !important;
+}
+.videos .candidate-profiles .candidate-divider, .spanish .candidate-profiles .candidate-divider, .candidate-profiles .candidate-profiles .candidate-divider, .key-dates .candidate-profiles .candidate-divider {
+  border-image-slice: 1;
+  border-right: 1px solid;
+  border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
+  margin: 0 0 0 20px;
+  flex: 1 0 20px;
+  width: 100%;
+}
+.videos .candidate-profiles .candidate-position p, .spanish .candidate-profiles .candidate-position p, .candidate-profiles .candidate-profiles .candidate-position p, .key-dates .candidate-profiles .candidate-position p {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 40px;
 }
 
 .key-dates {

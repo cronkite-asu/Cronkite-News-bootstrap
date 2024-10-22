@@ -185,227 +185,6 @@ hr {
   }
 }
 
-.election-details {
-  max-width: 80rem;
-  margin-top:25px;
-  h4  {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    font-family: $montserratFontFamily;
-    font-weight: 700;
-    font-size: 1.15rem;
-    color: $cnBlue;
-    text-transform: uppercase;
-    margin-bottom: 0;
-    a {
-      color:$cnBlue !important;
-      &:hover {
-        color:$cnBlue !important;
-      }
-    }
-  }
-  h4:after {
-      content: '';
-      border-image-slice: 1;
-      border-top: 1px solid;
-      border-image-source: linear-gradient(to right, $cnRed 50%, $cnBlue 50%);
-      margin: 0 0 0 20px;
-      flex: 1 0 20px;
-      width: 100%;
-  }
-  .election-key {
-    display: flex;
-    flex-direction: row;
-    background-color: #f4f4f4;
-    padding: 6px 0;
-    margin-top:15px;
-    margin-bottom: 10px;
-    justify-content: center;
-    .red-circle {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: $robotoFontFamily;
-      font-weight: 400;
-      text-transform: uppercase;
-      margin-left: 15px;
-      &:before {
-        width: 15px;
-        height: 15px;
-        display: block;
-        content: " ";
-        background-color: $cnRed;
-        -moz-border-radius: 15px;
-        -webkit-border-radius: 15px;
-        border-radius: 15px;
-        margin-right: 15px;
-      }
-    }
-    .blue-circle {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: $robotoFontFamily;
-      font-weight: 400;
-      text-transform: uppercase;
-      &:before {
-        width: 15px;
-        height: 15px;
-        display: block;
-        content: " ";
-        background-color: $cnBlue;
-        -moz-border-radius: 15px;
-        -webkit-border-radius: 15px;
-        border-radius: 15px;
-        margin-right: 15px;
-      }
-    }
-  }
-  .election-key-dates {
-    display: flex;
-    flex-direction: row;
-    padding-top:15px;
-    padding-bottom:15px;
-    border-bottom: 1px solid #ddd;
-    &.last-child {
-      border-bottom: none;
-    }
-    &:hover {
-      background-color: #f2f2f2;
-    }
-    .event-date {
-      text-align: center;
-      color: $white;
-      font-family: $montserratFontFamily;
-      font-weight: bold;
-      width: 60px;
-      line-height: 20px;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      -webkit-box-shadow: 0 8px 6px -6px #b8b8b8;
-      -moz-box-shadow: 0 8px 6px -6px #b8b8b8;
-      box-shadow: 0 8px 6px -6px #b8b8b8;
-      &.red {
-        background-color: $cnRed;
-      }
-      &.blue {
-        background-color: $cnBlue;
-      }
-    }
-    .event-title {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 80%;
-      margin-left: 15px;
-      font-family: $montserratFontFamily;
-      font-size: 1rem;
-      font-weight: bold;
-      padding-left: 15px;
-    }
-  }
-
-  .partners {
-    margin-top:40px;
-    margin-bottom: 25px;
-  }
-
-  .partner-logos {
-    img, svg {
-      width: 80%;
-      margin-bottom: 30px;
-      &.cn-logo {
-        width: 60%;
-      }
-    }
-  }
-
-  .faq-section {
-    margin-top:15px;
-  }
-
-  .candidate-profiles {
-    .candidate-divider {
-      border-image-slice: 1;
-      border-right: 1px solid;
-      border-image-source: linear-gradient(to right, $cnRed 50%, $cnBlue 50%);
-      margin: 0 0 0 20px;
-      flex: 1 0 20px;
-      width: 100%;
-    }
-    .candidate-position {
-      p {
-        font-family: $robotoFontFamily;
-        font-weight: bold;
-        font-weight: 600;
-        font-size: 0.95rem;
-        margin-bottom: 40px;
-      }
-    }
-    h4 {
-      margin-bottom: 15px;
-    }
-    a {
-      color: $cnBlue;
-      h3 {
-        font-family: $robotoFontFamily;
-        font-weight: 500;
-        font-size: 0.95rem;
-        margin-bottom: 40px;
-      }
-    }
-    .prop-zone {
-      h3 {
-        font-family: $robotoFontFamily;
-        font-weight: 500;
-        font-size: 1rem;
-        margin-bottom: 5px;
-      }
-    }
-  }
-
-  #standing-placements {
-    padding-bottom: 20px;
-    div {
-      img {
-        width: 100px;
-      }
-      &.special-ad {
-        img {
-          width: 100% !important;
-        }
-      }
-      &.icons-standing {
-        display: flex;
-        flex-flow: row;
-        align-items: center;
-        justify-content: center;
-        margin-top: 25px;
-      }
-      h3 {
-        font-family: "Roboto", sans-serif;
-        font-weight: 500;
-        font-size: 1.15rem;
-        margin-top: 16px;
-        padding: 0 0 0 25px;
-        @media only screen
-          and (max-width: 660px) {
-            font-weight: 400 !important;
-            font-size: 1.15rem !important;
-        }
-        a {
-          color: $black !important;
-          &:hover {
-            color: $cnBlue !important;
-          }
-        }
-      }
-    }
-  }
-}
-
 .videos, .spanish, .candidate-profiles, .key-dates {
   max-width: 80rem;
   margin-bottom: 50px;
@@ -454,6 +233,25 @@ hr {
       color: $cnBlue !important;
       &:hover {
         color: $black !important;
+      }
+    }
+  }
+  .candidate-profiles {
+    .candidate-divider {
+      border-image-slice: 1;
+      border-right: 1px solid;
+      border-image-source: linear-gradient(to right, $cnRed 50%, $cnBlue 50%);
+      margin: 0 0 0 20px;
+      flex: 1 0 20px;
+      width: 100%;
+    }
+    .candidate-position {
+      p {
+        font-family: $robotoFontFamily;
+        font-weight: bold;
+        font-weight: 600;
+        font-size: 0.95rem;
+        margin-bottom: 40px;
       }
     }
   }
