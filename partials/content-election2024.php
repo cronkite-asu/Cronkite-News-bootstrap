@@ -206,7 +206,7 @@ foreach ($mainStoryList as $mainStory) {
         $candidateProfilesList = get_field('candidate_profiles', 237021);
         $candidateCounter = 0;
         foreach ($candidateProfilesList as $profile) {
-            if ($candidateCounter > 2 && $candidateCounter < 5) {
+            if ($candidateCounter >= 2 && $candidateCounter < 4) {
             $permalink = get_permalink($profile);
             $summary = get_field('story_tease', $profile);
             if (get_field('use_short_headline', $profile) == 'yes' && get_field('homepage_headline', $profile) != '') {
@@ -237,7 +237,7 @@ foreach ($mainStoryList as $mainStory) {
         $candidateProfilesList = get_field('candidate_profiles', 237021);
         $candidateCounter = 0;
         foreach ($candidateProfilesList as $profile) {
-            if ($candidateCounter > 5 && $candidateCounter < 7) {
+            if ($candidateCounter >= 4 && $candidateCounter < 5) {
             $permalink = get_permalink($profile);
             $summary = get_field('story_tease', $profile);
             if (get_field('use_short_headline', $profile) == 'yes' && get_field('homepage_headline', $profile) != '') {
@@ -268,7 +268,7 @@ foreach ($mainStoryList as $mainStory) {
         $candidateProfilesList = get_field('candidate_profiles', 237021);
         $candidateCounter = 0;
         foreach ($candidateProfilesList as $profile) {
-            if ($candidateCounter > 7 && $candidateCounter < 12) {
+            if ($candidateCounter >= 5 && $candidateCounter < 7) {
             $permalink = get_permalink($profile);
             $summary = get_field('story_tease', $profile);
             if (get_field('use_short_headline', $profile) == 'yes' && get_field('homepage_headline', $profile) != '') {
@@ -299,7 +299,7 @@ foreach ($mainStoryList as $mainStory) {
         $candidateProfilesList = get_field('candidate_profiles', 237021);
         $candidateCounter = 0;
         foreach ($candidateProfilesList as $profile) {
-            if ($candidateCounter > 12 && $candidateCounter < 15) {
+            if ($candidateCounter >= 7 && $candidateCounter < 9) {
             $permalink = get_permalink($profile);
             $summary = get_field('story_tease', $profile);
             if (get_field('use_short_headline', $profile) == 'yes' && get_field('homepage_headline', $profile) != '') {
@@ -330,7 +330,7 @@ foreach ($mainStoryList as $mainStory) {
         $candidateProfilesList = get_field('candidate_profiles', 237021);
         $candidateCounter = 0;
         foreach ($candidateProfilesList as $profile) {
-            if ($candidateCounter > 15 && $candidateCounter < 22) {
+            if ($candidateCounter >= 9 && $candidateCounter < 14) {
             $permalink = get_permalink($profile);
             $summary = get_field('story_tease', $profile);
             if (get_field('use_short_headline', $profile) == 'yes' && get_field('homepage_headline', $profile) != '') {
