@@ -83,6 +83,9 @@ foreach ($mainStoryList as $mainStory) {
               <div class="large-3 medium-3 small-12 cell top-stories">
                 <div class="grid-x grid-padding-x">
                   <div class="large-12 medium-12 small-12 cell">
+                    <h4>Top stories</h4>
+                  </div>
+                  <div class="large-12 medium-12 small-12 cell">
                     <ul>
         <?php
                     foreach ($mainStoryList as $mainStory) {

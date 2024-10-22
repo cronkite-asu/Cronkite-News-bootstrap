@@ -164,6 +164,35 @@ hr {
     }
   }
   .top-stories {
+    h4 {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      font-family: $montserratFontFamily;
+      font-weight: 700;
+      color: $cnBlue;
+      padding-top:15px;
+      text-transform: uppercase;
+      margin-top: 0px;
+      margin-bottom: 25px;
+      a {
+        color:$cnBlue !important;
+        &:hover {
+          color:$cnBlue !important;
+        }
+      }
+    }
+    h4:after {
+        content: '';
+        /*border-top: 1px solid $cnBlue;*/
+        border-image-slice: 1;
+        border-top: 1px solid;
+        border-image-source: linear-gradient(to right, $cnRed 50%, $cnBlue 50%);
+        margin: 0 0 0 20px;
+        flex: 1 0 20px;
+        width: 100%;
+    }
     ul {
       margin: 0px;
       li {

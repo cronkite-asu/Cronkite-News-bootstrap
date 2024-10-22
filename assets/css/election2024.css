@@ -127,6 +127,35 @@ hr {
 #election-container .slide-aside h3 a:hover {
   color: #0a0a0a !important;
 }
+#election-container .top-stories h4 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #003594;
+  padding-top: 15px;
+  text-transform: uppercase;
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+#election-container .top-stories h4 a {
+  color: #003594 !important;
+}
+#election-container .top-stories h4 a:hover {
+  color: #003594 !important;
+}
+#election-container .top-stories h4:after {
+  content: "";
+  /*border-top: 1px solid $cnBlue;*/
+  border-image-slice: 1;
+  border-top: 1px solid;
+  border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
+  margin: 0 0 0 20px;
+  flex: 1 0 20px;
+  width: 100%;
+}
 #election-container .top-stories ul {
   margin: 0px;
 }
