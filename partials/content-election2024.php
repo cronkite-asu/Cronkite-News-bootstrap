@@ -283,6 +283,7 @@ foreach ($mainStoryList as $mainStory) {
         <?php } ?>
         <?php $candidateCounter++; ?>
         <?php } ?>
+            <hr>
           </div>
         </div>
 
