@@ -117,7 +117,6 @@ hr {
       }
     }
   }
-
   h4, h5 {
     display: flex;
     width: 100%;
@@ -148,8 +147,8 @@ hr {
     h3 {
       font-family: $robotoFontFamily;
       font-weight: 500;
-      font-size: 1.1rem;
-      line-height: 1.2;
+      font-size: 1.1rem;      
+      line-height: 1.25rem;
       color: $cnBlue;
       margin-top:6px;
       @media only screen
@@ -403,68 +402,6 @@ hr {
     font-size: 0.75rem;
     color: $white;
     padding: 2px 10px;
-  }
-}
-
-/* latest stories */
-.latest-stories {
-  max-width: 80rem;
-  border-top:none !important;
-  margin-top: 40px;
-  h4 {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    font-family: $montserratFontFamily;
-    font-weight: 700;
-    color: $cnBlue;
-    text-transform: uppercase;
-    margin-bottom: 0;
-    a {
-      color:$cnBlue !important;
-      &:hover {
-        color:$cnBlue !important;
-      }
-    }
-  }
-  h4:after {
-      content: '';
-      border-image-slice: 1;
-      border-top: 1px solid;
-      border-image-source: linear-gradient(to right, $cnRed 50%, $cnBlue 50%);
-      margin: 0 0 0 20px;
-      flex: 1 0 20px;
-      width: 100%;
-  }
-  h3 {
-    font-family: $robotoFontFamily;
-    font-weight: 400;
-    font-size: 1.1rem;
-    margin-top: 16px;
-    @media only screen
-      and (max-width: 660px) {
-        font-weight: 400 !important;
-        font-size: 1.15rem !important;
-    }
-    a {
-      color: $cnBlue !important;
-      &:hover {
-        color: $black !important;
-      }
-    }
-  }
-  .grid-padding-x > .cell {
-    margin-bottom: 0px;
-  }
-  .grid-padding-x > .cell:first-child {
-    margin-bottom: 20px;
-  }
-  .small-stories {
-    h3 {
-      margin:0;
-      font-size: 1rem;
-    }
   }
 }
 

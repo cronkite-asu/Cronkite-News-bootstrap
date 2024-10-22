@@ -412,8 +412,7 @@ foreach ($mainStoryList as $mainStory) {
         </div>
       </div>
       <div class="grid-x grid-margin-x">
-          <?php
-            print_r($topStoriesArray);
+          <?php            
             $args = [
                     'post_type' => 'post',
                     'orderby' => 'post_date',
