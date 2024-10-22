@@ -282,6 +282,21 @@ hr {
 .election-details .faq-section {
   margin-top: 15px;
 }
+.election-details .candidate-profiles .candidate-divider {
+  border-image-slice: 1;
+  border-right: 1px solid;
+  border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
+  margin: 0 0 0 20px;
+  flex: 1 0 20px;
+  width: 100%;
+}
+.election-details .candidate-profiles .candidate-position {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 40px;
+}
 .election-details .candidate-profiles h4 {
   margin-bottom: 15px;
 }
