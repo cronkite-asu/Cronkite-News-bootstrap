@@ -223,7 +223,7 @@ foreach ($mainStoryList as $mainStory) {
                 $title = get_the_title($profile);
             }
             // save main story ID
-            $topStoriesArray[] = get_the_ID();
+            $topStoriesArray[] = $profile;
         ?>
             <div class="large-6 medium-6 small-12 cell story">
               <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($profile); ?><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
