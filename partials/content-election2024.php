@@ -142,15 +142,11 @@ foreach ($mainStoryList as $mainStory) {
         $videoList = get_field('videos-list', 237021);
         $videoCounter = 0;
         foreach ($videoList as $video) {
-            $permalink = get_permalink($video);
-            $summary = get_field('story_tease', $video);
-            if (get_field('use_short_headline', $video) == 'yes' && get_field('homepage_headline', $video) != '') {
-                $title = get_field('homepage_headline', $video);
-            } else {
-                $title = get_the_title($video);
-            }
+              $title = get_sub_field('title');
+              $permalink = get_sub_field('link');
+              $screenshot = get_sub_field('screenshot');
         ?>
-              <div class="large-3 medium-3 small-12 cell"><a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail(get_the_ID()); ?><h3><?php echo get_the_title(get_the_ID()) ?></h3></a></div>
+              <div class="large-3 medium-3 small-12 cell"><a href="<?php echo $permalink; ?>"><img src="<?php echo $screenshot; ?>" /><h3><?php echo $title; ?></h3></a></div>
         <?php
           }
         ?>
