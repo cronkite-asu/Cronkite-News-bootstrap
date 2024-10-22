@@ -67,7 +67,7 @@ foreach ($mainStoryList as $mainStory) {
                 <div class="large-6 medium-6 small-12 cell main-story">
                   <div class="grid-x grid-padding-x">
                     <div class="large-12 medium-12 small-12 cell">
-                      <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?><h3 style="margin-top:15px;"><?php echo $title; ?></h3></a>
+                      <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?><h3><?php echo $title; ?></h3></a>
                     </div>
                   </div>
                 </div>
@@ -435,7 +435,7 @@ foreach ($mainStoryList as $mainStory) {
                     } else {
                         $title = get_the_title(get_the_ID());
                     }
-                    echo '<div class="large-3 medium-3 small-12 cell latest-news-story"><a href="'.$permalink.'"><div class="img-holder">'.get_the_post_thumbnail(get_the_ID()).'</div><div class="title-holder"><h3>'.$title.'</h3></div></a></div>';                                        
+                    echo '<div class="large-3 medium-3 small-12 cell latest-news-story"><a href="'.$permalink.'"><div class="img-holder">'.get_the_post_thumbnail(get_the_ID()).'</div><div class="title-holder"><h3>'.$title.'</h3></div></a></div>';
                 }
             }
           ?>

@@ -172,6 +172,14 @@ hr {
     }
   }
   .main-story {
+    h3 {
+      margin-top:15px;
+      @media only screen
+        and (max-width: 660px) {
+          margin-top:10px;
+          margin-bottom: 15px;
+      }
+    }
     @media only screen
       and (max-width: 660px) {
         order: 1;
@@ -435,7 +443,7 @@ hr {
           width: 70%;
         }
         h3 {
-          padding-left: 10px;          
+          padding-left: 10px;
           margin:0px;
         }
     }

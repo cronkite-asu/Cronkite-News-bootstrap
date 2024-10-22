@@ -137,6 +137,15 @@ hr {
 #election-container .slide-aside .spacer {
   margin-bottom: 10px;
 }
+#election-container .main-story h3 {
+  margin-top: 15px;
+}
+@media only screen and (max-width: 660px) {
+  #election-container .main-story h3 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+}
 @media only screen and (max-width: 660px) {
   #election-container .main-story {
     order: 1;
