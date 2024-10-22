@@ -252,7 +252,14 @@ hr {
       text-transform: uppercase;
     }
   }
+}
 
+.candidate-profiles {
+  hr {
+    display:block;
+    width: 100%;
+    border-bottom: 1px solid $grey;
+  }
 }
 
 .key-dates {

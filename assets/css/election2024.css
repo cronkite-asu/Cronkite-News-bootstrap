@@ -213,6 +213,12 @@ hr {
   text-transform: uppercase;
 }
 
+.candidate-profiles hr {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #D8D8D8;
+}
+
 .key-dates {
   margin-bottom: 25px;
 }
