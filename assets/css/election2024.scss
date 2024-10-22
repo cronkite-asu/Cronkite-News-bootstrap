@@ -422,8 +422,11 @@ hr {
       and (max-width: 660px) {
         display: flex;
         flex-direction: row;
-        div {
-          border:1px solid #ff0000;
+        .img-holder {
+          width:30%;
+        }
+        .title-holder {
+          width: 70%;
         }
     }
   }

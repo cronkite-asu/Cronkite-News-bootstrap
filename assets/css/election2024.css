@@ -382,8 +382,11 @@ hr {
     display: flex;
     flex-direction: row;
   }
-  .latest-news .latest-news-story div {
-    border: 1px solid #ff0000;
+  .latest-news .latest-news-story .img-holder {
+    width: 30%;
+  }
+  .latest-news .latest-news-story .title-holder {
+    width: 70%;
   }
 }
 
