@@ -127,7 +127,10 @@ hr {
 #election-container .slide-aside h3 a:hover {
   color: #0a0a0a !important;
 }
-#election-container .top-stories li {
+#election-container .top-stories ul {
+  margin: 0px;
+}
+#election-container .top-stories ul li {
   font-size: 0.95rem;
   line-height: 1.35rem;
   padding-bottom: 10px;
@@ -136,13 +139,13 @@ hr {
   list-style: none;
   margin-left: 0;
 }
-#election-container .top-stories li:last-child {
+#election-container .top-stories ul li:last-child {
   border-bottom: none;
 }
-#election-container .top-stories li a {
+#election-container .top-stories ul li a {
   color: #003594;
 }
-#election-container .top-stories li a:hover {
+#election-container .top-stories ul li a:hover {
   color: #0a0a0a;
 }
 

@@ -164,21 +164,24 @@ hr {
     }
   }
   .top-stories {
-    li {
-      font-size: 0.95rem;
-      line-height: 1.35rem;
-      padding-bottom:10px;
-      padding-top:10px;
-      border-bottom: 1px solid $grey;
-      list-style: none;
-      margin-left: 0;
-      &:last-child {
-        border-bottom: none;
-      }
-      a {
-        color: $cnBlue;
-        &:hover {
-          color: $black;
+    ul {
+      margin: 0px;
+      li {
+        font-size: 0.95rem;
+        line-height: 1.35rem;
+        padding-bottom:10px;
+        padding-top:10px;
+        border-bottom: 1px solid $grey;
+        list-style: none;
+        margin-left: 0;
+        &:last-child {
+          border-bottom: none;
+        }
+        a {
+          color: $cnBlue;
+          &:hover {
+            color: $black;
+          }
         }
       }
     }
