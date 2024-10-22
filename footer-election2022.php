@@ -234,8 +234,8 @@
         infinite: true,
         dots: false,
         centerMode: false,
-        /*autoplay: true,
-        autoplaySpeed: 6000,*/
+        autoplay: true,
+        autoplaySpeed: 5000,
         arrows: true,
         slidesToShow: 4,
         slidesToScroll: 1,

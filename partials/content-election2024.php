@@ -138,7 +138,7 @@ foreach ($mainStoryList as $mainStory) {
       </div>
       <div class="grid-x grid-margin-x">
         <div class="carousel-stories">
-        <?php                
+        <?php
         if( have_rows('videos') ) {
           while( have_rows('videos') ) {
             the_row();
