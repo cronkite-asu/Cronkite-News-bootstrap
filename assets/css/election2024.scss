@@ -178,6 +178,10 @@ hr {
     }
   }
   .top-stories {
+    @media only screen
+      and (max-width: 660px) {
+        order: 3;
+    }
     h4 {
       display: flex;
       width: 100%;
