@@ -401,7 +401,7 @@ hr {
     @media only screen
       and (max-width: 660px) {
         font-weight: 400 !important;
-        font-size: 1.15rem !important;
+        font-size: 0.95rem !important;
     }
     a {
       color: $cnBlue !important;
@@ -422,6 +422,8 @@ hr {
       and (max-width: 660px) {
         display: flex;
         flex-direction: row;
+        margin-bottom: 10px;
+        border-bottom: 1px solid $grey;
         a {
           display: flex;
         }

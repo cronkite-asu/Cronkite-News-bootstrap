@@ -361,7 +361,7 @@ hr {
 @media only screen and (max-width: 660px) {
   .latest-news h3 {
     font-weight: 400 !important;
-    font-size: 1.15rem !important;
+    font-size: 0.95rem !important;
   }
 }
 .latest-news h3 a {
@@ -381,6 +381,8 @@ hr {
   .latest-news .latest-news-story {
     display: flex;
     flex-direction: row;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #D8D8D8;
   }
   .latest-news .latest-news-story a {
     display: flex;
