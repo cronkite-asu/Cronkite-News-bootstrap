@@ -286,6 +286,9 @@ hr {
 .videos .carousel-stories .slick-prev:before, .videos .carousel-stories .slick-next:before, .spanish .carousel-stories .slick-prev:before, .spanish .carousel-stories .slick-next:before, .candidate-profiles .carousel-stories .slick-prev:before, .candidate-profiles .carousel-stories .slick-next:before, .key-dates .carousel-stories .slick-prev:before, .key-dates .carousel-stories .slick-next:before {
   color: #003594;
 }
+.videos .carousel-stories .slick-slider, .spanish .carousel-stories .slick-slider, .candidate-profiles .carousel-stories .slick-slider, .key-dates .carousel-stories .slick-slider {
+  margin-bottom: 0px;
+}
 
 .candidate-profiles hr {
   display: block;
