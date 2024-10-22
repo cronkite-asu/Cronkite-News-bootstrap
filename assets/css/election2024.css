@@ -382,11 +382,17 @@ hr {
     display: flex;
     flex-direction: row;
   }
+  .latest-news .latest-news-story a {
+    display: flex;
+  }
   .latest-news .latest-news-story .img-holder {
     width: 30%;
   }
   .latest-news .latest-news-story .title-holder {
     width: 70%;
+  }
+  .latest-news .latest-news-story h3 {
+    margin: 0px;
   }
 }
 
