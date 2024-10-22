@@ -217,8 +217,9 @@ hr {
 }
 .videos h3, .spanish h3, .candidate-profiles h3, .key-dates h3 {
   font-family: "Roboto", sans-serif;
+  font-size: 1rem;
   font-weight: 400;
-  font-size: 1.1rem;
+  line-height: 1.25rem;
   color: #003594;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -286,7 +287,7 @@ hr {
 .videos .carousel-stories .slick-prev:before, .videos .carousel-stories .slick-next:before, .spanish .carousel-stories .slick-prev:before, .spanish .carousel-stories .slick-next:before, .candidate-profiles .carousel-stories .slick-prev:before, .candidate-profiles .carousel-stories .slick-next:before, .key-dates .carousel-stories .slick-prev:before, .key-dates .carousel-stories .slick-next:before {
   color: #003594;
 }
-.videos .carousel-stories .slick-slider, .spanish .carousel-stories .slick-slider, .candidate-profiles .carousel-stories .slick-slider, .key-dates .carousel-stories .slick-slider {
+.videos .carousel-stories.slick-slider, .spanish .carousel-stories.slick-slider, .candidate-profiles .carousel-stories.slick-slider, .key-dates .carousel-stories.slick-slider {
   margin-bottom: 0px;
 }
 

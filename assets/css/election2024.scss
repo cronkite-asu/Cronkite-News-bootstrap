@@ -255,8 +255,9 @@ hr {
   }
   h3 {
     font-family: "Roboto", sans-serif;
+    font-size: 1rem;
     font-weight: 400;
-    font-size: 1.1rem;
+    line-height: 1.25rem;        
     color: $cnBlue;
     margin-top:15px;
     margin-bottom:15px;
@@ -325,7 +326,7 @@ hr {
     .slick-prev:before, .slick-next:before {
       color: $cnBlue;
     }
-    .slick-slider {
+    &.slick-slider {
       margin-bottom: 0px;
     }
   }
