@@ -171,7 +171,6 @@ foreach ($mainStoryList as $mainStory) {
               <p>Mayor</p>
             </div>
         <?php
-        // left side stories
         $candidateProfilesList = get_field('candidate_profiles', 237021);
         $candidateCounter = 0;
         foreach ($candidateProfilesList as $profile) {
@@ -202,7 +201,6 @@ foreach ($mainStoryList as $mainStory) {
               <p>Sheriff</p>
             </div>
         <?php
-        // left side stories
         $candidateProfilesList = get_field('candidate_profiles', 237021);
         $candidateCounter = 0;
         foreach ($candidateProfilesList as $profile) {
@@ -258,13 +256,12 @@ foreach ($mainStoryList as $mainStory) {
         </div>
 
         <!-- district 3 -->
-        <div class="large-6 medium-6 small-12 cell candidate-divider">
+        <div class="large-6 medium-6 small-12 cell">
           <div class="grid-x grid-padding-x">
             <div class="large-12 medium-12 small-12 cell candidate-position">
               <p>District 3</p>
             </div>
         <?php
-        // left side stories
         $candidateProfilesList = get_field('candidate_profiles', 237021);
         $candidateCounter = 0;
         foreach ($candidateProfilesList as $profile) {
@@ -295,7 +292,6 @@ foreach ($mainStoryList as $mainStory) {
               <p>District 5</p>
             </div>
         <?php
-        // left side stories
         $candidateProfilesList = get_field('candidate_profiles', 237021);
         $candidateCounter = 0;
         foreach ($candidateProfilesList as $profile) {
@@ -320,13 +316,12 @@ foreach ($mainStoryList as $mainStory) {
         </div>
 
         <!-- district 7 -->
-        <div class="large-6 medium-6 small-12 cell candidate-divider">
+        <div class="large-6 medium-6 small-12 cell">
           <div class="grid-x grid-padding-x">
             <div class="large-12 medium-12 small-12 cell candidate-position">
               <p>District 7</p>
             </div>
-        <?php
-        // left side stories
+        <?php        
         $candidateProfilesList = get_field('candidate_profiles', 237021);
         $candidateCounter = 0;
         foreach ($candidateProfilesList as $profile) {

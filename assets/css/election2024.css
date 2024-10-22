@@ -200,9 +200,7 @@ hr {
   color: #0a0a0a !important;
 }
 .videos .candidate-divider, .spanish .candidate-divider, .candidate-profiles .candidate-divider, .key-dates .candidate-divider {
-  border-image-slice: 1;
-  border-right: 1px solid;
-  border-image-source: linear-gradient(to right, #c31212 50%, #003594 50%);
+  border-right: 1px solid #D8D8D8;
 }
 .videos .candidate-position p, .spanish .candidate-position p, .candidate-profiles .candidate-position p, .key-dates .candidate-position p {
   font-family: "Roboto", sans-serif;

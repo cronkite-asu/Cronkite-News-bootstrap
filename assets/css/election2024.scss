@@ -238,9 +238,7 @@ hr {
   }
 
   .candidate-divider {
-    border-image-slice: 1;
-    border-right: 1px solid;
-    border-image-source: linear-gradient(to right, $cnRed 50%, $cnBlue 50%);    
+    border-right: 1px solid $grey;  
   }
   .candidate-position {
     p {
