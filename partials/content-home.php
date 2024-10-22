@@ -467,7 +467,7 @@
                       echo $seriesDescription;
                   } ?>
                   <?php if ($seriesURL != '') {
-                      echo '<a class="read-more" href="'.$seriesURL.'" target="_blank">READ MORE <i class="fa-regular fa-arrow-right-long"></i></a>';
+                      echo '<a class="read-more" href="'.$seriesURL.'">READ MORE <i class="fa-regular fa-arrow-right-long"></i></a>';
                   } ?>
               </div>
 
