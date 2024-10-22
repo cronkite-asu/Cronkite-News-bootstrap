@@ -199,7 +199,7 @@ foreach ($mainStoryList as $mainStory) {
         <div class="large-6 medium-6 small-12 cell">
           <div class="grid-x grid-padding-x">
             <div class="large-12 medium-12 small-12 cell candidate-position">
-              <p>Mayor</p>
+              <p>Sheriff</p>
             </div>
         <?php
         // left side stories
