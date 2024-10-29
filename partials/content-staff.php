@@ -39,7 +39,9 @@
 
               while ($staffDetails->have_posts()) {
                   $staffDetails->the_post();
-                  
+                  $staffNameURLSafe = str_replace('-j-', '-', str_replace('’', '', str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title(get_the_ID())))))));
+                  $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
+
                   if (get_field('student_photo') != '' || get_field('cn_staff_photo') != '') {
                       echo '<div class="author_photo">';
                       if (get_field('cn_staff_photo') != '') {
