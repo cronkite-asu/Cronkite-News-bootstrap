@@ -180,7 +180,7 @@
 
              if (have_rows('byline_info')) {
                  $sepCounter = 0;
-
+                 $staffID = array();
                  echo '<span class="author_name">';
                  while (have_rows('byline_info')) {
                      the_row();
@@ -503,10 +503,7 @@
                $postDate = strtotime(get_the_date());
                if ($postDate >= $compareDate) {
                    $storyContent = wpautop(get_the_content());
-
-                   function getVideoUrlsFromString($storyContent)
-                   {
-
+                   function getVideoUrlsFromString($storyContent){
                        $regex = '/<(?:[^\'">=]*|=\'[^\']*\'|="[^"]*"|=[^\'"][^\s>]*)*>|((?:[\w-]+:\/\/?|www[.])[^\s()<>]+(?:\([\w\d]+\)|(?:[^[:punct:]\s]|\/)))/ims';
                        $storyContent = preg_replace_callback(
                            $regex,
@@ -514,6 +511,7 @@
                                if (array_key_exists(1, $matches)) {
                                    $patternURL = '~(?:https?://)?(?:www.)?(?:youtube.com|youtu.be)/(?:watch\?v=)?([^\s]+)~';
                                    preg_match_all($patternURL, $matches[1], $ytLinks);
+                                   print_r($ytLinks);
                                    if ($ytLinks[1][0] != '') {
                                        return "<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/".strip_tags($ytLinks[1][0])."' frameborder='0' allowfullscreen></iframe></div>";
                                    } else {
