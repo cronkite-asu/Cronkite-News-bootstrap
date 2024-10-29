@@ -33,7 +33,7 @@
                   if (get_field('student_photo') != '' || get_field('cn_staff_photo') != '') {
                       echo '<div class="author_photo">';
                       if (get_field('cn_staff_photo') != '') {
-                          $staffChecker = 1;                          
+                          $staffChecker = 1;
                           echo '<img src="'.get_field('cn_staff_photo').'" class="cn-staff-bio-circular-large" alt="'.get_the_title(get_the_ID()).'" />';
                       } else {
                           $staffChecker = 0;
@@ -44,8 +44,8 @@
 
                   echo '<div class="bio">';
                   echo '<div class="name_container">';
-                  if (get_the_title($val) != '') {
-                      echo '<span class="name-lg">'.get_the_title($val).'</span>';
+                  if (get_the_title() != '') {
+                      echo '<span class="name-lg">'.get_the_title().'</span>';
                   } else {
                       echo '<span class="name-lg">'.'No author name found.'.'</span>';
                   }
