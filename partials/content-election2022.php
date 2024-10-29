@@ -10,6 +10,7 @@ $mainStoryCounter = 0;
 
 if (!empty($mainStoryList)) {
   foreach ($mainStoryList as $mainStory) {
+      print_r($mainStory);
       $candidateProfiles[] = $mainStory->ID;
   }
 }
@@ -155,9 +156,9 @@ if (!empty($mainStoryList)) {
     </div>
     <?php
       $videosList = get_field('explainer_videos', 185958);
-if ($videosList) {
-    $videosCounter = 0;
-    foreach ($videosList as $videoNews) {
+      if ($videosList) {
+      $videosCounter = 0;
+      foreach ($videosList as $videoNews) {
         if ($videosCounter == 0) {
             if (get_field('video_location', $videoNews) != '') {
                 $permalink = get_field('video_location', $videoNews);
