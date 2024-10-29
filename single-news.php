@@ -186,8 +186,7 @@
                      the_row();
                      $staffID = get_sub_field('cn_staff');
                      $cnStaffCount = count((array)$staffID);
-                     print_r($staffID);
-                     if ($staffID != '') {
+                     if (!empty($staffID)) {
                        foreach ($staffID as $key => $val) {
                            $args = [
                                   'post_type'   => 'students',
