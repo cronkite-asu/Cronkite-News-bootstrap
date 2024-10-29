@@ -2,9 +2,10 @@
  <?php
   get_header('new2019');
 
- //echo $_SERVER[REQUEST_URI];
- $audio_title_url = get_query_var('title');
- $clean_title = ucwords(str_replace('-', ' ', $audio_title_url));
+ if (get_query_var('title') != '') {
+   $audio_title_url = get_query_var('title');
+   $clean_title = ucwords(str_replace('-', ' ', $audio_title_url));
+  }
 
  if (get_the_ID() == '138082') {
      wp_redirect('https://cronkitenews.azpbs.org/story-removed/');
@@ -16,7 +17,6 @@
 
      <!-- main body container -->
      <div id="main_container" class="grid-container single-story-post">
-
        <!-- story content -->
        <div class="grid-x grid-padding-x single-story-block">
          <div class="large-12 medium-12 small-12 cell">
@@ -186,7 +186,7 @@
                      the_row();
                      $staffID = get_sub_field('cn_staff');
                      $cnStaffCount = count((array)$staffID);
-
+                     print_r('<!--'.$staffID.'-->');
                      foreach ($staffID as $key => $val) {
                          $args = [
                                 'post_type'   => 'students',
