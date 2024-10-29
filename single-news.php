@@ -161,7 +161,11 @@
 
              // bypass group not showing repeater field issue
              $groupFields = get_field('byline_info');
-             $externalAuthorRepeater = $groupFields['external_authors_repeater'];
+             if ($groupFields['external_authors_repeater'] != '') {
+               $externalAuthorRepeater = $groupFields['external_authors_repeater'];
+             } else {
+               $externalAuthorRepeater = '';
+             }
 
              $normalizeChars = [
                'Š'=>'S', 'š'=>'s', 'Ð'=>'Dj','Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A',
