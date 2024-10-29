@@ -68,12 +68,15 @@ if (! empty($categories)) {
     <script src="https://kit.fontawesome.com/0f0514404d.js" crossorigin="anonymous"></script>
 
     <?php
-  $settings = get_field('page-settings', get_the_ID());
+    if (get_field('page-settings', get_the_ID()) != '') {
+      $textColor = '';
+      $settings = get_field('page-settings', get_the_ID());
 
-if ($settings && $settings['text-color'] != '') {
-    $textColor = $settings['text-color'];
-}
-?>
+      if ($settings && $settings['text-color'] != '') {
+          $textColor = $settings['text-color'];
+      }
+    }
+    ?>
 
     <!-- NEW NAV - 12/12/19 -->
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/foundation.css">
