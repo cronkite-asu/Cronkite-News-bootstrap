@@ -29,7 +29,8 @@
 
               while ($staffDetails->have_posts()) {
                   $staffDetails->the_post();
-
+                  $staffNameURLSafe = str_replace('-j-', '-', str_replace('’', '', str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title(get_the_ID())))))));
+                  $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
                   if (get_field('student_photo') != '' || get_field('cn_staff_photo') != '') {
                       echo '<div class="author_photo">';
                       if (get_field('cn_staff_photo') != '') {
@@ -59,10 +60,10 @@
                       }
                       echo '<span class="pronunciation">';
                       ?>
-                                  <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php
-                                  } ?> <?php echo $pronunciationHolder; ?></span>
-                                  <?php
-                                  echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
+                  <?php if (get_field('audio_pronunciation') != '') { ?><a onclick="document.getElementById('pronunciation-audio-<?php echo $staffNameURLSafe; ?>').play()" class="pronunciation-audio-link"><i class="fas fa-volume-down"></i></a><?php
+                  } ?> <?php echo $pronunciationHolder; ?></span>
+                  <?php
+                  echo '<audio id="pronunciation-audio-'.$staffNameURLSafe.'" src="'.get_field('audio_pronunciation').'">Your browser does not support the <code>audio</code> element.</audio>';
                   }
 
                   // show name pronoun
