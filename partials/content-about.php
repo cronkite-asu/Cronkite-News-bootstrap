@@ -163,8 +163,7 @@
                     <?php
                     $staffNameURLSafe = str_replace('-j-', '-', str_replace('’', '', str_replace("&#8217;", "", str_replace('.', '', str_replace(' ', '-', strtolower(get_the_title($val)))))));
                     $staffNameURLSafe = strtr($staffNameURLSafe, $normalizeChars);
-                    echo '<!--'.$staffNameURLSafe.'-->';
-                    echo '<!--'.get_the_title($val).'-->';
+                    echo '<!--'.$val.'-->';
                     if (get_field('student_photo') != '') {
                         echo '<a href="https://cronkitenews.azpbs.org/people/'.$staffNameURLSafe.'/"><img src="'.get_field('student_photo').'" class="cn-staff-circular" /></a>';
                     } else {
@@ -178,9 +177,6 @@
                     } elseif (get_field('team') != '' || get_field('role') != '' || get_field('bureau') != '') {
                         echo '<span class="team-title">'.ucwords(str_replace('-', ' ', get_field('team'))).' '.ucwords(str_replace('-', ' ', get_field('role'))).', '.str_replace('Washington Dc', 'Washington, D.C.', ucwords(str_replace('-', ' ', get_field('bureau')))).'</span>';
                     }
-                    /*social_media_outlets
-                      -social_media_type
-                      -social_media_handle*/
                     ?>
                     <div class="staff-social-links">
                     <?php

@@ -33,8 +33,7 @@
                   if (get_field('student_photo') != '' || get_field('cn_staff_photo') != '') {
                       echo '<div class="author_photo">';
                       if (get_field('cn_staff_photo') != '') {
-                          $staffChecker = 1;
-                          echo get_the_ID();
+                          $staffChecker = 1;                          
                           echo '<img src="'.get_field('cn_staff_photo').'" class="cn-staff-bio-circular-large" alt="'.get_the_title(get_the_ID()).'" />';
                       } else {
                           $staffChecker = 0;
