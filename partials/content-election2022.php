@@ -9,10 +9,8 @@ $mainStoryList = get_field('candidate_profiles', 185958);
 $mainStoryCounter = 0;
 
 if (!empty($mainStoryList)) {
-  print_r($mainStoryList);
   foreach ($mainStoryList as $mainStory) {
-      print_r($mainStory);
-      $candidateProfiles[] = $mainStory->ID;
+      $candidateProfiles[] = $mainStory;
   }
 }
 ?>
