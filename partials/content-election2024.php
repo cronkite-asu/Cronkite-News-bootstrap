@@ -2,13 +2,6 @@
 // top stories array to avoid dups
 $topStoriesArray = [];
 $candidateProfiles = [];
-
-/*$mainStoryList = get_field('candidate_profiles', 237021);
-$mainStoryCounter = 0;
-
-foreach ($mainStoryList as $mainStory) {
-    $candidateProfiles[] = $mainStory->ID;
-}*/
 ?>
 
 <!-- main body container -->

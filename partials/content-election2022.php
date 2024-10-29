@@ -8,8 +8,10 @@ $candidateProfiles = [];
 $mainStoryList = get_field('candidate_profiles', 185958);
 $mainStoryCounter = 0;
 
-foreach ($mainStoryList as $mainStory) {
-    $candidateProfiles[] = $mainStory->ID;
+if (!empty($mainStoryList)) {
+  foreach ($mainStoryList as $mainStory) {
+      $candidateProfiles[] = $mainStory->ID;
+  }
 }
 ?>
 
