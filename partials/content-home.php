@@ -445,8 +445,7 @@
 
         <div class="grid-x grid-padding-x">
           <div class="large-12 medium-12 small-12 cell">
-            <img class="show-for-medium" src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/10/Election-Dates-Long-Long-10-29-11-5.jpg" />
-            <img class="show-for-small-only" src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/10/Election-Dates-Long-Mobile-10-29-11-5-640.jpg" />
+            <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/10/Election-Dates-Long-Mobile-11-1-11-5-copy.jpg" />
           </div>
         </div>
 
