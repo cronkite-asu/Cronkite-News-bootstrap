@@ -502,7 +502,7 @@
 
                $compareDate = strtotime('Mar 21, 2023');
                $postDate = strtotime(get_the_date());
-               if ($postDate >= $compareDate && get_the_ID() != 239535) {
+               if ($postDate >= $compareDate) {
                    $storyContent = wpautop(get_the_content());
                    function getVideoUrlsFromString($storyContent){
                        $regex = '/<(?:[^\'">=]*|=\'[^\']*\'|="[^"]*"|=[^\'"][^\s>]*)*>|((?:[\w-]+:\/\/?|www[.])[^\s()<>]+(?:\([\w\d]+\)|(?:[^[:punct:]\s]|\/)))/ims';
