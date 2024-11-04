@@ -864,15 +864,15 @@ if (have_rows('blocks')) {
   </div>
 
 <?php
-        } elseif (get_row_layout() == 'text-block') {
+  } elseif (get_row_layout() == 'text-block') {
 
-            $textBlockSettings = get_sub_field('settings');
-            if ($textBlockSettings['regular'] == 'size') {
-                $textWidth = '';
-            } else {
-                $textWidth = 'full';
-            }
-            ?>
+      $textBlockSettings = get_sub_field('settings');
+      if ($textBlockSettings['regular'] == 'size') {
+          $textWidth = '';
+      } else {
+          $textWidth = 'full';
+      }
+  ?>
 
   <div class="grid-container text-content <?php echo $textWidth; ?>">
     <div class="grid-x grid-padding-x">
@@ -883,17 +883,17 @@ if (have_rows('blocks')) {
   </div>
 
 <?php
-        } elseif (get_row_layout() == 'video-embed') {
+  } elseif (get_row_layout() == 'video-embed') {
 
-            $settings = get_sub_field('video-content-settings');
-            if ($settings['width'] == 'large-width') {
-                $videoWidth = 'large-video';
-                $color = '#656159';
-            } else {
-                $videoWidth = '';
-                $color = '';
-            }
-            ?>
+      $settings = get_sub_field('video-content-settings');
+      if ($settings['width'] == 'large-width') {
+          $videoWidth = 'large-video';
+          $color = '#656159';
+      } else {
+          $videoWidth = '';
+          $color = '';
+      }
+      ?>
 <?php if ($color != '') { ?>
   <div class="large-video-bg-color" style="background: <?php echo $color; ?>">
 <?php } ?>
@@ -1513,7 +1513,7 @@ if (have_rows('blocks')) {
         </div>
 
         <?php
-                            $audioCounter = 0;
+            $audioCounter = 0;
             if (have_rows('photo-group')) {
                 while (have_rows('photo-group')) {
                     the_row();
@@ -1590,7 +1590,30 @@ if (have_rows('blocks')) {
     </div>
 
 <?php
+  } elseif (get_row_layout() == 'election-block') {
+
+      if (get_sub_field('visual-type') == 'img') {
+
+      } else if (get_sub_field('visual-type') == 'video') {
+
+      } else if (get_sub_field('visual-type') == 'gallery') {
+        if (get_sub_field('gallery-type') == 'carousel') {
+
         }
+      } else if (get_sub_field('visual-type') == 'embed') {
+  ?>
+
+  <div class="grid-container text-content <?php echo $textWidth; ?>">
+    <div class="grid-x grid-padding-x">
+      <div class="large-12 cell">
+        <?php if (get_sub_field('title') != '') { echo get_sub_field('title'); } ?>
+        <?php if (get_sub_field('embed') != '') { echo get_sub_field('embed'); } ?>
+        <?php if (get_sub_field('content') != '') { echo get_sub_field('content'); } ?>
+      </div>
+    </div>
+  </div>
+
+<?php
     }
 }
 ?>
@@ -1666,14 +1689,12 @@ if ($inthisseriesSettings['show'] == 'yes') {
                   </div>
                 <?php } ?>
                 <?php
-                                  if ($upcomingStory['headline'] == '') {
-                                      if (get_field('use_short_headline', $upcomingStory['posted-link']) == 'yes' && get_field('homepage_headline', $upcomingStory['posted-link']) != '') {
-                                          ?>
-                       <h5><?php echo get_field('homepage_headline', $upcomingStory['posted-link']); ?></h5>
-                <?php
-                                      } else {
-                                          ?>
-                       <h5><?php echo get_the_title($upcomingStory['posted-link']); ?></h5>
+                  if ($upcomingStory['headline'] == '') {
+                    if (get_field('use_short_headline', $upcomingStory['posted-link']) == 'yes' && get_field('homepage_headline', $upcomingStory['posted-link']) != '') {
+                ?>
+                     <h5><?php echo get_field('homepage_headline', $upcomingStory['posted-link']); ?></h5>
+                <?php } else { ?>
+                     <h5><?php echo get_the_title($upcomingStory['posted-link']); ?></h5>
                 <?php } ?>
                <?php } else {  ?>
                  <h5><?php echo $upcomingStory['headline']; ?></h5>
@@ -1683,12 +1704,10 @@ if ($inthisseriesSettings['show'] == 'yes') {
               <div>
                 <a href="<?php echo get_permalink($upcomingStory['posted-link']); ?>"><?php echo get_the_post_thumbnail($upcomingStory['posted-link'], 'full', ['class' => 'img-responsive']); ?></a>
                 <?php
-                                            if (get_field('use_short_headline', $upcomingStory['posted-link']) == 'yes' && get_field('homepage_headline', $upcomingStory['posted-link']) != '') {
-                                                ?>
+                  if (get_field('use_short_headline', $upcomingStory['posted-link']) == 'yes' && get_field('homepage_headline', $upcomingStory['posted-link']) != '') {
+                      ?>
                     <h5><a href="<?php echo get_permalink($upcomingStory['posted-link']); ?>"><?php echo get_field('homepage_headline', $upcomingStory['posted-link']); ?></a></h5>
-                <?php
-                                            } else {
-                                                ?>
+                <?php } else { ?>
                 <h5><a href="<?php echo get_permalink($upcomingStory['posted-link']); ?>"><?php echo get_the_title($upcomingStory['posted-link']); ?></a></h5>
                 <?php } ?>
               </div>
