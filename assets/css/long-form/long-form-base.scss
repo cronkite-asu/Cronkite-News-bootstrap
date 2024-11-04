@@ -2316,4 +2316,24 @@ audio {
       padding: 4px 8px;
     }
   }
+  .wp-caption-text {
+    margin-top:10px;
+    @include caption-text();
+    padding-top: 0px;
+    &.audio {
+      margin-top:-20px;
+      margin-bottom:25px;
+    }
+    &.video {
+      margin-bottom:25px;
+    }
+    a {
+      color: #6e6e6e;
+      border-bottom: 1px solid #757575;
+      @include attr-transition1(border);
+      &:hover {
+        border:none;
+      }
+    }
+  }
 }

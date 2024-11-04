@@ -2356,5 +2356,35 @@ audio {
   margin: 0;
   padding: 4px 8px;
 }
+.election-block .wp-caption-text {
+  margin-top: 10px;
+  max-width: 800px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #6e6e6e;
+  padding-top: 10px;
+  letter-spacing: 0;
+  line-height: 1.2rem;
+  padding-top: 0px;
+}
+.election-block .wp-caption-text.audio {
+  margin-top: -20px;
+  margin-bottom: 25px;
+}
+.election-block .wp-caption-text.video {
+  margin-bottom: 25px;
+}
+.election-block .wp-caption-text a {
+  color: #6e6e6e;
+  border-bottom: 1px solid #757575;
+  -webkit-transition: border 0.25s;
+  -moz-transition: border 0.25s;
+  -o-transition: border 0.25s;
+  transition: border 0.25s;
+}
+.election-block .wp-caption-text a:hover {
+  border: none;
+}
 
 /*# sourceMappingURL=long-form-base.css.map */
