@@ -2357,6 +2357,7 @@ audio {
   color: #ffffff;
   margin: 0;
   padding: 4px 8px;
+  text-transform: uppercase;
 }
 .election-block .wp-caption-text {
   margin-top: 0px;
