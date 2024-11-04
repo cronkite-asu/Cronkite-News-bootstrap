@@ -2395,5 +2395,10 @@ audio {
 .election-summary {
   background-color: rgba(236, 236, 236, 0.55);
 }
+.election-summary p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 /*# sourceMappingURL=long-form-base.css.map */
