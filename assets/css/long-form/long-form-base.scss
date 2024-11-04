@@ -12,6 +12,7 @@ $notoSerif: 'Noto Serif', serif;
 $color: rgba(0,0,0,.08);
 $color2: rgba(0,0,0,.02);
 $cnBlue: #003594;
+$cnRed: #c31212;
 $white: #ffffff;
 $black: #000;
 $grey: #D8D8D8;
@@ -2272,7 +2273,7 @@ audio {
 }
 
 .election-block {
-  border-top: 1px solid $cnBlue;
+  border-top: 1px solid linear-gradient(to right, $cnBlue 50%, $cnRed 50%);
   background-color: rgba(236,236,236, 0.85);
   h2 {
     font-family: $robotoFontFamily;
