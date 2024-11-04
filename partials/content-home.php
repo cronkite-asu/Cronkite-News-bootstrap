@@ -1,5 +1,5 @@
 <!-- main body container -->
-<?php if (current_user_can('administrator')) { ?>
+<?php if (current_user_can('administrator') && get_field('election-layout', 24) == 'yes') { ?>
 <!-- main body container -->
 <div id="election-container" class="grid-container">
   <div class="grid-x grid-padding-x align-stretch">
