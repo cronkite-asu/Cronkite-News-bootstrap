@@ -971,77 +971,75 @@ if (have_rows('blocks')) {
 <?php } ?>
 
 <?php
-        } elseif (get_row_layout() == 'single-photo-block') {
+} elseif (get_row_layout() == 'single-photo-block') {
+    $settings = get_sub_field('single-photo-settings');
+    if ($settings['width'] == 'large-width') {
+        $photoWidth = 'large-photo';
+    } else {
+        $photoWidth = '';
+    }
 
-            $settings = get_sub_field('single-photo-settings');
-            if ($settings['width'] == 'large-width') {
-                $photoWidth = 'large-photo';
-            } else {
-                $photoWidth = '';
-            }
-
-            if ($settings['no_shadow'] == 'yes') {
-                $removeShadow = 'class="no-shadow"';
-            } else {
-                $removeShadow = '';
-            }
-            ?>
+    if ($settings['no_shadow'] == 'yes') {
+        $removeShadow = 'class="no-shadow"';
+    } else {
+        $removeShadow = '';
+    }
+?>
 
     <div class="grid-container photo-content single <?php echo $photoWidth; ?>">
       <div class="grid-x grid-padding-x">
-
         <?php
-                            $captionCounter = 0;
+            $captionCounter = 0;
             if (have_rows('photos')) {
-                while (have_rows('photos')) {
-                    the_row();
-                    ?>
+              while (have_rows('photos')) {
+                the_row();
+        ?>
   						<div class="large-12 medium-12 small-12 cell text-center">
   						    <img src="<?php echo get_sub_field('photo'); ?>" <?php echo $removeShadow; ?>  />
   			<?php
               if (get_sub_field('caption') != '') {
-                  if ($captionCounter == 0 && get_sub_field('caption') != '') {
-                      $combinedCaption = '<strong>Left:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
-                  } elseif ($captionCounter == 1 && get_sub_field('caption') != '') {
-                      $combinedCaption .= ' <strong>Center:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
-                  } elseif ($captionCounter == 2 && get_sub_field('caption') != '') {
-                      $combinedCaption .= ' <strong>Right:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
-                  }
-                  $captionCounter++;
+                if ($captionCounter == 0 && get_sub_field('caption') != '') {
+                    $combinedCaption = '<strong>Left:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
+                } elseif ($captionCounter == 1 && get_sub_field('caption') != '') {
+                    $combinedCaption .= ' <strong>Center:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
+                } elseif ($captionCounter == 2 && get_sub_field('caption') != '') {
+                    $combinedCaption .= ' <strong>Right:</strong> '. strip_tags(get_sub_field('caption'), '<a><span>');
+                }
+                $captionCounter++;
               }
         ?>
   						</div>
   			<?php
-                }
+              }
 
-                if ($captionCounter == 1) {
-                    $combinedCaption = str_replace('<strong>Left:</strong>', '', $combinedCaption);
-                }
-                ?>
+              if ($captionCounter == 1) {
+                  $combinedCaption = str_replace('<strong>Left:</strong>', '', $combinedCaption);
+              }
+        ?>
+        <?php if ($combinedCaption != '') { ?>
         <div class="large-12 cell">
           <?php echo '<div class="wp-caption-text"><p>'.$combinedCaption.'</p></div>'; ?>
         </div>
         <?php } ?>
+        <?php } ?>
       </div>
     </div>
 
-
 <?php
-        } elseif (get_row_layout() == 'single-photo-block-full-width') {
+} elseif (get_row_layout() == 'single-photo-block-full-width') {
+    $settings = get_sub_field('single-photo-full-width-settings');
+    if ($settings['width'] == 'large-width') {
+        $photoWidth = 'large-photo';
+    } else {
+        $photoWidth = '';
+    }
 
-            $settings = get_sub_field('single-photo-full-width-settings');
-            if ($settings['width'] == 'large-width') {
-                $photoWidth = 'large-photo';
-            } else {
-                $photoWidth = '';
-            }
-
-            if ($settings['no_shadow'] == 'yes') {
-                $removeShadow = 'class="no-shadow"';
-            } else {
-                $removeShadow = '';
-            }
-            ?>
+    if ($settings['no_shadow'] == 'yes') {
+        $removeShadow = 'class="no-shadow"';
+    } else {
+        $removeShadow = '';
+    }
+?>
 
     <div class="grid-container photo-content full single <?php echo $photoWidth; ?>">
       <div class="grid-x grid-padding-x">
