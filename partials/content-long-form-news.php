@@ -176,8 +176,8 @@ if (have_rows('blocks')) {
         $cssStyle = '';
       }
 ?>
-  <div id="intro" class="grid-container full <?php echo $cssStyle; ?>">
-    <div class="grid-x grid-padding-x">
+  <div id="intro" class="grid-container full">
+    <div class="grid-x grid-padding-x <?php echo $cssStyle; ?>">
       <div class="large-6 medium-6 small-12 cell intro-text">
         <?php if (get_sub_field('headline') != '') { ?>
           <h1><?php echo get_sub_field('headline'); ?></h1>
