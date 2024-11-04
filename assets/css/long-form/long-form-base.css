@@ -879,6 +879,21 @@ audio {
 #intro .grid-padding-x.skinny {
   height: 300px !important;
 }
+@media only screen and (max-width: 1080px) {
+  #intro .grid-padding-x.skinny {
+    height: 300px !important;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #intro .grid-padding-x.skinny {
+    height: 300px !important;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #intro .grid-padding-x.skinny {
+    height: auto;
+  }
+}
 #intro .intro-text {
   display: flex;
   flex-direction: column;
