@@ -2317,7 +2317,7 @@ audio {
     }
   }
   .wp-caption-text {
-    margin-top:10px;
+    margin-top:0px;
     p {
       @include caption-text();
     }

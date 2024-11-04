@@ -2357,7 +2357,7 @@ audio {
   padding: 4px 8px;
 }
 .election-block .wp-caption-text {
-  margin-top: 10px;
+  margin-top: 0px;
   padding-top: 0px;
 }
 .election-block .wp-caption-text p {
