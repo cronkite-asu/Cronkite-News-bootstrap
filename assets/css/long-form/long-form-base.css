@@ -2319,7 +2319,10 @@ audio {
 
 .election-block {
   border-top: 1px solid #003594;
-  background-color: rgb(236, 236, 236);
+  background-color: rgba(236, 236, 236, 0.85);
+}
+.election-block h2 {
+  font-family: "Roboto", sans-serif;
 }
 
 /*# sourceMappingURL=long-form-base.css.map */
