@@ -1,4 +1,111 @@
 <!-- main body container -->
+<?php if (current_user_can('administrator')) { ?>
+<!-- main body container -->
+<div id="election-container" class="grid-container">
+  <div class="grid-x grid-padding-x align-stretch">
+    <div class="large-12 medium-12 small-12 cell">
+
+      <div class="grid-x grid-padding-x">
+        <div class="large-3 medium-3 small-12 cell story slide-aside">
+          <div class="grid-x grid-padding-x">
+            <?php
+            // left side stories
+            $mainStoryList = get_field('stories', 237021);
+            $mainStoryCounter = 0;
+            foreach ($mainStoryList as $mainStory) {
+              if ($mainStoryCounter > 0 && $mainStoryCounter < 3) {
+                  $permalink = get_permalink($mainStory);
+                  $summary = get_field('story_tease', $mainStory);
+                  if ($mainStoryCounter == 1) {
+                    $firstChild = 'spacer';
+                  }
+
+                  if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
+                      $title = get_field('homepage_headline', $mainStory);
+                  } else {
+                      $title = get_the_title($mainStory);
+                  }
+
+                  // save main story ID
+                  $topStoriesArray[] = $mainStory;
+            ?>
+                <div class="large-12 medium-12 small-6 cell <?php echo $firstChild; ?>">
+                  <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?><h3><?php echo $title; ?></h3></a>
+                </div>
+            <?php
+              }
+              $mainStoryCounter++;
+            }
+            ?>
+          </div>
+        </div>
+
+        <?php
+            // main story
+            $mainStoryList = get_field('stories', 237021);
+            $mainStoryCounter = 0;
+            foreach ($mainStoryList as $mainStory) {
+              if ($mainStoryCounter < 1) {
+                $permalink = get_permalink($mainStory);
+                $summary = get_field('story_tease', $mainStory);
+                $title = get_the_title($mainStory);
+
+                // save main story ID
+                $topStoriesArray[] = $mainStory;
+        ?>
+                <div class="large-6 medium-6 small-12 cell main-story">
+                  <div class="grid-x grid-padding-x">
+                    <div class="large-12 medium-12 small-12 cell">
+                      <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?><h3><?php echo $title; ?></h3></a>
+                    </div>
+                  </div>
+                </div>
+        <?php
+              }
+              $mainStoryCounter++;
+            }
+
+            // top stories section
+            $mainStoryList = get_field('stories', 237021);
+            $mainStoryCounter = 0;
+        ?>
+              <div class="large-3 medium-3 small-12 cell top-stories">
+                <div class="grid-x grid-padding-x">
+                  <div class="large-12 medium-12 small-12 cell">
+                    <h4>Top stories</h4>
+                  </div>
+                  <div class="large-12 medium-12 small-12 cell">
+                    <ul>
+        <?php
+                    foreach ($mainStoryList as $mainStory) {
+                      if ($mainStoryCounter > 2) {
+                        $permalink = get_permalink($mainStory);
+                        $summary = get_field('story_tease', $mainStory);
+                        if (get_field('use_short_headline', $mainStory) == 'yes' && get_field('homepage_headline', $mainStory) != '') {
+                            $title = get_field('homepage_headline', $mainStory);
+                        } else {
+                            $title = get_the_title($mainStory);
+                        }
+
+                        // save main story ID
+                        $topStoriesArray[] = $mainStory;
+        ?>
+                          <li><a href="<?php echo $permalink; ?>" target="_blank"><?php echo $title; ?></a></li>
+        <?php
+                        }
+                        $mainStoryCounter++;
+                      }
+        ?>
+                  </ul>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+<?php } ?>
+
 <div id="homepage-container">
 
   <!-- main stories -->
