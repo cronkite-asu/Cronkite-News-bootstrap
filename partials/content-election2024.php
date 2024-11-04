@@ -109,13 +109,6 @@ $candidateProfiles = [];
   </div>
 </div>
 
-<div class="grid-container key-dates">
-  <div class="grid-x grid-padding-x">
-    <div class="large-12 medium-12 small-12 cell">
-      <img src="https://cronkitenews.azpbs.org/wp-content/uploads/2024/10/Election-Dates-Long-Mobile-11-1-11-5-copy.jpg" />      
-    </div>
-  </div>
-</div>
 
 <div class="grid-container videos">
   <div class="grid-x grid-padding-x">
