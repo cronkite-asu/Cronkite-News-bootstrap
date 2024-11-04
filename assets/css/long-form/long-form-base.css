@@ -877,16 +877,16 @@ audio {
   }
 }
 #intro .grid-padding-x.skinny {
-  height: 300px !important;
+  height: 400px !important;
 }
 @media only screen and (max-width: 1080px) {
   #intro .grid-padding-x.skinny {
-    height: 300px !important;
+    height: 400px !important;
   }
 }
 @media only screen and (max-width: 1024px) {
   #intro .grid-padding-x.skinny {
-    height: 300px !important;
+    height: 400px !important;
   }
 }
 @media only screen and (max-width: 900px) {
