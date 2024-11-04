@@ -2375,6 +2375,7 @@ audio {
   margin-bottom: 25px;
 }
 .election-block .wp-caption-text.video {
+  margin-top: 10px;
   margin-bottom: 25px;
 }
 .election-block .wp-caption-text a {
