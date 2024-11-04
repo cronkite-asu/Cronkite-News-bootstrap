@@ -2405,5 +2405,10 @@ audio {
   color: #000;
   margin-bottom: 10px;
 }
+.election-summary p {
+  font-size: 1rem;
+  line-height: 1.85rem;
+  letter-spacing: 0;
+}
 
 /*# sourceMappingURL=long-form-base.css.map */
