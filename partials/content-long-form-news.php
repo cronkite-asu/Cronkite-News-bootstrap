@@ -1631,9 +1631,10 @@ if (have_rows('blocks')) {
             </div>
         <?php
             }
-          } else if (get_sub_field('visual-type') == 'video') {
-
-          } else {
+          } else if (get_sub_field('visual-type') == 'video' || get_sub_field('visual-type') == 'embed') {
+            if (get_sub_field('embed') != '') {
+              echo get_sub_field('embed');
+            }
           }
         ?>
         <?php if (get_sub_field('content') != '') { echo get_sub_field('content'); } ?>
