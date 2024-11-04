@@ -117,25 +117,12 @@
   <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/smooth-scroll/dist/smooth-scroll.js"></script>
   <script src="<?php bloginfo('template_directory'); ?>/assets/js/vendor/plyr-master/dist/plyr.js"></script>
 
-  <?php if (current_user_can('administrator')) { ?>
-  <script src="https://webreader.naturalreaders.com/nr-webreader.js" defer></script>
-  <script>
-      window.addEventListener("DOMContentLoaded", function() {
-          if (typeof NRWebReader != 'undefined') {
-              window['NRWebReader'] = new NRWebReader({
-              widget_id: "3m7ptr3zhp"  // DO NOT REMOVE. This is your widget ID for your WebReader
-              });
-          }
-      });
-  </script>
-  <?php } ?>
-
   <?php
     $settings = get_field('longform-settings', get_the_ID());
-if (isset($settings['scripts-file']) && $settings['scripts-file'] != '') {
-    ?>
-  <script src="<?php echo $settings['scripts-file']; ?>"></script>
-    <?php } ?>
+    if (isset($settings['scripts-file']) && $settings['scripts-file'] != '') {
+  ?>
+    <script src="<?php echo $settings['scripts-file']; ?>"></script>
+  <?php } ?>
 
   <script>
   /**
