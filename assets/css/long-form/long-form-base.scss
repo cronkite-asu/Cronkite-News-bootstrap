@@ -1049,6 +1049,17 @@ audio {
       width: 100%;
     }
   }
+
+  .skinny {
+    .intro-text {
+      h1 {
+        font-weight: 800 !important;
+        font-size: 2rem !important;
+        line-height: 2.5rem !important;
+      }
+    }
+  }
+
   .background-img {
     position: relative;
     background-repeat: no-repeat !important;

@@ -186,8 +186,17 @@ if (have_rows('blocks')) {
           <?php echo get_sub_field('intro_summary'); ?>
         <?php } ?>
       </div>
+      <?php
+        if (get_sub_field('skinny-header') == 'yes') {
+      ?>
+      <div class="large-6 medium-6 small-12 cell">
+        <?php echo '<img src='.get_sub_field('photo').' />'; ?>
+      <?php } else { ?>
       <div class="large-6 medium-6 small-12 cell background-img" <?php echo 'style="background:url('.get_sub_field('photo').')"';?>>
+      <?php } ?>
+        <?php if (get_sub_field('credits') != '') { ?>
         <span class="photo-credit"><?php echo get_sub_field('credits'); ?></span>
+        <?php } ?>
       </div>
     </div>
   </div>
@@ -1152,32 +1161,31 @@ if (have_rows('blocks')) {
 
 
 <?php
-        } elseif (get_row_layout() == 'photo-slideshow') {
-
-            $settings = get_sub_field('slideshow-settings');
-            if ($settings['width'] == 'large-width') {
-                $photoWidth = 'large-photo';
-            } else {
-                $photoWidth = '';
-            }
-            ?>
+  } elseif (get_row_layout() == 'photo-slideshow') {
+    $settings = get_sub_field('slideshow-settings');
+    if ($settings['width'] == 'large-width') {
+        $photoWidth = 'large-photo';
+    } else {
+        $photoWidth = '';
+    }
+?>
 
     <div class="grid-container photo-content single <?php echo $photoWidth; ?>">
       <div class="grid-x grid-padding-x">
         <div class="large-12 medium-12 small-12 cell">
         <?php
-                            $captionCounter = 0;
+            $captionCounter = 0;
             if (have_rows('photos')) {
-                ?>
+        ?>
           <div id="story-slideshow" class="story-slideshow">
         <?php
-                                while (have_rows('photos')) {
-                                    the_row();
-                                    ?>
-                <div>
-                  <img src="<?php echo get_sub_field('photo'); ?>" />
-                  <div class="wp-caption-text"><?php echo get_sub_field('caption'); ?></div>
-                </div>
+            while (have_rows('photos')) {
+                the_row();
+        ?>
+            <div>
+              <img src="<?php echo get_sub_field('photo'); ?>" />
+              <div class="wp-caption-text"><?php echo get_sub_field('caption'); ?></div>
+            </div>
   			<?php } ?>
           </div>
         </div>
@@ -1596,27 +1604,39 @@ if (have_rows('blocks')) {
       </div>
     </div>
 
-<?php
-  } elseif (get_row_layout() == 'election-block') {
-
-      if (get_sub_field('visual-type') == 'img') {
-
-      } else if (get_sub_field('visual-type') == 'video') {
-
-      } else if (get_sub_field('visual-type') == 'gallery') {
-        if (get_sub_field('gallery-type') == 'carousel') {
-
-        }
-      } else {
-      }
-  ?>
+<?php } elseif (get_row_layout() == 'election-block') { ?>
 
   <div class="grid-container text-content election-block">
     <div class="grid-x grid-padding-x">
       <div class="large-12 cell">
         <?php if (get_sub_field('timestamp') != '') { echo '<span class="timestamp"><p>'.get_sub_field('timestamp').'</p></span>'; } ?>
         <?php if (get_sub_field('title') != '') { echo '<h2>'.get_sub_field('title').'</h2>'; } ?>
-        <?php if (get_sub_field('embed') != '') { echo get_sub_field('embed'); } ?>
+        <?php
+          if (get_sub_field('visual-type') == 'img' || get_sub_field('visual-type') == 'gallery') {
+            if (get_sub_field('gallery-type') == 'carousel') {
+
+            }
+
+            if (have_rows('photos')) {
+        ?>
+            <div id="story-slideshow" class="story-slideshow">
+        <?php
+              while (have_rows('photos')) {
+                  the_row();
+        ?>
+              <div>
+                <img src="<?php echo get_sub_field('photo'); ?>" />
+                <div class="wp-caption-text"><?php echo get_sub_field('caption'); ?></div>
+              </div>
+    			<?php } ?>
+            </div>
+        <?php
+            }
+          } else if (get_sub_field('visual-type') == 'video') {
+
+          } else {
+          }
+        ?>
         <?php if (get_sub_field('content') != '') { echo get_sub_field('content'); } ?>
       </div>
     </div>
