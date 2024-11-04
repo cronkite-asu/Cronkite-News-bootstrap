@@ -2330,11 +2330,13 @@ audio {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #003594;
+}
+.election-block .timestamp p {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-style: normal;
   color: #ffffff;
-  background-color: #003594;
 }
 
 /*# sourceMappingURL=long-form-base.css.map */

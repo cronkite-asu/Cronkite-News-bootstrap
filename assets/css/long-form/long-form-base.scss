@@ -2283,10 +2283,12 @@ audio {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: $robotoFontFamily;
-    font-weight: 300;
-    font-style: normal;
-    color: $white;
     background-color: $cnBlue;
+    p {
+      font-family: $robotoFontFamily;
+      font-weight: 300;
+      font-style: normal;
+      color: $white;
+    }
   }
 }
