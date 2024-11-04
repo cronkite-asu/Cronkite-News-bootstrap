@@ -1614,7 +1614,7 @@ if (have_rows('blocks')) {
   <div class="grid-container text-content election-block">
     <div class="grid-x grid-padding-x">
       <div class="large-12 cell">
-        <?php if (get_sub_field('title') != '') { echo get_sub_field('title'); } ?>
+        <?php if (get_sub_field('title') != '') { echo '<h2>'.get_sub_field('title').'</h2>'; } ?>
         <?php if (get_sub_field('embed') != '') { echo get_sub_field('embed'); } ?>
         <?php if (get_sub_field('content') != '') { echo get_sub_field('content'); } ?>
       </div>
