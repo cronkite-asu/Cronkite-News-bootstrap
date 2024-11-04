@@ -2330,6 +2330,7 @@ audio {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: fit-content;
   background-color: #003594;
 }
 .election-block .timestamp p {
@@ -2337,6 +2338,8 @@ audio {
   font-weight: 300;
   font-style: normal;
   color: #ffffff;
+  margin: 0;
+  padding: 4px 8px;
 }
 
 /*# sourceMappingURL=long-form-base.css.map */
