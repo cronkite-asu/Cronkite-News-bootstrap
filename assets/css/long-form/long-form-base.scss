@@ -2291,7 +2291,9 @@ audio {
   h2 {
     font-family: $robotoFontFamily;
     font-weight: 700;
+    line-height: 2rem;
     color: $black;
+    margin-bottom: 10px;
   }
   p {
     font-size: 1rem;

@@ -2331,7 +2331,9 @@ audio {
 .election-block h2 {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
+  line-height: 2rem;
   color: #000;
+  margin-bottom: 10px;
 }
 .election-block p {
   font-size: 1rem;
