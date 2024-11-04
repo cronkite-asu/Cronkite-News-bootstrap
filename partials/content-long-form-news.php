@@ -1590,32 +1590,8 @@ if (have_rows('blocks')) {
     </div>
 
 <?php
-  } elseif (get_row_layout() == 'election-block') {
-
-      if (get_sub_field('visual-type') == 'img') {
-
-      } else if (get_sub_field('visual-type') == 'video') {
-
-      } else if (get_sub_field('visual-type') == 'gallery') {
-        if (get_sub_field('gallery-type') == 'carousel') {
-
         }
-      } else {
-      }
-  ?>
-
-  <div class="grid-container text-content <?php echo $textWidth; ?>">
-    <div class="grid-x grid-padding-x">
-      <div class="large-12 cell">
-        <?php if (get_sub_field('title') != '') { echo get_sub_field('title'); } ?>
-        <?php if (get_sub_field('embed') != '') { echo get_sub_field('embed'); } ?>
-        <?php if (get_sub_field('content') != '') { echo get_sub_field('content'); } ?>
-      </div>
-    </div>
-  </div>
-
-<?php
-
+    }
 }
 ?>
 
