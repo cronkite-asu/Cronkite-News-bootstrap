@@ -160,14 +160,23 @@ function generateByline($currPostID, $currIntro, $publishDate, $style)
 <?php
 }
 
-
 if (have_rows('blocks')) {
-    while (have_rows('blocks')) {
-        the_row();
-        if (get_row_layout() == 'intro-split') {
-            $intro = get_sub_field('intro_summary');
-            ?>
-  <div id="intro" class="grid-container full">
+  while (have_rows('blocks')) {
+    the_row();
+    if (get_row_layout() == 'intro-split') {
+      if (get_sub_field('intro_summary') != '') {
+        $intro = get_sub_field('intro_summary');
+      } else {
+        $intro = '';
+      }
+
+      if (get_sub_field('skinny-header') == 'yes') {
+        $cssStyle = 'skinny';
+      } else {
+        $cssStyle = '';
+      }
+?>
+  <div id="intro" class="grid-container full <?php echo $cssStyle; ?>">
     <div class="grid-x grid-padding-x">
       <div class="large-6 medium-6 small-12 cell intro-text">
         <?php if (get_sub_field('headline') != '') { ?>
@@ -184,9 +193,7 @@ if (have_rows('blocks')) {
   </div>
 <?php generateByline(get_the_ID(), $intro, $publishDate, ''); ?>
 
-<?php
-        } elseif (get_row_layout() == 'intro-split-code') {
-            ?>
+<?php } elseif (get_row_layout() == 'intro-split-code') { ?>
   <div id="intro" class="grid-container full">
     <div class="grid-x grid-padding-x">
       <div class="large-6 medium-12 small-12 cell intro-text">
@@ -198,9 +205,9 @@ if (have_rows('blocks')) {
         <?php } ?>
 
         <?php
-                      $audioSettings = get_sub_field('audio');
-            if ($audioSettings['audio-file'] != '') {
-                ?>
+          $audioSettings = get_sub_field('audio');
+          if ($audioSettings['audio-file'] != '') {
+        ?>
         <div class="audio-holder in-content">
           <div class="player-btn">
 

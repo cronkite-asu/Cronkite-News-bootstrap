@@ -916,6 +916,9 @@ audio {
       and (max-width: 900px) {
         height: auto;
     }
+    &.skinny {
+      height: 300px !important;
+    }
   }
   .intro-text {
     display: flex;
@@ -923,7 +926,6 @@ audio {
     align-items: initial;
     justify-content: center;
     background:$black;
-    /*background:linear-gradient(to bottom, rgb(152, 57, 87), rgb(219, 39, 38));*/
     padding-left: 5rem;
     padding-right: 5rem;
     @media only screen
@@ -2230,7 +2232,6 @@ audio {
 }
 
 .charts-doc {
-
   .wp-caption-text {
     max-width: 45rem;
     margin:0 auto;
@@ -2256,4 +2257,8 @@ audio {
       }
     }
   }
+}
+
+.election-block {
+
 }
