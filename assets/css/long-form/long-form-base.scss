@@ -2278,4 +2278,11 @@ audio {
     font-family: $robotoFontFamily;
     font-weight: 700;
   }
+  .timestamp {
+    font-family: $robotoFontFamily;
+    font-weight: 300;
+    font-style: normal;
+    color: $white;
+    background-color: $cnBlue;
+  }
 }
