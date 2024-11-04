@@ -1622,7 +1622,7 @@ if (have_rows('blocks')) {
               <div>
                 <?php if (get_sub_field('photo') != '') { ?>
                   <img src="<?php echo get_sub_field('photo'); ?>" />
-                  <?php if (get_sub_field('credit')) { ?>
+                  <?php if (get_sub_field('credit') != '') { ?>
                   <div class="wp-caption-text"><?php echo get_sub_field('credit'); ?></div>
                   <?php } ?>
                 <?php } ?>
