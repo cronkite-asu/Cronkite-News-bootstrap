@@ -1600,7 +1600,8 @@ if (have_rows('blocks')) {
         if (get_sub_field('gallery-type') == 'carousel') {
 
         }
-      } else if (get_sub_field('visual-type') == 'embed') {
+      } else {
+      }
   ?>
 
   <div class="grid-container text-content <?php echo $textWidth; ?>">
@@ -1614,7 +1615,7 @@ if (have_rows('blocks')) {
   </div>
 
 <?php
-    }
+
 }
 ?>
 
