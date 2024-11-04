@@ -2394,6 +2394,7 @@ audio {
 
 .election-summary {
   background-color: rgba(236, 236, 236, 0.55);
+  margin-bottom: 25px;
 }
 .election-summary p {
   font-family: "Roboto", sans-serif;

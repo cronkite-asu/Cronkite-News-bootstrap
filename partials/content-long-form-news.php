@@ -884,8 +884,8 @@ if (have_rows('blocks')) {
         $textWidth = 'full';
     }
 
-    if ($textBlockSettings['block-id'] != '') {
-        $blockID = $textBlockSettings['block-id'];
+    if ($textBlockSettings['class'] != '') {
+        $blockID = $textBlockSettings['class'];
     } else {
         $blockID = '';
     }
