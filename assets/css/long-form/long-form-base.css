@@ -2317,4 +2317,8 @@ audio {
   border: none;
 }
 
+.election-block {
+  border: 1px solid #ff0000;
+}
+
 /*# sourceMappingURL=long-form-base.css.map */

@@ -34,7 +34,7 @@ $candidateProfiles = [];
                   $topStoriesArray[] = $mainStory;
             ?>
                 <div class="large-12 medium-12 small-6 cell <?php echo $firstChild; ?>">
-                  <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?><h3><?php echo $title; ?></h3></a>
+                  <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($mainStory); ?><h3><?php echo $title; ?></h3></a>
                 </div>
             <?php
               }
@@ -60,7 +60,7 @@ $candidateProfiles = [];
                 <div class="large-6 medium-6 small-12 cell main-story">
                   <div class="grid-x grid-padding-x">
                     <div class="large-12 medium-12 small-12 cell">
-                      <a href="<?php echo $permalink; ?>" target="_blank"><?php echo get_the_post_thumbnail($mainStory); ?><h3><?php echo $title; ?></h3></a>
+                      <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($mainStory); ?><h3><?php echo $title; ?></h3></a>
                     </div>
                   </div>
                 </div>
@@ -94,7 +94,7 @@ $candidateProfiles = [];
                         // save main story ID
                         $topStoriesArray[] = $mainStory;
         ?>
-                          <li><a href="<?php echo $permalink; ?>" target="_blank"><?php echo $title; ?></a></li>
+                          <li><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></li>
         <?php
                         }
                         $mainStoryCounter++;

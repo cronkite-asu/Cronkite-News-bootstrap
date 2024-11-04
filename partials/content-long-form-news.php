@@ -1611,7 +1611,7 @@ if (have_rows('blocks')) {
       }
   ?>
 
-  <div class="grid-container text-content <?php echo $textWidth; ?>">
+  <div class="grid-container text-content election-block">
     <div class="grid-x grid-padding-x">
       <div class="large-12 cell">
         <?php if (get_sub_field('title') != '') { echo get_sub_field('title'); } ?>
