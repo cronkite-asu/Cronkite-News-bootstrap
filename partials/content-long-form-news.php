@@ -186,14 +186,9 @@ if (have_rows('blocks')) {
           <?php echo get_sub_field('intro_summary'); ?>
         <?php } ?>
       </div>
-      <?php
-        if (get_sub_field('skinny-header') == 'yes') {
-      ?>
-      <div class="large-6 medium-6 small-12 cell">
-        <?php echo '<img src='.get_sub_field('photo').' />'; ?>
-      <?php } else { ?>
+
       <div class="large-6 medium-6 small-12 cell background-img" <?php echo 'style="background:url('.get_sub_field('photo').')"';?>>
-      <?php } ?>
+      
         <?php if (get_sub_field('credits') != '') { ?>
         <span class="photo-credit"><?php echo get_sub_field('credits'); ?></span>
         <?php } ?>
