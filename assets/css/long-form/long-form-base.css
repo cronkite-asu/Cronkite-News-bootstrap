@@ -2390,4 +2390,8 @@ audio {
   border: none;
 }
 
+.election-summary {
+  background-color: rgba(236, 236, 236, 0.55);
+}
+
 /*# sourceMappingURL=long-form-base.css.map */

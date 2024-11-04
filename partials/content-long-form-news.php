@@ -875,17 +875,22 @@ if (have_rows('blocks')) {
   </div>
 
 <?php
-        } elseif (get_row_layout() == 'text-block') {
+  } elseif (get_row_layout() == 'text-block') {
 
-            $textBlockSettings = get_sub_field('settings');
-            if ($textBlockSettings['regular'] == 'size') {
-                $textWidth = '';
-            } else {
-                $textWidth = 'full';
-            }
-            ?>
+    $textBlockSettings = get_sub_field('settings');
+    if ($textBlockSettings['regular'] == 'size') {
+        $textWidth = '';
+    } else {
+        $textWidth = 'full';
+    }
 
-  <div class="grid-container text-content <?php echo $textWidth; ?>">
+    if ($textBlockSettings['block-id'] != '') {
+        $blockID = $textBlockSettings['block-id'];
+    } else {
+        $blockID = '';
+    }
+?>
+  <div class="grid-container text-content <?php echo $textWidth; ?> <?php echo $blockID; ?>">
     <div class="grid-x grid-padding-x">
       <div class="large-12 cell">
         <?php echo get_sub_field('content');	?>
@@ -894,20 +899,20 @@ if (have_rows('blocks')) {
   </div>
 
 <?php
-        } elseif (get_row_layout() == 'video-embed') {
+} elseif (get_row_layout() == 'video-embed') {
 
-            $settings = get_sub_field('video-content-settings');
-            if ($settings['width'] == 'large-width') {
-                $videoWidth = 'large-video';
-                $color = '#656159';
-            } else {
-                $videoWidth = '';
-                $color = '';
-            }
-            ?>
-<?php if ($color != '') { ?>
-  <div class="large-video-bg-color" style="background: <?php echo $color; ?>">
-<?php } ?>
+    $settings = get_sub_field('video-content-settings');
+    if ($settings['width'] == 'large-width') {
+        $videoWidth = 'large-video';
+        $color = '#656159';
+    } else {
+        $videoWidth = '';
+        $color = '';
+    }
+?>
+  <?php if ($color != '') { ?>
+    <div class="large-video-bg-color" style="background: <?php echo $color; ?>">
+  <?php } ?>
   <div class="grid-container video-content <?php echo $videoWidth; ?>">
     <div class="grid-x grid-padding-x">
       <?php
