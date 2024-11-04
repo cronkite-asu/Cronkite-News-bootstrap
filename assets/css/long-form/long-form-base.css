@@ -2325,5 +2325,16 @@ audio {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
 }
+.election-block .timestamp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #ffffff;
+  background-color: #003594;
+}
 
 /*# sourceMappingURL=long-form-base.css.map */
