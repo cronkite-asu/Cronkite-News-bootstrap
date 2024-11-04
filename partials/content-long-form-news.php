@@ -188,7 +188,7 @@ if (have_rows('blocks')) {
       </div>
 
       <div class="large-6 medium-6 small-12 cell background-img" <?php echo 'style="background:url('.get_sub_field('photo').')"';?>>
-      
+
         <?php if (get_sub_field('credits') != '') { ?>
         <span class="photo-credit"><?php echo get_sub_field('credits'); ?></span>
         <?php } ?>
@@ -1612,16 +1612,20 @@ if (have_rows('blocks')) {
 
             }
 
-            if (have_rows('photos')) {
+            if (have_rows('image')) {
         ?>
             <div id="story-slideshow" class="story-slideshow">
         <?php
-              while (have_rows('photos')) {
+              while (have_rows('image')) {
                   the_row();
         ?>
               <div>
-                <img src="<?php echo get_sub_field('photo'); ?>" />
-                <div class="wp-caption-text"><?php echo get_sub_field('caption'); ?></div>
+                <?php if (get_sub_field('photo') != '') { ?>
+                  <img src="<?php echo get_sub_field('photo'); ?>" />
+                  <?php if (get_sub_field('credit')) { ?>
+                  <div class="wp-caption-text"><?php echo get_sub_field('credit'); ?></div>
+                  <?php } ?>
+                <?php } ?>
               </div>
     			<?php } ?>
             </div>
