@@ -2358,6 +2358,9 @@ audio {
 }
 .election-block .wp-caption-text {
   margin-top: 10px;
+  padding-top: 0px;
+}
+.election-block .wp-caption-text p {
   max-width: 800px;
   font-family: "Roboto", sans-serif;
   font-size: 0.85rem;
@@ -2366,7 +2369,6 @@ audio {
   padding-top: 10px;
   letter-spacing: 0;
   line-height: 1.2rem;
-  padding-top: 0px;
 }
 .election-block .wp-caption-text.audio {
   margin-top: -20px;
