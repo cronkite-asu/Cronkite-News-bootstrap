@@ -598,8 +598,8 @@ body {
 }
 @media only screen and (max-width: 660px) {
   #election-container .grid-padding-x > .cell {
-    padding-left: 0.875rem !important;
-    padding-right: 0.875rem !important;
+    padding-right: 0.625rem !important;
+    padding-left: 0.625rem !important;
   }
 }
 #election-container h3 {
