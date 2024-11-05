@@ -62,8 +62,8 @@ $candidateProfiles = [];
                     <div class="large-12 medium-12 small-12 cell">
                       <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($mainStory); ?><h3><?php echo $title; ?></h3></a>
                       <ul class="more-coverage">
-                        <li><a href="https://cronkitenews.azpbs.org/election-2024/" target="_blank">More election coverage</a></li>
-                        <li><a href="https://cronkitenews.azpbs.org/election-2024/election-2024-results/" target="_blank">Live election results</a></li>
+                        <li><a href="https://cronkitenews.azpbs.org/election-2024/" target="_blank">More election coverage &raquo;</a></li>
+                        <li><a href="https://cronkitenews.azpbs.org/election-2024/election-2024-results/" target="_blank">Live election results &raquo;</a></li>
                       </ul>
                     </div>
                   </div>
