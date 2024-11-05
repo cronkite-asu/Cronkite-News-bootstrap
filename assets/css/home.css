@@ -691,9 +691,6 @@ body {
     order: 1;
   }
 }
-#election-container .main-story .more-coverage li {
-  font-family: Georgia, Times, "Times New Roman", serif;
-}
 #election-container .main-story .more-coverage li a {
   color: #003594;
 }
