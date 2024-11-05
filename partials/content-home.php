@@ -104,7 +104,7 @@
     </div>
   </div>
 </div>
-<?php } else { ?>
+<?php } ?>
 
 <div id="homepage-container">
 
