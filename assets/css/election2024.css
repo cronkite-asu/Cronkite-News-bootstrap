@@ -205,6 +205,9 @@ hr {
 #election-container .top-stories ul li a:hover {
   color: #0a0a0a;
 }
+#election-container .top-stories .more-coverage li a {
+  color: #003594;
+}
 
 .videos, .spanish, .candidate-profiles, .key-dates {
   max-width: 80rem;
