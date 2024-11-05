@@ -657,6 +657,11 @@ body {
       padding: 0;
     }
     @media only screen
+      and (max-width: 1240px) {
+        padding-left: 0.875rem;
+        padding-right: 0.875rem;
+    }
+    @media only screen
       and (max-width: 660px) {
         padding-right: 0.625rem !important;
         padding-left: 0.625rem !important;
