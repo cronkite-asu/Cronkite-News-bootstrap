@@ -754,7 +754,10 @@ body {
         order: 1;
     }
     .more-coverage {
-      li {        
+      border-top: 1px solid $cnBlue;
+      margin-left: 0px;
+      li {
+        list-style-position: inside;
         a {
           color: $cnBlue;
         }

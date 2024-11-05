@@ -691,6 +691,13 @@ body {
     order: 1;
   }
 }
+#election-container .main-story .more-coverage {
+  border-top: 1px solid #003594;
+  margin-left: 0px;
+}
+#election-container .main-story .more-coverage li {
+  list-style-position: inside;
+}
 #election-container .main-story .more-coverage li a {
   color: #003594;
 }
