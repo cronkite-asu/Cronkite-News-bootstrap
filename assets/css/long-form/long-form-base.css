@@ -886,7 +886,7 @@ audio {
 }
 @media only screen and (max-width: 1024px) {
   #intro .grid-padding-x.skinny {
-    height: 400px !important;
+    height: auto !important;
   }
 }
 @media only screen and (max-width: 900px) {
