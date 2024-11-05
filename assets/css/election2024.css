@@ -154,6 +154,7 @@ hr {
 #election-container .main-story .more-coverage {
   border-top: 1px solid #003594;
   margin-left: 0px;
+  padding-top: 10px;
 }
 #election-container .main-story .more-coverage li {
   list-style-position: inside;
