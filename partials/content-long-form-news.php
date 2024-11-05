@@ -916,12 +916,10 @@ if (have_rows('blocks')) {
   <div class="grid-container video-content <?php echo $videoWidth; ?>">
     <div class="grid-x grid-padding-x">
       <?php
-                    if ($settings['video-player'] == 'regular-embed' || $settings['video-player'] == '') {
-                        ?>
+        if ($settings['video-player'] == 'regular-embed' || $settings['video-player'] == '') {
 
-      <?php
-                    } else {
-                        ?>
+        } else {
+      ?>
       <div class="large-12 cell">
         <h4 class="text-center"><?php echo get_sub_field('video-title'); ?></h4>
       </div>
@@ -929,10 +927,10 @@ if (have_rows('blocks')) {
 
       <div class="large-12 cell">
         <?php
-                            if ($settings['video-player'] == 'regular-embed' || $settings['video-player'] == '') {
-                                echo get_sub_field('embed');
-                            } else {
-                                ?>
+          if ($settings['video-player'] == 'regular-embed' || $settings['video-player'] == '') {
+              echo get_sub_field('embed');
+          } else {
+        ?>
         <div class="movie-poster-overlay">
           <div class="play-btn"><i class="fas fa-play-circle"></i></div>
           <video autoplay muted playsinline crossorigin loop>
@@ -941,29 +939,27 @@ if (have_rows('blocks')) {
         </div>
 
         <?php
-                                    echo '<div class="plyr__video-embed responsive-embed widescreen" id="player">';
-                                //echo '<iframe width="800" height="500" src="'.$vidlink.'?rel=0" frameborder="0" gesture="media" allowfullscreen></iframe>';
-                                echo '<iframe
+                echo '<div class="plyr__video-embed responsive-embed widescreen" id="player">';
+                //echo '<iframe width="800" height="500" src="'.$vidlink.'?rel=0" frameborder="0" gesture="media" allowfullscreen></iframe>';
+                echo '<iframe
                 src="'.get_sub_field('embed').'?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
                 allowfullscreen
                 allowtransparency
                 allow="autoplay"
             ></iframe>';
-                                echo '</div>';
-                            }
-
-            ?>
-
+              echo '</div>';
+          }
+        ?>
       </div>
       <?php
-            if ($settings['video-player'] != 'regular-embed' || $settings['video-player'] != '') {
-                ?>
+        if ($settings['video-player'] != 'regular-embed' || $settings['video-player'] != '') {
+      ?>
         <div class="large-12 cell">
           <?php echo '<div class="wp-caption-text"><p>'.strip_tags(get_sub_field('caption'), '<a>').'</p></div>'; ?>
         </div>
       <?php
-            }
-            ?>
+        }
+      ?>
     </div>
   </div>
 <?php if ($color != '') { ?>
