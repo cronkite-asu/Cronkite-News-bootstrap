@@ -700,6 +700,7 @@ body {
   list-style-position: inside;
 }
 #election-container .main-story .more-coverage li a {
+  font-size: 0.95rem;
   color: #003594;
 }
 @media only screen and (max-width: 660px) {

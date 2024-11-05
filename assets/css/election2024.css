@@ -161,6 +161,7 @@ hr {
 }
 #election-container .main-story .more-coverage li a {
   color: #003594;
+  font-size: 0.95rem;
 }
 @media only screen and (max-width: 660px) {
   #election-container .top-stories {
