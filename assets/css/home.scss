@@ -653,10 +653,13 @@ body {
   margin-top:25px;
   margin-bottom:25px;
   .grid-padding-x > .cell {
-    padding-left: 0rem;
-    padding-right: 0rem;
     &.remove-padding {
       padding: 0;
+    }
+    @media only screen
+      and (max-width: 1240px) {
+        padding-left: 0rem;
+        padding-right: 0rem;
     }
   }
   h3 {
