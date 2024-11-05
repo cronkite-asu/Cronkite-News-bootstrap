@@ -661,6 +661,12 @@ body {
         padding-left: 0rem;
         padding-right: 0rem;
     }
+    @media only screen
+      and (max-width: 660px) {
+        
+        padding-left: 0.875rem !important;
+        padding-right: 0.875rem !important;
+    }
   }
   h3 {
     font-family: $robotoFontFamily;

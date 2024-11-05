@@ -596,6 +596,12 @@ body {
     padding-right: 0rem;
   }
 }
+@media only screen and (max-width: 660px) {
+  #election-container .grid-padding-x > .cell {
+    padding-left: 0.875rem !important;
+    padding-right: 0.875rem !important;
+  }
+}
 #election-container h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 600;
