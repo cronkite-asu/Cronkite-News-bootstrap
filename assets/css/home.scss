@@ -795,6 +795,12 @@ body {
         border-bottom: 1px solid $grey;
         list-style: none;
         margin-left: 0;
+        @media only screen
+          and (max-width: 1080px) {
+            &:nth-of-type(1n+5) {
+
+            }
+        }
         &:last-child {
           border-bottom: none;
         }

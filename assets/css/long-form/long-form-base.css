@@ -1023,11 +1023,6 @@ audio {
   margin-bottom: 1.25rem;
   width: 100%;
 }
-#intro .skinny .intro-text h1 {
-  font-weight: 800 !important;
-  font-size: 2rem !important;
-  line-height: 2.5rem !important;
-}
 #intro .background-img {
   position: relative;
   background-repeat: no-repeat !important;
@@ -1063,6 +1058,16 @@ audio {
 }
 #intro .background-img .photo-credit a:hover {
   text-decoration: none;
+}
+#intro .skinny .intro-text h1 {
+  font-weight: 800 !important;
+  font-size: 2rem !important;
+  line-height: 2.5rem !important;
+}
+@media only screen and (max-width: 780px) {
+  #intro .skinny .background-img {
+    height: auto !important;
+  }
 }
 
 .stories-list {
