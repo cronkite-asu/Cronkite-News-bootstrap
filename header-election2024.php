@@ -147,9 +147,11 @@ if (isset($settings['text-color']) && $settings['text-color'] != '') {
 </head>
 
 <?php echo '<!--'.get_the_ID().'-->'; ?>
-
+<?php if (get_the_ID() == 240133) { ?>
+<body <?php body_class(); ?> style="background-color: rgba(159,4,224,.08);">
+<?php } else { ?>
 <body <?php body_class(); ?>>
-
+<?php } ?>
     <!-- reading progress container -->
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
