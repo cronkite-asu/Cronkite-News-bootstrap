@@ -151,16 +151,19 @@ hr {
     order: 1;
   }
 }
-#election-container .main-story .red {
+#election-container .main-story .headline {
+  display: flex;
+}
+#election-container .main-story .headline .red {
   background: #c31212;
 }
-#election-container .main-story .circle {
+#election-container .main-story .headline .circle {
   width: 25px;
   height: 25px;
   border-radius: 50%;
   box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1019607843);
 }
-#election-container .main-story .pulse {
+#election-container .main-story .headline .pulse {
   animation: pulse-animation 2s infinite;
 }
 @keyframes pulse-animation {
