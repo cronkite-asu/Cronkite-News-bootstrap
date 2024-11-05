@@ -337,7 +337,7 @@ body {
     content: '';
     border-image-slice: 1;
     border-top: 1px solid;
-    border-image-source: linear-gradient(to right, #fff 50%, #fff 50%);
+    border-image-source: linear-gradient(to right, $cnBlue 50%, $cnBlue 50%);
     margin: 0 0 0 20px;
     flex: 1 0 20px;
     width: 100%;
