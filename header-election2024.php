@@ -148,7 +148,7 @@ if (isset($settings['text-color']) && $settings['text-color'] != '') {
 
 <?php echo '<!--'.get_the_ID().'-->'; ?>
 <?php if (get_the_ID() == 240133) { ?>
-<body <?php body_class(); ?> style="background-color: rgba(159,4,224,.08);">
+<body <?php body_class(); ?> style="background-color: rgba(159,4,224,1);">
 <?php } else { ?>
 <body <?php body_class(); ?>>
 <?php } ?>
