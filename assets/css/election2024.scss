@@ -184,6 +184,13 @@ hr {
       and (max-width: 660px) {
         order: 1;
     }
+    .more-coverage {
+      li {
+        a {
+          color: $cnBlue;
+        }
+      }
+    }
   }
   .top-stories {
     @media only screen
@@ -236,13 +243,6 @@ hr {
           &:hover {
             color: $black;
           }
-        }
-      }
-    }
-    .more-coverage {
-      li {
-        a {
-          color: $cnBlue;
         }
       }
     }
