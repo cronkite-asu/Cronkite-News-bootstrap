@@ -2308,6 +2308,7 @@ audio {
     line-height: 2rem;
     color: $black;
     margin-bottom: 15px;
+    margin-top:0px;
   }
   p {
     font-size: 1rem;
@@ -2321,6 +2322,7 @@ audio {
     justify-content: center;
     width: fit-content;
     background-color: $cnBlue;
+    margin-bottom: 25px;
     p {
       font-family: $robotoFontFamily;
       font-weight: 400;

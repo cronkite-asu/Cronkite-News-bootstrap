@@ -2347,6 +2347,7 @@ audio {
   line-height: 2rem;
   color: #000;
   margin-bottom: 15px;
+  margin-top: 0px;
 }
 .election-block p {
   font-size: 1rem;
@@ -2360,6 +2361,7 @@ audio {
   justify-content: center;
   width: fit-content;
   background-color: #003594;
+  margin-bottom: 25px;
 }
 .election-block .timestamp p {
   font-family: "Roboto", sans-serif;
