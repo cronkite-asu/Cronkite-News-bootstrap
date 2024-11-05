@@ -60,7 +60,7 @@ $candidateProfiles = [];
                 <div class="large-6 medium-6 small-12 cell main-story">
                   <div class="grid-x grid-padding-x">
                     <div class="large-12 medium-12 small-12 cell">
-                      <div class="circle pulse red"></div> <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($mainStory); ?><h3><?php echo $title; ?></h3></a>
+                      <a href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($mainStory); ?><div class="circle pulse red"></div><h3><?php echo $title; ?></h3></a>
                     </div>
                   </div>
                 </div>
