@@ -2339,6 +2339,7 @@ audio {
   border-image: linear-gradient(to right, #003594 50%, #c31212 50%) 1 0 0 0;
   background-color: rgba(236, 236, 236, 0.55);
   margin-bottom: 25px;
+  padding-bottom: 25px;
 }
 .election-block h2 {
   font-family: "Roboto", sans-serif;
