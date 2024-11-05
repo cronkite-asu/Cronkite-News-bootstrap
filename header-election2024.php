@@ -146,6 +146,8 @@ if (isset($settings['text-color']) && $settings['text-color'] != '') {
     </style>
 </head>
 
+<?php echo '<!--'.get_the_ID().'-->'; ?>
+
 <body <?php body_class(); ?>>
 
     <!-- reading progress container -->
