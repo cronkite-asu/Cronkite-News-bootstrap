@@ -669,15 +669,17 @@ function related_box_grid_list($atts, $content = null) {
           if ($atts['block-name'] == 'election-2024') {
             $result .= '<div class="banner election-2024">'.get_field('block-title').'</div>';
           } else {
-            print_r(get_field('banner-images'));
-            if (get_field('banner-images') != '') {
-              //$bannerImg =
+
+            if (count(get_field('banner-images')) > 0) {
+              $bannerImg = get_field('banner-images');
+              $desktopImg = $bannerImg['desktop-img'];
+              $mobileImg = $bannerImg['mobile-img'];
             }
 
             if (get_field('block-title') != '') {
-              $result .= '<div class="banner default" style="background-image: url('.get_field('block-title').');">'.get_field('block-title').'</div>';
+              $result .= '<div class="banner default" style="background-image: url('.$desktopImg.');">'.get_field('block-title').'</div>';
             } else {
-              $result .= '<div class="banner default" style="background-image: url('.get_field('block-title').');">Related Stories</div>';
+              $result .= '<div class="banner default" style="background-image: url('.$desktopImg.');">Related Stories</div>';
             }
           }
           $result .= '<ul>';
