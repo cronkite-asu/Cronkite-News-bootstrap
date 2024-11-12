@@ -661,6 +661,7 @@ function related_box_grid_list($atts, $content = null) {
       $rsBlocks = new WP_Query($args);
       //print_r($rsBlocks);
       if ($rsBlocks->have_posts()) {
+        print_r('rs block');
         $result = '<div class="related-story-block">';
         while ($rsBlocks->have_posts()) {
           $rsBlocks->the_post();
