@@ -393,7 +393,6 @@ body {
   vertical-align: middle;
   width: 100%;
   background-size: cover;
-  background-image: url("https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/assets/img/election-2024-related-story-banner.jpg");
   background-repeat: no-repeat;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
@@ -401,6 +400,9 @@ body {
   text-transform: uppercase;
   padding: 10px 20px;
   color: #fff;
+}
+#main_container .single-story-block article .related-story-block .banner.election-2024, #top-ten .single-story-block article .related-story-block .banner.election-2024 {
+  background-image: url("https://cronkitenews.azpbs.org/wp-content/themes/Cronkite-News-bootstrap/assets/img/election-2024-related-story-banner.jpg");
 }
 #main_container .single-story-block article .related-story-block .rs-cta, #top-ten .single-story-block article .related-story-block .rs-cta {
   display: flex;

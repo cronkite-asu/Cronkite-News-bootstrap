@@ -667,13 +667,18 @@ function related_box_grid_list($atts, $content = null) {
           while ($rsBlocks->have_posts()) {
             $rsBlocks->the_post();
 
-            if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
-              $result .= '<div class="banner">'.get_field('block-title').'</div>';
+            if ($atts['block-name'] == 'election-2024') {
+              $result .= '<div class="banner election-2024">'.get_field('block-title').'</div>';
             } else {
+              print_r(get_field('banner-images'));
+              if (get_field('banner-images') != '') {
+                //$bannerImg =
+              }
+
               if (get_field('block-title') != '') {
-                $result .= '<h4>'.get_field('block-title').'</h4>';
+                $result .= '<div class="banner default">'.get_field('block-title').'</div>';
               } else {
-                $result .= '<h4>Related Stories</h4>';
+                $result .= '<div class="banner default" style="background-image: url('.get_field('block-title').');">Related Stories</div>';
               }
             }
             $result .= '<ul>';
