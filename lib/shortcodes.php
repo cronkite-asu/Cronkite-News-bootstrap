@@ -707,8 +707,10 @@ function related_box_grid_list($atts, $content = null) {
           }
         }
 
-        if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
-          $result .= '<div class="footer-banner"></div>';
+        if ($atts['block-name'] == 'election-2024') {
+          $result .= '<div class="footer-banner election-2024"></div>';
+        } else {
+          $result .= '<div class="footer-banner default"></div>';
         }
         $result .= '</div>';
       }
