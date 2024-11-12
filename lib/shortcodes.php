@@ -659,7 +659,7 @@ function related_box_grid_list($atts, $content = null) {
                 'p' => ucwords(str_replace('-', ' ', $atts['block-name'])),*/
                ];
       $rsBlocks = new WP_Query($args);
-      //print_r($rsBlocks);
+
       if ($rsBlocks->have_posts()) {
         print_r('rs block');
         $result = '<div class="related-story-block">';
@@ -675,7 +675,7 @@ function related_box_grid_list($atts, $content = null) {
             }
 
             if (get_field('block-title') != '') {
-              $result .= '<div class="banner default">'.get_field('block-title').'</div>';
+              $result .= '<div class="banner default" style="background-image: url('.get_field('block-title').');">'.get_field('block-title').'</div>';
             } else {
               $result .= '<div class="banner default" style="background-image: url('.get_field('block-title').');">Related Stories</div>';
             }
