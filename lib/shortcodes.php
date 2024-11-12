@@ -649,72 +649,70 @@ function video_embed_right($atts, $content = null)
 add_shortcode('video-embed-right', 'video_embed_right');
 
 function related_box_grid_list($atts, $content = null) {
-    //if (current_user_can('administrator')) {
-      if (isset($atts['block-name'])) {
-        $args = [
-                  'name'           => '"'.$atts['block-name'].'"',
-                  'post_type'   => 'rs_list',
-                  'post_status'    => 'publish',
-                  /*'posts_per_page' => 1,
-                  'post_status' => 'publish',
-                  'p' => ucwords(str_replace('-', ' ', $atts['block-name'])),*/
-                 ];
+    if (isset($atts['block-name'])) {
+      $args = [
+                'name'           => '"'.$atts['block-name'].'"',
+                'post_type'   => 'rs_list',
+                'post_status'    => 'publish',
+                /*'posts_per_page' => 1,
+                'post_status' => 'publish',
+                'p' => ucwords(str_replace('-', ' ', $atts['block-name'])),*/
+               ];
+      $rsBlocks = new WP_Query($args);
+      print_r($rsBlocks);
+      if ($rsBlocks->have_posts()) {
+        $result = '<div class="related-story-block">';
 
-        $rsBlocks = new WP_Query($args);
-        if ($rsBlocks->have_posts()) {
-          $result = '<div class="related-story-block">';
+        while ($rsBlocks->have_posts()) {
+          $rsBlocks->the_post();
 
-          while ($rsBlocks->have_posts()) {
-            $rsBlocks->the_post();
+          if ($atts['block-name'] == 'election-2024') {
+            $result .= '<div class="banner election-2024">'.get_field('block-title').'</div>';
+          } else {
+            print_r(get_field('banner-images'));
+            if (get_field('banner-images') != '') {
+              //$bannerImg =
+            }
 
-            if ($atts['block-name'] == 'election-2024') {
-              $result .= '<div class="banner election-2024">'.get_field('block-title').'</div>';
+            if (get_field('block-title') != '') {
+              $result .= '<div class="banner default">'.get_field('block-title').'</div>';
             } else {
-              print_r(get_field('banner-images'));
-              if (get_field('banner-images') != '') {
-                //$bannerImg =
-              }
+              $result .= '<div class="banner default" style="background-image: url('.get_field('block-title').');">Related Stories</div>';
+            }
+          }
+          $result .= '<ul>';
 
-              if (get_field('block-title') != '') {
-                $result .= '<div class="banner default">'.get_field('block-title').'</div>';
+          $storiesList = get_field('related-stories-list', get_the_ID());
+          $randKeys = array_rand($storiesList, 6);
+          $storiesListCounter = 0;
+          for ($i = 0; $i < count($storiesList); $i++) {
+            if ($storiesListCounter < 6) {
+              $permalink = get_permalink($storiesList[$randKeys[$i]]);
+              $summary = get_field('story_tease', $storiesList[$randKeys[$i]]);
+              if (get_field('use_short_headline', $storiesList[$randKeys[$i]]) == 'yes' && get_field('homepage_headline', $storiesList[$randKeys[$i]]) != '') {
+                  $title = get_field('homepage_headline', $storiesList[$randKeys[$i]]);
               } else {
-                $result .= '<div class="banner default" style="background-image: url('.get_field('block-title').');">Related Stories</div>';
+                  $title = get_the_title($storiesList[$randKeys[$i]]);
               }
+              $result .= '<li><a href="'.$permalink.'" target="_blank"><div class="img">'.get_the_post_thumbnail($storiesList[$randKeys[$i]]).'</div><h4>'.$title.'</h4></a></li>';
             }
-            $result .= '<ul>';
-
-            $storiesList = get_field('related-stories-list', get_the_ID());
-            $randKeys = array_rand($storiesList, 6);
-            $storiesListCounter = 0;
-            for ($i = 0; $i < count($storiesList); $i++) {
-              if ($storiesListCounter < 6) {
-                $permalink = get_permalink($storiesList[$randKeys[$i]]);
-                $summary = get_field('story_tease', $storiesList[$randKeys[$i]]);
-                if (get_field('use_short_headline', $storiesList[$randKeys[$i]]) == 'yes' && get_field('homepage_headline', $storiesList[$randKeys[$i]]) != '') {
-                    $title = get_field('homepage_headline', $storiesList[$randKeys[$i]]);
-                } else {
-                    $title = get_the_title($storiesList[$randKeys[$i]]);
-                }
-                $result .= '<li><a href="'.$permalink.'" target="_blank"><div class="img">'.get_the_post_thumbnail($storiesList[$randKeys[$i]]).'</div><h4>'.$title.'</h4></a></li>';
-              }
-              $storiesListCounter++;
-            }
-            $result .= '</ul>';
-            // cta
-            if (get_field('related-story-cta-link') != '') {
-              $result .= '<div class="rs-cta"><p><a href="'.get_field('related-story-cta-link').'">'.get_field('related-story-cta').' <i class="fa-solid fa-angles-right"></i></a></p></div>';
-            }
+            $storiesListCounter++;
           }
-
-          if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
-            $result .= '<div class="footer-banner"></div>';
+          $result .= '</ul>';
+          // cta
+          if (get_field('related-story-cta-link') != '') {
+            $result .= '<div class="rs-cta"><p><a href="'.get_field('related-story-cta-link').'">'.get_field('related-story-cta').' <i class="fa-solid fa-angles-right"></i></a></p></div>';
           }
-          $result .= '</div>';
         }
-        wp_reset_query();
 
-        return $result;
+        if ($atts['block-name'] == 'election-2024' || $atts['block-name'] == 'election-2024-prop-139') {
+          $result .= '<div class="footer-banner"></div>';
+        }
+        $result .= '</div>';
       }
-    //}
+      wp_reset_query();
+
+      return $result;
+    }
 }
 add_shortcode('related-story-block', 'related_box_grid_list');
