@@ -667,7 +667,7 @@ function related_box_grid_list($atts, $content = null) {
           $rsBlocks->the_post();
 
           if ($atts['block-name'] == 'election-2024') {
-            $result .= '<div class="banner election-2024">'.get_field('block-title').'</div>';
+            $result .= '<div class="banner election-2024"><span>'.get_field('block-title').'</span></div>';
           } else {
 
             if (count(get_field('banner-images')) > 0) {
@@ -677,9 +677,9 @@ function related_box_grid_list($atts, $content = null) {
             }
 
             if (get_field('block-title') != '') {
-              $result .= '<div class="banner default" style="background-image: url('.$desktopImg.');">'.get_field('block-title').'</div>';
+              $result .= '<div class="banner default" style="background-image: url('.$desktopImg.');"><span>'.get_field('block-title').'</span></div>';
             } else {
-              $result .= '<div class="banner default" style="background-image: url('.$desktopImg.');">Related Stories</div>';
+              $result .= '<div class="banner default" style="background-image: url('.$desktopImg.');"><span>Related Stories</span></div>';
             }
           }
           $result .= '<ul>';

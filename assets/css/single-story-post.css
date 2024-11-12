@@ -394,11 +394,15 @@ body {
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 10px 20px;
+  color: #fff;
+}
+#main_container .single-story-block article .related-story-block .banner span, #top-ten .single-story-block article .related-story-block .banner span {
+  display: flex;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-size: 1rem;
   text-transform: uppercase;
-  padding: 10px 20px;
   color: #fff;
 }
 #main_container .single-story-block article .related-story-block .banner.election-2024, #top-ten .single-story-block article .related-story-block .banner.election-2024 {
