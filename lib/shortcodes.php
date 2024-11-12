@@ -650,7 +650,7 @@ add_shortcode('video-embed-right', 'video_embed_right');
 
 function related_box_grid_list($atts, $content = null) {
     if (isset($atts['block-name'])) {
-      echo $curPostID = get_the_ID();
+      $curPostID = get_the_ID();
       $args = [
                 'name'           => '"'.$atts['block-name'].'"',
                 'post_type'   => 'rs_list',
