@@ -650,6 +650,7 @@ add_shortcode('video-embed-right', 'video_embed_right');
 
 function related_box_grid_list($atts, $content = null) {
     if (isset($atts['block-name'])) {
+      echo $curPostID = get_the_ID();
       $args = [
                 'name'           => '"'.$atts['block-name'].'"',
                 'post_type'   => 'rs_list',
@@ -660,7 +661,7 @@ function related_box_grid_list($atts, $content = null) {
                ];
       $rsBlocks = new WP_Query($args);
 
-      if ($rsBlocks->have_posts()) {        
+      if ($rsBlocks->have_posts()) {
         $result = '<div class="related-story-block">';
         while ($rsBlocks->have_posts()) {
           $rsBlocks->the_post();
@@ -683,6 +684,9 @@ function related_box_grid_list($atts, $content = null) {
           $result .= '<ul>';
 
           $storiesList = get_field('related-stories-list', get_the_ID());
+          if (($key = array_search($curPostID, $storiesList)) !== false) {
+              unset($storiesList[$key]);
+          }
           $randKeys = array_rand($storiesList, 6);
           $storiesListCounter = 0;
           for ($i = 0; $i < count($storiesList); $i++) {
