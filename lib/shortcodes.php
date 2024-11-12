@@ -660,8 +660,7 @@ function related_box_grid_list($atts, $content = null) {
                ];
       $rsBlocks = new WP_Query($args);
 
-      if ($rsBlocks->have_posts()) {
-        print_r('rs block');
+      if ($rsBlocks->have_posts()) {        
         $result = '<div class="related-story-block">';
         while ($rsBlocks->have_posts()) {
           $rsBlocks->the_post();
@@ -669,7 +668,6 @@ function related_box_grid_list($atts, $content = null) {
           if ($atts['block-name'] == 'election-2024') {
             $result .= '<div class="banner election-2024"><span>'.get_field('block-title').'</span></div>';
           } else {
-
             if (count(get_field('banner-images')) > 0) {
               $bannerImg = get_field('banner-images');
               $desktopImg = $bannerImg['desktop-img'];
