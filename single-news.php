@@ -186,7 +186,7 @@
                      the_row();
                      $staffID = get_sub_field('cn_staff');
                      $cnStaffCount = count((array)$staffID);
-                     
+
                      if ($staffID != '') {
                        foreach ($staffID as $key => $val) {
                            $args = [
@@ -1162,7 +1162,14 @@
                    <li>
                      <a href="<?php echo get_permalink(); ?>" target="_self">
                        <img class="" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'post-thumbnail'); ?>" alt="<?php echo get_the_title(); ?>" loading="lazy" decoding="async">
-                       <h3><?php echo get_the_title(); ?></h3>
+                       <?php
+                         if (get_field('use_short_headline', get_the_ID()) == 'yes' && get_field('homepage_headline', get_the_ID()) != '') {
+                             $title = get_field('homepage_headline', get_the_ID());
+                         } else {
+                             $title = get_the_title(get_the_ID());
+                         }
+                       ?>
+                       <h3><?php echo $title; ?></h3>
                        <time class="published" datetime="<?php echo ap_date(); ?>"><?php echo ap_date(); ?></time>
                      </a>
                    </li>
