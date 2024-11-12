@@ -397,6 +397,11 @@ body {
   padding: 10px 20px;
   color: #fff;
 }
+@media only screen and (max-width: 600px) {
+  #main_container .single-story-block article .related-story-block .banner, #top-ten .single-story-block article .related-story-block .banner {
+    background-size: cover;
+  }
+}
 #main_container .single-story-block article .related-story-block .banner span, #top-ten .single-story-block article .related-story-block .banner span {
   display: flex;
   font-family: "Roboto", sans-serif;

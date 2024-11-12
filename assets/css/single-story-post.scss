@@ -422,6 +422,10 @@ body {
           background-repeat: no-repeat;
           padding: 10px 20px;
           color: #fff;
+          @media only screen
+            and (max-width: 600px) {
+              background-size: cover;
+          }
           span {
             display: flex;
             font-family: $robotoFontFamily;
