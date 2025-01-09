@@ -626,7 +626,8 @@ if (!is_admin()) {
 
 // For ACF: Options add-on
 add_filter('acf/options_page/settings', 'my_options_page_settings');
-function my_options_page_settings($options) {
+function my_options_page_settings($options)
+{
     $options['title'] = __('Theme Settings');
     $options['pages'] = [
         __('Header'),
@@ -669,19 +670,22 @@ if (!is_admin()) {
     add_action('wp_head', 'stick_admin_bar');
 }
 
-function admin_logo_custom_url() {
+function admin_logo_custom_url()
+{
     $site_url = get_bloginfo('url');
     return ($site_url);
 }
 add_filter('login_headerurl', 'admin_logo_custom_url');
 
-function new_excerpt_more($more) {
+function new_excerpt_more($more)
+{
     return '.';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
 add_filter('mce_css', 'tuts_mcekit_editor_style');
-function tuts_mcekit_editor_style($url) {
+function tuts_mcekit_editor_style($url)
+{
     if (!empty($url)) {
         $url .= ',';
     }
@@ -694,7 +698,8 @@ function tuts_mcekit_editor_style($url) {
 
 // Turn off visual editor for everything but sliders
 add_filter('user_can_richedit', 'disable_visual_editor');
-function disable_visual_editor() {
+function disable_visual_editor()
+{
     if ('slider' == get_post_type()) {
         return true;
     }
@@ -702,7 +707,8 @@ function disable_visual_editor() {
 }
 
 // Make months AP style
-function ap_date() {
+function ap_date()
+{
     if (get_the_time('m')=='01') :
         $apmonth = 'Jan. ';
     elseif (get_the_time('m')=='02') :
@@ -789,7 +795,8 @@ function ap_noticias_date()
 // From http://justintadlock.com/archives/2008/12/06/creating-single-post-templates-in-wordpress
 define('SINGLE_PATH', TEMPLATEPATH . '/templates');
 add_filter('single_template', 'my_single_template');
-function my_single_template($single) {
+function my_single_template($single)
+{
     global $wp_query, $post;
     foreach ((array)get_the_category() as $cat) :
         if (file_exists(SINGLE_PATH . '/single-cat-' . $cat->slug . '.php')) {
@@ -799,7 +806,8 @@ function my_single_template($single) {
     return $single;
 }
 // Remove auto generated feed links
-function my_remove_feeds() {
+function my_remove_feeds()
+{
     remove_action('wp_head', 'feed_links_extra', 3);
     remove_action('wp_head', 'feed_links', 2);
 }
@@ -808,13 +816,15 @@ add_action('after_setup_theme', 'my_remove_feeds');
 /*******************************************************************************/
 
 // Move Yoast to bottom
-function wpcover_move_yoast() {
+function wpcover_move_yoast()
+{
     return 'high';
 }
 add_filter('wpseo_metabox_prio', 'wpcover_move_yoast');
 
 // get byline
-function get_story_byline($get_post_ID) {
+function get_story_byline($get_post_ID)
+{
     $externalAuthorCount = 1;
     $internalAuthorCount = 0;
     $commaSeparator = ',';
@@ -924,7 +934,8 @@ add_filter('wpseo_enhanced_slack_data', function ($data) {
 });
 
 // custom post type for students
-function students_CPT() {
+function students_CPT()
+{
     $cpt_students_labels = [
         'name'               => _x('Students', 'post type general name'),
         'singular_name'      => _x('Student', 'post type singular name'),
@@ -965,7 +976,8 @@ if (function_exists('acf_add_options_sub_page')) {
 }
 
 // custom post type for staff
-function staff_CPT() {
+function staff_CPT()
+{
     $cpt_staff_labels = [
         'name'               => _x('Staff', 'post type general name'),
         'singular_name'      => _x('Staff', 'post type singular name'),
@@ -997,7 +1009,8 @@ add_action('init', 'staff_CPT');
 
 
 // custom tags for stories
-function storytags_CPT() {
+function storytags_CPT()
+{
     $storytags_labels = [
         'name'               => _x('Story Tags', 'post type general name'),
         'singular_name'      => _x('Story Tag', 'post type singular name'),
@@ -1029,7 +1042,8 @@ add_action('init', 'storytags_CPT');
 
 
 // in this series
-function inThisSeries_CPT() {
+function inThisSeries_CPT()
+{
     $inThisSeries_labels = [
         'name'               => _x('In This Series', 'post type general name'),
         'singular_name'      => _x('In This Series', 'post type singular name'),
@@ -1061,7 +1075,8 @@ add_action('init', 'inThisSeries_CPT');
 
 
 // custom post type for staff
-function explore_CPT() {
+function explore_CPT()
+{
     $cpt_explore_labels = [
         'name'               => _x('Explores', 'post type general name'),
         'singular_name'      => _x('Explore', 'post type singular name'),
@@ -1093,7 +1108,8 @@ add_action('init', 'explore_CPT');
 
 
 // custom post type for election2020
-function election2020_CPT() {
+function election2020_CPT()
+{
     $cpt_election2020_labels = [
         'name'               => _x('Election 2020', 'post type general name'),
         'singular_name'      => _x('Election 2020', 'post type singular name'),
@@ -1134,7 +1150,8 @@ if (function_exists('acf_add_options_sub_page')) {
 }
 
 // custom post type for audio/video
-function audioVideo_CPT() {
+function audioVideo_CPT()
+{
     $cpt_audiovideo_labels = [
         'name'               => _x('Audio/Video', 'post type general name'),
         'singular_name'      => _x('Audio/Video', 'post type singular name'),
@@ -1165,7 +1182,8 @@ function audioVideo_CPT() {
 add_action('init', 'audioVideo_CPT');
 
 // custom post type for related stories
-function related_stories_CPT() {
+function related_stories_CPT()
+{
     $cpt_related_stories_labels = [
         'name'               => _x('Related Stories', 'post type general name'),
         'singular_name'      => _x('Related Stories', 'post type singular name'),
@@ -1196,7 +1214,8 @@ function related_stories_CPT() {
 add_action('init', 'related_stories_CPT');
 
 
-function cn_search_query($query) {
+function cn_search_query($query)
+{
     if (!is_admin() && $query->is_main_query()) {
         if (is_search()) {
             $query->set('orderby', 'date');
@@ -1205,7 +1224,8 @@ function cn_search_query($query) {
 }
 add_action('pre_get_posts', 'cn_search_query');
 
-function add_file_types_to_uploads($file_types) {
+function add_file_types_to_uploads($file_types)
+{
     $new_filetypes = [];
     $new_filetypes['svg'] = 'image/svg+xml';
     $file_types = array_merge($file_types, $new_filetypes);
@@ -1214,18 +1234,21 @@ function add_file_types_to_uploads($file_types) {
 add_action('upload_mimes', 'add_file_types_to_uploads');
 
 add_action('init', 'custom_init_storytags');
-function custom_init_storytags() {
+function custom_init_storytags()
+{
     remove_post_type_support('storytags', 'comments');
 }
 
-function audiovideoCPT_remove_wp_seo_meta_box() {
+function audiovideoCPT_remove_wp_seo_meta_box()
+{
     remove_meta_box('wpseo_meta', 'audioVideoCPT', 'normal');
 }
 add_action('add_meta_boxes', 'audiovideoCPT_remove_wp_seo_meta_box', 100);
 
 /* URL rewrite rule for CN staff people page */
 add_filter('query_vars', 'add_staff_name_var', 0, 1);
-function add_staff_name_var($vars) {
+function add_staff_name_var($vars)
+{
     $vars[] = 'staffname';
     return $vars;
 }
@@ -1233,7 +1256,8 @@ add_rewrite_rule('^people/([^/]+)/?$', 'index.php?pagename=people&staffname=$mat
 
 /* URL rewrite rule for Audio story page */
 add_filter('query_vars', 'add_audio_story_var', 0, 1);
-function add_audio_story_var($vars) {
+function add_audio_story_var($vars)
+{
     $vars[] = 'audio_id';
     $vars[] = 'audio_title';
     return $vars;
@@ -1241,7 +1265,8 @@ function add_audio_story_var($vars) {
 add_rewrite_rule('^audio/story/([^/]+)/([^/]+)/?$', 'index.php?page_id=175279&audio_id=$matches[1]&audio_title=$matches[2]', 'top');
 
 // change tags label to keywords
-function change_tax_object_label() {
+function change_tax_object_label()
+{
     global $wp_taxonomies;
     $labels = &$wp_taxonomies['post_tag']->labels;
     $labels->name = __('Keywords', 'framework');
@@ -1259,7 +1284,8 @@ function change_tax_object_label() {
 }
 add_action('init', 'change_tax_object_label');
 
-function change_user_publish_capabilities() {
+function change_user_publish_capabilities()
+{
     $author = get_role('editor');
     /*'edit_posts',
     'edit_published_posts',
@@ -1288,4 +1314,5 @@ add_action('admin_init', 'change_user_publish_capabilities');
 #'manage_categories' => false,
 #));
 
+add_filter('show_admin_bar', '__return_true');
 ?>
