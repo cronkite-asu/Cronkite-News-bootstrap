@@ -2006,7 +2006,7 @@ audio {
     }
   }
   .wp-caption-text {
-    max-width: 100%;    
+    max-width: 100%;
     color: $white;
     padding-top:0;
     p {
@@ -2014,8 +2014,8 @@ audio {
       max-width: 100%;
     }
     a {
-      color: $white;
-      border-bottom: 1px solid $white;
+      color: #6e6e6e;
+      border-bottom: 1px solid #6e6e6e;
       @include attr-transition1(border);
       &:hover {
         border:none;
