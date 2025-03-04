@@ -1553,14 +1553,14 @@ if (have_rows('blocks')) {
     <div class="grid-container vertical-two-squares-block">
       <div class="grid-x grid-padding-x align-middle">
         <div class="large-6 medium-6 small-12 cell vertical">
-          <img src="<?php echo get_sub_field('vertical-photo');	?>" alt="<?php echo get_sub_field('caption');	?>" />
+          <img src="<?php echo get_sub_field('vertical-photo');	?>" />
         </div>
         <div class="large-6 medium-6 small-12 cell stacks">
           <div class="stacked-photo">
-            <img src="<?php echo get_sub_field('top-right-photo');	?>" alt="<?php echo get_sub_field('caption');	?>" />
+            <img src="<?php echo get_sub_field('top-right-photo');	?>" />
           </div>
           <div class="stacked-photo">
-            <img src="<?php echo get_sub_field('bottom-right-photo');	?>" alt="<?php echo get_sub_field('caption');	?>" />
+            <img src="<?php echo get_sub_field('bottom-right-photo');	?>" />
           </div>
         </div>
       </div>
