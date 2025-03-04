@@ -1547,10 +1547,33 @@ if (have_rows('blocks')) {
       </div>
     </div>
 
+<?php
+  }	elseif ( get_row_layout() == 'vertical-two-squares-block' ) {
+?>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x align-middle">
+        <div class="large-6 medium-6 small-12 cell vertical">
+          <img src="<?php echo get_sub_field('vertical-photo');	?>" alt="<?php echo get_sub_field('caption');	?>" />
+        </div>
+        <div class="large-6 medium-6 small-12 cell stacks">
+          <div class="stacked-photo">
+            <img src="<?php echo get_sub_field('top-right-photo');	?>" alt="<?php echo get_sub_field('caption');	?>" />
+          </div>
+          <div class="stacked-photo">
+            <img src="<?php echo get_sub_field('bottom-right-photo');	?>" alt="<?php echo get_sub_field('caption');	?>" />
+          </div>
+        </div>
+      </div>
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 medium-12 small-12 cell">
+          <?php echo get_sub_field('caption'); ?>
+        </div>
+      </div>
+    </div>
 
 <?php
-        } elseif (get_row_layout() == 'large-photo-2-verticals') {
-            ?>
+    } elseif (get_row_layout() == 'large-photo-2-verticals') {
+?>
 
     <div class="grid-container large-photo-verticals">
       <div class="grid-x grid-padding-x align-middle">
