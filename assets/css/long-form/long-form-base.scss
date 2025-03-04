@@ -1986,6 +1986,16 @@ audio {
   }
 }
 
+.vertical-two-squares-block {
+  .stacked {
+    .stacked-photo {
+      &:first-child {
+        margin-bottom: 14px;
+      }
+    }
+  }
+}
+
 .sidexside-content {
   max-width: 92rem;
   margin-top:40px;

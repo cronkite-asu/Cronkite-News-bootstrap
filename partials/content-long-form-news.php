@@ -1550,7 +1550,7 @@ if (have_rows('blocks')) {
 <?php
   }	elseif ( get_row_layout() == 'vertical-two-squares-block' ) {
 ?>
-    <div class="grid-container">
+    <div class="grid-container vertical-two-squares-block">
       <div class="grid-x grid-padding-x align-middle">
         <div class="large-6 medium-6 small-12 cell vertical">
           <img src="<?php echo get_sub_field('vertical-photo');	?>" alt="<?php echo get_sub_field('caption');	?>" />
