@@ -1991,6 +1991,10 @@ audio {
   max-width: 47rem;
 }
 
+.vertical-two-squares-block .stacks .stacked-photo:first-child {
+  margin-bottom: 14px;
+}
+
 .sidexside-content {
   max-width: 92rem;
   margin-top: 40px;
