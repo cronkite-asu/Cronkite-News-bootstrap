@@ -2030,7 +2030,7 @@ audio {
   padding-top: 10px;
   letter-spacing: 0;
   line-height: 1.2rem;
-  max-width: 90rem;
+  max-width: 100%;
 }
 .vertical-two-squares-block .wp-caption-text a {
   color: #ffffff;

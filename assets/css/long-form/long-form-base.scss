@@ -2012,7 +2012,7 @@ audio {
     padding-top:0;
     p {
       @include caption-text();
-      max-width: 90rem;
+      max-width: 100%;
     }
     a {
       color: $white;
