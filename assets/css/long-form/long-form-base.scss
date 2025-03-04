@@ -2004,7 +2004,7 @@ audio {
   .wp-caption-text {
     max-width: 90rem;
     @include caption-text();
-    max-width: 720px;
+    max-width: 100%;
     color: $white;
     padding-top:0;
     p {
