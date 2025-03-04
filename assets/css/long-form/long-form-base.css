@@ -1997,6 +1997,42 @@ audio {
 .vertical-two-squares-block .stacks .stacked-photo:first-child {
   margin-bottom: 12px;
 }
+.vertical-two-squares-block .wp-caption-text {
+  max-width: 90rem;
+  max-width: 800px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #6e6e6e;
+  padding-top: 10px;
+  letter-spacing: 0;
+  line-height: 1.2rem;
+  max-width: 720px;
+  color: #ffffff;
+  padding-top: 0;
+}
+.vertical-two-squares-block .wp-caption-text p {
+  max-width: 800px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #6e6e6e;
+  padding-top: 10px;
+  letter-spacing: 0;
+  line-height: 1.2rem;
+  max-width: 90rem;
+}
+.vertical-two-squares-block .wp-caption-text a {
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  -webkit-transition: border 0.25s;
+  -moz-transition: border 0.25s;
+  -o-transition: border 0.25s;
+  transition: border 0.25s;
+}
+.vertical-two-squares-block .wp-caption-text a:hover {
+  border: none;
+}
 
 .sidexside-content {
   max-width: 92rem;

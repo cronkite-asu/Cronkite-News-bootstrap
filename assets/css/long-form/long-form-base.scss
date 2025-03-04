@@ -1997,6 +1997,25 @@ audio {
       }
     }
   }
+  .wp-caption-text {
+    max-width: 90rem;
+    @include caption-text();
+    max-width: 720px;
+    color: $white;
+    padding-top:0;
+    p {
+      @include caption-text();
+      max-width: 90rem;
+    }
+    a {
+      color: $white;
+      border-bottom: 1px solid $white;
+      @include attr-transition1(border);
+      &:hover {
+        border:none;
+      }
+    }
+  }
 }
 
 .sidexside-content {
