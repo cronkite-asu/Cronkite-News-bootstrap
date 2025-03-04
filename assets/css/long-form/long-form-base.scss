@@ -1989,6 +1989,9 @@ audio {
 .vertical-two-squares-block {
   .stacks {
     .stacked-photo {
+      img {
+        max-width: 99%;
+      }
       &:first-child {
         margin-bottom: 14px;
       }
