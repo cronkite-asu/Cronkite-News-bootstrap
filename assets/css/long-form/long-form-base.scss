@@ -1987,6 +1987,9 @@ audio {
 }
 
 .vertical-two-squares-block {
+  img {
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  }
   .stacks {
     .stacked-photo {
       img {
@@ -2002,9 +2005,8 @@ audio {
     }
   }
   .wp-caption-text {
-    max-width: 90rem;
-    @include caption-text();
     max-width: 100%;
+    @include caption-text();
     color: $white;
     padding-top:0;
     p {
