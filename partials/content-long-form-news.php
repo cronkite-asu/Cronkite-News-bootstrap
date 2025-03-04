@@ -1566,7 +1566,7 @@ if (have_rows('blocks')) {
       </div>
       <div class="grid-x grid-padding-x">
         <div class="large-12 medium-12 small-12 cell">
-          <?php echo get_sub_field('caption'); ?>
+          <div class="wp-caption-text"><p><?php echo get_sub_field('caption'); ?></p></div>
         </div>
       </div>
     </div>
