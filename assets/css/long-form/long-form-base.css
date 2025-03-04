@@ -1997,6 +1997,11 @@ audio {
 .vertical-two-squares-block img {
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
+@media only screen and (max-width: 780px) {
+  .vertical-two-squares-block .stacks .vertical img {
+    margin-bottom: 12px;
+  }
+}
 .vertical-two-squares-block .stacks .stacked-photo img {
   max-width: 98.9%;
 }
