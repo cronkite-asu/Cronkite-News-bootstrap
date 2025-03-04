@@ -2008,7 +2008,7 @@ audio {
   .wp-caption-text {
     max-width: 100%;
     color: $white;
-    padding-top:0;
+    padding-top:10px;
     p {
       @include caption-text();
       max-width: 100%;

@@ -2011,7 +2011,7 @@ audio {
 .vertical-two-squares-block .wp-caption-text {
   max-width: 100%;
   color: #ffffff;
-  padding-top: 0;
+  padding-top: 10px;
 }
 .vertical-two-squares-block .wp-caption-text p {
   max-width: 800px;
