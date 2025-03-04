@@ -1990,7 +1990,11 @@ audio {
   .stacks {
     .stacked-photo {
       img {
-        max-width: 98.8%;
+        max-width: 98.9%;
+        @media only screen
+          and (max-width: 780px) {
+            max-width: 100%;
+        }
       }
       &:first-child {
         margin-bottom: 12px;

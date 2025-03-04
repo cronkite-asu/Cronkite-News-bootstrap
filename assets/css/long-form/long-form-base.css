@@ -1992,7 +1992,12 @@ audio {
 }
 
 .vertical-two-squares-block .stacks .stacked-photo img {
-  max-width: 98.8%;
+  max-width: 98.9%;
+}
+@media only screen and (max-width: 780px) {
+  .vertical-two-squares-block .stacks .stacked-photo img {
+    max-width: 100%;
+  }
 }
 .vertical-two-squares-block .stacks .stacked-photo:first-child {
   margin-bottom: 12px;
