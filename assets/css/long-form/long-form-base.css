@@ -1991,6 +1991,9 @@ audio {
   max-width: 47rem;
 }
 
+.vertical-two-squares-block {
+  margin-top: 40px;
+}
 .vertical-two-squares-block img {
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
