@@ -442,6 +442,7 @@
           </div>
         </div>
 
+        <?php if (get_field('series_display') == 'yes') { ?>
         <div class="grid-x grid-padding-x latest-series">
             <?php
             $seriesTitle = get_field('series_title', 24);
@@ -487,7 +488,8 @@
                 ?>
                 </ul>
               </div>
-        </div>
+            </div>
+          <?php } ?>
         <?php } ?>
       </div>
     </div>
