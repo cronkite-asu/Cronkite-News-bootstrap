@@ -12,7 +12,7 @@
 <!-- main body container -->
 <div id="homepage-container">
   <!-- main stories -->
-  <div class="grid-container main-stories">
+  <div class="grid-container content">
   <?php
     $args = array(
       'post_type' => 'post',
