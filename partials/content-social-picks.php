@@ -23,10 +23,34 @@
     $query = new WP_Query($args);
   ?>
 
+  <style>
+    .headline-holder {
+      margin-bottom:15px;
+    }
+    .headline-holder a {
+      position: relative;
+      display: block;
+    }
+    .headline-holder a h2 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      max-width: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, transparent, #0a0a0a);
+      font-weight: 600;
+      font-size: 1.95rem !important;
+      margin-top: 16px;
+      margin-bottom: 0px;
+      padding: 10px 25px;
+      color: #ffffff;
+    }
+  </style>
+
   <div class="grid-x grid-margin-x">
     <?php if ($query->have_posts() ) : ?>
       <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-        <div class="cell large-4 small-4" style="margin-bottom:15px;"><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_the_post_thumbnail(get_the_ID()); ?></a></div>
+        <div class="cell large-4 small-4" class="headline-holder"><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_the_post_thumbnail(get_the_ID()); ?><h2><?php get_the_title(); ?></h2></a></div>
       <?php endwhile; ?>
     <?php endif; ?>
   </div>
