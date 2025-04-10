@@ -107,7 +107,7 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/assets/js/vendor/slick/slick-theme.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/impeachment.css">
     <link href="<?php bloginfo('template_directory');?>/assets/css/nav.css" rel="stylesheet">
-    <?php if (is_page(18) || is_single() || is_category() || is_tag() || is_page('people') || is_search() || is_page(158103) || is_page(122187) || is_page(83139) || is_page(83161) || is_page(1131) || is_page(175279) || is_page(233325) || is_page(83161)) {?>
+    <?php if (is_page(18) || is_single() || is_category() || is_tag() || is_page('people') || is_search() || is_page(158103) || is_page(122187) || is_page(83139) || is_page(83161) || is_page(1131) || is_page(175279) || is_page(233325) || is_page(83161) || is_page(37726)) {?>
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/assets/css/single-story-post.css">
     <?php } ?>
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/about-us.css">
@@ -194,7 +194,7 @@
         <div class="main_nav">
           <!-- logo -->
           <div class="logo">
-            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/assets/img/cronkite-news.svg" alt="Cronkite News" title="Cronkite News" /></a>            
+            <a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory');?>/assets/img/cronkite-news.svg" alt="Cronkite News" title="Cronkite News" /></a>
           </div>
           <!-- main navigation -->
           <div class="nav_links">
