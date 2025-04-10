@@ -25,7 +25,7 @@
 
   <style>
     .headline-holder {
-      margin-bottom:15px;
+      margin-bottom:25px;
     }
     .headline-holder a {
       position: relative;
