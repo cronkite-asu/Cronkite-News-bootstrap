@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<div class="grid-container content fluid">
+<div class="grid-container content">
   <?php
     $args = array(
       'post_type' => 'post',
