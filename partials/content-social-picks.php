@@ -50,7 +50,7 @@
   <div class="grid-x grid-margin-x">
     <?php if ($query->have_posts() ) : ?>
       <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-        <div class="cell large-4 small-4" class="headline-holder"><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_the_post_thumbnail(get_the_ID()); ?><h2><?php get_the_title(); ?></h2></a></div>
+        <div class="cell large-4 small-4" class="headline-holder"><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_the_post_thumbnail(get_the_ID()); ?><h2><?php echo get_the_title(); ?></h2></a></div>
       <?php endwhile; ?>
     <?php endif; ?>
   </div>
