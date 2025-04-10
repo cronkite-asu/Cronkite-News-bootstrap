@@ -40,7 +40,7 @@
       background-image: linear-gradient(to bottom, transparent, #0a0a0a);
       font-weight: 600;
       font-family: "Roboto", sans-serif;
-      font-size: 1.95rem !important;
+      font-size: 1.15rem !important;
       margin-top: 16px;
       margin-bottom: 0px;
       padding: 10px 25px;
