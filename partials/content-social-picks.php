@@ -26,7 +26,6 @@
   <style>
     .headline-holder {
       margin-bottom:15px;
-      border:1px solid #ff0000;
     }
     .headline-holder a {
       position: relative;
@@ -40,6 +39,7 @@
       width: 100%;
       background-image: linear-gradient(to bottom, transparent, #0a0a0a);
       font-weight: 600;
+      font-family: "Roboto", sans-serif;
       font-size: 1.95rem !important;
       margin-top: 16px;
       margin-bottom: 0px;
