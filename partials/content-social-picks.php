@@ -23,7 +23,7 @@
     $query = new WP_Query($args);
   ?>
 
-  <div class="grid-x">
+  <div class="grid-x grid-margin-x">
     <?php if ($query->have_posts() ) : ?>
       <?php while ( $query->have_posts() ) : $query->the_post(); ?>
         <div class="cell large-4 small-4"><a href="<?php echo get_permalink(); ?>" target="_blank"><?php echo get_the_post_thumbnail(get_the_ID()); ?></a></div>
