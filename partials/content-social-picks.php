@@ -26,6 +26,7 @@
   <style>
     .headline-holder {
       margin-bottom:15px;
+      border:1px solid #ff0000;
     }
     .headline-holder a {
       position: relative;
