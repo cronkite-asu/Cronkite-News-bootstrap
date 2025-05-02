@@ -34,8 +34,8 @@ echo '<p>Count: '.$count = $query->found_posts.'</p>';
     'category__in' => [ 185 ],
     'date_query' => [
                       [
-                          'after'     => 'August 16, 2024',
-                          'before'    => 'January 15, 2025',
+                          'after'     => 'January 16, 2024',
+                          'before'    => 'May 15, 2025',
                           'inclusive' => true,
                     ]],
   ];
