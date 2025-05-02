@@ -15,8 +15,8 @@ get_header('new2019'); ?>
     'category__not_in' => [ 11, 22877 ],
     'date_query' => [
                       [
-                          'after'     => 'September 1, 2022',
-                          'before'    => 'April 30, 2025',
+                          'after'     => 'August 1, 2022',
+                          'before'    => 'January 15, 2022',
                           'inclusive' => true,
                     ]],
   ];
@@ -34,8 +34,8 @@ echo '<p>Count: '.$count = $query->found_posts.'</p>';
     'category__in' => [ 185 ],
     'date_query' => [
                       [
-                          'after'     => 'September 1, 2022',
-                          'before'    => 'April 30, 2025',
+                          'after'     => 'August 1, 2022',
+                          'before'    => 'January 15, 2022',
                           'inclusive' => true,
                     ]],
   ];
