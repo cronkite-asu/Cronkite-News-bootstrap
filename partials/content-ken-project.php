@@ -2,8 +2,8 @@
 <div class="grid-container full bg-holder">
   <div class="grid-x grid-padding-x">
     <div class="large-12 cell text-center">
-      <h1 style="line-height:5rem;margin-bottom: 0px;padding-bottom: 40px;">Need a project headline</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel ultrices quam. Ut vitae porta nunc, et posuere est. Praesent in orci mattis, aliquet lectus vel, auctor tellus. Duis tincidunt mattis mi, eget pharetra nulla hendrerit id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed tincidunt feugiat urna ac lobortis. Aenean volutpat nisi eget purus dapibus malesuada. Proin vulputate vitae nulla sed tempus. Nullam est nisl, commodo tristique nulla sed, vulputate sodales nunc.</p>            
+      <h1 style="line-height:5rem;margin-bottom: 0px;padding-bottom: 40px;">Deadly Force</h1>
+      <p>On Jan. 10, Phoenix police surrounded a house in Maryvale. An unarmed, shirtless man wanted for questioning was on the roof. Officers shot him with hard plastic batons to force him to get down. Turrell Clay, 33, died four and a half hours later.</p>            
     </div>
   </div>
 </div>
