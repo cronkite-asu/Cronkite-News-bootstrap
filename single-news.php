@@ -250,6 +250,8 @@
                              if (array_key_exists($val['author_title_site'], $externalSites) == true) {
                                  if ($val['author_title_site'] == 'abc15') {
                                      echo '/<a href="'.$externalSites[$val['author_title_site']].'" target="_blank">'.strtoupper(ucwords(str_replace('-', ' ', $val['author_title_site']))).'</a>';
+                                 } else if ($val['author_title_site'] == 'howard-center-for-investigative-journalism') {
+                                     echo '/<a href="'.$externalSites[$val['author_title_site']].'" target="_blank">Howard Center for Investigative Journalism at Arizona State University</a>';
                                  } else {
                                      echo '/<a href="'.$externalSites[$val['author_title_site']].'" target="_blank">'.ucwords(str_replace('-', ' ', $val['author_title_site'])).'</a>';
                                  }
